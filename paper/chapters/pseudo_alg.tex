@@ -1,0 +1,52 @@
+\begin{algorithm}
+    \caption{CAPO: Context-Aware Prompt Optimization}
+    \begin{algorithmic}[1]
+    \Require Dataset $\mathcal{D} = \{(X_i, y_i)\}_{i=1}^n$, Meta-LLM $\Phi(x)$, Downstream LLM $\phi(x)$, Cost function $\ell(y, \hat{y})$, Initial prompts $\nu$, Population size $p$, Block size $b$, Number of iterations $n$
+    \State Divide dataset $\mathcal{D}$ into blocks $\mathcal{B} = \{B_1, ..., B_k\}$ where $|B_i| = b$
+    \State Create $d \in \mathbb{R}^x$ for fewshot examples
+    \For{$i=1$ to $n$}
+        \State $P \gets \text{random\_selection}(\nu)$
+        \State $\nu \gets \nu.\text{update}(P)$
+        \State $\nu \gets \text{mutate}(\nu)$
+        \State prepend few-shot examples to $\nu$
+        \State $\nu \gets \text{do\_racing}(\nu, \text{top\_k}=p)$
+    \EndFor
+    \State $\text{best\_prompt} \gets \text{do\_racing}(\nu, \text{top\_k}=1)$
+    \State \Return best\_prompt
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{do\_racing}
+    \begin{algorithmic}[1]
+    \Require Prompts $\nu$, Top-$k$ $p$, cost function $\ell(y, \hat{y})$, blocks $\mathcal{B}$, Downstream LLM $\phi(x)$
+    \State survivors $\gets \nu$
+    \State $i \gets 0$
+    \State scores $\gets [0]*\text{len}(\nu)$
+    \State shuffle $\mathcal{B}$
+    \While{len(survivors) $>$ top\_k}
+        \State $i \gets i + 1$
+        \State $\text{scores} \gets \frac{1}{i}\left(\text{evaluate}(\nu, B_i) + (i-1)*\text{scores}\right)$
+        \State $\text{survivors} \gets \text{racing\_elimination}(\nu, \text{scores}, i, \alpha)$
+    \EndWhile 
+    \State \Return survivors
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Confidence-based Racing Elimination}
+    \begin{algorithmic}[1]
+    \Require Prompts $P$, scores $S$, current round $n$, confidence level $\alpha$, total blocks $B$
+    \State $z_{\alpha} \gets \Phi^{-1}(1-\alpha/2)$ \Comment{Critical value}
+    \State survivors $\gets P$
+    \For{$p_i \in P$}
+        \For{$p_j \in P \setminus \{p_i\}$}
+            \If{$s_j > s_i$ \textbf{and} $(s_j - s_i)\sqrt{n} > z_{\alpha}$}
+                \State survivors $\gets$ survivors $\setminus \{p_i\}$
+                \State \textbf{break}
+            \EndIf
+        \EndFor
+    \EndFor
+    \State \Return survivors
+    \end{algorithmic}
+\end{algorithm}
