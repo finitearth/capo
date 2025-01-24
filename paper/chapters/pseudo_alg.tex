@@ -1,50 +1,95 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algorithmicx} 
+\usepackage{algpseudocode}
+
+\begin{document}
+
 \begin{algorithm}
     \caption{CAPO: Context-Aware Prompt Optimization}
     \begin{algorithmic}[1]
-    \Require Dataset $\mathcal{D} = \{(X_i, y_i)\}_{i=1}^n$, Meta-LLM $\Phi(x)$, Downstream LLM $\phi(x)$, Cost function $\ell(y, \hat{y})$, Initial prompts $\nu$, Population size $p$, Block size $b$, Number of iterations $n$
-    \State Divide dataset $\mathcal{D}$ into blocks $\mathcal{B} = \{B_1, ..., B_k\}$ where $|B_i| = b$
-    \State Create $d \in \mathbb{R}^x$ for fewshot examples
-    \For{$i=1$ to $n$}
-        \State $P \gets \text{random\_selection}(\nu)$
-        \State $O \gets \text{cross\_over}(P)$
-        \State $\nu \gets \nu.\text{update}(O)$
-        \State $\nu \gets \text{mutate}(\nu)$
-        \State prepend few-shot examples to $\nu$
-        \State $\nu \gets \text{do\_racing}(\nu, \text{top\_k}=p)$
+    \Require Dataset $\mathcal{D} = \{(X_i, y_i)\}_{i=1}^n$, Meta-LLM $\Phi(x)$, Downstream LLM $\phi(x)$, Cost function $\ell(y, \hat{y})$, Initial instructions $\Lambda = {\lambda_1, \dots, \lambda_p}$, Population size $p$, Block size $b$, Number of iterations $n$
+    \For{$\lambda \in \Lambda$} \Comment{Sample few shot examples}
+        \State $\xi \sim \text{U}(X)$
+        \State $\theta \gets \phi(\lambda||\xi)$   \Comment{Generate response with reasoning}
+        \State $\pi_i \gets (\lambda, \theta)$
     \EndFor
-    \State $\text{best\_prompt} \gets \text{do\_racing}(\nu, \text{top\_k}=1)$
+    \State Divide dataset $\mathcal{D}$ into blocks $\mathcal{B} = \{B_1, ..., B_k\}$ where $|B_i| = b$
+    \For{$i=1$ to $n$}
+        \State $P_1 \sim U(\Pi)$
+        \State $P_2 \sim U(\Pi)$
+        \State $O \gets \text{cross\_over}(P_1, P_2)$
+        \State $\Pi \gets \Pi.\text{update}(O)$
+        \State $\Pi \gets \text{mutate}(\Pi)$
+        \State $\Pi \gets \text{do\_racing}(\Pi, k=p)$
+    \EndFor
+    \State $\text{best\_prompt} \gets \text{do\_racing}(\Pi, k=1)$
     \State \Return best\_prompt
     \end{algorithmic}
 \end{algorithm}
 
 \begin{algorithm}
-    \caption{do\_racing}
+    \caption{cross\_over}
     \begin{algorithmic}[1]
-    \Require Prompts $\nu$, Top-$k$ $p$, cost function $\ell(y, \hat{y})$, blocks $\mathcal{B}$, Downstream LLM $\phi(x)$
-    \State survivors $\gets \nu$
+        \Require Parent prompt 1 $\pi_1 = (\lambda_1, \theta_1)$, Parent prompt 2 $\pi_2 = (\lambda_2, \theta_2)$, Meta-LLM $\Phi(x)$, Cross-Over-Meta-Prompt $\lambda_{\text{C}}$
+        \State $\lambda_{\text{off}} \gets \Phi(\lambda_{\text{C}} || \lambda_1 || \lambda_2)$
+        \State $\theta_{\text{off}, 1} \sim U(\theta_1)$
+        \State $\theta_{\text{off}, 2} \sim U(\theta_2)$
+        \State $\theta_{\text{off}} \gets \theta_{\text{off}, 1} \cup \theta_{\text{off}, 2}$
+        \State $\pi_{\text{off}} \gets (\lambda_{\text{off}}, \theta_{\text{off}})$
+        \State \Return $\pi_{\text{off}}$
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{mutate}
+    \begin{algorithmic}[1]
+        \Require prompt $\pi = (\lambda, \theta)$, Meta-LLM $\Phi(x)$, Mutation-Meta-Prompt $\lambda_{\text{M}}$, Dataset samples $X$
+        \State $\lambda_{\text{off}} \gets \Phi(\lambda_{\text{M}} || \lambda)$
+        \State $\theta_{\text{new}} \sim X$
+        \State $\theta_{\text{old}} \sim \theta$
+        \State $\theta \gets \theta_{\text{old}} \cup \theta_{\text{new}}$
+        \State $\theta \gets \text{shuffle}(\theta)$
+        \State $\pi \gets (\lambda, \theta)$
+        \State \Return $\pi$
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{do\_racing} 
+    \begin{algorithmic}[1]
+    \Require Prompts $\Pi$, Top-k $k$, cost function $\ell(y, \hat{y})$, blocks $\mathcal{B}$, Downstream LLM $\phi(x)$, number of evaluations $a$
+    \State survivors $\gets \Pi$
     \State $i \gets 0$
-    \State scores $\gets [0]*\text{len}(\nu)$
-    \State shuffle $\mathcal{B}$
-    \While{$\text{len(survivors)} > \text{top\_k} \ \land \ i < \text{len}(\mathcal{B})$}
+    \State scores $\gets [0]*\text{len}(\Pi)$
+    \State $\text{shuffle}(\mathcal{B})$
+    \While{$\text{len(survivors)} > k \ \land \ i < \text{len}(\mathcal{B})$}
         \State $i \gets i + 1$
-        \State $\text{scores} \gets \frac{1}{i}\left(\text{evaluate}(\nu, B_i) + (i-1)*\text{scores}\right)$
-        \State $\text{survivors} \gets \text{racing\_elimination}(\nu, \text{scores}, i*b, \alpha, k)$
+        \State $\text{scores} \gets \frac{1}{i}\left(\text{evaluate}(\Pi, B_i) + (i-1)*\text{scores}\right)$
+        \State $\text{survivors} \gets \text{racing\_elimination}(\Pi, \text{scores}, i*b, \alpha, k)$
     \EndWhile 
     \State \Return survivors
     \end{algorithmic}
 \end{algorithm}
 
 \begin{algorithm}
-    \caption{Confidence-based Racing Elimination}
+    \caption{racing\_elimination}
     \begin{algorithmic}[1]
-    \Require Prompts $P$, scores $S$, number of evaluations $a$, confidence level $\alpha$, total blocks $B$, top $k$
+    \Require Prompts $\Pi$, scores $S$,  confidence level $\alpha$, top-k $k$
     \State $z_{\alpha} \gets \Phi^{-1}(1-\alpha/2)$ \Comment{Critical value}
-    \State survivors $\gets P$
-    \For{$p_i \in P$}
-        \If{$\sum_{j \neq i} \mathbf{1}_{\left((s_j - s_i)\sqrt{a} > z_{\alpha}\right)} \geq k$} \Comment{\# prompts better than $p_i$ exceeds $k$}
-            \State survivors $\gets$ survivors $\setminus \{p_i\}$ \Comment{Eliminate $p_i$}
+    \State survivors $\gets \Pi$
+    \For{$\pi_i \in \Pi$}
+        \State n\_subst\_better $ \gets \sum_{j \neq i} \mathbf{1}_{\left[(s_j - s_i)\sqrt{a} > z_{\alpha}\right]} $
+        \If{n\_subst\_better $\geq k$}
+            \State survivors $\gets$ survivors $\setminus \{\pi_i\}$ \Comment{Eliminate $\pi_i$}
         \EndIf
     \EndFor
     \State \Return survivors
     \end{algorithmic}
 \end{algorithm}
+
+
+\end{document}
