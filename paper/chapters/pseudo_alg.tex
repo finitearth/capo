@@ -8,88 +8,111 @@
 
 \begin{document}
 
-\begin{algorithm}
-    \caption{CAPO: Context-Aware Prompt Optimization}
+\begin{algorithm}[h]
+    \caption{CAPO: Cost-Aware Prompt Optimization}
     \begin{algorithmic}[1]
-    \Require Dataset $\mathcal{D} = \{(X_i, y_i)\}_{i=1}^n$, Meta-LLM $\Phi(x)$, Downstream LLM $\phi(x)$, Cost function $\ell(y, \hat{y})$, Initial instructions $\Lambda = {\lambda_1, \dots, \lambda_p}$, Population size $p$, Block size $b$, Number of iterations $n$
-    \For{$\lambda \in \Lambda$} \Comment{Sample few shot examples}
-        \State $\xi \sim \text{U}(X)$
-        \State $\theta \gets \phi(\lambda||\xi)$   \Comment{Generate response with reasoning}
-        \State $\pi_i \gets (\lambda, \theta)$
-    \EndFor
-    \State Divide dataset $\mathcal{D}$ into blocks $\mathcal{B} = \{B_1, ..., B_k\}$ where $|B_i| = b$
-    \For{$i=1$ to $n$}
-        \State $P_1 \sim U(\Pi)$
-        \State $P_2 \sim U(\Pi)$
-        \State $O \gets \text{cross\_over}(P_1, P_2)$
-        \State $\Pi \gets \Pi.\text{update}(O)$
-        \State $\Pi \gets \text{mutate}(\Pi)$
-        \State $\Pi \gets \text{do\_racing}(\Pi, k=p)$
-    \EndFor
-    \State $\text{best\_prompt} \gets \text{do\_racing}(\Pi, k=1)$
-    \State \Return best\_prompt
+        \Require Dataset $\mathcal{D} = \{(X_i, y_i)\}_{i=1}^n$, Meta-LLM $\Phi(x)$,
+        Downstream LLM $\phi(x)$, Cost function $\ell(y, \hat{y})$,
+        Initial instructions $\Lambda = {\lambda_1, \dots, \lambda_p}$,
+        Population size $p$, Block size $b$, Number of iterations $n$, Number of crossovers per iteration $c$
+        \For{$\lambda \in \Lambda$}
+        \State $\text{num\_shots} \sim \text{U}(\text{lower}, \text{upper})$
+        \State $\xi \gets \text{sample}(X, \text{num\_shots})$ \Comment{Sample few shot examples}
+        \State $\theta \gets \phi(\lambda||\xi)$   \Comment{Generate few shots with reasoning}
+        \State $\pi \gets (\lambda, \theta)$
+        \State $\Pi \gets \Pi\text{.append}(\pi)$
+        \EndFor
+        \State Divide dataset $\mathcal{D}$ into blocks $\mathcal{B} = \{B_1, ..., B_k\}$ where $|B_i| = b$
+        \For{$i=1$ to $n$}
+        \State $\Pi_{\text{off}} \gets \text{cross\_over}(\Pi, c)$
+        \State $\Pi_{\text{off}} \gets \text{mutate}(\Pi_{\text{off}})$
+        \State $\Pi \gets \text{do\_racing}(\Pi \cup \Pi_\text{off}, k=p)$
+        \EndFor
+        \State $\text{best\_prompt} \gets \text{do\_racing}(\Pi, k=1)$
+        \State \Return best\_prompt
     \end{algorithmic}
 \end{algorithm}
 
-\begin{algorithm}
+\noindent Is reasoning always necessary? Maybe this is not important for simple tasks and costs a lot of tokens. (Idea: some few shot examples can be included without reasoning)
+
+\begin{algorithm}[h]
     \caption{cross\_over}
     \begin{algorithmic}[1]
-        \Require Parent prompt 1 $\pi_1 = (\lambda_1, \theta_1)$, Parent prompt 2 $\pi_2 = (\lambda_2, \theta_2)$, Meta-LLM $\Phi(x)$, Cross-Over-Meta-Prompt $\lambda_{\text{C}}$
-        \State $\lambda_{\text{off}} \gets \Phi(\lambda_{\text{C}} || \lambda_1 || \lambda_2)$
-        \State $\theta_{\text{off}, 1} \sim U(\theta_1)$
-        \State $\theta_{\text{off}, 2} \sim U(\theta_2)$
-        \State $\theta_{\text{off}} \gets \theta_{\text{off}, 1} \cup \theta_{\text{off}, 2}$
-        \State $\pi_{\text{off}} \gets (\lambda_{\text{off}}, \theta_{\text{off}})$
-        \State \Return $\pi_{\text{off}}$
+        \Require Population $\Pi$, Meta-LLM $\Phi(x)$, Cross-Over-Meta-Prompt $\lambda_{\text{C}}$, Number of crossovers $c$
+        \State $\Pi_{\text{off}} \gets  []$
+        \For{$j=1$ to $c$}
+        \State $P_1 \gets \text{sample}(\Pi, 1)$ \Comment{$P_1 = (\lambda_1, \theta_1)$}
+        \State $P_2 \gets \text{sample}(\Pi, 1)$ \Comment{$P_2 = (\lambda_2, \theta_2)$}
+        \State $\lambda_{\text{off}} \gets \Phi(\lambda_{\text{C}} || \lambda_1 || \lambda_2)$ \Comment{Let Meta-LLM cross over the prompts}
+        \State $\theta_{\text{off},j} \gets \text{sample}(\theta_1 \cup \theta_2, \left\lfloor\frac{|\theta_1|+|\theta_2|}{2}\right\rfloor)$ \Comment{Sample from all few-shot examples}
+        \State $\pi_{\text{off},j} \gets (\lambda_{\text{off},j}, \theta_{\text{off},j})$
+        \State $\Pi_{\text{off}} \gets \Pi_{\text{off}}.\text{append}(\pi_{\text{off},j})$
+        \EndFor
+        \State \Return $\Pi_{\text{off}}$
     \end{algorithmic}
 \end{algorithm}
 
-\begin{algorithm}
+\noindent Currently we do a random parent selection. In EvoPrompt they do a roulette wheel selection based on the fitness scores. This would require us to find a way of already having scores here.
+
+\begin{algorithm}[h]
     \caption{mutate}
     \begin{algorithmic}[1]
-        \Require prompt $\pi = (\lambda, \theta)$, Meta-LLM $\Phi(x)$, Mutation-Meta-Prompt $\lambda_{\text{M}}$, Dataset samples $X$
-        \State $\lambda_{\text{off}} \gets \Phi(\lambda_{\text{M}} || \lambda)$
-        \State $\theta_{\text{new}} \sim X$
-        \State $\theta_{\text{old}} \sim \theta$
+        \Require Population of offsprings $\Pi_{\text{off}}$, Meta-LLM $\Phi(x)$, Mutation-Meta-Prompt $\lambda_{\text{M}}$, Dataset samples $X$
+        \For{$\pi_{\text{off}} \in \Pi_{\text{off}}$}
+        \State $\lambda_{\text{off}} \gets \Phi(\lambda_{\text{M}} || \lambda_{\text{off}})$
+        \State $\text{num\_shots} \sim \text{U}(\text{lower}, \text{upper})$
+        \State $\text{num\_new\_shots} \sim \text{U}(\text{lower}, \text{num\_shots})$
+        \State $\xi \gets \text{sample}(X, \text{num\_new\_shots})$ \Comment{Sample new few shot examples}
+        \State $\theta_\text{new} \gets \phi(\lambda_\text{off}||\xi)$   \Comment{Generate few shots with reasoning}
+        \State $\theta_\text{old} \gets \text{sample}(\theta_{\text{off}}, \text{num\_shots} - \text{num\_new\_shots})$
         \State $\theta \gets \theta_{\text{old}} \cup \theta_{\text{new}}$
         \State $\theta \gets \text{shuffle}(\theta)$
-        \State $\pi \gets (\lambda, \theta)$
-        \State \Return $\pi$
+        \State $\pi_\text{off} \gets (\lambda_\text{off}, \theta)$
+        \EndFor
+        \State \Return $\Pi_{\text{off}}$
     \end{algorithmic}
 \end{algorithm}
 
+\noindent We have to clarify where the new few-shot examples are coming from.\\
+\noindent Extra Split:\\
++ no data leakage (fair, comparable assessment of prompts)\\
+- constrained pool of few-shot examples (how to get this pool?) - potentially smaller dev Split\\
+
+\noindent From Train Split:\\
+- data leakage (prompts that contain eval data point already as few-shot examples which are already confirmed as correct have advantages)\\
++ we can use the full train set\\
+
 \begin{algorithm}
-    \caption{do\_racing} 
+    \caption{do\_racing}
     \begin{algorithmic}[1]
-    \Require Prompts $\Pi$, Top-k $k$, cost function $\ell(y, \hat{y})$, blocks $\mathcal{B}$, Downstream LLM $\phi(x)$, number of evaluations $a$
-    \State survivors $\gets \Pi$
-    \State $i \gets 0$
-    \State scores $\gets [0]*\text{len}(\Pi)$
-    \State $\text{shuffle}(\mathcal{B})$
-    \While{$\text{len(survivors)} > k \ \land \ i < \text{len}(\mathcal{B})$}
+        \Require Prompts $\Pi$, Top-k $k$, cost function $\ell(y, \hat{y})$, blocks $\mathcal{B}$, Downstream LLM $\phi(x)$, number of evaluations $a$
+        \State survivors $\gets \Pi$
+        \State $i \gets 0$
+        \State scores $\gets [0]*\text{len}(\Pi)$
+        \State $\text{shuffle}(\mathcal{B})$
+        \While{$\text{len(survivors)} > k \ \land \ i < \text{len}(\mathcal{B})$}
         \State $i \gets i + 1$
         \State $\text{scores} \gets \frac{1}{i}\left(\text{evaluate}(\Pi, B_i) + (i-1)*\text{scores}\right)$
         \State $\text{survivors} \gets \text{racing\_elimination}(\Pi, \text{scores}, i*b, \alpha, k)$
-    \EndWhile 
-    \State \Return survivors
+        \EndWhile
+        \State \Return survivors
     \end{algorithmic}
 \end{algorithm}
 
 \begin{algorithm}
     \caption{racing\_elimination}
     \begin{algorithmic}[1]
-    \Require Prompts $\Pi$, scores $S$,  confidence level $\alpha$, top-k $k$
-    \State $z_{\alpha} \gets \Phi^{-1}(1-\alpha/2)$ \Comment{Critical value}
-    \State survivors $\gets \Pi$
-    \For{$\pi_i \in \Pi$}
+        \Require Prompts $\Pi$, scores $S$,  confidence level $\alpha$, top-k $k$
+        \State $z_{\alpha} \gets \Phi^{-1}(1-\alpha/2)$ \Comment{Critical value}
+        \State survivors $\gets \Pi$
+        \For{$\pi_i \in \Pi$}
         \State n\_subst\_better $ \gets \sum_{j \neq i} \mathbf{1}_{\left[(s_j - s_i)\sqrt{a} > z_{\alpha}\right]} $
         \If{n\_subst\_better $\geq k$}
-            \State survivors $\gets$ survivors $\setminus \{\pi_i\}$ \Comment{Eliminate $\pi_i$}
+        \State survivors $\gets$ survivors $\setminus \{\pi_i\}$ \Comment{Eliminate $\pi_i$}
         \EndIf
-    \EndFor
-    \State \Return survivors
+        \EndFor
+        \State \Return survivors
     \end{algorithmic}
 \end{algorithm}
-
 
 \end{document}
