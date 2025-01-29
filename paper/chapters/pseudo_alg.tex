@@ -1,12 +1,4 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{algorithm}
-\usepackage{algorithmicx} 
-\usepackage{algpseudocode}
-
-\begin{document}
+\section{Pseudo Algorithms}
 
 \begin{algorithm}[h]
     \caption{CAPO: Cost-Aware Prompt Optimization}
@@ -33,7 +25,8 @@
     \end{algorithmic}
 \end{algorithm}
 
-\noindent Is reasoning always necessary? Maybe this is not important for simple tasks and costs a lot of tokens. (Idea: some few shot examples can be included without reasoning)
+\noindent Is reasoning always necessary? Maybe this is not important for simple tasks and costs a lot of tokens. (Idea: some few shot examples can be included without reasoning)\\
+\newpage
 
 \begin{algorithm}[h]
     \caption{cross\_over}
@@ -52,7 +45,7 @@
     \end{algorithmic}
 \end{algorithm}
 
-\noindent Currently we do a random parent selection. In EvoPrompt they do a roulette wheel selection based on the fitness scores. This would require us to find a way of already having scores here.
+\noindent Currently we do a random parent selection. In EvoPrompt they do a roulette wheel selection based on the fitness scores. This would require us to find a way of already having scores here.\\
 
 \begin{algorithm}[h]
     \caption{mutate}
@@ -81,6 +74,7 @@
 \noindent From Train Split:\\
 - data leakage (prompts that contain eval data point already as few-shot examples which are already confirmed as correct have advantages)\\
 + we can use the full train set\\
+
 
 \begin{algorithm}
     \caption{do\_racing}
@@ -114,5 +108,3 @@
         \State \Return survivors
     \end{algorithmic}
 \end{algorithm}
-
-\end{document}
