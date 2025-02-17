@@ -6,27 +6,30 @@ from promptolution.tasks import ClassificationTask
 from promptolution.predictors.base_predictor import BasePredictor
 from promptolution.predictors.classificator import Classificator
 from promptolution.utils.prompt_creation import create_prompts_from_samples
+
+from collections import defaultdict
 from typing import List, Tuple, Callable, Dict
 import random
 import numpy as np
 import pandas as pd
+import math
+
 
 FEW_SHOT_TEMPLATE = """<instruction>
 
 <examples>"""
-# langchain has a class for few shot templates ... shall we use that?
 
 DOWNSTREAM_TEMPLATE = """
-{instruction}
-Input: {input}
+<instruction>
+Input: <input>
 Output:
 """
 
 CROSSOVER_TEMPLATE = """
 Combine the following prompts:
 
-Prompt 1: {mother}
-Prompt 2: {father}
+Prompt 1: <mother>
+Prompt 2: <father>
 
 Return the result between <prompt> and </prompt>.
 """
@@ -34,55 +37,100 @@ Return the result between <prompt> and </prompt>.
 MUTATION_TEMPLATE = """
 Improve the prompt and return the result between <prompt> and </prompt>:
 
-{instruction}
+<instruction>
 """
 
 
+def hoeffdings_inequality_test_diff(
+    score_a: float,
+    score_b: float,
+    n: int,
+    delta: float = 0.05,
+    min_val: float = 0.0,
+    max_val: float = 1.0,
+) -> bool:
+    """
+    Uses Hoeffding's inequality to test if candidate A's accuracy is significantly
+    higher than candidate B's accuracy when they have different numbers of evaluations.
+
+    For a candidate with n evaluations and observed average score, Hoeffding's inequality
+    gives a confidence bound:
+        epsilon = sqrt((R^2 * log(2/delta)) / (2*n))
+    where R = max_val - min_val.
+
+    Candidate A is considered significantly better than candidate B if:
+        (score_a - epsilon_a) > (score_b + epsilon_b)
+
+    Parameters:
+        score_a (float): Observed average accuracy for candidate A (default range [0,1]).
+        score_b (float): Observed average accuracy for candidate B.
+        n (int): Number of independent evaluations.
+        delta (float): Significance level (default 0.05 for 95% confidence).
+        min_val (float): Minimum possible score (default 0.0).
+        max_val (float): Maximum possible score (default 1.0).
+
+    Returns:
+        bool: True if candidate A is significantly better than candidate B, False otherwise.
+    """
+    R = max_val - min_val
+    epsilon_a = math.sqrt((R**2 * math.log(2 / delta)) / (2 * n))
+    epsilon_b = math.sqrt((R**2 * math.log(2 / delta)) / (2 * n))
+
+    result = (score_a - epsilon_a) > (score_b + epsilon_b)
+
+    return result
+
+
 class Prompt:
-    def __init__(self, instruction: str, examples: List[Tuple[str, str]]):
-        self.instruction = instruction
-        self.examples = examples  # List of (input, output with reasoning)
-        # block evaluation scores
-        self.block_scores: Dict[int, float] = {}
+    """
+    Represents a prompt consisting of an instruction and few-shot examples.
+    """
+
+    def __init__(self, instruction_text: str, examples: List[Tuple[str, str]]):
+        """
+        Initializes the Prompt with an instruction and associated examples.
+
+        Parameters:
+            instruction_text (str): The instruction or prompt text.
+            examples (List[Tuple[str, str]]): List of examples as (input, response).
+        """
+        self.instruction_text = instruction_text
+        self.examples = examples  # List of (sample_input, response)
 
     def construct_prompt(self) -> str:
-        examples = "\n".join([f"Input: {x}\nOutput: {y}" for x, y in self.examples])
-        return FEW_SHOT_TEMPLATE.replace("<instruction>", self.instruction).replace(
-            "<examples>", examples
+        """
+        Constructs the full prompt string by replacing placeholders in the template
+        with the instruction and formatted examples.
+
+        Returns:
+            str: The constructed prompt string.
+        """
+        examples_str = "\n".join(
+            [
+                f"Input: {sample_input}\nOutput: {response}"
+                for sample_input, response in self.examples
+            ]
         )
+        prompt = FEW_SHOT_TEMPLATE.replace(
+            "<instruction>", self.instruction_text
+        ).replace("<examples>", examples_str)
 
-    def evaluate_on_block(
-        self,
-        block: List[Tuple[str, str]],
-        block_id: int,
-        task: BaseTask,
-        predictor: BasePredictor,
-    ) -> float:
-        if block_id in self.block_scores:
-            return self.block_scores[block_id]
-
-        temp_task = ClassificationTask.from_dataframe(
-            pd.DataFrame(block, columns=["x", "y"]), description=task.description
-        )
-        prompt = self.construct_prompt()
-        prompt_length = len(prompt.split(" "))
-        score = temp_task.evaluate([prompt], predictor)
-        self.block_scores[block_id] = score
-
-        return score + prompt_length * 0.01
-
-    def get_score(self) -> float:
-        return np.mean(list(self.block_scores.values()))
+        return prompt
 
 
 class CAPOptimizer(BaseOptimizer):
+    """
+    Optimizer that evolves prompt instructions using crossover, mutation,
+    and racing based on evaluation scores and statistical tests.
+    """
+
     def __init__(
         self,
         initial_prompts: List[str],
         task: BaseTask,
-        dataset: List[Tuple[str, str]],
         meta_llm: BaseLLM,
         downstream_llm: BaseLLM,
+        length_penalty: float,
         block_size: int,
         crossovers_per_iter: int,
         upper_shots: int,
@@ -91,24 +139,37 @@ class CAPOptimizer(BaseOptimizer):
         crossover_meta_prompt: str = None,
         mutation_meta_prompt: str = None,
         callbacks: List[Callable] = [],
-        predictor=None,
+        predictor: BasePredictor = None,
     ):
-        super().__init__(initial_prompts, task, callbacks, predictor)
+        """
+        Initializes the CAPOptimizer with various parameters for prompt evolution.
 
-        if isinstance(dataset, pd.DataFrame):
-            dataset = [(x, y) for x, y in zip(dataset["x"], dataset["y"])]
-        self.dataset = dataset
+        Parameters:
+            initial_prompts (List[str]): Initial prompt instructions.
+            task (BaseTask): The task instance containing dataset and description.
+            meta_llm (BaseLLM): The meta language model for crossover/mutation.
+            downstream_llm (BaseLLM): The downstream language model used for responses.
+            length_penalty (float): Penalty factor for prompt length.
+            block_size (int): Number of samples per evaluation block.
+            crossovers_per_iter (int): Number of crossover operations per iteration.
+            upper_shots (int): Maximum number of few-shot examples per prompt.
+            max_n_blocks_eval (int): Maximum number of evaluation blocks.
+            test_statistic (Callable): Function to test significance between prompts.
+                Inputs are (score_a, score_b, n_evals) and returns True if A is better.
+            crossover_meta_prompt (str, optional): Template for crossover instructions.
+            mutation_meta_prompt (str, optional): Template for mutation instructions.
+            callbacks (List[Callable], optional): List of callbacks for optimizer events.
+            predictor (BasePredictor, optional): Predictor to evaluate prompt performance.
+        """
+        # Pass initial_prompts and task to the base optimizer
+        super().__init__(initial_prompts, task, callbacks, predictor)
+        self.task = task
 
         self.meta_llm = meta_llm
         self.downstream_llm = downstream_llm
 
-        if crossover_meta_prompt is None:
-            crossover_meta_prompt = CROSSOVER_TEMPLATE
-        self.crossover_meta_prompt = crossover_meta_prompt
-
-        if mutation_meta_prompt is None:
-            mutation_meta_prompt = MUTATION_TEMPLATE
-        self.mutation_meta_prompt = mutation_meta_prompt
+        self.crossover_meta_prompt = crossover_meta_prompt or CROSSOVER_TEMPLATE
+        self.mutation_meta_prompt = mutation_meta_prompt or MUTATION_TEMPLATE
 
         self.population_size = len(initial_prompts)
         self.block_size = block_size
@@ -116,126 +177,231 @@ class CAPOptimizer(BaseOptimizer):
         self.upper_shots = upper_shots
         self.max_n_blocks_eval = max_n_blocks_eval
         self.test_statistic = test_statistic
+
         self.blocks = self._split_into_blocks()
         self.population = self._initialize_population(initial_prompts)
 
-    def _split_into_blocks(self) -> List[List[Tuple[str, str]]]:
-        random.shuffle(self.dataset)
+        self.length_penalty = length_penalty
+
+        # Caches evaluations: (prompt id, block id) -> score
+        self.evaluation_cache: Dict[Tuple[int, int], float] = {}
+
+    def _split_into_blocks(self) -> List[Tuple[int, np.ndarray]]:
+        """
+        Splits the task's dataset into blocks of indices for evaluation.
+
+        Returns:
+            List[Tuple[int, np.ndarray]]: List of tuples (block_id, indices array).
+        """
+        # Use the task's xs (and corresponding ys) to create index blocks.
+        num_samples = len(self.task.xs)
+        indices = np.arange(num_samples)
+        np.random.shuffle(indices)
         blocks = [
-            self.dataset[i : i + self.block_size]
-            for i in range(0, len(self.dataset), self.block_size)
+            indices[i : i + self.block_size]
+            for i in range(0, num_samples, self.block_size)
         ]
-        return [(i, block) for i, block in enumerate(blocks)]
+        return list(enumerate(blocks))  # Each block is (block_id, indices)
 
     def _initialize_population(self, initial_prompts: List[str]) -> List[Prompt]:
+        """
+        Initializes the population of Prompt objects from initial instructions.
+
+        Parameters:
+            initial_prompts (List[str]): List of initial prompt instructions.
+
+        Returns:
+            List[Prompt]: Initialized population of prompts with few-shot examples.
+        """
         population = []
-        for instruction in initial_prompts:
-            num_shots = random.randint(0, self.upper_shots)
-            xi_samples = random.sample([x for x, _ in self.dataset], num_shots)
-            examples = []
-            for xi in xi_samples:
-                theta = self.downstream_llm.get_response(
-                    [f"{instruction}\nInput: {xi}\nOutput:"]
-                )[0]
-                examples.append((xi, theta))
-            population.append(Prompt(instruction, examples))
+        num_samples = len(self.task.xs)
+        for instruction_text in initial_prompts:
+            few_shots = self._create_few_shot_examples(instruction_text, num_samples)
+            population.append(Prompt(instruction_text, few_shots))
         return population
 
+    def _create_few_shot_examples(
+        self, instruction: str, n_shots: int
+    ) -> List[Tuple[str, str]]:
+        num_examples = random.randint(0, self.upper_shots)
+        all_indices = list(range(n_shots))
+        selected_indices = random.sample(all_indices, num_examples)
+        few_shots = []
+        for idx in selected_indices:
+            sample_input = self.task.xs[idx]
+            # Assuming sample_input can be cast to string
+            if random.random() < 0.5:
+                response = self.downstream_llm.get_response(
+                    [f"{instruction}\nInput: {sample_input}\nOutput:"]
+                )[0]
+            else:
+                response = self.task.ys[idx]
+            few_shots.append((str(sample_input), response))
+
+        return few_shots
+
+    def evaluate_prompt_on_block(
+        self, prompt: Prompt, block_indices: np.ndarray, block_id: int
+    ) -> float:
+        """
+        Evaluates a prompt on a given block of data and applies the length penalty.
+
+        Parameters:
+            prompt (Prompt): The prompt to evaluate.
+            block_indices (np.ndarray): Array of indices for the current block.
+            block_id (int): Identifier for the current block.
+
+        Returns:
+            float: The evaluation score (adjusted by prompt length penalty).
+        """
+        cache_key = (id(prompt), block_id)
+        if cache_key in self.evaluation_cache:
+            return self.evaluation_cache[cache_key]
+
+        prompt_str = prompt.construct_prompt()
+        prompt_length = len(prompt_str.split())
+        # Extract the block's inputs and targets using the indices
+        block_inputs = self.task.xs[block_indices]
+        block_targets = self.task.ys[block_indices]
+
+        # evaluate on task
+        temp_task = ClassificationTask.from_dataframe(
+            pd.DataFrame({"x": block_inputs, "y": block_targets}),
+            description=self.task.description,
+        )
+        score = temp_task.evaluate([prompt.construct_prompt()], self.predictor)
+
+        total_score = score - prompt_length * self.length_penalty
+        self.evaluation_cache[cache_key] = total_score
+        return total_score
+
     def _crossover(self, parents: List[Prompt]) -> List[Prompt]:
+        """
+        Performs crossover among parent prompts to generate offsprings.
+
+        Parameters:
+            parents (List[Prompt]): List of parent prompts.
+
+        Returns:
+            List[Prompt]: List of new offsprings after crossover.
+        """
         offsprings = []
         for _ in range(self.crossovers_per_iter):
-            mother_prompt, father_prompt = random.sample(parents, 2)
-            # Combine instructions from both parents using meta-LLM
+            mother, father = random.sample(parents, 2)
             crossover_prompt = (
-                self.crossover_meta_prompt.replace(
-                    "<mother>", mother_prompt.instruction
-                )
-                .replace("<father>", father_prompt.instruction)
+                self.crossover_meta_prompt.replace("<mother>", mother.instruction_text)
+                .replace("<father>}", father.instruction_text)
                 .strip()
             )
-            child_instr = (
+            child_instruction = (
                 self.meta_llm.get_response([crossover_prompt])[0]
-                .split("<prompt>")[1]
+                .split("<prompt>")[-1]
                 .split("</prompt>")[0]
                 .strip()
             )
-            # Combine examples from both parents
+            combined_examples = mother.examples + father.examples
+            num_examples = int(len(mother.examples) * 0.5 + len(father.examples) * 0.5)
             child_examples = random.sample(
-                mother_prompt.examples + father_prompt.examples,
-                int(
-                    len(mother_prompt.examples) * 0.5
-                    + len(father_prompt.examples) * 0.5
-                ),
+                combined_examples, min(num_examples, len(combined_examples))
             )
 
-            offsprings.append(Prompt(child_instr, child_examples))
+            offsprings.append(Prompt(child_instruction, child_examples))
         return offsprings
 
     def _mutate(self, offsprings: List[Prompt]) -> List[Prompt]:
+        """
+        Applies mutation to offsprings to generate new candidate prompts.
+
+        Parameters:
+            offsprings (List[Prompt]): List of offsprings to mutate.
+
+        Returns:
+            List[Prompt]: List of mutated prompts.
+        """
         mutated = []
         for prompt in offsprings:
-            # Mutate instruction using meta-LLM
             mutation_prompt = self.mutation_meta_prompt.replace(
-                "<instruction>", prompt.instruction
+                "<instruction>", prompt.instruction_text
             )
-            new_instr = (
+            new_instruction = (
                 self.meta_llm.get_response([mutation_prompt])[0]
                 .split("<prompt>")[-1]
                 .split("</prompt>")[0]
                 .strip()
             )
-            # Sample number of shots for the new instruction
-            num_shots = random.randint(0, self.upper_shots)
-            num_new = random.randint(0, num_shots)
-            num_old = num_shots - num_new
-            # Sample new examples
-            new_examples = random.sample([x for x, _ in self.dataset], num_new)
-            for example in new_examples:
-                reasoning = self.downstream_llm.get_response(
-                    [
-                        DOWNSTREAM_TEMPLATE.replace(
-                            "<instruction>", "mutation_prompt"
-                        ).replace("<example>", example)
-                    ],
-                    return_seq=True,
-                )[0]
-                # TODO: check if answer is correct!
-                new_examples.append((example, reasoning))
-            # Sample old examples
+            num_fewshots = random.randint(0, self.upper_shots)
+            new_few_shots = self._create_few_shot_examples(
+                new_instruction, num_fewshots
+            )
+            # Optionally combine some existing examples from the prompt
+            num_old = max(0, num_fewshots - len(new_few_shots))
             old_examples = random.sample(
                 prompt.examples, min(num_old, len(prompt.examples))
             )
-            combined = old_examples + new_examples
-            random.shuffle(combined)
-            mutated.append(Prompt(new_instr, combined))
+
+            combined_examples = old_examples + new_few_shots
+            random.shuffle(combined_examples)
+            mutated.append(Prompt(new_instruction, combined_examples))
         return mutated
 
     def _do_racing(self, candidates: List[Prompt], k: int) -> List[Prompt]:
-        random.shuffle(self.blocks)
-        for i, (block_id, block) in enumerate(self.blocks):
-            # TODO parralelize for speed up!!
+        """
+        Performs the racing (selection) phase by comparing candidates based on their
+        evaluation scores using the provided test statistic.
+
+        Parameters:
+            candidates (List[Prompt]): List of candidate prompts.
+            k (int): Number of survivors to retain.
+
+        Returns:
+            List[Prompt]: List of surviving prompts after racing.
+        """
+        prompt_evaluations = defaultdict(lambda: [])
+        for block_id, block_indices in self.blocks:
             for prompt in candidates:
-                prompt.evaluate_on_block(block, block_id, self.task, self.predictor)
-            # Calculate average scores and eliminate
+                score = self.evaluate_prompt_on_block(prompt, block_indices, block_id)
+                pid = id(prompt)
+                prompt_evaluations[pid].append(score)
+
+            candidate_avg_scores = {
+                id(prompt): np.mean(prompt_evaluations[id(prompt)])
+                for prompt in candidates
+            }
+            candidate_n_evals = {
+                id(prompt): len(prompt_evaluations[id(prompt)]) * self.block_size
+                for prompt in candidates
+            }
+            survivors = []
             for candidate in candidates:
-                score = candidate.get_score()
-                # count the number of prompts that perform significantly (using test_statistic) better than prompt
+                candidate_id = id(candidate)
+                score = candidate_avg_scores[candidate_id]
                 n_better = sum(
-                    [
-                        self.test_statistic(score, other.get_score())
-                        for other in candidates
-                    ]
+                    1
+                    for other in candidates
+                    if self.test_statistic(
+                        score,
+                        candidate_avg_scores[id(other)],
+                        candidate_n_evals[candidate_id],
+                    )
                 )
-                if n_better >= k:
-                    candidates.remove(candidate)
-            if len(candidates) <= k or i == self.max_n_blocks_eval:
+                if n_better < k:
+                    survivors.append(candidate)
+            candidates = survivors
+            if len(candidates) <= k or block_id == self.max_n_blocks_eval:
                 break
         return candidates[:k]
 
-    def optimize(self, n_steps: int) -> List[str]:
-        for step in range(n_steps):
-            print([p.construct_prompt() for p in self.population])
+    def optimize(self, n_steps: int) -> List[Prompt]:
+        """
+        Main optimization loop that evolves the prompt population over a number of steps.
 
+        Parameters:
+            n_steps (int): Number of optimization steps to perform.
+
+        Returns:
+            List[Prompt]: The final population of prompts after optimization.
+        """
+        for _ in range(n_steps):
             offsprings = self._crossover(self.population)
             mutated = self._mutate(offsprings)
             combined = self.population + mutated
@@ -245,36 +411,39 @@ class CAPOptimizer(BaseOptimizer):
         return self.population
 
 
-# Example usage
 if __name__ == "__main__":
     token = open("deepinfratoken.txt", "r").read()
 
     meta_llm = APILLM("meta-llama/Meta-Llama-3-8B-Instruct", token)
     downstream_llm = meta_llm
-    # Mock dataset and parameters
+    # Create the task – note that the task already loads its dataset.
     df = pd.read_csv(
         "hf://datasets/nakamoto-yama/dt-mappings/yama_dt_mappings.csv"
     ).rename({"Degree Type": "x", "Mapping": "y"}, axis=1)
     task = ClassificationTask.from_dataframe(df, description="test test")
+    # Ensure task.xs and task.ys are set (here, converting DataFrame columns to numpy arrays)
+    task.xs = df["x"].to_numpy()
+    task.ys = df["y"].to_numpy()
+
     initial_prompts = [
         create_prompts_from_samples(task, downstream_llm) for _ in range(10)
     ]
 
     predictor = Classificator(downstream_llm, df["y"].unique())
-    test_statistic = lambda x, y: x > y  # simple test statistic for now
+    test_statistic = lambda x, y, n: hoeffdings_inequality_test_diff(x, y, n, delta=0.5)
 
-    capo = CAPOptimizer(
+    optimizer = CAPOptimizer(
         initial_prompts=initial_prompts,
         task=task,
-        dataset=df,
         meta_llm=meta_llm,
         downstream_llm=downstream_llm,
+        length_penalty=0.01,
         block_size=30,
         crossovers_per_iter=2,
         upper_shots=5,
-        test_statistic=test_statistic,
         max_n_blocks_eval=5,
+        test_statistic=test_statistic,
         predictor=predictor,
     )
-    best_prompt = capo.optimize(n_steps=3)
-    print(f"Best instruction: \n\n{best_prompt}")
+    best_prompts = optimizer.optimize(n_steps=3)
+    print(f"Best instructions:\n\n{[p.construct_prompt() for p in best_prompts]}")
