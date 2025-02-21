@@ -2,6 +2,8 @@ import math
 import numpy as np
 from scipy.stats import ttest_rel
 
+
+
 def paired_t_test(
     scores_a: np.ndarray,
     scores_b: np.ndarray,

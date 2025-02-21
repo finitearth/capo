@@ -2,32 +2,35 @@ from promptolution.predictors.classificator import Classificator
 from promptolution.utils.prompt_creation import create_prompts_from_samples
 from promptolution.llms.api_llm import APILLM
 from promptolution.tasks import ClassificationTask
-
+from promptolution.callbacks import LoggerCallback
 from capo.capo import CAPOptimizer
-from capo.statistical_tests import hoeffdings_inequality_test_diff
-
+from capo.statistical_tests import hoeffdings_inequality_test_diff, paired_t_test
+from capo.task import CAPOTask
+from logging import getLogger
 import pandas as pd
 
 token = open("deepinfratoken.txt", "r").read()
 
 meta_llm = APILLM("meta-llama/Meta-Llama-3-8B-Instruct", token)
 downstream_llm = meta_llm
-# Create the task – note that the task already loads its dataset.
-df = pd.read_csv(
-    "hf://datasets/nakamoto-yama/dt-mappings/yama_dt_mappings.csv"
-).rename({"Degree Type": "x", "Mapping": "y"}, axis=1)
-task = ClassificationTask.from_dataframe(df, description="test test")
-# Ensure task.xs and task.ys are set (here, converting DataFrame columns to numpy arrays)
-task.xs = df["x"].to_numpy()
-task.ys = df["y"].to_numpy()
 
-initial_prompts = [
-    create_prompts_from_samples(task, downstream_llm) for _ in range(10)
-]
+df = pd.read_parquet(
+    "hf://datasets/stanfordnlp/imdb/plain_text/train-00000-of-00001.parquet"
+).sample(300)
+task = ClassificationTask.from_dataframe(
+    df, description="Is the Movie review positive =1 or negative =0",
+    x_column="text", y_column="label"
+)
 
-predictor = Classificator(downstream_llm, df["y"].unique())
-test_statistic = lambda x, y, n: hoeffdings_inequality_test_diff(x, y, n, delta=0.5)
+task = CAPOTask.from_task(task, block_size=30, few_shot_split_size=0.2)
+initial_prompts = [create_prompts_from_samples(task, downstream_llm) for _ in range(10)]
 
+predictor = Classificator(downstream_llm, task.classes)
+test_statistic = lambda x, y: paired_t_test(x, y, alpha=0.2)
+
+logger = getLogger(__name__)
+callback = LoggerCallback(logger)
+print("huhu")
 optimizer = CAPOptimizer(
     initial_prompts=initial_prompts,
     task=task,
@@ -38,8 +41,11 @@ optimizer = CAPOptimizer(
     crossovers_per_iter=2,
     upper_shots=5,
     max_n_blocks_eval=5,
+    few_shot_split_size=0.2,
     test_statistic=test_statistic,
     predictor=predictor,
+    callbacks=[callback],
+    shuffle_blocks_per_iter=False,
 )
-best_prompts = optimizer.optimize(n_steps=3)
-print(f"Best instructions:\n\n{[p.construct_prompt() for p in best_prompts]}")
+best_prompts = optimizer.optimize(n_steps=12)
+print(f"Best instructions:\n\n {best_prompts}")

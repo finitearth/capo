@@ -25,7 +25,7 @@ class Prompt:
         Returns:
             str: The constructed prompt string.
         """
-        examples_str = "\n".join(
+        examples_str = "\n\n".join(
             [
                 f"Input: {sample_input}\nOutput: {response}"
                 for sample_input, response in self.examples
@@ -36,3 +36,6 @@ class Prompt:
         ).replace("<examples>", examples_str)
 
         return prompt
+    
+    def __str__(self):
+        return self.construct_prompt()
