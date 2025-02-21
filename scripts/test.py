@@ -1,13 +1,17 @@
-from promptolution.predictors.classificator import Classificator
-from promptolution.utils.prompt_creation import create_prompts_from_samples
+import pandas as pd
 from promptolution.llms.api_llm import APILLM
+from promptolution.predictors.classificator import Classificator
 from promptolution.tasks import ClassificationTask
 from promptolution.callbacks import LoggerCallback
+
+from promptolution.utils.prompt_creation import create_prompts_from_samples
 from capo.capo import CAPOptimizer
 from capo.statistical_tests import hoeffdings_inequality_test_diff, paired_t_test
 from capo.task import CAPOTask
 from logging import getLogger
 import pandas as pd
+
+
 
 token = open("deepinfratoken.txt", "r").read()
 

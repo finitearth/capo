@@ -1,7 +1,16 @@
+import random
+from collections import defaultdict
+from typing import Callable, Dict, List, Tuple
+
+import numpy as np
+import pandas as pd
+from promptolution.llms.base_llm import BaseLLM
 from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.llms.base_llm import BaseLLM
 from promptolution.tasks.base_task import BaseTask
 from promptolution.predictors.base_predictor import BasePredictor
+from promptolution.tasks import ClassificationTask
+from promptolution.tasks.base_task import BaseTask
 
 from capo.templates import CROSSOVER_TEMPLATE, MUTATION_TEMPLATE, DOWNSTREAM_TEMPLATE
 from capo.utils import Prompt
@@ -188,9 +197,7 @@ class CAPOptimizer(BaseOptimizer):
                 .strip()
             )
             num_fewshots = random.randint(0, self.upper_shots)
-            new_few_shots = self._create_few_shot_examples(
-                new_instruction, num_fewshots
-            )
+            new_few_shots = self._create_few_shot_examples(new_instruction, num_fewshots)
             # combine the new shots with some existing from the prompt
             old_examples = random.sample(
                 prompt.examples,

@@ -1,5 +1,7 @@
-from typing import List, Tuple, Callable, Dict
+from typing import List, Tuple
+
 from capo.templates import FEW_SHOT_TEMPLATE
+
 
 class Prompt:
     """
@@ -31,9 +33,9 @@ class Prompt:
                 for sample_input, response in self.examples
             ]
         )
-        prompt = FEW_SHOT_TEMPLATE.replace(
-            "<instruction>", self.instruction_text
-        ).replace("<examples>", examples_str)
+        prompt = FEW_SHOT_TEMPLATE.replace("<instruction>", self.instruction_text).replace(
+            "<examples>", examples_str
+        )
 
         return prompt
     
