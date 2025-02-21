@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 
 
+
 class CAPOptimizer(BaseOptimizer):
     """
     Optimizer that evolves prompt instructions using crossover, mutation,
@@ -31,6 +32,7 @@ class CAPOptimizer(BaseOptimizer):
         crossovers_per_iter: int,
         upper_shots: int,
         max_n_blocks_eval: int,
+        few_shot_split_size: float,
         test_statistic: Callable,
         crossover_meta_prompt: str = None,
         mutation_meta_prompt: str = None,
@@ -52,10 +54,12 @@ class CAPOptimizer(BaseOptimizer):
             max_n_blocks_eval (int): Maximum number of evaluation blocks.
             test_statistic (Callable): Function to test significance between prompts.
                 Inputs are (score_a, score_b, n_evals) and returns True if A is better.
+            few_shot_split_size (float): Fraction of dataset to use for few-shots.
             crossover_meta_prompt (str, optional): Template for crossover instructions.
             mutation_meta_prompt (str, optional): Template for mutation instructions.
-            callbacks (List[Callable], optional): List of callbacks for optimizer events.
-            predictor (BasePredictor, optional): Predictor to evaluate prompt performance.
+            callbacks (List[Callable], optional): Callbacks for optimizer events.
+            predictor (BasePredictor, optional): Predictor to evaluate prompt
+                performance.
         """
         # Pass initial_prompts and task to the base optimizer
         super().__init__(initial_prompts, task, callbacks, predictor)
@@ -74,7 +78,8 @@ class CAPOptimizer(BaseOptimizer):
         self.max_n_blocks_eval = max_n_blocks_eval
         self.test_statistic = test_statistic
 
-        self.blocks = self._split_into_blocks()
+        # Each block is (block_id, indices), few_shot_split is a list of indices
+        self.blocks, self.few_shot_indices = self._split_dataset(few_shot_split_size)
         self.population = self._initialize_population(initial_prompts)
 
         self.length_penalty = length_penalty
@@ -82,22 +87,29 @@ class CAPOptimizer(BaseOptimizer):
         # Caches evaluations: (prompt id, block id) -> score
         self.evaluation_cache: Dict[Tuple[int, int], float] = {}
 
-    def _split_into_blocks(self) -> List[Tuple[int, np.ndarray]]:
+    def _split_dataset(
+        self, few_shot_split_size: float
+    ) -> List[Tuple[int, np.ndarray]]:
         """
-        Splits the task's dataset into blocks of indices for evaluation.
+        Splits the task's dataset into blocks of indices for evaluation
+        and few-shot examples.
 
         Returns:
-            List[Tuple[int, np.ndarray]]: List of tuples (block_id, indices array).
+            List[Tuple[int, np.ndarray]]: List of tuples (block_id, indices array),
+            Tuple[int, np.ndarray]: List of indices for few-shot examples.
         """
         # Use the task's xs (and corresponding ys) to create index blocks.
         num_samples = len(self.task.xs)
-        indices = np.arange(num_samples)
-        np.random.shuffle(indices)
+        indices = list(range(num_samples))
+        random.shuffle(indices)
+
+        n_few_shots = int(few_shot_split_size * num_samples)
+        few_shot_indices = indices[:n_few_shots]
         blocks = [
             indices[i : i + self.block_size]
-            for i in range(0, num_samples, self.block_size)
+            for i in range(n_few_shots, num_samples, self.block_size)
         ]
-        return list(enumerate(blocks))  # Each block is (block_id, indices)
+        return list(enumerate(blocks)), few_shot_indices
 
     def _initialize_population(self, initial_prompts: List[str]) -> List[Prompt]:
         """
@@ -110,22 +122,20 @@ class CAPOptimizer(BaseOptimizer):
             List[Prompt]: Initialized population of prompts with few-shot examples.
         """
         population = []
-        num_samples = len(self.task.xs)
         for instruction_text in initial_prompts:
-            few_shots = self._create_few_shot_examples(instruction_text, num_samples)
+            num_examples = random.randint(0, self.upper_shots)
+            few_shots = self._create_few_shot_examples(instruction_text, num_examples)
             population.append(Prompt(instruction_text, few_shots))
         return population
 
     def _create_few_shot_examples(
-        self, instruction: str, n_shots: int
+        self, instruction: str, num_examples: int
     ) -> List[Tuple[str, str]]:
-        num_examples = random.randint(0, self.upper_shots)
-        all_indices = list(range(n_shots))
-        selected_indices = random.sample(all_indices, num_examples)
+        selected_indices = random.sample(self.few_shot_indices, num_examples)
         few_shots = []
         for idx in selected_indices:
             sample_input = self.task.xs[idx]
-            # Assuming sample_input can be cast to string
+            # in half of the cases generate reasoning from downstream model
             if random.random() < 0.5:
                 response = self.downstream_llm.get_response(
                     [f"{instruction}\nInput: {sample_input}\nOutput:"]
@@ -196,7 +206,7 @@ class CAPOptimizer(BaseOptimizer):
                 .strip()
             )
             combined_examples = mother.examples + father.examples
-            num_examples = int(len(mother.examples) * 0.5 + len(father.examples) * 0.5)
+            num_examples = int((len(mother.examples) + len(father.examples)) / 2)
             child_examples = random.sample(
                 combined_examples, min(num_examples, len(combined_examples))
             )
@@ -229,10 +239,10 @@ class CAPOptimizer(BaseOptimizer):
             new_few_shots = self._create_few_shot_examples(
                 new_instruction, num_fewshots
             )
-            # Optionally combine some existing examples from the prompt
-            num_old = max(0, num_fewshots - len(new_few_shots))
+            # combine the new shots with some existing from the prompt
             old_examples = random.sample(
-                prompt.examples, min(num_old, len(prompt.examples))
+                prompt.examples,
+                min(num_fewshots - len(new_few_shots), len(prompt.examples)),
             )
 
             combined_examples = old_examples + new_few_shots
@@ -284,7 +294,7 @@ class CAPOptimizer(BaseOptimizer):
 
     def optimize(self, n_steps: int) -> List[Prompt]:
         """
-        Main optimization loop that evolves the prompt population over a number of steps.
+        Main optimization loop that evolves the prompt population.
 
         Parameters:
             n_steps (int): Number of optimization steps to perform.
@@ -302,3 +312,4 @@ class CAPOptimizer(BaseOptimizer):
 
         prompts = [p.construct_prompt() for p in self.population]
         return prompts
+ 

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "capo"
+version = "0.1.0"
+description = "Cost-aware prompt tuning algorithm"
+authors = ["Tom Zehle, Moritz Schlager, Timo Heiß"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.12"
+promptolution = "^1.1.1"
+numpy = "~1.26"
+pandas = "^2.2.3"
+scipy = "^1.15.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
