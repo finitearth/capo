@@ -27,9 +27,9 @@ class Prompt:
         Returns:
             str: The constructed prompt string.
         """
-        few_shot_str = "\n\n".join(self.few_shots)
+        few_shot_str = "\n\n".join(self.few_shots).strip()
         prompt = FEW_SHOT_TEMPLATE.replace(
-            "<instruction>", self.instruction_text
+            "<instruction>", self.instruction_text.strip()
         ).replace("<examples>", few_shot_str)
         return prompt
 
