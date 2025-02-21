@@ -125,16 +125,21 @@ class CAPOptimizer(BaseOptimizer):
             sample_target = self.task.ys[idx]
             # in half of the cases generate reasoning from downstream model
             if random.random() < 0.5:
-                response = self.downstream_llm.get_response(
-                    [
-                        DOWNSTREAM_TEMPLATE
-                        .replace("<input>", sample_input)
-                        .replace("<instruction>", instruction)
-                    ],
-                )[0]
+                c = 0
+                few_shot = ""
+                while c < 10:
+                    c += 1
+                    pred, seq = self.predictor.predict(
+                        [DOWNSTREAM_TEMPLATE.replace("<input>", sample_input).replace("<instruction>", instruction)],
+                        [sample_input],
+                        return_seq=True
+                    )
+                    if pred[0] == sample_target:
+                        few_shot = seq[0]
+                        break
             else:
-                response = sample_target
-            few_shots.append((str(sample_input), response))
+                few_shot = f"Input: {sample_input}\nOutput: {sample_target}"
+            few_shots.append(few_shot)
 
         return few_shots
 
@@ -158,8 +163,8 @@ class CAPOptimizer(BaseOptimizer):
                 .strip()
             )
             crossover_prompts.append(crossover_prompt)
-            combined_few_shots = mother.examples + father.examples
-            num_few_shots = int((len(mother.examples) + len(father.examples)) / 2)
+            combined_few_shots = mother.few_shots + father.few_shots
+            num_few_shots = int((len(mother.few_shots) + len(father.few_shots)) / 2)
             offspring_few_shot = random.sample(
                 combined_few_shots, min(num_few_shots, len(combined_few_shots))
             )
@@ -200,8 +205,8 @@ class CAPOptimizer(BaseOptimizer):
             new_few_shots = self._create_few_shot_examples(new_instruction, num_fewshots)
             # combine the new shots with some existing from the prompt
             old_examples = random.sample(
-                prompt.examples,
-                min(num_fewshots - len(new_few_shots), len(prompt.examples)),
+                prompt.few_shots,
+                min(num_fewshots - len(new_few_shots), len(prompt.few_shots)),
             )
 
             combined_examples = old_examples + new_few_shots
@@ -223,12 +228,15 @@ class CAPOptimizer(BaseOptimizer):
         """
         if self.shuffle_blocks_per_iter:
             random.shuffle(self.task.blocks)
-
+        block_scores = []
         for block_id, _ in self.task.blocks:
-            scores = self.task.evaluate_on_block(
+            new_scores = self.task.evaluate_on_block(
                 [c.construct_prompt() for c in candidates], block_id, self.predictor
             )
+            block_scores.append(new_scores)
+            scores = np.concatenate(block_scores, axis=1)
 
+            # boolean matrix C_ij cindicating if candidate i is better than candidate j
             comparison_matrix = np.array(
                 [
                     [self.test_statistic(score, other_score) for other_score in scores]
