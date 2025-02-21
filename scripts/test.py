@@ -34,7 +34,7 @@ test_statistic = lambda x, y: paired_t_test(x, y, alpha=0.2)
 
 logger = getLogger(__name__)
 callback = LoggerCallback(logger)
-print("huhu")
+
 optimizer = CAPOptimizer(
     initial_prompts=initial_prompts,
     task=task,
