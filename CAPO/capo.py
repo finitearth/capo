@@ -230,8 +230,13 @@ class CAPOptimizer(BaseOptimizer):
             random.shuffle(self.task.blocks)
         block_scores = []
         for block_id, _ in self.task.blocks:
+            # new_scores shape: (n_candidates, n_samples)
             new_scores = self.task.evaluate_on_block(
                 [c.construct_prompt() for c in candidates], block_id, self.predictor
+            )
+            # subtract length penalty
+            new_scores -= self.length_penalty * np.repeat(
+                [len(c.construct_prompt().split()) for c in candidates], self.block_size
             )
             block_scores.append(new_scores)
             scores = np.concatenate(block_scores, axis=1)
