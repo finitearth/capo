@@ -1,121 +1,17 @@
 from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.llms.base_llm import BaseLLM
-from promptolution.llms.api_llm import APILLM
 from promptolution.tasks.base_task import BaseTask
 from promptolution.tasks import ClassificationTask
 from promptolution.predictors.base_predictor import BasePredictor
-from promptolution.predictors.classificator import Classificator
-from promptolution.utils.prompt_creation import create_prompts_from_samples
+
+from capo.templates import CROSSOVER_TEMPLATE, MUTATION_TEMPLATE
+from capo.utils import Prompt
 
 from collections import defaultdict
 from typing import List, Tuple, Callable, Dict
 import random
 import numpy as np
 import pandas as pd
-import math
-
-
-FEW_SHOT_TEMPLATE = """<instruction>
-
-<examples>"""
-
-DOWNSTREAM_TEMPLATE = """
-<instruction>
-Input: <input>
-Output:
-"""
-
-CROSSOVER_TEMPLATE = """
-Combine the following prompts:
-
-Prompt 1: <mother>
-Prompt 2: <father>
-
-Return the result between <prompt> and </prompt>.
-"""
-
-MUTATION_TEMPLATE = """
-Improve the prompt and return the result between <prompt> and </prompt>:
-
-<instruction>
-"""
-
-
-def hoeffdings_inequality_test_diff(
-    score_a: float,
-    score_b: float,
-    n: int,
-    delta: float = 0.05,
-    min_val: float = 0.0,
-    max_val: float = 1.0,
-) -> bool:
-    """
-    Uses Hoeffding's inequality to test if candidate A's accuracy is significantly
-    higher than candidate B's accuracy when they have different numbers of evaluations.
-
-    For a candidate with n evaluations and observed average score, Hoeffding's inequality
-    gives a confidence bound:
-        epsilon = sqrt((R^2 * log(2/delta)) / (2*n))
-    where R = max_val - min_val.
-
-    Candidate A is considered significantly better than candidate B if:
-        (score_a - epsilon_a) > (score_b + epsilon_b)
-
-    Parameters:
-        score_a (float): Observed average accuracy for candidate A (default range [0,1]).
-        score_b (float): Observed average accuracy for candidate B.
-        n (int): Number of independent evaluations.
-        delta (float): Significance level (default 0.05 for 95% confidence).
-        min_val (float): Minimum possible score (default 0.0).
-        max_val (float): Maximum possible score (default 1.0).
-
-    Returns:
-        bool: True if candidate A is significantly better than candidate B, False otherwise.
-    """
-    R = max_val - min_val
-    epsilon_a = math.sqrt((R**2 * math.log(2 / delta)) / (2 * n))
-    epsilon_b = math.sqrt((R**2 * math.log(2 / delta)) / (2 * n))
-
-    result = (score_a - epsilon_a) > (score_b + epsilon_b)
-
-    return result
-
-
-class Prompt:
-    """
-    Represents a prompt consisting of an instruction and few-shot examples.
-    """
-
-    def __init__(self, instruction_text: str, examples: List[Tuple[str, str]]):
-        """
-        Initializes the Prompt with an instruction and associated examples.
-
-        Parameters:
-            instruction_text (str): The instruction or prompt text.
-            examples (List[Tuple[str, str]]): List of examples as (input, response).
-        """
-        self.instruction_text = instruction_text
-        self.examples = examples  # List of (sample_input, response)
-
-    def construct_prompt(self) -> str:
-        """
-        Constructs the full prompt string by replacing placeholders in the template
-        with the instruction and formatted examples.
-
-        Returns:
-            str: The constructed prompt string.
-        """
-        examples_str = "\n".join(
-            [
-                f"Input: {sample_input}\nOutput: {response}"
-                for sample_input, response in self.examples
-            ]
-        )
-        prompt = FEW_SHOT_TEMPLATE.replace(
-            "<instruction>", self.instruction_text
-        ).replace("<examples>", examples_str)
-
-        return prompt
 
 
 class CAPOptimizer(BaseOptimizer):
@@ -363,25 +259,20 @@ class CAPOptimizer(BaseOptimizer):
                 pid = id(prompt)
                 prompt_evaluations[pid].append(score)
 
-            candidate_avg_scores = {
-                id(prompt): np.mean(prompt_evaluations[id(prompt)])
-                for prompt in candidates
+            candidate_scores = {
+                id(prompt): prompt_evaluations[id(prompt)] for prompt in candidates
             }
-            candidate_n_evals = {
-                id(prompt): len(prompt_evaluations[id(prompt)]) * self.block_size
-                for prompt in candidates
-            }
+
             survivors = []
             for candidate in candidates:
                 candidate_id = id(candidate)
-                score = candidate_avg_scores[candidate_id]
+                scores = candidate_scores[candidate_id]
                 n_better = sum(
                     1
                     for other in candidates
                     if self.test_statistic(
-                        score,
-                        candidate_avg_scores[id(other)],
-                        candidate_n_evals[candidate_id],
+                        scores,
+                        candidate_scores[id(other)],
                     )
                 )
                 if n_better < k:
@@ -408,42 +299,6 @@ class CAPOptimizer(BaseOptimizer):
             self.population = self._do_racing(combined, self.population_size)
             self._on_step_end()
         self._on_train_end()
-        return self.population
 
-
-if __name__ == "__main__":
-    token = open("deepinfratoken.txt", "r").read()
-
-    meta_llm = APILLM("meta-llama/Meta-Llama-3-8B-Instruct", token)
-    downstream_llm = meta_llm
-    # Create the task – note that the task already loads its dataset.
-    df = pd.read_csv(
-        "hf://datasets/nakamoto-yama/dt-mappings/yama_dt_mappings.csv"
-    ).rename({"Degree Type": "x", "Mapping": "y"}, axis=1)
-    task = ClassificationTask.from_dataframe(df, description="test test")
-    # Ensure task.xs and task.ys are set (here, converting DataFrame columns to numpy arrays)
-    task.xs = df["x"].to_numpy()
-    task.ys = df["y"].to_numpy()
-
-    initial_prompts = [
-        create_prompts_from_samples(task, downstream_llm) for _ in range(10)
-    ]
-
-    predictor = Classificator(downstream_llm, df["y"].unique())
-    test_statistic = lambda x, y, n: hoeffdings_inequality_test_diff(x, y, n, delta=0.5)
-
-    optimizer = CAPOptimizer(
-        initial_prompts=initial_prompts,
-        task=task,
-        meta_llm=meta_llm,
-        downstream_llm=downstream_llm,
-        length_penalty=0.01,
-        block_size=30,
-        crossovers_per_iter=2,
-        upper_shots=5,
-        max_n_blocks_eval=5,
-        test_statistic=test_statistic,
-        predictor=predictor,
-    )
-    best_prompts = optimizer.optimize(n_steps=3)
-    print(f"Best instructions:\n\n{[p.construct_prompt() for p in best_prompts]}")
+        prompts = [p.construct_prompt() for p in self.population]
+        return prompts
