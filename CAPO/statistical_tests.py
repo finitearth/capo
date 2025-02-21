@@ -1,6 +1,8 @@
 import math
+
 import numpy as np
 from scipy.stats import ttest_rel
+
 
 def paired_t_test(
     scores_a: np.ndarray,
@@ -25,7 +27,7 @@ def paired_t_test(
     result = p_value < alpha
 
     return result
-        
+
 
 def hoeffdings_inequality_test_diff(
     scores_a: np.ndarray,

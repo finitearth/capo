@@ -1,18 +1,17 @@
-from promptolution.optimizers.base_optimizer import BaseOptimizer
+import random
+from collections import defaultdict
+from typing import Callable, Dict, List, Tuple
+
+import numpy as np
+import pandas as pd
 from promptolution.llms.base_llm import BaseLLM
-from promptolution.tasks.base_task import BaseTask
-from promptolution.tasks import ClassificationTask
+from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.predictors.base_predictor import BasePredictor
+from promptolution.tasks import ClassificationTask
+from promptolution.tasks.base_task import BaseTask
 
 from capo.templates import CROSSOVER_TEMPLATE, MUTATION_TEMPLATE
 from capo.utils import Prompt
-
-from collections import defaultdict
-from typing import List, Tuple, Callable, Dict
-import random
-import numpy as np
-import pandas as pd
-
 
 
 class CAPOptimizer(BaseOptimizer):
@@ -87,9 +86,7 @@ class CAPOptimizer(BaseOptimizer):
         # Caches evaluations: (prompt id, block id) -> score
         self.evaluation_cache: Dict[Tuple[int, int], float] = {}
 
-    def _split_dataset(
-        self, few_shot_split_size: float
-    ) -> List[Tuple[int, np.ndarray]]:
+    def _split_dataset(self, few_shot_split_size: float) -> List[Tuple[int, np.ndarray]]:
         """
         Splits the task's dataset into blocks of indices for evaluation
         and few-shot examples.
@@ -236,9 +233,7 @@ class CAPOptimizer(BaseOptimizer):
                 .strip()
             )
             num_fewshots = random.randint(0, self.upper_shots)
-            new_few_shots = self._create_few_shot_examples(
-                new_instruction, num_fewshots
-            )
+            new_few_shots = self._create_few_shot_examples(new_instruction, num_fewshots)
             # combine the new shots with some existing from the prompt
             old_examples = random.sample(
                 prompt.examples,
@@ -269,9 +264,7 @@ class CAPOptimizer(BaseOptimizer):
                 pid = id(prompt)
                 prompt_evaluations[pid].append(score)
 
-            candidate_scores = {
-                id(prompt): prompt_evaluations[id(prompt)] for prompt in candidates
-            }
+            candidate_scores = {id(prompt): prompt_evaluations[id(prompt)] for prompt in candidates}
 
             survivors = []
             for candidate in candidates:
@@ -312,4 +305,3 @@ class CAPOptimizer(BaseOptimizer):
 
         prompts = [p.construct_prompt() for p in self.population]
         return prompts
- 
