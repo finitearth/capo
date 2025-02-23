@@ -130,9 +130,13 @@ class CAPOptimizer(BaseOptimizer):
                 while c < 10:
                     c += 1
                     pred, seq = self.predictor.predict(
-                        [DOWNSTREAM_TEMPLATE.replace("<input>", sample_input).replace("<instruction>", instruction)],
+                        [
+                            DOWNSTREAM_TEMPLATE.replace("<input>", sample_input).replace(
+                                "<instruction>", instruction
+                            )
+                        ],
                         [sample_input],
-                        return_seq=True
+                        return_seq=True,
                     )
                     if pred[0] == sample_target:
                         few_shot = seq[0]
@@ -174,9 +178,7 @@ class CAPOptimizer(BaseOptimizer):
 
         offsprings = []
         for instruction, examples in zip(child_instructions, offspring_few_shots):
-            instruction = (
-                instruction.split("<prompt>")[-1].split("</prompt>")[0].strip()
-            )
+            instruction = instruction.split("<prompt>")[-1].split("</prompt>")[0].strip()
             offsprings.append(Prompt(instruction, examples))
         return offsprings
 
@@ -235,9 +237,11 @@ class CAPOptimizer(BaseOptimizer):
                 [c.construct_prompt() for c in candidates], block_id, self.predictor
             )
             # subtract length penalty
-            new_scores -= self.length_penalty * np.repeat(
-                [len(c.construct_prompt().split()) for c in candidates], self.block_size
+            prompt_lengths = np.array(
+                [len(c.construct_prompt().split()) for c in candidates]
             )
+
+            new_scores = new_scores - self.length_penalty * prompt_lengths[:, None]
             block_scores.append(new_scores)
             scores = np.concatenate(block_scores, axis=1)
 
