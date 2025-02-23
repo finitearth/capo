@@ -149,7 +149,7 @@ def chernoff_bound_test_diff(
 
     return (mean_a - delta_a) > (mean_b + delta_b)
 
-def mcnemar_test_diff(y_true: np.ndarray, y_pred1: np.ndarray, y_pred2: np.ndarray, alpha: float = 0.05, correction: bool = True) -> bool:
+def mcnemar_test_diff(scores_a: np.ndarray, scores_b: np.ndarray, alpha: float = 0.05, correction: bool = True) -> bool:
     """
     Perform McNemar's test to determine whether candidate A (with predictions y_pred1)
     is significantly better than candidate B (with predictions y_pred2).
@@ -180,9 +180,8 @@ def mcnemar_test_diff(y_true: np.ndarray, y_pred1: np.ndarray, y_pred2: np.ndarr
     - Classifcation task is binary (2 classes).
     
     Parameters:
-        y_true (np.ndarray): True binary labels.
-        y_pred1 (np.ndarray): Predictions from candidate A.
-        y_pred2 (np.ndarray): Predictions from candidate B.
+        scores_a (np.ndarray): Array of accuracies for candidate A.
+        scores_b (np.ndarray): Array of accuracies for candidate B.
         alpha (float): Significance level (default 0.05).
         correction (bool): Whether to apply continuity correction (default True).
     
@@ -190,8 +189,8 @@ def mcnemar_test_diff(y_true: np.ndarray, y_pred1: np.ndarray, y_pred2: np.ndarr
         bool: True if candidate A is significantly better than candidate B, False otherwise.
     """
     # Count instances where candidate A is correct and B is wrong, and vice versa.
-    b = np.sum((y_pred1 == y_true) & (y_pred2 != y_true))
-    c = np.sum((y_pred1 != y_true) & (y_pred2 == y_true))
+    b = np.sum((scores_a == 1) & (scores_b == 0))
+    c = np.sum((scores_a == 0) & (scores_b == 1))
     
     # If there are no discordant pairs, there's no evidence to claim superiority.
     if (b + c) == 0:
