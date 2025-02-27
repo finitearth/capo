@@ -1,25 +1,16 @@
 import random
-from collections import defaultdict
+from itertools import compress
 from typing import Callable, Dict, List, Tuple
 
 import numpy as np
-import pandas as pd
 from promptolution.llms.base_llm import BaseLLM
 from promptolution.optimizers.base_optimizer import BaseOptimizer
-from promptolution.llms.base_llm import BaseLLM
-from promptolution.tasks.base_task import BaseTask
 from promptolution.predictors.base_predictor import BasePredictor
-from promptolution.tasks import ClassificationTask
 from promptolution.tasks.base_task import BaseTask
 
-from capo.templates import CROSSOVER_TEMPLATE, MUTATION_TEMPLATE, DOWNSTREAM_TEMPLATE
-from capo.utils import Prompt
 from capo.task import CAPOTask
-
-from typing import List, Tuple, Callable, Dict
-import random
-import numpy as np
-from itertools import compress
+from capo.templates import CROSSOVER_TEMPLATE, DOWNSTREAM_TEMPLATE, MUTATION_TEMPLATE
+from capo.utils import Prompt
 
 
 class CAPOptimizer(BaseOptimizer):
@@ -237,9 +228,7 @@ class CAPOptimizer(BaseOptimizer):
                 [c.construct_prompt() for c in candidates], block_id, self.predictor
             )
             # subtract length penalty
-            prompt_lengths = np.array(
-                [len(c.construct_prompt().split()) for c in candidates]
-            )
+            prompt_lengths = np.array([len(c.construct_prompt().split()) for c in candidates])
 
             new_scores = new_scores - self.length_penalty * prompt_lengths[:, None]
             block_scores.append(new_scores)

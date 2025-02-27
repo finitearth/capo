@@ -1,6 +1,7 @@
-from promptolution.tasks import ClassificationTask
 import random
+
 import numpy as np
+from promptolution.tasks import ClassificationTask
 
 
 class CAPOTask(ClassificationTask):
@@ -50,9 +51,7 @@ class CAPOTask(ClassificationTask):
         # to the list of prompts to evaluate
         # if yes, use the cached score
         to_be_evaluated = [
-            prompt
-            for prompt in prompts
-            if (prompt, block_id) not in self.prompt_score_cache
+            prompt for prompt in prompts if (prompt, block_id) not in self.prompt_score_cache
         ]
         preds = predictor.predict(to_be_evaluated, xs)  # shape: P x N
         for prompt, pred in zip(to_be_evaluated, preds):

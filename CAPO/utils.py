@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import List
 
 from capo.templates import FEW_SHOT_TEMPLATE
 
@@ -28,9 +28,9 @@ class Prompt:
             str: The constructed prompt string.
         """
         few_shot_str = "\n\n".join(self.few_shots).strip()
-        prompt = FEW_SHOT_TEMPLATE.replace(
-            "<instruction>", self.instruction_text.strip()
-        ).replace("<examples>", few_shot_str)
+        prompt = FEW_SHOT_TEMPLATE.replace("<instruction>", self.instruction_text.strip()).replace(
+            "<examples>", few_shot_str
+        )
         return prompt
 
     def __str__(self):

@@ -1,15 +1,15 @@
+from logging import getLogger
+
 import pandas as pd
+from promptolution.callbacks import LoggerCallback
 from promptolution.llms.api_llm import APILLM
 from promptolution.predictors.classificator import Classificator
 from promptolution.tasks import ClassificationTask
-from promptolution.callbacks import LoggerCallback
-
 from promptolution.utils.prompt_creation import create_prompts_from_samples
+
 from capo.capo import CAPOptimizer
-from capo.statistical_tests import hoeffdings_inequality_test_diff, paired_t_test
+from capo.statistical_tests import paired_t_test
 from capo.task import CAPOTask
-from logging import getLogger
-import pandas as pd
 
 BLOCK_SIZE = 20
 FS_SPLIT = 0.2
@@ -23,8 +23,10 @@ df = pd.read_parquet(
     "hf://datasets/stanfordnlp/imdb/plain_text/train-00000-of-00001.parquet"
 ).sample(1_000)
 task = ClassificationTask.from_dataframe(
-    df, description="Is the Movie review positive =1 or negative =0",
-    x_column="text", y_column="label"
+    df,
+    description="Is the Movie review positive =1 or negative =0",
+    x_column="text",
+    y_column="label",
 )
 
 task = CAPOTask.from_task(task, block_size=BLOCK_SIZE, few_shot_split_size=FS_SPLIT)
