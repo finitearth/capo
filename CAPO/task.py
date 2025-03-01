@@ -4,12 +4,12 @@ import numpy as np
 from promptolution.tasks import ClassificationTask
 
 
-class CAPOTask(ClassificationTask):
+class CAPOTask(ClassificationTask):  # TODO: generalize to other task types
     @classmethod
     def from_task(cls, task, few_shot_split_size=0.2, block_size=30):
         instance = cls.__new__(cls)
         instance.__dict__.update(task.__dict__)
-        instance.few_shot_split_size = few_shot_split_size
+        instance.few_shot_split_size = few_shot_split_size  # TODO: outsource splitting
         instance.block_size = block_size
         instance.prompt_score_cache = {}
 

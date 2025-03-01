@@ -4,6 +4,9 @@ import numpy as np
 from scipy.special import rel_entr
 from scipy.stats import chi2, mannwhitneyu, ttest_rel
 
+# TODO: generally be careful with what kind of scores (0/1, continuous) are assumed
+# and specify this in the docstrings or include checks for this in the functions
+
 
 def paired_t_test(
     scores_a: np.ndarray,
@@ -97,7 +100,7 @@ def hoeffdings_inequality_test_diff(
     mean_a = scores_a.mean()
     mean_b = scores_b.mean()
 
-    n = min(len(scores_a), len(scores_b))
+    n = min(len(scores_a), len(scores_b))  # TODO: should be same length -> rather check for that
 
     R = max_val - min_val
     epsilon_a = math.sqrt((R**2 * math.log(2 / alpha)) / (2 * n))
