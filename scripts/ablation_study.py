@@ -17,6 +17,7 @@ DEFAULT_N_CROSSOVERS = 8
 BLOCK_SIZE = 30
 FS_SPLIT = 0.2
 
+
 def evaluate_config(
     fit_task,
     eval_task,
@@ -24,7 +25,9 @@ def evaluate_config(
     length_penalty=DEFAULT_LENGTH_PENALTY,
     n_crossovers=DEFAULT_N_CROSSOVERS,
 ):
-    initial_prompts = [create_prompts_from_samples(fit_task, downstream_llm) for _ in range(pop_size)]
+    initial_prompts = [
+        create_prompts_from_samples(fit_task, downstream_llm) for _ in range(pop_size)
+    ]
 
     optim = CAPOptimizer(
         initial_prompts=initial_prompts,
@@ -49,8 +52,6 @@ def evaluate_config(
 
     return prompts, scores
 
-    
-    
 
 token = open("deepinfratoken.txt", "r").read()
 
@@ -66,7 +67,9 @@ task_fit = CAPOClassificationTask.from_dataframe(
     x_column="text",
     y_column="label",
 )
-task_fit = CAPOClassificationTask.from_task(task_fit, block_size=BLOCK_SIZE, few_shot_split_size=FS_SPLIT)
+task_fit = CAPOClassificationTask.from_task(
+    task_fit, block_size=BLOCK_SIZE, few_shot_split_size=FS_SPLIT
+)
 
 df_eval = pd.read_parquet(
     "hf://datasets/stanfordnlp/imdb/plain_text/test-00000-of-00001.parquet"
@@ -77,7 +80,9 @@ task_eval = CAPOClassificationTask.from_dataframe(
     x_column="text",
     y_column="label",
 )
-task_eval = CAPOClassificationTask.from_task(task_eval, block_size=BLOCK_SIZE, few_shot_split_size=FS_SPLIT)
+task_eval = CAPOClassificationTask.from_task(
+    task_eval, block_size=BLOCK_SIZE, few_shot_split_size=FS_SPLIT
+)
 
 predictor = Classificator(downstream_llm, task_fit.classes)
 test_statistic = lambda x, y: paired_t_test(x, y, alpha=0.2)

@@ -1,6 +1,6 @@
 import random
 from itertools import compress
-from typing import Callable, Dict, List, Tuple
+from typing import Callable, List, Tuple
 
 import numpy as np
 from promptolution.llms.base_llm import BaseLLM
@@ -198,8 +198,7 @@ class CAPOptimizer(BaseOptimizer):
             )
             num_fewshots = random.randint(0, self.upper_shots)
             num_new_fewshots = random.randint(
-                max(0, num_fewshots - len(prompt.few_shots)), 
-                num_fewshots
+                max(0, num_fewshots - len(prompt.few_shots)), num_fewshots
             )
             new_few_shots = self._create_few_shot_examples(new_instruction, num_new_fewshots)
             # combine the new shots with some existing from the prompt

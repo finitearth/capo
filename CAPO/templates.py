@@ -15,7 +15,7 @@ Prompt 2: <father>
 Return the new instruction in the following format:
 <prompt>new instruction</prompt>"""
 
-MUTATION_TEMPLATE =  """Please do the following for this task: <taskdescription>
+MUTATION_TEMPLATE = """Please do the following for this task: <taskdescription>
 Rephrase the following instruction while preserving its core meaning, while substantially differing in linguistcal style.
 Return the new prompt between <prompt> and </prompt> tags.
 

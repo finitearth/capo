@@ -63,5 +63,6 @@ class CAPOTask(BaseTask):
 
         return scores
 
+
 class CAPOClassificationTask(ClassificationTask, CAPOTask):
     pass
