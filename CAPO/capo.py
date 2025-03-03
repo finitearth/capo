@@ -29,6 +29,7 @@ class CAPOptimizer(BaseOptimizer):
         block_size: int,
         crossovers_per_iter: int,
         upper_shots: int,
+        p_few_shot_reasoning: float,
         max_n_blocks_eval: int,
         few_shot_split_size: float,
         test_statistic: Callable,
@@ -50,6 +51,7 @@ class CAPOptimizer(BaseOptimizer):
             block_size (int): Number of samples per evaluation block.
             crossovers_per_iter (int): Number of crossover operations per iteration.
             upper_shots (int): Maximum number of few-shot examples per prompt.
+            p_few_shot_reasoning (float): Probability of generating llm-reasoning for few-shot examples, instead of simply using input-output pairs.
             max_n_blocks_eval (int): Maximum number of evaluation blocks.
             test_statistic (Callable): Function to test significance between prompts.
                 Inputs are (score_a, score_b, n_evals) and returns True if A is better.
@@ -68,6 +70,8 @@ class CAPOptimizer(BaseOptimizer):
         # Pass initial_prompts and task to the base optimizer
         super().__init__(initial_prompts, task, callbacks, predictor)
 
+        self.max_prompt_length = max(len(p.split()) for p in initial_prompts)
+
         self.meta_llm = meta_llm
         self.downstream_llm = downstream_llm
 
@@ -78,6 +82,7 @@ class CAPOptimizer(BaseOptimizer):
         self.block_size = block_size
         self.crossovers_per_iter = crossovers_per_iter
         self.upper_shots = upper_shots
+        self.p_few_shot_reasoning = p_few_shot_reasoning
         self.max_n_blocks_eval = max_n_blocks_eval
         self.test_statistic = test_statistic
 
@@ -85,9 +90,6 @@ class CAPOptimizer(BaseOptimizer):
         self.prompts = self._initialize_population(initial_prompts)
 
         self.length_penalty = length_penalty
-
-        # Caches evaluations: (prompt id, block id) -> score
-        self.evaluation_cache: Dict[Tuple[int, int], float] = {}  # TODO: remove as it is not used
 
     def _initialize_population(self, initial_prompts: List[str]) -> List[Prompt]:
         """
@@ -115,13 +117,12 @@ class CAPOptimizer(BaseOptimizer):
             sample_input = self.task.xs[idx]
             sample_target = self.task.ys[idx]
             # in half of the cases generate reasoning from downstream model
-            if random.random() < 0.5:  # TODO: discuss whether making this a hyperparameter
-                c = 0
-                few_shot = ""
-                while c < 10:
-                    # TODO: better to make "else"-case also fallback if no correct prediction found
-                    # (instead of empty string)?
-                    c += 1
+            few_shot = f"Input: {sample_input}\nOutput: {sample_target}"
+
+            if random.random() < self.p_few_shot_reasoning:
+                n_trials = 0
+                while n_trials < 3:
+                    n_trials += 1
                     pred, seq = self.predictor.predict(
                         [
                             DOWNSTREAM_TEMPLATE.replace("<input>", sample_input).replace(
@@ -134,8 +135,6 @@ class CAPOptimizer(BaseOptimizer):
                     if pred[0] == sample_target:
                         few_shot = seq[0]
                         break
-            else:
-                few_shot = f"Input: {sample_input}\nOutput: {sample_target}"
             few_shots.append(few_shot)
 
         return few_shots
@@ -196,17 +195,14 @@ class CAPOptimizer(BaseOptimizer):
                 .split("</prompt>")[0]
                 .strip()
             )
-            # TODO: the below procedure is different from the pseudo-code as far as I can see
             num_fewshots = random.randint(0, self.upper_shots)
-            new_few_shots = self._create_few_shot_examples(new_instruction, num_fewshots)
-            # combine the new shots with some existing from the prompt
-            old_examples = random.sample(
-                prompt.few_shots,
-                min(num_fewshots - len(new_few_shots), len(prompt.few_shots)),
-                # TODO: this will most likely be zero as num_fewshots == len(new_few_shots)
-                # if LLM makes correct prediction in 10 attempts -> so we never use old
-                # examples here?
+            num_new_fewshots = random.randint(
+                max(0, num_fewshots - len(prompt.few_shots)), 
+                num_fewshots
             )
+            new_few_shots = self._create_few_shot_examples(new_instruction, num_new_fewshots)
+            # combine the new shots with some existing from the prompt
+            old_examples = random.sample(prompt.few_shots, num_fewshots - num_new_fewshots)
 
             combined_examples = old_examples + new_few_shots
             random.shuffle(combined_examples)
@@ -233,17 +229,16 @@ class CAPOptimizer(BaseOptimizer):
             new_scores = self.task.evaluate_on_block(
                 [c.construct_prompt() for c in candidates], block_id, self.predictor
             )
+
             # subtract length penalty
             prompt_lengths = np.array([len(c.construct_prompt().split()) for c in candidates])
+            rel_prompt_lengths = prompt_lengths / self.max_prompt_length
 
-            # TODO: normalization of prompt lengths? random sampling of length penalties?
-            new_scores = new_scores - self.length_penalty * prompt_lengths[:, None]
+            new_scores = new_scores - self.length_penalty * rel_prompt_lengths[:, None]
             block_scores.append(new_scores)
             scores = np.concatenate(block_scores, axis=1)
 
             # boolean matrix C_ij indicating if candidate i is better than candidate j
-            # TODO: currently we need to compute every comparison, but we could stop early
-            # if we know that a candidate is worse than k others -> could be done more efficiently
             comparison_matrix = np.array(
                 [
                     [self.test_statistic(score, other_score) for other_score in scores]
@@ -255,14 +250,11 @@ class CAPOptimizer(BaseOptimizer):
             # Create mask for survivors and filter candidates
             candidates = list(compress(candidates, n_better < k))
             if len(candidates) <= k or block_id == self.max_n_blocks_eval:
-                # TODO: what happens if we eliminated more candidates so that we have less than k?
-                # TODO: what happens if we reach max_n_blocks_eval? -> should do a normal
-                # evaluation on the entire dataset without testing then and eliminate
-                # (no additional evaluation cost as we have already have all scores,
-                # better than just take first k according to some arbitrary order)
                 break
 
         self.scores = list(range(k))
+        candidates.sort(key=lambda x: self.scores[candidates.index(x)], reverse=True)
+
         return candidates[:k]
 
     def optimize(self, n_steps: int) -> List[Prompt]:
@@ -284,4 +276,4 @@ class CAPOptimizer(BaseOptimizer):
         self._on_train_end()
 
         prompts = [p.construct_prompt() for p in self.prompts]
-        return prompts  # TODO: maybe return with associated scores / sorted?
+        return prompts

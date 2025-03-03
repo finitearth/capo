@@ -1,15 +1,15 @@
 import random
 
 import numpy as np
-from promptolution.tasks import ClassificationTask
+from promptolution.tasks import BaseTask, ClassificationTask
 
 
-class CAPOTask(ClassificationTask):  # TODO: generalize to other task types
+class CAPOTask(BaseTask):
     @classmethod
     def from_task(cls, task, few_shot_split_size=0.2, block_size=30):
         instance = cls.__new__(cls)
         instance.__dict__.update(task.__dict__)
-        instance.few_shot_split_size = few_shot_split_size  # TODO: outsource splitting
+        instance.few_shot_split_size = few_shot_split_size
         instance.block_size = block_size
         instance.prompt_score_cache = {}
 
@@ -62,3 +62,6 @@ class CAPOTask(ClassificationTask):  # TODO: generalize to other task types
         scores = np.array(scores)
 
         return scores
+
+class CAPOClassificationTask(ClassificationTask, CAPOTask):
+    pass

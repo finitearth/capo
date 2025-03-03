@@ -97,10 +97,10 @@ def hoeffdings_inequality_test_diff(
     Returns:
         bool: True if candidate A is significantly better than candidate B, False otherwise.
     """
+    assert len(scores_a) == len(scores_b), "Scores must have the same length"
+    n = len(scores_a)
     mean_a = scores_a.mean()
     mean_b = scores_b.mean()
-
-    n = min(len(scores_a), len(scores_b))  # TODO: should be same length -> rather check for that
 
     R = max_val - min_val
     epsilon_a = math.sqrt((R**2 * math.log(2 / alpha)) / (2 * n))
@@ -131,9 +131,10 @@ def chernoff_bound_test_diff(
     Returns:
         bool: True if candidate A is significantly better than candidate B, False otherwise.
     """
+    assert len(scores_a) == len(scores_b), "Scores must have the same length"
+    n = len(scores_a)
     mean_a = scores_a.mean()
     mean_b = scores_b.mean()
-    n = min(len(scores_a), len(scores_b))
     target = math.log(2 / alpha) / n  # Target value for KL divergence
 
     def find_delta(mean: float, sign: int) -> float:
