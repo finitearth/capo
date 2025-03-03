@@ -156,6 +156,7 @@ class CAPOptimizer(BaseOptimizer):
             crossover_prompt = (
                 self.crossover_meta_prompt.replace("<mother>", mother.instruction_text)
                 .replace("<father>", father.instruction_text)
+                .replace("<taskdescription>", self.task.description)
                 .strip()
             )
             crossover_prompts.append(crossover_prompt)
