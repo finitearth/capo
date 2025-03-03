@@ -17,8 +17,9 @@ Prompt 2: <father>
 Return the result between <prompt> and </prompt>.
 """
 
-MUTATION_TEMPLATE = """
-Improve the prompt and return the result between <prompt> and </prompt>:
+MUTATION_TEMPLATE = """Merge the following two sentences into a single coherent sentence. Maintain the key linguistic features from both original sentences:
+Prompt 1: <prompt1>
+Prompt 2: <prompt2>
 
-<instruction>
-"""
+Return the new instruction in the following format:
+<prompt>new instruction</prompt>"""
