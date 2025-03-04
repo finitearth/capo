@@ -252,8 +252,10 @@ class CAPOptimizer(BaseOptimizer):
             if len(candidates) <= k or block_id == self.max_n_blocks_eval:
                 break
 
-        self.scores = list(range(k))
-        candidates.sort(key=lambda x: self.scores[candidates.index(x)], reverse=True)
+        # calculate mean over scores
+        self.scores = scores.mean(axis=1)
+        # sort candidates based on score
+        candidates = [c for _, c in sorted(zip(self.scores, candidates), reverse=True)]
 
         return candidates[:k]
 
