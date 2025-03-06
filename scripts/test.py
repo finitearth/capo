@@ -1,3 +1,4 @@
+import time
 from logging import getLogger
 
 import pandas as pd
@@ -10,9 +11,12 @@ from capo.capo import CAPOptimizer
 from capo.statistical_tests import paired_t_test
 from capo.task import CAPOClassificationTask
 
-BLOCK_SIZE = 20
-FS_SPLIT = 0.2
-BATCH_SIZE = 64
+BLOCK_SIZE = 30
+FS_SPLIT = 0.1
+BATCH_SIZE = 256
+
+# start time
+start = time.time()
 
 try:
     token = open("deepinfratoken.txt", "r").read()
@@ -34,7 +38,7 @@ else:
 downstream_llm = llm
 meta_llm = llm
 
-df = pd.read_json("hf://datasets/SetFit/sst5/train.jsonl", lines=True).sample(500)
+df = pd.read_json("hf://datasets/SetFit/sst5/train.jsonl", lines=True)  # .sample(1000)
 
 task = CAPOClassificationTask.from_dataframe(
     df,
@@ -44,7 +48,7 @@ task = CAPOClassificationTask.from_dataframe(
 )
 
 task = CAPOClassificationTask.from_task(task, block_size=BLOCK_SIZE, few_shot_split_size=FS_SPLIT)
-initial_prompts = [create_prompts_from_samples(task, downstream_llm) for _ in range(5)]
+initial_prompts = [create_prompts_from_samples(task, downstream_llm) for _ in range(10)]
 
 predictor = Classificator(downstream_llm, task.classes)
 test_statistic = lambda x, y: paired_t_test(x, y, alpha=0.2)
@@ -57,11 +61,11 @@ optimizer = CAPOptimizer(
     task=task,
     meta_llm=meta_llm,
     downstream_llm=downstream_llm,
-    length_penalty=5e-4,
+    length_penalty=1e-5,
     block_size=BLOCK_SIZE,
     crossovers_per_iter=4,
     upper_shots=3,
-    max_n_blocks_eval=10,
+    max_n_blocks_eval=30,
     p_few_shot_reasoning=0.5,
     few_shot_split_size=FS_SPLIT,
     test_statistic=test_statistic,
@@ -69,5 +73,8 @@ optimizer = CAPOptimizer(
     callbacks=[callback],
     shuffle_blocks_per_iter=False,
 )
-best_prompts = optimizer.optimize(n_steps=5)
+best_prompts = optimizer.optimize(n_steps=10)
+end = time.time()
+
 print(f"Best instructions:\n\n {best_prompts}")
+print(f"Time taken: {end - start} seconds")
