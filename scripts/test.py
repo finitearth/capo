@@ -14,7 +14,10 @@ BLOCK_SIZE = 20
 FS_SPLIT = 0.2
 BATCH_SIZE = 512
 
-token = open("deepinfratoken.txt", "r").read()
+try:
+    token = open("deepinfratoken.txt", "r").read()
+except FileNotFoundError:
+    token = None
 model_name = "vllm-shuyuej/Llama-3.3-70B-Instruct-GPTQ"
 
 if "vllm" in model_name:
