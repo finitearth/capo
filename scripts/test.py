@@ -18,13 +18,13 @@ try:
     token = open("deepinfratoken.txt", "r").read()
 except FileNotFoundError:
     token = None
-model_name = "vllm-shuyuej/Llama-3.3-70B-Instruct-GPTQ"
+model_name = "vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4"
 
 if "vllm" in model_name:
     llm = get_llm(
         model_name,
         batch_size=BATCH_SIZE,
-        model_storage_path="../models/",
+        model_storage_path="../temp/",
     )
 else:
     llm = get_llm(model_name, token)
