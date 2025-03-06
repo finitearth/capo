@@ -19,6 +19,7 @@ try:
 except FileNotFoundError:
     token = None
 model_name = "vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4"
+# model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
 
 if "vllm" in model_name:
     llm = get_llm(

@@ -255,7 +255,9 @@ class CAPOptimizer(BaseOptimizer):
         # calculate mean over scores
         self.scores = scores.mean(axis=1)
         # sort candidates based on score
-        candidates = [c for _, c in sorted(zip(self.scores, candidates), reverse=True)]
+        score_candidate_pairs = list(zip(self.scores, candidates))
+        sorted_pairs = sorted(score_candidate_pairs, key=lambda x: x[0], reverse=True)
+        candidates = [candidate for _, candidate in sorted_pairs]
 
         return candidates[:k]
 
