@@ -2,7 +2,7 @@ from logging import getLogger
 
 import pandas as pd
 from promptolution.callbacks import LoggerCallback
-from promptolution.llms.api_llm import APILLM
+from promptolution.llms import get_llm
 from promptolution.predictors.classificator import Classificator
 from promptolution.utils.prompt_creation import create_prompts_from_samples
 
@@ -12,11 +12,22 @@ from capo.task import CAPOClassificationTask
 
 BLOCK_SIZE = 20
 FS_SPLIT = 0.2
+BATCH_SIZE = 512
 
 token = open("deepinfratoken.txt", "r").read()
+model_name = "vllm-shuyuej/Llama-3.3-70B-Instruct-GPTQ"
 
-meta_llm = APILLM("meta-llama/Meta-Llama-3-8B-Instruct", token)
-downstream_llm = meta_llm
+if "vllm" in model_name:
+    llm = get_llm(
+        model_name,
+        batch_size=BATCH_SIZE,
+        model_storage_path="../models/",
+    )
+else:
+    llm = get_llm(model_name, token)
+
+downstream_llm = llm
+meta_llm = llm
 
 df = pd.read_json("hf://datasets/SetFit/sst5/train.jsonl", lines=True).sample(500)
 
