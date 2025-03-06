@@ -17,12 +17,12 @@ logger = Logger(__name__)
 def main():
     """Run inference test on a dataset using a specified LLM."""
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", type=str)
-    parser.add_argument("--output", type=str)
-    parser.add_argument("--datasets", type=list, default=["agnews", "subj"])
-    parser.add_argument("--token", type=str, default=None)
-    parser.add_argument("--batch-size", type=int, default=64)
-    parser.add_argument("--model-storage-path", type=str, default=None)
+    parser.add_argument("--model")
+    parser.add_argument("--output")
+    parser.add_argument("--datasets", default=["agnews", "subj"])
+    parser.add_argument("--token", default=None)
+    parser.add_argument("--batch-size", default=None)
+    parser.add_argument("--model-storage-path", default=None)
     args = parser.parse_args()
 
     start_time = time.time()
@@ -32,6 +32,7 @@ def main():
             args.model,
             batch_size=args.batch_size,
             model_storage_path=args.model_storage_path,
+            revision="main",
         )
     else:
         llm = get_llm(args.model, args.token)
@@ -84,7 +85,10 @@ def main():
             results.to_csv(args.output, mode="a", header=False, index=False)
 
     total_inference_time = time.time() - start_time
-    print(f"Total inference took {total_inference_time:.2f} seconds")
+    print(
+        f"Total inference took {total_inference_time:.2f} seconds and required {llm.get_token_count()} tokens."
+    )
+    print(f"Results saved to {args.output}")
 
 
 if __name__ == "__main__":
