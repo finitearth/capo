@@ -22,17 +22,23 @@ def main():
     parser.add_argument("--datasets", default=["agnews", "subj"])
     parser.add_argument("--token", default=None)
     parser.add_argument("--batch-size", default=None)
+    parser.add_argument("--revision", default="main")
+    parser.add_argument("--max-model-len", default=None)
     parser.add_argument("--model-storage-path", default=None)
     args = parser.parse_args()
 
     start_time = time.time()
 
+    if args.max_model_len is not None:
+        max_model_len = int(args.max_model_len)
+
     if "vllm" in args.model:
         llm = get_llm(
             args.model,
             batch_size=args.batch_size,
+            max_model_len=max_model_len,
             model_storage_path=args.model_storage_path,
-            revision="main",
+            revision=args.revision,
         )
     else:
         llm = get_llm(args.model, args.token)
