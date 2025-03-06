@@ -241,7 +241,7 @@ class CAPOptimizer(BaseOptimizer):
             # boolean matrix C_ij indicating if candidate i is better than candidate j
             comparison_matrix = np.array(
                 [
-                    [self.test_statistic(score, other_score) for other_score in scores]
+                    [self.test_statistic(other_score, score) for other_score in scores]
                     for score in scores
                 ]
             )
