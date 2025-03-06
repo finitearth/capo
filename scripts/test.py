@@ -18,12 +18,11 @@ token = open("deepinfratoken.txt", "r").read()
 meta_llm = APILLM("meta-llama/Meta-Llama-3-8B-Instruct", token)
 downstream_llm = meta_llm
 
-df = pd.read_parquet(
-    "hf://datasets/stanfordnlp/imdb/plain_text/train-00000-of-00001.parquet"
-).sample(1_000)
+df = pd.read_json("hf://datasets/SetFit/sst5/train.jsonl", lines=True).sample(500)
+
 task = CAPOClassificationTask.from_dataframe(
     df,
-    description="Is the Movie review positive =1 or negative =0",
+    description="The dataset consists of movie reviews with five levels of sentiment labels: terrible, bad, neutral, okay, good, and great. The task is to classify each movie review into one of these five sentiment categories. The class mentioned first in the response of the LLM will be the prediction.",
     x_column="text",
     y_column="label",
 )
