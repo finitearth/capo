@@ -12,7 +12,7 @@ from capo.task import CAPOClassificationTask
 
 BLOCK_SIZE = 20
 FS_SPLIT = 0.2
-BATCH_SIZE = 512
+BATCH_SIZE = 128
 
 try:
     token = open("deepinfratoken.txt", "r").read()
@@ -23,6 +23,7 @@ model_name = "vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4"
 if "vllm" in model_name:
     llm = get_llm(
         model_name,
+        max_model_len=1024,
         batch_size=BATCH_SIZE,
         model_storage_path="../temp/",
     )
