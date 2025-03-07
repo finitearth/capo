@@ -16,7 +16,7 @@ Return the new instruction in the following format:
 <prompt>new instruction</prompt>"""
 
 MUTATION_TEMPLATE = """Please do the following for this task: <taskdescription>
-Rephrase the following instruction while preserving its core meaning, while substantially differing in linguistcal style.
+Rephrase the following instruction while preserving its core meaning, while substantially differing in linguistic style.
 Return the new prompt between <prompt> and </prompt> tags.
 
 <instruction>"""
