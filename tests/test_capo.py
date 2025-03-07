@@ -7,7 +7,7 @@ import pytest
 from capo.capo import CAPOptimizer, Prompt
 
 
-def mock_test_statistic(score_a, score_b, n_evals=1):
+def mock_test_statistic(score_a, score_b):
     return np.mean(score_a) > np.mean(score_b)
 
 
