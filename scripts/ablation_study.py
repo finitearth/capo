@@ -17,6 +17,10 @@ DEFAULT_N_CROSSOVERS = 8
 BLOCK_SIZE = 30
 FS_SPLIT = 0.2
 
+# TODO Check that defaults align with evoprompt
+# TODO more callbacks: token length, time, etc
+# TODO find and implement two datasets
+
 
 def evaluate_config(
     fit_task,
