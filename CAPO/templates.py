@@ -8,17 +8,15 @@ Input: <input>
 Output:
 """
 
-CROSSOVER_TEMPLATE = """
-Combine the following prompts:
-
+CROSSOVER_TEMPLATE = """Merge the following two sentences into a single coherent sentence. Maintain the key linguistic features from both original sentences:
 Prompt 1: <mother>
 Prompt 2: <father>
 
-Return the result between <prompt> and </prompt>.
-"""
+Return the new instruction in the following format:
+<prompt>new instruction</prompt>"""
 
-MUTATION_TEMPLATE = """
-Improve the prompt and return the result between <prompt> and </prompt>:
+MUTATION_TEMPLATE = """Please do the following for this task: <taskdescription>
+Rephrase the following instruction while preserving its core meaning, while substantially differing in linguistic style.
+Return the new prompt between <prompt> and </prompt> tags.
 
-<instruction>
-"""
+<instruction>"""
