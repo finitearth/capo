@@ -11,11 +11,14 @@ promptolution = "^1.1.1"
 numpy = "~1.26"
 pandas = "^2.2.3"
 scipy = "^1.15.2"
-pytest = "^8.3.5"
 
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.1.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.5"
 
 [build-system]
 requires = ["poetry-core"]
