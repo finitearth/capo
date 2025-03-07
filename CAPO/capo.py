@@ -280,7 +280,10 @@ class CAPOptimizer(BaseOptimizer):
             mutated = self._mutate(offsprings)
             combined = self.prompts + mutated
             self.prompts = self._do_racing(combined, self.population_size)
-            self._on_step_end()
+            continue_optimization = self._on_step_end()
+            if not continue_optimization:
+                break
+
         self._on_train_end()
 
         prompts = [p.construct_prompt() for p in self.prompts]
