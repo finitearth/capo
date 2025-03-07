@@ -7,14 +7,15 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "~3.12"
-promptolution = "^1.1.1"
+promptolution = "^1.2.0"
 numpy = "~1.26"
 pandas = "^2.2.3"
 scipy = "^1.15.2"
+
+[tool.poetry.group.visualization.dependencies]
 matplotlib = "^3.10.1"
 ipykernel = "^6.29.5"
 seaborn = "^0.13.2"
-
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.1.0"
