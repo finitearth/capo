@@ -77,7 +77,7 @@ for model_name in args.models.strip("[]").split(","):
             max_model_len=args.max_model_len,
             batch_size=args.batch_size,
             model_storage_path=args.model_storage_path,
-            revision=args.revision,
+            # revision=args.revision,
         )
     else:
         llm = get_llm(model_name, args.token)
