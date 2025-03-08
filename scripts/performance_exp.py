@@ -136,8 +136,8 @@ for model_name in args.models:
     # Print results
     print(f"\nBest instructions for {model_name}:\n\n{best_prompt}")
     print(f"Time taken: {total_time:.2f} seconds")
-    input_tokens = llm.get_token_count()["input_tokens"]
-    output_tokens = llm.get_token_count()["output_tokens"]
+    # input_tokens = llm.get_token_count()["input_tokens"]
+    # output_tokens = llm.get_token_count()["output_tokens"]
 
     # Create new row
     new_result = pd.DataFrame(
@@ -145,8 +145,8 @@ for model_name in args.models:
             "model": [model_name],
             "dataset": [args.dataset],
             "time_seconds": [total_time],
-            "input_tokens": [input_tokens],
-            "output_tokens": [output_tokens],
+            # "input_tokens": [input_tokens],
+            # "output_tokens": [output_tokens],
             "block_size": [args.block_size],
             "fs_split": [args.fs_split],
             "n_steps": [args.n_steps],
