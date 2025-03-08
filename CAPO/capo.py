@@ -172,6 +172,7 @@ class CAPOptimizer(BaseOptimizer):
                 .replace("<taskdescription>", self.task.description)
                 .strip()
             )
+            # collect crossover prompts and than passing them bundled to the meta llm => faster
             crossover_prompts.append(crossover_prompt)
             combined_few_shots = mother.few_shots + father.few_shots
             num_few_shots = (len(mother.few_shots) + len(father.few_shots)) // 2
@@ -196,17 +197,16 @@ class CAPOptimizer(BaseOptimizer):
         Returns:
             List[Prompt]: List of mutated prompts.
         """
+        # collect mutation prompts and than passing them bundled to the meta llm => faster
+        mutation_prompts = [
+            self.mutation_meta_prompt.replace("<instruction>", prompt.instruction_text)
+            for prompt in offsprings
+        ]
+        new_instructions = self.meta_llm.get_response(mutation_prompts)
+
         mutated = []
-        for prompt in offsprings:
-            mutation_prompt = self.mutation_meta_prompt.replace(
-                "<instruction>", prompt.instruction_text
-            )
-            new_instruction = (
-                self.meta_llm.get_response([mutation_prompt])[0]
-                .split("<prompt>")[-1]
-                .split("</prompt>")[0]
-                .strip()
-            )
+        for new_instruction, prompt in zip(new_instructions, offsprings):
+            new_instruction = new_instruction.split("<prompt>")[-1].split("</prompt>")[0].strip()
             num_fewshots = random.randint(0, self.upper_shots)
             num_new_fewshots = random.randint(
                 max(0, num_fewshots - len(prompt.few_shots)), num_fewshots
@@ -297,14 +297,17 @@ class CAPOptimizer(BaseOptimizer):
         for _ in range(n_steps):
             offsprings = self._crossover(self.prompts)
             mutated = self._mutate(offsprings)
+
             if self.verbosity > 0:
                 self.logger.warning(f"Generated {len(mutated)} mutated prompts.")
                 self.logger.warning(f"Generated Prompts: {[p.construct_prompt() for p in mutated]}")
             combined = self.prompts + mutated
             self.prompts = self._do_racing(combined, self.population_size)
+
             continue_optimization = self._on_step_end()
             if not continue_optimization:
-                break
+                # break
+                pass  # TODO: need to wait for promptolution update!
 
         self._on_train_end()
 
