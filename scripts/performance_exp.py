@@ -65,7 +65,7 @@ dataset_path = f"hf://datasets/{args.dataset}/train.jsonl"
 df = pd.read_json(dataset_path, lines=True)
 
 # Run optimization for each model
-for model_name in args.models:
+for model_name in args.models.strip("[]").split(","):
     print(f"\n\n{'=' * 40}\nRunning optimization for model: {model_name}\n{'=' * 40}\n")
 
     start_time = time.time()
