@@ -20,7 +20,7 @@ logger = Logger(__name__)
 parser = argparse.ArgumentParser()
 parser.add_argument("--model")
 parser.add_argument("--output")
-parser.add_argument("--datasets", default=["agnews", "subj"])
+parser.add_argument("--datasets", default=["subj"])
 parser.add_argument("--token", default=None)
 parser.add_argument("--batch-size", default=None)
 parser.add_argument("--revision", default="main")
@@ -58,12 +58,12 @@ for dataset in args.datasets:
     task = get_task(config, split="dev")
     predictor = Classificator(llm, classes=task.classes)
 
-    prompt = task.initial_population
+    prompts = [task.initial_population[0]]
 
     xs = task.xs[: config.n_eval_samples]
     ys = task.ys[: config.n_eval_samples]
 
-    for prompt in tqdm(task.initial_population):
+    for prompt in tqdm(prompts):
         preds, seqs = predictor.predict(prompt, xs, return_seq=True)
 
         scores = []

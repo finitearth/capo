@@ -16,7 +16,7 @@ class Prompt:
             instruction_text (str): The instruction or prompt text.
             few_shots (List[str]): List of examples as string.
         """
-        self.instruction_text = instruction_text
+        self.instruction_text = instruction_text.strip()
         self.few_shots = few_shots  # List of (sample_input, response)
 
     def construct_prompt(self) -> str:

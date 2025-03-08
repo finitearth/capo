@@ -1,5 +1,6 @@
 import random
 from itertools import compress
+from logging import getLogger
 from typing import Callable, List, Tuple
 
 import numpy as np
@@ -8,7 +9,6 @@ from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.predictors.base_predictor import BasePredictor
 from promptolution.tasks.base_task import BaseTask
 
-from capo.task import CAPOTask
 from capo.templates import CROSSOVER_TEMPLATE, DOWNSTREAM_TEMPLATE, MUTATION_TEMPLATE
 from capo.utils import Prompt
 
@@ -38,6 +38,8 @@ class CAPOptimizer(BaseOptimizer):
         mutation_meta_prompt: str = None,
         callbacks: List[Callable] = [],
         predictor: BasePredictor = None,
+        verbosity: int = 0,
+        logger=getLogger(__name__),
     ):
         """
         Initializes the CAPOptimizer with various parameters for prompt evolution.
@@ -63,9 +65,10 @@ class CAPOptimizer(BaseOptimizer):
             callbacks (List[Callable], optional): Callbacks for optimizer events.
             predictor (BasePredictor, optional): Predictor to evaluate prompt
                 performance.
+            verbosity (int, optional): Verbosity level for logging. Defaults to 0.
         """
-        if not isinstance(task, CAPOTask):
-            task = CAPOTask.from_task(task, few_shot_split_size, block_size)
+        # if not isinstance(task, CAPOTask):
+        #     task = CAPOTask.from_task(task, few_shot_split_size, block_size)
 
         # Pass initial_prompts and task to the base optimizer
         super().__init__(initial_prompts, task, callbacks, predictor)
@@ -87,9 +90,13 @@ class CAPOptimizer(BaseOptimizer):
         self.test_statistic = test_statistic
 
         self.shuffle_blocks_per_iter = shuffle_blocks_per_iter
-        self.prompts = self._initialize_population(initial_prompts)
 
         self.length_penalty = length_penalty
+        self.verbosity = verbosity
+        self.logger = logger
+
+        self.prompts = self._initialize_population(initial_prompts)
+        self.scores = np.empty(0)
 
     def _initialize_population(self, initial_prompts: List[str]) -> List[Prompt]:
         """
@@ -106,6 +113,11 @@ class CAPOptimizer(BaseOptimizer):
             num_examples = random.randint(0, self.upper_shots)
             few_shots = self._create_few_shot_examples(instruction_text, num_examples)
             population.append(Prompt(instruction_text, few_shots))
+
+        if self.verbosity > 0:
+            self.logger.warning(
+                f"Initialized population with {len(population)} prompts: \n {[p.construct_prompt() for p in population]}"
+            )
         return population
 
     def _create_few_shot_examples(
@@ -121,7 +133,7 @@ class CAPOptimizer(BaseOptimizer):
 
             if random.random() < self.p_few_shot_reasoning:
                 n_trials = 0
-                while n_trials < 3:
+                while n_trials < 5:
                     n_trials += 1
                     pred, seq = self.predictor.predict(
                         [
@@ -132,7 +144,8 @@ class CAPOptimizer(BaseOptimizer):
                         [sample_input],
                         return_seq=True,
                     )
-                    if pred[0] == sample_target:
+                    pred = str(pred[0][0])
+                    if pred == sample_target:
                         few_shot = seq[0]
                         break
             few_shots.append(few_shot)
@@ -161,10 +174,8 @@ class CAPOptimizer(BaseOptimizer):
             )
             crossover_prompts.append(crossover_prompt)
             combined_few_shots = mother.few_shots + father.few_shots
-            num_few_shots = int((len(mother.few_shots) + len(father.few_shots)) / 2)
-            offspring_few_shot = random.sample(
-                combined_few_shots, min(num_few_shots, len(combined_few_shots))
-            )
+            num_few_shots = (len(mother.few_shots) + len(father.few_shots)) // 2
+            offspring_few_shot = random.sample(combined_few_shots, num_few_shots)
             offspring_few_shots.append(offspring_few_shot)
 
         child_instructions = self.meta_llm.get_response(crossover_prompts)
@@ -249,17 +260,29 @@ class CAPOptimizer(BaseOptimizer):
             n_better = np.sum(comparison_matrix, axis=1)
             # Create mask for survivors and filter candidates
             candidates = list(compress(candidates, n_better < k))
+            block_scores = [bs[n_better < k] for bs in block_scores]
+
+            if self.verbosity > 0 and len(candidates) < len(self.scores):
+                self.logger.warning(f"Racing: {len(candidates)} prompts remain.")
+                self.logger.warning(
+                    f"Prompts that are eliminated: {[(s, c.construct_prompt()) for i, (s, c) in enumerate(zip(self.scores, self.prompts)) if n_better[i] >= k]}"
+                )
+            elif self.verbosity > 0:
+                self.logger.warning(f"Racing: {len(candidates)} prompts remain.")
+
             if len(candidates) <= k or block_id == self.max_n_blocks_eval:
+                if self.verbosity > 0:
+                    self.logger.warning(
+                        f"Racing: {len(candidates)} prompts remain after {block_id} blocks."
+                    )
                 break
 
-        # calculate mean over scores
-        self.scores = scores.mean(axis=1)
-        # sort candidates based on score
-        score_candidate_pairs = list(zip(self.scores, candidates))
-        sorted_pairs = sorted(score_candidate_pairs, key=lambda x: x[0], reverse=True)
-        candidates = [candidate for _, candidate in sorted_pairs]
+        scores = np.concatenate(block_scores, axis=1).mean(axis=1)
+        order = np.argsort(-scores)[:k]
+        candidates = [candidates[i] for i in order]
+        self.scores = scores[order]
 
-        return candidates[:k]
+        return candidates
 
     def optimize(self, n_steps: int) -> List[str]:
         """
@@ -274,6 +297,9 @@ class CAPOptimizer(BaseOptimizer):
         for _ in range(n_steps):
             offsprings = self._crossover(self.prompts)
             mutated = self._mutate(offsprings)
+            if self.verbosity > 0:
+                self.logger.warning(f"Generated {len(mutated)} mutated prompts.")
+                self.logger.warning(f"Generated Prompts: {[p.construct_prompt() for p in mutated]}")
             combined = self.prompts + mutated
             self.prompts = self._do_racing(combined, self.population_size)
             continue_optimization = self._on_step_end()

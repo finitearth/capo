@@ -121,7 +121,6 @@ def test_do_racing_with_guaranteed_elimination(optimizer):
     survivors = optimizer._do_racing(candidates, k=2)
     assert len(survivors) == 2
     survivor_texts = [s.instruction_text for s in survivors]
-    print("Survivors:", survivor_texts)
     assert "P1 - Champion" in survivor_texts, "Best prompt P1 should not be eliminated"
     assert "P3 - Loser" not in survivor_texts, "Worst prompt P3 should be eliminated"
     assert "P2 - Middle" in survivor_texts, "Middle prompt P2 should survive"

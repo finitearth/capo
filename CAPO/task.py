@@ -13,7 +13,7 @@ class CAPOTask(BaseTask):
         instance.block_size = block_size
         instance.prompt_score_cache = {}
 
-        instance.ys = np.array([task.classes[y] for y in task.ys])
+        instance.ys = np.array([str(task.classes[y]) for y in task.ys])
         instance.blocks, instance.few_shots = instance._split_into_blocks()
 
         return instance
@@ -67,3 +67,4 @@ class CAPOTask(BaseTask):
 class CAPOClassificationTask(ClassificationTask, CAPOTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.classes = [str(c) for c in self.classes]

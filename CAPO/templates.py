@@ -2,8 +2,7 @@ FEW_SHOT_TEMPLATE = """<instruction>
 
 <examples>"""
 
-DOWNSTREAM_TEMPLATE = """
-<instruction>
+DOWNSTREAM_TEMPLATE = """<instruction>
 Input: <input>
 Output:
 """
