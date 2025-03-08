@@ -20,7 +20,7 @@ parser.add_argument("--output", default="outputs/performance_tests.csv")
 parser.add_argument("--token", default=None)
 parser.add_argument("--batch-size", default=None)
 parser.add_argument("--revision", default="main")
-parser.add_argument("--max-model-len", type=int, default=512)
+parser.add_argument("--max-model-len", type=int, default=2000)
 parser.add_argument("--model-storage-path", default="../models/")
 parser.add_argument("--block-size", type=int, default=30)
 parser.add_argument("--fs-split", type=float, default=0.1)
@@ -70,6 +70,17 @@ for model_name in args.models.strip("[]").split(","):
 
     start_time = time.time()
 
+    # Set up CAPO task
+    task = CAPOClassificationTask.from_dataframe(
+        df,
+        description="The dataset consists of text samples with sentiment labels. The task is to classify each text into the correct sentiment category. The class mentioned first in the response of the LLM will be the prediction.",
+        x_column="text",
+        y_column="label",
+    )
+    task = CAPOClassificationTask.from_task(
+        task, block_size=args.block_size, few_shot_split_size=args.fs_split
+    )
+
     # Set up LLM
     if "vllm" in model_name:
         llm = get_llm(
@@ -84,17 +95,6 @@ for model_name in args.models.strip("[]").split(","):
 
     downstream_llm = llm
     meta_llm = llm
-
-    # Set up CAPO task
-    task = CAPOClassificationTask.from_dataframe(
-        df,
-        description="The dataset consists of text samples with sentiment labels. The task is to classify each text into the correct sentiment category. The class mentioned first in the response of the LLM will be the prediction.",
-        x_column="text",
-        y_column="label",
-    )
-    task = CAPOClassificationTask.from_task(
-        task, block_size=args.block_size, few_shot_split_size=args.fs_split
-    )
 
     # Create initial prompts
     initial_prompts = [
