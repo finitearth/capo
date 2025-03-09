@@ -54,7 +54,7 @@ for model_name in args.models.strip("[]").split(","):
         df,
         description="",
         # The dataset contains linguistically diverse grade school math word problems that require multi-step reasoning. The answer is the final number and will be extracted after the <answer> tag.
-        x_column="question",
+        x_column="input",
         y_column="target",
     )
     task = CAPOClassificationTask.from_task(
