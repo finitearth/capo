@@ -37,6 +37,7 @@ args = parser.parse_args()
 # TODO: investigate if we have to clear the cache after each model run
 # TODO: implement revision for loaded datasets
 
+
 # Create or load the results file
 try:
     results_df = pd.read_csv(args.output)
@@ -74,7 +75,8 @@ for model_name in args.models.strip("[]").split(","):
     # Set up CAPO task
     task = CAPOClassificationTask.from_dataframe(
         df,
-        description="The dataset consists of text samples with sentiment labels. The task is to classify each text into the correct sentiment category. The class mentioned first in the response of the LLM will be the prediction.",
+        description="The task is to classify the texts into one of those classes: veryNegative, negative, neutral, positive, veryPositive. "
+        "The first occurrence of a valid class label in the prediction is used as the predicted class.",
         x_column="text",
         y_column="label",
     )
@@ -96,10 +98,18 @@ for model_name in args.models.strip("[]").split(","):
 
     downstream_llm = llm
     meta_llm = llm
+    # TODO remove after promptolution update
+    prompt_creation_template = """You are asked to give the corresponding prompt that gives the following outputs given these inputs for the following task: <task_desc>.
+Return it starting with <prompt> and ending with </prompt> tags.
+Include the name of the output classes in the prompt.
 
-    # Create initial prompts
+<input_output_pairs>
+
+The instruction was"""
+    prompt_creation_template = prompt_creation_template.replace("<task_desc>", task.description)
     initial_prompts = [
-        create_prompts_from_samples(task, downstream_llm) for _ in range(args.n_initial_prompts)
+        create_prompts_from_samples(task, downstream_llm, meta_prompt=prompt_creation_template)
+        for _ in range(args.n_initial_prompts)
     ]
 
     # Set up predictor and callbacks

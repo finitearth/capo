@@ -169,7 +169,7 @@ class CAPOptimizer(BaseOptimizer):
             crossover_prompt = (
                 self.crossover_meta_prompt.replace("<mother>", mother.instruction_text)
                 .replace("<father>", father.instruction_text)
-                .replace("<taskdescription>", self.task.description)
+                .replace("<task_desc>", self.task.description)
                 .strip()
             )
             # collect crossover prompts and than passing them bundled to the meta llm => faster
