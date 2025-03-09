@@ -48,7 +48,7 @@ for model_name in args.models.strip("[]").split(","):
     # Set up CAPO task
     task = CAPOClassificationTask.from_dataframe(
         df,
-        description=None,
+        description="The dataset contains linguistically diverse grade school math word problems that require multi-step reasoning. The answer is the final number and will be extracted after the <answer> tag.",
         x_column="question",
         y_column="target",
     )
@@ -75,14 +75,15 @@ for model_name in args.models.strip("[]").split(","):
     callbacks = [LoggerCallback(logger), CSVCallback(args.output_dir + model_name + "/")]
 
     meta_prompt = """You are asked to give the corresponding prompt that gives the following outputs given these inputs for the following task:
-    The dataset contains linguistically diverse grade school math word problems that require multi-step reasoning. The answer is the final number and will be extracted after the <answer> tag.
-    Return it starting with <prompt> and ending with </prompt> tags.
-    Include the name of the output classes in the prompt.
+The dataset contains linguistically diverse grade school math word problems that require multi-step reasoning. The answer is the final number and will be extracted after the <answer> tag.
+Return it starting with <prompt> and ending with </prompt> tags.
+Include the name of the output classes in the prompt.
 
-    <input_output_pairs>
+<input_output_pairs>
 
-    The instruction was"""
+The instruction was"""
 
+    # TODO: should use samples only from the few-shot dataset here
     initial_prompts = create_prompts_from_samples(
         task,
         downstream_llm,
@@ -91,9 +92,7 @@ for model_name in args.models.strip("[]").split(","):
         n_prompts=args.n_initial_prompts,
         n_samples=2,
     )
-    import IPython
 
-    IPython.embed()
     # Initialize optimizer
     optimizer = CAPOptimizer(
         initial_prompts=initial_prompts,
