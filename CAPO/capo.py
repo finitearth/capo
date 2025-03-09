@@ -242,7 +242,9 @@ class CAPOptimizer(BaseOptimizer):
             )
 
             # subtract length penalty
-            prompt_lengths = np.array([len(c.construct_prompt().split()) for c in candidates])
+            prompt_lengths = np.array(
+                [len(c.construct_prompt().split()) for c in candidates]
+            )  # TODO: token count instead of word count
             rel_prompt_lengths = prompt_lengths / self.max_prompt_length
 
             new_scores = new_scores - self.length_penalty * rel_prompt_lengths[:, None]
