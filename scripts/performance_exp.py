@@ -125,6 +125,7 @@ for model_name in args.models.strip("[]").split(","):
         predictor=predictor,
         callbacks=[callback],
         shuffle_blocks_per_iter=False,
+        verbosity=1000,
     )
 
     # Run optimization
