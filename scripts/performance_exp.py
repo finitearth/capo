@@ -83,17 +83,19 @@ Include the name of the output classes in the prompt.
 
 The instruction was"""
     # TODO: should use samples only from the few-shot dataset here
-    for i in range(5):
-        initial_prompts = create_prompts_from_samples(
-            task,
-            downstream_llm,
-            meta_prompt=meta_prompt,
-            task_description="",
-            n_prompts=args.n_initial_prompts,
-            n_samples=2,
-        )
+    initial_prompts = create_prompts_from_samples(
+        task,
+        downstream_llm,
+        meta_prompt=meta_prompt,
+        task_description="",
+        n_prompts=args.n_initial_prompts,
+        n_samples=2,
+    )
 
-        logger.warning(initial_prompts)
+    logger.warning(initial_prompts)
+    import IPython
+
+    IPython.embed()
     # Initialize optimizer
     optimizer = CAPOptimizer(
         initial_prompts=initial_prompts,
