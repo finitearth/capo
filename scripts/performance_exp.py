@@ -40,6 +40,7 @@ ds = load_dataset(
     split="train",
 )
 df = ds.to_pandas()
+df["input"] = df["text1"] + "\n" + df["text2"]
 df["target"] = df["label"].map({0: "NoEntailment", 1: "Entailment"})
 
 # df["target"] = df["answer"].str.split("#### ").apply(lambda x: x[-1]).str.strip()
