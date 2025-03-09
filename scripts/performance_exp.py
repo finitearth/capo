@@ -41,7 +41,7 @@ ds = load_dataset(
 )
 df = ds.to_pandas()
 df["input"] = df["text1"] + "\n" + df["text2"]
-df["target"] = df["label"].map({0: "NoEntailment", 1: "Entailment"})
+df["target"] = df["label"].map({1: "NoEntailment", 0: "Entailment"})
 
 # df["target"] = df["answer"].str.split("#### ").apply(lambda x: x[-1]).str.strip()
 
