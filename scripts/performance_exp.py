@@ -19,7 +19,7 @@ parser.add_argument("--output-dir", default="results/")
 parser.add_argument("--token", default=None)
 parser.add_argument("--batch-size", type=int, default=None)
 parser.add_argument("--revision", default="main")
-parser.add_argument("--max-model-len", type=int, default=1024)
+parser.add_argument("--max-model-len", type=int, default=2000)
 parser.add_argument("--model-storage-path", default="../models/")
 parser.add_argument("--block-size", type=int, default=30)
 parser.add_argument("--fs-split", type=float, default=0.1)
@@ -89,6 +89,7 @@ for model_name in args.models.strip("[]").split(","):
         meta_prompt=meta_prompt,
         task_description="",
         n_prompts=args.n_initial_prompts,
+        n_samples=2,
     )
     import IPython
 
