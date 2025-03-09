@@ -63,6 +63,7 @@ except FileNotFoundError:
 # Load dataset
 dataset_path = f"hf://datasets/{args.dataset}/train.jsonl"
 df = pd.read_json(dataset_path, lines=True)
+df["label"] = df["label"].astype(str)
 
 # Run optimization for each model
 for model_name in args.models.strip("[]").split(","):
