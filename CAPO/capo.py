@@ -9,7 +9,7 @@ from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.predictors.base_predictor import BasePredictor
 from promptolution.tasks.base_task import BaseTask
 
-from capo.templates import CROSSOVER_TEMPLATE, DOWNSTREAM_TEMPLATE, MUTATION_TEMPLATE
+from capo.templates import CROSSOVER_TEMPLATE, MUTATION_TEMPLATE
 from capo.utils import Prompt
 
 
@@ -136,11 +136,7 @@ class CAPOptimizer(BaseOptimizer):
                 while n_trials < 5:
                     n_trials += 1
                     pred, seq = self.predictor.predict(
-                        [
-                            DOWNSTREAM_TEMPLATE.replace("<input>", sample_input).replace(
-                                "<instruction>", instruction
-                            )
-                        ],
+                        [instruction],
                         [sample_input],
                         return_seq=True,
                     )
