@@ -6,11 +6,13 @@ from datasets import load_dataset
 from promptolution.callbacks import CSVCallback, LoggerCallback
 from promptolution.llms import get_llm
 from promptolution.predictors.classificator import MarkerBasedClassificator
-from promptolution.utils.prompt_creation import create_prompts_from_samples
 
 from capo.capo import CAPOptimizer
 from capo.statistical_tests import paired_t_test
 from capo.task import CAPOClassificationTask
+
+# from promptolution.utils.prompt_creation import create_prompts_from_samples
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--models", required=True)
@@ -77,25 +79,33 @@ for model_name in args.models.strip("[]").split(","):
     meta_prompt = """You are asked to give the corresponding prompt that gives the following outputs given these inputs for the following task:
 The dataset contains linguistically diverse grade school math word problems that require multi-step reasoning. The answer is the final number and will be extracted after the <answer> tag.
 Return it starting with <prompt> and ending with </prompt> tags.
-Include the name of the output classes in the prompt.
 
 <input_output_pairs>
 
 The instruction was"""
     # TODO: should use samples only from the few-shot dataset here
-    initial_prompts = create_prompts_from_samples(
-        task,
-        downstream_llm,
-        meta_prompt=meta_prompt,
-        task_description="",
-        n_prompts=args.n_initial_prompts,
-        n_samples=2,
-    )
+    # initial_prompts = create_prompts_from_samples(
+    #     task,
+    #     downstream_llm,
+    #     meta_prompt=meta_prompt,
+    #     task_description="",
+    #     n_prompts=args.n_initial_prompts,
+    #     n_samples=2,
+    # )
 
-    logger.warning(initial_prompts)
-    import IPython
+    initial_prompts = [
+        "Given the following inputs, determine the final number by performing the necessary calculations.",
+        "Given the following inputs, determine the final number based on the multi-step reasoning required for each problem.",
+        "Given the following input, determine the final number after performing the necessary calculations. The answer should be extracted after the <answer> tag.",
+        "Given the following inputs, determine the final number by extracting it after the <answer> tag.",
+        "Given the following math word problem, determine the final number.",
+        "Given the following inputs, provide the corresponding prompt that gives the outputs.",
+        "Given the following inputs, determine the final number by solving the problem step by step. The answer will be extracted after the <answer> tag.",
+        "Given the following math word problems, determine the final number by following the steps outlined in the problem. The answer should be extracted after the <answer> tag.",
+        "Given the following input, determine the final number after performing the multi-step reasoning. The answer should be extracted after the <answer> tag.",
+        "Given the following inputs, provide the corresponding prompt that gives the outputs for the task. The dataset contains linguistically diverse grade school math word problems that require multi-step reasoning. The answer is the final number and will be extracted after the <answer> tag.",
+    ]
 
-    IPython.embed()
     # Initialize optimizer
     optimizer = CAPOptimizer(
         initial_prompts=initial_prompts,
