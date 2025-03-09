@@ -4,7 +4,7 @@ import time
 from logging import getLogger
 
 import pandas as pd
-from promptolution.callbacks import LoggerCallback
+from promptolution.callbacks import CSVCallback, LoggerCallback
 from promptolution.llms import get_llm
 from promptolution.predictors.classificator import Classificator
 from promptolution.utils.prompt_creation import create_prompts_from_samples
@@ -16,7 +16,7 @@ from capo.task import CAPOClassificationTask
 parser = argparse.ArgumentParser()
 parser.add_argument("--models", required=True)
 parser.add_argument("--dataset", default="SetFit/sst5")
-parser.add_argument("--output", default="outputs/performance_tests.csv")
+parser.add_argument("--output-dir", default="results/")
 parser.add_argument("--token", default=None)
 parser.add_argument("--batch-size", type=int, default=None)
 parser.add_argument("--revision", default="main")
@@ -110,13 +110,13 @@ The instruction was"""
     initial_prompts = [
         create_prompts_from_samples(task, downstream_llm, meta_prompt=prompt_creation_template)
         for _ in range(args.n_initial_prompts)
-    ]
+    ]  # TODO: use new promptolution multiple prompt thingy
 
     # Set up predictor and callbacks
     predictor = Classificator(downstream_llm, task.classes)
     test_statistic = lambda x, y: paired_t_test(x, y, alpha=args.alpha)
     logger = getLogger(__name__)
-    callback = LoggerCallback(logger)
+    callbacks = [LoggerCallback(logger), CSVCallback(args.output)]
 
     # Initialize optimizer
     optimizer = CAPOptimizer(
@@ -133,7 +133,7 @@ The instruction was"""
         few_shot_split_size=args.fs_split,
         test_statistic=test_statistic,
         predictor=predictor,
-        callbacks=[callback],
+        callbacks=callbacks,
         shuffle_blocks_per_iter=False,
         verbosity=1000,
     )
