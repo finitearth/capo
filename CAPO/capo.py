@@ -30,6 +30,7 @@ class CAPOptimizer(BaseOptimizer):
         crossovers_per_iter: int,
         upper_shots: int,
         p_few_shot_reasoning: float,
+        n_trials_generation_reasoning: int,
         max_n_blocks_eval: int,
         few_shot_split_size: float,
         test_statistic: Callable,
@@ -54,6 +55,7 @@ class CAPOptimizer(BaseOptimizer):
             crossovers_per_iter (int): Number of crossover operations per iteration.
             upper_shots (int): Maximum number of few-shot examples per prompt.
             p_few_shot_reasoning (float): Probability of generating llm-reasoning for few-shot examples, instead of simply using input-output pairs.
+            n_trials_generation_reasoning (int): Number of trials to generate reasoning for few-shot examples.
             max_n_blocks_eval (int): Maximum number of evaluation blocks.
             test_statistic (Callable): Function to test significance between prompts.
                 Inputs are (score_a, score_b, n_evals) and returns True if A is better.
@@ -86,6 +88,7 @@ class CAPOptimizer(BaseOptimizer):
         self.crossovers_per_iter = crossovers_per_iter
         self.upper_shots = upper_shots
         self.p_few_shot_reasoning = p_few_shot_reasoning
+        self.n_trials_generation_reasoning = n_trials_generation_reasoning
         self.max_n_blocks_eval = max_n_blocks_eval
         self.test_statistic = test_statistic
 
@@ -120,31 +123,55 @@ class CAPOptimizer(BaseOptimizer):
             )
         return population
 
+    # def _create_few_shot_examples(
+    #     self, instruction: str, num_examples: int
+    # ) -> List[Tuple[str, str]]:
+    #     selected_indices = random.sample(self.task.few_shots, num_examples)
+    #     few_shots = []
+    #     for idx in selected_indices:
+    #         sample_input = self.task.xs[idx]
+    #         sample_target = self.task.ys[idx]
+    #         # in half of the cases generate reasoning from downstream model
+    #         few_shot = f"Input: {sample_input}\nOutput: {sample_target}"
+
+    #         if random.random() < self.p_few_shot_reasoning:
+    #             n_trials = 0
+    #             while n_trials < 5:
+    #                 n_trials += 1
+    #                 pred, seq = self.predictor.predict(
+    #                     [instruction],
+    #                     [sample_input],
+    #                     return_seq=True,
+    #                 )
+    #                 pred = str(pred[0][0])
+    #                 if pred == sample_target:
+    #                     few_shot = seq[0]
+    #                     break
+    #         few_shots.append(few_shot)
+
+    #     return few_shots
+
     def _create_few_shot_examples(
         self, instruction: str, num_examples: int
     ) -> List[Tuple[str, str]]:
         selected_indices = random.sample(self.task.few_shots, num_examples)
-        few_shots = []
-        for idx in selected_indices:
-            sample_input = self.task.xs[idx]
-            sample_target = self.task.ys[idx]
-            # in half of the cases generate reasoning from downstream model
-            few_shot = f"Input: {sample_input}\nOutput: {sample_target}"
+        sample_inputs = np.array([self.task.xs[idx] for idx in selected_indices])
+        sample_targets = np.array([self.task.ys[idx] for idx in selected_indices])
+        few_shots = [f"Input: {i}\nOutput: {t}" for i, t in zip(sample_inputs, sample_targets)]
 
-            if random.random() < self.p_few_shot_reasoning:
-                n_trials = 0
-                while n_trials < 5:
-                    n_trials += 1
-                    pred, seq = self.predictor.predict(
-                        [instruction],
-                        [sample_input],
-                        return_seq=True,
-                    )
-                    pred = str(pred[0][0])
-                    if pred == sample_target:
-                        few_shot = seq[0]
-                        break
-            few_shots.append(few_shot)
+        # select half of the examples to generate reasoning from downstream model
+        generate_reasoning_idx = random.sample(range(num_examples), num_examples // 2)
+        preds, seqs = self.predictor.predict(
+            [instruction] * self.n_trials_generation_reasoning,
+            sample_inputs[generate_reasoning_idx],
+            return_seq=True,
+        )  # output shape: (n_trials, n_reasoning_examples)
+
+        # check which predictions are correct and sample a single one per example
+        for i, idx in enumerate(generate_reasoning_idx):
+            correct_idx = np.where(preds[i] == sample_targets[idx])[0]
+            if len(correct_idx) > 0:
+                few_shots[idx] = seqs[i][correct_idx[0]]
 
         return few_shots
 

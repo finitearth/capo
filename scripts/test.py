@@ -23,7 +23,7 @@ try:
 except FileNotFoundError:
     token = None
 # model_name = "vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4"
-model_name = "meta-llama/Llama-3.3-70B-Instruct-Turbo"
+model_name = "microsoft/phi-4"
 
 if "vllm" in model_name:
     llm = get_llm(
@@ -84,6 +84,7 @@ optimizer = CAPOptimizer(
     upper_shots=6,
     max_n_blocks_eval=30,
     p_few_shot_reasoning=0.5,
+    n_trials_generation_reasoning=5,
     few_shot_split_size=FS_SPLIT,
     test_statistic=test_statistic,
     predictor=predictor,
