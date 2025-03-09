@@ -82,7 +82,6 @@ Include the name of the output classes in the prompt.
 <input_output_pairs>
 
 The instruction was"""
-
     # TODO: should use samples only from the few-shot dataset here
     initial_prompts = create_prompts_from_samples(
         task,
@@ -93,6 +92,7 @@ The instruction was"""
         n_samples=2,
     )
 
+    logger.warning(initial_prompts)
     # Initialize optimizer
     optimizer = CAPOptimizer(
         initial_prompts=initial_prompts,
