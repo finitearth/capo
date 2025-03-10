@@ -25,7 +25,7 @@ parser.add_argument("--fs-split", type=float, default=0.1)
 parser.add_argument("--n-steps", type=int, default=999)
 parser.add_argument("--n-initial-prompts", type=int, default=10)
 parser.add_argument("--n-eval-samples", type=int, default=300)
-parser.add_argument("--max-tokens", type=int, default=1000000)
+parser.add_argument("--max-tokens", type=int, default=1000)
 args = parser.parse_args()
 
 logger = getLogger(__name__)
@@ -66,6 +66,7 @@ for model_name in args.models.strip("[]").split(","):
         batch_size=args.batch_size,
         model_storage_path=args.model_storage_path,
         revision=args.revision,
+        token=args.token,
     )
 
     downstream_llm = llm
@@ -92,6 +93,12 @@ for model_name in args.models.strip("[]").split(","):
 
     # Set up predictor and callbacks
     predictor = FirstOccurrenceClassificator(downstream_llm, task.classes)
+
+    score, seq = task.evaluate(
+        initial_prompts, predictor, n_samples=args.n_eval_samples, return_seq=True
+    )
+    logger.warning(f"Initial score: {score}")
+    logger.warning(f"Initial sequences: {seq}")
 
     # Initialize optimizer
     optimizer = EvoPromptGA(
