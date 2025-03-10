@@ -24,6 +24,8 @@ parser.add_argument("--block-size", type=int, default=30)
 parser.add_argument("--fs-split", type=float, default=0.1)
 parser.add_argument("--n-steps", type=int, default=999)
 parser.add_argument("--n-initial-prompts", type=int, default=10)
+parser.add_argument("--n-eval-samples", type=int, default=300)
+parser.add_argument("--max-tokens", type=int, default=1000000)
 args = parser.parse_args()
 
 logger = getLogger(__name__)
@@ -54,7 +56,7 @@ for model_name in args.models.strip("[]").split(","):
     callbacks = [
         LoggerCallback(logger),
         CSVCallback(args.output_dir + model_name + "/"),
-        TokenCountCallback(1000, "input_tokens"),
+        TokenCountCallback(args.max_tokens, "input_tokens"),
     ]
 
     # Set up LLM
@@ -99,7 +101,7 @@ for model_name in args.models.strip("[]").split(","):
         meta_llm=meta_llm,
         initial_prompts=initial_prompts,
         callbacks=callbacks,
-        n_eval_samples=300,
+        n_eval_samples=args.n_eval_samples,
     )
 
     # Run optimization
