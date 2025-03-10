@@ -43,8 +43,6 @@ df = ds.to_pandas()
 df["input"] = df["text1"] + "\n" + df["text2"]
 df["target"] = df["label"].map({1: "NoEntailment", 0: "Entailment"})
 
-print(df.head())
-
 # df["target"] = df["answer"].str.split("#### ").apply(lambda x: x[-1]).str.strip()
 
 # Run optimization for each model
@@ -95,13 +93,10 @@ The instruction was"""
         meta_prompt=meta_prompt,
         task_description="",
         n_prompts=args.n_initial_prompts,
-        n_samples=3,
+        n_samples=1,
     )
 
     logger.warning(initial_prompts)
-
-    # test cache clearing
-    llm.__del__()
 
     # Initialize optimizer
     optimizer = CAPOptimizer(
