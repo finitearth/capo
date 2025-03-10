@@ -5,10 +5,12 @@ from logging import getLogger
 from datasets import load_dataset
 from promptolution.callbacks import CSVCallback, LoggerCallback, TokenCountCallback
 from promptolution.llms import get_llm
-from promptolution.optimizers import EvoPromptGA
+
+# from promptolution.optimizers import EvoPromptGA
 from promptolution.predictors.classificator import FirstOccurrenceClassificator
 from promptolution.tasks import ClassificationTask
-from promptolution.templates import EVOPROMPT_GA_TEMPLATE_TD
+
+# from promptolution.templates import EVOPROMPT_GA_TEMPLATE_TD
 from promptolution.utils.prompt_creation import create_prompts_from_samples
 
 parser = argparse.ArgumentParser()
@@ -100,21 +102,24 @@ for model_name in args.models.strip("[]").split(","):
     logger.warning(f"Initial score: {score}")
     logger.warning(f"Initial sequences: {seq}")
 
-    # Initialize optimizer
-    optimizer = EvoPromptGA(
-        task=task,
-        prompt_template=EVOPROMPT_GA_TEMPLATE_TD.replace("<task_desc>", task_description),
-        predictor=predictor,
-        meta_llm=meta_llm,
-        initial_prompts=initial_prompts,
-        callbacks=callbacks,
-        n_eval_samples=args.n_eval_samples,
-    )
+    print(f"Initial score: {score}")
+    print(f"Initial sequences: {seq}")
 
-    # Run optimization
-    best_prompts = optimizer.optimize(n_steps=args.n_steps)
+    # # Initialize optimizer
+    # optimizer = EvoPromptGA(
+    #     task=task,
+    #     prompt_template=EVOPROMPT_GA_TEMPLATE_TD.replace("<task_desc>", task_description),
+    #     predictor=predictor,
+    #     meta_llm=meta_llm,
+    #     initial_prompts=initial_prompts,
+    #     callbacks=callbacks,
+    #     n_eval_samples=args.n_eval_samples,
+    # )
 
-    # clear cache by deleting the used llm
-    llm.__del__()
+    # # Run optimization
+    # best_prompts = optimizer.optimize(n_steps=args.n_steps)
+
+    # # clear cache by deleting the used llm
+    # llm.__del__()
 
 print("\nAll optimization runs completed successfully!")
