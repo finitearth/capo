@@ -5,7 +5,7 @@ from logging import getLogger
 from datasets import load_dataset
 from promptolution.callbacks import CSVCallback, LoggerCallback
 from promptolution.llms import get_llm
-from promptolution.predictors.classificator import MarkerBasedClassificator
+from promptolution.predictors.classificator import FirstOccurrenceClassificator
 from promptolution.utils.prompt_creation import create_prompts_from_samples
 
 from capo.capo import CAPOptimizer
@@ -43,6 +43,8 @@ df = ds.to_pandas()
 df["input"] = df["text1"] + "\n" + df["text2"]
 df["target"] = df["label"].map({1: "NoEntailment", 0: "Entailment"})
 
+print(df.head())
+
 # df["target"] = df["answer"].str.split("#### ").apply(lambda x: x[-1]).str.strip()
 
 # Run optimization for each model
@@ -53,7 +55,6 @@ for model_name in args.models.strip("[]").split(","):
     task = CAPOClassificationTask.from_dataframe(
         df,
         description="",
-        # The dataset contains linguistically diverse grade school math word problems that require multi-step reasoning. The answer is the final number and will be extracted after the <answer> tag.
         x_column="input",
         y_column="target",
     )
@@ -74,14 +75,15 @@ for model_name in args.models.strip("[]").split(","):
     meta_llm = llm
 
     # Set up predictor and callbacks
-    predictor = MarkerBasedClassificator(downstream_llm, task.classes)
+    predictor = FirstOccurrenceClassificator(downstream_llm, task.classes)
     test_statistic = lambda x, y: paired_t_test(x, y, alpha=args.alpha)
     logger = getLogger(__name__)
     callbacks = [LoggerCallback(logger), CSVCallback(args.output_dir + model_name + "/")]
 
     meta_prompt = """You are asked to give the corresponding prompt that gives the following outputs given these inputs for the following task:
-The dataset contains linguistically diverse grade school math word problems that require multi-step reasoning. The answer is the final number and will be extracted after the <answer> tag.
+Given is a Textual Entailment Recognition (RTE) task of determining a inferential relationship between natural language hypothesis and premise. The task is to classify each text into the correct category "NoEntailment" or "Entailment". The class mentioned first in the response of the LLM will be the prediction.
 Return it starting with <prompt> and ending with </prompt> tags.
+Include the name of the output classes in the prompt.
 
 <input_output_pairs>
 
@@ -96,18 +98,10 @@ The instruction was"""
         n_samples=3,
     )
 
-    # initial_prompts = [
-    #     "Given the following inputs, determine the final number by performing the necessary calculations.",
-    #     "Given the following inputs, determine the final number based on the multi-step reasoning required for each problem.",
-    #     "Given the following input, determine the final number after performing the necessary calculations. The answer should be extracted after the <answer> tag.",
-    #     "Given the following inputs, determine the final number by extracting it after the <answer> tag.",
-    #     "Given the following math word problem, determine the final number.",
-    #     "Given the following inputs, provide the corresponding prompt that gives the outputs.",
-    #     "Given the following inputs, determine the final number by solving the problem step by step. The answer will be extracted after the <answer> tag.",
-    #     "Given the following math word problems, determine the final number by following the steps outlined in the problem. The answer should be extracted after the <answer> tag.",
-    #     "Given the following input, determine the final number after performing the multi-step reasoning. The answer should be extracted after the <answer> tag.",
-    #     "Given the following inputs, provide the corresponding prompt that gives the outputs for the task. The dataset contains linguistically diverse grade school math word problems that require multi-step reasoning. The answer is the final number and will be extracted after the <answer> tag.",
-    # ]
+    logger.warning(initial_prompts)
+
+    # test cache clearing
+    llm.__del__()
 
     # Initialize optimizer
     optimizer = CAPOptimizer(
@@ -132,5 +126,8 @@ The instruction was"""
 
     # Run optimization
     best_prompts = optimizer.optimize(n_steps=args.n_steps)
+
+    # clear cache by deleting the used llm
+    llm.__del__()
 
 print("\nAll optimization runs completed successfully!")
