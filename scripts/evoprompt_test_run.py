@@ -97,7 +97,7 @@ for model_name in args.models.strip("[]").split(","):
     predictor = FirstOccurrenceClassificator(downstream_llm, task.classes)
 
     score, seq = task.evaluate(
-        initial_prompts, predictor, n_samples=args.n_eval_samples, return_seq=True
+        initial_prompts, predictor, n_samples=args.n_eval_samples, return_seq=True, subsample=True
     )
     logger.warning(f"Initial score: {score}")
     logger.warning(f"Initial sequences: {seq}")
