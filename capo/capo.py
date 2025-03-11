@@ -133,7 +133,7 @@ class CAPOptimizer(BaseOptimizer):
 
         # select partition of the examples to generate reasoning from downstream model
         generate_reasoning_idx = random.sample(
-            range(num_examples), num_examples * self.p_few_shot_reasoning
+            range(num_examples), int(num_examples * self.p_few_shot_reasoning)
         )
         preds, seqs = self.predictor.predict(
             [instruction] * self.n_trials_generation_reasoning,
