@@ -23,7 +23,7 @@ try:
 except FileNotFoundError:
     token = None
 # model_name = "vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4"
-model_name = "meta-llama/Llama-3.3-70B-Instruct-Turbo"
+model_name = "microsoft/phi-4"
 
 if "vllm" in model_name:
     llm = get_llm(
@@ -40,9 +40,20 @@ meta_llm = llm
 
 df = pd.read_json("hf://datasets/SetFit/sst5/train.jsonl", lines=True).sample(1000)
 
+# map very negative to veryNegative, very positive to veryPositive
+df["label_text"] = df["label_text"].map(
+    {
+        "very negative": "veryNegative",
+        "negative": "negative",
+        "neutral": "neutral",
+        "positive": "positive",
+        "very positive": "veryPositive",
+    }
+)
+
 task = CAPOClassificationTask.from_dataframe(
     df,
-    description="The dataset consists of movie reviews with five levels of sentiment labels: very negative, negative, neutral, positive, and very positive. The task is to classify each movie review into one of these five sentiment categories. The class mentioned first in the response of the LLM will be the prediction.",
+    description="The dataset consists of movie reviews with five levels of sentiment labels: veryNegative, negative, neutral, positive, and veryPositive. The task is to classify each movie review into one of these five sentiment categories. The class mentioned first in the response of the LLM will be the prediction.",
     x_column="text",
     y_column="label_text",
 )
@@ -73,6 +84,7 @@ optimizer = CAPOptimizer(
     upper_shots=6,
     max_n_blocks_eval=30,
     p_few_shot_reasoning=0.5,
+    n_trials_generation_reasoning=5,
     few_shot_split_size=FS_SPLIT,
     test_statistic=test_statistic,
     predictor=predictor,

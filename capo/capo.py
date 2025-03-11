@@ -9,7 +9,7 @@ from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.predictors.base_predictor import BasePredictor
 from promptolution.tasks.base_task import BaseTask
 
-from capo.templates import CROSSOVER_TEMPLATE, DOWNSTREAM_TEMPLATE, MUTATION_TEMPLATE
+from capo.templates import CROSSOVER_TEMPLATE, MUTATION_TEMPLATE
 from capo.utils import Prompt
 
 
@@ -30,6 +30,7 @@ class CAPOptimizer(BaseOptimizer):
         crossovers_per_iter: int,
         upper_shots: int,
         p_few_shot_reasoning: float,
+        n_trials_generation_reasoning: int,
         max_n_blocks_eval: int,
         few_shot_split_size: float,
         test_statistic: Callable,
@@ -54,6 +55,7 @@ class CAPOptimizer(BaseOptimizer):
             crossovers_per_iter (int): Number of crossover operations per iteration.
             upper_shots (int): Maximum number of few-shot examples per prompt.
             p_few_shot_reasoning (float): Probability of generating llm-reasoning for few-shot examples, instead of simply using input-output pairs.
+            n_trials_generation_reasoning (int): Number of trials to generate reasoning for few-shot examples.
             max_n_blocks_eval (int): Maximum number of evaluation blocks.
             test_statistic (Callable): Function to test significance between prompts.
                 Inputs are (score_a, score_b, n_evals) and returns True if A is better.
@@ -86,6 +88,7 @@ class CAPOptimizer(BaseOptimizer):
         self.crossovers_per_iter = crossovers_per_iter
         self.upper_shots = upper_shots
         self.p_few_shot_reasoning = p_few_shot_reasoning
+        self.n_trials_generation_reasoning = n_trials_generation_reasoning
         self.max_n_blocks_eval = max_n_blocks_eval
         self.test_statistic = test_statistic
 
@@ -124,31 +127,25 @@ class CAPOptimizer(BaseOptimizer):
         self, instruction: str, num_examples: int
     ) -> List[Tuple[str, str]]:
         selected_indices = random.sample(self.task.few_shots, num_examples)
-        few_shots = []
-        for idx in selected_indices:
-            sample_input = self.task.xs[idx]
-            sample_target = self.task.ys[idx]
-            # in half of the cases generate reasoning from downstream model
-            few_shot = f"Input: {sample_input}\nOutput: {sample_target}"
+        sample_inputs = np.array([self.task.xs[idx] for idx in selected_indices])
+        sample_targets = np.array([self.task.ys[idx] for idx in selected_indices])
+        few_shots = [f"Input: {i}\nOutput: {t}" for i, t in zip(sample_inputs, sample_targets)]
 
-            if random.random() < self.p_few_shot_reasoning:
-                n_trials = 0
-                while n_trials < 5:
-                    n_trials += 1
-                    pred, seq = self.predictor.predict(
-                        [
-                            DOWNSTREAM_TEMPLATE.replace("<input>", sample_input).replace(
-                                "<instruction>", instruction
-                            )
-                        ],
-                        [sample_input],
-                        return_seq=True,
-                    )
-                    pred = str(pred[0][0])
-                    if pred == sample_target:
-                        few_shot = seq[0]
-                        break
-            few_shots.append(few_shot)
+        # select partition of the examples to generate reasoning from downstream model
+        generate_reasoning_idx = random.sample(
+            range(num_examples), int(num_examples * self.p_few_shot_reasoning)
+        )
+        preds, seqs = self.predictor.predict(
+            [instruction] * self.n_trials_generation_reasoning,
+            sample_inputs[generate_reasoning_idx],
+            return_seq=True,
+        )  # output shape: (n_trials, n_reasoning_examples)
+
+        # check which predictions are correct and get a single one per example
+        for i, idx in enumerate(generate_reasoning_idx):
+            correct_idx = np.where(preds[i] == sample_targets[idx])[0]
+            if len(correct_idx) > 0:
+                few_shots[idx] = seqs[i][correct_idx[0]]
 
         return few_shots
 
@@ -169,7 +166,7 @@ class CAPOptimizer(BaseOptimizer):
             crossover_prompt = (
                 self.crossover_meta_prompt.replace("<mother>", mother.instruction_text)
                 .replace("<father>", father.instruction_text)
-                .replace("<taskdescription>", self.task.description)
+                .replace("<task_desc>", self.task.description)
                 .strip()
             )
             # collect crossover prompts and than passing them bundled to the meta llm => faster
@@ -242,7 +239,9 @@ class CAPOptimizer(BaseOptimizer):
             )
 
             # subtract length penalty
-            prompt_lengths = np.array([len(c.construct_prompt().split()) for c in candidates])
+            prompt_lengths = np.array(
+                [len(c.construct_prompt().split()) for c in candidates]
+            )  # TODO: token count instead of word count
             rel_prompt_lengths = prompt_lengths / self.max_prompt_length
 
             new_scores = new_scores - self.length_penalty * rel_prompt_lengths[:, None]
