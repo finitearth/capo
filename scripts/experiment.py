@@ -1,6 +1,7 @@
 """Main script to run all experiments."""
 
 import argparse
+import os
 import random
 from logging import getLogger
 
@@ -14,6 +15,7 @@ from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 from capo.capo import CAPOptimizer
 from capo.dataset_utils.load_datasets import get_initial_prompts, get_tasks
 from capo.statistical_tests import paired_t_test
+from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
 from capo.utils import generate_random_hash
 
 parser = argparse.ArgumentParser()
@@ -43,6 +45,7 @@ parser.add_argument("--population-size", type=int)
 
 # optimizer-specific parameters: EvoPromptGA
 parser.add_argument("--n-eval-samples", type=int)
+parser.add_argument("--evoprompt-ga-template", default="standard")
 
 # optimizer-specific parameters: CAPO
 parser.add_argument("--block-size", type=int)
@@ -59,6 +62,9 @@ args = parser.parse_args()
 logger = getLogger(__name__)
 
 if __name__ == "__main__":
+    # create output directory
+    os.makedirs(args.output_dir, exist_ok=True)
+
     # set-up callbacks
     callbacks = [
         LoggerCallback(logger),
@@ -93,12 +99,22 @@ if __name__ == "__main__":
     # initialize population
     initial_prompts = random.sample(dev_task.initial_prompts, args.population_size)
 
+    # set-up EvoPromptGA template
+    if args.evoprompt_ga_template == "standard":
+        evoprompt_template = EVOPROMPT_GA_TEMPLATE
+    elif args.evoprompt_ga_template == "simplified":
+        evoprompt_template = EVOPROMPT_GA_SIMPLIFIED_TEMPLATE.replace(
+            "<task_desc>", dev_task.description
+        )
+    else:
+        raise ValueError(f"Template {args.evoprompt_ga_template} not supported.")
+
     # initialize optimizer
     optimizer: BaseOptimizer
     if args.optimizer == "EvoPromptGA":
         optimizer = EvoPromptGA(
             task=dev_task,
-            prompt_template=EVOPROMPT_GA_TEMPLATE,
+            prompt_template=evoprompt_template,
             predictor=predictor,
             meta_llm=meta_llm,
             initial_prompts=initial_prompts,

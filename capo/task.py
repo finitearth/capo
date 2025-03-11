@@ -53,6 +53,7 @@ class CAPOTask(BaseTask):
         to_be_evaluated = [
             prompt for prompt in prompts if (prompt, block_id) not in self.prompt_score_cache
         ]
+
         preds = predictor.predict(to_be_evaluated, xs)  # shape: P x N
         for prompt, pred in zip(to_be_evaluated, preds):
             score = np.array([self.metric([y], [p]) for y, p in zip(ys, pred)])

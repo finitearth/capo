@@ -196,7 +196,9 @@ class CAPOptimizer(BaseOptimizer):
         """
         # collect mutation prompts and than passing them bundled to the meta llm => faster
         mutation_prompts = [
-            self.mutation_meta_prompt.replace("<instruction>", prompt.instruction_text)
+            self.mutation_meta_prompt.replace("<instruction>", prompt.instruction_text).replace(
+                "<task_desc>", self.task.description
+            )
             for prompt in offsprings
         ]
         new_instructions = self.meta_llm.get_response(mutation_prompts)
