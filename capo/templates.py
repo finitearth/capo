@@ -2,7 +2,8 @@ FEW_SHOT_TEMPLATE = """<instruction>
 
 <examples>"""
 
-CROSSOVER_TEMPLATE = """Merge the following two sentences into a single coherent sentence. Maintain the key linguistic features from both original sentences:
+CROSSOVER_TEMPLATE = """Please do the following for this task: <task_desc>
+Merge the following two sentences into a single coherent sentence. Maintain the key linguistic features from both original sentences:
 Prompt 1: <mother>
 Prompt 2: <father>
 
