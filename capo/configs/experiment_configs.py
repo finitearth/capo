@@ -1,3 +1,5 @@
+"""Experiment configurations for all experiments in the paper."""
+
 from capo.configs.base_config import ExperimentConfig, ModelConfig, OptimizerConfig
 
 llama = ModelConfig(
@@ -36,6 +38,7 @@ BENCHMARK_CONFIG = ExperimentConfig(
                 "n_steps": 999,
                 "population_size": 10,
                 "n_eval_samples": 300,
+                "evoprompt_ga_template": "standard",
             },
         ),
         OptimizerConfig(
@@ -53,6 +56,140 @@ BENCHMARK_CONFIG = ExperimentConfig(
                 "shuffle_blocks_per_iter": True,
             },
         ),
+    ],
+    random_seeds=[42, 43, 44],
+    budget_per_run=10_000_000,
+    output_dir="results/",
+)
+
+
+ABLATION_CONFIG = ExperimentConfig(
+    name="ablation_experiment",
+    datasets=["agnews", "rte"],
+    models=[llama],
+    optimizers=[
+        OptimizerConfig(
+            name="CAPO_zero_shot",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "block_size": 30,
+                "length_penalty": 0.05,
+                "crossovers_per_iter": 4,
+                "upper_shots": 0,  # TODO: to be checked
+                "max_n_blocks_eval": 10,
+                "alpha": 0.2,
+                "shuffle_blocks_per_iter": True,
+            },
+        ),
+        OptimizerConfig(
+            name="CAPO_no_length_penalty",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "block_size": 30,
+                "length_penalty": 0.0,  # TODO: to be checked
+                "crossovers_per_iter": 4,
+                "upper_shots": 3,
+                "max_n_blocks_eval": 10,
+                "alpha": 0.2,
+                "shuffle_blocks_per_iter": True,
+            },
+        ),
+        OptimizerConfig(
+            name="CAPO_no_racing",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "block_size": 300,  # TODO: to be checked
+                "length_penalty": 0.05,
+                "crossovers_per_iter": 4,
+                "upper_shots": 3,
+                "max_n_blocks_eval": 1,  # TODO: to be checked
+                "alpha": 0.2,
+                "shuffle_blocks_per_iter": True,
+            },
+        ),
+        OptimizerConfig(
+            name="EvoPromptGA_simplified_with_TD",
+            optimizer="EvoPromptGA",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "n_eval_samples": 300,
+                "evoprompt_ga_template": "simplified",
+            },
+        ),
+    ],
+    random_seeds=[42, 43, 44],
+    budget_per_run=10_000_000,
+    output_dir="results/",
+)
+
+length_penalty_grid = [0.01, 0.02, 0.05, 0.1]
+population_size_grid = [6, 8, 10, 12]
+ncrossovers_grid = [4, 7, 10]
+
+HYPERPARAMETER_CONFIG = ExperimentConfig(
+    name="hyperparameter_experiment",
+    datasets=["agnews", "rte"],
+    models=[llama],
+    optimizers=[
+        OptimizerConfig(
+            name=f"CAPO_gamma_{length_penalty}",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "block_size": 30,
+                "length_penalty": length_penalty,
+                "crossovers_per_iter": 4,
+                "upper_shots": 3,
+                "max_n_blocks_eval": 10,
+                "alpha": 0.2,
+                "shuffle_blocks_per_iter": True,
+            },
+        )
+        for length_penalty in length_penalty_grid
+    ]
+    + [
+        OptimizerConfig(
+            name=f"CAPO_pop_{population_size}",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": population_size,
+                "block_size": 30,
+                "length_penalty": 0.05,
+                "crossovers_per_iter": 4,
+                "upper_shots": 3,
+                "max_n_blocks_eval": 10,
+                "alpha": 0.2,
+                "shuffle_blocks_per_iter": True,
+            },
+        )
+        for population_size in population_size_grid
+    ]
+    + [
+        OptimizerConfig(
+            name=f"CAPO_ncrossovers_{ncrossovers}",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "block_size": 30,
+                "length_penalty": 0.05,
+                "crossovers_per_iter": ncrossovers,
+                "upper_shots": 3,
+                "max_n_blocks_eval": 10,
+                "alpha": 0.2,
+                "shuffle_blocks_per_iter": True,
+            },
+        )
+        for ncrossovers in ncrossovers_grid
     ],
     random_seeds=[42, 43, 44],
     budget_per_run=10_000_000,
