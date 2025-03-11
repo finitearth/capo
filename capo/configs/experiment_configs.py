@@ -1,4 +1,4 @@
-from base_config import ExperimentConfig, ModelConfig, OptimizerConfig
+from capo.configs.base_config import ExperimentConfig, ModelConfig, OptimizerConfig
 
 llama = ModelConfig(
     model="shuyuej/Llama-3.3-70B-Instruct-GPTQ",
