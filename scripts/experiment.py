@@ -12,6 +12,7 @@ from promptolution.predictors import FirstOccurrenceClassificator, MarkerBasedCl
 from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
 from capo.capo import CAPOptimizer
+from capo.dataset_utils.load_datasets import get_initial_prompts, get_tasks
 from capo.statistical_tests import paired_t_test
 from capo.utils import generate_random_hash
 
@@ -78,7 +79,8 @@ if __name__ == "__main__":
     meta_llm = llm
 
     # set-up task (including task description and initial prompts)
-    fewshot_task, dev_task = ...  # from args.dataset
+    dev_task, fs_task, test_task = get_tasks(args.dataset, args.optimizer)
+    initial_prompts = get_initial_prompts(args.dataset)
 
     # set-up predictor
     if args.dataset in ...:
