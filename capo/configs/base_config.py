@@ -21,6 +21,7 @@ class OptimizerConfig:
 @dataclass
 class ModelConfig:
     model: ModelType
+    alias: str
     max_model_len: int
     batch_size: int
     model_storage_path: Path

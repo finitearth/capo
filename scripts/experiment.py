@@ -1,6 +1,7 @@
 """Main script to run all experiments."""
 
 import argparse
+import os
 import random
 from logging import getLogger
 
@@ -60,6 +61,9 @@ args = parser.parse_args()
 logger = getLogger(__name__)
 
 if __name__ == "__main__":
+    # create output directory
+    os.makedirs(args.output_dir, exist_ok=True)
+
     # set-up callbacks
     callbacks = [
         LoggerCallback(logger),
