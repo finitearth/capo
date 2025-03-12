@@ -1,6 +1,6 @@
 from typing import List
 
-from capo.templates import FEW_SHOT_TEMPLATE
+from capo.templates import DOWNSTREAM_TEMPLATE
 
 
 class Prompt:
@@ -17,7 +17,7 @@ class Prompt:
             few_shots (List[str]): List of examples as string.
         """
         self.instruction_text = instruction_text.strip()
-        self.few_shots = few_shots  # List of (sample_input, response)
+        self.few_shots = few_shots
 
     def construct_prompt(self) -> str:
         """
@@ -28,9 +28,9 @@ class Prompt:
             str: The constructed prompt string.
         """
         few_shot_str = "\n\n".join(self.few_shots).strip()
-        prompt = FEW_SHOT_TEMPLATE.replace("<instruction>", self.instruction_text.strip()).replace(
-            "<examples>", few_shot_str
-        )
+        prompt = DOWNSTREAM_TEMPLATE.replace(
+            "<instruction>", self.instruction_text.strip()
+        ).replace("<few_shots>", few_shot_str)
         return prompt
 
     def __str__(self):

@@ -1,6 +1,13 @@
-FEW_SHOT_TEMPLATE = """<instruction>
+DOWNSTREAM_TEMPLATE = """<instruction>
 
-<examples>"""
+<few_shots>
+
+
+Input: <input>
+Output:"""
+
+FEWSHOT_TEMPLATE = """Input: <input>
+Output: <output>"""
 
 CROSSOVER_TEMPLATE = """You receive two prompts for the following task: <task_desc>
 Please merge the two prompts into a single coherent prompt. Maintain the key linguistic features from both original prompts:

@@ -12,7 +12,7 @@ from promptolution.tasks.base_task import BaseTask
 
 from capo.prompt import Prompt
 from capo.task import CAPOClassificationTask
-from capo.templates import CROSSOVER_TEMPLATE, MUTATION_TEMPLATE
+from capo.templates import CROSSOVER_TEMPLATE, FEWSHOT_TEMPLATE, MUTATION_TEMPLATE
 
 
 class CAPOptimizer(BaseOptimizer):
@@ -139,7 +139,12 @@ class CAPOptimizer(BaseOptimizer):
         few_shot_samples = self.df_few_shots.sample(num_examples, replace=True)
         sample_inputs = few_shot_samples["input"].values
         sample_targets = few_shot_samples["target"].values
-        few_shots = [f"Input: {i}\nOutput: {t}" for i, t in zip(sample_inputs, sample_targets)]
+        few_shots = [
+            FEWSHOT_TEMPLATE.replace("<input>", i).replace(
+                "<output>", f"{self.predictor.begin_marker} {t} {self.predictor.end_marker}"
+            )
+            for i, t in zip(sample_inputs, sample_targets)
+        ]
 
         # select partition of the examples to generate reasoning from downstream model
         generate_reasoning_idx = random.sample(
