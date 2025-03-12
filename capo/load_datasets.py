@@ -12,6 +12,7 @@ from capo.task import CAPOClassificationTask
 def get_tasks(
     dataset_name: str,
     optimizer_name: OptimizerType,
+    block_size: int,
     dev_size: int = 300,
     fs_size: int = 200,
     test_size: int = 500,
@@ -63,38 +64,44 @@ def get_tasks(
         raise ValueError("Not enough data in training split to create dev and few-shot splits")
 
     for df in [dev_df, fs_df, test_df]:
-        for target_col, source in config["columns"].items():
-            if callable(source):
-                df[target_col] = source(df)
-            else:
-                df[target_col] = df[source]
+        if callable(config.input):
+            df["input"] = config.input(df)
+        else:
+            df["input"] = df[config.input]
+
+        if callable(config.target):
+            df["target"] = config.target(df)
+        else:
+            df["target"] = df[config.target]
 
     # create a task from each dataset
     if optimizer_name == "CAPO":
         dev_task = CAPOClassificationTask(
-            dev_df,
+            df=dev_df,
             description=config.task_description,
             initial_prompts=config.initial_prompts,
             x_column="input",
             y_column="target",
+            block_size=block_size,
         )
         test_task = CAPOClassificationTask(
-            test_df,
+            df=test_df,
             description=config.task_description,
             initial_prompts=config.initial_prompts,
             x_column="input",
             y_column="target",
+            block_size=block_size,
         )
     else:
         dev_task = ClassificationTask(
-            dev_df,
+            df=dev_df,
             description=config.task_description,
             initial_prompts=config.initial_prompts,
             x_column="input",
             y_column="target",
         )
         test_task = ClassificationTask(
-            test_df,
+            df=test_df,
             description=config.task_description,
             initial_prompts=config.initial_prompts,
             x_column="input",

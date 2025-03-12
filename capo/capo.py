@@ -29,7 +29,6 @@ class CAPOptimizer(BaseOptimizer):
         meta_llm: BaseLLM,
         downstream_llm: BaseLLM,
         length_penalty: float,
-        block_size: int,
         crossovers_per_iter: int,
         upper_shots: int,
         p_few_shot_reasoning: float,
@@ -54,7 +53,6 @@ class CAPOptimizer(BaseOptimizer):
             meta_llm (BaseLLM): The meta language model for crossover/mutation.
             downstream_llm (BaseLLM): The downstream language model used for responses.
             length_penalty (float): Penalty factor for prompt length.
-            block_size (int): Number of samples per evaluation block.
             crossovers_per_iter (int): Number of crossover operations per iteration.
             upper_shots (int): Maximum number of few-shot examples per prompt.
             p_few_shot_reasoning (float): Probability of generating llm-reasoning for few-shot examples, instead of simply using input-output pairs.
@@ -91,7 +89,6 @@ class CAPOptimizer(BaseOptimizer):
         self.mutation_meta_prompt = mutation_meta_prompt or MUTATION_TEMPLATE
 
         self.population_size = len(initial_prompts)
-        self.block_size = block_size
         self.crossovers_per_iter = crossovers_per_iter
         self.upper_shots = upper_shots
         self.p_few_shot_reasoning = p_few_shot_reasoning

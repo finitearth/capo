@@ -91,11 +91,13 @@ if __name__ == "__main__":
 
     # set-up task (including task description and initial prompts)
     dev_task, df_fewshots, test_task = get_tasks(
-        args.dataset, args.optimizer, seed=args.random_seed
+        args.dataset, args.optimizer, seed=args.random_seed, block_size=args.block_size
     )
 
     # set-up predictor
     predictor = MarkerBasedClassificator(downstream_llm, dev_task.classes)
+
+    print(dev_task.initial_prompts)
 
     # initialize population
     initial_prompts = random.sample(dev_task.initial_prompts, args.population_size)
@@ -131,7 +133,6 @@ if __name__ == "__main__":
             meta_llm=meta_llm,
             initial_prompts=initial_prompts,
             callbacks=callbacks,
-            block_size=args.block_size,
             length_penalty=args.length_penalty,
             crossovers_per_iter=args.crossovers_per_iter,
             upper_shots=args.upper_shots,
