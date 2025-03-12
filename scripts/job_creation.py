@@ -7,5 +7,7 @@ if __name__ == "__main__":
     print(len(individual_configs))
 
     for config in individual_configs:
-        command = generate_command(config, time="00:30:00")
+        command = generate_command(
+            config, time="0-01:30:00", gres="gpu:1", partition="mcml-hgx-a100-80x4"
+        )
         print(command)

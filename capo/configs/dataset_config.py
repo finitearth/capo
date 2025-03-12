@@ -1,6 +1,6 @@
 """Dataset configuration for all datasets."""
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Callable, List
 
 from capo.configs.initial_prompts import INITIAL_PROMPTS
@@ -20,9 +20,9 @@ class DatasetConfig:
     revision: str
     input: str | Callable
     target: str | Callable
-    names: SplitConfig = SplitConfig(train=None, test=None)
-    splits: SplitConfig = SplitConfig(train="train", test="test")
-    initial_prompts: List[str] = None
+    names: SplitConfig = field(default_factory=lambda: SplitConfig(train=None, test=None))
+    splits: SplitConfig = field(default_factory=lambda: SplitConfig(train="train", test="test"))
+    initial_prompts: List[str] = field(default_factory=list)
     task_description: str = None
 
 
