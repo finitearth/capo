@@ -71,7 +71,7 @@ if __name__ == "__main__":
     logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
     callbacks = [
         LoggerCallback(logger),
-        CSVCallback(logging_dir + "log.csv"),
+        CSVCallback(logging_dir),
         TokenCountCallback(args.budget_per_run, "input_tokens"),
         PickleCallback(logging_dir),
     ]
