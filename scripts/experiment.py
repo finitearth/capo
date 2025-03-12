@@ -34,7 +34,7 @@ parser.add_argument("--dataset", required=True)
 parser.add_argument("--model", required=True)
 parser.add_argument("--model-revision", required=True)
 parser.add_argument("--max-model-len", type=int, required=True)
-parser.add_argument("--batch-size", type=int, required=True)
+parser.add_argument("--batch-size", type=int, default=None)
 parser.add_argument("--model-storage-path", default="../models/")
 
 # optimizer parameters
