@@ -12,11 +12,12 @@ from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.predictors import FirstOccurrenceClassificator, MarkerBasedClassificator
 from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
+from capo.callbacks import PickleCallback
 from capo.capo import CAPOptimizer
 from capo.dataset_utils.load_datasets import get_initial_prompts, get_tasks
 from capo.statistical_tests import paired_t_test
 from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
-from capo.utils import generate_random_hash
+from capo.utils import generate_random_hash, seed_everything
 
 parser = argparse.ArgumentParser()
 
@@ -65,11 +66,15 @@ if __name__ == "__main__":
     # create output directory
     os.makedirs(args.output_dir, exist_ok=True)
 
+    seed_everything(args.random_seed)
+
     # set-up callbacks
+    logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
     callbacks = [
         LoggerCallback(logger),
-        CSVCallback(args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"),
+        CSVCallback(logging_dir + "log.csv"),
         TokenCountCallback(args.budget_per_run, "input_tokens"),
+        PickleCallback(logging_dir),
     ]
 
     # Set up LLM
@@ -85,7 +90,8 @@ if __name__ == "__main__":
     meta_llm = llm
 
     # set-up task (including task description and initial prompts)
-    dev_task, fs_task, test_task = get_tasks(args.dataset, args.optimizer)
+    dev_task, df_fewshots, test_task = get_tasks(args.dataset, args.optimizer)
+
     initial_prompts = get_initial_prompts(args.dataset)
 
     # set-up predictor
@@ -125,6 +131,8 @@ if __name__ == "__main__":
         optimizer = CAPOptimizer(
             task=dev_task,
             predictor=predictor,
+            df_few_shots=df_fewshots,
+            downstream_llm=downstream_llm,
             meta_llm=meta_llm,
             initial_prompts=initial_prompts,
             callbacks=callbacks,

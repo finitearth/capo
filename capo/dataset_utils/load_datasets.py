@@ -116,45 +116,33 @@ def get_tasks(
 
     # create a task from each dataset
     if optimizer_name == "capo":
-        val_task = CAPOClassificationTask.from_dataframe(
+        val_task = CAPOClassificationTask(
             val_df,
             description=TASK_DESCRIPTIONS[dataset_name],
             x_column="input",
             y_column="target",
         )
-        fs_task = CAPOClassificationTask.from_dataframe(
-            fs_df,
-            description=TASK_DESCRIPTIONS[dataset_name],
-            x_column="input",
-            y_column="target",
-        )
-        test_task = CAPOClassificationTask.from_dataframe(
+        test_task = CAPOClassificationTask(
             test_df,
             description=TASK_DESCRIPTIONS[dataset_name],
             x_column="input",
             y_column="target",
         )
     else:
-        val_task = ClassificationTask.from_dataframe(
+        val_task = ClassificationTask(
             val_df,
             description=TASK_DESCRIPTIONS[dataset_name],
             x_column="input",
             y_column="target",
         )
-        fs_task = ClassificationTask.from_dataframe(
-            fs_df,
-            description=TASK_DESCRIPTIONS[dataset_name],
-            x_column="input",
-            y_column="target",
-        )
-        test_task = ClassificationTask.from_dataframe(
+        test_task = ClassificationTask(
             test_df,
             description=TASK_DESCRIPTIONS[dataset_name],
             x_column="input",
             y_column="target",
         )
 
-    return val_task, fs_task, test_task
+    return val_task, fs_df, test_task
 
 
 def get_initial_prompts(dataset_name: str) -> List:

@@ -4,12 +4,14 @@ from logging import getLogger
 from typing import Callable, List, Tuple
 
 import numpy as np
+import pandas as pd
 from promptolution.llms.base_llm import BaseLLM
 from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.predictors.base_predictor import BasePredictor
 from promptolution.tasks.base_task import BaseTask
 
 from capo.prompt import Prompt
+from capo.task import CAPOClassificationTask
 from capo.templates import CROSSOVER_TEMPLATE, MUTATION_TEMPLATE
 
 
@@ -23,6 +25,7 @@ class CAPOptimizer(BaseOptimizer):
         self,
         initial_prompts: List[str],
         task: BaseTask,
+        df_few_shots: pd.DataFrame,
         meta_llm: BaseLLM,
         downstream_llm: BaseLLM,
         length_penalty: float,
@@ -32,7 +35,6 @@ class CAPOptimizer(BaseOptimizer):
         p_few_shot_reasoning: float,
         n_trials_generation_reasoning: int,
         max_n_blocks_eval: int,
-        few_shot_split_size: float,
         test_statistic: Callable,
         shuffle_blocks_per_iter: bool = True,
         crossover_meta_prompt: str = None,
@@ -48,6 +50,7 @@ class CAPOptimizer(BaseOptimizer):
         Parameters:
             initial_prompts (List[str]): Initial prompt instructions.
             task (BaseTask): The task instance containing dataset and description.
+            df_few_shots (pd.DataFrame): DataFrame containing few-shot examples.
             meta_llm (BaseLLM): The meta language model for crossover/mutation.
             downstream_llm (BaseLLM): The downstream language model used for responses.
             length_penalty (float): Penalty factor for prompt length.
@@ -61,7 +64,6 @@ class CAPOptimizer(BaseOptimizer):
                 Inputs are (score_a, score_b, n_evals) and returns True if A is better.
             shuffle_blocks_per_iter (bool, optional): Whether to shuffle blocks each
                 iteration. Defaults to True.
-            few_shot_split_size (float): Fraction of dataset to use for few-shots.
             crossover_meta_prompt (str, optional): Template for crossover instructions.
             mutation_meta_prompt (str, optional): Template for mutation instructions.
             callbacks (List[Callable], optional): Callbacks for optimizer events.
@@ -69,19 +71,21 @@ class CAPOptimizer(BaseOptimizer):
                 performance.
             verbosity (int, optional): Verbosity level for logging. Defaults to 0.
         """
-        # if not isinstance(task, CAPOTask):
-        #     task = CAPOTask.from_task(task, few_shot_split_size, block_size)
+        assert isinstance(task, CAPOClassificationTask), "CAPOptimizer requires a CAPO task."
 
         # Pass initial_prompts and task to the base optimizer
         super().__init__(initial_prompts, task, callbacks, predictor)
+        self.df_few_shots = df_few_shots
 
         self.meta_llm = meta_llm
         self.downstream_llm = downstream_llm
 
         if hasattr(self.downstream_llm, "tokenizer"):
-            self.token_count = lambda x: len(self.downstream_llm.tokenizer(x)["input_ids"])
+            self.token_count = lambda x: len(
+                self.downstream_llm.tokenizer(x.construct_prompt())["input_ids"]
+            )
         else:
-            self.token_count = lambda x: len(x.split())
+            self.token_count = lambda x: len(x.construct_prompt().split())
 
         self.crossover_meta_prompt = crossover_meta_prompt or CROSSOVER_TEMPLATE
         self.mutation_meta_prompt = mutation_meta_prompt or MUTATION_TEMPLATE
@@ -101,7 +105,8 @@ class CAPOptimizer(BaseOptimizer):
         self.verbosity = verbosity
         self.logger = logger
 
-        self.prompts = self._initialize_population(initial_prompts)
+        self.prompt_objects = self._initialize_population(initial_prompts)
+        self.prompts = [p.construct_prompt() for p in self.prompt_objects]
         self.max_prompt_length = max(self.token_count(p) for p in self.prompts)
 
         self.scores = np.empty(0)
@@ -131,9 +136,9 @@ class CAPOptimizer(BaseOptimizer):
     def _create_few_shot_examples(
         self, instruction: str, num_examples: int
     ) -> List[Tuple[str, str]]:
-        selected_indices = random.sample(self.task.few_shots, num_examples)
-        sample_inputs = np.array([self.task.xs[idx] for idx in selected_indices])
-        sample_targets = np.array([self.task.ys[idx] for idx in selected_indices])
+        few_shot_samples = self.df_few_shots.sample(num_examples, replace=True)
+        sample_inputs = few_shot_samples["input"].values
+        sample_targets = few_shot_samples["target"].values
         few_shots = [f"Input: {i}\nOutput: {t}" for i, t in zip(sample_inputs, sample_targets)]
 
         # select partition of the examples to generate reasoning from downstream model
@@ -329,14 +334,15 @@ class CAPOptimizer(BaseOptimizer):
             List[str]: The final population of prompts after optimization.
         """
         for _ in range(n_steps):
-            offsprings = self._crossover(self.prompts)
+            offsprings = self._crossover(self.prompts_objects)
             mutated = self._mutate(offsprings)
 
             if self.verbosity > 0:
                 self.logger.warning(f"Generated {len(mutated)} mutated prompts.")
                 self.logger.warning(f"Generated Prompts: {[p.construct_prompt() for p in mutated]}")
             combined = self.prompts + mutated
-            self.prompts = self._do_racing(combined, self.population_size)
+            self.prompts_objects = self._do_racing(combined, self.population_size)
+            self.prompts = [p.construct_prompt() for p in self.prompts_objects]
 
             continue_optimization = self._on_step_end()
             if not continue_optimization:
@@ -344,5 +350,4 @@ class CAPOptimizer(BaseOptimizer):
 
         self._on_train_end()
 
-        prompts = [p.construct_prompt() for p in self.prompts]
-        return prompts
+        return self.prompts
