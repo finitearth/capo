@@ -3,7 +3,7 @@
 from capo.configs.base_config import ExperimentConfig, ModelConfig, OptimizerConfig
 
 llama = ModelConfig(
-    model="shuyuej/Llama-3.3-70B-Instruct-GPTQ",
+    model="vllm-shuyuej/Llama-3.3-70B-Instruct-GPTQ",
     alias="llama",
     max_model_len=1024,
     batch_size=None,
@@ -12,7 +12,7 @@ llama = ModelConfig(
 )
 
 qwen = ModelConfig(
-    model="Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4",
+    model="vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4",
     alias="qwen",
     max_model_len=1024,
     batch_size=None,
@@ -21,7 +21,7 @@ qwen = ModelConfig(
 )
 
 mistral = ModelConfig(
-    model="ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE",
+    model="vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE",
     alias="mistral",
     max_model_len=1024,
     batch_size=None,
