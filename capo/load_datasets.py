@@ -74,8 +74,6 @@ def get_tasks(
         else:
             df.loc[:, "target"] = df[config.target]
 
-        print(df.head())
-
     # create a task from each dataset
     if optimizer_name == "CAPO":
         dev_task = CAPOClassificationTask(
