@@ -11,6 +11,7 @@ DATASET_INFO = {
     "sst-5": {
         "name": "SetFit/sst5",
         "revision": "e51bdcd8cd3a30da231967c1a249ba59361279a3",
+        "names": {"train": None, "test": None},
         "splits": {"train": "train", "test": "test"},
         "columns": {
             "input": "text",
@@ -28,18 +29,21 @@ DATASET_INFO = {
     "agnews": {
         "name": "SetFit/ag_news",
         "revision": "ca5ba619eb034211db5f70932b6702efd21e7c73",
+        "names": {"train": None, "test": None},
         "splits": {"train": "train", "test": "test"},
         "columns": {"input": "text", "target": "label_text"},
     },
     "subj": {
         "name": "SetFit/subj",
         "revision": "f3c1162e678417f664d76b21864fdb87b0615fcf",
+        "names": {"train": None, "test": None},
         "splits": {"train": "train", "test": "test"},
         "columns": {"input": "text", "target": "label_text"},
     },
     "rte": {
         "name": "SetFit/rte",
         "revision": "23f2a468b9bc13030f5595a2e5f9307cb165280cmain",
+        "names": {"train": None, "test": None},
         "splits": {"train": "train", "test": "test"},
         "columns": {
             "input": lambda df: df["text1"] + "\n" + df["text2"],
@@ -49,6 +53,7 @@ DATASET_INFO = {
     "gsm8k": {
         "name": "openai/gsm8k",
         "revision": "e53f048856ff4f594e959d75785d2c2d37b678ee",
+        "names": {"train": "main", "test": "main"},
         "splits": {"train": "train", "test": "test"},
         "columns": {
             "input": "question",
@@ -85,11 +90,17 @@ def get_tasks(
     config = DATASET_INFO[dataset_name]
 
     train_df = load_dataset(
-        config["name"], split=config["splits"]["train"], revision=config["revision"]
+        config["name"],
+        name=config["names"]["train"],
+        split=config["splits"]["train"],
+        revision=config["revision"],
     ).to_pandas()
 
     test_df = load_dataset(
-        config["name"], split=config["splits"]["test"], revision=config["revision"]
+        config["name"],
+        name=config["names"]["test"],
+        split=config["splits"]["test"],
+        revision=config["revision"],
     ).to_pandas()
 
     if len(test_df) > test_size:
