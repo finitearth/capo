@@ -356,3 +356,19 @@ class CAPOptimizer(BaseOptimizer):
         self._on_train_end()
 
         return self.prompts
+
+    def __getstate__(self):
+        """Return state values to be pickled."""
+        state = self.__dict__.copy()
+        state.pop("predictor", None)
+        state.pop("logger", None)
+        state.pop("meta_llm", None)
+        state.pop("downstream_llm", None)
+
+        return state
+
+    def __setstate__(self, state):
+        """Restore state from the unpickled state values."""
+        self.__dict__.update(state)
+        self.predictor = None
+        self.logger = getLogger(__name__)
