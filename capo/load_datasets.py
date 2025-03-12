@@ -65,14 +65,16 @@ def get_tasks(
 
     for df in [dev_df, fs_df, test_df]:
         if callable(config.input):
-            df["input"] = config.input(df)
+            df.loc[:, "input"] = config.input(df)
         else:
-            df["input"] = df[config.input]
+            df.loc[:, "input"] = df[config.input]
 
         if callable(config.target):
-            df["target"] = config.target(df)
+            df.loc[:, "target"] = config.target(df)
         else:
-            df["target"] = df[config.target]
+            df.loc[:, "target"] = df[config.target]
+
+        print(df.head())
 
     # create a task from each dataset
     if optimizer_name == "CAPO":

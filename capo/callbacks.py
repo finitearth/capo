@@ -10,7 +10,7 @@ class PickleCallback(Callback):
 
     def on_step_end(self, optimizer):
         self.count += 1
-        with open(self.output_dir + self.count + ".pickle", "wb") as f:
+        with open(f"{self.output_dir}{self.count}.pickle", "wb") as f:
             pickle.dump(optimizer, f)
 
         return True
