@@ -54,7 +54,6 @@ parser.add_argument("--length-penalty", type=float)
 parser.add_argument("--crossovers-per-iter", type=int)
 parser.add_argument("--upper-shots", type=int)
 parser.add_argument("--max-n-blocks-eval", type=int)
-parser.add_argument("--population-size", type=int)
 parser.add_argument("--alpha", type=float)
 parser.add_argument("--shuffle-blocks-per-iter", type=bool)
 
