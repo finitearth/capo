@@ -3724,15 +3724,16 @@ wcwidth = "*"
 
 [[package]]
 name = "promptolution"
-version = "1.3.0"
+version = "1.3.1"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "promptolution-1.3.0-py3-none-any.whl", hash = "sha256:6b55e3c96f5fed1698bb0e38e6113929cae8bf0b669a24d062e21e0e8b82d147"},
+    {file = "promptolution-1.3.1-py3-none-any.whl", hash = "sha256:97ab930b1915ca27e2c087298575cb2c069082483b1b8cff7751077d3ec90695"},
 ]
 
 [package.dependencies]
+datasets = ">=3.3.2,<4.0.0"
 langchain-anthropic = ">=0.1.22,<0.2.0"
 langchain-community = ">=0.2.12,<0.3.0"
 langchain-core = ">=0.2.29,<0.3.0"
@@ -6318,4 +6319,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "a6424c29e43503d88d76386fe5433e7a832666756245da6ff850209d717afcaa"
+content-hash = "d8473201d7495803f1f851128bbaad6517780264d47b90a63a6f569799739328"

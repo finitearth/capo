@@ -107,7 +107,7 @@ class CAPOptimizer(BaseOptimizer):
 
         self.prompt_objects = self._initialize_population(initial_prompts)
         self.prompts = [p.construct_prompt() for p in self.prompt_objects]
-        self.max_prompt_length = max(self.token_count(p) for p in self.prompts)
+        self.max_prompt_length = max(self.token_count(p) for p in self.prompt_objects)
 
         self.scores = np.empty(0)
 
