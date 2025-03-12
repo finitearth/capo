@@ -1,31 +1,28 @@
-TASK_DESCRIPTIONS = {
-    "sst-5": "The dataset consists of movie reviews with five levels of sentiment labels: veryNegative, negative, neutral, positive, and veryPositive. The task is to classify each movie review into one of these five sentiment categories. The class will be extracted between the markers <final_answer> answer </final_answer>.",
-    "agnews": "The dataset contains news articles categorized into four classes: World, Sports, Business, and Sci/Tech. The task is to classify each news article into one of the four categories. The class will be extracted between the markers <final_answer> answer </final_answer>.",
-    "subj": "The dataset contains sentences labeled as either subjective or objective. The task is to classify each sentence as either subjective or objective. The class will be extracted between the markers <final_answer> answer </final_answer>.",
-    "rte": "The dataset contains pairs of sentences where the task is to determine whether the meaning of one sentence can be inferred from the other. The task is to classify each pair as either Entailment (if the second sentence follows logically from the first) or NoEntailment (if the second sentence does not necessarily follow from the first). The class will be extracted between the markers <final_answer> answer </final_answer>.",
-    "gsm8k": "The dataset consists of grade school math word problems that require multi-step reasoning to solve. The task is to solve each word problem and provide the final answer. The final solution will be extracted between the markers <final_answer> answer </final_answer>.",
-}
+"""
+Initial prompts for each dataset.
 
-# Initial prompts for each task where created using the Claude Sonnet 3.7 API https://claude.ai/,
-# prompting it with the following instructions and the task descriptions above:
-# """
-# Please create diverse prompts for the following task. They should be linguistically diverse
-# (but always in English) and have varying lengths and complexities. This means some consist
-# only of a short sentence with a rather high-level description while others elaborate on the
-# task in little more detail.
-#
-# Task: <task_description>
-#
-# Explicitly state this expected format as part of the prompts. Create overall 20 prompts
-# within quotes as an array:
-# """
-#
-# The corresponding chats with Claude Sonnet 3.7 API are given below:
-# sst-5: https://claude.ai/share/b3087202-4aea-4f16-9464-0ed2056c7ec6
-# agnews: https://claude.ai/share/7d8d866f-00eb-480d-b117-355f48b818e1
-# subj: https://claude.ai/share/c11b3edb-e5a0-4c1f-942b-42acacd0bc2b
-# rte: https://claude.ai/share/29166259-0ef0-4cd5-8a84-c68496a1ba6e
-# gsm8k: https://claude.ai/share/94483a7d-9388-4671-bb73-086ef198fce3
+The initial prompts for each dataset where created using the Claude Sonnet 3.7 API https://claude.ai/,
+prompting it with the following instructions and the task descriptions above:
+
+'''
+Please create diverse prompts for the following task. They should be linguistically diverse
+(but always in English) and have varying lengths and complexities. This means some consist
+only of a short sentence with a rather high-level description while others elaborate on the
+task in little more detail.
+
+Task: <task_description>
+
+Explicitly state this expected format as part of the prompts. Create overall 20 prompts
+within quotes as an array:
+'''
+
+The corresponding chats with Claude Sonnet 3.7 API are given below:
+- sst-5: https://claude.ai/share/b3087202-4aea-4f16-9464-0ed2056c7ec6
+- agnews: https://claude.ai/share/7d8d866f-00eb-480d-b117-355f48b818e1
+- subj: https://claude.ai/share/c11b3edb-e5a0-4c1f-942b-42acacd0bc2b
+- rte: https://claude.ai/share/29166259-0ef0-4cd5-8a84-c68496a1ba6e
+- gsm8k: https://claude.ai/share/94483a7d-9388-4671-bb73-086ef198fce3
+"""
 
 
 INITIAL_PROMPTS = {
