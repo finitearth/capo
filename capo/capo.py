@@ -75,10 +75,13 @@ class CAPOptimizer(BaseOptimizer):
         # Pass initial_prompts and task to the base optimizer
         super().__init__(initial_prompts, task, callbacks, predictor)
 
-        self.max_prompt_length = max(len(p.split()) for p in initial_prompts)
-
         self.meta_llm = meta_llm
         self.downstream_llm = downstream_llm
+
+        if hasattr(self.downstream_llm, "tokenizer"):
+            self.token_count = lambda x: len(self.downstream_llm.tokenizer(x)["input_ids"])
+        else:
+            self.token_count = lambda x: len(x.split())
 
         self.crossover_meta_prompt = crossover_meta_prompt or CROSSOVER_TEMPLATE
         self.mutation_meta_prompt = mutation_meta_prompt or MUTATION_TEMPLATE
@@ -99,6 +102,8 @@ class CAPOptimizer(BaseOptimizer):
         self.logger = logger
 
         self.prompts = self._initialize_population(initial_prompts)
+        self.max_prompt_length = max(self.token_count(p) for p in self.prompts)
+
         self.scores = np.empty(0)
 
     def _initialize_population(self, initial_prompts: List[str]) -> List[Prompt]:
@@ -141,6 +146,10 @@ class CAPOptimizer(BaseOptimizer):
             return_seq=True,
         )  # output shape: (n_trials, n_reasoning_examples)
 
+        if self.verbosity > 1:
+            self.logger.warning(f"Few-shot examples: {few_shots}")
+            self.logger.warning(f"Generated reasoning: {seqs}")
+
         # check which predictions are correct and get a single one per example
         for i, idx in enumerate(generate_reasoning_idx):
             correct_idx = np.where(preds[i] == sample_targets[idx])[0]
@@ -176,12 +185,19 @@ class CAPOptimizer(BaseOptimizer):
             offspring_few_shot = random.sample(combined_few_shots, num_few_shots)
             offspring_few_shots.append(offspring_few_shot)
 
-        child_instructions = self.meta_llm.get_response(crossover_prompts)
+        child_instructions = self.meta_llm.get_response(
+            crossover_prompts, return_seq=self.verbosity > 1
+        )
+        if self.verbosity > 1:
+            child_instructions, seq = child_instructions
+            self.logger.warning(f"Generated reasoning: {seq}")
+            self.logger.warning(f"Generated crossover prompts: {child_instructions}")
 
         offsprings = []
         for instruction, examples in zip(child_instructions, offspring_few_shots):
             instruction = instruction.split("<prompt>")[-1].split("</prompt>")[0].strip()
             offsprings.append(Prompt(instruction, examples))
+
         return offsprings
 
     def _mutate(self, offsprings: List[Prompt]) -> List[Prompt]:
@@ -201,7 +217,13 @@ class CAPOptimizer(BaseOptimizer):
             )
             for prompt in offsprings
         ]
-        new_instructions = self.meta_llm.get_response(mutation_prompts)
+        new_instructions = self.meta_llm.get_response(
+            mutation_prompts, return_seq=self.verbosity > 1
+        )
+        if self.verbosity > 1:
+            new_instructions, seq = new_instructions
+            self.logger.warning(f"Generated reasoning: {seq}")
+            self.logger.warning(f"Generated mutation prompts: {new_instructions}")
 
         mutated = []
         for new_instruction, prompt in zip(new_instructions, offsprings):
@@ -217,6 +239,7 @@ class CAPOptimizer(BaseOptimizer):
             combined_examples = old_examples + new_few_shots
             random.shuffle(combined_examples)
             mutated.append(Prompt(new_instruction, combined_examples))
+
         return mutated
 
     def _do_racing(self, candidates: List[Prompt], k: int) -> List[Prompt]:
@@ -234,16 +257,14 @@ class CAPOptimizer(BaseOptimizer):
         if self.shuffle_blocks_per_iter:
             random.shuffle(self.task.blocks)
         block_scores = []
-        for block_id, _ in self.task.blocks:
+        for i, (block_id, _) in enumerate(self.task.blocks):
             # new_scores shape: (n_candidates, n_samples)
             new_scores = self.task.evaluate_on_block(
                 [c.construct_prompt() for c in candidates], block_id, self.predictor
             )
 
             # subtract length penalty
-            prompt_lengths = np.array(
-                [len(c.construct_prompt().split()) for c in candidates]
-            )  # TODO: token count instead of word count
+            prompt_lengths = np.array([self.token_count(c) for c in candidates])
             rel_prompt_lengths = prompt_lengths / self.max_prompt_length
 
             new_scores = new_scores - self.length_penalty * rel_prompt_lengths[:, None]
@@ -257,27 +278,39 @@ class CAPOptimizer(BaseOptimizer):
                     for score in scores
                 ]
             )
+
             # Sum along rows to get number of better scores for each candidate
             n_better = np.sum(comparison_matrix, axis=1)
+
+            if self.verbosity > 1:
+                self.logger.warning(f"Comparison Matrix: {comparison_matrix}")
+                self.logger.warning(f"Number of better scores: {n_better}")
+
+            if self.verbosity > 1:
+                # log eliminated prompts
+                eliminated_prompts = [
+                    c.construct_prompt() for c in compress(candidates, n_better >= k)
+                ]
+                eliminated_scores = scores[n_better >= k]
+                self.logger.warning("Eliminated Prompts:")
+                self.logger.warning(
+                    "\n\n".join(
+                        [
+                            f"Prompt: {p} \n Score: {s}"
+                            for p, s in zip(eliminated_prompts, eliminated_scores)
+                        ]
+                    )
+                )
+
             # Create mask for survivors and filter candidates
             candidates = list(compress(candidates, n_better < k))
             block_scores = [bs[n_better < k] for bs in block_scores]
 
-            if self.verbosity > 0 and len(candidates) < len(self.scores):
-                self.logger.warning(f"Racing: {len(candidates)} prompts remain.")
-                self.logger.warning(
-                    f"Prompts that are eliminated: {[(s, c.construct_prompt()) for i, (s, c) in enumerate(zip(self.scores, self.prompts)) if n_better[i] >= k]}"
-                )
-            elif self.verbosity > 0:
-                self.logger.warning(f"Racing: {len(candidates)} prompts remain.")
-
-            if len(candidates) <= k or block_id == self.max_n_blocks_eval:
-                if self.verbosity > 0:
-                    self.logger.warning(
-                        f"Racing: {len(candidates)} prompts remain after {block_id} blocks."
-                    )
+            if len(candidates) <= k or i == self.max_n_blocks_eval:
                 break
 
+        if self.verbosity > 0:
+            self.logger.warning(f"Racing: {len(candidates)} prompts remain after {i} blocks.")
         scores = np.concatenate(block_scores, axis=1).mean(axis=1)
         order = np.argsort(-scores)[:k]
         candidates = [candidates[i] for i in order]
@@ -307,8 +340,7 @@ class CAPOptimizer(BaseOptimizer):
 
             continue_optimization = self._on_step_end()
             if not continue_optimization:
-                # break
-                pass  # TODO: need to wait for promptolution update!
+                break
 
         self._on_train_end()
 
