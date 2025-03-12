@@ -3,7 +3,7 @@
 from capo.configs.base_config import ExperimentConfig, ModelConfig, OptimizerConfig
 
 llama = ModelConfig(
-    model="shuyuej/Llama-3.3-70B-Instruct-GPTQ",
+    model="vllm-shuyuej/Llama-3.3-70B-Instruct-GPTQ",
     alias="llama",
     max_model_len=1024,
     batch_size=None,
@@ -12,7 +12,7 @@ llama = ModelConfig(
 )
 
 qwen = ModelConfig(
-    model="Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4",
+    model="vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4",
     alias="qwen",
     max_model_len=1024,
     batch_size=None,
@@ -21,7 +21,7 @@ qwen = ModelConfig(
 )
 
 mistral = ModelConfig(
-    model="ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE",
+    model="vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE",
     alias="mistral",
     max_model_len=1024,
     batch_size=None,
@@ -56,7 +56,7 @@ BENCHMARK_CONFIG = ExperimentConfig(
                 "upper_shots": 3,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
-                "shuffle_blocks_per_iter": True,
+                "shuffle_blocks_per_iter": False,
             },
         ),
     ],
@@ -83,7 +83,7 @@ ABLATION_CONFIG = ExperimentConfig(
                 "upper_shots": 0,  # TODO: to be checked
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
-                "shuffle_blocks_per_iter": True,
+                "shuffle_blocks_per_iter": False,
             },
         ),
         OptimizerConfig(
@@ -98,7 +98,7 @@ ABLATION_CONFIG = ExperimentConfig(
                 "upper_shots": 3,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
-                "shuffle_blocks_per_iter": True,
+                "shuffle_blocks_per_iter": False,
             },
         ),
         OptimizerConfig(
@@ -113,7 +113,7 @@ ABLATION_CONFIG = ExperimentConfig(
                 "upper_shots": 3,
                 "max_n_blocks_eval": 1,  # TODO: to be checked
                 "alpha": 0.2,
-                "shuffle_blocks_per_iter": True,
+                "shuffle_blocks_per_iter": False,
             },
         ),
         OptimizerConfig(
@@ -153,7 +153,7 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
                 "upper_shots": 3,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
-                "shuffle_blocks_per_iter": True,
+                "shuffle_blocks_per_iter": False,
             },
         )
         for length_penalty in length_penalty_grid
@@ -171,7 +171,7 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
                 "upper_shots": 3,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
-                "shuffle_blocks_per_iter": True,
+                "shuffle_blocks_per_iter": False,
             },
         )
         for population_size in population_size_grid
@@ -189,7 +189,7 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
                 "upper_shots": 3,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
-                "shuffle_blocks_per_iter": True,
+                "shuffle_blocks_per_iter": False,
             },
         )
         for ncrossovers in ncrossovers_grid

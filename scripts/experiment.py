@@ -9,12 +9,12 @@ from promptolution.callbacks import CSVCallback, LoggerCallback, TokenCountCallb
 from promptolution.llms import get_llm
 from promptolution.optimizers import EvoPromptGA
 from promptolution.optimizers.base_optimizer import BaseOptimizer
-from promptolution.predictors import FirstOccurrenceClassificator, MarkerBasedClassificator
+from promptolution.predictors import MarkerBasedClassificator
 from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
 from capo.callbacks import PickleCallback
 from capo.capo import CAPOptimizer
-from capo.dataset_utils.load_datasets import get_initial_prompts, get_tasks
+from capo.load_datasets import get_tasks
 from capo.statistical_tests import paired_t_test
 from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
 from capo.utils import generate_random_hash, seed_everything
@@ -34,7 +34,7 @@ parser.add_argument("--dataset", required=True)
 parser.add_argument("--model", required=True)
 parser.add_argument("--model-revision", required=True)
 parser.add_argument("--max-model-len", type=int, required=True)
-parser.add_argument("--batch-size", type=int, required=True)
+parser.add_argument("--batch-size", type=int, default=None)
 parser.add_argument("--model-storage-path", default="../models/")
 
 # optimizer parameters
@@ -54,7 +54,6 @@ parser.add_argument("--length-penalty", type=float)
 parser.add_argument("--crossovers-per-iter", type=int)
 parser.add_argument("--upper-shots", type=int)
 parser.add_argument("--max-n-blocks-eval", type=int)
-parser.add_argument("--population-size", type=int)
 parser.add_argument("--alpha", type=float)
 parser.add_argument("--shuffle-blocks-per-iter", type=bool)
 
@@ -72,7 +71,7 @@ if __name__ == "__main__":
     logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
     callbacks = [
         LoggerCallback(logger),
-        CSVCallback(logging_dir + "log.csv"),
+        CSVCallback(logging_dir),
         TokenCountCallback(args.budget_per_run, "input_tokens"),
         PickleCallback(logging_dir),
     ]
@@ -83,24 +82,22 @@ if __name__ == "__main__":
         max_model_len=args.max_model_len,
         batch_size=args.batch_size,
         model_storage_path=args.model_storage_path,
-        revision=args.revision,
+        revision=args.model_revision,
+        seed=args.random_seed,
     )
 
     downstream_llm = llm
     meta_llm = llm
 
     # set-up task (including task description and initial prompts)
-    dev_task, df_fewshots, test_task = get_tasks(args.dataset, args.optimizer)
-
-    initial_prompts = get_initial_prompts(args.dataset)
+    dev_task, df_fewshots, test_task = get_tasks(
+        args.dataset, args.optimizer, seed=args.random_seed, block_size=args.block_size
+    )
 
     # set-up predictor
-    if args.dataset in ...:
-        predictor = FirstOccurrenceClassificator(downstream_llm, dev_task.classes)  # TODO
-    elif args.dataset in ...:
-        predictor = MarkerBasedClassificator(downstream_llm, dev_task.classes)  # TODO
-    else:
-        raise ValueError(f"Task {args.dataset} not supported.")
+    predictor = MarkerBasedClassificator(downstream_llm, dev_task.classes)
+
+    print(dev_task.initial_prompts)
 
     # initialize population
     initial_prompts = random.sample(dev_task.initial_prompts, args.population_size)
@@ -136,7 +133,6 @@ if __name__ == "__main__":
             meta_llm=meta_llm,
             initial_prompts=initial_prompts,
             callbacks=callbacks,
-            block_size=args.block_size,
             length_penalty=args.length_penalty,
             crossovers_per_iter=args.crossovers_per_iter,
             upper_shots=args.upper_shots,
@@ -145,6 +141,7 @@ if __name__ == "__main__":
             n_trials_generation_reasoning=5,
             test_statistic=lambda x, y: paired_t_test(x, y, alpha=args.alpha),
             shuffle_blocks_per_iter=args.shuffle_blocks_per_iter,
+            verbosity=0,
         )
     else:
         raise ValueError(f"Optimizer {args.optimizer} not supported.")

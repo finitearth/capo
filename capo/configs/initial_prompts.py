@@ -1,31 +1,28 @@
-TASK_DESCRIPTIONS = {
-    "sst-5": "The dataset consists of movie reviews with five levels of sentiment labels: veryNegative, negative, neutral, positive, and veryPositive. The task is to classify each movie review into one of these five sentiment categories. The class will be extracted between the markers <final_answer> answer </final_answer>.",
-    "agnews": "The dataset contains news articles categorized into four classes: World, Sports, Business, and Sci/Tech. The task is to classify each news article into one of the four categories. The class will be extracted between the markers <final_answer> answer </final_answer>.",
-    "subj": "The dataset contains sentences labeled as either subjective or objective. The task is to classify each sentence as either subjective or objective. The class will be extracted between the markers <final_answer> answer </final_answer>.",
-    "rte": "The dataset contains pairs of sentences where the task is to determine whether the meaning of one sentence can be inferred from the other. The task is to classify each pair as either Entailment (if the second sentence follows logically from the first) or NoEntailment (if the second sentence does not necessarily follow from the first). The class will be extracted between the markers <final_answer> answer </final_answer>.",
-    "gsm8k": "The dataset consists of grade school math word problems that require multi-step reasoning to solve. The task is to solve each word problem and provide the final answer. The final solution will be extracted between the markers <final_answer> answer </final_answer>.",
-}
+"""
+Initial prompts for each dataset.
 
-# Initial prompts for each task where created using the Claude Sonnet 3.7 API https://claude.ai/,
-# prompting it with the following instructions and the task descriptions above:
-# """
-# Please create diverse prompts for the following task. They should be linguistically diverse
-# (but always in English) and have varying lengths and complexities. This means some consist
-# only of a short sentence with a rather high-level description while others elaborate on the
-# task in little more detail.
-#
-# Task: <task_description>
-#
-# Explicitly state this expected format as part of the prompts. Create overall 20 prompts
-# within quotes as an array:
-# """
-#
-# The corresponding chats with Claude Sonnet 3.7 API are given below:
-# sst-5: https://claude.ai/share/b3087202-4aea-4f16-9464-0ed2056c7ec6
-# agnews: https://claude.ai/share/7d8d866f-00eb-480d-b117-355f48b818e1
-# subj: https://claude.ai/share/c11b3edb-e5a0-4c1f-942b-42acacd0bc2b
-# rte: https://claude.ai/share/29166259-0ef0-4cd5-8a84-c68496a1ba6e
-# gsm8k: https://claude.ai/share/94483a7d-9388-4671-bb73-086ef198fce3
+The initial prompts for each dataset where created using the Claude Sonnet 3.7 API https://claude.ai/,
+prompting it with the following instructions and the task descriptions above:
+
+'''
+Please create diverse prompts for the following task. They should be linguistically diverse
+(but always in English) and have varying lengths and complexities. This means some consist
+only of a short sentence with a rather high-level description while others elaborate on the
+task in little more detail.
+
+Task: <task_description>
+
+Explicitly state this expected format as part of the prompts. Create overall 20 prompts
+within quotes as an array:
+'''
+
+The corresponding chats with Claude Sonnet 3.7 API are given below:
+- sst-5: https://claude.ai/share/b3087202-4aea-4f16-9464-0ed2056c7ec6
+- agnews: https://claude.ai/share/7d8d866f-00eb-480d-b117-355f48b818e1
+- subj: https://claude.ai/share/c11b3edb-e5a0-4c1f-942b-42acacd0bc2b
+- rte: https://claude.ai/share/29166259-0ef0-4cd5-8a84-c68496a1ba6e
+- gsm8k: https://claude.ai/share/94483a7d-9388-4671-bb73-086ef198fce3
+"""
 
 
 INITIAL_PROMPTS = {
@@ -118,25 +115,25 @@ INITIAL_PROMPTS = {
         "Assessment of textual inference: Does sentence 2 follow logically from sentence 1? If it does, the answer is Entailment; if not, the answer is NoEntailment. Place your classification inside <final_answer> </final_answer> markers.",
     ],
     "gsm8k": [
-        "Solve this math word problem using step-by-step reasoning. Put your final answer between <final_answer> tags."
-        "I need help with a multi-step grade school math problem. Can you walk through the solution and place the final result inside <final_answer> answer </final_answer> markers?"
-        "Break down this word problem carefully. Remember to format the final answer within <final_answer> </final_answer> tags."
-        "Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Your final answer must be contained within <final_answer> </final_answer> tags."
-        "Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers."
-        "Work through this grade school word problem methodically. After your explanation, provide the ultimate answer surrounded by <final_answer> tags."
-        "I'm struggling with this math word problem that needs multiple steps to solve. Can you help? Make sure to put your final answer between <final_answer> </final_answer> tags so I can easily find it."
-        "Tackle this elementary math problem by breaking it into logical steps. When you reach the solution, enclose the final answer with <final_answer> and </final_answer> markers for clarity."
-        "Solve step-by-step. Final answer between <final_answer> tags."
-        "This multi-step math problem requires careful reasoning. Please work through it systematically and clearly mark your final answer using <final_answer> </final_answer> format."
-        "Calculate the solution to this grade school word problem. Show your reasoning process, and don't forget to place your final answer within <final_answer> </final_answer> markers as required."
-        "Can you help solve this math word problem? It may take several steps. When you've figured it out, please put the final answer in <final_answer> </final_answer> tags."
-        "I'd appreciate your assistance with this elementary math word problem. Please explain each step of your reasoning and make sure to format the final solution inside <final_answer> </final_answer> markers."
-        "Solve this math problem by breaking it down into smaller parts. Once you reach the conclusion, ensure your final answer appears between <final_answer> and </final_answer> tags."
-        "Work through this word problem step-by-step. I need the answer formatted as <final_answer>your answer</final_answer> at the end of your explanation."
-        "Calling all math wizards! I need help with this tricky multi-step word problem. Walk me through your solution process and wrap the final answer with <final_answer> </final_answer> tags."
-        "Please analyze this elementary school math problem that requires multiple logical steps. After explaining your reasoning, provide the ultimate solution between <final_answer> tags."
-        "I'm having trouble with this grade school math word problem. Can you provide a detailed solution? Make sure to put your final answer between <final_answer> and </final_answer> markers so I can easily identify it."
-        "This problem requires multi-step reasoning to solve correctly. Please walk through your approach and clearly indicate your final answer using the <final_answer> </final_answer> format."
-        "Solve the following math word problem by working through it methodically. Your explanation should be clear, and your final answer must be enclosed within <final_answer> </final_answer> tags as specified."
+        "Solve this math word problem using step-by-step reasoning. Put your final answer between <final_answer> tags.",
+        "I need help with a multi-step grade school math problem. Can you walk through the solution and place the final result inside <final_answer> answer </final_answer> markers?",
+        "Break down this word problem carefully. Remember to format the final answer within <final_answer> </final_answer> tags.",
+        "Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Your final answer must be contained within <final_answer> </final_answer> tags.",
+        "Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.",
+        "Work through this grade school word problem methodically. After your explanation, provide the ultimate answer surrounded by <final_answer> tags.",
+        "I'm struggling with this math word problem that needs multiple steps to solve. Can you help? Make sure to put your final answer between <final_answer> </final_answer> tags so I can easily find it.",
+        "Tackle this elementary math problem by breaking it into logical steps. When you reach the solution, enclose the final answer with <final_answer> and </final_answer> markers for clarity.",
+        "Solve step-by-step. Final answer between <final_answer> tags.",
+        "This multi-step math problem requires careful reasoning. Please work through it systematically and clearly mark your final answer using <final_answer> </final_answer> format.",
+        "Calculate the solution to this grade school word problem. Show your reasoning process, and don't forget to place your final answer within <final_answer> </final_answer> markers as required.",
+        "Can you help solve this math word problem? It may take several steps. When you've figured it out, please put the final answer in <final_answer> </final_answer> tags.",
+        "I'd appreciate your assistance with this elementary math word problem. Please explain each step of your reasoning and make sure to format the final solution inside <final_answer> </final_answer> markers.",
+        "Solve this math problem by breaking it down into smaller parts. Once you reach the conclusion, ensure your final answer appears between <final_answer> and </final_answer> tags.",
+        "Work through this word problem step-by-step. I need the answer formatted as <final_answer>your answer</final_answer> at the end of your explanation.",
+        "Calling all math wizards! I need help with this tricky multi-step word problem. Walk me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.",
+        "Please analyze this elementary school math problem that requires multiple logical steps. After explaining your reasoning, provide the ultimate solution between <final_answer> tags.",
+        "I'm having trouble with this grade school math word problem. Can you provide a detailed solution? Make sure to put your final answer between <final_answer> and </final_answer> markers so I can easily identify it.",
+        "This problem requires multi-step reasoning to solve correctly. Please walk through your approach and clearly indicate your final answer using the <final_answer> </final_answer> format.",
+        "Solve the following math word problem by working through it methodically. Your explanation should be clear, and your final answer must be enclosed within <final_answer> </final_answer> tags as specified.",
     ],
 }
