@@ -129,7 +129,7 @@ class CAPOptimizer(BaseOptimizer):
 
         if self.verbosity > 0:
             self.logger.warning(
-                f"Initialized population with {len(population)} prompts: \n {[p.construct_prompt() for p in population]}"
+                f"🍿Initialized population with {len(population)} prompts: \n {[p.construct_prompt() for p in population]}"
             )
         return population
 
@@ -157,8 +157,8 @@ class CAPOptimizer(BaseOptimizer):
         )  # output shape: (n_trials, n_reasoning_examples)
 
         if self.verbosity > 1:
-            self.logger.warning(f"Few-shot examples: {few_shots}")
-            self.logger.warning(f"Generated reasoning: {seqs}")
+            self.logger.warning(f"🔫Few-shot examples: {few_shots}")
+            self.logger.warning(f"💆‍♂️Generated reasoning: {seqs}")
 
         # check which predictions are correct and get a single one per example
         for i, idx in enumerate(generate_reasoning_idx):
@@ -195,13 +195,10 @@ class CAPOptimizer(BaseOptimizer):
             offspring_few_shot = random.sample(combined_few_shots, num_few_shots)
             offspring_few_shots.append(offspring_few_shot)
 
-        child_instructions = self.meta_llm.get_response(
-            crossover_prompts, return_seq=self.verbosity > 1
-        )
+        child_instructions = self.meta_llm.get_response(crossover_prompts)
         if self.verbosity > 1:
-            child_instructions, seq = child_instructions
-            self.logger.warning(f"Generated reasoning: {seq}")
-            self.logger.warning(f"Generated crossover prompts: {child_instructions}")
+            self.logger.warning(f"💆‍♂️Generated reasoning: \n{child_instructions}")
+            self.logger.warning(f"🥐Generated crossover prompts: \n{child_instructions}")
 
         offsprings = []
         for instruction, examples in zip(child_instructions, offspring_few_shots):
@@ -227,13 +224,9 @@ class CAPOptimizer(BaseOptimizer):
             )
             for prompt in offsprings
         ]
-        new_instructions = self.meta_llm.get_response(
-            mutation_prompts, return_seq=self.verbosity > 1
-        )
+        new_instructions = self.meta_llm.get_response(mutation_prompts)
         if self.verbosity > 1:
-            new_instructions, seq = new_instructions
-            self.logger.warning(f"Generated reasoning: {seq}")
-            self.logger.warning(f"Generated mutation prompts: {new_instructions}")
+            self.logger.warning(f"🧟Generated mutation prompts: \n{new_instructions}")
 
         mutated = []
         for new_instruction, prompt in zip(new_instructions, offsprings):
@@ -293,8 +286,8 @@ class CAPOptimizer(BaseOptimizer):
             n_better = np.sum(comparison_matrix, axis=1)
 
             if self.verbosity > 1:
-                self.logger.warning(f"Comparison Matrix: {comparison_matrix}")
-                self.logger.warning(f"Number of better scores: {n_better}")
+                self.logger.warning(f"🛝Comparison Matrix: \n{comparison_matrix}")
+                self.logger.warning(f"🔢Number of better scores: {n_better}")
 
             if self.verbosity > 1:
                 # log eliminated prompts
@@ -302,7 +295,7 @@ class CAPOptimizer(BaseOptimizer):
                     c.construct_prompt() for c in compress(candidates, n_better >= k)
                 ]
                 eliminated_scores = scores[n_better >= k]
-                self.logger.warning("Eliminated Prompts:")
+                self.logger.warning("⚰️Eliminated Prompts:")
                 self.logger.warning(
                     "\n\n".join(
                         [
@@ -320,7 +313,7 @@ class CAPOptimizer(BaseOptimizer):
                 break
 
         if self.verbosity > 0:
-            self.logger.warning(f"Racing: {len(candidates)} prompts remain after {i} blocks.")
+            self.logger.warning(f"🏎️Racing: {len(candidates)} prompts remain after {i} blocks.")
         scores = np.concatenate(block_scores, axis=1).mean(axis=1)
         order = np.argsort(-scores)[:k]
         candidates = [candidates[i] for i in order]
@@ -339,15 +332,17 @@ class CAPOptimizer(BaseOptimizer):
             List[str]: The final population of prompts after optimization.
         """
         for _ in range(n_steps):
-            offsprings = self._crossover(self.prompts_objects)
+            offsprings = self._crossover(self.prompt_objects)
             mutated = self._mutate(offsprings)
 
             if self.verbosity > 0:
-                self.logger.warning(f"Generated {len(mutated)} mutated prompts.")
-                self.logger.warning(f"Generated Prompts: {[p.construct_prompt() for p in mutated]}")
-            combined = self.prompts + mutated
-            self.prompts_objects = self._do_racing(combined, self.population_size)
-            self.prompts = [p.construct_prompt() for p in self.prompts_objects]
+                self.logger.warning(f"🧟Generated {len(mutated)} mutated prompts.")
+                self.logger.warning(
+                    f"😶Generated Prompts: {[p.construct_prompt() for p in mutated]}"
+                )
+            combined = self.prompt_objects + mutated
+            self.prompt_objects = self._do_racing(combined, self.population_size)
+            self.prompts = [p.construct_prompt() for p in self.prompt_objects]
 
             continue_optimization = self._on_step_end()
             if not continue_optimization:

@@ -3,8 +3,7 @@ DOWNSTREAM_TEMPLATE = """<instruction>
 <few_shots>
 
 
-Input: <input>
-Output:"""
+Input: """
 
 FEWSHOT_TEMPLATE = """Input: <input>
 Output: <output>"""
