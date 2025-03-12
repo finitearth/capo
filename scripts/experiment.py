@@ -82,7 +82,7 @@ if __name__ == "__main__":
         max_model_len=args.max_model_len,
         batch_size=args.batch_size,
         model_storage_path=args.model_storage_path,
-        revision=args.revision,
+        revision=args.model_revision,
         seed=args.random_seed,
     )
 
