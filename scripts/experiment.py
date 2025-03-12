@@ -9,12 +9,12 @@ from promptolution.callbacks import CSVCallback, LoggerCallback, TokenCountCallb
 from promptolution.llms import get_llm
 from promptolution.optimizers import EvoPromptGA
 from promptolution.optimizers.base_optimizer import BaseOptimizer
-from promptolution.predictors import FirstOccurrenceClassificator, MarkerBasedClassificator
+from promptolution.predictors import MarkerBasedClassificator
 from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
 from capo.callbacks import PickleCallback
 from capo.capo import CAPOptimizer
-from capo.dataset_utils.load_datasets import get_initial_prompts, get_tasks
+from capo.load_datasets import get_tasks
 from capo.statistical_tests import paired_t_test
 from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
 from capo.utils import generate_random_hash, seed_everything
@@ -84,23 +84,19 @@ if __name__ == "__main__":
         batch_size=args.batch_size,
         model_storage_path=args.model_storage_path,
         revision=args.revision,
+        seed=args.random_seed,
     )
 
     downstream_llm = llm
     meta_llm = llm
 
     # set-up task (including task description and initial prompts)
-    dev_task, df_fewshots, test_task = get_tasks(args.dataset, args.optimizer)
-
-    initial_prompts = get_initial_prompts(args.dataset)
+    dev_task, df_fewshots, test_task = get_tasks(
+        args.dataset, args.optimizer, seed=args.random_seed
+    )
 
     # set-up predictor
-    if args.dataset in ...:
-        predictor = FirstOccurrenceClassificator(downstream_llm, dev_task.classes)  # TODO
-    elif args.dataset in ...:
-        predictor = MarkerBasedClassificator(downstream_llm, dev_task.classes)  # TODO
-    else:
-        raise ValueError(f"Task {args.dataset} not supported.")
+    predictor = MarkerBasedClassificator(downstream_llm, dev_task.classes)
 
     # initialize population
     initial_prompts = random.sample(dev_task.initial_prompts, args.population_size)
@@ -145,6 +141,7 @@ if __name__ == "__main__":
             n_trials_generation_reasoning=5,
             test_statistic=lambda x, y: paired_t_test(x, y, alpha=args.alpha),
             shuffle_blocks_per_iter=args.shuffle_blocks_per_iter,
+            verbosity=0,
         )
     else:
         raise ValueError(f"Optimizer {args.optimizer} not supported.")
