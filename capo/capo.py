@@ -2,7 +2,6 @@ import random
 from itertools import compress
 from logging import getLogger
 from typing import Callable, List, Tuple
-
 import numpy as np
 import pandas as pd
 from promptolution.llms.base_llm import BaseLLM
