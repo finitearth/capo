@@ -53,8 +53,8 @@ def generate_command(
     if qos is not None:
         command += f" --qos={qos}"
     command += f" --job-name={config.name}"
-    command += f" --output={config.output_dir}/%x-%j.out"
-    command += f" --error={config.output_dir}/%x-%j.err"
+    command += " --output=logs/%x-%j.out"
+    command += " --error=logs/%x-%j.err"
     command += ' --wrap "poetry run python scripts/experiment.py'
 
     # Add all the parameters

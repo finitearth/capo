@@ -29,7 +29,7 @@ class NumberOfEvalsCallback(Callback):
     def __init__(self, dir):
         self.dir = dir
 
-    def on_train_end(self, optimizer):
+    def on_step_end(self, optimizer):
         if hasattr(optimizer.task, "prompt_score_cache"):
             eval_dict = optimizer.task.prompt_score_cache  # (prompt, block_id): score
             with open(f"{self.dir}/block_evals.json", "w") as f:
