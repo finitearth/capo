@@ -4,7 +4,6 @@ import argparse
 import os
 import random
 from logging import getLogger
-from copy import deepcopy
 
 from promptolution.callbacks import LoggerCallback, TokenCountCallback
 from promptolution.llms import get_llm
@@ -13,12 +12,12 @@ from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.predictors import MarkerBasedClassificator
 from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
-from capo.callbacks import PickleCallback, CSVCallback
+from capo.callbacks import CSVCallback, PickleCallback
 from capo.capo import CAPOptimizer
 from capo.load_datasets import get_tasks
 from capo.statistical_tests import paired_t_test
 from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
-from capo.utils import generate_random_hash, seed_everything, copy_llm
+from capo.utils import copy_llm, generate_random_hash, seed_everything
 
 parser = argparse.ArgumentParser()
 
@@ -142,7 +141,7 @@ if __name__ == "__main__":
             n_trials_generation_reasoning=5,
             test_statistic=lambda x, y: paired_t_test(x, y, alpha=args.alpha),
             shuffle_blocks_per_iter=args.shuffle_blocks_per_iter,
-            verbosity=0,
+            verbosity=1,
         )
     else:
         raise ValueError(f"Optimizer {args.optimizer} not supported.")
