@@ -2,6 +2,7 @@ import random
 from itertools import compress
 from logging import getLogger
 from typing import Callable, List, Tuple
+
 import numpy as np
 import pandas as pd
 from promptolution.llms.base_llm import BaseLLM
@@ -152,6 +153,8 @@ class CAPOptimizer(BaseOptimizer):
             return_seq=True,
         )  # output shape: (n_trials, n_reasoning_examples)
 
+        seqs_without_input = [s.replace(sample_inputs[i], "").strip() for i, s in enumerate(seqs)]
+
         if self.verbosity > 1:
             self.logger.warning(f"🔫Few-shot examples: {few_shots}")
             self.logger.warning(f"💆‍♂️Generated reasoning: {seqs}")
@@ -160,7 +163,10 @@ class CAPOptimizer(BaseOptimizer):
         for i, idx in enumerate(generate_reasoning_idx):
             correct_idx = np.where(preds[i] == sample_targets[idx])[0]
             if len(correct_idx) > 0:
-                few_shots[idx] = seqs[i][correct_idx[0]]
+                fs_reasoning = FEWSHOT_TEMPLATE.replace("<input>", sample_inputs[idx]).replace(
+                    "<output>", f"{seqs_without_input[correct_idx[0]]}"
+                )
+                few_shots[idx] = fs_reasoning
 
         return few_shots
 

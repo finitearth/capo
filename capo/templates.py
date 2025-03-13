@@ -2,7 +2,6 @@ DOWNSTREAM_TEMPLATE = """<instruction>
 
 <few_shots>
 
-
 Input: """
 
 FEWSHOT_TEMPLATE = """Input: <input>

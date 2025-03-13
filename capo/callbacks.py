@@ -1,3 +1,4 @@
+import json
 import os
 from datetime import datetime
 
@@ -21,20 +22,16 @@ class PickleCallback(Callback):
 
 
 class NumberOfEvalsCallback(Callback):
-    def __init__(self, output_dir):
-        self.output_dir = output_dir
+    def __init__(self, dir):
+        self.dir = dir
 
     def on_train_end(self, optimizer):
         if hasattr(optimizer.task, "prompt_score_cache"):
             eval_dict = optimizer.task.prompt_score_cache  # (prompt, block_id): score
-            # convert into df, group by prompt, count number of evaluations
-            eval_df = pd.DataFrame(eval_dict.keys(), columns=["prompt", "block_id"])
-            # eval_df = eval_df.groupby("prompt").count()
-            eval_df.to_csv(f"{self.output_dir}/eval_counts.csv")
-
+            with open(f"{self.dir}/block_evals.json", "w") as f:
+                json.dump(eval_dict, f)
         else:
             print("Task has no prompt_score_cache attribute.")
-
         return True
 
 
@@ -48,7 +45,6 @@ class CSVCallback(CSVCallback):
         if not os.path.exists(dir):
             os.makedirs(dir)
 
-        self.dir = dir
         self.dir = dir
         self.step = 0
         self.input_tokens_meta = 0
