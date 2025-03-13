@@ -106,6 +106,7 @@ class CAPOptimizer(BaseOptimizer):
         self.prompts = [p.construct_prompt() for p in self.prompt_objects]
         self.max_prompt_length = max(self.token_count(p) for p in self.prompt_objects)
 
+        self.block_ids = []
         self.scores = np.empty(0)
 
     def _initialize_population(self, initial_prompts: List[str]) -> List[Prompt]:
@@ -265,6 +266,11 @@ class CAPOptimizer(BaseOptimizer):
         """
         if self.shuffle_blocks_per_iter:
             random.shuffle(self.task.blocks)
+
+        # extract the list of shuffled block ids
+        self.block_ids = [block_id for block_id, _ in self.task.blocks]
+        print(f"BLOCK IDS: {self.block_ids}")
+
         block_scores = []
         for i, (block_id, _) in enumerate(self.task.blocks):
             # new_scores shape: (n_candidates, n_samples)

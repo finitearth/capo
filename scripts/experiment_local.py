@@ -81,14 +81,14 @@ if __name__ == "__main__":
         PromptScoreCallback(logging_dir, save_all_steps=True),
     ]
 
+    # read token from deepinfratoken.txt
+    with open("deepinfratoken.txt", "r") as f:
+        token = f.read().strip()
+
     # Set up LLM
     llm = get_llm(
         model_id=args.model,
-        max_model_len=args.max_model_len,
-        batch_size=args.batch_size,
-        model_storage_path=args.model_storage_path,
-        revision=args.model_revision,
-        seed=args.random_seed,
+        token=token,
     )
 
     downstream_llm = llm
@@ -101,8 +101,6 @@ if __name__ == "__main__":
 
     # set-up predictor
     predictor = MarkerBasedClassificator(downstream_llm, dev_task.classes)
-
-    print(dev_task.initial_prompts)
 
     # initialize population
     initial_prompts = random.sample(dev_task.initial_prompts, args.population_size)
@@ -146,7 +144,7 @@ if __name__ == "__main__":
             n_trials_generation_reasoning=5,
             test_statistic=lambda x, y: paired_t_test(x, y, alpha=args.alpha),
             shuffle_blocks_per_iter=args.shuffle_blocks_per_iter,
-            verbosity=1,
+            verbosity=2,
         )
     else:
         raise ValueError(f"Optimizer {args.optimizer} not supported.")

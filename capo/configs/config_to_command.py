@@ -116,11 +116,9 @@ def generate_command(
     command = add_param_if_exists(
         command, "alpha", config.optimizers[0].optimizer_params.get("alpha")
     )
-    command = add_param_if_exists(
-        command,
-        "shuffle-blocks-per-iter",
-        config.optimizers[0].optimizer_params.get("shuffle_blocks_per_iter"),
-    )
+
+    if config.optimizers[0].optimizer_params.get("shuffle_blocks_per_iter"):
+        command += " --shuffle-blocks-per-iter"
 
     command += '"'
 

@@ -1,4 +1,3 @@
-import json
 import os
 from datetime import datetime
 
@@ -25,17 +24,44 @@ class PickleCallback(Callback):
         return True
 
 
-class NumberOfEvalsCallback(Callback):
-    def __init__(self, dir):
+class PromptScoreCallback(Callback):
+    def __init__(self, dir, save_all_steps=False):
+        """Initialize the PromptScoreCallback."""
+        if not os.path.exists(dir):
+            os.makedirs(dir)
         self.dir = dir
+        self.save_all_steps = save_all_steps
+        self.count = 0
 
     def on_step_end(self, optimizer):
         if hasattr(optimizer.task, "prompt_score_cache"):
-            eval_dict = optimizer.task.prompt_score_cache  # (prompt, block_id): score
-            with open(f"{self.dir}/block_evals.json", "w") as f:
-                json.dump(eval_dict, f)
-        else:
-            print("Task has no prompt_score_cache attribute.")
+            eval_dict = optimizer.task.prompt_score_cache
+
+            prompts = set()
+            block_ids = set()
+            for prompt, block_id in eval_dict.keys():
+                prompts.add(prompt)
+                block_ids.add(block_id)
+
+            prompts = sorted(list(prompts))
+            block_ids = sorted(list(block_ids))
+
+            df = pd.DataFrame(index=prompts, columns=block_ids, dtype=float)
+
+            ordered_columns = [col for col in optimizer.block_ids if col in df.columns]
+            df = df[ordered_columns]
+
+            for (prompt, block_id), score in eval_dict.items():
+                df.at[prompt, block_id] = score.mean()
+
+            if self.save_all_steps:
+                csv_path = os.path.join(self.dir, f"prompt_scores_{self.count}.csv")
+                df.to_csv(csv_path)
+                self.count += 1
+            else:
+                csv_path = os.path.join(self.dir, "prompt_scores.csv")
+                df.to_csv(csv_path)
+
         return True
 
 
