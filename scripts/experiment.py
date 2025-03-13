@@ -8,13 +8,13 @@ from logging import getLogger
 
 from promptolution.callbacks import LoggerCallback, TokenCountCallback
 from promptolution.llms import get_llm
-from promptolution.optimizers import EvoPromptGA
 from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.predictors import MarkerBasedClassificator
 from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
 from capo.callbacks import CSVCallback, NumberOfEvalsCallback, PickleCallback
 from capo.capo import CAPOptimizer
+from capo.evopromptga import EvoPromptGA
 from capo.load_datasets import get_tasks
 from capo.statistical_tests import paired_t_test
 from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
