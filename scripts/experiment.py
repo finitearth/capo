@@ -1,6 +1,7 @@
 """Main script to run all experiments."""
 
 import argparse
+import json
 import os
 import random
 from logging import getLogger
@@ -62,13 +63,15 @@ args = parser.parse_args()
 logger = getLogger(__name__)
 
 if __name__ == "__main__":
-    # create output directory
-    os.makedirs(args.output_dir, exist_ok=True)
-
     seed_everything(args.random_seed)
 
     # set-up callbacks
     logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
+    os.makedirs(logging_dir, exist_ok=True)
+    # write arguments as json in output directory
+    with open(logging_dir + "/args.json", "w") as f:
+        json.dump(vars(args), f)
+
     callbacks = [
         LoggerCallback(logger),
         CSVCallback(logging_dir),
@@ -77,14 +80,23 @@ if __name__ == "__main__":
         NumberOfEvalsCallback(logging_dir),
     ]
 
+    # read token from deepinfratoken.txt
+    with open("deepinfratoken.txt", "r") as f:
+        token = f.read().strip()
+
     # Set up LLM
+    # llm = get_llm(
+    #     model_id=args.model,
+    #     max_model_len=args.max_model_len,
+    #     batch_size=args.batch_size,
+    #     model_storage_path=args.model_storage_path,
+    #     revision=args.model_revision,
+    #     seed=args.random_seed,
+    # )
+
     llm = get_llm(
         model_id=args.model,
-        max_model_len=args.max_model_len,
-        batch_size=args.batch_size,
-        model_storage_path=args.model_storage_path,
-        revision=args.model_revision,
-        seed=args.random_seed,
+        token=token,
     )
 
     downstream_llm = llm

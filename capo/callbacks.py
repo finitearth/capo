@@ -3,7 +3,6 @@ import os
 from datetime import datetime
 
 import dill
-import numpy as np
 import pandas as pd
 from promptolution.callbacks import Callback, CSVCallback
 
@@ -64,6 +63,7 @@ class CSVCallback(CSVCallback):
         df = pd.DataFrame(
             {
                 "step": [self.step] * len(optimizer.prompts),
+                "timestamp": [datetime.now()] * len(optimizer.prompts),
                 "input_tokens_meta_llm": [
                     optimizer.meta_llm.input_token_count - self.input_tokens_meta
                 ]
@@ -105,23 +105,4 @@ class CSVCallback(CSVCallback):
         Args:
         optimizer: The optimizer object that called the callback.
         """
-        df = pd.DataFrame(
-            dict(
-                steps=self.step,
-                input_tokens_llm=optimizer.meta_llm.input_token_count,
-                output_tokens=optimizer.meta_llm.output_token_count,
-                time_elapsed=(datetime.now() - self.start_time).total_seconds(),
-                end_time=datetime.now(),
-                start_time=self.start_time,
-                avg_score=np.array(optimizer.scores).mean(),
-                end_prompts=str(optimizer.prompts),
-            ),
-            index=[0],
-        )
-
-        if not os.path.exists(self.dir + "train_results.csv"):
-            df.to_csv(self.dir + "train_results.csv", index=False)
-        else:
-            df.to_csv(self.dir + "train_results.csv", mode="a", header=False, index=False)
-
         return True
