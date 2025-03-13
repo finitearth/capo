@@ -4,6 +4,8 @@ from promptolution.callbacks import Callback, CSVCallback
 from datetime import datetime
 import os
 import numpy as np
+import dill #unused but required for pickling correctly
+
 
 class PickleCallback(Callback):
     def __init__(self, output_dir):
