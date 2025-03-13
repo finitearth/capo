@@ -1,10 +1,10 @@
-import pickle
+import os
+from datetime import datetime
+
+import dill
+import numpy as np
 import pandas as pd
 from promptolution.callbacks import Callback, CSVCallback
-from datetime import datetime
-import os
-import numpy as np
-import dill #unused but required for pickling correctly
 
 
 class PickleCallback(Callback):
@@ -15,9 +15,10 @@ class PickleCallback(Callback):
     def on_step_end(self, optimizer):
         self.count += 1
         with open(f"{self.output_dir}{self.count}.pickle", "wb") as f:
-            pickle.dump(optimizer, f)
+            dill.dump(optimizer, f)
 
         return True
+
 
 class CSVCallback(CSVCallback):
     def __init__(self, dir):
@@ -45,11 +46,16 @@ class CSVCallback(CSVCallback):
         df = pd.DataFrame(
             {
                 "step": [self.step] * len(optimizer.prompts),
-                "input_tokens_meta_llm": [optimizer.meta_llm.input_token_count] * len(optimizer.prompts),
-                "output_tokens_meta_llm": [optimizer.meta_llm.output_token_count] * len(optimizer.prompts),
-                "input_tokens_downstream_llm": [optimizer.downstream_llm.input_token_count] * len(optimizer.prompts),
-                "output_tokens_downstream_llm": [optimizer.downstream_llm.output_token_count] * len(optimizer.prompts),
-                "time_elapsed": [(datetime.now() - self.step_time).total_seconds()] * len(optimizer.prompts),
+                "input_tokens_meta_llm": [optimizer.meta_llm.input_token_count]
+                * len(optimizer.prompts),
+                "output_tokens_meta_llm": [optimizer.meta_llm.output_token_count]
+                * len(optimizer.prompts),
+                "input_tokens_downstream_llm": [optimizer.downstream_llm.input_token_count]
+                * len(optimizer.prompts),
+                "output_tokens_downstream_llm": [optimizer.downstream_llm.output_token_count]
+                * len(optimizer.prompts),
+                "time_elapsed": [(datetime.now() - self.step_time).total_seconds()]
+                * len(optimizer.prompts),
                 "score": optimizer.scores,
                 "prompt": optimizer.prompts,
             }
@@ -71,7 +77,6 @@ class CSVCallback(CSVCallback):
         """
         df = pd.DataFrame(
             dict(
-
                 steps=self.step,
                 input_tokens_llm=optimizer.meta_llm.input_token_count,
                 output_tokens=optimizer.meta_llm.output_token_count,
