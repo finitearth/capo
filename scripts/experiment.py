@@ -12,7 +12,7 @@ from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.predictors import MarkerBasedClassificator
 from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
-from capo.callbacks import CSVCallback, PickleCallback
+from capo.callbacks import CSVCallback, NumberOfEvalsCallback, PickleCallback
 from capo.capo import CAPOptimizer
 from capo.load_datasets import get_tasks
 from capo.statistical_tests import paired_t_test
@@ -74,6 +74,7 @@ if __name__ == "__main__":
         CSVCallback(logging_dir),
         TokenCountCallback(args.budget_per_run, "input_tokens"),
         PickleCallback(logging_dir),
+        NumberOfEvalsCallback(logging_dir),
     ]
 
     # Set up LLM

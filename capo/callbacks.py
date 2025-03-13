@@ -20,6 +20,24 @@ class PickleCallback(Callback):
         return True
 
 
+class NumberOfEvalsCallback(Callback):
+    def __init__(self, output_dir):
+        self.output_dir = output_dir
+
+    def on_train_end(self, optimizer):
+        if hasattr(optimizer.task, "prompt_score_cache"):
+            eval_dict = optimizer.task.prompt_score_cache  # (prompt, block_id): score
+            # convert into df, group by prompt, count number of evaluations
+            eval_df = pd.DataFrame(eval_dict.keys(), columns=["prompt", "block_id"])
+            # eval_df = eval_df.groupby("prompt").count()
+            eval_df.to_csv(f"{self.output_dir}/eval_counts.csv")
+
+        else:
+            print("Task has no prompt_score_cache attribute.")
+
+        return True
+
+
 class CSVCallback(CSVCallback):
     def __init__(self, dir):
         """Initialize the CSVCallback.
@@ -33,6 +51,10 @@ class CSVCallback(CSVCallback):
         self.dir = dir
         self.dir = dir
         self.step = 0
+        self.input_tokens_meta = 0
+        self.output_tokens_meta = 0
+        self.input_tokens_downstream = 0
+        self.output_tokens_downstream = 0
         self.start_time = datetime.now()
         self.step_time = datetime.now()
 
@@ -46,13 +68,21 @@ class CSVCallback(CSVCallback):
         df = pd.DataFrame(
             {
                 "step": [self.step] * len(optimizer.prompts),
-                "input_tokens_meta_llm": [optimizer.meta_llm.input_token_count]
+                "input_tokens_meta_llm": [
+                    optimizer.meta_llm.input_token_count - self.input_tokens_meta
+                ]
                 * len(optimizer.prompts),
-                "output_tokens_meta_llm": [optimizer.meta_llm.output_token_count]
+                "output_tokens_meta_llm": [
+                    optimizer.meta_llm.output_token_count - self.output_tokens_meta
+                ]
                 * len(optimizer.prompts),
-                "input_tokens_downstream_llm": [optimizer.downstream_llm.input_token_count]
+                "input_tokens_downstream_llm": [
+                    optimizer.downstream_llm.input_token_count - self.input_tokens_downstream
+                ]
                 * len(optimizer.prompts),
-                "output_tokens_downstream_llm": [optimizer.downstream_llm.output_token_count]
+                "output_tokens_downstream_llm": [
+                    optimizer.downstream_llm.output_token_count - self.output_tokens_downstream
+                ]
                 * len(optimizer.prompts),
                 "time_elapsed": [(datetime.now() - self.step_time).total_seconds()]
                 * len(optimizer.prompts),
@@ -61,6 +91,10 @@ class CSVCallback(CSVCallback):
             }
         )
         self.step_time = datetime.now()
+        self.input_tokens_meta = optimizer.meta_llm.input_token_count
+        self.output_tokens_meta = optimizer.meta_llm.output_token_count
+        self.input_tokens_downstream = optimizer.downstream_llm.input_token_count
+        self.output_tokens_downstream = optimizer.downstream_llm.output_token_count
 
         if not os.path.exists(self.dir + "step_results.csv"):
             df.to_csv(self.dir + "step_results.csv", index=False)
