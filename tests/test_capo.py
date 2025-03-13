@@ -27,23 +27,24 @@ def optimizer():
     meta_llm = Mock()
     downstream_llm = Mock()
     predictor = Mock()
+    df_few_shots = Mock()
     predictor.predict.return_value = (["output"], ["Input: input\nOutput: output"])
 
     initial_prompts = ["Prompt 1", "Prompt 2"]
 
-    with patch("capo.capo.CAPOTask.from_task", return_value=task):
+    with patch("capo.capo.CAPOClassificationTask", return_value=task):
         opt = CAPOptimizer(
             initial_prompts=initial_prompts,
             task=task,
+            df_few_shots=df_few_shots,
             meta_llm=meta_llm,
             downstream_llm=downstream_llm,
             length_penalty=0.1,
-            block_size=2,
             crossovers_per_iter=1,
             upper_shots=2,
             p_few_shot_reasoning=0.5,
             max_n_blocks_eval=2,
-            few_shot_split_size=0.5,
+            n_trials_generation_reasoning=3,
             test_statistic=mock_test_statistic,
             shuffle_blocks_per_iter=False,
             predictor=predictor,
