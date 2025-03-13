@@ -60,37 +60,36 @@ class CSVCallback(CSVCallback):
         optimizer: The optimizer object that called the callback
         """
         self.step += 1
-        df = pd.DataFrame(
-            {
-                "step": [self.step] * len(optimizer.prompts),
-                "timestamp": [datetime.now()] * len(optimizer.prompts),
-                "input_tokens_meta_llm": [
-                    optimizer.meta_llm.input_token_count - self.input_tokens_meta
-                ]
-                * len(optimizer.prompts),
-                "output_tokens_meta_llm": [
-                    optimizer.meta_llm.output_token_count - self.output_tokens_meta
-                ]
-                * len(optimizer.prompts),
-                "input_tokens_downstream_llm": [
-                    optimizer.downstream_llm.input_token_count - self.input_tokens_downstream
-                ]
-                * len(optimizer.prompts),
-                "output_tokens_downstream_llm": [
-                    optimizer.downstream_llm.output_token_count - self.output_tokens_downstream
-                ]
-                * len(optimizer.prompts),
-                "time_elapsed": [(datetime.now() - self.step_time).total_seconds()]
-                * len(optimizer.prompts),
-                "score": optimizer.scores,
-                "prompt": optimizer.prompts,
-            }
-        )
+        data = {
+            "step": [self.step] * len(optimizer.prompts),
+            "timestamp": [datetime.now()] * len(optimizer.prompts),
+            "time_elapsed": [(datetime.now() - self.step_time).total_seconds()]
+            * len(optimizer.prompts),
+            "score": optimizer.scores,
+            "prompt": optimizer.prompts,
+        }
+        if hasattr(optimizer, "meta_llm"):
+            data["input_tokens_meta_llm"] = [
+                optimizer.meta_llm.input_token_count - self.input_tokens_meta
+            ] * len(optimizer.prompts)
+            data["output_tokens_meta_llm"] = [
+                optimizer.meta_llm.output_token_count - self.output_tokens_meta
+            ] * len(optimizer.prompts)
+            self.input_tokens_meta = optimizer.meta_llm.input_token_count
+            self.output_tokens_meta = optimizer.meta_llm.output_token_count
+
+        if hasattr(optimizer, "downstream_llm"):
+            data["input_tokens_downstream_llm"] = [
+                optimizer.downstream_llm.input_token_count - self.input_tokens_downstream
+            ] * len(optimizer.prompts)
+            data["output_tokens_downstream_llm"] = [
+                optimizer.downstream_llm.output_token_count - self.output_tokens_downstream
+            ] * len(optimizer.prompts)
+            self.input_tokens_downstream = optimizer.downstream_llm.input_token_count
+            self.output_tokens_downstream = optimizer.downstream_llm.output_token_count
+
+        df = pd.DataFrame(data)
         self.step_time = datetime.now()
-        self.input_tokens_meta = optimizer.meta_llm.input_token_count
-        self.output_tokens_meta = optimizer.meta_llm.output_token_count
-        self.input_tokens_downstream = optimizer.downstream_llm.input_token_count
-        self.output_tokens_downstream = optimizer.downstream_llm.output_token_count
 
         if not os.path.exists(self.dir + "step_results.csv"):
             df.to_csv(self.dir + "step_results.csv", index=False)

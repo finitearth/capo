@@ -4,11 +4,12 @@ import pandas as pd
 from promptolution.llms import get_llm
 from promptolution.predictors import Classificator
 
-from capo.dataset_utils.load_datasets import load_dataset
+from capo.load_datasets import load_dataset
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--model", required=True)
 parser.add_argument("--csv-path", required=True)
+parser.add_argument("--output-path", required=True)
 parser.add_argument("--dataset", default="SetFit/rte")
 parser.add_argument("--output-dir", default="results/")
 parser.add_argument("--token", default=None)
@@ -26,6 +27,8 @@ args = parser.parse_args()
 
 if __name__ == "__main__":
     df = pd.read_csv(args.csv_path)
+    # take best per step
+    df = df.groupby("step").apply(lambda x: x.nlargest(1, "score")).reset_index(drop=True)
     prompts = df["prompt"].tolist()
     _, _, test_task = load_dataset(args.dataset, "", val_size=args.n_eval_samples)
     llm = get_llm(
@@ -41,5 +44,7 @@ if __name__ == "__main__":
 
     scores = test_task.evaluate(prompts, predictor)
 
-    df["scores"] = scores
-    df.to_csv(args.csv_path, index=False)
+    df["test_score"] = scores
+    df.to_csv(args.output_path, index=False)
+
+# do by handing over the path get the configuration
