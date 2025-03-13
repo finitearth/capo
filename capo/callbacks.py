@@ -8,14 +8,19 @@ from promptolution.callbacks import Callback, CSVCallback
 
 
 class PickleCallback(Callback):
-    def __init__(self, output_dir):
+    def __init__(self, output_dir, save_all_steps=False):
         self.output_dir = output_dir
+        self.save_all_steps = save_all_steps
         self.count = 0
 
     def on_step_end(self, optimizer):
         self.count += 1
-        with open(f"{self.output_dir}{self.count}.pickle", "wb") as f:
-            dill.dump(optimizer, f)
+        if self.save_all_steps:
+            with open(f"{self.output_dir}{self.count}.pickle", "wb") as f:
+                dill.dump(optimizer, f)
+        else:
+            with open(f"{self.output_dir}optimizer.pickle", "wb") as f:
+                dill.dump(optimizer, f)
 
         return True
 
