@@ -4,6 +4,7 @@ import argparse
 import os
 import random
 from logging import getLogger
+from copy import deepcopy
 
 from promptolution.callbacks import CSVCallback, LoggerCallback, TokenCountCallback
 from promptolution.llms import get_llm
@@ -87,7 +88,8 @@ if __name__ == "__main__":
     )
 
     downstream_llm = llm
-    meta_llm = llm
+    meta_llm = deepcopy(llm)
+    meta_llm.llm = downstream_llm.llm
 
     # set-up task (including task description and initial prompts)
     dev_task, df_fewshots, test_task = get_tasks(

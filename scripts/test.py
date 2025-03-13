@@ -84,7 +84,6 @@ optimizer = CAPOptimizer(
     meta_llm=meta_llm,
     downstream_llm=downstream_llm,
     length_penalty=1e-5,
-    block_size=BLOCK_SIZE,
     crossovers_per_iter=5,
     upper_shots=6,
     max_n_blocks_eval=30,
