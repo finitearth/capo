@@ -69,9 +69,9 @@ class CSVCallback(CSVCallback):
         """
         df = pd.DataFrame(
             dict(
-                                
+
                 steps=self.step,
-                input_tokens=optimizer.meta_llm.input_token_count,
+                input_tokens_llm=optimizer.meta_llm.input_token_count,
                 output_tokens=optimizer.meta_llm.output_token_count,
                 time_elapsed=(datetime.now() - self.start_time).total_seconds(),
                 end_time=datetime.now(),
