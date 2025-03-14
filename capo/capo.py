@@ -79,6 +79,9 @@ class CAPOptimizer(BaseOptimizer):
                 self.downstream_llm.tokenizer(x.construct_prompt())["input_ids"]
             )
         else:
+            logger.warning(
+                "The downstream language model does not have a tokenizer. Using simple token count."
+            )
             self.token_count = lambda x: len(x.construct_prompt().split())
 
         self.crossover_meta_prompt = crossover_meta_prompt or CROSSOVER_TEMPLATE
@@ -191,7 +194,6 @@ class CAPOptimizer(BaseOptimizer):
 
         child_instructions = self.meta_llm.get_response(crossover_prompts)
         if self.verbosity > 1:
-            self.logger.warning(f"💆‍♂️Generated reasoning: \n{child_instructions}")
             self.logger.warning(f"🥐Generated crossover prompts: \n{child_instructions}")
 
         offsprings = []

@@ -73,11 +73,11 @@ args = parser.parse_args()
 logger = getLogger(__name__)
 
 if __name__ == "__main__":
-    seed_everything(args.random_seed)
-
     # set-up callbacks
     logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
     os.makedirs(logging_dir, exist_ok=True)
+
+    seed_everything(args.random_seed)
 
     # write arguments as json in output directory
     with open(logging_dir + "/args.json", "w") as f:
@@ -111,8 +111,6 @@ if __name__ == "__main__":
 
     # set-up predictor
     predictor = MarkerBasedClassificator(downstream_llm, dev_task.classes)
-
-    print(dev_task.initial_prompts)
 
     # initialize population
     initial_prompts = random.sample(dev_task.initial_prompts, args.population_size)
