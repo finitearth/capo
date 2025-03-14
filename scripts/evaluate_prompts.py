@@ -10,7 +10,8 @@ from capo.load_datasets import get_tasks
 parser = argparse.ArgumentParser()
 parser.add_argument("--experiment-path", required=True)
 parser.add_argument("--validation-size", type=int, default=500)
-parser.add_argument("--max-tokens", type=int, default=5000000)
+parser.add_argument("--max-tokens", type=int, default=10000000)
+parser.add_argument("--only-best", action="store_true")
 args = parser.parse_args()
 
 if __name__ == "__main__":
@@ -22,8 +23,11 @@ if __name__ == "__main__":
     df = pd.read_csv(f"{args.experiment_path}step_results.csv")
 
     # take best per step
-    df_best = df.groupby("step").apply(lambda x: x.nlargest(1, "score")).reset_index(drop=True)
-    prompts = df_best["prompt"].unique().tolist()
+    if args.only_best:
+        df_best = df.groupby("step").apply(lambda x: x.nlargest(1, "score")).reset_index(drop=True)
+        prompts = df_best["prompt"].unique().tolist()
+    else:
+        prompts = df["prompt"].unique().tolist()
 
     _, _, test_task = get_tasks(
         dataset_name=experiment_args["dataset"],
