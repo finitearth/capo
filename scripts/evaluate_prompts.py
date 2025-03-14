@@ -41,7 +41,7 @@ if __name__ == "__main__":
         seed=experiment_args["random_seed"],
     )
 
-    predictor = MarkerBasedClassificator(llm, df, test_task.classes)
+    predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
 
     scores = test_task.evaluate(prompts, predictor)
 
