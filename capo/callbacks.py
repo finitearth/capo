@@ -47,8 +47,10 @@ class PromptScoreCallback(Callback):
             block_ids = sorted(list(block_ids))
 
             df = pd.DataFrame(index=prompts, columns=block_ids, dtype=float)
+            import IPython
 
-            ordered_columns = [col for col in optimizer.block_ids if col in df.columns]
+            IPython.embed()
+            ordered_columns = [col for col, _ in optimizer.task.blocks if col in df.columns]
             df = df[ordered_columns]
 
             for (prompt, block_id), score in eval_dict.items():

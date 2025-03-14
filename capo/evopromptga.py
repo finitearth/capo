@@ -10,11 +10,7 @@ logger = Logger(__name__)
 class EvoPromptGAPickable(EvoPromptGA):
     """Inherit from EvoPromptGA and make it pickable, and create attribute for downstream LLM."""
 
-    def __init__(
-        self,
-        *args,
-        **kwargs,
-    ):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.downstream_llm = self.predictor.llm
 

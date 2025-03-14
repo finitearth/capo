@@ -57,6 +57,8 @@ parser.add_argument("--upper-shots", type=int)
 parser.add_argument("--max-n-blocks-eval", type=int)
 parser.add_argument("--alpha", type=float)
 parser.add_argument("--shuffle-blocks-per-iter", action="store_true", default=False)
+parser.add_argument("--trials-reasoning", default=5, type=int)
+parser.add_argument("--p-reasoning", default=0.5, type=float)
 
 args = parser.parse_args()
 
@@ -140,8 +142,6 @@ if __name__ == "__main__":
             crossovers_per_iter=args.crossovers_per_iter,
             upper_shots=args.upper_shots,
             max_n_blocks_eval=args.max_n_blocks_eval,
-            p_few_shot_reasoning=0.5,
-            n_trials_generation_reasoning=5,
             test_statistic=lambda x, y: paired_t_test(x, y, alpha=args.alpha),
             shuffle_blocks_per_iter=args.shuffle_blocks_per_iter,
             verbosity=2,

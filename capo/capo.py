@@ -31,8 +31,6 @@ class CAPOptimizer(BaseOptimizer):
         length_penalty: float,
         crossovers_per_iter: int,
         upper_shots: int,
-        p_few_shot_reasoning: float,
-        n_trials_generation_reasoning: int,
         max_n_blocks_eval: int,
         test_statistic: Callable,
         shuffle_blocks_per_iter: bool = True,
@@ -91,8 +89,6 @@ class CAPOptimizer(BaseOptimizer):
         self.population_size = len(initial_prompts)
         self.crossovers_per_iter = crossovers_per_iter
         self.upper_shots = upper_shots
-        self.p_few_shot_reasoning = p_few_shot_reasoning
-        self.n_trials_generation_reasoning = n_trials_generation_reasoning
         self.max_n_blocks_eval = max_n_blocks_eval
         self.test_statistic = test_statistic
 
@@ -133,9 +129,9 @@ class CAPOptimizer(BaseOptimizer):
     def _create_few_shot_examples(
         self, instruction: str, num_examples: int
     ) -> List[Tuple[str, str]]:
-        few_shot_samples = self.df_few_shots.sample(
-            num_examples, replace=True
-        )  # TODO: doesnt this have to be false
+        if num_examples == 0:
+            return []
+        few_shot_samples = self.df_few_shots.sample(num_examples)
         sample_inputs = few_shot_samples["input"].values
         sample_targets = few_shot_samples["target"].values
         few_shots = [
@@ -144,36 +140,31 @@ class CAPOptimizer(BaseOptimizer):
             )
             for i, t in zip(sample_inputs, sample_targets)
         ]
-
-        # select partition of the examples to generate reasoning from downstream model
-        generate_reasoning_idx = random.sample(
-            range(num_examples), int(num_examples * self.p_few_shot_reasoning)
-        )
+        # Select partition of the examples to generate reasoning from downstream model
         preds, seqs = self.predictor.predict(
-            [instruction] * self.n_trials_generation_reasoning,
-            sample_inputs[generate_reasoning_idx],
+            instruction,
+            sample_inputs,
             return_seq=True,
-        )  # output shape: (n_trials, n_reasoning_examples)
-
-        for i in range(seqs.shape[0]):
-            for j in range(seqs.shape[1]):
-                seqs[i][j] = (
-                    seqs[i][j].replace(sample_inputs[generate_reasoning_idx[j]], "").strip()
-                )
+        )
+        preds, seqs = preds.reshape(num_examples), seqs.reshape(num_examples)
+        # Process and clean up the generated sequences
+        for j in range(seqs.shape[0]):  # For each example
+            seqs[j] = seqs[j].replace(sample_inputs[j], "").strip()
 
         if self.verbosity > 1:
             self.logger.warning(f"🔫Few-shot examples: {few_shots}")
             self.logger.warning(f"💆‍♂️Generated reasoning: {seqs}")
 
-        # check which predictions are correct and get a single one per example
-        for i, idx in enumerate(generate_reasoning_idx):
-            correct_idx = np.where(preds[i] == sample_targets[idx])[0]
-            if len(correct_idx) > 0:
-                fs_reasoning = FEWSHOT_TEMPLATE.replace("<input>", sample_inputs[idx]).replace(
-                    "<output>", seqs[i][correct_idx[0]]
-                )
-                few_shots[idx] = fs_reasoning
+        # Check which predictions are correct and get a single one per example
+        for j in range(num_examples):
+            target = sample_targets[j]
 
+            # Try to find a trial with correct prediction for this example
+            if preds[j] == target:  # If prediction matches target
+                fs_reasoning = FEWSHOT_TEMPLATE.replace("<input>", sample_inputs[j]).replace(
+                    "<output>", seqs[j]
+                )
+                few_shots[j] = fs_reasoning
         return few_shots
 
     def _crossover(self, parents: List[Prompt]) -> List[Prompt]:
