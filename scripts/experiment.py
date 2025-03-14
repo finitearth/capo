@@ -105,7 +105,7 @@ if __name__ == "__main__":
     meta_llm = copy_llm(llm)
 
     # set-up task (including task description and initial prompts)
-    dev_task, df_fewshots, test_task = get_tasks(
+    dev_task, df_fewshots, _ = get_tasks(
         args.dataset, args.optimizer, seed=args.random_seed, block_size=args.block_size
     )
 

@@ -185,7 +185,7 @@ class CAPOptimizer(BaseOptimizer):
                 .replace("<task_desc>", self.task.description)
                 .strip()
             )
-            # collect crossover prompts and than passing them bundled to the meta llm => faster
+            # collect all crossover prompts then pass them bundled to the meta llm (speedup)
             crossover_prompts.append(crossover_prompt)
             combined_few_shots = mother.few_shots + father.few_shots
             num_few_shots = (len(mother.few_shots) + len(father.few_shots)) // 2
@@ -213,7 +213,7 @@ class CAPOptimizer(BaseOptimizer):
         Returns:
             List[Prompt]: List of mutated prompts.
         """
-        # collect mutation prompts and than passing them bundled to the meta llm => faster
+        # collect all mutation prompts then pass them bundled to the meta llm (speedup)
         mutation_prompts = [
             self.mutation_meta_prompt.replace("<instruction>", prompt.instruction_text).replace(
                 "<task_desc>", self.task.description
@@ -288,8 +288,6 @@ class CAPOptimizer(BaseOptimizer):
                 self.logger.warning(f"🛝Comparison Matrix: \n{comparison_matrix}")
                 self.logger.warning(f"🔢Number of better scores: {n_better}")
 
-            if self.verbosity > 1:
-                # log eliminated prompts
                 eliminated_prompts = [
                     c.construct_prompt() for c in compress(candidates, n_better >= k)
                 ]
