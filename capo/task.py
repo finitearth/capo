@@ -18,7 +18,7 @@ class CAPOClassificationTask(ClassificationTask):
 
         blocks = [
             indices[i * self.block_size : (i + 1) * self.block_size]
-            for i in range(0, num_samples // self.block_size)
+            for i in range(num_samples // self.block_size)
         ]
 
         blocks = list(enumerate(blocks))

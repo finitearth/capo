@@ -53,7 +53,7 @@ BENCHMARK_CONFIG = ExperimentConfig(
                 "block_size": 30,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
-                "upper_shots": 3,
+                "upper_shots": 5,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
