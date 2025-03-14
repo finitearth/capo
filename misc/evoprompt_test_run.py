@@ -5,7 +5,7 @@ from logging import getLogger
 from datasets import load_dataset
 from promptolution.callbacks import CSVCallback, LoggerCallback, TokenCountCallback
 from promptolution.llms import get_llm
-from promptolution.optimizers import EvoPromptGA
+from capo.evopromptga import EvoPromptGAPickable
 from promptolution.predictors.classificator import FirstOccurrenceClassificator
 from promptolution.tasks import ClassificationTask
 from promptolution.templates import EVOPROMPT_GA_TEMPLATE_TD
@@ -95,7 +95,7 @@ for model_name in args.models.strip("[]").split(","):
     predictor = FirstOccurrenceClassificator(downstream_llm, task.classes)
 
     # Initialize optimizer
-    optimizer = EvoPromptGA(
+    optimizer = EvoPromptGAPickable(
         task=task,
         prompt_template=EVOPROMPT_GA_TEMPLATE_TD.replace("<task_desc>", task_description),
         predictor=predictor,

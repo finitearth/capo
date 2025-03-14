@@ -31,15 +31,7 @@ _SST5_CONFIG = DatasetConfig(
     alias="sst-5",
     revision="e51bdcd8cd3a30da231967c1a249ba59361279a3",
     input="text",
-    target=lambda df: df["label_text"].map(
-        {
-            "very negative": "veryNegative",
-            "negative": "negative",
-            "neutral": "neutral",
-            "positive": "positive",
-            "very positive": "veryPositive",
-        }
-    ),
+    target=lambda df: df["label_text"],
     initial_prompts=INITIAL_PROMPTS["sst-5"],
     task_description=TASK_DESCRIPTIONS["sst-5"],
 )
@@ -68,8 +60,8 @@ _RTE_CONFIG = DatasetConfig(
     name="SetFit/rte",
     alias="rte",
     revision="23f2a468b9bc13030f5595a2e5f9307cb165280c",
-    input=lambda df: df["text1"] + "\n" + df["text2"],
-    target=lambda df: df["label"].map({1: "NoEntailment", 0: "Entailment"}),
+    input=lambda df: "Text 1:\n" + df["text1"] + "\n Text 2:\n" + df["text2"],
+    target=lambda df: df["label"].map({1: "No Entailment", 0: "Entailment"}),
     initial_prompts=INITIAL_PROMPTS["rte"],
     task_description=TASK_DESCRIPTIONS["rte"],
 )

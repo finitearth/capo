@@ -106,7 +106,6 @@ class CAPOptimizer(BaseOptimizer):
         self.prompts = [p.construct_prompt() for p in self.prompt_objects]
         self.max_prompt_length = max(self.token_count(p) for p in self.prompt_objects)
 
-        self.block_ids = []
         self.scores = np.empty(0)
 
     def _initialize_population(self, initial_prompts: List[str]) -> List[Prompt]:
@@ -134,12 +133,14 @@ class CAPOptimizer(BaseOptimizer):
     def _create_few_shot_examples(
         self, instruction: str, num_examples: int
     ) -> List[Tuple[str, str]]:
-        few_shot_samples = self.df_few_shots.sample(num_examples, replace=True)
+        few_shot_samples = self.df_few_shots.sample(
+            num_examples, replace=True
+        )  # TODO: doesnt this have to be false
         sample_inputs = few_shot_samples["input"].values
         sample_targets = few_shot_samples["target"].values
         few_shots = [
             FEWSHOT_TEMPLATE.replace("<input>", i).replace(
-                "<output>", f"{self.predictor.begin_marker} {t} {self.predictor.end_marker}"
+                "<output>", f"{self.predictor.begin_marker}{t}{self.predictor.end_marker}"
             )
             for i, t in zip(sample_inputs, sample_targets)
         ]
@@ -266,10 +267,6 @@ class CAPOptimizer(BaseOptimizer):
         """
         if self.shuffle_blocks_per_iter:
             random.shuffle(self.task.blocks)
-
-        # extract the list of shuffled block ids
-        self.block_ids = [block_id for block_id, _ in self.task.blocks]
-        print(f"BLOCK IDS: {self.block_ids}")
 
         block_scores = []
         for i, (block_id, _) in enumerate(self.task.blocks):

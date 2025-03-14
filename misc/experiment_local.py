@@ -14,7 +14,7 @@ from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
 from capo.callbacks import CSVCallback, PickleCallback, PromptScoreCallback
 from capo.capo import CAPOptimizer
-from capo.evopromptga import EvoPromptGA
+from capo.evopromptga import EvoPromptGAPickable
 from capo.load_datasets import get_tasks
 from capo.statistical_tests import paired_t_test
 from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     # initialize optimizer
     optimizer: BaseOptimizer
     if args.optimizer == "EvoPromptGA":
-        optimizer = EvoPromptGA(
+        optimizer = EvoPromptGAPickable(
             task=dev_task,
             prompt_template=evoprompt_template,
             predictor=predictor,

@@ -28,9 +28,12 @@ class Prompt:
             str: The constructed prompt string.
         """
         few_shot_str = "\n\n".join(self.few_shots).strip()
-        prompt = DOWNSTREAM_TEMPLATE.replace(
-            "<instruction>", self.instruction_text.strip()
-        ).replace("<few_shots>", few_shot_str)
+        prompt = (
+            DOWNSTREAM_TEMPLATE.replace("<instruction>", self.instruction_text)
+            .replace("<few_shots>", few_shot_str)
+            .replace("\n\n\n\n", "\n\n")
+            .strip()
+        )
         return prompt
 
     def __str__(self):
