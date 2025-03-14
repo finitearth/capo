@@ -1,7 +1,7 @@
 """Main script to run all experiments.
 
 for minimal example run:
-python scripts/experiments.py --experiment-name test --random-seed 42 \
+python scripts/experiment.py --experiment-name test --random-seed 42 \
     --budget-per-run 1000000 --output-dir results/ --dataset subj \
     --model vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4\
     --model-revision c83e67dfb2664f5039fd4cd99e206799e27dd800 \
