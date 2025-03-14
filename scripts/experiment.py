@@ -2,7 +2,7 @@
 
 for minimal example run:
 python scripts/experiments.py --experiment-name test --random-seed 42 \
-    --budget-per-run 1000000 --output-dir results/ --dataset fewrel \
+    --budget-per-run 1000000 --output-dir results/ --dataset subj \
     --model vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4\
     --model-revision c83e67dfb2664f5039fd4cd99e206799e27dd800 \
     --max-model-len 1024 --optimizer CAPO --n-steps 10 --population-size 10 \
