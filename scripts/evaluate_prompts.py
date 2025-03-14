@@ -22,8 +22,8 @@ if __name__ == "__main__":
     df = pd.read_csv(f"{args.experiment_path}step_results.csv")
 
     # take best per step
-    df_results = df.groupby("step").apply(lambda x: x.nlargest(1, "score")).reset_index(drop=True)
-    prompts = df_results["prompt"].unique().tolist()
+    df_best = df.groupby("step").apply(lambda x: x.nlargest(1, "score")).reset_index(drop=True)
+    prompts = df_best["prompt"].unique().tolist()
 
     _, _, test_task = get_tasks(
         dataset_name=experiment_args["dataset"],
@@ -42,7 +42,7 @@ if __name__ == "__main__":
         seed=experiment_args["random_seed"],
     )
 
-    # for local
+    # for local testing
     # with open("deepinfratoken.txt", "r") as f:
     #     token = f.read()
 
@@ -55,11 +55,9 @@ if __name__ == "__main__":
 
     scores = test_task.evaluate(prompts, predictor)
 
-    print(scores)
-
-    # assign each prompt its score (there might be multiple prompts per score)
-    df_results["test_score"] = df_results["prompt"].map(dict(zip(prompts, scores)))
+    df_results = pd.DataFrame({"prompt": prompts, "test_score": scores})
 
     # save results to the step_results as extra column by joining on the prompt
-    df = df.join(df_results.set_index("prompt")["test_score"], on="prompt")
+    df = df.merge(df_results, on="prompt", how="left")
+
     df.to_csv(f"{args.experiment_path}step_results_eval.csv", index=False)
