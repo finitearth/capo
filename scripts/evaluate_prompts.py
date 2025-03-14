@@ -30,6 +30,7 @@ if __name__ == "__main__":
         optimizer_name=experiment_args["optimizer"],
         seed=experiment_args["random_seed"],
         block_size=experiment_args["block_size"],
+        test_size=args.validation_size,
     )
 
     llm = get_llm(
@@ -41,11 +42,23 @@ if __name__ == "__main__":
         seed=experiment_args["random_seed"],
     )
 
+    # for local testing
+    # with open("deepinfratoken.txt", "r") as f:
+    #     token = f.read()
+
+    # llm = get_llm(
+    #     model_id="microsoft/phi-4",
+    #     token=token,
+    # )
+
     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
 
     scores = test_task.evaluate(prompts, predictor)
 
-    df_results["test_score"] = scores
+    print(scores)
+
+    # assign each prompt its score (there might be multiple prompts per score)
+    df_results["test_score"] = df_results["prompt"].map(dict(zip(prompts, scores)))
 
     # save results to the step_results as extra column by joining on the prompt
     df = df.join(df_results.set_index("prompt")["test_score"], on="prompt")
