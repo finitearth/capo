@@ -31,7 +31,7 @@ class Prompt:
         prompt = (
             DOWNSTREAM_TEMPLATE.replace("<instruction>", self.instruction_text)
             .replace("<few_shots>", few_shot_str)
-            .replace("\n\n\n\n", "\n\n")
+            .replace("\n\n\n\n", "\n\n")  # replace extra newlines if no few shots are provided
             .strip()
         )
         return prompt

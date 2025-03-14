@@ -69,10 +69,8 @@ class CAPOptimizer(BaseOptimizer):
         """
         assert isinstance(task, CAPOClassificationTask), "CAPOptimizer requires a CAPO task."
 
-        # Pass initial_prompts and task to the base optimizer
         super().__init__(initial_prompts, task, callbacks, predictor)
         self.df_few_shots = df_few_shots
-
         self.meta_llm = meta_llm
         self.downstream_llm = downstream_llm
 
@@ -131,7 +129,7 @@ class CAPOptimizer(BaseOptimizer):
     ) -> List[Tuple[str, str]]:
         if num_examples == 0:
             return []
-        few_shot_samples = self.df_few_shots.sample(num_examples)
+        few_shot_samples = self.df_few_shots.sample(num_examples, replace=False)
         sample_inputs = few_shot_samples["input"].values
         sample_targets = few_shot_samples["target"].values
         few_shots = [
@@ -147,24 +145,21 @@ class CAPOptimizer(BaseOptimizer):
             return_seq=True,
         )
         preds, seqs = preds.reshape(num_examples), seqs.reshape(num_examples)
-        # Process and clean up the generated sequences
-        for j in range(seqs.shape[0]):  # For each example
+
+        # Check which predictions are correct and get a single one per example
+        for j in range(num_examples):
+            # Process and clean up the generated sequences
             seqs[j] = seqs[j].replace(sample_inputs[j], "").strip()
+            # Check if the prediction is correct and add reasoning if so
+            if preds[j] == sample_targets[j]:
+                few_shots[j] = FEWSHOT_TEMPLATE.replace("<input>", sample_inputs[j]).replace(
+                    "<output>", seqs[j]
+                )
 
         if self.verbosity > 1:
             self.logger.warning(f"🔫Few-shot examples: {few_shots}")
             self.logger.warning(f"💆‍♂️Generated reasoning: {seqs}")
 
-        # Check which predictions are correct and get a single one per example
-        for j in range(num_examples):
-            target = sample_targets[j]
-
-            # Try to find a trial with correct prediction for this example
-            if preds[j] == target:  # If prediction matches target
-                fs_reasoning = FEWSHOT_TEMPLATE.replace("<input>", sample_inputs[j]).replace(
-                    "<output>", seqs[j]
-                )
-                few_shots[j] = fs_reasoning
         return few_shots
 
     def _crossover(self, parents: List[Prompt]) -> List[Prompt]:
@@ -224,8 +219,6 @@ class CAPOptimizer(BaseOptimizer):
             for prompt in offsprings
         ]
         new_instructions = self.meta_llm.get_response(mutation_prompts)
-        if self.verbosity > 1:
-            self.logger.warning(f"🧟Generated mutation prompts: \n{new_instructions}")
 
         mutated = []
         for new_instruction, prompt in zip(new_instructions, offsprings):
@@ -241,6 +234,10 @@ class CAPOptimizer(BaseOptimizer):
             combined_examples = old_examples + new_few_shots
             random.shuffle(combined_examples)
             mutated.append(Prompt(new_instruction, combined_examples))
+
+        if self.verbosity > 0:
+            self.logger.warning(f"🧟Generated {len(mutated)} mutated prompts.")
+            self.logger.warning(f"😶Generated Prompts: {[p.construct_prompt() for p in mutated]}")
 
         return mutated
 
@@ -334,16 +331,9 @@ class CAPOptimizer(BaseOptimizer):
         for _ in range(n_steps):
             offsprings = self._crossover(self.prompt_objects)
             mutated = self._mutate(offsprings)
-
-            if self.verbosity > 0:
-                self.logger.warning(f"🧟Generated {len(mutated)} mutated prompts.")
-                self.logger.warning(
-                    f"😶Generated Prompts: {[p.construct_prompt() for p in mutated]}"
-                )
             combined = self.prompt_objects + mutated
             self.prompt_objects = self._do_racing(combined, self.population_size)
             self.prompts = [p.construct_prompt() for p in self.prompt_objects]
-
             continue_optimization = self._on_step_end()
             if not continue_optimization:
                 break
