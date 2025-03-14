@@ -42,7 +42,7 @@ if __name__ == "__main__":
         seed=experiment_args["random_seed"],
     )
 
-    # for local testing
+    # for local
     # with open("deepinfratoken.txt", "r") as f:
     #     token = f.read()
 
@@ -62,4 +62,4 @@ if __name__ == "__main__":
 
     # save results to the step_results as extra column by joining on the prompt
     df = df.join(df_results.set_index("prompt")["test_score"], on="prompt")
-    df.to_csv(f"{args.experiment_path}step_results.csv", index=False)
+    df.to_csv(f"{args.experiment_path}step_results_eval.csv", index=False)
