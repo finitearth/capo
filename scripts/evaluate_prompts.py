@@ -1,5 +1,7 @@
 import argparse
 import json
+import os
+from glob import glob
 
 import pandas as pd
 from promptolution.llms import get_llm
@@ -8,19 +10,21 @@ from promptolution.predictors import MarkerBasedClassificator
 from capo.load_datasets import get_tasks
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--experiment-path", required=True)
+parser.add_argument("--experiment-path", type=str)
+parser.add_argument("--find-unevaluated", action="store_true")
 parser.add_argument("--validation-size", type=int, default=500)
 parser.add_argument("--max-tokens", type=int, default=10000000)
 parser.add_argument("--only-best", action="store_true")
 args = parser.parse_args()
 
-if __name__ == "__main__":
+
+def run_experiment(experiment_path: str):
     # read experiment args
-    with open(f"{args.experiment_path}args.json", "r") as f:
+    with open(f"{experiment_path}args.json", "r") as f:
         experiment_args = json.load(f)
 
     # read experiment results by using the best prompt per step from the step_results.csv
-    df = pd.read_csv(f"{args.experiment_path}step_results.csv")
+    df = pd.read_csv(f"{experiment_path}step_results.csv")
 
     # take best per step
     if args.only_best:
@@ -46,15 +50,6 @@ if __name__ == "__main__":
         seed=experiment_args["random_seed"],
     )
 
-    # for local testing
-    # with open("deepinfratoken.txt", "r") as f:
-    #     token = f.read()
-
-    # llm = get_llm(
-    #     model_id="microsoft/phi-4",
-    #     token=token,
-    # )
-
     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
 
     scores = test_task.evaluate(prompts, predictor)
@@ -64,4 +59,14 @@ if __name__ == "__main__":
     # save results to the step_results as extra column by joining on the prompt
     df = df.merge(df_results, on="prompt", how="left")
 
-    df.to_csv(f"{args.experiment_path}step_results_eval.csv", index=False)
+    df.to_csv(f"{experiment_path}step_results_eval.csv", index=False)
+
+
+if __name__ == "__main__":
+    if args.find_unevaluated:
+        experiments = glob(f"{args.experiment_path}*/step_results.csv")
+        for experiment in experiments:
+            if not os.path.exists(f"{experiment}step_results_eval.csv"):
+                run_experiment(experiment)
+    else:
+        run_experiment(args.experiment_path)
