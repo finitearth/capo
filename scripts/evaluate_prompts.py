@@ -2,12 +2,15 @@ import argparse
 import json
 import os
 from glob import glob
+from logging import getLogger
 
 import pandas as pd
 from promptolution.llms import get_llm
 from promptolution.predictors import MarkerBasedClassificator
 
 from capo.load_datasets import get_tasks
+
+logger = getLogger(__name__)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--experiment-path", type=str)
@@ -22,7 +25,7 @@ def run_experiment(experiment_path: str):
     # read experiment args
     with open(f"{experiment_path}args.json", "r") as f:
         experiment_args = json.load(f)
-
+    logger.info(f"Running experiment with args: {experiment_args}")
     # read experiment results by using the best prompt per step from the step_results.csv
     df = pd.read_csv(f"{experiment_path}step_results.csv")
 
@@ -61,12 +64,17 @@ def run_experiment(experiment_path: str):
 
     df.to_csv(f"{experiment_path}step_results_eval.csv", index=False)
 
+    logger.info(f"Finished evaluation of {experiment_path}")
+
 
 if __name__ == "__main__":
     if args.find_unevaluated:
         experiments = glob(f"{args.experiment_path}*/step_results.csv")
+        logger.info(f"Found {len(experiments)} experiments")
         for experiment in experiments:
             if not os.path.exists(f"{experiment}step_results_eval.csv"):
                 run_experiment(experiment)
+            else:
+                logger.info(f"Skipping {experiment} as it was already evaluated")
     else:
         run_experiment(args.experiment_path)
