@@ -78,7 +78,7 @@ if __name__ == "__main__":
         experiments = glob(f"{args.experiment_path}**/step_results.csv", recursive=True)
         logger.critical(f"Found {len(experiments)} experiments")
         for experiment in experiments:
-            if not os.path.exists(experiment):
+            if not os.path.exists(experiment.replace("step_results.csv", "step_results_eval.csv")):
                 experiment_path = experiment.replace("step_results.csv", "")
                 run_experiment(experiment_path)
             else:
