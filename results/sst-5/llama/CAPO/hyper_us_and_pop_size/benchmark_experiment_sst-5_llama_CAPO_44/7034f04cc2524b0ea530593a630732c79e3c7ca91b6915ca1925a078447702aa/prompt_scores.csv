@@ -603,6 +603,31 @@ Input: the master of disguise is funny -- not `` ha ha '' funny , `` dead circus
 Output: <final_answer>neutral</final_answer>
 
 Input:",0.5,,,,,,,,,
+"Analyze the sentiment expressed in the movie review. Determine the emotional tone and classify it into one of the five sentiment levels: very negative, negative, neutral, positive, or very positive. Evaluate the emotional tone of the given movie review and categorize it into one of the five sentiment categories: very negative, negative, neutral, positive, or very positive. Examine the movie review and determine its sentiment. Choose from the following categories: very negative, negative, neutral, positive, or very positive. Identify the sentiment expressed in the movie review. Ensure the classification is formatted as <final_answer>your_classification</final_answer>.
+
+Input: what 's really sad is to see two academy award winning actresses -lrb- and one academy award winning actor -rrb- succumb to appearing in this junk that 's tv sitcom material at best .
+Output: <final_answer>negative</final_answer>
+
+Input: there are n't many conclusive answers in the film , but there is an interesting story of pointed personalities , courage , tragedy and the little guys vs. the big guys .
+Output: <final_answer>positive</final_answer>
+
+Input: ... a pretentious mess ...
+Output: <final_answer>very negative</final_answer>
+
+Input: -lrb- evans is -rrb- a fascinating character , and deserves a better vehicle than this facetious smirk of a movie .
+Output: Based on the provided movie review, the sentiment conveyed is negative. The review criticizes the movie and expresses dissatisfaction with the character and the movie itself. The use of words like ""facetious"" and ""smirk"" indicates a negative tone.
+
+<final_answer>negative</final_answer>
+
+Input: a huge disappointment coming , as it does , from filmmakers and performers of this calibre
+Output: <final_answer>very negative</final_answer>
+
+Input: never lets go your emotions , taking them to surprising highs , sorrowful lows and hidden impulsive niches ... gorgeous , passionate , and at times uncommonly moving .
+Output: Based on the provided movie review, the sentiment expressed is positive. The review describes the movie as having emotional highs, lows, and moving moments, which indicate a strong emotional impact. The use of words like ""gorgeous,"" ""passionate,"" and ""uncommonly moving"" suggests a positive emotional tone.
+
+<final_answer>positive</final_answer>
+
+Input:",0.5333333333333333,,,,,,,,,
 "Analyze the sentiment expressed in the movie review. Determine the emotional tone and classify it into one of the five sentiment levels: very negative, negative, neutral, positive, or very positive. How would you describe the sentiment of this movie review? Choose from very negative, negative, neutral, positive, or very positive. Provide your answer within <final_answer> </final_answer> tags.
 
 Input: dreary tale of middle-class angst
@@ -726,6 +751,22 @@ Output: Based on the content of the movie review, the sentiment is neutral. The 
 <final_answer>neutral</final_answer>
 
 Input:",0.6,0.6,0.6,0.43333333333333335,0.5,0.3333333333333333,,,,
+"Analyze the sentiment expressed in the movie review. Identify whether it belongs to one of the following categories: very negative, negative, neutral, positive, or very positive. What sentiment does this movie review convey? Select from the following options: very negative, negative, neutral, positive, or very positive. Your response should be enclosed between <final_answer> and </final_answer> markers.
+
+Input: this quiet , introspective and entertaining independent is worth seeking .
+Output: <final_answer>very positive</final_answer>
+
+Input: one of these days hollywood will come up with an original idea for a teen movie , but until then there 's always these rehashes to feed to the younger generations .
+Output: Based on the text provided, the sentiment expressed in the movie review is negative. The review criticizes the lack of original ideas in teen movies and describes them as ""rehashes.""
+
+<final_answer>negative</final_answer>
+
+Input: it 's rare for any movie to be as subtle and touching as the son 's room .
+Output: Based on the sentiment expressed in the movie review, the sentiment conveyed is positive. The review highlights the movie's subtlety and emotional impact, which suggests a positive sentiment.
+
+<final_answer>positive</final_answer>
+
+Input:",0.7,0.5333333333333333,0.6,0.43333333333333335,0.4,0.4,,,,
 "Analyze the sentiment expressed in this film critique. Categorize it as either very negative, negative, neutral, positive, or very positive, and present your answer between <final_answer> </final_answer> tags.
 
 Input: the lousy lead performances ... keep the movie from ever reaching the comic heights it obviously desired .
@@ -1758,6 +1799,22 @@ Input: ... a delicious crime drama on par with the slickest of mamet .
 Output: <final_answer>very positive</final_answer>
 
 Input:",0.7333333333333333,0.5666666666666667,0.6,0.4666666666666667,0.5333333333333333,0.6,0.5,0.7,0.4666666666666667,0.36666666666666664
+"Examine the movie review and identify its sentiment. Select from the following categories: very negative, negative, neutral, positive, or very positive. What sentiment does this movie review express? Provide your final classification as <final_answer>answer</final_answer>.
+
+Input: a slow-moving police-procedural thriller that takes its title all too literally .
+Output: Based on the review, the sentiment is negative. The use of words like ""slow-moving"" and ""takes its title all too literally"" indicates a negative sentiment.
+
+<final_answer>negative</final_answer>
+
+Input: hey , happy !
+Output: Based on the text ""hey, happy!"", the sentiment expressed is positive.
+
+<final_answer>positive</final_answer>
+
+Input: mandel holland 's direction is uninspired , and his scripting unsurprising , but the performances by phifer and black are ultimately winning .
+Output: <final_answer>neutral</final_answer>
+
+Input:",0.7333333333333333,0.6333333333333333,0.6333333333333333,0.43333333333333335,0.5,0.4666666666666667,0.6333333333333333,0.6,0.5666666666666667,0.4
 "Examine the movie review and identify its sentiment. Select from the following categories: very negative, negative, neutral, positive, or very positive. What sentiment does this movie review express? Provide your final classification as <final_answer>answer</final_answer>.
 
 Input: the film makes strong arguments regarding the social status of america 's indigenous people , but really only exists to try to eke out an emotional tug of the heart , one which it fails to get .
@@ -2930,6 +2987,23 @@ Input: there are n't many conclusive answers in the film , but there is an inter
 Output: <final_answer>positive</final_answer>
 
 Input:",0.6666666666666666,0.5,0.5666666666666667,,,,,,,
+"Movie sentiment classification task: Examine the movie review and determine its sentiment. Choose from the following categories: very negative, negative, neutral, positive, or very positive. Analyze the movie review and determine its sentiment. Ensure the classification is formatted as <final_answer>answer</final_answer>. Identify the sentiment expressed in the movie review.
+
+Input: there are n't many conclusive answers in the film , but there is an interesting story of pointed personalities , courage , tragedy and the little guys vs. the big guys .
+Output: <final_answer>positive</final_answer>
+
+Input: this quiet , introspective and entertaining independent is worth seeking .
+Output: <final_answer>very positive</final_answer>
+
+Input: they 're just a couple of cops in copmovieland , these two , but in narc , they find new routes through a familiar neighborhood .
+Output: <final_answer>positive</final_answer>
+
+Input: some of the most inventive silliness you are likely to witness in a movie theatre for some time .
+Output: Based on the provided movie review, the sentiment can be classified as **positive**. The review highlights the innovative and entertaining aspects of the movie, suggesting a positive experience.
+
+<final_answer>positive</final_answer>
+
+Input:",0.7,0.6,0.6,0.4666666666666667,0.5,0.4666666666666667,0.5333333333333333,0.6333333333333333,0.5,0.36666666666666664
 "Movie sentiment classification task: Examine the movie review and identify its sentiment. From the following five options - very negative, negative, neutral, positive, or very positive, which best describes this review? Your final classification should be presented as <final_answer>classification</final_answer>.
 
 Input: taken as a whole , the tuxedo does n't add up to a whole lot .
