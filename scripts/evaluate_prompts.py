@@ -28,8 +28,6 @@ def run_experiment(experiment_path: str):
     logger.critical(f"Running experiment with args: {experiment_args}")
     # read experiment results by using the best prompt per step from the step_results.csv
     df = pd.read_csv(f"{experiment_path}step_results.csv")
-    # empty file to experiment path to block other evaluations
-    open(f"{experiment_path}step_results_eval.csv", "w").close()
 
     # take best per step
     if args.only_best:
@@ -70,8 +68,6 @@ def run_experiment(experiment_path: str):
     # save results to the step_results as extra column by joining on the prompt
     df = df.merge(df_results, on="prompt", how="left")
     # delete the empty file to allow other evaluations
-    os.remove(f"{experiment_path}step_results_eval.csv")
-
     df.to_csv(f"{experiment_path}step_results_eval.csv", index=False)
 
     logger.critical(f"Finished evaluation of {experiment_path}")
