@@ -77,6 +77,9 @@ if __name__ == "__main__":
     if args.find_unevaluated:
         experiments = glob(f"{args.experiment_path}**/step_results.csv", recursive=True)
         logger.critical(f"Found {len(experiments)} experiments")
+        import IPython
+
+        IPython.embed()
         for experiment in experiments:
             if not os.path.exists(f"{experiment}step_results_eval.csv"):
                 experiment_path = experiment.replace("step_results.csv", "")
