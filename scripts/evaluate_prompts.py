@@ -52,7 +52,7 @@ def run_experiment(experiment_path: str):
         model_storage_path=experiment_args["model_storage_path"],
         revision=experiment_args["model_revision"],
         seed=experiment_args["random_seed"],
-        dtype="float32",
+        device="cuda",
     )
 
     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
