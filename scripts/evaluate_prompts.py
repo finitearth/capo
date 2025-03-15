@@ -35,6 +35,7 @@ def run_experiment(experiment_path: str):
         prompts = df_best["prompt"].unique().tolist()
     else:
         prompts = df["prompt"].unique().tolist()
+    logger.critical(f"Found {len(prompts)} unique prompts")
 
     _, _, test_task = get_tasks(
         dataset_name=experiment_args["dataset"],
@@ -51,6 +52,7 @@ def run_experiment(experiment_path: str):
         model_storage_path=experiment_args["model_storage_path"],
         revision=experiment_args["model_revision"],
         seed=experiment_args["random_seed"],
+        dtype="float32",
     )
 
     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
