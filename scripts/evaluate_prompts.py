@@ -13,7 +13,7 @@ from capo.load_datasets import get_tasks
 logger = getLogger(__name__)
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--experiment-path", type=str)
+parser.add_argument("--experiment-path", type=str, default="results/")
 parser.add_argument("--find-unevaluated", action="store_true")
 parser.add_argument("--validation-size", type=int, default=500)
 parser.add_argument("--max-tokens", type=int, default=10000000)
@@ -69,11 +69,12 @@ def run_experiment(experiment_path: str):
 
 if __name__ == "__main__":
     if args.find_unevaluated:
-        experiments = glob(f"{args.experiment_path}**/step_results.csv")
+        experiments = glob(f"{args.experiment_path}**/step_results.csv", recursive=True)
         logger.critical(f"Found {len(experiments)} experiments")
         for experiment in experiments:
             if not os.path.exists(f"{experiment}step_results_eval.csv"):
-                run_experiment(experiment)
+                experiment_path = experiment.replace("step_results.csv", "")
+                run_experiment(experiment_path)
             else:
                 logger.critical(f"Skipping {experiment} as it was already evaluated")
     else:
