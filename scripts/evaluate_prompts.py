@@ -28,6 +28,8 @@ def run_experiment(experiment_path: str):
     logger.critical(f"Running experiment with args: {experiment_args}")
     # read experiment results by using the best prompt per step from the step_results.csv
     df = pd.read_csv(f"{experiment_path}step_results.csv")
+    # empty file to experiment path to block other evaluations
+    open(f"{experiment_path}step_results_eval.csv", "w").close()
 
     # take best per step
     if args.only_best:
@@ -44,7 +46,12 @@ def run_experiment(experiment_path: str):
         block_size=experiment_args["block_size"],
         test_size=args.validation_size,
     )
-
+    # model_id=args.model,
+    # max_model_len=args.max_model_len,
+    # batch_size=args.batch_size,
+    # model_storage_path=args.model_storage_path,
+    # revision=args.model_revision,
+    # seed=args.random_seed,
     llm = get_llm(
         model_id=experiment_args["model"],
         max_model_len=experiment_args["max_model_len"],
@@ -52,7 +59,6 @@ def run_experiment(experiment_path: str):
         model_storage_path=experiment_args["model_storage_path"],
         revision=experiment_args["model_revision"],
         seed=experiment_args["random_seed"],
-        device="cuda",
     )
 
     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
@@ -63,6 +69,8 @@ def run_experiment(experiment_path: str):
 
     # save results to the step_results as extra column by joining on the prompt
     df = df.merge(df_results, on="prompt", how="left")
+    # delete the empty file to allow other evaluations
+    os.remove(f"{experiment_path}step_results_eval.csv")
 
     df.to_csv(f"{experiment_path}step_results_eval.csv", index=False)
 
