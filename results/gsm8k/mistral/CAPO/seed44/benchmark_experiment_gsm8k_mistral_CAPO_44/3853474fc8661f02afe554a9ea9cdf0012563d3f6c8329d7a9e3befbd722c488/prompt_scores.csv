@@ -1,7 +1,7 @@
-,0
+,0,1
 "Address the elementary math problem by disseecting it into logical steps. Break it down into smaller parts to solve it. When you reach the solution, ensure your final answer appears between <final_answer> and </final_answer> markers for clarity.
 
-Input:",0.23333333333333334
+Input:",0.23333333333333334,0.3333333333333333
 "Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Your final answer must be contained within <final_answer> </final_answer> tags.
 
 Input: Marcy uses 6 ounces of pet cleaner to clean up a dog stain, 4 ounces to clean up a cat stain, and 1 ounce to clean up a rabbit stain. How much cleaner does she need to clean up after 6 dogs, 3 cats and 1 rabbit?
@@ -75,7 +75,7 @@ Let's calculate the total number of pants:
 Input: Sixteen boys and 14 girls attended Simon's birthday party. Three-fourths of the boys and 6/7 of the girls brought gifts. How many of those who attended did not bring gifts?
 Output: <final_answer>6</final_answer>
 
-Input:",0.0
+Input:",0.0,
 "Break down this word problem carefully. Remember to format the final answer within <final_answer> </final_answer> tags.
 
 Input: Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
@@ -145,7 +145,7 @@ Therefore, it will take 22 rounds to fill the pool.
 Input: Joan is preparing sandwiches for a family potluck. She decides to make ham sandwiches and grilled cheese sandwiches. One ham sandwich requires 2 slices of cheese, and one grilled cheese sandwich requires 3 slices of cheese. She uses a total of 50 slices of cheese to make the sandwiches. If she makes 10 ham sandwiches, how many grilled cheese sandwiches does she make?
 Output: <final_answer>10</final_answer>
 
-Input:",0.0
+Input:",0.0,
 "Calculate the solution to this grade school word problem. Show your reasoning process, and don't forget to place your final answer within <final_answer> </final_answer> markers as required.
 
 Input: Diana gets 30 minutes of video game time for every hour she reads. Her dad decided to raise her reward by 20%. Diana read for 12 hours this week. How many more minutes of video game time will she get as a result of her raise?
@@ -180,10 +180,10 @@ Output: To solve this problem, we need to calculate the total distance Cheryl wa
 
 <final_answer> 12 </final_answer>
 
-Input:",0.5
+Input:",0.5,0.5333333333333333
 "Calling all math wizards! I need help with this tricky multi-step word problem. Walk me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
 
-Input:",0.16666666666666666
+Input:",0.16666666666666666,0.26666666666666666
 "Can you assist in solving this math word problem? It requires multiple steps to solve. Break down the problem step-by step. Once you've solved it, please include the final answer within <final_answer> </final_answer> tags.
 
 Input: Janet filmed a new movie that is 60% longer than her previous 2-hour long movie.  Her previous movie cost $50 per minute to film, and the newest movie cost twice as much per minute to film as the previous movie.  What was the total amount of money required to film Janet's entire newest film?
@@ -262,10 +262,10 @@ Output: To solve this problem, we need to break it down into several steps:
 
 <final_answer>40</final_answer>
 
-Input:",0.0
+Input:",0.0,
 "Can you help solve this math word problem? It may take several steps. When you've figured it out, please put the final answer in <final_answer> </final_answer> tags.
 
-Input:",0.2
+Input:",0.2,0.4666666666666667
 "Determine the solution to this elementary math word problem by following a step-by-step approach. Explain your reasoning and ensure that the final answer is enclosed within <final_answer> </final_answer> markers.
 
 Input: In her bakery, Teal sells pumpkin pie and custard pie by the slice.  The pumpkin pie is cut into 8 pieces.  The custard pie is cut into 6 pieces.  Pumpkin pie is $5 a slice.  Custard pie is $6 a slice.  If Teal sells 4 pumpkin pies and 5 custard pies, how much money does she make from her sales?
@@ -323,7 +323,104 @@ Output: To determine the total cost of Fabian's new accessories, we need to foll
 
 <final_answer>64</final_answer>
 
-Input:",0.0
+Input:",0.0,
+"Determine the solution to this grade school math word problem by following a step-by-step approach. Explain your reasoning and ensure that the final answer is enclosed within <final_answer> </final_answer> markers.
+
+Input: Colton had 72 dolphin stickers. He gave 4 stickers each to 3 friends.  He also gave his friend Mandy 2 more than he gave his three friends total.   And he gave Justin 10 less than Mandy.  How many stickers does Colton have left?
+Output: <final_answer>42</final_answer>
+
+Input: Herman likes to feed the birds in December, January and February.  He feeds them 1/2 cup in the morning and 1/2 cup in the afternoon.  How many cups of food will he need for all three months?
+Output: <final_answer>90</final_answer>
+
+Input: Betty ordered 18 items in an online shop via cash on delivery. She ordered 6 pieces of slippers that cost $2.5 each, 4 pieces of lipstick for $1.25 each, and 8 pieces of hair color for $3 each. How much did Betty pay in total when it was delivered?
+Output: To determine the total amount Betty paid, we need to calculate the cost of each type of item and then sum these costs.
+
+1. **Calculate the cost of slippers:**
+   - Number of slippers: 6
+   - Cost per slopper: $2.5
+   - Total cost for slippers: \(6 \times 2.5 = 15$
+
+2. **Calculate the cost of lipstick:**
+   - Number of lipsticks: 4
+   - Cost per lipstick: $1.25
+   - Total cost for lipsticks: \(4 \times 1.25 = 5\)
+
+3. **Calculate the cost of hair color:**
+   - Number of hair colors: 8
+    - Cost per hair color: $3
+    - Total cost for hair colors: \(8 \times 3 = 24\)
+
+4. **Sum the total cost of all items:**
+   - Total cost = Cost of slippers + Cost of lipsticks + Cost of hair colors
+    - Total cost = \(15 + 5 + 24 = 44$
+
+Therefore, the total amount Betty paid is <final_answer> 44 </final_answer>.
+
+Input: A train travels 360 miles in 3 hours. At the same rate, how many additional hours would it take to travel an additional 240 miles?
+Output: <final_answer>2</final_answer>
+
+Input: Kyle goes to basketball practice every day for 2 hours. At practice he spends half of the time shooting and the rest of the time running and weight lifting. If he runs for twice the time he spends weightlifting, how much time in minutes does he spend lifting weight?
+Output: <final_answer>20</final_answer>
+
+Input: Mrs. Gable’s third grade class is on a field trip to the beach. For lunch, Mrs. Gable brought 20 lunches for the 20 students in her class. She included a pack of animal crackers in each lunch bag for dessert. Each pack of animal crackers contained 10 animal crackers. If 2 students did not eat their animal crackers, how many animal crackers were eaten in total among Mrs. Gable’s students?
+Output: <final_answer>180</final_answer>
+
+Input:",0.26666666666666666,0.36666666666666664
+"Determine the solution to this grade school math word problem. Provide a detailed explanation of your reasoning process, and ensure that the final answer is enclosed within <final_answer> </final_answer> markers. Can you assist in solving this math word problem? It may involve multiple steps. Once you have figured out the solution, please include the final answer within <final_answer> </final_answer> tags.
+
+Input: Jordan and Perry took a boat out to the lake to go fishing on a Monday morning. Jordan caught 4 fish and Perry caught double what Jordan caught. On the way back to shore, the boat tipped over and they lost one-fourth of their total catch. How many fish remain?
+Output: <final_answer>9</final_answer>
+
+Input:",0.4,0.6333333333333333
+"I need assistance with a challenging grade school math problem that requires multiple steps to solve. Calling all math experts! Can you help me find the solution? Guide me through your solution process and once you've determined the answer, place the final result inside <final_answer>answer</final_answer> so I can easily locate it.
+
+Input: There are six unicorns in the Enchanted Forest. Everywhere a unicorn steps, four flowers spring into bloom. The six unicorns are going to walk all the way across the forest side-by-side, a journey of 9 kilometers. If each unicorn moves 3 meters forward with each step, how many flowers bloom because of this trip?
+Output: <final_answer>72000</final_answer>
+
+Input: Aubree saw 20 beavers and 40 chipmunks by a tree when going to school and scared them away when they saw her. While coming back from school, she realized the number of beavers had doubled and the number of chipmunks had decreased by 10. What's the total number of animals she saw that day?
+Output: To solve this problem, we need to follow these steps:
+
+1. **Calculate the initial number of animals:**
+   - Beavers: 20
+   - Chipmunks: 40
+
+2. **Calculate the number of animals after the changes:**
+   - Beavers: 20 doubled = 20 * 2 = 40
+   - Chipmunks: 40 decreased by 10 = 40 - 10 = 30
+
+3. **Calculate the total number of animals seen that day:**
+   - Total number of animals = Initial number of beavers + Initial number of chipmunks + changed number of beavers + changed number of chipmunks
+   - Total number of animals = 20 + 40 + 40 + 30 = 130
+
+<final_answer>130</final_answer>
+
+Input: A group of researchers are studying a colony of penguins. Their results show that the size doubled in the first year they watched the colony, then tripled in the next year. This year, however, harsh conditions meant the colony only gained 129 penguins. The colony has 1077 penguins in it now. Each penguin eats one and a half fish every day. How many fish did the whole colony catch per day to eat at the beginning of the first year?
+Output: <final_answer>237</final_answer>
+
+Input: Lisa was collecting socks to donate to a homeless shelter. She bought 12 pairs at a discount store. Sandra, her friend, came over and brought her 20 pairs of socks. Her cousin showed up with one-fifth the number of pairs that Sandra bought. After work, Lisa’s mom brought 8 more than three times the number of pairs Lisa started with. How many pairs of socks did Lisa end up with?
+Output: To solve this problem, we need to follow several steps to calculate the total number of pairs of socks Lisa ended up with. Let's break down the problem step by step.
+
+1. **Lisa's initial pairs:**
+   Lisa bought 12 pairs of socks.
+
+2. **Sandra's pairs:**
+   Sandra brought 20 pairs of socks.
+
+3. **Cousin's pairs:**
+   The cousin brought one-fifth the number of pairs that Sandra bought.
+   \[ \text{Cousin's pairs} = \frac{1}{5} \times 20 = 4 \]
+
+4. **Lisa's mom's pairs:**
+   Lisa's mom brought 8 more than three times the number of pairs Lisa started with.
+   \[ \text{Lisa's mom's pairs} = 3 \times 12 + 8 = 36 + 8 = 44 \]
+
+5. **Total pairs:**
+   Adding all the pairs together:
+   \[ \text{Total pairs} = 12 + 20 + 4 + 44 = 80 \]
+
+So, the total number of pairs of socks Lisa ended up with is <final_answer>80</final_answer>.
+
+Input:",0.0,
 "I need assistance with a math word problem that requires multiple steps to solve. Can you help me figure out the solution? Once you've determined the answer, please include the final solution within <final_answer> </final_answer> so I can easily locate it.
 
 Input: Joan is preparing sandwiches for a family potluck. She decides to make ham sandwiches and grilled cheese sandwiches. One ham sandwich requires 2 slices of cheese, and one grilled cheese sandwich requires 3 slices of cheese. She uses a total of 50 slices of cheese to make the sandwiches. If she makes 10 ham sandwiches, how many grilled cheese sandwiches does she make?
@@ -373,13 +470,13 @@ Let's go through each step:
 
 <final_answer>99</final_answer>
 
-Input:",0.4
+Input:",0.4,0.6666666666666666
 "I need help with a multi-step grade school math problem. Can you walk through the solution and place the final result inside <final_answer> answer </final_answer> markers?
 
 Input: Billy has $25 less than twice the money Sam has. If Sam has $75, how much money do they have together?
 Output: <final_answer>200</final_answer>
 
-Input:",0.4
+Input:",0.4,0.5666666666666667
 "I'm seeking assistance with a complex grade school math problem that requires multiple steps to solve. Can you guide me through the solution step-by-step and include the final answer within <final_answer>answer</final_answer> markers?
 
 Input: Mr. McNeely takes a register of the total number of students present in class every day. On a particular week, the number of students in the class on the second day was 40 more than the first day. The number of students who didn't turn up for the class on the second day was twice the number of students who didn't turn up on the third day. On the third day, 1/7 of the total number of students of the class called in sick. If the total number of students in the class is 280, calculate the number of absent students in the three days.
@@ -462,10 +559,211 @@ Total time = 1 hour (assembling) + 3 hours (baking) + 1 hour (decorating) = 5 ho
 
 <final_answer>5</final_answer>
 
-Input:",0.0
+Input:",0.0,
+"I'm seeking assistance with a complex grade school math problem that requires multiple steps to solve. Could you guide me through the solution step-by-step and include the final answer within <final_answer>answer</final_answer> markers?
+
+Input: Yesterday, Vincent bought fifteen packs of stickers. Today, he bought ten more packs of stickers than yesterday. How many packs of stickers does Vincent have altogether?
+Output: Sure, let's break down the problem step-by-step:
+
+1. **Calculate the number of packs Vincent bought today:**
+   Vincent bought 10 more packs than yesterday. Since he bought 15 packs yesterday, today he bought:
+   \[ 15 + 10 = 25 \]
+
+2. **Calculate the total number of packs Vincent has:**
+   Add the number of packs from yesterday and today:
+   \[ 15 + 25 = 40 \]
+
+So, Vincent has <final_answer>40</final_answer> packs of stickers altogether.
+
+Input: At the pet store, there are 7 puppies and 6 kittens for sale. Two puppies and three kittens are sold. How many pets remain at the store?
+Output: Sure, let's solve this step-by-step:
+
+1. **Calculate the total number of puppies and kittens initially:**
+   - Number of puppies: 7
+   - Number of kittens: 6
+   - Total number of pets: 7 + 6 = 13
+
+2. **Calculate the number of pets sold:**
+   - Number of puppies sold: 2
+   - Number of kittens sold: 3
+   - Total number of pets sold: 2 + 3 = 5
+
+3. **Calculate the number of pets remaining:**
+   - Total number of pets remaining: 13 - 5 = 8
+
+<final_answer>8</final_answer>
+
+Input: James earns $10 per week as an allowance. After saving all his money for four weeks, he spends half of it on a new video game. He then spends a quarter of what is left to buy a new book. How much money does he have left?
+Output: Sure, let's break down the problem step-by-step:
+
+1. **Calculate the total amount James saves:**
+   James earns $10 per week. After saving for four weeks, the total amount saved is:
+   \[ 10 \times 4 = 40 \]
+
+2. **Calculate the amount spent on the video game:**
+   James spends half of his savings on a new video game:
+   \[ \frac{40}{2} = 20 \]
+
+3. **Calculate the remaining amount after buying the video game:**
+   The remaining amount is:
+   \[ 40 - 20 = 20 \]
+
+4. **Calculate the amount spent on the book:**
+   James spends a quarter of the remaining amount on a new book:
+   \[ \frac{20}{4} = 5 \]
+
+5. **Calculate the remaining amount after buying the book:**
+   The remaining amount is:
+   \[ 20 - 5 = 15 \]
+
+So, the final amount James has left is <final_answer>15</final_answer>.
+
+Input: A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output: Sure, let's break down the problem step-by-step:
+
+1. **Initial Number of Balloons**:
+   The hot air balloon starts with 200 balloons.
+
+2. **After Half an hour**:
+   1/5 of the total number of balloons blow up.
+   \[ \text{Balloons blown up} = \frac{1}{5} \times 200 = 40 \]
+   So, 40 balloons have blown up.
+
+3. **Remaining Balloons after half an hour**:
+   \[ \textRemaining balloons} = 200 - 40 = 160\]
+
+4. **After another hour**:
+   Twice the number of balloons that had already blown up also blow up.
+   \[ \textAdditional balloons blown up} = 2 \times 40 = 80 \]
+   So, 80 additional balloons have blown up.
+
+5. **Remaining Balloons after another hour**:
+   \[ \textRemaining balloons} = 160 - 80 = 80\]
+
+Therefore, the number of balloons that remain intact is <final_answer>80</final_answer>.
+
+Input: Paddy's Confidential has 600 cans of stew required to feed 40 people. How many cans would be needed to feed 30% fewer people?
+Output: <final_answer>420</final_answer>
+
+Input: Sweet Hope hosts a casino with 3 roulette tables labeled A, B, and C. At 6:00 pm, Table B had twice as much money on it as table C, which had $20 more than table A. If there was $40 on table A, how much money was there on all the tables?
+Output: Sure, let's solve this step-by-step.
+
+1. **Determine the amount on Table A:**
+   Table A has $40.
+
+2. **Determine the amount on Table C:**
+   Table C has $20 more than Table A.
+   \[ \text{Amount on Table C} = 40 + 20 = 60 \]
+
+3. **Determine the amount on Table B:**
+   Table B has twice as much money as Table C.
+   \[ \text{Amount on Table B} = 2 \times 60 = 120 \]
+
+4. **Calculate the total amount on all tables:**
+   \[ \text{Total amount} = 40 + 60 + 120 = 220 \]
+
+<final_answer>220</final_answer>
+
+Input:",0.0,
 "I'm seeking help with a complex grade school math problem that requires multiple steps to solve. Can you assist me in finding the solution? Once you've determined the answer, please walk through the solution and place the final result inside <final_answer>answer</final_answer> so I can easily locate it.
 
-Input:",0.26666666666666666
+Input:",0.26666666666666666,0.4
+"I'm seeking help with a math word problem that requires a series of steps to solve. Can you assist me in finding the solution? It may involve multiple steps. Once you've determined the answer, please include the final solution within <final_answer> </final_answer> so I can easily locate it.
+
+Input: June's mom promises to pay her 1 cent for every cloverleaf she picks from the lawn. June picks 200 clovers in total. 75% have 3 petals. 24% have two petals and 1% have four petals. How many cents does June earn?
+Output: To solve this problem, we need to calculate the number of clovers with each type of petals and then determine the total amount of money June earns.
+
+1. **Calculate the number of clovers with each type of petals:**
+   - 75% of 200 clovers have 3 petals:
+     \[ 0.75 \times 200 = 150 \]
+   - 24% of 200 clovers have 2 petals:
+    \[0.24 \times 200 = 48\]
+    - 1% of 200 clovers have 4 petals:
+    \[0.01 \times 200 = 2\]
+
+2. **Calculate the total number of petals:**
+   \[150 \times 3 + 48 \times 2 + 2 \ * 4 = 450 + 96 + 8 = 554\]
+
+3. **Calculate the total amount of money June earns:**
+   \[554 \times 1 = 554\]
+
+<final_answer>554</final_answer>
+
+Input: Jed collects stamp cards. Every week, he gets 6 cards. But every two weeks, he gives 2 cards to his friends. If Jed started with 20 cards, after how many weeks will he have a total of 40 cards?
+Output: <final_answer>4</final_answer>
+
+Input: Meghan had money in the following denomination: 2 $100 bills, 5 $50 bills, and 10 $10 bills. How much money did he have altogether?
+Output: To solve this problem, we need to calculate the total amount of money Megan has by summing the value of each denomination.
+
+1. Calculate the total value of the $100 bills:
+   \[ 2 \times 100 = 200 \]
+
+2. Calculate the total value of the $50 bills:
+   \[ 5 \times 50 = 250 \]
+
+3. Calculate the total value of the $10 bills:
+   \[ 10 \times 10 = 100 \]
+
+4. Sum the values of all the denominations:
+   \[ 200 + 250 + 100 = 550 \]
+
+Therefore, the total amount of money Megan has is <final_answer>550</final_answer>.
+
+Input: Vaishali wears a beautiful piece of clothing called a Saree,  a traditional Indian dress for women.  It is mostly tangerine-colored, with blue, brown, and gold-colored decorative stripes.  There are three times as many gold stripes as brown stripes, and five times as many blue stripes as gold stripes. If there are 4 brown stripes, how many blue stripes does Vaishali's Saree have?
+Output: To solve this problem, we need to follow these steps:
+
+1. **Determine the number of gold stripes**:
+   - Given that there are three times as many gold stripes as brown strips, and there are 4 brown strips, we can calculate the number of gold strips as follows:
+   \[
+    \text{Number of gold strips} = 3 \times 4 = 12
+    \]
+
+2. **Determine the number of blue strips**:
+   - Given that there are five times as many blue strips as gold strips, we can calculate the number of blue strips as follows:
+   \[
+    \text{Number of blue strips} = 5 \times 12 = 60
+    \]
+
+Therefore, the number of blue strips on Vaishali's Sarree is <final_answer>60</final_answer>.
+
+Input: Archie is playing with his marbles outside. He loses 60% of them into the street. Of the remaining ones, he loses half down a sewer. If he has 20 left, how many did he start with?
+Output: To solve this problem, we need to work backwards from the remaining marbles to determine the original number of marbles. Let's break it down step by step:
+
+1. **Determine the number of marbles after losing half down the seower:**
+   Archie has 20 marbles left after losing half down the seower. This means he had 20 * 2 = 40 marbles before losing half down the seower.
+
+2. **Determine the number of marbles before losing 60% into the street:**
+   Before losing 60% of his marbles into the street, he had 40 marbles. This means he had 40 / (1 - 0.6) = 40 / 0.4 = 100 marbles before losing 60% into the street.
+
+So, Archie started with <final_answer>100</final_answer> marbles.
+
+Input: Maryann spends seven times as long doing accounting as calling clients. If she worked 560 minutes today, how many minutes did she spend calling clients?
+Output: To solve this problem, we need to determine the time Maryann spent calling clients. Let's break down the steps:
+
+1. **Determine the total time spent on accounting and calling clients:**
+   Maryann spent 560 minutes in total.
+
+2. **Determine the ratio of time spent on accounting to calling clients:**
+   Maryann spends seven times as long doing accounting as calling clients. This means the time spent on accounting is 7 times the time spent on calling clients.
+
+3. **Set up the equations:**
+   Let \(x$ be the time spent calling clients.
+   Then the time spent on accounting is $7x$.
+
+4. **Total time equation:**
+   The total time spent is the sum of the time spent on accounting and calling clients:
+   \[ x + 7x = 560 \]
+
+5. **Solve for $x$:
+   \[ 8x = 560 \]
+   \[ x = \frac{560}{8} \]
+    \[ x = 70\]
+
+So, Maryann spent 70 minutes calling clients.
+
+<final_answer> 70 </final_answer>
+
+Input:",0.0,
 "I'm struggling with this math word problem that needs multiple steps to solve. Can you help? Make sure to put your final answer between <final_answer> </final_answer> tags so I can easily find it.
 
 Input: Ursula earns $8.50 an hour working in a restaurant. She works 8 hours a day. If she works 20 days a month, determine her annual salary.
@@ -566,7 +864,7 @@ Output: <final_answer>10</final_answer>
 Input: Monica charges $25.00 per person when catering a dinner party.  For repeat customers, she offers a 10% discount.  Phoebe is a repeat customer who is having a dinner party for 20 guests.  How much will Monica make from the party?
 Output: <final_answer>450</final_answer>
 
-Input:",0.0
+Input:",0.0,
 "Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
 
 Input: Mrs. Gable’s third grade class is on a field trip to the beach. For lunch, Mrs. Gable brought 20 lunches for the 20 students in her class. She included a pack of animal crackers in each lunch bag for dessert. Each pack of animal crackers contained 10 animal crackers. If 2 students did not eat their animal crackers, how many animal crackers were eaten in total among Mrs. Gable’s students?
@@ -607,10 +905,13 @@ Output: <final_answer>200</final_answer>
 Input: Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
 Output: <final_answer>8</final_answer>
 
-Input:",0.4
+Input:",0.4,0.5666666666666667
 "Solve step-by-step. Final answer between <final_answer> tags.
 
-Input:",0.23333333333333334
+Input:",0.23333333333333334,0.3333333333333333
+"Solve this complex grade school math problem by breaking it down into steps. Provide a detailed explanation of each step and ensure the final answer is enclosed between <final_answer> and </final_answer>.
+
+Input:",0.13333333333333333,0.2
 "Solve this math problem by breaking it down into smaller parts. Once you reach the conclusion, ensure your final answer appears between <final_answer> and </final_answer> tags.
 
 Input: Mark wants to build a pyramid of soda cases that's four levels tall. Each level of the pyramid has a square base where each side is one case longer than the level above it. The top level is just one case. How many cases of soda does Mark need?
@@ -628,7 +929,81 @@ Output: <final_answer>122</final_answer>
 Input: Archibald eats 1 apple a day for two weeks. Over the next three weeks, he eats the same number of apples as the total of the first two weeks. Over the next two weeks, he eats 3 apples a day. Over these 7 weeks, how many apples does he average a week?
 Output: <final_answer>10</final_answer>
 
-Input:",0.5666666666666667
+Input:",0.5666666666666667,0.7
+"Tackle the elementary math problem by breaking it down into logical steps. Decompose it into smaller parts to solve it. I need assistance with a math word problem that requires multiple steps to solve. Can you help me figure out the solution? Once you've determined the answer, please include the final solution within <final_answer> and </final_answer> so I can easily locate it.
+
+Input:",0.03333333333333333,
+"Tackle the elementary math problem by breaking it down into logical steps. Disseect it into smaller parts to solve it. Solve step-by-step. When you reach the solution, ensure your final answer appears between <final_answer> and </final_answer> markers for clarity.
+
+Input: Leon ordered 3 sets of toy organizers for $78 per set and 2 gaming chairs for $83 each. If there is a delivery fee that is 5% of the total sales, how much did Leon pay?
+Output: <final_answer>420</final_answer>
+
+Input: The math teacher would be happy if the class average test score was at least 85. There are 10 students in the class, 5 of which scored a 92 on the test and 4 of which scored an 80. What would the last student have to score to at least make the teacher happy?
+Output: To solve this problem, we need to calculate the average score of the class and determine what the last student needs to score to achieve an average of at least 85.
+
+### Step 1: Calculate the total score of the first 9 students.
+- 5 students scored 92.
+- 4 students scored 80.
+
+Total score for the first 9 students:
+\[ 5 \times 92 + 4 \times 80 = 460 + 320 = 780 \]
+
+### Step 2: Determine the required total score for the class to have an average of 85.
+The average score for 10 students should be 85.
+\[ 10 \times 85 = 850 \]
+
+### Step 3: Calculate the score needed for the last student.
+The total score needed for the last student to make the average 85:
+\[ 850 - 780 = 70 \]
+
+### Conclusion:
+The last student needs to score <final_answer>70</final_answer> to make the average score of the class at least 85.
+
+Input: Meghan had money in the following denomination: 2 $100 bills, 5 $50 bills, and 10 $10 bills. How much money did he have altogether?
+Output: <final_answer>550</final_answer>
+
+Input: There were 21 dollars in the cookie jar. Doris spent $6 from the cookie jar. Martha spent half as much as Doris. How much money, in dollars, was left in the cookie jar?
+Output: To solve this problem, we will break it down into logical steps:
+
+1. **Initial Amount**: Start with the initial amount in the cookie jar.
+   - Initial amount = $21
+
+2. **Doris's Spend**: Calculate how much Doris spent.
+   - Doris spent = $6
+
+3. **Remaining Amount after Doris's Spend**: Calculate the remaining amount after Doris's spend.
+   - Remaining amount after Doris = $21 - $6 = $15
+
+4. **Martha's Spend: Calculate how much Martha spent.
+   - Martha spent = half of what Doris spent = $6 / 2 = $3
+
+5. **Remaining Amount after Martha's Spend: Calculate the remaining amount after Martha's spend.
+   - Remaining amount after Martha = $15 - $3 = $12
+
+So, the final amount left in the cookie jar is <final_answer>12</final_answer>.
+
+Input: Annie is a mother of 3 children: Mark, Matt, and Mike. She decided to give them some fruits. Mike received 3 oranges. Matt got twice as many apples, and Mark got as many bananas as Mike and Matt received fruits altogether. How many fruits do the three children have in total?
+Output: To solve this problem, we need to break it down into smaller steps:
+
+1. **Determine the number of fruits Mike received:**
+   - Mike received 3 oranges.
+
+2. **Determine the number of fruits Matt received:**
+   - Matt received twice as many apples as Mike received oranges.
+   - Therefore, Matt received \(2 \times 3 = 6\) apples.
+
+3. **Determine the number of fruits Mark received:**
+   - Mark received as many bananas as Mike and Matt received fruits altogether.
+   - The total number of fruits Mike and Matt received is \(3 + 6 = 9$.
+   - Therefore, Mark received 9 bananas.
+
+4. **Calculate the total number of fruits:
+   - The total number of fruits is the sum of the fruits received by Mike, Matt, and Mark.
+   - Total fruits = \(3 + 6 + 9 = 18$.
+
+<final_answer>18</final_answer>
+
+Input:",0.0,
 "Tackle this elementary math problem by breaking it into logical steps. When you reach the solution, enclose the final answer with <final_answer> and </final_answer> markers for clarity.
 
 Input: Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
@@ -694,7 +1069,7 @@ Output: To solve this problem, we will break it into logical steps:
 Input: Mike spent 37 dollars on notebooks.  He bought a total of 12 notebooks.  He bought 3 red notebooks at 4 dollars each, 2 green notebooks at 2 dollars each, and the rest were blue notebooks.  How much does each blue notebook cost?
 Output: <final_answer>3</final_answer>
 
-Input:",0.0
+Input:",0.0,
 "To tackle this grade school math word problem, follow a systematic approach. Break down each step of your reasoning process. After detailing your explanation, present the final answer enclosed within <final_answer> tags.
 
 Input: While shopping, Greg spent 300$ on a shirt and shoes. If Greg spent 9 more than twice as much on shoes as he did a shirt, how much did Greg spend on a shirt?
@@ -739,7 +1114,7 @@ Output: To solve this problem, we need to calculate the average number of birds 
 
 Therefore, the average number of birds Kendra saw on each site is <final_answer>7</final_answer>.
 
-Input:",0.5333333333333333
+Input:",0.5333333333333333,0.7
 "To tackle this word problem, you need to break it down into manageable steps. Ensure that the final answer is enclosed within <final_answer> </final_answer> tags. I'm having trouble with this math problem that requires multiple steps to solve. Can you assist me? Make sure to place your final answer between <final_answer> </final_answer> tags so I can easily locate it.
 
 Input: Joan is preparing sandwiches for a family potluck. She decides to make ham sandwiches and grilled cheese sandwiches. One ham sandwich requires 2 slices of cheese, and one grilled cheese sandwich requires 3 slices of cheese. She uses a total of 50 slices of cheese to make the sandwiches. If she makes 10 ham sandwiches, how many grilled cheese sandwiches does she make?
@@ -820,7 +1195,7 @@ Output: To solve this problem, we need to calculate the total amount of money by
 
 Therefore, the total amount of money Meghan had is <final_answer>550</final_answer>.
 
-Input:",0.0
+Input:",0.0,
 "Work through this grade school word problem methodically. After your explanation, provide the ultimate answer surrounded by <final_answer> tags.
 
 Input: Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
@@ -893,4 +1268,4 @@ So, the total number of eggs Uncle Ben will have is <final_answer>1158</final_an
 Input: The length of a rectangle is four times its width. If the area is 100 m2. what is the length of the rectangle?
 Output: <final_answer>20</final_answer>
 
-Input:",0.0
+Input:",0.0,
