@@ -49,11 +49,11 @@ BENCHMARK_CONFIG = ExperimentConfig(
             optimizer="CAPO",
             optimizer_params={
                 "n_steps": 999,
-                "population_size": 10,
+                "population_size": 12,
                 "block_size": 30,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
-                "upper_shots": 5,
+                "upper_shots": 8,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,

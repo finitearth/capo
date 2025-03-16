@@ -18,6 +18,7 @@ parser.add_argument("--find-unevaluated", action="store_true")
 parser.add_argument("--validation-size", type=int, default=500)
 parser.add_argument("--max-tokens", type=int, default=10000000)
 parser.add_argument("--only-best", action="store_true")
+parser.add_argument("--reverse", action="store_true")
 args = parser.parse_args()
 
 
@@ -76,6 +77,8 @@ def run_experiment(experiment_path: str):
 if __name__ == "__main__":
     if args.find_unevaluated:
         experiments = glob(f"{args.experiment_path}**/step_results.csv", recursive=True)
+        if args.reverse:
+            experiments = experiments[::-1]
         logger.critical(f"Found {len(experiments)} experiments")
         for experiment in experiments:
             if not os.path.exists(experiment.replace("step_results.csv", "step_results_eval.csv")):
