@@ -1,0 +1,726 @@
+step,timestamp,time_elapsed,score,prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,2025-03-16 19:09:52.727308,150.314367,0.5512713823393437,"Solve this math problem by breaking it down into smaller parts. Once you reach the conclusion, ensure your final answer appears between <final_answer> and </final_answer> tags.
+
+Input: Mark wants to build a pyramid of soda cases that's four levels tall. Each level of the pyramid has a square base where each side is one case longer than the level above it. The top level is just one case. How many cases of soda does Mark need?
+Output: <final_answer>30</final_answer>
+
+Input: Two alien spacecraft on a sightseeing tour of Earth left New Orleans airport at 3:00 pm to travel the 448-mile distance to Dallas by air.  Traveling nonstop, the first spacecraft landed in Dallas at 3:30 pm, while the second spacecraft landed in Dallas thirty minutes later. Assuming both spacecraft traveled at constant speed, what was the difference in speed, in miles per hour, between the two spacecraft?
+Output: <final_answer>448</final_answer>
+
+Input: Martha buys 1 latte for $4.00 every morning, 5 days a week.  3 days a week, she buys an iced coffee for $2.00.  Her goal for the entire year is to cut her coffee spending by 25%.  How much will she save?
+Output: <final_answer>338</final_answer>
+
+Input: Carrie worked for 2 hours a day for 4 days to make and decorate a wedding cake. She was paid $22 an hour. The cost for supplies to make the cake was $54. How much profit did Carrie earn on the cake?
+Output: <final_answer>122</final_answer>
+
+Input: Archibald eats 1 apple a day for two weeks. Over the next three weeks, he eats the same number of apples as the total of the first two weeks. Over the next two weeks, he eats 3 apples a day. Over these 7 weeks, how many apples does he average a week?
+Output: <final_answer>10</final_answer>
+
+Input:",1260,470,394082,65532,0.596
+1,2025-03-16 19:09:52.727308,150.314367,0.480235783633842,"Calculate the solution to this grade school word problem. Show your reasoning process, and don't forget to place your final answer within <final_answer> </final_answer> markers as required.
+
+Input: Diana gets 30 minutes of video game time for every hour she reads. Her dad decided to raise her reward by 20%. Diana read for 12 hours this week. How many more minutes of video game time will she get as a result of her raise?
+Output: <final_answer>72</final_answer>
+
+Input: Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output: To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input: Cheryl got angry with her sister and decided to run away from home. She walked 2 miles every hour for 3 hours. Then she got homesick and walked back home. How many miles did Cheryl walk in total?
+Output: To solve this problem, we need to calculate the total distance Cheryl walked. We can break it down into two parts: the distance she walked away from home and the distance she walked back home.
+
+1. **Distance away from home:**
+   - Cheryl walked 2 miles every hour for 3 hours.
+   - Total distance away from home = 2 miles/hour * 3 hours = 6 miles.
+
+2. **Distance back home:**
+   - Cheryl walked back the same distance she traveled away from home.
+   - Total distance back home = 6 miles.
+
+3. **Total distance walked:**
+   - Total distance = distance away from home + distance back home = 6 miles + 6 miles = 12 miles.
+
+<final_answer> 12 </final_answer>
+
+Input:",1260,470,394082,65532,0.594
+1,2025-03-16 19:09:52.727308,150.314367,0.3971914008321774,"I need help with a multi-step grade school math problem. Can you walk through the solution and place the final result inside <final_answer> answer </final_answer> markers?
+
+Input: Billy has $25 less than twice the money Sam has. If Sam has $75, how much money do they have together?
+Output: <final_answer>200</final_answer>
+
+Input:",1260,470,394082,65532,0.536
+1,2025-03-16 19:09:52.727308,150.314367,0.3821775312066574,"Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input: Mrs. Gable’s third grade class is on a field trip to the beach. For lunch, Mrs. Gable brought 20 lunches for the 20 students in her class. She included a pack of animal crackers in each lunch bag for dessert. Each pack of animal crackers contained 10 animal crackers. If 2 students did not eat their animal crackers, how many animal crackers were eaten in total among Mrs. Gable’s students?
+Output: <final_answer>180</final_answer>
+
+Input: Barry wants to make a huge salad using only cucumbers and tomatoes. He will use a total of 280 pieces of vegetables. If there are thrice as many tomatoes as cucumbers, how many cucumbers will be used in the salad?
+Output: To solve this problem, we can follow these steps:
+
+1. **Define the variables**:
+   Let \( c$ be the number of cucumbers.
+   Let $t$ be the number of tomatoes.
+
+2. **Set up the equations based on the problem:
+   - The total number of vegetables is 280.
+   - There are thrice as many tomatoes as cucumbers.
+
+   Therefore, we have:
+   \[ c + t = 280 \]
+   \[ t = 3c \]
+
+3. **Substitute the second equation into the first equation:
+   \[ c + 3c = 280 \]
+   \[ 4c = 280\]
+
+4. **Solve for $c$:
+   \[ c = \frac{280}{4} \]
+    \[ c = 70\]
+
+So, the number of cucumbers used in the salad is 70.
+
+<final_answer>
+70
+</final_answer>
+
+Input: Billy has $25 less than twice the money Sam has. If Sam has $75, how much money do they have together?
+Output: <final_answer>200</final_answer>
+
+Input: Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
+Output: <final_answer>8</final_answer>
+
+Input:",1260,470,394082,65532,0.564
+1,2025-03-16 19:09:52.727308,150.314367,0.3762829403606103,"I need assistance with a math word problem that requires multiple steps to solve. Can you help me figure out the solution? Once you've determined the answer, please include the final solution within <final_answer> </final_answer> so I can easily locate it.
+
+Input: Joan is preparing sandwiches for a family potluck. She decides to make ham sandwiches and grilled cheese sandwiches. One ham sandwich requires 2 slices of cheese, and one grilled cheese sandwich requires 3 slices of cheese. She uses a total of 50 slices of cheese to make the sandwiches. If she makes 10 ham sandwiches, how many grilled cheese sandwiches does she make?
+Output: <final_answer>10</final_answer>
+
+Input: Jed collects stamp cards. Every week, he gets 6 cards. But every two weeks, he gives 2 cards to his friends. If Jed started with 20 cards, after how many weeks will he have a total of 40 cards?
+Output: <final_answer>4</final_answer>
+
+Input: Meghan had money in the following denomination: 2 $100 bills, 5 $50 bills, and 10 $10 bills. How much money did he have altogether?
+Output: To solve this problem, we need to calculate the total amount of money by summing the value of each denomation.
+
+1. Calculate the total value of the $100 bills:
+   \[ 2 \times 100 = 200 \]
+
+2. Calculate the total value of the $50 bills:
+   \[ 5 \times 50 = 250 \]
+
+3. Calculate the total value of the $10 bills:
+   \[ 10 \times 10 = 100 \]
+
+4. Sum the values of all denominations:
+   \[ 200 + 250 + 100 = 550 \]
+
+Therefore, the total amount of money Meghan had is <final_answer>550</final_answer>.
+
+Input: Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output: To solve this problem, we need to follow these steps:
+
+1. **Calculate half the number of toys Bill has.**
+2. **Determify how many more toys Hash has than half the number of toys Bill has.
+3. **Calculate the total number of toys Hash has.
+4. **Calculate the total number of toys both boys have.
+
+Let's go through each step:
+
+1. **Calculate half the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. **Determine how many more toys Hash has than half the number of toys Bill has:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. **Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39\]
+
+4. **Calculate the total number of toys both boys have:**
+   \[ \textTotal toys = 60 + 39 = 99\]
+
+<final_answer>99</final_answer>
+
+Input:",1260,470,394082,65532,0.572
+1,2025-03-16 19:09:52.727308,150.314367,0.2327092001849282,"Solve step-by-step. Final answer between <final_answer> tags.
+
+Input:",1260,470,394082,65532,0.352
+1,2025-03-16 19:09:52.727308,150.314367,0.1985783633841886,"Can you help solve this math word problem? It may take several steps. When you've figured it out, please put the final answer in <final_answer> </final_answer> tags.
+
+Input:",1260,470,394082,65532,0.398
+1,2025-03-16 19:09:52.727308,150.314367,0.165210355987055,"Calling all math wizards! I need help with this tricky multi-step word problem. Walk me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:",1260,470,394082,65532,0.336
+1,2025-03-16 19:09:52.727308,150.314367,-0.0356796116504854,"Tackle this elementary math problem by breaking it into logical steps. When you reach the solution, enclose the final answer with <final_answer> and </final_answer> markers for clarity.
+
+Input: Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output: To solve this problem, we can break it into logical steps:
+
+1. **Calculate the total cost of the skirts:**
+   - Jane bought 2 skirts at $13 each.
+   - Total cost for skirts = 2 * $13 = $26
+
+2. **Calculate the total cost of the blouses:**
+   - Jane bought 3 blouses at $6 each.
+   - Total cost for blouses = 3 * $6 = $18
+
+3. **Calculate the total cost of all items:**
+   - Total cost = cost of skirts + cost of blouses
+   - Total cost = $26 + $18 = $44
+
+4. **Calculate the change Jane received:**
+   - Jane paid $100.
+   - Change = $100 - total cost
+    - Change = $100 - $44 = $56
+
+<final_answer>56</final_answer>
+
+Input: Betty ordered 18 items in an online shop via cash on delivery. She ordered 6 pieces of slippers that cost $2.5 each, 4 pieces of lipstick for $1.25 each, and 8 pieces of hair color for $3 each. How much did Betty pay in total when it was delivered?
+Output: <final_answer>44</final_answer>
+
+Input: On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output: <final_answer>108</final_answer>
+
+Input: A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output: <final_answer>80</final_answer>
+
+Input: Ursula earns $8.50 an hour working in a restaurant. She works 8 hours a day. If she works 20 days a month, determine her annual salary.
+Output: <final_answer>16320</final_answer>
+
+Input: Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output: <final_answer>1</final_answer>
+
+Input: James earns $10 per week as an allowance. After saving all his money for four weeks, he spends half of it on a new video game. He then spends a quarter of what is left to buy a new book. How much money does he have left?
+Output: To solve this problem, we will break it into logical steps:
+
+1. **Calculate the total amount James saves in four weeks:**
+   - James earns $10 per week.
+   - Total amount saved in four weeks = $10 * 4 = $40.
+
+2. **Calculate the amount spent on the video game:**
+   - James spends half of his savings on the video game.
+   - Amount spent on the video game = $40 / 2 = $20.
+
+3. **Calculate the remaining amount after buying the video game:**
+   - Remaining amount = $40 - $20 = $20.
+
+4. **Calculate the amount spent on the book:**
+   - James spends a quarter of the remaining amount on the book.
+   - Amount spent on the book = $20 / 4 = $5.
+
+5. **Calculate the final amount James has left:**
+   - Final amount = $20 - $5 = $15.
+
+<final_answer>15</final_answer>
+
+Input: Mike spent 37 dollars on notebooks.  He bought a total of 12 notebooks.  He bought 3 red notebooks at 4 dollars each, 2 green notebooks at 2 dollars each, and the rest were blue notebooks.  How much does each blue notebook cost?
+Output: <final_answer>3</final_answer>
+
+Input:",1260,470,394082,65532,0.0
+1,2025-03-16 19:09:52.727308,150.314367,-0.0358876560332871,"Break down this word problem carefully. Remember to format the final answer within <final_answer> </final_answer> tags.
+
+Input: Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output: To solve this problem, we need to break it down step by step:
+
+1. **Total number of paper cranes**: Alice wants 1000 paper cranines.
+2. **Alice folds half of the paper cranines**: Alice folds half of 1000, which is:
+   \[ \frac{1000}{2} = 500 \]
+3. **Remaining paper cranines**: After Alice folds 500, the remaining number of paper cranines is:
+   \[ 1000 - 500 = 500 \]
+4. **Friend folds a fifth of the remaining paper cranines**: The friend folds a fifth of 500, which is:
+   \[ \frac{500}{5} = 100 \]
+5. **Remaining paper cranines after the friend folds**: After the friend folds 100, the remaining number of paper cranines is:
+   \[ 500 - 100 = 400 \]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input: Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output: <final_answer>5</final_answer>
+
+Input: Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output: To solve this problem, we need to break it down step by step:
+
+1. **Determine half of the number of toys Bill has:**
+   - Bill has 60 toys.
+   - Half of 60 is \( \frac{60}{2} = 30 \).
+
+2. **Calculate the number of toys Hash has:**
+   - Hash has nine more than half of the number of toys Bill has.
+   - Half of 60 is 30.
+   - Therefore, Hash has \( 30 + 9 = 39 \) toys.
+
+3. **Calculate the total number of toys:
+   - The total number of toys is the sum of the toys Bill has and the toys Hash has.
+   - Total toys = \( 60 + 39 = 99 \).
+
+<final_answer>99</final_answer>
+
+Input: Colton had 72 dolphin stickers. He gave 4 stickers each to 3 friends.  He also gave his friend Mandy 2 more than he gave his three friends total.   And he gave Justin 10 less than Mandy.  How many stickers does Colton have left?
+Output: <final_answer>42</final_answer>
+
+Input: George and Harry want to fill a pool with buckets. George can carry two buckets each round, and Harry can carry three buckets each round. If it takes 110 buckets to fill the pool, how many rounds will it take to fill the pool?
+Output: To solve this problem, we need to determine the number of rounds it will take for George and Harry to fill the pool with 110 buckets. Here's a step-by-step breakdown:
+
+1. **Determine the number of buckets carried per round:**
+   - George carries 2 buckets per round.
+   - Harry carries 3 buckets per round.
+
+2. **Calculate the total number of buckets carried per round:**
+   \[
+    \text{Total buckets per round} = 2 + 3 = 5
+    \]
+
+3. **Determine the number of rounds needed to fill the pool:**
+   \[
+    \text{Number of rounds} = \frac{\text{Total number of buckets}}{\ \text{Total buckets per round}} = \frac{110}{5} = 22
+    \]
+
+Therefore, it will take 22 rounds to fill the pool.
+
+<final_answer>
+22
+</final_answer>
+
+Input: Joan is preparing sandwiches for a family potluck. She decides to make ham sandwiches and grilled cheese sandwiches. One ham sandwich requires 2 slices of cheese, and one grilled cheese sandwich requires 3 slices of cheese. She uses a total of 50 slices of cheese to make the sandwiches. If she makes 10 ham sandwiches, how many grilled cheese sandwiches does she make?
+Output: <final_answer>10</final_answer>
+
+Input:",1260,470,394082,65532,0.0
+1,2025-03-16 19:09:52.727308,150.314367,-0.0397018030513176,"Work through this grade school word problem methodically. After your explanation, provide the ultimate answer surrounded by <final_answer> tags.
+
+Input: Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
+Output: <final_answer>8</final_answer>
+
+Input: Lucia is a dancer. She takes 2 hip-hop classes a week, 2 ballet classes a week, and 1 jazz class a week. One hip-hop class costs $10. One ballet class costs $12, and one jazz class costs $8. What is the total cost of Lucia’s dance classes in one week?
+Output: To solve this problem, we need to calculate the total cost of Lucia's dance classes for one week. We will break down the costs for each type of dance class and then sum them up.
+
+1. **Hip-hop classes:**
+   - Lucia takes 2 hip-hop classes per week.
+   - Each hip-hop class costs $10.
+   - Total cost for hip-hop classes: \(2 \times 10 = 20$
+
+2. **Ballet classes:**
+   - Lucia takes 2 ballet classes per week.
+   - Each ballet class costs $12.
+   - Total cost for ballet classes: \(2 \times 12 = 24\)
+
+3. **Jazz classes:**
+   - Lucia takes 1 jazz class per week.
+   - Each jazz class costs $8.
+   - Total cost for jazz classes: \(1 \times 8 = 8$
+
+Now, we sum up the costs for all types of dance classes:
+\[20 + 24 + 8 = 52\]
+
+Therefore, the total cost of Lucia's dance classes in one week is <final_answer>52</final_answer>.
+
+Input: At a coffee shop, 7 customers order coffee at $5 each and 8 customers order tea at $4 each. How much money did the coffee shop make?
+Output: To solve this problem, we need to calculate the total amount of money the coffee shop made by summing the revenue from the coffee and tea sales.
+
+1. **Calculate the revenue from coffee sales:**
+   - Number of customers ordering coffee: 7
+   - Price of coffee: $5
+   - Total revenue from coffee: \(7 \times 5 = 35$
+
+2. **Calculate the revenue from tea sales:**
+   - Number of customers ordering tea: 8
+   - Price of tea: $4
+   - Total revenue from tea: \(8 \times 4 = 32\)
+
+3. **Calculate the total revenue:**
+   - Total revenue from coffee and tea: \(35 + 32 = 67$
+
+Therefore, the total amount of money the coffee shop made is <final_answer>67</final_answer>.
+
+Input: James has 20 pairs of red socks and half as many black socks.  He has twice as many white socks as red and black combined.  How many total socks does he have combined?
+Output: <final_answer>90</final_answer>
+
+Input: Tony's dad is very strict about the washing machine and family members are only allowed to wash 50 total ounces of clothing at a time. Tony doesn't want to break the rules, so he weighs his clothes and finds that a pair of socks weighs 2 ounces, underwear weighs 4 ounces, a shirt weighs 5 ounces, shorts weigh 8 ounces, and pants weigh 10 ounces. Tony is washing a pair of pants, 2 shirts, a pair of shorts, and 3 pairs of socks. How many more pairs of underwear can he add to the wash and not break the rule?
+Output: <final_answer>4</final_answer>
+
+Input: Uncle Ben has 440 chickens on his farm. 39 are roosters and the rest are hens. 15 of his hens do not lay eggs, and the rest do. If each egg-laying hen lays 3 eggs, how many eggs will Uncle Ben have?
+Output: To solve this problem, we need to follow these steps:
+
+1. **Determine the total number of hens:**
+   Uncle Ben has 440 chickens, and 39 of them are roosters. Therefore, the number of hens is:
+   \[ 440 - 39 = 401 \]
+
+2. **Determine the number of egg-laying hens:**
+   Out of the 401 hens, 15 do not lay eggs. Therefore, the number of egg-laying hens is:
+   \[ 401 - 15 = 386\]
+
+3. **Calculate the total number of eggs laid by the egg-laying hens:**
+   Each egg-laying hen lays 3 eggs. Therefore, the total number of eggs is:
+   \[ 386 \times 3 = 1158\]
+
+So, the total number of eggs Uncle Ben will have is <final_answer>1158</final_answer>.
+
+Input: The length of a rectangle is four times its width. If the area is 100 m2. what is the length of the rectangle?
+Output: <final_answer>20</final_answer>
+
+Input:",1260,470,394082,65532,0.0
+1,2025-03-16 19:09:52.727308,150.314367,-0.0398058252427184,"To tackle this word problem, you need to break it down into manageable steps. Ensure that the final answer is enclosed within <final_answer> </final_answer> tags. I'm having trouble with this math problem that requires multiple steps to solve. Can you assist me? Make sure to place your final answer between <final_answer> </final_answer> tags so I can easily locate it.
+
+Input: Joan is preparing sandwiches for a family potluck. She decides to make ham sandwiches and grilled cheese sandwiches. One ham sandwich requires 2 slices of cheese, and one grilled cheese sandwich requires 3 slices of cheese. She uses a total of 50 slices of cheese to make the sandwiches. If she makes 10 ham sandwiches, how many grilled cheese sandwiches does she make?
+Output: <final_answer>10</final_answer>
+
+Input: George and Harry want to fill a pool with buckets. George can carry two buckets each round, and Harry can carry three buckets each round. If it takes 110 buckets to fill the pool, how many rounds will it take to fill the pool?
+Output: To solve this problem, we need to determine the number of rounds it will take for George and Harry to fill the pool with 110 buckets. Here's a step-by-step breakdown:
+
+1. **Determine the number of buckets carried per round:**
+   - George carries 2 buckets per round.
+   - Harry carries 3 buckets per round.
+
+2. **Calculate the total number of buckets carried per round:**
+   \[
+    \text{Total buckets per round} = 2 + 3 = 5
+    \]
+
+3. **Determine the number of rounds needed to fill the pool:**
+   \[
+    \text{Number of rounds} = \frac{\text{Total number of buckets}}{\ \text{Total buckets per round}} = \frac{110}{5} = 22
+    \]
+
+Therefore, it will take 22 rounds to fill the pool.
+
+<final_answer>
+22
+</final_answer>
+
+Input: Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output: To solve this problem, we need to break it down step by step:
+
+1. **Determine half of the number of toys Bill has:**
+   - Bill has 60 toys.
+   - Half of 60 is \( \frac{60}{2} = 30 \).
+
+2. **Calculate the number of toys Hash has:**
+   - Hash has nine more than half of the number of toys Bill has.
+   - Half of 60 is 30.
+   - Therefore, Hash has \( 30 + 9 = 39 \) toys.
+
+3. **Calculate the total number of toys:
+   - The total number of toys is the sum of the toys Bill has and the toys Hash has.
+   - Total toys = \( 60 + 39 = 99 \).
+
+<final_answer>99</final_answer>
+
+Input: Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output: To solve this problem, we need to break it down step by step:
+
+1. **Total number of paper cranes**: Alice wants 1000 paper cranines.
+2. **Alice folds half of the paper cranines**: Alice folds half of 1000, which is:
+   \[ \frac{1000}{2} = 500 \]
+3. **Remaining paper cranines**: After Alice folds 500, the remaining number of paper cranines is:
+   \[ 1000 - 500 = 500 \]
+4. **Friend folds a fifth of the remaining paper cranines**: The friend folds a fifth of 500, which is:
+   \[ \frac{500}{5} = 100 \]
+5. **Remaining paper cranines after the friend folds**: After the friend folds 100, the remaining number of paper cranines is:
+   \[ 500 - 100 = 400 \]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input: Meghan had money in the following denomination: 2 $100 bills, 5 $50 bills, and 10 $10 bills. How much money did he have altogether?
+Output: To solve this problem, we need to calculate the total amount of money by summing the value of each denomation.
+
+1. Calculate the total value of the $100 bills:
+   \[ 2 \times 100 = 200 \]
+
+2. Calculate the total value of the $50 bills:
+   \[ 5 \times 50 = 250 \]
+
+3. Calculate the total value of the $10 bills:
+   \[ 10 \times 10 = 100 \]
+
+4. Sum the values of all denominations:
+   \[ 200 + 250 + 100 = 550 \]
+
+Therefore, the total amount of money Meghan had is <final_answer>550</final_answer>.
+
+Input:",1260,470,394082,65532,0.0
+2,2025-03-16 19:10:21.180135,28.451188,0.5512713823393437,"Solve this math problem by breaking it down into smaller parts. Once you reach the conclusion, ensure your final answer appears between <final_answer> and </final_answer> tags.
+
+Input: Mark wants to build a pyramid of soda cases that's four levels tall. Each level of the pyramid has a square base where each side is one case longer than the level above it. The top level is just one case. How many cases of soda does Mark need?
+Output: <final_answer>30</final_answer>
+
+Input: Two alien spacecraft on a sightseeing tour of Earth left New Orleans airport at 3:00 pm to travel the 448-mile distance to Dallas by air.  Traveling nonstop, the first spacecraft landed in Dallas at 3:30 pm, while the second spacecraft landed in Dallas thirty minutes later. Assuming both spacecraft traveled at constant speed, what was the difference in speed, in miles per hour, between the two spacecraft?
+Output: <final_answer>448</final_answer>
+
+Input: Martha buys 1 latte for $4.00 every morning, 5 days a week.  3 days a week, she buys an iced coffee for $2.00.  Her goal for the entire year is to cut her coffee spending by 25%.  How much will she save?
+Output: <final_answer>338</final_answer>
+
+Input: Carrie worked for 2 hours a day for 4 days to make and decorate a wedding cake. She was paid $22 an hour. The cost for supplies to make the cake was $54. How much profit did Carrie earn on the cake?
+Output: <final_answer>122</final_answer>
+
+Input: Archibald eats 1 apple a day for two weeks. Over the next three weeks, he eats the same number of apples as the total of the first two weeks. Over the next two weeks, he eats 3 apples a day. Over these 7 weeks, how many apples does he average a week?
+Output: <final_answer>10</final_answer>
+
+Input:",1262,428,68575,22817,0.596
+2,2025-03-16 19:10:21.180135,28.451188,0.5114539990753585,"To tackle this grade school math word problem, follow a systematic approach. Break down each step of your reasoning process. After detailing your explanation, present the final answer enclosed within <final_answer> tags.
+
+Input: While shopping, Greg spent 300$ on a shirt and shoes. If Greg spent 9 more than twice as much on shoes as he did a shirt, how much did Greg spend on a shirt?
+Output: <final_answer>97</final_answer>
+
+Input: Saheed made four times as much money as Kayla. Kayla made $30 less than Vika. Vika made $84. How many dollars did Saheed make?
+Output: To solve this problem, we need to follow these steps:
+
+1. **Determine the amount of money Vika made.**
+   - Vika made $84.
+
+2. **Determine the amount of money Kayla made.**
+   - Kayla made $30 less than Vika.
+   - Therefore, Kayla made $84 - $30 = $54.
+
+3. **Determine the amount of money Saheid made.**
+   - Saheid made four times as much money as Kayla.
+   - Therefore, Saheid made $4 \times 54 = $216.
+
+### Final Answer
+<final_answer>216</final_answer>
+
+Input: Kendra tracks the different species of birds they spot on their birdwatching trip. On Monday they visited 5 sites and saw an average of 7 birds at each site. On Tuesday, Kendra visited 5 sites and saw an average of 5 birds at each site. On Wednesday visited 10 sites and saw an average of 8 birds at each site. On average, how many different birds did Kendra see on each site?
+Output: To solve this problem, we need to calculate the average number of birds Kendra saw on each site over the three days. Here is the step-by-step process:
+
+1. **Calculate the total number of birds seen on each day:**
+   - Monday: 5 sites with an average of 7 birds each.
+     \[ 5 \times 7 = 35 \]
+   - Tuesday: 5 sites with an average of 5 birds each.
+    \[ 5 \times 5 = 25 \]
+   - Wednesday: 10 sites with an average of 8 birds each.
+    \[ 10 \times 8 = 80\]
+
+2. **Calculate the total number of birds seen over the three days:**
+    \[ 35 + 25 + 80 = 140\]
+
+3. **Calculate the total number of sites visited over the three days:
+    \[ 5 + 5 + 10 = 20\]
+
+4. **Calculate the average number of birds seen per site:
+    \[ \frac{140}{20} = 7 \]
+
+Therefore, the average number of birds Kendra saw on each site is <final_answer>7</final_answer>.
+
+Input:",1262,428,68575,22817,0.618
+2,2025-03-16 19:10:21.180135,28.451188,0.480235783633842,"Calculate the solution to this grade school word problem. Show your reasoning process, and don't forget to place your final answer within <final_answer> </final_answer> markers as required.
+
+Input: Diana gets 30 minutes of video game time for every hour she reads. Her dad decided to raise her reward by 20%. Diana read for 12 hours this week. How many more minutes of video game time will she get as a result of her raise?
+Output: <final_answer>72</final_answer>
+
+Input: Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output: To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input: Cheryl got angry with her sister and decided to run away from home. She walked 2 miles every hour for 3 hours. Then she got homesick and walked back home. How many miles did Cheryl walk in total?
+Output: To solve this problem, we need to calculate the total distance Cheryl walked. We can break it down into two parts: the distance she walked away from home and the distance she walked back home.
+
+1. **Distance away from home:**
+   - Cheryl walked 2 miles every hour for 3 hours.
+   - Total distance away from home = 2 miles/hour * 3 hours = 6 miles.
+
+2. **Distance back home:**
+   - Cheryl walked back the same distance she traveled away from home.
+   - Total distance back home = 6 miles.
+
+3. **Total distance walked:**
+   - Total distance = distance away from home + distance back home = 6 miles + 6 miles = 12 miles.
+
+<final_answer> 12 </final_answer>
+
+Input:",1262,428,68575,22817,0.594
+2,2025-03-16 19:10:21.180135,28.451188,0.3971914008321774,"I need help with a multi-step grade school math problem. Can you walk through the solution and place the final result inside <final_answer> answer </final_answer> markers?
+
+Input: Billy has $25 less than twice the money Sam has. If Sam has $75, how much money do they have together?
+Output: <final_answer>200</final_answer>
+
+Input:",1262,428,68575,22817,0.536
+2,2025-03-16 19:10:21.180135,28.451188,0.3821775312066574,"Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input: Mrs. Gable’s third grade class is on a field trip to the beach. For lunch, Mrs. Gable brought 20 lunches for the 20 students in her class. She included a pack of animal crackers in each lunch bag for dessert. Each pack of animal crackers contained 10 animal crackers. If 2 students did not eat their animal crackers, how many animal crackers were eaten in total among Mrs. Gable’s students?
+Output: <final_answer>180</final_answer>
+
+Input: Barry wants to make a huge salad using only cucumbers and tomatoes. He will use a total of 280 pieces of vegetables. If there are thrice as many tomatoes as cucumbers, how many cucumbers will be used in the salad?
+Output: To solve this problem, we can follow these steps:
+
+1. **Define the variables**:
+   Let \( c$ be the number of cucumbers.
+   Let $t$ be the number of tomatoes.
+
+2. **Set up the equations based on the problem:
+   - The total number of vegetables is 280.
+   - There are thrice as many tomatoes as cucumbers.
+
+   Therefore, we have:
+   \[ c + t = 280 \]
+   \[ t = 3c \]
+
+3. **Substitute the second equation into the first equation:
+   \[ c + 3c = 280 \]
+   \[ 4c = 280\]
+
+4. **Solve for $c$:
+   \[ c = \frac{280}{4} \]
+    \[ c = 70\]
+
+So, the number of cucumbers used in the salad is 70.
+
+<final_answer>
+70
+</final_answer>
+
+Input: Billy has $25 less than twice the money Sam has. If Sam has $75, how much money do they have together?
+Output: <final_answer>200</final_answer>
+
+Input: Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
+Output: <final_answer>8</final_answer>
+
+Input:",1262,428,68575,22817,0.564
+2,2025-03-16 19:10:21.180135,28.451188,0.3762829403606103,"I need assistance with a math word problem that requires multiple steps to solve. Can you help me figure out the solution? Once you've determined the answer, please include the final solution within <final_answer> </final_answer> so I can easily locate it.
+
+Input: Joan is preparing sandwiches for a family potluck. She decides to make ham sandwiches and grilled cheese sandwiches. One ham sandwich requires 2 slices of cheese, and one grilled cheese sandwich requires 3 slices of cheese. She uses a total of 50 slices of cheese to make the sandwiches. If she makes 10 ham sandwiches, how many grilled cheese sandwiches does she make?
+Output: <final_answer>10</final_answer>
+
+Input: Jed collects stamp cards. Every week, he gets 6 cards. But every two weeks, he gives 2 cards to his friends. If Jed started with 20 cards, after how many weeks will he have a total of 40 cards?
+Output: <final_answer>4</final_answer>
+
+Input: Meghan had money in the following denomination: 2 $100 bills, 5 $50 bills, and 10 $10 bills. How much money did he have altogether?
+Output: To solve this problem, we need to calculate the total amount of money by summing the value of each denomation.
+
+1. Calculate the total value of the $100 bills:
+   \[ 2 \times 100 = 200 \]
+
+2. Calculate the total value of the $50 bills:
+   \[ 5 \times 50 = 250 \]
+
+3. Calculate the total value of the $10 bills:
+   \[ 10 \times 10 = 100 \]
+
+4. Sum the values of all denominations:
+   \[ 200 + 250 + 100 = 550 \]
+
+Therefore, the total amount of money Meghan had is <final_answer>550</final_answer>.
+
+Input: Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output: To solve this problem, we need to follow these steps:
+
+1. **Calculate half the number of toys Bill has.**
+2. **Determify how many more toys Hash has than half the number of toys Bill has.
+3. **Calculate the total number of toys Hash has.
+4. **Calculate the total number of toys both boys have.
+
+Let's go through each step:
+
+1. **Calculate half the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. **Determine how many more toys Hash has than half the number of toys Bill has:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. **Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39\]
+
+4. **Calculate the total number of toys both boys have:**
+   \[ \textTotal toys = 60 + 39 = 99\]
+
+<final_answer>99</final_answer>
+
+Input:",1262,428,68575,22817,0.572
+2,2025-03-16 19:10:21.180135,28.451188,0.2644475265834488,"I'm seeking help with a complex grade school math problem that requires multiple steps to solve. Can you assist me in finding the solution? Once you've determined the answer, please walk through the solution and place the final result inside <final_answer>answer</final_answer> so I can easily locate it.
+
+Input:",1262,428,68575,22817,0.384
+2,2025-03-16 19:10:21.180135,28.451188,0.2327092001849282,"Solve step-by-step. Final answer between <final_answer> tags.
+
+Input:",1262,428,68575,22817,0.352
+2,2025-03-16 19:10:21.180135,28.451188,0.2315302820157188,"Address the elementary math problem by disseecting it into logical steps. Break it down into smaller parts to solve it. When you reach the solution, ensure your final answer appears between <final_answer> and </final_answer> markers for clarity.
+
+Input:",1262,428,68575,22817,0.33
+2,2025-03-16 19:10:21.180135,28.451188,0.1985783633841886,"Can you help solve this math word problem? It may take several steps. When you've figured it out, please put the final answer in <final_answer> </final_answer> tags.
+
+Input:",1262,428,68575,22817,0.398
+2,2025-03-16 19:10:21.180135,28.451188,0.165210355987055,"Calling all math wizards! I need help with this tricky multi-step word problem. Walk me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:",1262,428,68575,22817,0.336
+2,2025-03-16 19:10:21.180135,28.451188,-0.0356796116504854,"Tackle this elementary math problem by breaking it into logical steps. When you reach the solution, enclose the final answer with <final_answer> and </final_answer> markers for clarity.
+
+Input: Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output: To solve this problem, we can break it into logical steps:
+
+1. **Calculate the total cost of the skirts:**
+   - Jane bought 2 skirts at $13 each.
+   - Total cost for skirts = 2 * $13 = $26
+
+2. **Calculate the total cost of the blouses:**
+   - Jane bought 3 blouses at $6 each.
+   - Total cost for blouses = 3 * $6 = $18
+
+3. **Calculate the total cost of all items:**
+   - Total cost = cost of skirts + cost of blouses
+   - Total cost = $26 + $18 = $44
+
+4. **Calculate the change Jane received:**
+   - Jane paid $100.
+   - Change = $100 - total cost
+    - Change = $100 - $44 = $56
+
+<final_answer>56</final_answer>
+
+Input: Betty ordered 18 items in an online shop via cash on delivery. She ordered 6 pieces of slippers that cost $2.5 each, 4 pieces of lipstick for $1.25 each, and 8 pieces of hair color for $3 each. How much did Betty pay in total when it was delivered?
+Output: <final_answer>44</final_answer>
+
+Input: On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output: <final_answer>108</final_answer>
+
+Input: A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output: <final_answer>80</final_answer>
+
+Input: Ursula earns $8.50 an hour working in a restaurant. She works 8 hours a day. If she works 20 days a month, determine her annual salary.
+Output: <final_answer>16320</final_answer>
+
+Input: Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output: <final_answer>1</final_answer>
+
+Input: James earns $10 per week as an allowance. After saving all his money for four weeks, he spends half of it on a new video game. He then spends a quarter of what is left to buy a new book. How much money does he have left?
+Output: To solve this problem, we will break it into logical steps:
+
+1. **Calculate the total amount James saves in four weeks:**
+   - James earns $10 per week.
+   - Total amount saved in four weeks = $10 * 4 = $40.
+
+2. **Calculate the amount spent on the video game:**
+   - James spends half of his savings on the video game.
+   - Amount spent on the video game = $40 / 2 = $20.
+
+3. **Calculate the remaining amount after buying the video game:**
+   - Remaining amount = $40 - $20 = $20.
+
+4. **Calculate the amount spent on the book:**
+   - James spends a quarter of the remaining amount on the book.
+   - Amount spent on the book = $20 / 4 = $5.
+
+5. **Calculate the final amount James has left:**
+   - Final amount = $20 - $5 = $15.
+
+<final_answer>15</final_answer>
+
+Input: Mike spent 37 dollars on notebooks.  He bought a total of 12 notebooks.  He bought 3 red notebooks at 4 dollars each, 2 green notebooks at 2 dollars each, and the rest were blue notebooks.  How much does each blue notebook cost?
+Output: <final_answer>3</final_answer>
+
+Input:",1262,428,68575,22817,0.0
