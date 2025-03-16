@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/scripts/evaluate_prompts.py", line 90, in <module>
+    run_experiment(args.experiment_path)
+  File "/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/scripts/evaluate_prompts.py", line 27, in run_experiment
+    with open(f"{experiment_path}args.json", "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results//rte/qwen/CAPO/seed42benchmark_experiment_rte_qwen_CAPO_423e16aa9d2cb47dc79220b8c8024cda3fdf326ea4c97d0c6deb26160fca955a7fargs.json'

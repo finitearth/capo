@@ -1,0 +1,807 @@
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:02<00:08,  2.69s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:05<00:05,  2.68s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:06<00:02,  2.15s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09<00:00,  2.26s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:09<00:00,  2.33s/it]
+
+Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:19,  1.76it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:18,  1.79it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:01<00:17,  1.81it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:02<00:17,  1.82it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:02<00:16,  1.80it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:03<00:15,  1.82it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:03<00:15,  1.84it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:04<00:14,  1.85it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:04<00:13,  1.88it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:05<00:13,  1.89it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:05<00:12,  1.91it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:06<00:12,  1.92it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:06<00:11,  1.93it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:07<00:10,  1.94it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:07<00:10,  1.95it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:08<00:09,  1.96it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:08<00:09,  1.99it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:09<00:08,  2.00it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:09<00:07,  2.01it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:10<00:07,  2.01it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:10<00:06,  2.02it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:11<00:06,  2.02it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:11<00:05,  2.03it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:12<00:05,  2.04it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:12<00:04,  2.08it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:13<00:04,  2.10it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:13<00:03,  2.13it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:14<00:03,  2.15it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:14<00:02,  2.17it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:15<00:02,  2.17it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:15<00:01,  2.18it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:16<00:01,  2.19it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:16<00:00,  2.20it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:16<00:00,  2.20it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:17<00:00,  2.21it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:17<00:00,  2.01it/s]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "input"] = df[config.input]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:75: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "target"] = df[config.target]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "input"] = df[config.input]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:75: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "target"] = df[config.target]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/promptolution/promptolution/tasks/classification_tasks.py:56: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df[y_column] = df[y_column].str.lower()
+Processed prompts:   0%|          | 0/15 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   7%|▋         | 1/15 [00:00<00:08,  1.65it/s, est. speed input: 193.09 toks/s, output: 16.50 toks/s]Processed prompts:  73%|███████▎  | 11/15 [00:00<00:00, 16.86it/s, est. speed input: 1679.18 toks/s, output: 151.87 toks/s]Processed prompts: 100%|██████████| 15/15 [00:00<00:00, 18.36it/s, est. speed input: 2173.34 toks/s, output: 269.37 toks/s]
+Processed prompts:   0%|          | 0/10 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  10%|█         | 1/10 [00:00<00:05,  1.60it/s, est. speed input: 166.27 toks/s, output: 36.77 toks/s]Processed prompts: 100%|██████████| 10/10 [00:00<00:00, 15.98it/s, est. speed input: 1749.74 toks/s, output: 367.52 toks/s]
+Processed prompts:   0%|          | 0/10 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  10%|█         | 1/10 [00:00<00:03,  2.60it/s, est. speed input: 259.96 toks/s, output: 26.00 toks/s]Processed prompts: 100%|██████████| 10/10 [00:00<00:00, 25.97it/s, est. speed input: 2454.71 toks/s, output: 259.75 toks/s]
+Processed prompts:   0%|          | 0/15 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   7%|▋         | 1/15 [00:00<00:11,  1.19it/s, est. speed input: 145.11 toks/s, output: 32.11 toks/s]Processed prompts:  73%|███████▎  | 11/15 [00:01<00:00, 12.24it/s, est. speed input: 1120.41 toks/s, output: 280.54 toks/s]Processed prompts:  93%|█████████▎| 14/15 [00:01<00:00, 12.81it/s, est. speed input: 1198.34 toks/s, output: 361.45 toks/s]Processed prompts: 100%|██████████| 15/15 [00:01<00:00, 11.25it/s, est. speed input: 1282.19 toks/s, output: 406.40 toks/s]
+Processed prompts:   0%|          | 0/10 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  10%|█         | 1/10 [00:00<00:03,  2.53it/s, est. speed input: 250.78 toks/s, output: 25.33 toks/s]Processed prompts: 100%|██████████| 10/10 [00:00<00:00, 25.31it/s, est. speed input: 2442.66 toks/s, output: 253.12 toks/s]
+Processed prompts:   0%|          | 0/10 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  10%|█         | 1/10 [00:00<00:03,  2.34it/s, est. speed input: 212.65 toks/s, output: 28.04 toks/s]Processed prompts: 100%|██████████| 10/10 [00:00<00:00, 23.35it/s, est. speed input: 2253.29 toks/s, output: 280.20 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  3.14it/s, est. speed input: 430.65 toks/s, output: 31.43 toks/s]Processed prompts:  80%|████████  | 4/5 [00:00<00:00,  8.37it/s, est. speed input: 1019.92 toks/s, output: 102.36 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  9.30it/s, est. speed input: 1274.52 toks/s, output: 148.85 toks/s]
+Processed prompts:   0%|          | 0/10 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  10%|█         | 1/10 [00:00<00:05,  1.51it/s, est. speed input: 190.62 toks/s, output: 34.79 toks/s]Processed prompts: 100%|██████████| 10/10 [00:00<00:00, 15.12it/s, est. speed input: 1905.27 toks/s, output: 347.78 toks/s]
+Processed prompts:   0%|          | 0/20 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   5%|▌         | 1/20 [00:01<00:22,  1.21s/it, est. speed input: 92.05 toks/s, output: 33.17 toks/s]Processed prompts:  30%|███       | 6/20 [00:01<00:02,  5.57it/s, est. speed input: 463.52 toks/s, output: 181.22 toks/s]Processed prompts:  80%|████████  | 16/20 [00:01<00:00, 16.66it/s, est. speed input: 1026.95 toks/s, output: 522.42 toks/s]Processed prompts: 100%|██████████| 20/20 [00:01<00:00, 13.26it/s, est. speed input: 1276.04 toks/s, output: 678.78 toks/s]
+🍿Initialized population with 10 prompts: 
+ ['Determine the appropriate category for the following news article. Options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.\n\nInput: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer \nOutput: <final_answer> Sports </final_answer>\n\nInput: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \\$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Natural gas giant Gazprom to participate in Russian auction of key Yukos unit (Canadian Press) Canadian Press - MOSCOW (AP) - The nascent petroleum division of natural gas giant Gazprom will bid for the crown jewels of the battered Yukos oil empire, its chief said Tuesday - a widely anticipated move that could put the heart of the company jailed billionaire Mikhail Khodorkovsky created in Kremlin-friendly hands.\nOutput: <final_answer> World </final_answer>\n\nInput: Armed Militiamen Worry Sudanese Refugees (AP) AP - Armed militiamen surged into a western border area where some Darfur refugees attempted to return to their raided village, U.N. security officials said Sunday, raising further concern about how quickly 1.4 million displaced Sudanese could return home safely.\nOutput: <final_answer> World </final_answer>\n\nInput: ', "I'm working on a news classification project. Could you read this article and tell me if it's about World, Sports, Business, or Sci/Tech? Please put your answer between <final_answer> </final_answer> markers.\n\nInput: Millwall: We #39;re not to blame The FA confirmed today that they will launch an investigation into the incidents, which began late in the second half as away fans alleged Millwall supporters had made taunts about the Hillsborough disaster in 1989.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Bergkamp Backing Van Persie to Shine Van Persie scored a last-gasp equaliser to rescue Arsenal from the jaws of defeat against Southampton on Saturday. The visitors had looked certain to condemn Arsene Wengers side \nOutput: <final_answer> Sports </final_answer>\n\nInput: THE SONG REMAINS THE SAME The Recording Industry Association of America has wielded a heavy legal arsenal in its war against illegal music downloads, including filing another round of lawsuits on Thursday - this time against 762 people.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ", "Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.\n\nInput: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.\nOutput: <final_answer> World </final_answer>\n\nInput: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.\nOutput: <final_answer> World </final_answer>\n\nInput: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ", "Please review this news article carefully. Based on its content, assign it to the most appropriate category among World, Sports, Business, and Sci/Tech. To ensure your answer is correctly processed, place it within <final_answer> </final_answer> tags.\n\nInput: Red Sox, Astros Hunt for Their First Wins After Curt Schilling and Pedro Martinez failed to get the Boston Red Sox a win against the New York Yankees in the first two games of the AL championship series, Bronson Arroyo will take the hill for Game 3 at Fenway Park on Saturday.    In Houston, the winless Astros face a similar challenge as they return home and put their hopes in Roger Clemens for NLCS Game 3 against the St...\nOutput: <final_answer> World </final_answer>\n\nInput: At summit, a deal on membership talks BRUSSELS The European Union took a huge step towards its most controversial enlargement to date late Thursday night by agreeing to open membership negotiations with Turkey, although with strict conditions.\nOutput: <final_answer> World </final_answer>\n\nInput: 170 miners remain trapped in coalmine gas explosion By 1 pm on Sunday, 123 miners were rescued alive after a major gas explosion took place at the Chenjiashan Coalmine, Shaanxi Province, around 7:10 am but another 170 remained trapped underground.\nOutput: <final_answer> World </final_answer>\n\nInput: Myanmar #39;s foreign minister, deputy fired MYANMAR #39;S military junta yesterday dismissed the Foreign Minister and his deputy in an unexpected Cabinet reshuffle that saw two other ministers also fired.\nOutput: <final_answer> World </final_answer>\n\nInput: Fans offside as tycoons target English clubs DIVIDED down the years by the rawest rivalry in English football, Manchester United and Liverpool found their histories converging at the weekend as both clubs braced themselves for imminent takeover.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.\nOutput: <final_answer> World </final_answer>\n\nInput: It #39;s on to LA for the Giants Bee Staff Writer. SAN DIEGO - The San Diego Padres returned the favor, and the playoff-chasing Giants gladly accepted it before a disappointed record crowd of 45,389 at Petco Park.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ", 'News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.\n\nInput: Britain: Weapons Report Proves Hussein Was a Threat Britain says a CIA report that concludes Iraq had no weapons of mass destruction before the US-led invasion last year nonetheless confirms that Iraqi leader Saddam Hussein posed a threat that could not be ignored.\nOutput: <final_answer> World </final_answer>\n\nInput: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.\nOutput: <final_answer> World </final_answer>\n\nInput: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', "You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>\n\nInput: UNDATED: 2-of-8 shooting. Keith Langford had 19 of his 24 points in the first half as Kansas coasted from the outset. JR Giddens had 14 of his 16 points for Kansas (6-0) in the first half.\nOutput: <final_answer> Sports </final_answer>\n\nInput: At St. Helens, Little Lava but Plenty of Data Today scientists observe volcanoes from much greater distances and can send data across the Internet to scientists around the world.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Search Engine Forums Spotlight Links to this week's topics from search engine forums across the web: New MSN Search Goes LIVE in Beta - Microsoft To Launch New Search Engine - Google Launches 'Google Advertising Professionals' - Organic vs Paid Traffic ROI? - Making Money With AdWords? - Link Building 101\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Nigerian troops leave for Darfur Nigerian troops left for Sudan #39;s Darfur province on Monday as part of an African Union force mandated for the conflict-torn region, military officials said.\nOutput: <final_answer> World </final_answer>\n\nInput: ", "Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.\n\nInput: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...\nOutput: <final_answer> World </final_answer>\n\nInput: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ", 'Your task is to categorize the following news article into exactly one of these four classes: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be properly processed by our system.\n\nInput: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \\$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets \nOutput: <final_answer> Business </final_answer>\n\nInput: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets \nOutput: <final_answer> Business </final_answer>\n\nInput: 10th World Series Title Beckoning for St. Louis  NEW YORK (Reuters) - The Cardinals may be heading to their  first World Series since 1987 but there is nothing new about  post-season baseball in St. Louis.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', 'Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.\n\nInput: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets \nOutput: <final_answer> Business </final_answer>\n\nInput: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Radcliffe finds the old character for her next book When Paula Radcliffe #39;s autobiography My Story So Far hits the bookshelves next week it will already be out of date, because it will not include the tale of her dramatic victory in the New York City Marathon here yesterday.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Royal Doulton in takeover talks China maker Royal Doulton has revealed it is in talks about a takeover by Irish rival Waterford Wedgwood. Stoke-based Doulton, which is to close its last remaining current UK factory next year, said it was in  quot;advanced discussions quot; with Waterford.\nOutput: <final_answer> Business </final_answer>\n\nInput: IBM launches Websphere 6 IBM today announced that Websphere 6, the long awaited-update to its application server software, will be available by the end of the year.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: At summit, a deal on membership talks BRUSSELS The European Union took a huge step towards its most controversial enlargement to date late Thursday night by agreeing to open membership negotiations with Turkey, although with strict conditions.\nOutput: <final_answer> World </final_answer>\n\nInput: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Storm Damage Hurts BellSouth Earnings  WASHINGTON (Reuters) - BellSouth Corp. &lt;A HREF="http://www.investor.reuters.com/FullQuote.aspx?ticker=BLS.N target=/stocks/quickinfo/fullquote"&gt;BLS.N&lt;/A&gt; on Monday  said third-quarter earnings fell due to storm damage in its  region and the sale of some international assets.\nOutput: <final_answer> Business </final_answer>\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', 'Read the following news text and determine which category it belongs to. Choose from: World, Sports, Business, or Sci/Tech. Your final answer must be enclosed in <final_answer> </final_answer> tags for automated extraction.\n\nInput: EMC hires former IBM veteran as CTO EMC last week said it has hired former IBM veteran Jeffrey M. Nick as chief technology officer for the storage vendor. Nick, who left IBM in June following 24 years with the company \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ']
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.01s/it, est. speed input: 207.66 toks/s, output: 53.40 toks/s]Processed prompts:  50%|█████     | 2/4 [00:01<00:00,  2.09it/s, est. speed input: 368.59 toks/s, output: 103.13 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  3.07it/s, est. speed input: 500.35 toks/s, output: 147.49 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.82it/s, est. speed input: 508.48 toks/s, output: 171.70 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.41it/s, est. speed input: 508.48 toks/s, output: 171.70 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.05s/it, est. speed input: 149.76 toks/s, output: 56.28 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  3.02it/s, est. speed input: 410.27 toks/s, output: 155.50 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  3.12it/s, est. speed input: 462.88 toks/s, output: 185.02 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.65it/s, est. speed input: 462.88 toks/s, output: 185.02 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:02,  1.34it/s, est. speed input: 175.39 toks/s, output: 52.21 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  6.69it/s, est. speed input: 876.71 toks/s, output: 261.00 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  3.15it/s, est. speed input: 352.98 toks/s, output: 37.82 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00, 15.75it/s, est. speed input: 1763.73 toks/s, output: 188.97 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ["Examine the provided news article thoroughly. Determine the most fitting category from World, Sports, Business, and Sci/Tech based on the content. Ensure your response is enclosed within <final_answer> </final_answer> tags. For the given news article, identify the category it belongs to. Choose from World, Sports, Business, or Sci/Tech. Format your answer as <final_answer>category</final_answer>.\n\nInput: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...\nOutput: <final_answer> World </final_answer>\n\nInput: Microsoft Sues 7 Spammers Microsoft indicated that the defendants used compromised computers around the world, using so-called zombie computers. By TechWeb.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Mancini Ready To Chase Juventus Inter Milan trainer Roberto Mancini is urging his side to keep the pressure on first place Juventus by continuing to turn their fine form into victories.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ", 'You are tasked with assigning each news article to one of the following categories: World, Sports, Business, or Sci/Tech. Analyze the content of the news article and determine which category it falls into. Ensure the classification is enclosed within <final_answer> </final_answer> tags for proper processing by our system.\n\nInput: EMC hires former IBM veteran as CTO EMC last week said it has hired former IBM veteran Jeffrey M. Nick as chief technology officer for the storage vendor. Nick, who left IBM in June following 24 years with the company \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \\$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: S. Africa Condemns Claims About Aristide S. African Government Condemns Accusations That It Is Being Used As Springboard for Haiti #39;s Aristide. A boy passes a car that says  quot;Aristide King quot; in the pro-Aristide slum of Bel-Air in Port-au-Prince, Sunday, Oct. 17, 2004.\nOutput: <final_answer> World </final_answer>\n\nInput: ', 'Task: Analyze the provided text and determine its category. Based on the content, classify it into one of the following categories: World, Sports, Business, or Sci/Tech. Your response should be formatted as <final_answer> category </final_answer>.\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', 'Examine the provided news article and determine its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Format: <final_answer> category </final_answer>\n\nInput: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Falcons Sign Crumpler to Contract Extension (Reuters) Reuters - The Atlanta Falcons\\Monday signed Pro Bowl tight end Alge Crumpler to a six-year\\contract extension.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ']
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:29<3:00:14, 29.47s/it, est. speed input: 19.11 toks/s, output: 0.34 toks/s]Processed prompts:  38%|███▊      | 139/368 [00:39<00:50,  4.52it/s, est. speed input: 1592.43 toks/s, output: 35.21 toks/s]Processed prompts:  60%|██████    | 221/368 [00:39<00:17,  8.29it/s, est. speed input: 2557.19 toks/s, output: 59.96 toks/s]Processed prompts:  77%|███████▋  | 283/368 [00:40<00:07, 11.99it/s, est. speed input: 3069.58 toks/s, output: 75.51 toks/s]Processed prompts:  86%|████████▌ | 316/368 [00:41<00:03, 13.38it/s, est. speed input: 3265.74 toks/s, output: 92.83 toks/s]Processed prompts:  91%|█████████▏| 336/368 [00:42<00:02, 14.73it/s, est. speed input: 3453.17 toks/s, output: 125.62 toks/s]Processed prompts:  95%|█████████▍| 349/368 [00:45<00:01, 10.76it/s, est. speed input: 3312.18 toks/s, output: 167.45 toks/s]Processed prompts:  97%|█████████▋| 358/368 [00:45<00:00, 11.77it/s, est. speed input: 3400.47 toks/s, output: 217.15 toks/s]Processed prompts: 100%|██████████| 368/368 [00:45<00:00,  8.04it/s, est. speed input: 3482.04 toks/s, output: 273.05 toks/s]
+Processed prompts:   0%|          | 0/52 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/52 [00:03<02:52,  3.39s/it, est. speed input: 56.62 toks/s, output: 2.95 toks/s]Processed prompts:  87%|████████▋ | 45/52 [00:03<00:00, 17.38it/s, est. speed input: 3188.69 toks/s, output: 142.67 toks/s]Processed prompts: 100%|██████████| 52/52 [00:07<00:00,  7.41it/s, est. speed input: 1841.89 toks/s, output: 180.61 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:28<2:35:25, 28.34s/it, est. speed input: 19.40 toks/s, output: 0.35 toks/s]Processed prompts:  61%|██████    | 200/330 [00:34<00:16,  7.78it/s, est. speed input: 2591.25 toks/s, output: 58.60 toks/s]Processed prompts:  73%|███████▎  | 242/330 [00:34<00:08,  9.92it/s, est. speed input: 3089.65 toks/s, output: 72.53 toks/s]Processed prompts:  96%|█████████▌| 316/330 [00:34<00:00, 15.52it/s, est. speed input: 3778.48 toks/s, output: 96.46 toks/s]Processed prompts: 100%|██████████| 330/330 [00:38<00:00,  8.63it/s, est. speed input: 3586.65 toks/s, output: 133.52 toks/s]
+Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:28<2:37:29, 28.72s/it, est. speed input: 21.59 toks/s, output: 0.35 toks/s]Processed prompts:  62%|██████▏   | 203/330 [00:34<00:16,  7.79it/s, est. speed input: 2636.04 toks/s, output: 58.67 toks/s]Processed prompts:  70%|██████▉   | 230/330 [00:34<00:10,  9.22it/s, est. speed input: 2941.50 toks/s, output: 67.88 toks/s]Processed prompts:  75%|███████▍  | 247/330 [00:35<00:08, 10.31it/s, est. speed input: 3044.63 toks/s, output: 72.27 toks/s]Processed prompts:  93%|█████████▎| 306/330 [00:35<00:01, 16.52it/s, est. speed input: 3633.61 toks/s, output: 91.89 toks/s]Processed prompts: 100%|██████████| 330/330 [00:39<00:00,  8.44it/s, est. speed input: 3562.41 toks/s, output: 167.96 toks/s]
+🏎️Racing: 10 prompts remain after 2 blocks.
+14-03-25 01:11:40:636976 - ✨Step 1 ended✨
+*** Prompt 0: Score: 0.8689141414141413
+Read the following news text and determine which category it belongs to. Choose from: World, Sports, Business, or Sci/Tech. Your final answer must be enclosed in <final_answer> </final_answer> tags for automated extraction.
+
+Input: EMC hires former IBM veteran as CTO EMC last week said it has hired former IBM veteran Jeffrey M. Nick as chief technology officer for the storage vendor. Nick, who left IBM in June following 24 years with the company 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8496717171717172
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+Input: UNDATED: 2-of-8 shooting. Keith Langford had 19 of his 24 points in the first half as Kansas coasted from the outset. JR Giddens had 14 of his 16 points for Kansas (6-0) in the first half.
+Output: <final_answer> Sports </final_answer>
+
+Input: At St. Helens, Little Lava but Plenty of Data Today scientists observe volcanoes from much greater distances and can send data across the Internet to scientists around the world.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Search Engine Forums Spotlight Links to this week's topics from search engine forums across the web: New MSN Search Goes LIVE in Beta - Microsoft To Launch New Search Engine - Google Launches 'Google Advertising Professionals' - Organic vs Paid Traffic ROI? - Making Money With AdWords? - Link Building 101
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Nigerian troops leave for Darfur Nigerian troops left for Sudan #39;s Darfur province on Monday as part of an African Union force mandated for the conflict-torn region, military officials said.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.8495454545454544
+Examine the provided news article and determine its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Format: <final_answer> category </final_answer>
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Falcons Sign Crumpler to Contract Extension (Reuters) Reuters - The Atlanta Falcons\Monday signed Pro Bowl tight end Alge Crumpler to a six-year\contract extension.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 3: Score: 0.8412121212121212
+Examine the provided news article thoroughly. Determine the most fitting category from World, Sports, Business, and Sci/Tech based on the content. Ensure your response is enclosed within <final_answer> </final_answer> tags. For the given news article, identify the category it belongs to. Choose from World, Sports, Business, or Sci/Tech. Format your answer as <final_answer>category</final_answer>.
+
+Input: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...
+Output: <final_answer> World </final_answer>
+
+Input: Microsoft Sues 7 Spammers Microsoft indicated that the defendants used compromised computers around the world, using so-called zombie computers. By TechWeb.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Mancini Ready To Chase Juventus Inter Milan trainer Roberto Mancini is urging his side to keep the pressure on first place Juventus by continuing to turn their fine form into victories.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 4: Score: 0.8391666666666666
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Britain: Weapons Report Proves Hussein Was a Threat Britain says a CIA report that concludes Iraq had no weapons of mass destruction before the US-led invasion last year nonetheless confirms that Iraqi leader Saddam Hussein posed a threat that could not be ignored.
+Output: <final_answer> World </final_answer>
+
+Input: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.
+Output: <final_answer> World </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 5: Score: 0.8341161616161616
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.
+Output: <final_answer> World </final_answer>
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.82489898989899
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...
+Output: <final_answer> World </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.8070202020202023
+Determine the appropriate category for the following news article. Options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer 
+Output: <final_answer> Sports </final_answer>
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Natural gas giant Gazprom to participate in Russian auction of key Yukos unit (Canadian Press) Canadian Press - MOSCOW (AP) - The nascent petroleum division of natural gas giant Gazprom will bid for the crown jewels of the battered Yukos oil empire, its chief said Tuesday - a widely anticipated move that could put the heart of the company jailed billionaire Mikhail Khodorkovsky created in Kremlin-friendly hands.
+Output: <final_answer> World </final_answer>
+
+Input: Armed Militiamen Worry Sudanese Refugees (AP) AP - Armed militiamen surged into a western border area where some Darfur refugees attempted to return to their raided village, U.N. security officials said Sunday, raising further concern about how quickly 1.4 million displaced Sudanese could return home safely.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.7840656565656564
+Your task is to categorize the following news article into exactly one of these four classes: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be properly processed by our system.
+
+Input: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets 
+Output: <final_answer> Business </final_answer>
+
+Input: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets 
+Output: <final_answer> Business </final_answer>
+
+Input: 10th World Series Title Beckoning for St. Louis  NEW YORK (Reuters) - The Cardinals may be heading to their  first World Series since 1987 but there is nothing new about  post-season baseball in St. Louis.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 9: Score: 0.7722222222222223
+Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.
+
+Input: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets 
+Output: <final_answer> Business </final_answer>
+
+Input: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Radcliffe finds the old character for her next book When Paula Radcliffe #39;s autobiography My Story So Far hits the bookshelves next week it will already be out of date, because it will not include the tale of her dramatic victory in the New York City Marathon here yesterday.
+Output: <final_answer> Sports </final_answer>
+
+Input: Royal Doulton in takeover talks China maker Royal Doulton has revealed it is in talks about a takeover by Irish rival Waterford Wedgwood. Stoke-based Doulton, which is to close its last remaining current UK factory next year, said it was in  quot;advanced discussions quot; with Waterford.
+Output: <final_answer> Business </final_answer>
+
+Input: IBM launches Websphere 6 IBM today announced that Websphere 6, the long awaited-update to its application server software, will be available by the end of the year.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: At summit, a deal on membership talks BRUSSELS The European Union took a huge step towards its most controversial enlargement to date late Thursday night by agreeing to open membership negotiations with Turkey, although with strict conditions.
+Output: <final_answer> World </final_answer>
+
+Input: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Storm Damage Hurts BellSouth Earnings  WASHINGTON (Reuters) - BellSouth Corp. &lt;A HREF="http://www.investor.reuters.com/FullQuote.aspx?ticker=BLS.N target=/stocks/quickinfo/fullquote"&gt;BLS.N&lt;/A&gt; on Monday  said third-quarter earnings fell due to storm damage in its  region and the sale of some international assets.
+Output: <final_answer> Business </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.15it/s, est. speed input: 224.07 toks/s, output: 51.98 toks/s]Processed prompts:  50%|█████     | 2/4 [00:00<00:00,  2.34it/s, est. speed input: 405.14 toks/s, output: 99.51 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  3.21it/s, est. speed input: 519.63 toks/s, output: 140.46 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  4.38it/s, est. speed input: 644.96 toks/s, output: 186.43 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  3.17it/s, est. speed input: 644.96 toks/s, output: 186.43 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.18it/s, est. speed input: 174.79 toks/s, output: 54.33 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  3.45it/s, est. speed input: 455.82 toks/s, output: 150.33 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  3.94it/s, est. speed input: 529.80 toks/s, output: 186.41 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  3.27it/s, est. speed input: 529.80 toks/s, output: 186.41 toks/s]
+Processed prompts:   0%|          | 0/15 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   7%|▋         | 1/15 [00:00<00:10,  1.30it/s, est. speed input: 147.98 toks/s, output: 31.15 toks/s]Processed prompts: 100%|██████████| 15/15 [00:00<00:00, 19.46it/s, est. speed input: 2082.41 toks/s, output: 467.08 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ['Task: Analyze the provided text and identify the category it falls into. Choose from the options: World, Sports, Business, or Sci/Tech. Format your response as <final_answer>category</final_answer>.\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.\nOutput: <final_answer> World </final_answer>\n\nInput: ', 'Analyze the given news article and identify its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Determine the appropriate category for the following news article. Format your response with <final_answer> category </final_answer>.\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer \nOutput: <final_answer> Sports </final_answer>\n\nInput: Falcons Sign Crumpler to Contract Extension (Reuters) Reuters - The Atlanta Falcons\\Monday signed Pro Bowl tight end Alge Crumpler to a six-year\\contract extension.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', "Examine the provided news article and identify the suitable category. The options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.\n\nInput: US Seals Off Iraq #39;s Falluja, Air Raids Kill Three The US military blocked roads round Iraq #39;s rebel-held city of Falluja on Friday after mounting air strikes overnight that local hospital sources said killed three people.\nOutput: <final_answer> World </final_answer>\n\nInput: Myanmar #39;s foreign minister, deputy fired MYANMAR #39;S military junta yesterday dismissed the Foreign Minister and his deputy in an unexpected Cabinet reshuffle that saw two other ministers also fired.\nOutput: <final_answer> World </final_answer>\n\nInput: Strong Quake Reported in Philippines - U.S. Agency (Reuters) Reuters - A strong earthquake of magnitude 6.6\\hit Manila in the Philippines overnight, the U.S. Geological\\Survey's earthquake center in Golden, Colorado reported on\\Friday.\nOutput: <final_answer> World </final_answer>\n\nInput: Spammers given boot by net host A campaign by anti-spam groups has persuaded a large US net service provider to ban spammers using its network.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: FedEx Is Flying High The company reported strong fiscal second-quarter results and positive trends seem likely to continue to drive healthy growth.\nOutput: <final_answer> Business </final_answer>\n\nInput: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: I.B.M. Offers \\$10,000 to Owners of Contaminated Houses The company is willing to pay \\$10,000 each to the owners of nearly 500 contaminated homes in an upstate village if the owners give up their right to sue over pollution.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ", "You are tasked with categorizing news articles into one of four categories: World, Sports, Business, or Sci/Tech. Read the article below and determine which category it belongs to. Provide your answer in the format <final_answer> category </final_answer>.\n\nInput: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...\nOutput: <final_answer> World </final_answer>\n\nInput: LSU #39;s Saban meets with Miami Dolphins LSU football coach Nick Saban met with representatives of the Miami Dolphins on Tuesday night to discuss their head coaching job. In a statement today, Saban said he and the Dolphins had a  quot;preliminary quot; discussion and no decision was made.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Nigerian troops leave for Darfur Nigerian troops left for Sudan #39;s Darfur province on Monday as part of an African Union force mandated for the conflict-torn region, military officials said.\nOutput: <final_answer> World </final_answer>\n\nInput: "]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:10<21:47, 10.99s/it, est. speed input: 20.75 toks/s, output: 0.91 toks/s]Processed prompts:  66%|██████▌   | 79/120 [00:11<00:04, 10.06it/s, est. speed input: 2764.54 toks/s, output: 77.16 toks/s]Processed prompts: 100%|██████████| 120/120 [00:15<00:00,  7.93it/s, est. speed input: 2871.30 toks/s, output: 254.62 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:02<01:12,  2.49s/it, est. speed input: 122.30 toks/s, output: 4.02 toks/s]Processed prompts:  93%|█████████▎| 28/30 [00:02<00:00, 14.30it/s, est. speed input: 3308.60 toks/s, output: 115.95 toks/s]Processed prompts: 100%|██████████| 30/30 [00:03<00:00,  8.80it/s, est. speed input: 2781.53 toks/s, output: 119.67 toks/s]
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:02<01:13,  2.52s/it, est. speed input: 127.62 toks/s, output: 3.96 toks/s]Processed prompts:  80%|████████  | 24/30 [00:02<00:00, 12.03it/s, est. speed input: 2852.89 toks/s, output: 97.93 toks/s]Processed prompts: 100%|██████████| 30/30 [00:06<00:00,  4.87it/s, est. speed input: 1571.73 toks/s, output: 152.23 toks/s]
+Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:24<2:11:48, 24.04s/it, est. speed input: 7.53 toks/s, output: 0.42 toks/s]Processed prompts:  63%|██████▎   | 209/330 [00:33<00:15,  8.07it/s, est. speed input: 2419.09 toks/s, output: 63.23 toks/s]Processed prompts:  76%|███████▌  | 250/330 [00:33<00:07, 10.13it/s, est. speed input: 2793.48 toks/s, output: 77.74 toks/s]Processed prompts:  96%|█████████▌| 316/330 [00:33<00:00, 15.06it/s, est. speed input: 3768.59 toks/s, output: 99.11 toks/s]Processed prompts: 100%|██████████| 330/330 [00:37<00:00,  8.86it/s, est. speed input: 3566.52 toks/s, output: 134.25 toks/s]
+Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:24<2:12:53, 24.24s/it, est. speed input: 7.10 toks/s, output: 0.41 toks/s]Processed prompts:  62%|██████▏   | 203/330 [00:33<00:16,  7.78it/s, est. speed input: 2332.81 toks/s, output: 60.98 toks/s]Processed prompts:  75%|███████▍  | 247/330 [00:33<00:08,  9.99it/s, est. speed input: 2766.38 toks/s, output: 76.47 toks/s]Processed prompts:  95%|█████████▌| 314/330 [00:33<00:01, 15.00it/s, est. speed input: 3732.47 toks/s, output: 98.40 toks/s]Processed prompts: 100%|██████████| 330/330 [00:37<00:00,  8.78it/s, est. speed input: 3566.29 toks/s, output: 143.12 toks/s]
+Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:23<2:11:09, 23.92s/it, est. speed input: 7.07 toks/s, output: 0.42 toks/s]Processed prompts:  50%|█████     | 165/330 [00:32<00:25,  6.38it/s, est. speed input: 1883.84 toks/s, output: 50.10 toks/s]Processed prompts:  70%|███████   | 232/330 [00:33<00:09, 10.04it/s, est. speed input: 2619.79 toks/s, output: 74.31 toks/s]Processed prompts:  82%|████████▏ | 272/330 [00:33<00:04, 12.91it/s, est. speed input: 3231.77 toks/s, output: 87.38 toks/s]Processed prompts:  96%|█████████▋| 318/330 [00:33<00:00, 17.51it/s, est. speed input: 3795.24 toks/s, output: 103.79 toks/s]Processed prompts: 100%|██████████| 330/330 [00:37<00:00,  8.88it/s, est. speed input: 3556.55 toks/s, output: 135.98 toks/s]
+Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:24<2:11:42, 24.02s/it, est. speed input: 7.70 toks/s, output: 0.42 toks/s]Processed prompts:  55%|█████▍    | 181/330 [00:33<00:21,  6.97it/s, est. speed input: 2095.16 toks/s, output: 54.72 toks/s]Processed prompts:  74%|███████▍  | 245/330 [00:33<00:08, 10.30it/s, est. speed input: 2739.83 toks/s, output: 77.60 toks/s]Processed prompts:  97%|█████████▋| 319/330 [00:33<00:00, 15.83it/s, est. speed input: 3820.87 toks/s, output: 103.07 toks/s]Processed prompts: 100%|██████████| 330/330 [00:37<00:00,  8.86it/s, est. speed input: 3559.61 toks/s, output: 131.86 toks/s]
+Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:24<2:13:20, 24.32s/it, est. speed input: 7.07 toks/s, output: 0.41 toks/s]Processed prompts:  58%|█████▊    | 190/330 [00:33<00:19,  7.24it/s, est. speed input: 2170.12 toks/s, output: 56.80 toks/s]Processed prompts:  75%|███████▌  | 249/330 [00:33<00:07, 10.26it/s, est. speed input: 2781.05 toks/s, output: 77.28 toks/s]Processed prompts:  96%|█████████▌| 316/330 [00:33<00:00, 15.23it/s, est. speed input: 3784.85 toks/s, output: 98.83 toks/s]Processed prompts: 100%|██████████| 330/330 [00:37<00:00,  8.78it/s, est. speed input: 3570.66 toks/s, output: 122.37 toks/s]
+🏎️Racing: 10 prompts remain after 7 blocks.
+14-03-25 01:15:20:792411 - ✨Step 2 ended✨
+*** Prompt 0: Score: 0.8495454545454543
+Examine the provided news article and determine its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Format: <final_answer> category </final_answer>
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Falcons Sign Crumpler to Contract Extension (Reuters) Reuters - The Atlanta Falcons\Monday signed Pro Bowl tight end Alge Crumpler to a six-year\contract extension.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8494696969696968
+Read the following news text and determine which category it belongs to. Choose from: World, Sports, Business, or Sci/Tech. Your final answer must be enclosed in <final_answer> </final_answer> tags for automated extraction.
+
+Input: EMC hires former IBM veteran as CTO EMC last week said it has hired former IBM veteran Jeffrey M. Nick as chief technology officer for the storage vendor. Nick, who left IBM in June following 24 years with the company 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.8433333333333334
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Britain: Weapons Report Proves Hussein Was a Threat Britain says a CIA report that concludes Iraq had no weapons of mass destruction before the US-led invasion last year nonetheless confirms that Iraqi leader Saddam Hussein posed a threat that could not be ignored.
+Output: <final_answer> World </final_answer>
+
+Input: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.
+Output: <final_answer> World </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 3: Score: 0.8412121212121213
+Examine the provided news article thoroughly. Determine the most fitting category from World, Sports, Business, and Sci/Tech based on the content. Ensure your response is enclosed within <final_answer> </final_answer> tags. For the given news article, identify the category it belongs to. Choose from World, Sports, Business, or Sci/Tech. Format your answer as <final_answer>category</final_answer>.
+
+Input: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...
+Output: <final_answer> World </final_answer>
+
+Input: Microsoft Sues 7 Spammers Microsoft indicated that the defendants used compromised computers around the world, using so-called zombie computers. By TechWeb.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Mancini Ready To Chase Juventus Inter Milan trainer Roberto Mancini is urging his side to keep the pressure on first place Juventus by continuing to turn their fine form into victories.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 4: Score: 0.8343939393939396
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+Input: UNDATED: 2-of-8 shooting. Keith Langford had 19 of his 24 points in the first half as Kansas coasted from the outset. JR Giddens had 14 of his 16 points for Kansas (6-0) in the first half.
+Output: <final_answer> Sports </final_answer>
+
+Input: At St. Helens, Little Lava but Plenty of Data Today scientists observe volcanoes from much greater distances and can send data across the Internet to scientists around the world.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Search Engine Forums Spotlight Links to this week's topics from search engine forums across the web: New MSN Search Goes LIVE in Beta - Microsoft To Launch New Search Engine - Google Launches 'Google Advertising Professionals' - Organic vs Paid Traffic ROI? - Making Money With AdWords? - Link Building 101
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Nigerian troops leave for Darfur Nigerian troops left for Sudan #39;s Darfur province on Monday as part of an African Union force mandated for the conflict-torn region, military officials said.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 5: Score: 0.8262878787878788
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...
+Output: <final_answer> World </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.8202272727272727
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.
+Output: <final_answer> World </final_answer>
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.8125757575757577
+Determine the appropriate category for the following news article. Options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer 
+Output: <final_answer> Sports </final_answer>
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Natural gas giant Gazprom to participate in Russian auction of key Yukos unit (Canadian Press) Canadian Press - MOSCOW (AP) - The nascent petroleum division of natural gas giant Gazprom will bid for the crown jewels of the battered Yukos oil empire, its chief said Tuesday - a widely anticipated move that could put the heart of the company jailed billionaire Mikhail Khodorkovsky created in Kremlin-friendly hands.
+Output: <final_answer> World </final_answer>
+
+Input: Armed Militiamen Worry Sudanese Refugees (AP) AP - Armed militiamen surged into a western border area where some Darfur refugees attempted to return to their raided village, U.N. security officials said Sunday, raising further concern about how quickly 1.4 million displaced Sudanese could return home safely.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.8020454545454544
+Analyze the given news article and identify its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Determine the appropriate category for the following news article. Format your response with <final_answer> category </final_answer>.
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer 
+Output: <final_answer> Sports </final_answer>
+
+Input: Falcons Sign Crumpler to Contract Extension (Reuters) Reuters - The Atlanta Falcons\Monday signed Pro Bowl tight end Alge Crumpler to a six-year\contract extension.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 9: Score: 0.7833333333333331
+Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.
+
+Input: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets 
+Output: <final_answer> Business </final_answer>
+
+Input: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Radcliffe finds the old character for her next book When Paula Radcliffe #39;s autobiography My Story So Far hits the bookshelves next week it will already be out of date, because it will not include the tale of her dramatic victory in the New York City Marathon here yesterday.
+Output: <final_answer> Sports </final_answer>
+
+Input: Royal Doulton in takeover talks China maker Royal Doulton has revealed it is in talks about a takeover by Irish rival Waterford Wedgwood. Stoke-based Doulton, which is to close its last remaining current UK factory next year, said it was in  quot;advanced discussions quot; with Waterford.
+Output: <final_answer> Business </final_answer>
+
+Input: IBM launches Websphere 6 IBM today announced that Websphere 6, the long awaited-update to its application server software, will be available by the end of the year.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: At summit, a deal on membership talks BRUSSELS The European Union took a huge step towards its most controversial enlargement to date late Thursday night by agreeing to open membership negotiations with Turkey, although with strict conditions.
+Output: <final_answer> World </final_answer>
+
+Input: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Storm Damage Hurts BellSouth Earnings  WASHINGTON (Reuters) - BellSouth Corp. &lt;A HREF="http://www.investor.reuters.com/FullQuote.aspx?ticker=BLS.N target=/stocks/quickinfo/fullquote"&gt;BLS.N&lt;/A&gt; on Monday  said third-quarter earnings fell due to storm damage in its  region and the sale of some international assets.
+Output: <final_answer> Business </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.09it/s, est. speed input: 216.22 toks/s, output: 51.07 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.35it/s, est. speed input: 460.55 toks/s, output: 142.17 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.16it/s, est. speed input: 460.55 toks/s, output: 142.17 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.12it/s, est. speed input: 168.24 toks/s, output: 53.83 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  3.44it/s, est. speed input: 438.01 toks/s, output: 147.27 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.34it/s, est. speed input: 389.90 toks/s, output: 150.89 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.30it/s, est. speed input: 389.90 toks/s, output: 150.89 toks/s]
+Processed prompts:   0%|          | 0/15 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   7%|▋         | 1/15 [00:00<00:10,  1.36it/s, est. speed input: 230.39 toks/s, output: 13.55 toks/s]Processed prompts: 100%|██████████| 15/15 [00:00<00:00, 20.32it/s, est. speed input: 3223.80 toks/s, output: 203.18 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  2.01it/s, est. speed input: 221.01 toks/s, output: 48.22 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00, 10.04it/s, est. speed input: 1104.59 toks/s, output: 241.00 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  2.01it/s, est. speed input: 223.08 toks/s, output: 48.23 toks/s]Processed prompts:  80%|████████  | 4/5 [00:00<00:00,  7.27it/s, est. speed input: 674.61 toks/s, output: 162.57 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  6.24it/s, est. speed input: 693.14 toks/s, output: 189.83 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ['Analyze the given news article to determine its appropriate category among World, Sports, Business, and Sci/Tech. Ensure your response is enclosed within <final_answer> </final_answer> tags. For the provided news article, identify the category it belongs to. Choose from World, Sports, Business, or Sci/Tech. Format your answer as <final_answer>category</final_answer>. News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech.\n\nInput: Creative declares marketing \'war\' against iPod (MacCentral) MacCentral - Creative Technology Ltd. Chief Executive Officer Sim Wong Hoo told reporters in Singapore his company plans to spent US #36;100 million in 2005 in a marketing war aimed squarely at Apple Computer Inc.\'s iPod. "The MP3 war has started and I am the one who has declared war," Hoo said.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Despite judging error, Hamm #39;s gold medal shows no tarnish Let me be clear here, since some self-righteous columnists who wouldn #39;t know a handstand from a night stand have entered the fray: Paul Hamm should not give up his gold medal.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, \'\'We will not remain in ...\nOutput: <final_answer> World </final_answer>\n\nInput: Fannie Mae Execs, Regulator Square Off (Reuters) Reuters - Fannie Mae executives and their\\regulator squared off on Wednesday, with executives denying any\\accounting irregularity and the regulator saying the housing\\finance company\'s management may need to go.\nOutput: <final_answer> Business </final_answer>\n\nInput: Microsoft Sues 7 Spammers Microsoft indicated that the defendants used compromised computers around the world, using so-called zombie computers. By TechWeb.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: 10th World Series Title Beckoning for St. Louis  NEW YORK (Reuters) - The Cardinals may be heading to their  first World Series since 1987 but there is nothing new about  post-season baseball in St. Louis.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Iraq #39;s Chalabi escapes assassination Just after escaping an attempt to kill him on Wednesday, he said an Iraqi court had dropped charges that could have put him in jail.\nOutput: <final_answer> World </final_answer>\n\nInput: I thought I saw a shove, but I guess I need glasses Nothing happened, Reggie Wayne said. Nothing happened when the Indianapolis Colts wide receiver and Peyton Manning went face mask to face mask on the sideline late in Sunday #39;s game.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', "Examine the news article thoroughly and identify the correct category. The options are World, Sports, Business, and Sci/Tech. Your response should be formatted as <final_answer> category </final_answer>.\n\nInput: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \\$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Group urges EPA to cut pollution If the government required deeper cuts in air pollution from power plants, at least 3,000 lives would be saved and 140,000 children would avoid asthma and other respiratory ailments, an environmental group said Tuesday.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.\nOutput: <final_answer> World </final_answer>\n\nInput: Broadband Pushes Europe Web Users to 100 Million More than half of Europe #39;s Internet surfers now have a high-speed broadband connection at home, which has helped to push the number of Web users in Europe through the 100 million mark, a survey found on Thursday.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Armed Militiamen Worry Sudanese Refugees (AP) AP - Armed militiamen surged into a western border area where some Darfur refugees attempted to return to their raided village, U.N. security officials said Sunday, raising further concern about how quickly 1.4 million displaced Sudanese could return home safely.\nOutput: <final_answer> World </final_answer>\n\nInput: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.\nOutput: <final_answer> World </final_answer>\n\nInput: ", 'You are tasked with categorizing news articles into one of the following categories: World, Sports, Business, or Sci/Tech. Analyze the article below and determine its category. Your classification should be provided between the <final_answer> </final_answer> markers.\n\nInput: S. Africa Condemns Claims About Aristide S. African Government Condemns Accusations That It Is Being Used As Springboard for Haiti #39;s Aristide. A boy passes a car that says  quot;Aristide King quot; in the pro-Aristide slum of Bel-Air in Port-au-Prince, Sunday, Oct. 17, 2004.\nOutput: <final_answer> World </final_answer>\n\nInput: At summit, a deal on membership talks BRUSSELS The European Union took a huge step towards its most controversial enlargement to date late Thursday night by agreeing to open membership negotiations with Turkey, although with strict conditions.\nOutput: <final_answer> World </final_answer>\n\nInput: Radcliffe finds the old character for her next book When Paula Radcliffe #39;s autobiography My Story So Far hits the bookshelves next week it will already be out of date, because it will not include the tale of her dramatic victory in the New York City Marathon here yesterday.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Nigerian troops leave for Darfur Nigerian troops left for Sudan #39;s Darfur province on Monday as part of an African Union force mandated for the conflict-torn region, military officials said.\nOutput: <final_answer> World </final_answer>\n\nInput: At St. Helens, Little Lava but Plenty of Data Today scientists observe volcanoes from much greater distances and can send data across the Internet to scientists around the world.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: IBM launches Websphere 6 IBM today announced that Websphere 6, the long awaited-update to its application server software, will be available by the end of the year.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ', "Examine the provided news article thoroughly and identify its category. Choose from the options: World, Sports, Business, or Sci/Tech. Format your answer as <final_answer>category</final_answer>.\n\nInput: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.\nOutput: <final_answer> World </final_answer>\n\nInput: Fans offside as tycoons target English clubs DIVIDED down the years by the rawest rivalry in English football, Manchester United and Liverpool found their histories converging at the weekend as both clubs braced themselves for imminent takeover.\nOutput: <final_answer> Sports </final_answer>\n\nInput: "]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:17<35:07, 17.71s/it, est. speed input: 48.21 toks/s, output: 0.56 toks/s]Processed prompts:  75%|███████▌  | 90/120 [00:17<00:04,  7.17it/s, est. speed input: 3397.25 toks/s, output: 54.31 toks/s]Processed prompts: 100%|██████████| 120/120 [00:21<00:00,  5.53it/s, est. speed input: 3271.96 toks/s, output: 146.61 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:15<23:34, 15.89s/it, est. speed input: 52.93 toks/s, output: 0.63 toks/s]Processed prompts:  97%|█████████▋| 87/90 [00:16<00:00,  7.66it/s, est. speed input: 3837.34 toks/s, output: 57.57 toks/s]Processed prompts: 100%|██████████| 90/90 [00:19<00:00,  4.63it/s, est. speed input: 3286.45 toks/s, output: 63.26 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:16<23:46, 16.03s/it, est. speed input: 53.65 toks/s, output: 0.62 toks/s]Processed prompts:  90%|█████████ | 81/90 [00:16<00:01,  7.06it/s, est. speed input: 3584.23 toks/s, output: 52.84 toks/s]Processed prompts: 100%|██████████| 90/90 [00:19<00:00,  4.57it/s, est. speed input: 3271.05 toks/s, output: 83.27 toks/s]
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:15<23:27, 15.81s/it, est. speed input: 53.89 toks/s, output: 0.63 toks/s]Processed prompts:  98%|█████████▊| 88/90 [00:16<00:00,  7.78it/s, est. speed input: 3891.13 toks/s, output: 58.25 toks/s]Processed prompts: 100%|██████████| 90/90 [00:16<00:00,  5.56it/s, est. speed input: 3931.02 toks/s, output: 61.21 toks/s]
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:15<23:34, 15.89s/it, est. speed input: 52.85 toks/s, output: 0.63 toks/s]Processed prompts:  90%|█████████ | 81/90 [00:16<00:01,  7.14it/s, est. speed input: 3619.75 toks/s, output: 52.78 toks/s]Processed prompts: 100%|██████████| 90/90 [00:19<00:00,  4.61it/s, est. speed input: 3274.68 toks/s, output: 73.76 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:09<09:18,  9.46s/it, est. speed input: 61.40 toks/s, output: 1.06 toks/s]Processed prompts:  95%|█████████▌| 57/60 [00:09<00:00,  8.31it/s, est. speed input: 3738.11 toks/s, output: 65.63 toks/s]Processed prompts: 100%|██████████| 60/60 [00:13<00:00,  4.61it/s, est. speed input: 2917.19 toks/s, output: 72.12 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:09<09:20,  9.50s/it, est. speed input: 61.77 toks/s, output: 1.05 toks/s]Processed prompts:  93%|█████████▎| 56/60 [00:09<00:00,  8.15it/s, est. speed input: 3662.24 toks/s, output: 62.89 toks/s]Processed prompts: 100%|██████████| 60/60 [00:13<00:00,  4.60it/s, est. speed input: 2915.62 toks/s, output: 71.37 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:09<09:42,  9.88s/it, est. speed input: 58.09 toks/s, output: 1.01 toks/s]Processed prompts:  98%|█████████▊| 59/60 [00:10<00:00,  8.15it/s, est. speed input: 3699.60 toks/s, output: 62.65 toks/s]Processed prompts: 100%|██████████| 60/60 [00:11<00:00,  5.28it/s, est. speed input: 3369.91 toks/s, output: 65.97 toks/s]
+Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:23<2:09:32, 23.62s/it, est. speed input: 12.32 toks/s, output: 0.42 toks/s]Processed prompts:  64%|██████▍   | 211/330 [00:34<00:15,  7.83it/s, est. speed input: 2318.96 toks/s, output: 62.10 toks/s]Processed prompts:  77%|███████▋  | 253/330 [00:34<00:07,  9.87it/s, est. speed input: 2715.05 toks/s, output: 76.25 toks/s]Processed prompts:  98%|█████████▊| 323/330 [00:34<00:00, 14.93it/s, est. speed input: 3889.04 toks/s, output: 98.01 toks/s]Processed prompts: 100%|██████████| 330/330 [00:37<00:00,  8.69it/s, est. speed input: 3597.39 toks/s, output: 108.19 toks/s]
+Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:23<2:09:48, 23.67s/it, est. speed input: 15.84 toks/s, output: 0.42 toks/s]Processed prompts:  58%|█████▊    | 192/330 [00:34<00:19,  7.10it/s, est. speed input: 2162.29 toks/s, output: 56.33 toks/s]Processed prompts:  74%|███████▎  | 243/330 [00:34<00:09,  9.60it/s, est. speed input: 2622.88 toks/s, output: 73.82 toks/s]Processed prompts:  97%|█████████▋| 320/330 [00:34<00:00, 15.12it/s, est. speed input: 3836.84 toks/s, output: 100.12 toks/s]Processed prompts: 100%|██████████| 330/330 [00:38<00:00,  8.62it/s, est. speed input: 3577.13 toks/s, output: 125.18 toks/s]
+🏎️Racing: 11 prompts remain after 9 blocks.
+14-03-25 01:19:01:544440 - ✨Step 3 ended✨
+*** Prompt 0: Score: 0.8428787878787877
+Examine the provided news article and determine its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Format: <final_answer> category </final_answer>
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Falcons Sign Crumpler to Contract Extension (Reuters) Reuters - The Atlanta Falcons\Monday signed Pro Bowl tight end Alge Crumpler to a six-year\contract extension.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8424999999999999
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Britain: Weapons Report Proves Hussein Was a Threat Britain says a CIA report that concludes Iraq had no weapons of mass destruction before the US-led invasion last year nonetheless confirms that Iraqi leader Saddam Hussein posed a threat that could not be ignored.
+Output: <final_answer> World </final_answer>
+
+Input: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.
+Output: <final_answer> World </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.8411363636363635
+Read the following news text and determine which category it belongs to. Choose from: World, Sports, Business, or Sci/Tech. Your final answer must be enclosed in <final_answer> </final_answer> tags for automated extraction.
+
+Input: EMC hires former IBM veteran as CTO EMC last week said it has hired former IBM veteran Jeffrey M. Nick as chief technology officer for the storage vendor. Nick, who left IBM in June following 24 years with the company 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 3: Score: 0.827878787878788
+Examine the provided news article thoroughly. Determine the most fitting category from World, Sports, Business, and Sci/Tech based on the content. Ensure your response is enclosed within <final_answer> </final_answer> tags. For the given news article, identify the category it belongs to. Choose from World, Sports, Business, or Sci/Tech. Format your answer as <final_answer>category</final_answer>.
+
+Input: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...
+Output: <final_answer> World </final_answer>
+
+Input: Microsoft Sues 7 Spammers Microsoft indicated that the defendants used compromised computers around the world, using so-called zombie computers. By TechWeb.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Mancini Ready To Chase Juventus Inter Milan trainer Roberto Mancini is urging his side to keep the pressure on first place Juventus by continuing to turn their fine form into victories.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 4: Score: 0.8218939393939393
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+Input: UNDATED: 2-of-8 shooting. Keith Langford had 19 of his 24 points in the first half as Kansas coasted from the outset. JR Giddens had 14 of his 16 points for Kansas (6-0) in the first half.
+Output: <final_answer> Sports </final_answer>
+
+Input: At St. Helens, Little Lava but Plenty of Data Today scientists observe volcanoes from much greater distances and can send data across the Internet to scientists around the world.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Search Engine Forums Spotlight Links to this week's topics from search engine forums across the web: New MSN Search Goes LIVE in Beta - Microsoft To Launch New Search Engine - Google Launches 'Google Advertising Professionals' - Organic vs Paid Traffic ROI? - Making Money With AdWords? - Link Building 101
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Nigerian troops leave for Darfur Nigerian troops left for Sudan #39;s Darfur province on Monday as part of an African Union force mandated for the conflict-torn region, military officials said.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 5: Score: 0.8204545454545455
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...
+Output: <final_answer> World </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.8052272727272727
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.
+Output: <final_answer> World </final_answer>
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.8025757575757577
+Determine the appropriate category for the following news article. Options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer 
+Output: <final_answer> Sports </final_answer>
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Natural gas giant Gazprom to participate in Russian auction of key Yukos unit (Canadian Press) Canadian Press - MOSCOW (AP) - The nascent petroleum division of natural gas giant Gazprom will bid for the crown jewels of the battered Yukos oil empire, its chief said Tuesday - a widely anticipated move that could put the heart of the company jailed billionaire Mikhail Khodorkovsky created in Kremlin-friendly hands.
+Output: <final_answer> World </final_answer>
+
+Input: Armed Militiamen Worry Sudanese Refugees (AP) AP - Armed militiamen surged into a western border area where some Darfur refugees attempted to return to their raided village, U.N. security officials said Sunday, raising further concern about how quickly 1.4 million displaced Sudanese could return home safely.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.7945454545454547
+Analyze the given news article and identify its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Determine the appropriate category for the following news article. Format your response with <final_answer> category </final_answer>.
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer 
+Output: <final_answer> Sports </final_answer>
+
+Input: Falcons Sign Crumpler to Contract Extension (Reuters) Reuters - The Atlanta Falcons\Monday signed Pro Bowl tight end Alge Crumpler to a six-year\contract extension.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 9: Score: 0.7896969696969696
+You are tasked with categorizing news articles into one of the following categories: World, Sports, Business, or Sci/Tech. Analyze the article below and determine its category. Your classification should be provided between the <final_answer> </final_answer> markers.
+
+Input: S. Africa Condemns Claims About Aristide S. African Government Condemns Accusations That It Is Being Used As Springboard for Haiti #39;s Aristide. A boy passes a car that says  quot;Aristide King quot; in the pro-Aristide slum of Bel-Air in Port-au-Prince, Sunday, Oct. 17, 2004.
+Output: <final_answer> World </final_answer>
+
+Input: At summit, a deal on membership talks BRUSSELS The European Union took a huge step towards its most controversial enlargement to date late Thursday night by agreeing to open membership negotiations with Turkey, although with strict conditions.
+Output: <final_answer> World </final_answer>
+
+Input: Radcliffe finds the old character for her next book When Paula Radcliffe #39;s autobiography My Story So Far hits the bookshelves next week it will already be out of date, because it will not include the tale of her dramatic victory in the New York City Marathon here yesterday.
+Output: <final_answer> Sports </final_answer>
+
+Input: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Nigerian troops leave for Darfur Nigerian troops left for Sudan #39;s Darfur province on Monday as part of an African Union force mandated for the conflict-torn region, military officials said.
+Output: <final_answer> World </final_answer>
+
+Input: At St. Helens, Little Lava but Plenty of Data Today scientists observe volcanoes from much greater distances and can send data across the Internet to scientists around the world.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: IBM launches Websphere 6 IBM today announced that Websphere 6, the long awaited-update to its application server software, will be available by the end of the year.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.02it/s, est. speed input: 209.33 toks/s, output: 51.82 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  2.07it/s, est. speed input: 405.91 toks/s, output: 124.46 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.79it/s, est. speed input: 400.11 toks/s, output: 148.46 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.74it/s, est. speed input: 400.11 toks/s, output: 148.46 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.01it/s, est. speed input: 156.59 toks/s, output: 54.55 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  2.38it/s, est. speed input: 356.89 toks/s, output: 137.85 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.88it/s, est. speed input: 348.41 toks/s, output: 153.46 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.84it/s, est. speed input: 348.41 toks/s, output: 153.46 toks/s]
+Processed prompts:   0%|          | 0/20 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   5%|▌         | 1/20 [00:00<00:14,  1.30it/s, est. speed input: 164.24 toks/s, output: 13.03 toks/s]Processed prompts:  80%|████████  | 16/20 [00:01<00:00, 18.39it/s, est. speed input: 1807.99 toks/s, output: 176.18 toks/s]Processed prompts: 100%|██████████| 20/20 [00:01<00:00, 18.44it/s, est. speed input: 2194.97 toks/s, output: 290.51 toks/s]
+Processed prompts:   0%|          | 0/10 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  10%|█         | 1/10 [00:00<00:07,  1.24it/s, est. speed input: 155.76 toks/s, output: 43.27 toks/s]Processed prompts:  60%|██████    | 6/10 [00:00<00:00,  8.12it/s, est. speed input: 763.34 toks/s, output: 231.86 toks/s]Processed prompts: 100%|██████████| 10/10 [00:00<00:00, 10.58it/s, est. speed input: 1148.45 toks/s, output: 418.10 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ['You are tasked with categorizing news articles into one of the following categories: World, Sports, Business, or Sci/Tech. Carefully read the article below and determine its category. Format: <final_answer>category</final_answer>\n\nInput: Trojan horse exploits image flaw Infected graphical images that can implant a backdoor into a Windows computer if they are viewed have been spotted on Usenet. EasyNews, a provider of Usenet newsgroups, said it has identified two JPEG images \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Nelson living magical dream The expression rarely changes, but for a moment, Orlando Magic point guard Jameer Nelson let his guard down. An all-American point guard and consensus college player of the year last season at St.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Nelson living magical dream The expression rarely changes, but for a moment, Orlando Magic point guard Jameer Nelson let his guard down. An all-American point guard and consensus college player of the year last season at St.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Cassell returns to the fold Sam Cassell and the Minnesota Timberwolves apparently are back on good terms. The veteran guard reported for yesterday afternoon\'s practice after skipping the team\'s media day and first day of workouts earlier in the week. Cassell, 34, was unhappy about not getting a contract extension.\nOutput: <final_answer> Sports </final_answer>\n\nInput: U.S. Sees Possible Attacks in Uzbekistan (Reuters) Reuters - The State Department said on Tuesday\\it had information that "terrorists may be planning to launch\\new attacks" in Uzbekistan around the time of Uzbek\\Independence Day celebrations in early September.\nOutput: <final_answer> World </final_answer>\n\nInput: Bigley granted Irish passport The Irish government has given Kenneth Bigley - kidnapped in Iraq - an Irish passport in a bid to stress his non-British roots. It was issued following appeals from his family and his dual citizenship means \nOutput: <final_answer> World </final_answer>\n\nInput: UNDATED: 2-of-8 shooting. Keith Langford had 19 of his 24 points in the first half as Kansas coasted from the outset. JR Giddens had 14 of his 16 points for Kansas (6-0) in the first half.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Reports of Kim #39;s demise exaggerated  quot;DON #39;T have a reaction, I #39;ll leave it to the analysts, quot; responded US State Department official Adam Ereli to questions about the significance of reports that North Korea #39;s media had stopped calling Kim Jong-il  quot;Dear Leader quot;.\nOutput: <final_answer> World </final_answer>\n\nInput: Group: Illegal Ivory Easy to Get Online (AP) AP - Online sales of illegal ivory are booming in the United States despite a longtime global trade ban, conservationists charge.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: NL Wrap: Pujols Drives in Five Runs as Cardinals Rout Reds  NEW YORK (Reuters) - Albert Pujols homered for the fifth  time in the last four games and drove in five runs as the St  Louis Cardinals routed the Cincinnati Reds 10-5 in National  League play at Busch Stadium on Monday.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', 'You are tasked with categorizing news articles into one of four categories: World, Sports, Business, or Sci/Tech. Given a news article, determine which category it belongs to. Ensure your response is formatted as <final_answer>category</final_answer>.\n\nInput: Spammers given boot by net host A campaign by anti-spam groups has persuaded a large US net service provider to ban spammers using its network.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: RIAA Expands P-to-P Lawsuits Latest round of legal action targets users of a variety of services, including eDonkey.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets \nOutput: <final_answer> Business </final_answer>\n\nInput: Tiffany Posts Unexpected Dip in Earnings  NEW YORK (Reuters) - Luxury jeweler Tiffany   Co.    on  Thursday posted an unexpected drop in quarterly earnings and  slashed its profit forecast, as weak silver jewelry sales in  Japan and higher diamonds and precious metals costs more than  offset improved U.S. sales.\nOutput: <final_answer> Business </final_answer>\n\nInput: ', 'Analyze the given news article and determine its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Identify the category of the news article by analyzing its content. Determine the appropriate category for the following news article. Format your response with <final_answer> category </final_answer>\n\nInput: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \\$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ', 'Analyze the news article provided and determine the most appropriate category from World, Sports, Business, and Sci/Tech. Ensure your response is enclosed within <final_answer> </final_answer> tags. For the given news article, identify the category it belongs to. Choose from World, Sports, Business, or Sci/Tech. Format your answer as <final_answer>category</final_answer>. Examine the news article and determine its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Determine the appropriate category for the following news article.\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ']
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:12<24:54, 12.56s/it, est. speed input: 64.48 toks/s, output: 0.80 toks/s]Processed prompts:  66%|██████▌   | 79/120 [00:12<00:04,  8.81it/s, est. speed input: 2820.03 toks/s, output: 67.26 toks/s]Processed prompts: 100%|██████████| 120/120 [00:17<00:00,  6.87it/s, est. speed input: 2870.33 toks/s, output: 387.10 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:07<07:40,  7.80s/it, est. speed input: 102.16 toks/s, output: 1.28 toks/s]Processed prompts:  95%|█████████▌| 57/60 [00:07<00:00, 10.03it/s, est. speed input: 3749.11 toks/s, output: 76.32 toks/s]Processed prompts: 100%|██████████| 60/60 [00:08<00:00,  7.48it/s, est. speed input: 3893.47 toks/s, output: 84.76 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:07<07:47,  7.93s/it, est. speed input: 102.93 toks/s, output: 1.26 toks/s]Processed prompts:  90%|█████████ | 54/60 [00:08<00:00,  9.35it/s, est. speed input: 3645.17 toks/s, output: 71.15 toks/s]Processed prompts: 100%|██████████| 60/60 [00:11<00:00,  5.22it/s, est. speed input: 2748.17 toks/s, output: 93.61 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:07<07:38,  7.77s/it, est. speed input: 104.06 toks/s, output: 1.29 toks/s]Processed prompts:  93%|█████████▎| 56/60 [00:07<00:00,  9.90it/s, est. speed input: 3794.02 toks/s, output: 74.68 toks/s]Processed prompts: 100%|██████████| 60/60 [00:10<00:00,  5.52it/s, est. speed input: 2858.88 toks/s, output: 86.62 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:07<07:40,  7.81s/it, est. speed input: 101.88 toks/s, output: 1.28 toks/s]Processed prompts:  93%|█████████▎| 56/60 [00:08<00:00,  9.85it/s, est. speed input: 3793.05 toks/s, output: 73.74 toks/s]Processed prompts: 100%|██████████| 60/60 [00:11<00:00,  5.23it/s, est. speed input: 2724.60 toks/s, output: 120.46 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:07<07:35,  7.72s/it, est. speed input: 104.05 toks/s, output: 1.30 toks/s]Processed prompts:  92%|█████████▏| 55/60 [00:07<00:00,  9.72it/s, est. speed input: 3676.49 toks/s, output: 75.77 toks/s]Processed prompts: 100%|██████████| 60/60 [00:11<00:00,  5.28it/s, est. speed input: 2718.97 toks/s, output: 119.15 toks/s]
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:06<02:54,  6.02s/it, est. speed input: 134.43 toks/s, output: 1.66 toks/s]Processed prompts: 100%|██████████| 30/30 [00:06<00:00,  4.93it/s, est. speed input: 3973.59 toks/s, output: 52.63 toks/s]
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:06<02:55,  6.05s/it, est. speed input: 135.82 toks/s, output: 1.65 toks/s]Processed prompts: 100%|██████████| 30/30 [00:06<00:00,  4.93it/s, est. speed input: 3993.70 toks/s, output: 51.93 toks/s]
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:06<02:55,  6.04s/it, est. speed input: 133.52 toks/s, output: 1.66 toks/s]Processed prompts: 100%|██████████| 30/30 [00:06<00:00,  4.94it/s, est. speed input: 3985.52 toks/s, output: 51.41 toks/s]
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:06<02:55,  6.05s/it, est. speed input: 147.19 toks/s, output: 1.65 toks/s]Processed prompts: 100%|██████████| 30/30 [00:06<00:00,  4.91it/s, est. speed input: 3964.68 toks/s, output: 52.06 toks/s]
+🏎️Racing: 11 prompts remain after 9 blocks.
+14-03-25 01:20:45:668407 - ✨Step 4 ended✨
+*** Prompt 0: Score: 0.8428787878787877
+Examine the provided news article and determine its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Format: <final_answer> category </final_answer>
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Falcons Sign Crumpler to Contract Extension (Reuters) Reuters - The Atlanta Falcons\Monday signed Pro Bowl tight end Alge Crumpler to a six-year\contract extension.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8424999999999999
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Britain: Weapons Report Proves Hussein Was a Threat Britain says a CIA report that concludes Iraq had no weapons of mass destruction before the US-led invasion last year nonetheless confirms that Iraqi leader Saddam Hussein posed a threat that could not be ignored.
+Output: <final_answer> World </final_answer>
+
+Input: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.
+Output: <final_answer> World </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.8411363636363635
+Read the following news text and determine which category it belongs to. Choose from: World, Sports, Business, or Sci/Tech. Your final answer must be enclosed in <final_answer> </final_answer> tags for automated extraction.
+
+Input: EMC hires former IBM veteran as CTO EMC last week said it has hired former IBM veteran Jeffrey M. Nick as chief technology officer for the storage vendor. Nick, who left IBM in June following 24 years with the company 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 3: Score: 0.827878787878788
+Examine the provided news article thoroughly. Determine the most fitting category from World, Sports, Business, and Sci/Tech based on the content. Ensure your response is enclosed within <final_answer> </final_answer> tags. For the given news article, identify the category it belongs to. Choose from World, Sports, Business, or Sci/Tech. Format your answer as <final_answer>category</final_answer>.
+
+Input: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...
+Output: <final_answer> World </final_answer>
+
+Input: Microsoft Sues 7 Spammers Microsoft indicated that the defendants used compromised computers around the world, using so-called zombie computers. By TechWeb.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Mancini Ready To Chase Juventus Inter Milan trainer Roberto Mancini is urging his side to keep the pressure on first place Juventus by continuing to turn their fine form into victories.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 4: Score: 0.8218939393939393
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+Input: UNDATED: 2-of-8 shooting. Keith Langford had 19 of his 24 points in the first half as Kansas coasted from the outset. JR Giddens had 14 of his 16 points for Kansas (6-0) in the first half.
+Output: <final_answer> Sports </final_answer>
+
+Input: At St. Helens, Little Lava but Plenty of Data Today scientists observe volcanoes from much greater distances and can send data across the Internet to scientists around the world.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Search Engine Forums Spotlight Links to this week's topics from search engine forums across the web: New MSN Search Goes LIVE in Beta - Microsoft To Launch New Search Engine - Google Launches 'Google Advertising Professionals' - Organic vs Paid Traffic ROI? - Making Money With AdWords? - Link Building 101
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Nigerian troops leave for Darfur Nigerian troops left for Sudan #39;s Darfur province on Monday as part of an African Union force mandated for the conflict-torn region, military officials said.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 5: Score: 0.8205303030303029
+You are tasked with categorizing news articles into one of the following categories: World, Sports, Business, or Sci/Tech. Carefully read the article below and determine its category. Format: <final_answer>category</final_answer>
+
+Input: Trojan horse exploits image flaw Infected graphical images that can implant a backdoor into a Windows computer if they are viewed have been spotted on Usenet. EasyNews, a provider of Usenet newsgroups, said it has identified two JPEG images 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Nelson living magical dream The expression rarely changes, but for a moment, Orlando Magic point guard Jameer Nelson let his guard down. An all-American point guard and consensus college player of the year last season at St.
+Output: <final_answer> Sports </final_answer>
+
+Input: Nelson living magical dream The expression rarely changes, but for a moment, Orlando Magic point guard Jameer Nelson let his guard down. An all-American point guard and consensus college player of the year last season at St.
+Output: <final_answer> Sports </final_answer>
+
+Input: Cassell returns to the fold Sam Cassell and the Minnesota Timberwolves apparently are back on good terms. The veteran guard reported for yesterday afternoon's practice after skipping the team's media day and first day of workouts earlier in the week. Cassell, 34, was unhappy about not getting a contract extension.
+Output: <final_answer> Sports </final_answer>
+
+Input: U.S. Sees Possible Attacks in Uzbekistan (Reuters) Reuters - The State Department said on Tuesday\it had information that "terrorists may be planning to launch\new attacks" in Uzbekistan around the time of Uzbek\Independence Day celebrations in early September.
+Output: <final_answer> World </final_answer>
+
+Input: Bigley granted Irish passport The Irish government has given Kenneth Bigley - kidnapped in Iraq - an Irish passport in a bid to stress his non-British roots. It was issued following appeals from his family and his dual citizenship means 
+Output: <final_answer> World </final_answer>
+
+Input: UNDATED: 2-of-8 shooting. Keith Langford had 19 of his 24 points in the first half as Kansas coasted from the outset. JR Giddens had 14 of his 16 points for Kansas (6-0) in the first half.
+Output: <final_answer> Sports </final_answer>
+
+Input: Reports of Kim #39;s demise exaggerated  quot;DON #39;T have a reaction, I #39;ll leave it to the analysts, quot; responded US State Department official Adam Ereli to questions about the significance of reports that North Korea #39;s media had stopped calling Kim Jong-il  quot;Dear Leader quot;.
+Output: <final_answer> World </final_answer>
+
+Input: Group: Illegal Ivory Easy to Get Online (AP) AP - Online sales of illegal ivory are booming in the United States despite a longtime global trade ban, conservationists charge.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: NL Wrap: Pujols Drives in Five Runs as Cardinals Rout Reds  NEW YORK (Reuters) - Albert Pujols homered for the fifth  time in the last four games and drove in five runs as the St  Louis Cardinals routed the Cincinnati Reds 10-5 in National  League play at Busch Stadium on Monday.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.8204545454545455
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...
+Output: <final_answer> World </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.8052272727272727
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.
+Output: <final_answer> World </final_answer>
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.8025757575757577
+Determine the appropriate category for the following news article. Options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer 
+Output: <final_answer> Sports </final_answer>
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Natural gas giant Gazprom to participate in Russian auction of key Yukos unit (Canadian Press) Canadian Press - MOSCOW (AP) - The nascent petroleum division of natural gas giant Gazprom will bid for the crown jewels of the battered Yukos oil empire, its chief said Tuesday - a widely anticipated move that could put the heart of the company jailed billionaire Mikhail Khodorkovsky created in Kremlin-friendly hands.
+Output: <final_answer> World </final_answer>
+
+Input: Armed Militiamen Worry Sudanese Refugees (AP) AP - Armed militiamen surged into a western border area where some Darfur refugees attempted to return to their raided village, U.N. security officials said Sunday, raising further concern about how quickly 1.4 million displaced Sudanese could return home safely.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 9: Score: 0.7945454545454547
+Analyze the given news article and identify its category among World, Sports, Business, or Sci/Tech. You are a news classification system. Read the article below and assign it to one of these categories. Determine the appropriate category for the following news article. Format your response with <final_answer> category </final_answer>.
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer 
+Output: <final_answer> Sports </final_answer>
+
+Input: Falcons Sign Crumpler to Contract Extension (Reuters) Reuters - The Atlanta Falcons\Monday signed Pro Bowl tight end Alge Crumpler to a six-year\contract extension.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+14-03-25 01:20:45:698183 - Training ended
+[rank0]:[W314 01:20:46.303638381 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

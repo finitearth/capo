@@ -1,0 +1,40 @@
+Running experiment with args: {'experiment_name': 'benchmark_experiment_gsm8k_mistral_CAPO_43', 'random_seed': 43, 'budget_per_run': 10000000, 'output_dir': 'results//gsm8k/mistral/CAPO/seed43/', 'dataset': 'gsm8k', 'model': 'vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE', 'model_revision': '803393813b8fc4046fb663af2e3c56339a5b520b', 'max_model_len': 1024, 'batch_size': None, 'model_storage_path': '../models/', 'optimizer': 'CAPO', 'n_steps': 999, 'population_size': 12, 'n_eval_samples': None, 'evoprompt_ga_template': 'standard', 'block_size': 30, 'length_penalty': 0.05, 'crossovers_per_iter': 4, 'upper_shots': 8, 'max_n_blocks_eval': 10, 'alpha': 0.2, 'shuffle_blocks_per_iter': False}
+Found 41 unique prompts
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "input"] = df[config.input]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:73: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "target"] = config.target(df)
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "input"] = df[config.input]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:73: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "target"] = config.target(df)
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/tasks/classification_tasks.py:56: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df[y_column] = df[y_column].str.lower()
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:05,  1.96s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:04<00:04,  2.04s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:05<00:01,  1.63s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:07<00:00,  1.71s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:07<00:00,  1.76s/it]
+
+Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:19,  1.73it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:18,  1.81it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:01<00:17,  1.84it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:02<00:16,  1.82it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:02<00:16,  1.82it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:03<00:15,  1.83it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:03<00:15,  1.86it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:04<00:14,  1.87it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:04<00:13,  1.89it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:05<00:13,  1.89it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:05<00:12,  1.90it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:06<00:11,  1.93it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:06<00:11,  1.96it/s]
