@@ -1,0 +1,23 @@
+Running experiment with args: {'experiment_name': 'benchmark_experiment_subj_mistral_EvoPromptGA_44', 'random_seed': 44, 'budget_per_run': 10000000, 'output_dir': 'results//subj/mistral/EvoPromptGA/seed44/', 'dataset': 'subj', 'model': 'vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE', 'model_revision': '803393813b8fc4046fb663af2e3c56339a5b520b', 'max_model_len': 1024, 'batch_size': None, 'model_storage_path': '../models/', 'optimizer': 'EvoPromptGA', 'n_steps': 999, 'population_size': 10, 'n_eval_samples': 300, 'evoprompt_ga_template': 'standard', 'block_size': None, 'length_penalty': None, 'crossovers_per_iter': None, 'upper_shots': None, 'max_n_blocks_eval': None, 'alpha': None, 'shuffle_blocks_per_iter': False}
+Traceback (most recent call last):
+  File "/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/scripts/evaluate_prompts.py", line 90, in <module>
+    run_experiment(args.experiment_path)
+  File "/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/scripts/evaluate_prompts.py", line 31, in run_experiment
+    df = pd.read_csv(f"{experiment_path}step_results.csv")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results//subj/mistral/EvoPromptGA/seed44/benchmark_experiment_subj_mistral_EvoPromptGA_44/ddc7655036dd4a6c70fb76419e5cac5b62d2ef691426043dd2bbd271eff633ff/step_results.csv'
