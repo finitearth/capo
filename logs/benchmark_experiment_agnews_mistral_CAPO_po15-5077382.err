@@ -1,0 +1,1081 @@
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:02<00:07,  2.60s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:05<00:04,  2.50s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:06<00:01,  1.99s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:08<00:00,  2.10s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:08<00:00,  2.17s/it]
+
+Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:18,  1.82it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:17,  1.85it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:01<00:17,  1.87it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:02<00:16,  1.89it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:02<00:15,  1.90it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:03<00:15,  1.92it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:03<00:14,  1.88it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:04<00:14,  1.91it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:04<00:13,  1.88it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:05<00:13,  1.91it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:05<00:12,  1.92it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:06<00:11,  1.94it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:06<00:11,  1.97it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:07<00:10,  1.99it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:07<00:09,  2.01it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:08<00:09,  2.03it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:08<00:08,  2.06it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:09<00:08,  2.07it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:09<00:07,  2.08it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:10<00:07,  2.09it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:10<00:06,  2.10it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:11<00:06,  2.11it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:11<00:05,  2.12it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:12<00:05,  2.13it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:12<00:04,  2.16it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:12<00:04,  2.19it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:13<00:03,  2.23it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:13<00:03,  2.24it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:14<00:02,  2.27it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:14<00:02,  2.29it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:15<00:01,  2.28it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:15<00:01,  2.29it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:15<00:00,  2.30it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:16<00:00,  2.31it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:16<00:00,  2.31it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:16<00:00,  2.08it/s]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "input"] = df[config.input]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:75: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "target"] = df[config.target]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "input"] = df[config.input]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:75: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "target"] = df[config.target]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/promptolution/promptolution/tasks/classification_tasks.py:56: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df[y_column] = df[y_column].str.lower()
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:02,  1.96it/s, est. speed input: 231.79 toks/s, output: 45.18 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  9.81it/s, est. speed input: 1158.28 toks/s, output: 225.76 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:02,  1.81it/s, est. speed input: 238.45 toks/s, output: 46.97 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  9.03it/s, est. speed input: 1191.71 toks/s, output: 234.73 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  3.69it/s, est. speed input: 347.35 toks/s, output: 36.95 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00, 18.46it/s, est. speed input: 1735.21 toks/s, output: 184.59 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  3.62it/s, est. speed input: 368.86 toks/s, output: 36.16 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00, 18.06it/s, est. speed input: 1842.83 toks/s, output: 180.66 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:03,  1.18it/s, est. speed input: 118.27 toks/s, output: 56.77 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  5.91it/s, est. speed input: 591.19 toks/s, output: 283.77 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:02,  1.80it/s, est. speed input: 221.23 toks/s, output: 48.56 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  8.99it/s, est. speed input: 1105.63 toks/s, output: 242.70 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  2.10it/s, est. speed input: 216.17 toks/s, output: 48.27 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00, 10.49it/s, est. speed input: 1080.26 toks/s, output: 241.22 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  3.52it/s, est. speed input: 376.84 toks/s, output: 35.22 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00, 17.59it/s, est. speed input: 1882.45 toks/s, output: 175.93 toks/s]
+🍿Initialized population with 15 prompts: 
+ ['Determine the appropriate category for the following news article. Options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.\n\n\n\nInput: ', "I'm working on a news classification project. Could you read this article and tell me if it's about World, Sports, Business, or Sci/Tech? Please put your answer between <final_answer> </final_answer> markers.\n\nInput: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer \nOutput: <final_answer> Sports </final_answer>\n\nInput: ", 'Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.\n\nInput: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', 'Please review this news article carefully. Based on its content, assign it to the most appropriate category among World, Sports, Business, and Sci/Tech. To ensure your answer is correctly processed, place it within <final_answer> </final_answer> tags.\n\nInput: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \\$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Natural gas giant Gazprom to participate in Russian auction of key Yukos unit (Canadian Press) Canadian Press - MOSCOW (AP) - The nascent petroleum division of natural gas giant Gazprom will bid for the crown jewels of the battered Yukos oil empire, its chief said Tuesday - a widely anticipated move that could put the heart of the company jailed billionaire Mikhail Khodorkovsky created in Kremlin-friendly hands.\nOutput: <final_answer> World </final_answer>\n\nInput: Armed Militiamen Worry Sudanese Refugees (AP) AP - Armed militiamen surged into a western border area where some Darfur refugees attempted to return to their raided village, U.N. security officials said Sunday, raising further concern about how quickly 1.4 million displaced Sudanese could return home safely.\nOutput: <final_answer> World </final_answer>\n\nInput: ', 'News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.\n\nInput: Millwall: We #39;re not to blame The FA confirmed today that they will launch an investigation into the incidents, which began late in the second half as away fans alleged Millwall supporters had made taunts about the Hillsborough disaster in 1989.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ', 'You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>\n\n\n\nInput: ', "Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.\n\nInput: Bergkamp Backing Van Persie to Shine Van Persie scored a last-gasp equaliser to rescue Arsenal from the jaws of defeat against Southampton on Saturday. The visitors had looked certain to condemn Arsene Wengers side \nOutput: <final_answer> Sports </final_answer>\n\nInput: THE SONG REMAINS THE SAME The Recording Industry Association of America has wielded a heavy legal arsenal in its war against illegal music downloads, including filing another round of lawsuits on Thursday - this time against 762 people.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.\nOutput: <final_answer> World </final_answer>\n\nInput: ", "Your task is to categorize the following news article into exactly one of these four classes: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be properly processed by our system.\n\nInput: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.\nOutput: <final_answer> World </final_answer>\n\nInput: ", 'Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.\n\nInput: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Red Sox, Astros Hunt for Their First Wins After Curt Schilling and Pedro Martinez failed to get the Boston Red Sox a win against the New York Yankees in the first two games of the AL championship series, Bronson Arroyo will take the hill for Game 3 at Fenway Park on Saturday.    In Houston, the winless Astros face a similar challenge as they return home and put their hopes in Roger Clemens for NLCS Game 3 against the St...\nOutput: <final_answer> World </final_answer>\n\nInput: ', 'Read the following news text and determine which category it belongs to. Choose from: World, Sports, Business, or Sci/Tech. Your final answer must be enclosed in <final_answer> </final_answer> tags for automated extraction.\n\nInput: At summit, a deal on membership talks BRUSSELS The European Union took a huge step towards its most controversial enlargement to date late Thursday night by agreeing to open membership negotiations with Turkey, although with strict conditions.\nOutput: <final_answer> World </final_answer>\n\nInput: 170 miners remain trapped in coalmine gas explosion By 1 pm on Sunday, 123 miners were rescued alive after a major gas explosion took place at the Chenjiashan Coalmine, Shaanxi Province, around 7:10 am but another 170 remained trapped underground.\nOutput: <final_answer> World </final_answer>\n\nInput: ', 'Based on the content of this news article, classify it as either World, Sports, Business, or Sci/Tech. Your classification must be placed between <final_answer> </final_answer> tags for proper extraction.\n\nInput: Myanmar #39;s foreign minister, deputy fired MYANMAR #39;S military junta yesterday dismissed the Foreign Minister and his deputy in an unexpected Cabinet reshuffle that saw two other ministers also fired.\nOutput: <final_answer> World </final_answer>\n\nInput: Fans offside as tycoons target English clubs DIVIDED down the years by the rawest rivalry in English football, Manchester United and Liverpool found their histories converging at the weekend as both clubs braced themselves for imminent takeover.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', "In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech. After reading the article below, determine its appropriate category and ensure you format your answer as <final_answer> category </final_answer> for our extraction script.\n\nInput: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.\nOutput: <final_answer> World </final_answer>\n\nInput: It #39;s on to LA for the Giants Bee Staff Writer. SAN DIEGO - The San Diego Padres returned the favor, and the playoff-chasing Giants gladly accepted it before a disappointed record crowd of 45,389 at Petco Park.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ", 'Examine the following news text and identify whether it should be classified as World, Sports, Business, or Sci/Tech content. Your classification must be formatted with <final_answer> tags for automated extraction by our system.\n\nInput: Britain: Weapons Report Proves Hussein Was a Threat Britain says a CIA report that concludes Iraq had no weapons of mass destruction before the US-led invasion last year nonetheless confirms that Iraqi leader Saddam Hussein posed a threat that could not be ignored.\nOutput: <final_answer> World </final_answer>\n\nInput: ', 'Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For proper data extraction, format your answer as <final_answer> category </final_answer>.\n\n\n\nInput: ', 'Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.\n\nInput: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ']
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.07s/it, est. speed input: 188.58 toks/s, output: 53.48 toks/s]Processed prompts:  50%|█████     | 2/4 [00:01<00:01,  1.61it/s, est. speed input: 306.52 toks/s, output: 98.06 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  1.65it/s, est. speed input: 334.04 toks/s, output: 129.02 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.02it/s, est. speed input: 449.52 toks/s, output: 188.31 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.04s/it, est. speed input: 154.89 toks/s, output: 54.84 toks/s]Processed prompts:  50%|█████     | 2/4 [00:01<00:01,  1.71it/s, est. speed input: 262.35 toks/s, output: 100.96 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  1.65it/s, est. speed input: 292.04 toks/s, output: 129.22 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.07it/s, est. speed input: 406.75 toks/s, output: 190.19 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:02,  1.85it/s, est. speed input: 229.31 toks/s, output: 48.08 toks/s]Processed prompts:  40%|████      | 2/5 [00:00<00:01,  2.63it/s, est. speed input: 306.73 toks/s, output: 86.58 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  6.18it/s, est. speed input: 766.64 toks/s, output: 249.77 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ['We have a collection of news articles, each needing to be categorized into one of four groups: World, Sports, Business, or Sci/Tech. For the given news article, identify the appropriate category. After reading the article below, determine its category and format your answer as <final_answer>category</final_answer> for our extraction script.\n\n\n\nInput: ', 'In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer>category</final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.\n\nInput: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.\nOutput: <final_answer> World </final_answer>\n\nInput: ', 'In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.\n\nInput: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', 'Analyze the provided news text and identify the suitable category for the article. The options are World, Sports, Business, and Sci/Tech. Ensure your classification is formatted with <final_answer>category</final_answer> for automated extraction by our system.\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: UNDATED: 2-of-8 shooting. Keith Langford had 19 of his 24 points in the first half as Kansas coasted from the outset. JR Giddens had 14 of his 16 points for Kansas (6-0) in the first half.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ']
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:15<1:33:16, 15.25s/it, est. speed input: 7.28 toks/s, output: 0.66 toks/s]Processed prompts:  35%|███▍      | 127/368 [00:22<00:33,  7.16it/s, est. speed input: 1275.53 toks/s, output: 57.10 toks/s]Processed prompts:  53%|█████▎    | 196/368 [00:22<00:13, 12.58it/s, est. speed input: 2000.03 toks/s, output: 93.77 toks/s]Processed prompts:  61%|██████▏   | 226/368 [00:22<00:09, 15.28it/s, est. speed input: 2326.78 toks/s, output: 105.74 toks/s]Processed prompts:  67%|██████▋   | 246/368 [00:22<00:06, 18.05it/s, est. speed input: 2554.79 toks/s, output: 115.29 toks/s]Processed prompts:  72%|███████▏  | 265/368 [00:23<00:04, 21.71it/s, est. speed input: 2726.61 toks/s, output: 128.75 toks/s]Processed prompts:  77%|███████▋  | 284/368 [00:23<00:03, 23.98it/s, est. speed input: 2849.79 toks/s, output: 142.68 toks/s]Processed prompts:  81%|████████  | 298/368 [00:25<00:03, 18.73it/s, est. speed input: 2825.25 toks/s, output: 166.82 toks/s]Processed prompts:  84%|████████▎ | 308/368 [00:25<00:03, 19.20it/s, est. speed input: 2861.12 toks/s, output: 192.65 toks/s]Processed prompts:  86%|████████▌ | 316/368 [00:25<00:02, 21.01it/s, est. speed input: 2910.69 toks/s, output: 215.75 toks/s]Processed prompts:  88%|████████▊ | 323/368 [00:25<00:01, 22.51it/s, est. speed input: 2952.20 toks/s, output: 236.73 toks/s]Processed prompts:  89%|████████▉ | 329/368 [00:26<00:01, 21.32it/s, est. speed input: 2967.49 toks/s, output: 256.47 toks/s]Processed prompts:  91%|█████████ | 334/368 [00:26<00:01, 21.11it/s, est. speed input: 2982.19 toks/s, output: 274.73 toks/s]Processed prompts:  92%|█████████▏| 338/368 [00:26<00:01, 16.77it/s, est. speed input: 2956.94 toks/s, output: 288.09 toks/s]Processed prompts:  93%|█████████▎| 341/368 [00:27<00:02, 11.44it/s, est. speed input: 2906.37 toks/s, output: 298.83 toks/s]Processed prompts:  93%|█████████▎| 344/368 [00:29<00:03,  6.07it/s, est. speed input: 2767.46 toks/s, output: 306.28 toks/s]Processed prompts:  97%|█████████▋| 357/368 [00:29<00:00, 11.53it/s, est. speed input: 2890.16 toks/s, output: 417.38 toks/s]Processed prompts: 100%|██████████| 368/368 [00:29<00:00, 12.47it/s, est. speed input: 2980.12 toks/s, output: 512.83 toks/s]
+Processed prompts:   0%|          | 0/202 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/202 [00:10<34:43, 10.36s/it, est. speed input: 16.31 toks/s, output: 0.96 toks/s]Processed prompts:  32%|███▏      | 65/202 [00:10<00:15,  8.77it/s, est. speed input: 1112.52 toks/s, output: 62.18 toks/s]Processed prompts:  58%|█████▊    | 118/202 [00:11<00:04, 17.25it/s, est. speed input: 2028.22 toks/s, output: 136.38 toks/s]Processed prompts:  74%|███████▍  | 149/202 [00:11<00:02, 24.33it/s, est. speed input: 2610.42 toks/s, output: 203.98 toks/s]Processed prompts:  88%|████████▊ | 177/202 [00:12<00:01, 24.00it/s, est. speed input: 2771.94 toks/s, output: 299.13 toks/s]Processed prompts:  97%|█████████▋| 195/202 [00:15<00:00, 14.16it/s, est. speed input: 2445.14 toks/s, output: 441.08 toks/s]Processed prompts: 100%|██████████| 202/202 [00:15<00:00, 12.95it/s, est. speed input: 2549.22 toks/s, output: 555.97 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:15<1:33:08, 15.23s/it, est. speed input: 6.44 toks/s, output: 0.66 toks/s]Processed prompts:  48%|████▊     | 176/368 [00:21<00:18, 10.43it/s, est. speed input: 1789.07 toks/s, output: 82.27 toks/s]Processed prompts:  58%|█████▊    | 212/368 [00:21<00:11, 13.33it/s, est. speed input: 2229.25 toks/s, output: 101.92 toks/s]Processed prompts:  62%|██████▎   | 230/368 [00:21<00:09, 14.81it/s, est. speed input: 2431.60 toks/s, output: 108.71 toks/s]Processed prompts:  79%|███████▉  | 292/368 [00:22<00:03, 24.27it/s, est. speed input: 2948.48 toks/s, output: 138.09 toks/s]Processed prompts:  85%|████████▌ | 314/368 [00:23<00:02, 22.89it/s, est. speed input: 3006.11 toks/s, output: 161.99 toks/s]Processed prompts:  89%|████████▉ | 329/368 [00:24<00:01, 20.63it/s, est. speed input: 3035.14 toks/s, output: 207.01 toks/s]Processed prompts:  92%|█████████▏| 339/368 [00:27<00:02, 11.93it/s, est. speed input: 2738.40 toks/s, output: 249.92 toks/s]Processed prompts:  94%|█████████▍| 346/368 [00:28<00:01, 12.86it/s, est. speed input: 2780.33 toks/s, output: 311.95 toks/s]Processed prompts:  96%|█████████▌| 352/368 [00:28<00:01, 13.78it/s, est. speed input: 2833.87 toks/s, output: 364.03 toks/s]Processed prompts: 100%|██████████| 368/368 [00:28<00:00, 13.00it/s, est. speed input: 2975.17 toks/s, output: 508.69 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:06<11:47,  6.37s/it, est. speed input: 30.61 toks/s, output: 1.57 toks/s]Processed prompts:  44%|████▍     | 49/112 [00:06<00:06, 10.00it/s, est. speed input: 1493.21 toks/s, output: 75.38 toks/s]Processed prompts:  96%|█████████▌| 107/112 [00:06<00:00, 26.25it/s, est. speed input: 3237.57 toks/s, output: 274.57 toks/s]Processed prompts: 100%|██████████| 112/112 [00:10<00:00, 11.04it/s, est. speed input: 2272.41 toks/s, output: 233.16 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:15<1:35:43, 15.65s/it, est. speed input: 7.41 toks/s, output: 0.64 toks/s]Processed prompts:  44%|████▍     | 161/368 [00:21<00:22,  9.31it/s, est. speed input: 1644.39 toks/s, output: 73.41 toks/s]Processed prompts:  52%|█████▏    | 190/368 [00:22<00:15, 11.57it/s, est. speed input: 2008.94 toks/s, output: 88.76 toks/s]Processed prompts:  55%|█████▌    | 203/368 [00:22<00:13, 12.48it/s, est. speed input: 2153.72 toks/s, output: 93.43 toks/s]Processed prompts:  68%|██████▊   | 252/368 [00:22<00:05, 19.93it/s, est. speed input: 2553.04 toks/s, output: 115.15 toks/s]Processed prompts:  76%|███████▌  | 280/368 [00:22<00:03, 25.38it/s, est. speed input: 2810.87 toks/s, output: 137.48 toks/s]Processed prompts:  82%|████████▏ | 302/368 [00:24<00:02, 22.91it/s, est. speed input: 2897.90 toks/s, output: 158.21 toks/s]Processed prompts:  86%|████████▌ | 317/368 [00:24<00:02, 21.97it/s, est. speed input: 2931.54 toks/s, output: 192.49 toks/s]Processed prompts:  89%|████████▉ | 328/368 [00:26<00:02, 17.90it/s, est. speed input: 2909.37 toks/s, output: 226.31 toks/s]Processed prompts:  91%|█████████▏| 336/368 [00:29<00:03,  9.91it/s, est. speed input: 2667.74 toks/s, output: 248.48 toks/s]Processed prompts:  96%|█████████▌| 352/368 [00:29<00:01, 13.15it/s, est. speed input: 2805.06 toks/s, output: 385.96 toks/s]Processed prompts: 100%|██████████| 368/368 [00:29<00:00, 12.50it/s, est. speed input: 2941.64 toks/s, output: 525.10 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:06<11:30,  6.22s/it, est. speed input: 37.80 toks/s, output: 1.61 toks/s]Processed prompts:  46%|████▌     | 51/112 [00:06<00:05, 10.66it/s, est. speed input: 1662.00 toks/s, output: 80.17 toks/s]Processed prompts:  89%|████████▉ | 100/112 [00:06<00:00, 24.58it/s, est. speed input: 3228.43 toks/s, output: 252.59 toks/s]Processed prompts: 100%|██████████| 112/112 [00:10<00:00, 11.07it/s, est. speed input: 2348.05 toks/s, output: 287.22 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:15<1:32:17, 15.09s/it, est. speed input: 7.03 toks/s, output: 0.66 toks/s]Processed prompts:  47%|████▋     | 173/368 [00:21<00:18, 10.36it/s, est. speed input: 1780.43 toks/s, output: 81.70 toks/s]Processed prompts:  55%|█████▌    | 203/368 [00:21<00:12, 12.78it/s, est. speed input: 2148.96 toks/s, output: 98.14 toks/s]Processed prompts:  59%|█████▉    | 218/368 [00:21<00:10, 13.91it/s, est. speed input: 2296.15 toks/s, output: 103.38 toks/s]Processed prompts:  75%|███████▌  | 277/368 [00:21<00:03, 22.92it/s, est. speed input: 2772.64 toks/s, output: 131.13 toks/s]Processed prompts:  80%|████████  | 296/368 [00:22<00:02, 25.16it/s, est. speed input: 2926.52 toks/s, output: 147.78 toks/s]Processed prompts:  84%|████████▍ | 310/368 [00:23<00:02, 19.88it/s, est. speed input: 2871.85 toks/s, output: 169.70 toks/s]Processed prompts:  87%|████████▋ | 320/368 [00:24<00:02, 20.52it/s, est. speed input: 2921.27 toks/s, output: 199.77 toks/s]Processed prompts:  89%|████████▉ | 328/368 [00:24<00:01, 21.83it/s, est. speed input: 2965.67 toks/s, output: 228.04 toks/s]Processed prompts:  91%|█████████ | 335/368 [00:27<00:03, 10.43it/s, est. speed input: 2716.06 toks/s, output: 240.69 toks/s]Processed prompts:  92%|█████████▏| 340/368 [00:28<00:03,  9.28it/s, est. speed input: 2672.13 toks/s, output: 274.82 toks/s]Processed prompts:  95%|█████████▌| 351/368 [00:28<00:01, 12.09it/s, est. speed input: 2771.57 toks/s, output: 371.74 toks/s]Processed prompts: 100%|██████████| 368/368 [00:28<00:00, 12.91it/s, est. speed input: 2918.74 toks/s, output: 524.43 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:05<11:04,  5.98s/it, est. speed input: 31.93 toks/s, output: 1.67 toks/s]Processed prompts:  54%|█████▍    | 61/112 [00:06<00:03, 13.31it/s, est. speed input: 1988.26 toks/s, output: 99.29 toks/s]Processed prompts:  93%|█████████▎| 104/112 [00:06<00:00, 25.70it/s, est. speed input: 3302.70 toks/s, output: 255.22 toks/s]Processed prompts: 100%|██████████| 112/112 [00:09<00:00, 11.44it/s, est. speed input: 2316.27 toks/s, output: 251.17 toks/s]
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:15<1:33:33, 15.30s/it, est. speed input: 6.34 toks/s, output: 0.65 toks/s]Processed prompts:  48%|████▊     | 177/368 [00:21<00:18, 10.48it/s, est. speed input: 1849.62 toks/s, output: 82.62 toks/s]Processed prompts:  55%|█████▍    | 202/368 [00:21<00:13, 12.45it/s, est. speed input: 2136.42 toks/s, output: 96.08 toks/s]Processed prompts:  58%|█████▊    | 214/368 [00:21<00:11, 13.25it/s, est. speed input: 2248.95 toks/s, output: 100.67 toks/s]Processed prompts:  77%|███████▋  | 283/368 [00:22<00:03, 23.94it/s, est. speed input: 2890.67 toks/s, output: 133.86 toks/s]Processed prompts:  83%|████████▎ | 307/368 [00:23<00:02, 24.33it/s, est. speed input: 3006.47 toks/s, output: 156.49 toks/s]Processed prompts:  88%|████████▊ | 324/368 [00:24<00:01, 22.23it/s, est. speed input: 3014.55 toks/s, output: 197.85 toks/s]Processed prompts:  91%|█████████▏| 336/368 [00:26<00:02, 15.01it/s, est. speed input: 2857.32 toks/s, output: 230.15 toks/s]Processed prompts:  93%|█████████▎| 344/368 [00:28<00:01, 12.44it/s, est. speed input: 2778.44 toks/s, output: 288.59 toks/s]Processed prompts:  95%|█████████▌| 350/368 [00:28<00:01, 13.31it/s, est. speed input: 2825.46 toks/s, output: 340.92 toks/s]Processed prompts: 100%|██████████| 368/368 [00:28<00:00, 13.02it/s, est. speed input: 2987.31 toks/s, output: 503.90 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:06<11:08,  6.03s/it, est. speed input: 34.02 toks/s, output: 1.66 toks/s]Processed prompts:  41%|████      | 46/112 [00:06<00:06, 10.44it/s, est. speed input: 1546.27 toks/s, output: 76.00 toks/s]Processed prompts:  56%|█████▋    | 63/112 [00:06<00:03, 14.35it/s, est. speed input: 2088.66 toks/s, output: 130.37 toks/s]Processed prompts:  90%|█████████ | 101/112 [00:06<00:00, 28.77it/s, est. speed input: 3166.33 toks/s, output: 266.30 toks/s]Processed prompts: 100%|██████████| 112/112 [00:09<00:00, 11.21it/s, est. speed input: 2304.20 toks/s, output: 278.98 toks/s]
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:14<1:31:22, 14.94s/it, est. speed input: 6.96 toks/s, output: 0.67 toks/s]Processed prompts:  40%|████      | 149/368 [00:20<00:24,  9.01it/s, est. speed input: 1587.39 toks/s, output: 71.08 toks/s]Processed prompts:  54%|█████▍    | 199/368 [00:21<00:12, 13.17it/s, est. speed input: 2096.10 toks/s, output: 99.10 toks/s]Processed prompts:  60%|██████    | 222/368 [00:21<00:09, 15.26it/s, est. speed input: 2338.01 toks/s, output: 109.68 toks/s]Processed prompts:  69%|██████▉   | 253/368 [00:21<00:06, 19.12it/s, est. speed input: 2510.51 toks/s, output: 122.31 toks/s]Processed prompts:  81%|████████  | 297/368 [00:22<00:02, 28.12it/s, est. speed input: 2947.09 toks/s, output: 150.80 toks/s]Processed prompts:  86%|████████▌ | 317/368 [00:23<00:02, 25.33it/s, est. speed input: 3003.03 toks/s, output: 174.01 toks/s]Processed prompts:  90%|████████▉ | 331/368 [00:23<00:01, 24.10it/s, est. speed input: 3044.07 toks/s, output: 210.79 toks/s]Processed prompts:  93%|█████████▎| 341/368 [00:25<00:01, 19.66it/s, est. speed input: 2999.01 toks/s, output: 241.53 toks/s]Processed prompts:  95%|█████████▍| 349/368 [00:27<00:01, 12.10it/s, est. speed input: 2818.26 toks/s, output: 286.73 toks/s]Processed prompts:  96%|█████████▋| 355/368 [00:27<00:00, 13.19it/s, est. speed input: 2871.80 toks/s, output: 340.78 toks/s]Processed prompts: 100%|██████████| 368/368 [00:27<00:00, 13.37it/s, est. speed input: 2991.42 toks/s, output: 461.67 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:05<10:55,  5.91s/it, est. speed input: 31.14 toks/s, output: 1.69 toks/s]Processed prompts:  46%|████▌     | 51/112 [00:06<00:05, 11.86it/s, est. speed input: 1705.60 toks/s, output: 88.62 toks/s]Processed prompts:  65%|██████▌   | 73/112 [00:06<00:02, 17.64it/s, est. speed input: 2463.04 toks/s, output: 163.61 toks/s]Processed prompts:  85%|████████▍ | 95/112 [00:06<00:00, 25.68it/s, est. speed input: 3067.88 toks/s, output: 244.88 toks/s]Processed prompts:  99%|█████████▉| 111/112 [00:09<00:00, 11.61it/s, est. speed input: 2251.40 toks/s, output: 313.84 toks/s]Processed prompts: 100%|██████████| 112/112 [00:09<00:00, 11.32it/s, est. speed input: 2268.55 toks/s, output: 339.72 toks/s]
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:15<1:31:45, 15.00s/it, est. speed input: 7.33 toks/s, output: 0.67 toks/s]Processed prompts:  43%|████▎     | 158/368 [00:21<00:22,  9.51it/s, est. speed input: 1592.40 toks/s, output: 75.03 toks/s]Processed prompts:  55%|█████▍    | 201/368 [00:21<00:12, 13.06it/s, est. speed input: 2073.85 toks/s, output: 98.95 toks/s]Processed prompts:  60%|██████    | 221/368 [00:21<00:09, 14.76it/s, est. speed input: 2273.98 toks/s, output: 106.89 toks/s]Processed prompts:  69%|██████▉   | 253/368 [00:21<00:05, 19.70it/s, est. speed input: 2481.83 toks/s, output: 122.13 toks/s]Processed prompts:  79%|███████▉  | 290/368 [00:21<00:02, 26.96it/s, est. speed input: 2869.54 toks/s, output: 147.32 toks/s]Processed prompts:  84%|████████▍ | 309/368 [00:23<00:02, 20.44it/s, est. speed input: 2822.52 toks/s, output: 172.91 toks/s]Processed prompts:  88%|████████▊ | 322/368 [00:24<00:02, 18.85it/s, est. speed input: 2851.96 toks/s, output: 214.57 toks/s]Processed prompts:  90%|████████▉ | 331/368 [00:27<00:03, 11.72it/s, est. speed input: 2645.38 toks/s, output: 245.52 toks/s]Processed prompts:  92%|█████████▏| 338/368 [00:28<00:02, 10.99it/s, est. speed input: 2624.39 toks/s, output: 299.14 toks/s]Processed prompts:  95%|█████████▍| 348/368 [00:28<00:01, 13.23it/s, est. speed input: 2714.09 toks/s, output: 386.73 toks/s]Processed prompts: 100%|██████████| 368/368 [00:28<00:00, 12.82it/s, est. speed input: 2888.22 toks/s, output: 564.56 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:05<10:59,  5.95s/it, est. speed input: 31.62 toks/s, output: 1.68 toks/s]Processed prompts:  51%|█████     | 57/112 [00:06<00:04, 12.65it/s, est. speed input: 1877.73 toks/s, output: 95.26 toks/s]Processed prompts:  95%|█████████▍| 106/112 [00:06<00:00, 27.27it/s, est. speed input: 3413.21 toks/s, output: 276.91 toks/s]Processed prompts: 100%|██████████| 112/112 [00:09<00:00, 11.59it/s, est. speed input: 2339.01 toks/s, output: 224.66 toks/s]
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:15<1:33:40, 15.32s/it, est. speed input: 8.03 toks/s, output: 0.65 toks/s]Processed prompts:  45%|████▍     | 164/368 [00:21<00:21,  9.68it/s, est. speed input: 1741.68 toks/s, output: 76.33 toks/s]Processed prompts:  55%|█████▌    | 203/368 [00:21<00:12, 12.82it/s, est. speed input: 2165.28 toks/s, output: 97.55 toks/s]Processed prompts:  60%|██████    | 221/368 [00:22<00:10, 14.27it/s, est. speed input: 2364.04 toks/s, output: 104.63 toks/s]Processed prompts:  79%|███████▉  | 290/368 [00:22<00:03, 24.76it/s, est. speed input: 2960.30 toks/s, output: 138.68 toks/s]Processed prompts:  85%|████████▌ | 313/368 [00:22<00:02, 26.00it/s, est. speed input: 3071.47 toks/s, output: 160.10 toks/s]Processed prompts:  89%|████████▉ | 329/368 [00:24<00:01, 22.34it/s, est. speed input: 3066.20 toks/s, output: 198.90 toks/s]Processed prompts:  92%|█████████▏| 340/368 [00:27<00:02, 12.31it/s, est. speed input: 2763.27 toks/s, output: 232.19 toks/s]Processed prompts:  95%|█████████▍| 349/368 [00:28<00:01, 13.59it/s, est. speed input: 2839.06 toks/s, output: 312.60 toks/s]Processed prompts: 100%|██████████| 368/368 [00:28<00:00, 13.10it/s, est. speed input: 3011.88 toks/s, output: 485.79 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:06<11:12,  6.06s/it, est. speed input: 28.06 toks/s, output: 1.65 toks/s]Processed prompts:  48%|████▊     | 54/112 [00:06<00:05, 11.56it/s, est. speed input: 1716.11 toks/s, output: 89.88 toks/s]Processed prompts:  91%|█████████ | 102/112 [00:06<00:00, 25.14it/s, est. speed input: 3245.71 toks/s, output: 260.55 toks/s]Processed prompts: 100%|██████████| 112/112 [00:09<00:00, 11.39it/s, est. speed input: 2354.55 toks/s, output: 240.94 toks/s]
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:15<1:32:15, 15.08s/it, est. speed input: 7.09 toks/s, output: 0.66 toks/s]Processed prompts:  49%|████▉     | 180/368 [00:21<00:17, 10.80it/s, est. speed input: 1849.40 toks/s, output: 85.17 toks/s]Processed prompts:  58%|█████▊    | 214/368 [00:21<00:11, 13.57it/s, est. speed input: 2241.61 toks/s, output: 103.90 toks/s]Processed prompts:  63%|██████▎   | 231/368 [00:21<00:09, 14.94it/s, est. speed input: 2426.58 toks/s, output: 110.29 toks/s]Processed prompts:  82%|████████▏ | 301/368 [00:21<00:02, 25.82it/s, est. speed input: 3026.45 toks/s, output: 144.97 toks/s]Processed prompts:  88%|████████▊ | 325/368 [00:23<00:02, 21.13it/s, est. speed input: 3007.78 toks/s, output: 182.26 toks/s]Processed prompts:  93%|█████████▎| 341/368 [00:26<00:01, 15.19it/s, est. speed input: 2820.92 toks/s, output: 239.71 toks/s]Processed prompts:  96%|█████████▌| 352/368 [00:27<00:01, 15.41it/s, est. speed input: 2892.67 toks/s, output: 335.51 toks/s]Processed prompts:  98%|█████████▊| 360/368 [00:27<00:00, 16.69it/s, est. speed input: 2948.53 toks/s, output: 407.74 toks/s]Processed prompts: 100%|██████████| 368/368 [00:27<00:00, 13.35it/s, est. speed input: 3020.32 toks/s, output: 482.03 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:05<11:02,  5.97s/it, est. speed input: 28.65 toks/s, output: 1.68 toks/s]Processed prompts:  50%|█████     | 56/112 [00:06<00:04, 12.22it/s, est. speed input: 1855.21 toks/s, output: 92.15 toks/s]Processed prompts:  88%|████████▊ | 99/112 [00:06<00:00, 24.87it/s, est. speed input: 3212.22 toks/s, output: 248.81 toks/s]Processed prompts: 100%|██████████| 112/112 [00:09<00:00, 11.50it/s, est. speed input: 2329.16 toks/s, output: 248.86 toks/s]
+Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:15<1:34:23, 15.43s/it, est. speed input: 12.38 toks/s, output: 0.65 toks/s]Processed prompts:  44%|████▍     | 161/368 [00:21<00:21,  9.48it/s, est. speed input: 1596.98 toks/s, output: 74.71 toks/s]Processed prompts:  53%|█████▎    | 196/368 [00:21<00:13, 12.29it/s, est. speed input: 1988.32 toks/s, output: 93.66 toks/s]Processed prompts:  58%|█████▊    | 212/368 [00:22<00:11, 13.52it/s, est. speed input: 2154.07 toks/s, output: 99.31 toks/s]Processed prompts:  67%|██████▋   | 248/368 [00:22<00:06, 19.04it/s, est. speed input: 2407.54 toks/s, output: 115.59 toks/s]Processed prompts:  78%|███████▊  | 286/368 [00:22<00:03, 26.88it/s, est. speed input: 2802.45 toks/s, output: 141.05 toks/s]Processed prompts:  84%|████████▍ | 310/368 [00:24<00:02, 22.25it/s, est. speed input: 2832.01 toks/s, output: 169.54 toks/s]Processed prompts:  89%|████████▊ | 326/368 [00:24<00:01, 22.77it/s, est. speed input: 2927.00 toks/s, output: 218.21 toks/s]Processed prompts:  92%|█████████▏| 338/368 [00:26<00:01, 18.27it/s, est. speed input: 2892.08 toks/s, output: 258.84 toks/s]Processed prompts:  94%|█████████▍| 347/368 [00:28<00:01, 12.27it/s, est. speed input: 2764.10 toks/s, output: 314.75 toks/s]Processed prompts:  96%|█████████▋| 355/368 [00:28<00:00, 13.86it/s, est. speed input: 2831.75 toks/s, output: 384.93 toks/s]Processed prompts: 100%|██████████| 368/368 [00:28<00:00, 12.95it/s, est. speed input: 2944.64 toks/s, output: 502.01 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:05<11:02,  5.97s/it, est. speed input: 27.13 toks/s, output: 1.67 toks/s]Processed prompts:  50%|█████     | 56/112 [00:06<00:04, 12.16it/s, est. speed input: 1778.40 toks/s, output: 92.77 toks/s]Processed prompts:  90%|█████████ | 101/112 [00:06<00:00, 24.99it/s, est. speed input: 3195.71 toks/s, output: 255.75 toks/s]Processed prompts: 100%|██████████| 112/112 [00:09<00:00, 11.38it/s, est. speed input: 2306.98 toks/s, output: 276.17 toks/s]
+🏎️Racing: 16 prompts remain after 9 blocks.
+14-03-25 01:15:39:061438 - ✨Step 1 ended✨
+*** Prompt 0: Score: 0.8459874608150468
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: Bergkamp Backing Van Persie to Shine Van Persie scored a last-gasp equaliser to rescue Arsenal from the jaws of defeat against Southampton on Saturday. The visitors had looked certain to condemn Arsene Wengers side 
+Output: <final_answer> Sports </final_answer>
+
+Input: THE SONG REMAINS THE SAME The Recording Industry Association of America has wielded a heavy legal arsenal in its war against illegal music downloads, including filing another round of lawsuits on Thursday - this time against 762 people.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8048066875653083
+In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech. After reading the article below, determine its appropriate category and ensure you format your answer as <final_answer> category </final_answer> for our extraction script.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: It #39;s on to LA for the Giants Bee Staff Writer. SAN DIEGO - The San Diego Padres returned the favor, and the playoff-chasing Giants gladly accepted it before a disappointed record crowd of 45,389 at Petco Park.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.7832497387669802
+Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Red Sox, Astros Hunt for Their First Wins After Curt Schilling and Pedro Martinez failed to get the Boston Red Sox a win against the New York Yankees in the first two games of the AL championship series, Bronson Arroyo will take the hill for Game 3 at Fenway Park on Saturday.    In Houston, the winless Astros face a similar challenge as they return home and put their hopes in Roger Clemens for NLCS Game 3 against the St...
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 3: Score: 0.7826332288401253
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+
+
+Input: 
+*** Prompt 4: Score: 0.7759352142110761
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 5: Score: 0.7685370950888192
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Millwall: We #39;re not to blame The FA confirmed today that they will launch an investigation into the incidents, which began late in the second half as away fans alleged Millwall supporters had made taunts about the Hillsborough disaster in 1989.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.7653082549634272
+Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.7597074190177638
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.7424764890282132
+Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For proper data extraction, format your answer as <final_answer> category </final_answer>.
+
+
+
+Input: 
+*** Prompt 9: Score: 0.7100835945663533
+Determine the appropriate category for the following news article. Options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.
+
+
+
+Input: 
+*** Prompt 10: Score: 0.7085579937304075
+We have a collection of news articles, each needing to be categorized into one of four groups: World, Sports, Business, or Sci/Tech. For the given news article, identify the appropriate category. After reading the article below, determine its category and format your answer as <final_answer>category</final_answer> for our extraction script.
+
+
+
+Input: 
+*** Prompt 11: Score: 0.694649947753396
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer>category</final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.
+
+Input: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 12: Score: 0.67
+Please review this news article carefully. Based on its content, assign it to the most appropriate category among World, Sports, Business, and Sci/Tech. To ensure your answer is correctly processed, place it within <final_answer> </final_answer> tags.
+
+Input: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Natural gas giant Gazprom to participate in Russian auction of key Yukos unit (Canadian Press) Canadian Press - MOSCOW (AP) - The nascent petroleum division of natural gas giant Gazprom will bid for the crown jewels of the battered Yukos oil empire, its chief said Tuesday - a widely anticipated move that could put the heart of the company jailed billionaire Mikhail Khodorkovsky created in Kremlin-friendly hands.
+Output: <final_answer> World </final_answer>
+
+Input: Armed Militiamen Worry Sudanese Refugees (AP) AP - Armed militiamen surged into a western border area where some Darfur refugees attempted to return to their raided village, U.N. security officials said Sunday, raising further concern about how quickly 1.4 million displaced Sudanese could return home safely.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 13: Score: 0.6615047021943572
+Your task is to categorize the following news article into exactly one of these four classes: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be properly processed by our system.
+
+Input: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 14: Score: 0.5924137931034482
+I'm working on a news classification project. Could you read this article and tell me if it's about World, Sports, Business, or Sci/Tech? Please put your answer between <final_answer> </final_answer> markers.
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Braves rally to even series ATLANTA - With plenty of incentive, Rafael Furcal made sure the Atlanta Braves #39; season lasts at least two more games. Set to report to jail once the post-season ends, Furcal hit a two-out, two-run homer 
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.05s/it, est. speed input: 194.38 toks/s, output: 51.20 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  1.69it/s, est. speed input: 359.74 toks/s, output: 117.31 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.02it/s, est. speed input: 497.10 toks/s, output: 173.12 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.02it/s, est. speed input: 160.65 toks/s, output: 54.23 toks/s]Processed prompts:  50%|█████     | 2/4 [00:01<00:00,  2.16it/s, est. speed input: 294.10 toks/s, output: 104.50 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  1.58it/s, est. speed input: 281.63 toks/s, output: 120.18 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  2.28it/s, est. speed input: 367.10 toks/s, output: 173.58 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.94it/s, est. speed input: 367.10 toks/s, output: 173.58 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:03<00:15,  3.92s/it, est. speed input: 13.02 toks/s, output: 65.33 toks/s]Processed prompts: 100%|██████████| 5/5 [00:03<00:00,  1.28it/s, est. speed input: 65.07 toks/s, output: 326.64 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:03,  1.28it/s, est. speed input: 136.00 toks/s, output: 55.17 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  5.78it/s, est. speed input: 612.48 toks/s, output: 255.38 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ["new prompt\n\nInput: Search Engine Forums Spotlight Links to this week's topics from search engine forums across the web: New MSN Search Goes LIVE in Beta - Microsoft To Launch New Search Engine - Google Launches 'Google Advertising Professionals' - Organic vs Paid Traffic ROI? - Making Money With AdWords? - Link Building 101\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: At St. Helens, Little Lava but Plenty of Data Today scientists observe volcanoes from much greater distances and can send data across the Internet to scientists around the world.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ", "I'm working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer> category </final_answer>.\n\nInput: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ", "I'm tasked with categorizing news articles into four distinct categories: World, Sports, Business, and Sci/Tech. Please analyze the provided news article and determine which category it belongs to. Your response should be formatted as <final_answer> category </final_answer>.\n\nInput: One in Four Bird Species May Die Out This Century By the end of the century one in 10 species of birds in the world will be extinct and a further 15 percent will be on the brink of extinction.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Nigerian troops leave for Darfur Nigerian troops left for Sudan #39;s Darfur province on Monday as part of an African Union force mandated for the conflict-torn region, military officials said.\nOutput: <final_answer> World </final_answer>\n\nInput: ", "We have a collection of news articles, each needing to be categorized into one of the following groups: World, Sports, Business, or Sci/Tech. After examining the article below, determine its appropriate category and format your answer as <final_answer>category</final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.\n\nInput: Warsaw official vowstroop cuts in Iraq POLAND WASHINGTON -- The prime minister of Poland told his Parliament yesterday that he would begin reducing the number of Polish troops in Iraq in January, another blow to the US-led coalition that has lost nearly a third of its members this year. Addressing legislators before a vote of confidence, Prime Minister Marek Belka promised, ''We will not remain in ...\nOutput: <final_answer> World </final_answer>\n\nInput: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.\nOutput: <final_answer> World </final_answer>\n\nInput: "]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:07<14:43,  7.43s/it, est. speed input: 32.59 toks/s, output: 1.35 toks/s]Processed prompts:  28%|██▊       | 33/120 [00:07<00:14,  6.07it/s, est. speed input: 1260.30 toks/s, output: 47.03 toks/s]Processed prompts:  37%|███▋      | 44/120 [00:08<00:09,  8.15it/s, est. speed input: 1489.71 toks/s, output: 76.09 toks/s]Processed prompts:  54%|█████▍    | 65/120 [00:08<00:03, 14.80it/s, est. speed input: 2034.63 toks/s, output: 138.43 toks/s]Processed prompts:  72%|███████▏  | 86/120 [00:08<00:01, 23.61it/s, est. speed input: 2484.87 toks/s, output: 206.87 toks/s]Processed prompts:  85%|████████▌ | 102/120 [00:09<00:00, 22.43it/s, est. speed input: 2692.01 toks/s, output: 268.98 toks/s]Processed prompts:  94%|█████████▍| 113/120 [00:10<00:00, 15.42it/s, est. speed input: 2575.45 toks/s, output: 341.62 toks/s]Processed prompts: 100%|██████████| 120/120 [00:11<00:00, 10.03it/s, est. speed input: 2399.85 toks/s, output: 444.12 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:03<03:51,  3.92s/it, est. speed input: 48.74 toks/s, output: 2.55 toks/s]Processed prompts:  23%|██▎       | 14/60 [00:04<00:10,  4.49it/s, est. speed input: 1036.54 toks/s, output: 36.88 toks/s]Processed prompts:  57%|█████▋    | 34/60 [00:04<00:01, 13.11it/s, est. speed input: 1951.43 toks/s, output: 150.82 toks/s]Processed prompts:  77%|███████▋  | 46/60 [00:04<00:00, 19.21it/s, est. speed input: 2380.60 toks/s, output: 222.72 toks/s]Processed prompts:  93%|█████████▎| 56/60 [00:08<00:00,  6.92it/s, est. speed input: 1720.61 toks/s, output: 329.96 toks/s]Processed prompts: 100%|██████████| 60/60 [00:08<00:00,  7.47it/s, est. speed input: 1886.34 toks/s, output: 457.40 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:01<00:51,  1.78s/it, est. speed input: 109.10 toks/s, output: 12.37 toks/s]Processed prompts:  70%|███████   | 21/30 [00:01<00:00, 15.23it/s, est. speed input: 2052.30 toks/s, output: 286.32 toks/s]Processed prompts: 100%|██████████| 30/30 [00:02<00:00, 13.22it/s, est. speed input: 2452.33 toks/s, output: 369.35 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/30 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   3%|▎         | 1/30 [00:01<00:49,  1.72s/it, est. speed input: 108.87 toks/s, output: 12.81 toks/s]Processed prompts:  63%|██████▎   | 19/30 [00:01<00:00, 14.20it/s, est. speed input: 1853.63 toks/s, output: 267.92 toks/s]Processed prompts:  97%|█████████▋| 29/30 [00:02<00:00, 20.43it/s, est. speed input: 2496.10 toks/s, output: 394.45 toks/s]Processed prompts: 100%|██████████| 30/30 [00:02<00:00, 14.01it/s, est. speed input: 2468.23 toks/s, output: 398.91 toks/s]
+🏎️Racing: 15 prompts remain after 3 blocks.
+14-03-25 01:16:13:304201 - ✨Step 2 ended✨
+*** Prompt 0: Score: 0.8826018808777429
+I'm working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer> category </final_answer>.
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8576541274817137
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: Bergkamp Backing Van Persie to Shine Van Persie scored a last-gasp equaliser to rescue Arsenal from the jaws of defeat against Southampton on Saturday. The visitors had looked certain to condemn Arsene Wengers side 
+Output: <final_answer> Sports </final_answer>
+
+Input: THE SONG REMAINS THE SAME The Recording Industry Association of America has wielded a heavy legal arsenal in its war against illegal music downloads, including filing another round of lawsuits on Thursday - this time against 762 people.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.8153082549634274
+Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 3: Score: 0.8152037617554859
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Millwall: We #39;re not to blame The FA confirmed today that they will launch an investigation into the incidents, which began late in the second half as away fans alleged Millwall supporters had made taunts about the Hillsborough disaster in 1989.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 4: Score: 0.8092998955067919
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+
+
+Input: 
+*** Prompt 5: Score: 0.8076018808777429
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.8065830721003134
+Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Red Sox, Astros Hunt for Their First Wins After Curt Schilling and Pedro Martinez failed to get the Boston Red Sox a win against the New York Yankees in the first two games of the AL championship series, Bronson Arroyo will take the hill for Game 3 at Fenway Park on Saturday.    In Houston, the winless Astros face a similar challenge as they return home and put their hopes in Roger Clemens for NLCS Game 3 against the St...
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.8048066875653083
+In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech. After reading the article below, determine its appropriate category and ensure you format your answer as <final_answer> category </final_answer> for our extraction script.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: It #39;s on to LA for the Giants Bee Staff Writer. SAN DIEGO - The San Diego Padres returned the favor, and the playoff-chasing Giants gladly accepted it before a disappointed record crowd of 45,389 at Petco Park.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.7924764890282131
+Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For proper data extraction, format your answer as <final_answer> category </final_answer>.
+
+
+
+Input: 
+*** Prompt 9: Score: 0.7718913270637411
+We have a collection of news articles, each needing to be categorized into one of four groups: World, Sports, Business, or Sci/Tech. For the given news article, identify the appropriate category. After reading the article below, determine its category and format your answer as <final_answer>category</final_answer> for our extraction script.
+
+
+
+Input: 
+*** Prompt 10: Score: 0.7600835945663531
+Determine the appropriate category for the following news article. Options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.
+
+
+
+Input: 
+*** Prompt 11: Score: 0.7480407523510973
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 12: Score: 0.746316614420063
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer>category</final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.
+
+Input: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 13: Score: 0.6833333333333332
+Please review this news article carefully. Based on its content, assign it to the most appropriate category among World, Sports, Business, and Sci/Tech. To ensure your answer is correctly processed, place it within <final_answer> </final_answer> tags.
+
+Input: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Natural gas giant Gazprom to participate in Russian auction of key Yukos unit (Canadian Press) Canadian Press - MOSCOW (AP) - The nascent petroleum division of natural gas giant Gazprom will bid for the crown jewels of the battered Yukos oil empire, its chief said Tuesday - a widely anticipated move that could put the heart of the company jailed billionaire Mikhail Khodorkovsky created in Kremlin-friendly hands.
+Output: <final_answer> World </final_answer>
+
+Input: Armed Militiamen Worry Sudanese Refugees (AP) AP - Armed militiamen surged into a western border area where some Darfur refugees attempted to return to their raided village, U.N. security officials said Sunday, raising further concern about how quickly 1.4 million displaced Sudanese could return home safely.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 14: Score: 0.6565047021943573
+Your task is to categorize the following news article into exactly one of these four classes: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be properly processed by our system.
+
+Input: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.
+Output: <final_answer> World </final_answer>
+
+Input: 
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.06it/s, est. speed input: 210.52 toks/s, output: 51.03 toks/s]Processed prompts:  50%|█████     | 2/4 [00:01<00:00,  2.11it/s, est. speed input: 374.66 toks/s, output: 97.34 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  2.43it/s, est. speed input: 439.91 toks/s, output: 131.20 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.33it/s, est. speed input: 479.31 toks/s, output: 159.41 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.13it/s, est. speed input: 479.31 toks/s, output: 159.41 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.03it/s, est. speed input: 156.94 toks/s, output: 54.72 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  3.22it/s, est. speed input: 440.85 toks/s, output: 151.38 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.25it/s, est. speed input: 390.54 toks/s, output: 155.34 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.19it/s, est. speed input: 390.54 toks/s, output: 155.34 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  2.03it/s, est. speed input: 245.06 toks/s, output: 46.58 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00, 10.12it/s, est. speed input: 1224.66 toks/s, output: 232.78 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ['You are tasked with categorizing news articles into four distinct categories: World, Sports, Business, and Sci/Tech. Analyze the provided article and determine which category it falls under. Format: <final_answer> category </final_answer>\n\nInput: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', 'In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. For proper data extraction, format your answer as <final_answer> category </final_answer>.\n\n\n\nInput: ', 'You are tasked with categorizing news articles into one of four categories: World, Sports, Business, or Sci/Tech. Read the provided news article and identify its category. Your classification should be enclosed within <final_answer> tags.\n\nInput: Back to front switches blamed for space probe crash It shouldn #39;t happen to a scientist: investigators have found that the \\$250m (139m) Genesis space probe, which crash-landed in the Utah desert last month, failed because the switches designed to trigger its parachute were installed backwards.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets \nOutput: <final_answer> Business </final_answer>\n\nInput: ', "I'm tasked with categorizing news articles into one of four categories: World, Sports, Business, or Sci/Tech. Your job is to analyze the given news article and determine which category it falls under. The response should be formatted as <final_answer> category </final_answer>.\n\nInput: Arson eyed at Dutch mosque THE HAGUE -- A mosque in the Netherlands' southeast was destroyed by fire yesterday in what seemed to be the latest suspected attack against an Islamic site since the killing of a Dutch filmmaker critical of Islamic fundamentalism.\nOutput: <final_answer> World </final_answer>\n\nInput: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets \nOutput: <final_answer> Business </final_answer>\n\nInput: "]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:07<14:01,  7.07s/it, est. speed input: 23.06 toks/s, output: 1.41 toks/s]Processed prompts:  31%|███       | 37/120 [00:07<00:12,  6.70it/s, est. speed input: 1011.15 toks/s, output: 55.00 toks/s]Processed prompts:  42%|████▎     | 51/120 [00:07<00:06, 10.03it/s, est. speed input: 1345.56 toks/s, output: 96.33 toks/s]Processed prompts:  49%|████▉     | 59/120 [00:07<00:05, 12.12it/s, est. speed input: 1509.61 toks/s, output: 121.07 toks/s]Processed prompts:  56%|█████▌    | 67/120 [00:08<00:03, 14.92it/s, est. speed input: 1698.81 toks/s, output: 151.89 toks/s]Processed prompts:  61%|██████    | 73/120 [00:08<00:02, 17.20it/s, est. speed input: 1809.05 toks/s, output: 177.65 toks/s]Processed prompts:  66%|██████▌   | 79/120 [00:08<00:02, 14.91it/s, est. speed input: 1843.78 toks/s, output: 201.13 toks/s]Processed prompts:  71%|███████   | 85/120 [00:08<00:01, 18.27it/s, est. speed input: 1994.33 toks/s, output: 244.12 toks/s]Processed prompts:  76%|███████▌  | 91/120 [00:08<00:01, 21.97it/s, est. speed input: 2146.42 toks/s, output: 288.24 toks/s]Processed prompts:  82%|████████▏ | 98/120 [00:09<00:00, 27.61it/s, est. speed input: 2336.23 toks/s, output: 343.67 toks/s]Processed prompts:  87%|████████▋ | 104/120 [00:09<00:00, 31.58it/s, est. speed input: 2481.06 toks/s, output: 392.62 toks/s]Processed prompts:  92%|█████████▏| 110/120 [00:09<00:00, 35.38it/s, est. speed input: 2618.70 toks/s, output: 444.18 toks/s]Processed prompts:  98%|█████████▊| 117/120 [00:09<00:00, 29.06it/s, est. speed input: 2729.47 toks/s, output: 499.42 toks/s]Processed prompts: 100%|██████████| 120/120 [00:11<00:00, 10.20it/s, est. speed input: 2303.84 toks/s, output: 465.19 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:02<02:48,  2.85s/it, est. speed input: 57.85 toks/s, output: 3.51 toks/s]Processed prompts:  52%|█████▏    | 31/60 [00:03<00:02, 13.54it/s, est. speed input: 1765.62 toks/s, output: 105.35 toks/s]Processed prompts:  77%|███████▋  | 46/60 [00:03<00:00, 21.20it/s, est. speed input: 2533.11 toks/s, output: 211.22 toks/s]Processed prompts:  92%|█████████▏| 55/60 [00:03<00:00, 24.47it/s, est. speed input: 2834.52 toks/s, output: 300.54 toks/s]Processed prompts: 100%|██████████| 60/60 [00:04<00:00, 14.70it/s, est. speed input: 2618.53 toks/s, output: 324.19 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:02<02:54,  2.96s/it, est. speed input: 58.08 toks/s, output: 3.38 toks/s]Processed prompts:  43%|████▎     | 26/60 [00:03<00:03, 10.78it/s, est. speed input: 1422.63 toks/s, output: 84.62 toks/s]Processed prompts:  73%|███████▎  | 44/60 [00:03<00:00, 20.17it/s, est. speed input: 2380.21 toks/s, output: 207.79 toks/s]Processed prompts:  90%|█████████ | 54/60 [00:03<00:00, 23.91it/s, est. speed input: 2774.72 toks/s, output: 293.56 toks/s]Processed prompts: 100%|██████████| 60/60 [00:03<00:00, 15.78it/s, est. speed input: 2911.58 toks/s, output: 354.34 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:02<02:46,  2.82s/it, est. speed input: 60.69 toks/s, output: 3.55 toks/s]Processed prompts:  52%|█████▏    | 31/60 [00:03<00:02, 13.68it/s, est. speed input: 1757.02 toks/s, output: 106.49 toks/s]Processed prompts:  72%|███████▏  | 43/60 [00:03<00:00, 19.46it/s, est. speed input: 2339.81 toks/s, output: 189.53 toks/s]Processed prompts:  85%|████████▌ | 51/60 [00:03<00:00, 23.51it/s, est. speed input: 2664.47 toks/s, output: 267.75 toks/s]Processed prompts:  97%|█████████▋| 58/60 [00:04<00:00, 16.52it/s, est. speed input: 2427.54 toks/s, output: 300.34 toks/s]Processed prompts: 100%|██████████| 60/60 [00:04<00:00, 13.02it/s, est. speed input: 2280.74 toks/s, output: 321.23 toks/s]
+🏎️Racing: 15 prompts remain after 3 blocks.
+14-03-25 01:16:42:819260 - ✨Step 3 ended✨
+*** Prompt 0: Score: 0.8826018808777429
+I'm working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer> category </final_answer>.
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8576541274817137
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: Bergkamp Backing Van Persie to Shine Van Persie scored a last-gasp equaliser to rescue Arsenal from the jaws of defeat against Southampton on Saturday. The visitors had looked certain to condemn Arsene Wengers side 
+Output: <final_answer> Sports </final_answer>
+
+Input: THE SONG REMAINS THE SAME The Recording Industry Association of America has wielded a heavy legal arsenal in its war against illegal music downloads, including filing another round of lawsuits on Thursday - this time against 762 people.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.8153082549634274
+Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 3: Score: 0.8152037617554859
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Millwall: We #39;re not to blame The FA confirmed today that they will launch an investigation into the incidents, which began late in the second half as away fans alleged Millwall supporters had made taunts about the Hillsborough disaster in 1989.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 4: Score: 0.8092998955067919
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+
+
+Input: 
+*** Prompt 5: Score: 0.8076018808777429
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.8065830721003134
+Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Red Sox, Astros Hunt for Their First Wins After Curt Schilling and Pedro Martinez failed to get the Boston Red Sox a win against the New York Yankees in the first two games of the AL championship series, Bronson Arroyo will take the hill for Game 3 at Fenway Park on Saturday.    In Houston, the winless Astros face a similar challenge as they return home and put their hopes in Roger Clemens for NLCS Game 3 against the St...
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.8048066875653083
+In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech. After reading the article below, determine its appropriate category and ensure you format your answer as <final_answer> category </final_answer> for our extraction script.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: It #39;s on to LA for the Giants Bee Staff Writer. SAN DIEGO - The San Diego Padres returned the favor, and the playoff-chasing Giants gladly accepted it before a disappointed record crowd of 45,389 at Petco Park.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.7995820271682338
+You are tasked with categorizing news articles into four distinct categories: World, Sports, Business, and Sci/Tech. Analyze the provided article and determine which category it falls under. Format: <final_answer> category </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 9: Score: 0.7924764890282131
+Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For proper data extraction, format your answer as <final_answer> category </final_answer>.
+
+
+
+Input: 
+*** Prompt 10: Score: 0.7718913270637411
+We have a collection of news articles, each needing to be categorized into one of four groups: World, Sports, Business, or Sci/Tech. For the given news article, identify the appropriate category. After reading the article below, determine its category and format your answer as <final_answer>category</final_answer> for our extraction script.
+
+
+
+Input: 
+*** Prompt 11: Score: 0.7600835945663531
+Determine the appropriate category for the following news article. Options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.
+
+
+
+Input: 
+*** Prompt 12: Score: 0.7480407523510973
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 13: Score: 0.746316614420063
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer>category</final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.
+
+Input: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 14: Score: 0.7409352142110762
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. For proper data extraction, format your answer as <final_answer> category </final_answer>.
+
+
+
+Input: 
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.04it/s, est. speed input: 211.29 toks/s, output: 49.71 toks/s]Processed prompts:  50%|█████     | 2/4 [00:02<00:02,  1.04s/it, est. speed input: 213.17 toks/s, output: 82.36 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:02<00:00,  1.43it/s, est. speed input: 302.09 toks/s, output: 132.38 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.61it/s, est. speed input: 351.50 toks/s, output: 171.20 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.40it/s, est. speed input: 351.50 toks/s, output: 171.20 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.05it/s, est. speed input: 158.04 toks/s, output: 51.28 toks/s]Processed prompts:  50%|█████     | 2/4 [00:02<00:02,  1.02s/it, est. speed input: 185.84 toks/s, output: 84.02 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:02<00:00,  1.42it/s, est. speed input: 265.21 toks/s, output: 133.46 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.62it/s, est. speed input: 318.98 toks/s, output: 173.09 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.41it/s, est. speed input: 318.98 toks/s, output: 173.09 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ['In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer>category</final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system. In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech. After reading the article below, determine its appropriate category and ensure you format your answer as <final_answer>category</final_answer> for our extraction script.\n\nInput: Bush campaigns to seize Democratic stronghold of Minnesota (AFP) AFP - US President George W. Bush launched a three-stop bus tour in this up-for-grabs state, hoping to become the first Republican White House hopeful to win Minnesota in 32 years.\nOutput: <final_answer> World </final_answer>\n\nInput: ', 'In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer>category</final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system. Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech.\n\n\n\nInput: ', 'Analyze the content of the given news article to determine its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.\n\n\n\nInput: ', "We have a dataset of news articles that need to be sorted into one of four categories: World, Sports, Business, or Sci/Tech. For the given news article, identify the appropriate category. After reading the article below, determine its category and format your answer as <final_answer>category</final_answer> for our extraction script. I'm working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer>category</final_answer>.\n\nInput: 10th World Series Title Beckoning for St. Louis  NEW YORK (Reuters) - The Cardinals may be heading to their  first World Series since 1987 but there is nothing new about  post-season baseball in St. Louis.\nOutput: <final_answer> Sports </final_answer>\n\nInput: "]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:06<13:44,  6.93s/it, est. speed input: 45.46 toks/s, output: 1.44 toks/s]Processed prompts:  12%|█▏        | 14/120 [00:07<00:38,  2.77it/s, est. speed input: 584.20 toks/s, output: 20.20 toks/s]Processed prompts:  18%|█▊        | 22/120 [00:07<00:22,  4.40it/s, est. speed input: 866.00 toks/s, output: 40.19 toks/s]Processed prompts:  89%|████████▉ | 107/120 [00:07<00:00, 32.42it/s, est. speed input: 3029.15 toks/s, output: 303.89 toks/s]Processed prompts: 100%|██████████| 120/120 [00:08<00:00, 14.60it/s, est. speed input: 3249.46 toks/s, output: 357.43 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:04<06:47,  4.58s/it, est. speed input: 39.30 toks/s, output: 2.18 toks/s]Processed prompts:   6%|▌         | 5/90 [00:05<01:08,  1.25it/s, est. speed input: 187.31 toks/s, output: 12.64 toks/s]Processed prompts:  92%|█████████▏| 83/90 [00:05<00:00, 28.38it/s, est. speed input: 2947.06 toks/s, output: 355.58 toks/s]Processed prompts: 100%|██████████| 90/90 [00:05<00:00, 16.14it/s, est. speed input: 3099.71 toks/s, output: 398.02 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:04<07:00,  4.73s/it, est. speed input: 25.39 toks/s, output: 2.12 toks/s]Processed prompts:   6%|▌         | 5/90 [00:05<01:10,  1.21it/s, est. speed input: 189.08 toks/s, output: 12.29 toks/s]Processed prompts:  84%|████████▍ | 76/90 [00:05<00:00, 25.86it/s, est. speed input: 2663.74 toks/s, output: 319.12 toks/s]Processed prompts: 100%|██████████| 90/90 [00:05<00:00, 15.18it/s, est. speed input: 3012.06 toks/s, output: 390.55 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:04<06:45,  4.55s/it, est. speed input: 27.66 toks/s, output: 2.20 toks/s]Processed prompts:   4%|▍         | 4/90 [00:05<01:27,  1.01s/it, est. speed input: 143.84 toks/s, output: 10.36 toks/s]Processed prompts:  90%|█████████ | 81/90 [00:05<00:00, 28.30it/s, est. speed input: 2813.83 toks/s, output: 353.31 toks/s]Processed prompts: 100%|██████████| 90/90 [00:05<00:00, 16.00it/s, est. speed input: 3025.75 toks/s, output: 397.28 toks/s]
+Processed prompts:   0%|          | 0/180 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/180 [00:08<26:09,  8.77s/it, est. speed input: 23.04 toks/s, output: 1.14 toks/s]Processed prompts:  16%|█▌        | 28/180 [00:08<00:34,  4.42it/s, est. speed input: 580.81 toks/s, output: 31.70 toks/s]Processed prompts:  23%|██▎       | 41/180 [00:09<00:21,  6.38it/s, est. speed input: 785.00 toks/s, output: 57.57 toks/s]Processed prompts:  66%|██████▌   | 118/180 [00:09<00:02, 27.13it/s, est. speed input: 2243.47 toks/s, output: 244.95 toks/s]Processed prompts:  83%|████████▎ | 149/180 [00:09<00:00, 35.42it/s, est. speed input: 2754.58 toks/s, output: 327.92 toks/s]Processed prompts:  96%|█████████▌| 173/180 [00:10<00:00, 40.14it/s, est. speed input: 3108.27 toks/s, output: 419.62 toks/s]Processed prompts: 100%|██████████| 180/180 [00:13<00:00, 13.61it/s, est. speed input: 2526.46 toks/s, output: 388.72 toks/s]
+Processed prompts:   0%|          | 0/150 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/150 [00:07<17:47,  7.16s/it, est. speed input: 24.43 toks/s, output: 1.40 toks/s]Processed prompts:  13%|█▎        | 20/150 [00:07<00:33,  3.84it/s, est. speed input: 484.83 toks/s, output: 27.74 toks/s]Processed prompts:  20%|██        | 30/150 [00:07<00:20,  5.76it/s, est. speed input: 656.06 toks/s, output: 45.89 toks/s]Processed prompts:  64%|██████▍   | 96/150 [00:07<00:01, 27.48it/s, est. speed input: 2133.94 toks/s, output: 244.19 toks/s]Processed prompts:  82%|████████▏ | 123/150 [00:08<00:00, 37.44it/s, est. speed input: 2703.36 toks/s, output: 334.05 toks/s]Processed prompts:  97%|█████████▋| 146/150 [00:08<00:00, 38.05it/s, est. speed input: 3052.31 toks/s, output: 422.95 toks/s]Processed prompts: 100%|██████████| 150/150 [00:11<00:00, 13.15it/s, est. speed input: 2383.23 toks/s, output: 378.30 toks/s]
+Processed prompts:   0%|          | 0/150 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/150 [00:07<17:56,  7.23s/it, est. speed input: 21.03 toks/s, output: 1.38 toks/s]Processed prompts:   8%|▊         | 12/150 [00:07<01:01,  2.26it/s, est. speed input: 301.75 toks/s, output: 16.61 toks/s]Processed prompts:  12%|█▏        | 18/150 [00:08<00:39,  3.32it/s, est. speed input: 414.44 toks/s, output: 28.12 toks/s]Processed prompts:  68%|██████▊   | 102/150 [00:08<00:01, 30.22it/s, est. speed input: 2302.22 toks/s, output: 273.50 toks/s]Processed prompts:  89%|████████▉ | 134/150 [00:08<00:00, 41.02it/s, est. speed input: 2925.40 toks/s, output: 381.19 toks/s]Processed prompts: 100%|██████████| 150/150 [00:08<00:00, 16.79it/s, est. speed input: 3068.81 toks/s, output: 440.59 toks/s]
+🏎️Racing: 15 prompts remain after 6 blocks.
+14-03-25 01:17:49:783182 - ✨Step 4 ended✨
+*** Prompt 0: Score: 0.8612255560531421
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: Bergkamp Backing Van Persie to Shine Van Persie scored a last-gasp equaliser to rescue Arsenal from the jaws of defeat against Southampton on Saturday. The visitors had looked certain to condemn Arsene Wengers side 
+Output: <final_answer> Sports </final_answer>
+
+Input: THE SONG REMAINS THE SAME The Recording Industry Association of America has wielded a heavy legal arsenal in its war against illegal music downloads, including filing another round of lawsuits on Thursday - this time against 762 people.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8445066427825048
+I'm working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer> category </final_answer>.
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.8021570383639348
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+
+
+Input: 
+*** Prompt 3: Score: 0.8019629795491863
+You are tasked with categorizing news articles into four distinct categories: World, Sports, Business, and Sci/Tech. Analyze the provided article and determine which category it falls under. Format: <final_answer> category </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 4: Score: 0.8000447828034035
+In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech. After reading the article below, determine its appropriate category and ensure you format your answer as <final_answer> category </final_answer> for our extraction script.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: It #39;s on to LA for the Giants Bee Staff Writer. SAN DIEGO - The San Diego Padres returned the favor, and the playoff-chasing Giants gladly accepted it before a disappointed record crowd of 45,389 at Petco Park.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 5: Score: 0.7994402149574563
+Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Red Sox, Astros Hunt for Their First Wins After Curt Schilling and Pedro Martinez failed to get the Boston Red Sox a win against the New York Yankees in the first two games of the AL championship series, Bronson Arroyo will take the hill for Game 3 at Fenway Park on Saturday.    In Houston, the winless Astros face a similar challenge as they return home and put their hopes in Roger Clemens for NLCS Game 3 against the St...
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.7921256904015523
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.7867368263919988
+Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.784251380803105
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Millwall: We #39;re not to blame The FA confirmed today that they will launch an investigation into the incidents, which began late in the second half as away fans alleged Millwall supporters had made taunts about the Hillsborough disaster in 1989.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 9: Score: 0.7688237050306015
+Analyze the content of the given news article to determine its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+
+
+Input: 
+*** Prompt 10: Score: 0.7682788475891925
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 11: Score: 0.7591431556948797
+Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For proper data extraction, format your answer as <final_answer> category </final_answer>.
+
+
+
+Input: 
+*** Prompt 12: Score: 0.7281459919390951
+We have a dataset of news articles that need to be sorted into one of four categories: World, Sports, Business, or Sci/Tech. For the given news article, identify the appropriate category. After reading the article below, determine its category and format your answer as <final_answer>category</final_answer> for our extraction script. I'm working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer>category</final_answer>.
+
+Input: 10th World Series Title Beckoning for St. Louis  NEW YORK (Reuters) - The Cardinals may be heading to their  first World Series since 1987 but there is nothing new about  post-season baseball in St. Louis.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 13: Score: 0.7267502612330199
+Determine the appropriate category for the following news article. Options are World, Sports, Business, and Sci/Tech. Format your response with <final_answer> category </final_answer>.
+
+
+
+Input: 
+*** Prompt 14: Score: 0.7266532318256458
+We have a collection of news articles, each needing to be categorized into one of four groups: World, Sports, Business, or Sci/Tech. For the given news article, identify the appropriate category. After reading the article below, determine its category and format your answer as <final_answer>category</final_answer> for our extraction script.
+
+
+
+Input: 
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.21s/it, est. speed input: 184.37 toks/s, output: 55.14 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  2.30it/s, est. speed input: 431.99 toks/s, output: 147.03 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.53it/s, est. speed input: 550.60 toks/s, output: 201.25 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.02s/it, est. speed input: 167.50 toks/s, output: 54.85 toks/s]Processed prompts:  50%|█████     | 2/4 [00:01<00:01,  1.79it/s, est. speed input: 274.20 toks/s, output: 101.73 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  2.32it/s, est. speed input: 350.18 toks/s, output: 142.54 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.58it/s, est. speed input: 472.62 toks/s, output: 200.52 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ['Analyze the provided news article and identify its category among World, Sports, Business, or Sci/Tech. After reading the article, determine the appropriate category and format your answer as <final_answer>category</final_answer> for our extraction script.\n\n\n\nInput: ', 'In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify the appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Determine the appropriate category for the following news article. The options are World, Sports, Business, and Sci/Tech.\n\nInput: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets \nOutput: <final_answer> Business </final_answer>\n\nInput: ', 'Given a collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, analyze the content to identify the appropriate category. Ensure your response is formatted as <final_answer> category </final_answer> for our extraction process.\n\n\n\nInput: ', 'Examine the content of the provided news article to identify its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your response is formatted as <final_answer> category </final_answer>. Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For accurate data extraction, format your answer as <final_answer> category </final_answer>.\n\nInput: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ']
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:05<11:14,  5.67s/it, est. speed input: 41.09 toks/s, output: 1.76 toks/s]Processed prompts:  62%|██████▏   | 74/120 [00:05<00:02, 17.98it/s, est. speed input: 2501.24 toks/s, output: 136.53 toks/s]Processed prompts:  90%|█████████ | 108/120 [00:06<00:00, 24.98it/s, est. speed input: 3093.02 toks/s, output: 265.98 toks/s]Processed prompts: 100%|██████████| 120/120 [00:09<00:00, 13.12it/s, est. speed input: 2337.29 toks/s, output: 270.37 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:05<11:10,  5.63s/it, est. speed input: 39.06 toks/s, output: 1.78 toks/s]Processed prompts:  65%|██████▌   | 78/120 [00:05<00:02, 18.51it/s, est. speed input: 2626.04 toks/s, output: 137.93 toks/s]Processed prompts:  88%|████████▊ | 106/120 [00:05<00:00, 27.03it/s, est. speed input: 3208.63 toks/s, output: 245.28 toks/s]Processed prompts: 100%|██████████| 120/120 [00:06<00:00, 18.37it/s, est. speed input: 3257.53 toks/s, output: 315.01 toks/s]
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:04<07:08,  4.82s/it, est. speed input: 49.39 toks/s, output: 2.08 toks/s]Processed prompts:  78%|███████▊  | 70/90 [00:05<00:01, 19.53it/s, est. speed input: 2864.64 toks/s, output: 146.75 toks/s]Processed prompts: 100%|██████████| 90/90 [00:06<00:00, 14.81it/s, est. speed input: 2993.08 toks/s, output: 212.73 toks/s]
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:04<06:50,  4.61s/it, est. speed input: 49.45 toks/s, output: 2.17 toks/s]Processed prompts:  88%|████████▊ | 79/90 [00:04<00:00, 23.17it/s, est. speed input: 3189.34 toks/s, output: 171.97 toks/s]Processed prompts: 100%|██████████| 90/90 [00:06<00:00, 14.77it/s, est. speed input: 2847.13 toks/s, output: 197.88 toks/s]
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:04<06:57,  4.69s/it, est. speed input: 58.82 toks/s, output: 2.13 toks/s]Processed prompts:  80%|████████  | 72/90 [00:04<00:00, 20.57it/s, est. speed input: 2966.59 toks/s, output: 155.31 toks/s]Processed prompts: 100%|██████████| 90/90 [00:08<00:00, 10.85it/s, est. speed input: 2128.68 toks/s, output: 180.65 toks/s]
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:04<06:44,  4.55s/it, est. speed input: 49.68 toks/s, output: 2.20 toks/s]Processed prompts:  87%|████████▋ | 78/90 [00:04<00:00, 22.74it/s, est. speed input: 3120.44 toks/s, output: 177.13 toks/s]Processed prompts: 100%|██████████| 90/90 [00:08<00:00, 11.10it/s, est. speed input: 2115.74 toks/s, output: 168.79 toks/s]
+Processed prompts:   0%|          | 0/90 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/90 [00:04<06:48,  4.59s/it, est. speed input: 50.57 toks/s, output: 2.18 toks/s]Processed prompts:  88%|████████▊ | 79/90 [00:04<00:00, 23.27it/s, est. speed input: 3235.10 toks/s, output: 174.88 toks/s]Processed prompts: 100%|██████████| 90/90 [00:04<00:00, 18.13it/s, est. speed input: 3482.41 toks/s, output: 220.63 toks/s]
+🏎️Racing: 15 prompts remain after 6 blocks.
+14-03-25 01:18:44:497468 - ✨Step 5 ended✨
+*** Prompt 0: Score: 0.8612255560531421
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: Bergkamp Backing Van Persie to Shine Van Persie scored a last-gasp equaliser to rescue Arsenal from the jaws of defeat against Southampton on Saturday. The visitors had looked certain to condemn Arsene Wengers side 
+Output: <final_answer> Sports </final_answer>
+
+Input: THE SONG REMAINS THE SAME The Recording Industry Association of America has wielded a heavy legal arsenal in its war against illegal music downloads, including filing another round of lawsuits on Thursday - this time against 762 people.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8445066427825048
+I'm working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer> category </final_answer>.
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.8271234512613823
+Given a collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, analyze the content to identify the appropriate category. Ensure your response is formatted as <final_answer> category </final_answer> for our extraction process.
+
+
+
+Input: 
+*** Prompt 3: Score: 0.8076280041797284
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify the appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Determine the appropriate category for the following news article. The options are World, Sports, Business, and Sci/Tech.
+
+Input: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets 
+Output: <final_answer> Business </final_answer>
+
+Input: 
+*** Prompt 4: Score: 0.8021570383639348
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+
+
+Input: 
+*** Prompt 5: Score: 0.8019629795491863
+You are tasked with categorizing news articles into four distinct categories: World, Sports, Business, and Sci/Tech. Analyze the provided article and determine which category it falls under. Format: <final_answer> category </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.8004552918346023
+Examine the content of the provided news article to identify its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your response is formatted as <final_answer> category </final_answer>. Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For accurate data extraction, format your answer as <final_answer> category </final_answer>.
+
+Input: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.8000447828034035
+In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech. After reading the article below, determine its appropriate category and ensure you format your answer as <final_answer> category </final_answer> for our extraction script.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: It #39;s on to LA for the Giants Bee Staff Writer. SAN DIEGO - The San Diego Padres returned the favor, and the playoff-chasing Giants gladly accepted it before a disappointed record crowd of 45,389 at Petco Park.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.7994402149574563
+Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Red Sox, Astros Hunt for Their First Wins After Curt Schilling and Pedro Martinez failed to get the Boston Red Sox a win against the New York Yankees in the first two games of the AL championship series, Bronson Arroyo will take the hill for Game 3 at Fenway Park on Saturday.    In Houston, the winless Astros face a similar challenge as they return home and put their hopes in Roger Clemens for NLCS Game 3 against the St...
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 9: Score: 0.7921256904015523
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 10: Score: 0.7867368263919988
+Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 11: Score: 0.784251380803105
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Millwall: We #39;re not to blame The FA confirmed today that they will launch an investigation into the incidents, which began late in the second half as away fans alleged Millwall supporters had made taunts about the Hillsborough disaster in 1989.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 12: Score: 0.7688237050306015
+Analyze the content of the given news article to determine its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+
+
+Input: 
+*** Prompt 13: Score: 0.7682788475891925
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify its appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Your task is to classify the following news article into exactly one of these four categories: World, Sports, Business, or Sci/Tech. The classification must be provided between <final_answer> </final_answer> tags to be correctly processed by our system.
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 14: Score: 0.7591431556948797
+Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For proper data extraction, format your answer as <final_answer> category </final_answer>.
+
+
+
+Input: 
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:04,  1.47s/it, est. speed input: 151.85 toks/s, output: 56.52 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  2.39it/s, est. speed input: 427.68 toks/s, output: 163.56 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.15it/s, est. speed input: 505.18 toks/s, output: 197.66 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.32s/it, est. speed input: 141.26 toks/s, output: 57.41 toks/s]Processed prompts:  50%|█████     | 2/4 [00:01<00:01,  1.60it/s, est. speed input: 257.24 toks/s, output: 110.44 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.90it/s, est. speed input: 430.44 toks/s, output: 199.25 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.20it/s, est. speed input: 430.44 toks/s, output: 199.25 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:02,  1.90it/s, est. speed input: 306.34 toks/s, output: 41.86 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  9.51it/s, est. speed input: 1531.04 toks/s, output: 209.21 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ['Examine the given news article and determine its category among World, Sports, Business, or Sci/Tech. Your classification should be enclosed between <final_answer> </final_answer> markers. I am working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer> category </final_answer>.\n\nInput: Royal Doulton in takeover talks China maker Royal Doulton has revealed it is in talks about a takeover by Irish rival Waterford Wedgwood. Stoke-based Doulton, which is to close its last remaining current UK factory next year, said it was in  quot;advanced discussions quot; with Waterford.\nOutput: <final_answer> Business </final_answer>\n\nInput: Radcliffe finds the old character for her next book When Paula Radcliffe #39;s autobiography My Story So Far hits the bookshelves next week it will already be out of date, because it will not include the tale of her dramatic victory in the New York City Marathon here yesterday.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', 'Analyze the content of the news article to determine its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your response is formatted as <final_answer> category </final_answer>. Classification task: Examine the news content below and determine its appropriate category. For accurate data extraction, format your answer as <final_answer> category </final_answer>. In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech.\n\nInput: IBM launches Websphere 6 IBM today announced that Websphere 6, the long awaited-update to its application server software, will be available by the end of the year.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ', 'Examine the provided news article and determine its appropriate category from the following options: World, Sports, Business, or Sci/Tech. Each news article in our dataset must be classified into one of these categories. After reading the article below, identify its category and format your answer as <final_answer>category</final_answer> for our extraction script.\n\nInput: At summit, a deal on membership talks BRUSSELS The European Union took a huge step towards its most controversial enlargement to date late Thursday night by agreeing to open membership negotiations with Turkey, although with strict conditions.\nOutput: <final_answer> World </final_answer>\n\nInput: ', 'Based on the provided news article, determine which category it belongs to. Choose from World, Sports, Business, or Sci/Tech. After analyzing the article below, identify the appropriate category and format your answer as <final_answer>category</final_answer> for our extraction script. Determine the category for the following news article. The options are World, Sports, Business, and Sci/Tech.\n\n\n\nInput: ']
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:06<13:42,  6.91s/it, est. speed input: 44.72 toks/s, output: 1.45 toks/s]Processed prompts:  62%|██████▏   | 74/120 [00:07<00:03, 14.25it/s, est. speed input: 2462.50 toks/s, output: 111.00 toks/s]Processed prompts:  91%|█████████ | 109/120 [00:07<00:00, 23.14it/s, est. speed input: 3247.42 toks/s, output: 225.35 toks/s]Processed prompts: 100%|██████████| 120/120 [00:08<00:00, 13.41it/s, est. speed input: 2968.03 toks/s, output: 265.85 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:06<13:40,  6.90s/it, est. speed input: 42.48 toks/s, output: 1.45 toks/s]Processed prompts:  69%|██████▉   | 83/120 [00:07<00:02, 16.04it/s, est. speed input: 2797.89 toks/s, output: 121.11 toks/s]Processed prompts:  99%|█████████▉| 119/120 [00:07<00:00, 24.08it/s, est. speed input: 3495.98 toks/s, output: 236.05 toks/s]Processed prompts: 100%|██████████| 120/120 [00:07<00:00, 15.79it/s, est. speed input: 3482.64 toks/s, output: 239.70 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:04<04:09,  4.22s/it, est. speed input: 73.65 toks/s, output: 2.37 toks/s]Processed prompts:  82%|████████▏ | 49/60 [00:04<00:00, 15.42it/s, est. speed input: 2985.45 toks/s, output: 116.62 toks/s]Processed prompts: 100%|██████████| 60/60 [00:05<00:00, 10.52it/s, est. speed input: 2871.54 toks/s, output: 171.30 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:04<04:02,  4.11s/it, est. speed input: 73.28 toks/s, output: 2.43 toks/s]Processed prompts:  92%|█████████▏| 55/60 [00:04<00:00, 18.05it/s, est. speed input: 3373.86 toks/s, output: 134.18 toks/s]Processed prompts: 100%|██████████| 60/60 [00:04<00:00, 13.10it/s, est. speed input: 3452.78 toks/s, output: 154.54 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:04<04:04,  4.15s/it, est. speed input: 76.67 toks/s, output: 2.41 toks/s]Processed prompts:  85%|████████▌ | 51/60 [00:04<00:00, 16.36it/s, est. speed input: 3066.88 toks/s, output: 123.87 toks/s]Processed prompts: 100%|██████████| 60/60 [00:07<00:00,  7.70it/s, est. speed input: 2056.44 toks/s, output: 167.67 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:04<03:59,  4.06s/it, est. speed input: 73.67 toks/s, output: 2.46 toks/s]Processed prompts:  87%|████████▋ | 52/60 [00:04<00:00, 17.00it/s, est. speed input: 3181.08 toks/s, output: 132.44 toks/s]Processed prompts: 100%|██████████| 60/60 [00:07<00:00,  7.88it/s, est. speed input: 2060.83 toks/s, output: 133.65 toks/s]
+Processed prompts:   0%|          | 0/60 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/60 [00:04<04:00,  4.08s/it, est. speed input: 79.35 toks/s, output: 2.45 toks/s]Processed prompts:  80%|████████  | 48/60 [00:04<00:00, 15.75it/s, est. speed input: 2896.44 toks/s, output: 119.88 toks/s]Processed prompts: 100%|██████████| 60/60 [00:07<00:00,  7.83it/s, est. speed input: 2058.71 toks/s, output: 151.15 toks/s]
+Processed prompts:   0%|          | 0/240 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/240 [00:12<49:30, 12.43s/it, est. speed input: 12.15 toks/s, output: 0.80 toks/s]Processed prompts:  48%|████▊     | 114/240 [00:12<00:09, 12.92it/s, est. speed input: 2014.89 toks/s, output: 91.14 toks/s]Processed prompts:  94%|█████████▍| 226/240 [00:13<00:00, 27.00it/s, est. speed input: 3346.90 toks/s, output: 273.77 toks/s]Processed prompts: 100%|██████████| 240/240 [00:16<00:00, 14.41it/s, est. speed input: 2881.60 toks/s, output: 308.95 toks/s]
+Processed prompts:   0%|          | 0/240 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/240 [00:12<48:42, 12.23s/it, est. speed input: 14.48 toks/s, output: 0.82 toks/s]Processed prompts:  66%|██████▋   | 159/240 [00:12<00:04, 17.47it/s, est. speed input: 2697.75 toks/s, output: 128.92 toks/s]Processed prompts:  88%|████████▊ | 211/240 [00:12<00:01, 25.20it/s, est. speed input: 3253.77 toks/s, output: 223.25 toks/s]Processed prompts: 100%|██████████| 240/240 [00:13<00:00, 17.45it/s, est. speed input: 3422.05 toks/s, output: 289.98 toks/s]
+🏎️Racing: 15 prompts remain after 8 blocks.
+14-03-25 01:20:11:884674 - ✨Step 6 ended✨
+*** Prompt 0: Score: 0.8400615348891212
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: Bergkamp Backing Van Persie to Shine Van Persie scored a last-gasp equaliser to rescue Arsenal from the jaws of defeat against Southampton on Saturday. The visitors had looked certain to condemn Arsene Wengers side 
+Output: <final_answer> Sports </final_answer>
+
+Input: THE SONG REMAINS THE SAME The Recording Industry Association of America has wielded a heavy legal arsenal in its war against illegal music downloads, including filing another round of lawsuits on Thursday - this time against 762 people.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8270463253221872
+I'm working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer> category </final_answer>.
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.8112504353883664
+Given a collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, analyze the content to identify the appropriate category. Ensure your response is formatted as <final_answer> category </final_answer> for our extraction process.
+
+
+
+Input: 
+*** Prompt 3: Score: 0.8011029838616045
+In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech. After reading the article below, determine its appropriate category and ensure you format your answer as <final_answer> category </final_answer> for our extraction script.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: It #39;s on to LA for the Giants Bee Staff Writer. SAN DIEGO - The San Diego Padres returned the favor, and the playoff-chasing Giants gladly accepted it before a disappointed record crowd of 45,389 at Petco Park.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 4: Score: 0.7965168930686174
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify the appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Determine the appropriate category for the following news article. The options are World, Sports, Business, and Sci/Tech.
+
+Input: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets 
+Output: <final_answer> Business </final_answer>
+
+Input: 
+*** Prompt 5: Score: 0.7961859979101357
+Examine the given news article and determine its category among World, Sports, Business, or Sci/Tech. Your classification should be enclosed between <final_answer> </final_answer> markers. I am working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer> category </final_answer>.
+
+Input: Royal Doulton in takeover talks China maker Royal Doulton has revealed it is in talks about a takeover by Irish rival Waterford Wedgwood. Stoke-based Doulton, which is to close its last remaining current UK factory next year, said it was in  quot;advanced discussions quot; with Waterford.
+Output: <final_answer> Business </final_answer>
+
+Input: Radcliffe finds the old character for her next book When Paula Radcliffe #39;s autobiography My Story So Far hits the bookshelves next week it will already be out of date, because it will not include the tale of her dramatic victory in the New York City Marathon here yesterday.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.7877568791361895
+Examine the content of the provided news article to identify its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your response is formatted as <final_answer> category </final_answer>. Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For accurate data extraction, format your answer as <final_answer> category </final_answer>.
+
+Input: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.7829153605015671
+You are tasked with categorizing news articles into four distinct categories: World, Sports, Business, and Sci/Tech. Analyze the provided article and determine which category it falls under. Format: <final_answer> category </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.7825089980262394
+Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Red Sox, Astros Hunt for Their First Wins After Curt Schilling and Pedro Martinez failed to get the Boston Red Sox a win against the New York Yankees in the first two games of the AL championship series, Bronson Arroyo will take the hill for Game 3 at Fenway Park on Saturday.    In Houston, the winless Astros face a similar challenge as they return home and put their hopes in Roger Clemens for NLCS Game 3 against the St...
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 9: Score: 0.7788981771740392
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 10: Score: 0.774921630094044
+Analyze the content of the news article to determine its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your response is formatted as <final_answer> category </final_answer>. Classification task: Examine the news content below and determine its appropriate category. For accurate data extraction, format your answer as <final_answer> category </final_answer>. In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech.
+
+Input: IBM launches Websphere 6 IBM today announced that Websphere 6, the long awaited-update to its application server software, will be available by the end of the year.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 11: Score: 0.774114710321607
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+
+
+Input: 
+*** Prompt 12: Score: 0.7726111691628933
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Millwall: We #39;re not to blame The FA confirmed today that they will launch an investigation into the incidents, which began late in the second half as away fans alleged Millwall supporters had made taunts about the Hillsborough disaster in 1989.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 13: Score: 0.7708638105189828
+Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input: UN: N. Korean Environment in Poor Shape SEOUL, South Korea - North Korea #39;s forests are depleted, its rivers and streams are filled with runoff from factories and a reliance on coal energy has created severe urban air pollution, the United Nations said Friday in its first report on the communist 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 14: Score: 0.7555961918030883
+Analyze the content of the given news article to determine its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+
+
+Input: 
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.09s/it, est. speed input: 190.74 toks/s, output: 51.60 toks/s]Processed prompts:  50%|█████     | 2/4 [00:01<00:01,  1.97it/s, est. speed input: 359.86 toks/s, output: 100.05 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:02<00:00,  1.36it/s, est. speed input: 306.95 toks/s, output: 114.14 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.90it/s, est. speed input: 402.26 toks/s, output: 165.49 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.67it/s, est. speed input: 402.26 toks/s, output: 165.49 toks/s]
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.08s/it, est. speed input: 147.44 toks/s, output: 54.71 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:02<00:00,  1.48it/s, est. speed input: 261.81 toks/s, output: 117.86 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.94it/s, est. speed input: 343.96 toks/s, output: 169.43 toks/s]Processed prompts: 100%|██████████| 4/4 [00:02<00:00,  1.69it/s, est. speed input: 343.96 toks/s, output: 169.43 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:02,  1.65it/s, est. speed input: 323.98 toks/s, output: 39.67 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  8.26it/s, est. speed input: 1619.25 toks/s, output: 198.27 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  2.65it/s, est. speed input: 495.46 toks/s, output: 26.49 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00, 13.24it/s, est. speed input: 2475.92 toks/s, output: 132.40 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:02,  1.88it/s, est. speed input: 287.66 toks/s, output: 43.24 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  8.91it/s, est. speed input: 1362.80 toks/s, output: 211.99 toks/s]
+Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:02,  1.88it/s, est. speed input: 191.44 toks/s, output: 50.67 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  9.38it/s, est. speed input: 956.76 toks/s, output: 253.26 toks/s]
+🧟Generated 4 mutated prompts.
+😶Generated Prompts: ['Examine the content of the news article to determine its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your response is formatted as <final_answer> category </final_answer>. Classification task: Analyze the news content below and determine its appropriate category. For accurate data extraction, format your answer as <final_answer> category </final_answer>. Given a collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, analyze the content to identify the appropriate category. Ensure your response is formatted as <final_answer> category </final_answer> for our extraction process.\n\nInput: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Storm Damage Hurts BellSouth Earnings  WASHINGTON (Reuters) - BellSouth Corp. &lt;A HREF="http://www.investor.reuters.com/FullQuote.aspx?ticker=BLS.N target=/stocks/quickinfo/fullquote"&gt;BLS.N&lt;/A&gt; on Monday  said third-quarter earnings fell due to storm damage in its  region and the sale of some international assets.\nOutput: <final_answer> Business </final_answer>\n\nInput: ', 'Examine the content of the provided news article to identify its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your response is formatted as <final_answer> category </final_answer>. In our collection of news articles, each article must be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify the appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Determine the appropriate category for the following news article. The options are World, Sports, Business, and Sci/Tech.\n\nInput: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \\$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.\nOutput: <final_answer> Sports </final_answer>\n\nInput: EMC hires former IBM veteran as CTO EMC last week said it has hired former IBM veteran Jeffrey M. Nick as chief technology officer for the storage vendor. Nick, who left IBM in June following 24 years with the company \nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: ', 'Examine the provided news article and determine its category among World, Sports, Business, or Sci/Tech. After reviewing the article, analyze the content to identify the appropriate category. Ensure your response is formatted as <final_answer> category </final_answer> for our extraction process.\n\nInput: S. Africa Condemns Claims About Aristide S. African Government Condemns Accusations That It Is Being Used As Springboard for Haiti #39;s Aristide. A boy passes a car that says  quot;Aristide King quot; in the pro-Aristide slum of Bel-Air in Port-au-Prince, Sunday, Oct. 17, 2004.\nOutput: <final_answer> World </final_answer>\n\nInput: Microsoft Sues 7 Spammers Microsoft indicated that the defendants used compromised computers around the world, using so-called zombie computers. By TechWeb.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: Mancini Ready To Chase Juventus Inter Milan trainer Roberto Mancini is urging his side to keep the pressure on first place Juventus by continuing to turn their fine form into victories.\nOutput: <final_answer> Sports </final_answer>\n\nInput: ', "I'm tasked with categorizing news articles into four distinct categories: World, Sports, Business, and Sci/Tech. For the given news article, determine which category it belongs to. Your response should be formatted as <final_answer>category</final_answer>.\n\nInput: Falcons Sign Crumpler to Contract Extension (Reuters) Reuters - The Atlanta Falcons\\Monday signed Pro Bowl tight end Alge Crumpler to a six-year\\contract extension.\nOutput: <final_answer> Sports </final_answer>\n\nInput: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.\nOutput: <final_answer> Sci/Tech </final_answer>\n\nInput: "]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:09<19:04,  9.62s/it, est. speed input: 39.51 toks/s, output: 1.04 toks/s]Processed prompts:  78%|███████▊  | 93/120 [00:09<00:02, 13.17it/s, est. speed input: 3015.00 toks/s, output: 102.48 toks/s]Processed prompts:  92%|█████████▎| 111/120 [00:10<00:00, 16.48it/s, est. speed input: 3495.35 toks/s, output: 145.20 toks/s]Processed prompts: 100%|██████████| 120/120 [00:11<00:00, 10.32it/s, est. speed input: 3238.56 toks/s, output: 175.43 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:09<18:59,  9.57s/it, est. speed input: 38.34 toks/s, output: 1.04 toks/s]Processed prompts:  85%|████████▌ | 102/120 [00:09<00:01, 14.68it/s, est. speed input: 3371.03 toks/s, output: 110.74 toks/s]Processed prompts: 100%|██████████| 120/120 [00:13<00:00,  9.10it/s, est. speed input: 2847.95 toks/s, output: 141.37 toks/s]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:430: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  return hypotest_fun_in(*args, **kwds)
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:09<19:21,  9.76s/it, est. speed input: 39.44 toks/s, output: 1.02 toks/s]Processed prompts:  77%|███████▋  | 92/120 [00:10<00:02, 12.96it/s, est. speed input: 2989.86 toks/s, output: 97.08 toks/s]Processed prompts:  96%|█████████▌| 115/120 [00:10<00:00, 16.46it/s, est. speed input: 3560.98 toks/s, output: 153.83 toks/s]Processed prompts: 100%|██████████| 120/120 [00:11<00:00, 10.67it/s, est. speed input: 3410.21 toks/s, output: 172.75 toks/s]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:09<18:48,  9.48s/it, est. speed input: 39.54 toks/s, output: 1.05 toks/s]Processed prompts:  81%|████████  | 97/120 [00:09<00:01, 14.08it/s, est. speed input: 3201.16 toks/s, output: 104.49 toks/s]Processed prompts: 100%|██████████| 120/120 [00:10<00:00, 11.24it/s, est. speed input: 3485.96 toks/s, output: 155.40 toks/s]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:09<19:03,  9.61s/it, est. speed input: 40.80 toks/s, output: 1.04 toks/s]Processed prompts:  73%|███████▎  | 88/120 [00:09<00:02, 12.83it/s, est. speed input: 2930.94 toks/s, output: 94.28 toks/s]Processed prompts: 100%|██████████| 120/120 [00:13<00:00,  8.99it/s, est. speed input: 2817.10 toks/s, output: 170.38 toks/s]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:09<18:40,  9.42s/it, est. speed input: 39.60 toks/s, output: 1.06 toks/s]Processed prompts:  70%|███████   | 84/120 [00:09<00:02, 12.49it/s, est. speed input: 2840.72 toks/s, output: 92.56 toks/s]Processed prompts: 100%|██████████| 120/120 [00:13<00:00,  9.08it/s, est. speed input: 2795.36 toks/s, output: 195.44 toks/s]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:09<18:48,  9.48s/it, est. speed input: 39.97 toks/s, output: 1.05 toks/s]Processed prompts:  83%|████████▎ | 100/120 [00:09<00:01, 14.52it/s, est. speed input: 3299.14 toks/s, output: 110.49 toks/s]Processed prompts: 100%|██████████| 120/120 [00:10<00:00, 11.34it/s, est. speed input: 3507.42 toks/s, output: 163.45 toks/s]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:09<19:05,  9.62s/it, est. speed input: 40.73 toks/s, output: 1.04 toks/s]Processed prompts:  78%|███████▊  | 94/120 [00:09<00:01, 13.70it/s, est. speed input: 3188.76 toks/s, output: 102.21 toks/s]Processed prompts: 100%|██████████| 120/120 [00:13<00:00,  9.03it/s, est. speed input: 2836.05 toks/s, output: 157.74 toks/s]
+Processed prompts:   0%|          | 0/120 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/120 [00:09<18:50,  9.50s/it, est. speed input: 39.56 toks/s, output: 1.05 toks/s]Processed prompts:  89%|████████▉ | 107/120 [00:09<00:00, 15.55it/s, est. speed input: 3496.65 toks/s, output: 114.91 toks/s]Processed prompts: 100%|██████████| 120/120 [00:10<00:00, 11.67it/s, est. speed input: 3619.45 toks/s, output: 146.69 toks/s]
+Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:15<1:24:33, 15.42s/it, est. speed input: 8.95 toks/s, output: 0.65 toks/s]Processed prompts:  42%|████▏     | 138/330 [00:20<00:22,  8.60it/s, est. speed input: 1628.04 toks/s, output: 66.98 toks/s]Processed prompts:  52%|█████▏    | 170/330 [00:21<00:14, 10.92it/s, est. speed input: 1981.66 toks/s, output: 83.75 toks/s]Processed prompts:  67%|██████▋   | 220/330 [00:21<00:06, 16.79it/s, est. speed input: 2648.88 toks/s, output: 109.33 toks/s]Processed prompts:  78%|███████▊  | 257/330 [00:21<00:03, 22.64it/s, est. speed input: 3103.42 toks/s, output: 144.59 toks/s]Processed prompts:  86%|████████▋ | 285/330 [00:21<00:01, 28.41it/s, est. speed input: 3320.48 toks/s, output: 177.91 toks/s]Processed prompts:  94%|█████████▍| 310/330 [00:21<00:00, 35.12it/s, est. speed input: 3558.85 toks/s, output: 208.25 toks/s]Processed prompts: 100%|██████████| 330/330 [00:24<00:00, 13.61it/s, est. speed input: 3352.22 toks/s, output: 237.13 toks/s]
+🏎️Racing: 18 prompts remain after 9 blocks.
+14-03-25 01:22:34:709678 - ✨Step 7 ended✨
+*** Prompt 0: Score: 0.8459874608150468
+Given this news article, what category does it fall under? Select from World, Sports, Business, or Sci/Tech. Ensure your answer is formatted as <final_answer> category </final_answer>.
+
+Input: Bergkamp Backing Van Persie to Shine Van Persie scored a last-gasp equaliser to rescue Arsenal from the jaws of defeat against Southampton on Saturday. The visitors had looked certain to condemn Arsene Wengers side 
+Output: <final_answer> Sports </final_answer>
+
+Input: THE SONG REMAINS THE SAME The Recording Industry Association of America has wielded a heavy legal arsenal in its war against illegal music downloads, including filing another round of lawsuits on Thursday - this time against 762 people.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 1: Score: 0.8259352142110762
+I'm working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer> category </final_answer>.
+
+Input: Sony #39;s PlayStation Portable goes on sale TOKYO - Sony Computer Entertainment Inc entered the handheld video game market Sunday with the sale of its new PlayStation Portable, pitting it against competitors ahead of the holiday sales period.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 2: Score: 0.8076384535005225
+Examine the provided news article and determine its category among World, Sports, Business, or Sci/Tech. After reviewing the article, analyze the content to identify the appropriate category. Ensure your response is formatted as <final_answer> category </final_answer> for our extraction process.
+
+Input: S. Africa Condemns Claims About Aristide S. African Government Condemns Accusations That It Is Being Used As Springboard for Haiti #39;s Aristide. A boy passes a car that says  quot;Aristide King quot; in the pro-Aristide slum of Bel-Air in Port-au-Prince, Sunday, Oct. 17, 2004.
+Output: <final_answer> World </final_answer>
+
+Input: Microsoft Sues 7 Spammers Microsoft indicated that the defendants used compromised computers around the world, using so-called zombie computers. By TechWeb.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Mancini Ready To Chase Juventus Inter Milan trainer Roberto Mancini is urging his side to keep the pressure on first place Juventus by continuing to turn their fine form into victories.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 3: Score: 0.805694879832811
+Given a collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, analyze the content to identify the appropriate category. Ensure your response is formatted as <final_answer> category </final_answer> for our extraction process.
+
+
+
+Input: 
+*** Prompt 4: Score: 0.8048066875653083
+In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech. After reading the article below, determine its appropriate category and ensure you format your answer as <final_answer> category </final_answer> for our extraction script.
+
+Input: Senate Expected to Approve Bill Overhauling Intelligence Today As debate in the G.O.P.-controlled Senate opened, the chamber's leaders predicted the bill would easily pass.
+Output: <final_answer> World </final_answer>
+
+Input: It #39;s on to LA for the Giants Bee Staff Writer. SAN DIEGO - The San Diego Padres returned the favor, and the playoff-chasing Giants gladly accepted it before a disappointed record crowd of 45,389 at Petco Park.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 5: Score: 0.7976280041797283
+In our collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, identify the appropriate category and format your answer as <final_answer> category </final_answer> for our extraction script. Determine the appropriate category for the following news article. The options are World, Sports, Business, and Sci/Tech.
+
+Input: UPDATE: US Wine Unit Bruises Foster #39;s Annual Earnings MELBOURNE (Dow Jones)--Australian drinks company Foster #39;s Group Ltd. (FGL.AU) said Tuesday that annual net profit rose 73 as gains from the sale of its local pub assets 
+Output: <final_answer> Business </final_answer>
+
+Input: 
+*** Prompt 6: Score: 0.7945872518286311
+Examine the content of the news article to determine its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your response is formatted as <final_answer> category </final_answer>. Classification task: Analyze the news content below and determine its appropriate category. For accurate data extraction, format your answer as <final_answer> category </final_answer>. Given a collection of news articles, each article needs to be assigned to one of the following categories: World, Sports, Business, or Sci/Tech. After reviewing the article below, analyze the content to identify the appropriate category. Ensure your response is formatted as <final_answer> category </final_answer> for our extraction process.
+
+Input: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Storm Damage Hurts BellSouth Earnings  WASHINGTON (Reuters) - BellSouth Corp. &lt;A HREF="http://www.investor.reuters.com/FullQuote.aspx?ticker=BLS.N target=/stocks/quickinfo/fullquote"&gt;BLS.N&lt;/A&gt; on Monday  said third-quarter earnings fell due to storm damage in its  region and the sale of some international assets.
+Output: <final_answer> Business </final_answer>
+
+Input: 
+*** Prompt 7: Score: 0.7928526645768024
+Examine the given news article and determine its category among World, Sports, Business, or Sci/Tech. Your classification should be enclosed between <final_answer> </final_answer> markers. I am working on a news classification project. Could you analyze this article and determine if it falls under World, Sports, Business, or Sci/Tech? Your response should be formatted as <final_answer> category </final_answer>.
+
+Input: Royal Doulton in takeover talks China maker Royal Doulton has revealed it is in talks about a takeover by Irish rival Waterford Wedgwood. Stoke-based Doulton, which is to close its last remaining current UK factory next year, said it was in  quot;advanced discussions quot; with Waterford.
+Output: <final_answer> Business </final_answer>
+
+Input: Radcliffe finds the old character for her next book When Paula Radcliffe #39;s autobiography My Story So Far hits the bookshelves next week it will already be out of date, because it will not include the tale of her dramatic victory in the New York City Marathon here yesterday.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 8: Score: 0.7895820271682339
+You are tasked with categorizing news articles into four distinct categories: World, Sports, Business, and Sci/Tech. Analyze the provided article and determine which category it falls under. Format: <final_answer> category </final_answer>
+
+Input: Packers #39; secondary banged up Green Bay, WI (Sports Network) - The Green Bay Packers could be without two starters in their defensive backfield for this weekend #39;s game at Washington.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 9: Score: 0.7866457680250786
+Examine the content of the provided news article to identify its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your response is formatted as <final_answer> category </final_answer>. Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For accurate data extraction, format your answer as <final_answer> category </final_answer>.
+
+Input: Mladin Release From Road Atlanta Australia #39;s Mat Mladin completed a winning double at the penultimate round of this year #39;s American AMA Chevrolet Superbike Championship after taking 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 10: Score: 0.7832497387669802
+Analyze this news article and identify whether it belongs to World, Sports, Business, or Sci/Tech categories. Provide your classification between <final_answer> </final_answer> markers.
+
+Input: Microsoft cuts key Longhorn feature By scaling back, company hopes to hit a 2006 release. Microsoft Corp. is dropping a highly touted new feature from its plans for the next generation of Windows -- scaling back ambitions for its biggest product 
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Google planning big things with Books and GMail Google has not had anything big for us since it went public some time ago. Now, it is back with some news that could worry biggies like Amazon and Barnes and Noble.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: Red Sox, Astros Hunt for Their First Wins After Curt Schilling and Pedro Martinez failed to get the Boston Red Sox a win against the New York Yankees in the first two games of the AL championship series, Bronson Arroyo will take the hill for Game 3 at Fenway Park on Saturday.    In Houston, the winless Astros face a similar challenge as they return home and put their hopes in Roger Clemens for NLCS Game 3 against the St...
+Output: <final_answer> World </final_answer>
+
+Input: 
+*** Prompt 11: Score: 0.7826332288401253
+You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+
+
+Input: 
+*** Prompt 12: Score: 0.7759352142110761
+Please read this news article carefully and assign it to one of these four categories: World, Sports, Business, or Sci/Tech. Your answer must be formatted as <final_answer> category </final_answer>.
+
+Input: Voluntary response key to BCA grading The grade on the report card was  quot;F. quot; The University of Nevada was one of four colleges that failed to meet the standards for a football coaching search as outlined by the Black Coaches Association.
+Output: <final_answer> Sports </final_answer>
+
+Input: 
+*** Prompt 13: Score: 0.7715882967607105
+Analyze the content of the news article to determine its category. Choose from World, Sports, Business, or Sci/Tech. Ensure your response is formatted as <final_answer> category </final_answer>. Classification task: Examine the news content below and determine its appropriate category. For accurate data extraction, format your answer as <final_answer> category </final_answer>. In our dataset of news articles, each piece must be classified into one of four categories: World, Sports, Business, or Sci/Tech.
+
+Input: IBM launches Websphere 6 IBM today announced that Websphere 6, the long awaited-update to its application server software, will be available by the end of the year.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+*** Prompt 14: Score: 0.7685370950888192
+News article classification task: Categorize the following text as World, Sports, Business, or Sci/Tech. Your answer should be formatted as <final_answer> category </final_answer>.
+
+Input: Millwall: We #39;re not to blame The FA confirmed today that they will launch an investigation into the incidents, which began late in the second half as away fans alleged Millwall supporters had made taunts about the Hillsborough disaster in 1989.
+Output: <final_answer> Sports </final_answer>
+
+Input: Rison Given Option for Release Former Pro Bowl receiver Andre Rison was given the option of paying \$10,000 to get out of jail after spending almost a month locked up for failing to pay child support.
+Output: <final_answer> Sports </final_answer>
+
+Input: N.M. Museum to Launch Names Into Space (AP) AP - The New Mexico Museum of Space History will be shipping names to the stars with the first X-Prize launch into space.
+Output: <final_answer> Sci/Tech </final_answer>
+
+Input: 
+14-03-25 01:22:34:748279 - Training ended
+[rank0]:[W314 01:22:35.045518176 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
