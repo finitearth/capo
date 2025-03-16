@@ -1,0 +1,87 @@
+Could not set the permissions on the file '/dss/dsshome1/07/ra42ziz2/.cache/huggingface/hub/models--ConfidentialMind--Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE/blobs/704667da2064afc656e20a821ddce91cf6a13064.incomplete'. Error: [Errno 2] No such file or directory: '/dss/dsshome1/07/ra42ziz2/.cache/huggingface/hub/models--ConfidentialMind--Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE/blobs/704667da2064afc656e20a821ddce91cf6a13064.incomplete'.
+Continuing without setting permissions.
+Traceback (most recent call last):
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/shutil.py", line 847, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [Errno 2] No such file or directory: '/dss/dsshome1/07/ra42ziz2/.cache/huggingface/hub/models--ConfidentialMind--Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE/blobs/704667da2064afc656e20a821ddce91cf6a13064.incomplete' -> '/dss/dsshome1/07/ra42ziz2/.cache/huggingface/hub/models--ConfidentialMind--Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE/blobs/704667da2064afc656e20a821ddce91cf6a13064'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1609, in _copy_no_matter_what
+    shutil.copy2(src, dst)
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/shutil.py", line 475, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dss/dsshome1/07/ra42ziz2/.cache/huggingface/hub/models--ConfidentialMind--Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE/blobs/704667da2064afc656e20a821ddce91cf6a13064.incomplete'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dss/dsshome1/07/ra42ziz2/prompt_tuning/capo/scripts/experiment.py", line 95, in <module>
+    llm = get_llm(
+          ^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/llms/__init__.py", line 37, in get_llm
+    return VLLM(model_id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/llms/vllm.py", line 98, in __init__
+    self.llm = LLM(**llm_params)
+               ^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/utils.py", line 1022, in inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 242, in __init__
+    self.llm_engine = self.engine_class.from_engine_args(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/engine/llm_engine.py", line 486, in from_engine_args
+    engine_config = engine_args.create_engine_config(usage_context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1127, in create_engine_config
+    model_config = self.create_model_config()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1047, in create_model_config
+    return ModelConfig(
+           ^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/config.py", line 304, in __init__
+    hf_config = get_config(self.model, trust_remote_code, revision,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/transformers_utils/config.py", line 266, in get_config
+    config_dict, _ = PretrainedConfig.get_config_dict(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/transformers/configuration_utils.py", line 594, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/transformers/configuration_utils.py", line 653, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/transformers/utils/hub.py", line 342, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1557, in _download_to_tmp_and_move
+    _chmod_and_move(incomplete_path, destination_path)
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1598, in _chmod_and_move
+    shutil.move(str(src), str(dst), copy_function=_copy_no_matter_what)
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/shutil.py", line 867, in move
+    copy_function(src, real_dst)
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1612, in _copy_no_matter_what
+    shutil.copyfile(src, dst)
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dss/dsshome1/07/ra42ziz2/.cache/huggingface/hub/models--ConfidentialMind--Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE/blobs/704667da2064afc656e20a821ddce91cf6a13064.incomplete'
+Exception ignored in: <function VLLM.__del__ at 0x7fa68277aac0>
+Traceback (most recent call last):
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/llms/vllm.py", line 166, in __del__
+    del self.llm
+        ^^^^^^^^
+AttributeError: 'VLLM' object has no attribute 'llm'

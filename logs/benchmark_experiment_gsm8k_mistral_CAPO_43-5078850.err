@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/transformers/configuration_utils.py", line 688, in _get_config_dict
+    config_dict = cls._dict_from_json_file(resolved_config_file)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/transformers/configuration_utils.py", line 797, in _dict_from_json_file
+    return json.loads(text)
+           ^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/json/decoder.py", line 341, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 50 column 1 (char 1312)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dss/dsshome1/07/ra42ziz2/prompt_tuning/capo/scripts/experiment.py", line 95, in <module>
+    llm = get_llm(
+          ^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/llms/__init__.py", line 37, in get_llm
+    return VLLM(model_id, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/llms/vllm.py", line 98, in __init__
+    self.llm = LLM(**llm_params)
+               ^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/utils.py", line 1022, in inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 242, in __init__
+    self.llm_engine = self.engine_class.from_engine_args(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/engine/llm_engine.py", line 486, in from_engine_args
+    engine_config = engine_args.create_engine_config(usage_context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1127, in create_engine_config
+    model_config = self.create_model_config()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1047, in create_model_config
+    return ModelConfig(
+           ^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/config.py", line 304, in __init__
+    hf_config = get_config(self.model, trust_remote_code, revision,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/vllm/transformers_utils/config.py", line 266, in get_config
+    config_dict, _ = PretrainedConfig.get_config_dict(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/transformers/configuration_utils.py", line 594, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/transformers/configuration_utils.py", line 692, in _get_config_dict
+    raise EnvironmentError(
+OSError: It looks like the config file at '/dss/dsshome1/07/ra42ziz2/.cache/huggingface/hub/models--ConfidentialMind--Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE/snapshots/803393813b8fc4046fb663af2e3c56339a5b520b/config.json' is not a valid JSON file.
+Exception ignored in: <function VLLM.__del__ at 0x7f031919f380>
+Traceback (most recent call last):
+  File "/dss/dsshome1/07/ra42ziz2/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/llms/vllm.py", line 166, in __del__
+    del self.llm
+        ^^^^^^^^
+AttributeError: 'VLLM' object has no attribute 'llm'
