@@ -1,0 +1,58 @@
+Running experiment with args: {'experiment_name': 'benchmark_experiment_agnews_llama_CAPO_43', 'random_seed': 43, 'budget_per_run': 10000000, 'output_dir': 'results//agnews/llama/CAPO/seed43/', 'dataset': 'agnews', 'model': 'vllm-shuyuej/Llama-3.3-70B-Instruct-GPTQ', 'model_revision': '3a7f7f7d46e362291821aaefb0a38b632f1190a8', 'max_model_len': 1024, 'batch_size': None, 'model_storage_path': '../models/', 'optimizer': 'CAPO', 'n_steps': 999, 'population_size': 12, 'n_eval_samples': None, 'evoprompt_ga_template': 'standard', 'block_size': 30, 'length_penalty': 0.05, 'crossovers_per_iter': 4, 'upper_shots': 8, 'max_n_blocks_eval': 10, 'alpha': 0.2, 'shuffle_blocks_per_iter': False}
+Found 33 unique prompts
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "input"] = df[config.input]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:75: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "target"] = df[config.target]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "input"] = df[config.input]
+/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:75: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "target"] = df[config.target]
+/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/tasks/classification_tasks.py:56: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df[y_column] = df[y_column].str.lower()
+Loading safetensors checkpoint shards:   0% Completed | 0/8 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  12% Completed | 1/8 [00:02<00:18,  2.69s/it]
+Loading safetensors checkpoint shards:  25% Completed | 2/8 [00:05<00:15,  2.65s/it]
+Loading safetensors checkpoint shards:  38% Completed | 3/8 [00:06<00:09,  1.98s/it]
+Loading safetensors checkpoint shards:  50% Completed | 4/8 [00:08<00:08,  2.15s/it]
+Loading safetensors checkpoint shards:  62% Completed | 5/8 [00:11<00:06,  2.29s/it]
+Loading safetensors checkpoint shards:  75% Completed | 6/8 [00:13<00:04,  2.37s/it]
+Loading safetensors checkpoint shards:  88% Completed | 7/8 [00:16<00:02,  2.43s/it]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:19<00:00,  2.46s/it]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:19<00:00,  2.38s/it]
+
+Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:28,  1.20it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:27,  1.22it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:02<00:25,  1.24it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:03<00:24,  1.25it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:04<00:24,  1.24it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:04<00:22,  1.26it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:05<00:21,  1.28it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:06<00:21,  1.28it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:07<00:19,  1.32it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:07<00:18,  1.34it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:08<00:17,  1.36it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:09<00:16,  1.38it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:09<00:15,  1.40it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:10<00:14,  1.42it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:11<00:13,  1.43it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:11<00:13,  1.45it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:12<00:12,  1.49it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:13<00:11,  1.51it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:13<00:10,  1.52it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:14<00:09,  1.55it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:15<00:08,  1.58it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:15<00:08,  1.60it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:16<00:07,  1.62it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:16<00:06,  1.64it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:17<00:05,  1.70it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:17<00:05,  1.74it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:18<00:04,  1.79it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:18<00:03,  1.83it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:19<00:03,  1.87it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:19<00:02,  1.90it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:20<00:02,  1.92it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:20<00:01,  1.94it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:21<00:01,  1.95it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:21<00:00,  1.97it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:22<00:00,  1.96it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:22<00:00,  1.56it/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:21<39:29, 21.34s/it, est. speed input: 11.43 toks/s, output: 0.66 toks/s]Processed prompts: 100%|██████████| 112/112 [00:21<00:00,  5.22it/s, est. speed input: 1305.65 toks/s, output: 75.76 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:21<39:41, 21.45s/it, est. speed input: 11.61 toks/s, output: 0.65 toks/s]Processed prompts: 100%|██████████| 112/112 [00:21<00:00,  5.20it/s, est. speed input: 1304.47 toks/s, output: 75.56 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:21<39:20, 21.27s/it, est. speed input: 12.18 toks/s, output: 0.66 toks/s]Processed prompts: 100%|██████████| 112/112 [00:21<00:00,  5.24it/s, est. speed input: 1315.18 toks/s, output: 75.38 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:21<39:32, 21.38s/it, est. speed input: 11.83 toks/s, output: 0.65 toks/s]Processed prompts: 100%|██████████| 112/112 [00:21<00:00,  5.22it/s, est. speed input: 1306.09 toks/s, output: 75.37 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:23<43:33, 23.55s/it, est. speed input: 10.28 toks/s, output: 0.59 toks/s]Processed prompts: 100%|██████████| 112/112 [00:23<00:00,  4.74it/s, est. speed input: 1330.95 toks/s, output: 67.73 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:25<47:39, 25.77s/it, est. speed input: 11.72 toks/s, output: 0.54 toks/s]Processed prompts:  65%|██████▌   | 73/112 [00:25<00:09,  4.01it/s, est. speed input: 877.20 toks/s, output: 39.57 toks/s]Processed prompts: 100%|██████████| 112/112 [00:25<00:00,  4.33it/s, est. speed input: 1338.15 toks/s, output: 63.68 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:25<47:31, 25.69s/it, est. speed input: 11.45 toks/s, output: 0.55 toks/s]Processed prompts: 100%|██████████| 112/112 [00:25<00:00,  4.35it/s, est. speed input: 1339.33 toks/s, output: 62.38 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:25<47:55, 25.91s/it, est. speed input: 12.01 toks/s, output: 0.54 toks/s]Processed prompts: 100%|██████████| 112/112 [00:25<00:00,  4.31it/s, est. speed input: 1337.74 toks/s, output: 62.16 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:25<46:48, 25.30s/it, est. speed input: 11.46 toks/s, output: 0.55 toks/s]Processed prompts: 100%|██████████| 112/112 [00:25<00:00,  4.41it/s, est. speed input: 1334.76 toks/s, output: 63.26 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:22<40:47, 22.05s/it, est. speed input: 11.11 toks/s, output: 0.63 toks/s]Processed prompts: 100%|██████████| 112/112 [00:22<00:00,  5.06it/s, est. speed input: 1294.43 toks/s, output: 73.17 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:21<40:13, 21.74s/it, est. speed input: 11.77 toks/s, output: 0.64 toks/s]Processed prompts: 100%|██████████| 112/112 [00:21<00:00,  5.13it/s, est. speed input: 1316.88 toks/s, output: 74.37 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:21<40:23, 21.83s/it, est. speed input: 11.04 toks/s, output: 0.64 toks/s]Processed prompts: 100%|██████████| 112/112 [00:21<00:00,  5.11it/s, est. speed input: 1314.64 toks/s, output: 72.84 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   1%|          | 1/112 [00:21<40:14, 21.75s/it, est. speed input: 11.54 toks/s, output: 0.64 toks/s]Processed prompts: 100%|██████████| 112/112 [00:21<00:00,  5.13it/s, est. speed input: 1310.80 toks/s, output: 73.80 toks/s]
+Processed prompts:   0%|          | 0/112 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
