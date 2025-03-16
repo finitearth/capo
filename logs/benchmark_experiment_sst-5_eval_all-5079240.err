@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/scripts/evaluate_prompts.py", line 90, in <module>
+    run_experiment(args.experiment_path)
+  File "/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/scripts/evaluate_prompts.py", line 27, in run_experiment
+    with open(f"{experiment_path}args.json", "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results//subj/mistral/CAPO/seed42benchmark_experiment_subj_mistral_CAPO_42024a78588cc84da192a19bf4720fe4814eb11bdb445bb1c0259d466d86e9cad2args.json'
