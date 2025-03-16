@@ -1,0 +1,32 @@
+Running experiment with args: {'experiment_name': 'benchmark_experiment_gsm8k_llama_CAPO_44', 'random_seed': 44, 'budget_per_run': 10000000, 'output_dir': 'results//gsm8k/llama/CAPO/seed44/', 'dataset': 'gsm8k', 'model': 'vllm-shuyuej/Llama-3.3-70B-Instruct-GPTQ', 'model_revision': '3a7f7f7d46e362291821aaefb0a38b632f1190a8', 'max_model_len': 1024, 'batch_size': None, 'model_storage_path': '../models/', 'optimizer': 'CAPO', 'n_steps': 999, 'population_size': 12, 'n_eval_samples': None, 'evoprompt_ga_template': 'standard', 'block_size': 30, 'length_penalty': 0.05, 'crossovers_per_iter': 4, 'upper_shots': 8, 'max_n_blocks_eval': 10, 'alpha': 0.2, 'shuffle_blocks_per_iter': False}
+Found 28 unique prompts
+/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "input"] = df[config.input]
+/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/capo/load_datasets.py:73: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "target"] = config.target(df)
+/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "input"] = df[config.input]
+/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/capo/load_datasets.py:73: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.loc[:, "target"] = config.target(df)
+/dss/dsshome1/08/ra42zak2/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/tasks/classification_tasks.py:56: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df[y_column] = df[y_column].str.lower()
