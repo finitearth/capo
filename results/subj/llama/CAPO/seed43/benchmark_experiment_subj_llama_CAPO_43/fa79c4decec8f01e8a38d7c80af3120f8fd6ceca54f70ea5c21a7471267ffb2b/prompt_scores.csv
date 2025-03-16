@@ -86,6 +86,44 @@ Input: through the guidance of his doctor , he confronts his painful past and be
 Output: <final_answer>objective</final_answer>
 
 Input:",0.9666666666666667,0.9333333333333333,0.9,0.9,0.9,0.9666666666666667,0.8,0.9333333333333333,0.8666666666666667,0.9
+"Assess the emotional tone and factual accuracy of a given sentence to determine whether it expresses a personal sentiment or presents information based on verifiable evidence, and then categorize it as either subjective, which includes personal opinions and biases, or objective, which is grounded in factual data, by enclosing your assessment within the markers <final_answer>subjective</final_answer> or <final_answer>objective</final_answer> to clearly distinguish between a statement that reflects personal feelings and one that is supported by unbiased, factual content.
+
+Input: one of the best films of the year with its exploration of the obstacles to happiness faced by five contemporary individuals . . . a psychological masterpiece .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+The sentence is expressing a personal viewpoint, using phrases such as ""one of the best films of the year"" and ""a psychological masterpiece,"" which indicate a subjective evaluation of the film's quality. The use of superlatives like ""best"" and the term ""masterpiece"" further emphasize the personal opinion being conveyed.
+
+<final_answer>subjective</final_answer>
+
+Input: the characters seem one-dimensional , and the film is superficial and will probably be of interest primarily to its target audience .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>subjective</final_answer>
+
+Input: the film 's apocalyptic urban setting and unrelentingly icy zeitgeist is message enough without a triumphant parting shot
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>subjective</final_answer>
+
+Input: it 's like a vintage automobile that sometimes runs smoothly , and sometimes lurches and sputters . but it never quite stalls .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>subjective</final_answer>
+
+Input: a full world has been presented onscreen , not some series of carefully structured plot points building to a pat resolution .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>subjective</final_answer>
+
+Input: since bursting onto the music scene last year with her double platinum first album 'pie on my face ' , tildy st .
+Output: <final_answer>objective</final_answer>
+
+Input: daringly perceptive , taut , piercing and feisty , biggie and tupac is undeniably subversive and involving in its bold presentation .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>subjective</final_answer>
+
+Input:",0.9,,,,,,,,,
 "Assess the given sentence to discern whether it presents information in a neutral, fact-based manner or if it embodies a personal viewpoint, sentiment, or bias, and subsequently categorize it as either subjective, indicating the presence of opinion, emotion, or partiality, or objective, denoting an impartial, evidence-supported, and verifiable statement, and then encapsulate your assessment within the <final_answer> tags, using either ""subjective"" or ""objective"" to differentiate between factual and opinion-based content.
 
 Input: this is the dark , moody tale of a neglected housewife who discovers she can escape her loneliness and recover a sense of interaction with her husband by having conversations with him . . .
@@ -110,6 +148,29 @@ Input: the stakes are high and the characters have to face their fears , their f
 Output: <final_answer>objective</final_answer>
 
 Input:",0.9333333333333333,,,,,,,,,
+"Assess the given sentence to distinguish between objective and subjective classifications. Objective sentences present information in a neutral and factual manner, devoid of personal opinions or emotional undertones. In contrast, subjective sentences convey personal views, emotions, or biased judgments. Classify the sentence as <final_answer>objective</final_answer> if it adheres to a fact-based, unbiased narrative, or as <final_answer>subjective</final_answer> if it incorporates personal sentiments, opinions, or emotional expressions.
+
+Input: by candidly detailing the politics involved in the creation of an extraordinary piece of music , [ jones ] calls our attention to the inherent conflict between commerce and creativity .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+The given sentence can be classified as <final_answer>subjective</final_answer>. 
+
+Although the sentence reports on an action taken by Jones, which could be seen as factual, the description of the piece of music as ""extraordinary"" and the mention of an ""inherent conflict between commerce and creativity"" introduce subjective judgments. The term ""extraordinary"" is an evaluative term that reflects a personal opinion or value judgment about the music. Similarly, the identification of a conflict between commerce and creativity implies an interpretation or analysis of the situation that may not be universally agreed upon, further indicating a subjective perspective.
+
+Input: they lie in bed but all his advances are instantly rejected by a progressively more nervous ana .
+Output: <final_answer>objective</final_answer>
+
+Input: the characters seem one-dimensional , and the film is superficial and will probably be of interest primarily to its target audience .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+The given sentence is <final_answer>subjective</final_answer>. 
+
+The sentence expresses personal opinions and biased judgments through phrases such as ""seem one-dimensional"", ""superficial"", and ""will probably be of interest primarily to its target audience"". These expressions convey the speaker's negative view of the film and its characters, indicating a subjective evaluation rather than a neutral, fact-based assessment.
+
+Input: she 's helped along in that process by betsy wright ( pamela gordon ) , a misanthropic dog-walker in need of help with her business and struggling with her own dark past .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.8,,,,,,,,,
 "Assess the given sentence to distinguish whether it presents verifiable facts in a neutral manner or conveys personal viewpoints, sentiments, or evaluations. Categorize the sentence as either objective, which implies an unbiased and fact-based statement, or subjective, which involves personal opinions or emotional inclinations, and provide your classification in the format <final_answer>objective</final_answer> for factual sentences or <final_answer>subjective</final_answer> for sentences expressing personal perspectives.
 
 Input: a coming-of-age tale from new zealand whose boozy , languid air is balanced by a rich visual clarity and deeply felt performances across the board .
@@ -145,6 +206,16 @@ Input: with a single clue to their whereabouts and nothing to lose , he leaves t
 Output: <final_answer>objective</final_answer>
 
 Input:",0.9666666666666667,,,,,,,,,
+"Assess the nature of the given sentence, discerning whether it embodies a dispassionate, fact-driven narrative or a personalized, emotive expression. Decide whether the sentence's tone is rooted in empirical evidence or influenced by individual feelings, beliefs, or biases. Classify the sentence as either subjective, encompassing personal opinions, emotional undertones, and biased perspectives, or objective, characterized by its neutral, unbiased presentation of verifiable facts and data. Clearly demarcate your classification within the specified markers as <final_answer>subjective</final_answer> or <final_answer>objective</final_answer>, thereby differentiating between sentiment and fact, and opinion and evidence.
+
+Input: one of the best films of the year with its exploration of the obstacles to happiness faced by five contemporary individuals . . . a psychological masterpiece .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+The sentence is expressing a personal viewpoint, using phrases such as ""one of the best films of the year"" and ""a psychological masterpiece,"" which indicate a subjective evaluation of the film's quality. The use of superlatives like ""best"" and the term ""masterpiece"" further emphasize the personal opinion being conveyed.
+
+<final_answer>subjective</final_answer>
+
+Input:",0.9333333333333333,0.9,0.8666666666666667,0.9,0.8666666666666667,0.9333333333333333,0.8,0.9,0.8666666666666667,0.8666666666666667
 "Assess the nature of the provided sentence, differentiating between expressions of personal feelings, opinions, or biases and statements grounded in empirical evidence and factual data. Categorize the sentence as either 'subjective', indicating the presence of emotional tone, personal judgment, or partiality, or 'objective', denoting a neutral, fact-driven presentation of information. Clearly denote your assessment by enclosing it within the <final_answer> </final_answer> tags, specifying ""subjective"" for sentences reflecting individual perspectives or emotional undertones and ""objective"" for those rooted in verifiable reality and unbiased observation.
 
 Input: has all the poignancy of a hallmark card and all the comedy of a gallagher stand-up act .
@@ -302,6 +373,47 @@ Input: a true story set in modern times to bring people closer to the knowledge 
 Output: <final_answer>objective</final_answer>
 
 Input:",0.6,,,,,,,,,
+"Assess the sentence's emotional undertones and factual basis to categorize it as either subjective, which includes personal sentiments, opinions, and biased assessments, or objective, characterized by its neutrality, factual accuracy, and freedom from emotional sway. Determine whether the sentence conveys a personal viewpoint or presents information grounded in verifiable evidence, and denote your classification within the specified markers as <final_answer>subjective</final_answer> or <final_answer>objective</final_answer> to reflect the sentence's alignment with either personal perspective or empirical data.
+
+Input: at first shocked into disbelief , amudha then expresses her determination to search out for her biological mother .
+Output: <final_answer>objective</final_answer>
+
+Input: so , alexi starts to bribe members of the different teams to cause more trouble than necessary on the field , and the viewers love it .
+Output: <final_answer>objective</final_answer>
+
+Input: a faction of political separatists , led by count dooku , attempts to assassinate her .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer> objective </final_answer>
+
+Input: the longer the movie goes , the worse it gets , but it 's actually pretty good in the first few minutes .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+The sentence ""the longer the movie goes, the worse it gets, but it's actually pretty good in the first few minutes"" contains a personal evaluation of a movie's quality, which varies based on the duration of viewing. The use of phrases such as ""the worse it gets"" and ""pretty good"" indicate a subjective judgment rather than a factual report. These expressions reflect the speaker's personal opinion about the movie, suggesting that the assessment is influenced by personal taste rather than objective criteria. Therefore, the sentence is categorized as subjective because it conveys a personal viewpoint rather than presenting information grounded in verifiable evidence.
+
+<final_answer>subjective</final_answer>
+
+Input: one of the best films of the year with its exploration of the obstacles to happiness faced by five contemporary individuals . . . a psychological masterpiece .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+The sentence is expressing a personal viewpoint, using phrases such as ""one of the best films of the year"" and ""a psychological masterpiece,"" which indicate a subjective evaluation of the film's quality. The use of superlatives like ""best"" and the term ""masterpiece"" further emphasize the personal opinion being conveyed.
+
+<final_answer>subjective</final_answer>
+
+Input: the events of the film are just so weird that i honestly never knew what the hell was coming next .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+The sentence provided is an expression of personal sentiment and opinion regarding the events of a film. It includes phrases such as ""are just so weird"" and ""I honestly never knew what the hell was coming next,"" which indicate a subjective experience and emotional reaction to the content of the film. The use of ""I"" clearly denotes a personal viewpoint, and the descriptive language (""weird"") reflects the speaker's opinion rather than presenting a neutral, factual account. Therefore, the sentence is categorized as subjective because it conveys a personal viewpoint and emotional response rather than presenting information grounded in verifiable evidence.
+
+<final_answer>subjective</final_answer>
+
+Input: scared of death , winnie must choose between being immortal and being with jesse or following the circle of life and dying someday .
+Output: <final_answer>objective</final_answer>
+
+Input: the doctor also finds he has an attraction to her , despite their age difference .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.9666666666666667,,,,,,,,,
 "Assess the sentence's tone and content to distinguish between objective statements that convey factual information in a neutral manner and subjective expressions that reflect personal viewpoints, emotions, or prejudices. Categorize the sentence as either subjective, which incorporates personal opinions or feelings, or objective, which presents unbiased facts. Clearly indicate your classification between the <final_answer> </final_answer> markers to provide a straightforward evaluation.
 
 Input: bullock 's complete lack of focus and ability quickly derails the film
@@ -335,6 +447,42 @@ The sentence's tone and content suggest a subjective expression, as it reflects 
 <final_answer> subjective </final_answer>
 
 Input:",0.9333333333333333,,,,,,,,,
+"Assess the sentence's tone and content to distinguish between objective statements that convey factual information in a neutral manner and subjective expressions that reflect personal viewpoints, emotions, or prejudices. Categorize the sentence as either subjective, which incorporates personal opinions or feelings, or objective, which presents unbiased facts. Clearly indicate your classification between the <final_answer> </final_answer> markers to provide a straightforward evaluation.
+
+Input: to the degree that ivans xtc . works , it 's thanks to huston 's revelatory performance .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer> subjective </final_answer>
+
+Input: both stars manage to be funny , but , like the recent i spy , the star chemistry begs the question of whether random gags add up to a movie .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+To assess the tone and content of the given sentence, we need to analyze its components and the language used. The sentence discusses the comedic abilities of two stars in a movie and questions whether the combination of random gags makes for a cohesive film. 
+
+The phrase ""both stars manage to be funny"" is an observation that can be considered subjective because humor is highly personal and what one person finds funny, another might not. However, it's presented in a fairly neutral manner without strong emotional language. 
+
+The comparison to ""the recent I Spy"" and the question about whether ""random gags add up to a movie"" introduce a critical or evaluative element. This part of the sentence is more subjective because it implies a judgment about the quality or effectiveness of the movie's approach to comedy. The use of ""begs the question"" suggests a skepticism or doubt about the movie's success in achieving its comedic goals through the method of using random gags.
+
+Given these observations, the sentence combines elements of objective observation (the stars' ability to be funny) with subjective evaluation (the effectiveness of the movie's comedic approach). However, the overall tone leans more towards a subjective expression because it reflects a personal viewpoint on the movie's quality and the impact of its comedic
+
+Input: through the guidance of his doctor , he confronts his painful past and begins a quest to find the family he never knew .
+Output: <final_answer>objective</final_answer>
+
+Input: the most brilliant work in this genre since the 1984 uncut version of sergio leone 's flawed but staggering once upon a time in america .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+To assess the tone and content of the given sentence, it's essential to break down its components and analyze the language used. The sentence compares a work to Sergio Leone's ""Once Upon a Time in America,"" specifically the 1984 uncut version, and describes it as ""the most brilliant work in this genre"" while also characterizing Leone's work as ""flawed but staggering.""
+
+1. **Use of Superlatives**: The sentence uses the superlative ""most brilliant,"" which indicates a comparison and a high level of praise. This kind of language is typically associated with subjective opinions, as ""brilliant"" is a qualitative judgment that can vary greatly from person to person.
+
+2. **Reference to a Specific Work**: The comparison to ""Once Upon a Time in America"" and the specification of the ""1984 uncut version"" suggests a deep knowledge or appreciation of the genre and the work of Sergio Leone. However, the act of choosing this particular work for comparison can also be seen as subjective, as it reflects the speaker's personal taste or opinion on what constitutes excellence in the genre.
+
+3. **Description of Leone's Work**: Describing ""Once Upon a Time in America"" as ""flawed but staggering"" further
+
+Input: haris seems to be an all-american guy except that he creates strange installations of hanging ropes , and suffers from terrible visions- of himself as a child in afghanistan in traditional dress , of smoke and bombs , of his dead parents and the russian soldier who shot them during the soviet invasion .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.6,,,,,,,,,
 "Assess the sentiment and tone of a given sentence to distinguish whether it conveys a personal viewpoint, emotion, or prejudice, or if it presents information in a neutral and factual manner. Classify the sentence as either subjective, indicating the presence of personal opinions or biases, or objective, denoting the presence of verifiable and unbiased data. Your classification should be clearly marked as <final_answer>subjective</final_answer> or <final_answer>objective</final_answer> to differentiate between expressions of personal sentiment and the dissemination of factual content, thus separating the articulation of individual perspectives from the presentation of objective facts.
 
 Input: they lie in bed but all his advances are instantly rejected by a progressively more nervous ana .
@@ -479,6 +627,29 @@ To assess the sentiment of the given statement, let's break it down:
 3. **Objective Elements**: While the statement does reference specific elements that can be observed (e.g., the presence of gags, the performance of stars), the overall evaluation of these elements is subjective. There are no
 
 Input:",0.7,,,,,,,,,
+"Assess the sentiment of a given statement to distinguish between verifiable facts and personal viewpoints, then categorize it as either subjective, which includes emotional language, personal opinions, and biases, or objective, which is grounded in factual, unbiased information, and encapsulate your assessment within the specified markers as <final_answer>subjective</final_answer> or <final_answer>objective</final_answer> to denote whether the statement reflects a personal viewpoint or factual evidence, ensuring your classification is concisely represented between the markers.
+
+Input: will only satisfy those who ca n't tell the difference between the good , the bad and the ugly .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer> subjective </final_answer>
+
+Input: with an expressive face reminiscent of gong li and a vivid personality like zhang ziyi 's , dong stakes out the emotional heart of happy .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer> subjective </final_answer>
+
+Input: ' . . . both hokey and super-cool , and definitely not in a hurry , so sit back , relax and have a few laughs while the little ones get a fuzzy treat . '
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer> subjective </final_answer>
+
+Input: the film was immensely enjoyable thanks to great performances by both steve buscemi and rosario dawson . . .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>subjective</final_answer>
+
+Input:",0.7666666666666667,,,,,,,,,
 "Assess the sentiment of a given statement to distinguish between verifiable facts and personal viewpoints, then categorize it as either subjective, which includes emotional language, personal opinions, and biases, or objective, which presents unbiased and factual information, and encapsulate your assessment within the specified markers as <final_answer>subjective</final_answer> or <final_answer>objective</final_answer> to denote whether the statement reflects a personal viewpoint or factual evidence, ensuring the classification is clearly presented between the tags.
 
 Input:",0.7,,,,,,,,,
@@ -1629,6 +1800,12 @@ Input: in the early years , mitra is repeatedly punished as the warden tries to 
 Output: <final_answer>objective</final_answer>
 
 Input:",0.6,,,,,,,,,
+"Determine the nature of the given sentence, categorizing it as either subjective, which encompasses personal viewpoints, emotions, and opinions, or objective, which comprises factual and unbiased information that can be verified. Conclude by inserting either 'subjective' or 'objective' between the <final_answer> and </final_answer> markers to signify whether the sentence is based on personal perspective or verifiable facts.
+
+Input: a true story set in modern times to bring people closer to the knowledge that there is a better way .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.6333333333333333,,,,,,,,,
 "Determine the nature of the given sentence, categorizing it as either subjective, which encompasses personal viewpoints, emotions, or biased perspectives, or objective, which comprises factual and verifiable data. Conclude by inserting either 'subjective' or 'objective' between the <final_answer> and </final_answer> markers to signify your classification.
 
 Input: here , adrian lyne comes as close to profundity as he is likely to get .
@@ -1744,6 +1921,9 @@ Input: especially when you would much rather want to be one of the cool muslim b
 Output: <final_answer>objective</final_answer>
 
 Input:",0.8666666666666667,0.8333333333333334,,,,,,,,
+"Determine the sentiment of a sentence, distinguishing between statements that present verifiable facts and those that convey personal viewpoints or emotional reactions. The objective is to assign a label to each sentence, indicating whether it belongs to the category of subjective expressions, which encompass personal opinions, sentiments, and biases, or the category of objective statements, which are grounded in empirical evidence and lack personal inclinations. To achieve this, analyze the language and purpose of each sentence, identifying whether it stems from individual perspective or factual data. Categorize the sentences into two groups: those that reflect personal attitudes, emotions, or prejudices, and those that offer factual information without emotional connotations or personal biases. Utilize the format <final_answer>subjective</final_answer> or <final_answer>objective</final_answer> to signify your categorization, clearly marking whether the sentence is rooted in personal opinion or factual evidence by enclosing your classification, either 'subjective' or 'objective', within the designated tags to unmistakably convey the sentence's nature.
+
+Input:",0.7,,,,,,,,,
 "Determine the sentiment orientation of given sentences by categorizing them as either subjective, which encompasses personal viewpoints, emotions, and prejudices, or objective, which encompasses factual and unbiased information. Examine the tone, language, and purpose of each sentence to ascertain whether it reflects a personal stance or presents verifiable facts, and then classify it as either 'subjective' or 'objective', clearly indicating your classification between <final_answer> and </final_answer> tags to signify the sentence's inherent nature as being influenced by personal opinion or rooted in factual evidence.
 
 Input: his reins in the countryside around the happy forest surpassed the sporadic attacks by the evil knight .
@@ -2031,6 +2211,42 @@ Input: deep in the blue ridge mountains , just outside of a small , quiet town ,
 Output: <final_answer>objective</final_answer>
 
 Input:",0.8333333333333334,,,,,,,,,
+"Determine whether the given sentence is subjective, which involves personal opinions, emotions, or biases, or objective, which is grounded in facts and lacks emotional undertones, and then clearly indicate the classification as either ""subjective"" or ""objective"" within the <final_answer> tags to effectively distinguish between sentiment-driven and fact-based expressions.
+
+Input: one of the best films of the year with its exploration of the obstacles to happiness faced by five contemporary individuals . . . a psychological masterpiece .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+The sentence is expressing a personal viewpoint, using phrases such as ""one of the best films of the year"" and ""a psychological masterpiece,"" which indicate a subjective evaluation of the film's quality. The use of superlatives like ""best"" and the term ""masterpiece"" further emphasize the personal opinion being conveyed.
+
+<final_answer>subjective</final_answer>
+
+Input: potter begins his second year at hogwarts school of wizardry , but is warned by a mysterious creature that danger awaits him at the school .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer> objective </final_answer>
+
+Input: in the early years , mitra is repeatedly punished as the warden tries to break her .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+The given sentence describes a situation without expressing a personal opinion or emotion about the event itself. It reports on actions taken by the warden towards Mitra in a neutral manner, focusing on the facts of the situation rather than evaluating them. Therefore, the sentence is grounded in facts and lacks emotional undertones.
+
+<final_answer> objective </final_answer>
+
+Input: this is the dark , moody tale of a neglected housewife who discovers she can escape her loneliness and recover a sense of interaction with her husband by having conversations with him . . .
+Output: <final_answer>objective</final_answer>
+
+Input: potter begins his second year at hogwarts school of wizardry , but is warned by a mysterious creature that danger awaits him at the school .
+Output: <final_answer>objective</final_answer>
+
+Input: it 's too interested in jerking off in all its byzantine incarnations to bother pleasuring its audience .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer> subjective </final_answer>
+
+Input: she 's helped along in that process by betsy wright ( pamela gordon ) , a misanthropic dog-walker in need of help with her business and struggling with her own dark past .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.9666666666666667,0.9666666666666667,0.9666666666666667,0.9333333333333333,0.9666666666666667,0.9666666666666667,0.8333333333333334,0.9333333333333333,0.8666666666666667,0.8666666666666667
 "Determine whether the provided sentence conveys a personal viewpoint, emotion, or assessment, or if it presents information in a neutral and factual manner, devoid of personal influence. Your task is to categorize the sentence as either subjective, which encompasses personal perspectives, sentiments, or evaluations, or objective, which involves the presentation of verifiable facts without emotional undertones. After analyzing the sentence's content, insert your classification - either 'subjective' or 'objective' - within the <final_answer>answer</final_answer> markers to signify your conclusion.
 
 Input: while working a car insurance scam , toni cutter , a female con artist , accidentally turns a routine collision into a fatality and exposes her lawyer and lover , stephen tally , to felony murder charges from the district attorney .
@@ -2628,6 +2844,52 @@ Input: shae powell , a successful single mom , wakes up rattled from a horrible 
 Output: <final_answer>objective</final_answer>
 
 Input:",0.6,,,,,,,,,
+"Examine the provided sentence to discern whether it conveys verifiable, unbiased facts or embodies personal sentiments, emotions, or partiality. Categorize the sentence as either objective, indicating it presents information devoid of emotional sway, or subjective, denoting the presence of individual viewpoints or prejudiced opinions. Respond with the classification enclosed within <final_answer>answer</final_answer>, where answer is either ""objective"" for factual content or ""subjective"" for opinion-based content, to succinctly identify the sentence's nature.
+
+Input: a raw comedy that is intermittently hilarious as it attacks pretty much every taboo around .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>subjective</final_answer>
+
+Input: toledo ( daniel hendler ) , 25 years old , future architect , suffers from an acute jealousy .
+Output: <final_answer>objective</final_answer>
+
+Input: at first shocked into disbelief , amudha then expresses her determination to search out for her biological mother .
+Output: <final_answer>objective</final_answer>
+
+Input: shae powell , a successful single mom , wakes up rattled from a horrible dream .
+Output: <final_answer>objective</final_answer>
+
+Input: ben cronin has it all : the admiration of his many friends , a terrific girlfriend , and he 's on the fast-track to an athletic scholarship .
+Output: <final_answer>objective</final_answer>
+
+Input: the comedy death to smoochy is a rancorous curiosity : a movie without an apparent audience .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>subjective</final_answer>
+
+Input: this is n't a terrible film by any means , but it 's also far from being a realized work .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>subjective</final_answer>
+
+Input: one of the best films of the year with its exploration of the obstacles to happiness faced by five contemporary individuals . . . a psychological masterpiece .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>subjective</final_answer>
+
+Input:",0.9666666666666667,,,,,,,,,
+"Examine the provided sentence to discern whether it conveys verifiable, unbiased facts or embodies personal sentiments, emotions, or partiality. Categorize the sentence as either objective, indicating it presents information devoid of emotional sway, or subjective, denoting the presence of individual viewpoints or prejudiced opinions. Respond with the classification enclosed within <final_answer>answer</final_answer>, where answer is either ""objective"" for factual content or ""subjective"" for opinion-based content, to succinctly identify the sentence's nature.
+
+Input: she 's helped along in that process by betsy wright ( pamela gordon ) , a misanthropic dog-walker in need of help with her business and struggling with her own dark past .
+Output: <final_answer>objective</final_answer>
+
+Input: potter begins his second year at hogwarts school of wizardry , but is warned by a mysterious creature that danger awaits him at the school .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer>objective</final_answer>
+
+Input:",0.9,0.8666666666666667,,,,,,,,
 "Examine the sentence carefully to discern whether it offers verifiable, neutral data or expresses a viewpoint influenced by personal feelings, attitudes, or partiality, and subsequently categorize it as either objective, indicating information grounded in evidence and free from bias, or subjective, denoting content that reflects personal opinions or emotions, and present your assessment in the format <final_answer>answer</final_answer>, where ""answer"" is replaced with either ""objective"" for fact-based, unbiased information or ""subjective"" for content that embodies personal perspectives or sentiments.
 
 Input: those who managed to avoid the deconstructionist theorizing of french philosopher jacques derrida in college can now take an 85-minute brush-up course with the documentary derrida . or , you can do something fun tonight .
@@ -2984,6 +3246,36 @@ Input: haris seems to be an all-american guy except that he creates strange inst
 Output: <final_answer>objective</final_answer>
 
 Input:",0.8333333333333334,0.7333333333333333,,,,,,,,
+"To accomplish this task, you must swiftly differentiate between sentences that convey personal sentiments, biases, or emotional undertones, which are deemed subjective, and those that present verifiable evidence or factual content without emotional influence, classified as objective. Your goal is to evaluate each sentence and determine whether it expresses a personal perspective or imparts factual information. To convey your classification, simply type ""subjective"" for sentences with personal opinions or emotions and ""objective"" for sentences with factual data, placing your chosen classification between the <final_answer> </final_answer> tags for a clear designation.
+
+Input: all in all , the count of monte cristo is okay , but it is surely no classic , like the novel upon which it is based .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer> subjective </final_answer>
+
+Input: shae powell , a successful single mom , wakes up rattled from a horrible dream .
+Output: <final_answer>objective</final_answer>
+
+Input: he 's lost his super powers , and it will take all of bachelorman 's skill and cunning to get his lois lane back .
+Output: <final_answer>objective</final_answer>
+
+Input: proof that a newcomer indie filmmaker can infuse some new life into the downtrodden loser character study .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer> subjective </final_answer>
+
+Input: will only satisfy those who ca n't tell the difference between the good , the bad and the ugly .
+Output: <|start_header_id|>assistant<|end_header_id|>
+
+<final_answer> subjective </final_answer>
+
+Input: seeking a microscopic camera that could be incorporated into his artificial eye so he could secretly film whatever he sees , the filmmaker explores the futuristic technology that could make this possible , while revisiting chapters of his own past .
+Output: <final_answer>objective</final_answer>
+
+Input: joanna , a good-for-nothing girl who miserably failed in her attempt to win any television game show and contest , is hired by nino as his personal secretary , believing that she could be her lucky charm .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.9666666666666667,0.9,0.9333333333333333,0.9,0.9,0.9333333333333333,0.8333333333333334,0.9333333333333333,0.9333333333333333,0.9
 "To accurately categorize sentences, analyze the language and intent behind each statement, differentiating between statements that convey personal opinions, emotions, or biases, and those that provide factual, unbiased information. Classify each sentence as either subjective, indicating the presence of personal viewpoints or emotional tone, or objective, denoting a neutral, fact-based presentation. Ensure your classification is clearly marked as either 'subjective' or 'objective' within the <final_answer> </final_answer> tags for a direct and efficient response.
 
 Input: his reins in the countryside around the happy forest surpassed the sporadic attacks by the evil knight .

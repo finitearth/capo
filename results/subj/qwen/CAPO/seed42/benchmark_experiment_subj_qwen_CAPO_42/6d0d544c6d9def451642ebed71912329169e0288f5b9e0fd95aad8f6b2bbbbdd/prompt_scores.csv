@@ -209,7 +209,64 @@ Input: he dies alone at the hospital , and apparently everything nete planned we
 Output: <final_answer>objective</final_answer>
 
 Input:",0.8,0.8666666666666667,0.7333333333333333,,,,,,,
+"Analyze each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which reflects personal feelings or judgments. Use your knowledge of subjective and objective language to label each sentence as 'objective' if it is presented in a neutral, unbiased way, or 'subjective' if it includes personal evaluations, critiques, or emotions. Please format your classification as follows: <final_answer>your_classification</final_answer>.
+
+Input: mark , fresh from college , returns to his boring hometown to work off his gambling debts .
+Output: <final_answer>objective</final_answer>
+
+Input: without [ de niro ] , city by the sea would slip under the waves . he drags it back , single-handed .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: this is the kind of movie where the big scene is a man shot out of a cannon into a vat of ice cream .
+Output: <final_answer>subjective</final_answer>
+
+Input: finally paula , who ran away from home and got pregnant , is now in a relationship she does n't want .
+Output: <final_answer>objective</final_answer>
+
+Input: the only element of suspense is whether the movie will change titles or distributors again before the closing credits roll .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: kids will love its fantasy and adventure , and grownups should appreciate its whimsical humor .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.9,0.8666666666666667,0.8,0.7666666666666667,0.7666666666666667,0.7333333333333333,0.7666666666666667,0.7,0.7666666666666667,0.8
 "Analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false without personal bias, or a subjective opinion, which reflects personal feelings or judgments. Utilize your knowledge of the differences between subjective and objective language to evaluate the given sentence and conclude whether it is 'subjective' (expressing personal opinions or feelings) or 'objective' (stating facts unaffected by personal feelings). Please present your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input:",0.6333333333333333,,,,,,,,,
+"Analyze each sentence to determine whether it expresses an objective fact, which is a statement that can be confirmed as true or false without any bias, or a subjective viewpoint, which conveys a personal opinion, feeling, or assessment that can vary among individuals. Your task is to classify each sentence as either subjective or objective based on its content. Identify if the sentence offers an objective fact, which is a statement that can be substantiated as true or false without personal bias, or a subjective opinion, which reflects personal feelings, judgments, or perspectives. Use your understanding of the distinctions between subjective and objective language to categorize the sentence as 'subjective' for expressions of personal opinions or emotions, or 'objective' for statements of fact without personal bias. Please enclose your classification within the <final_answer>your_classification</final_answer> markers.
+
+Input: ronnie schwann , a young man regarded as `` slow , `` has affections for sarah , a young woman who stays at hope house , a facility for the mentally ill .
+Output: <final_answer>objective</final_answer>
+
+Input: imagine the cleanflicks version of 'love story , ' with ali macgraw 's profanities replaced by romance-novel platitudes .
+Output: user
+This sentence is describing a hypothetical scenario where a specific movie's content is altered to fit a certain standard, which involves a subjective viewpoint as it reflects a personal interpretation or preference regarding the movie's dialogue and tone. Therefore, it is not an objective fact but a subjective viewpoint.
+
+<final_answer>subjective</final_answer>
+
+Input: but cousin roberto is n't the tough guy they 'd expected .
+Output: <final_answer>objective</final_answer>
+
+Input: the story of a normal family in which come out the dreams of those who have lost their possibilities and of those who want to realize them .
+Output: <final_answer>objective</final_answer>
+
+Input: an impressively coordinated enterprise that lasts three hours , manages a large cast , and covers a period of 30-odd years while successfully unfolding as a series of scenes from the life of a single character .
+Output: user
+This sentence describes the characteristics of an enterprise, such as its duration, the number of participants, and the time span it covers. However, the use of the word ""impressively"" introduces a subjective judgment about the quality of the coordination. The rest of the sentence provides factual information about the enterprise's structure and content. Therefore, the sentence contains both objective facts and a subjective viewpoint.
+
+<final_answer>subjective</final_answer>
+
+Input: . . . comes alive only when it switches gears to the sentimental .
+Output: user
+This sentence expresses a personal opinion about when something ""comes alive,"" which is a subjective feeling or judgment. It implies a preference for a sentimental approach, which can vary among individuals. Therefore, this sentence is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: lieutenant hart must then defend the black pilot against charges before an obviously racist american tribunal ; unaware that the trial itself is only a front for the real secret of the prison camp .
+Output: <final_answer>objective</final_answer>
 
 Input:",0.6333333333333333,,,,,,,,,
 "Analyze each sentence to determine whether it presents an objective fact (a statement that can be proven true or false without bias) or a subjective viewpoint (a personal opinion, feeling, or assessment that can vary from person to person). Using your understanding of the distinctions between subjective and objective language, decide if the sentence is 'subjective' (conveying personal opinions or emotions) or 'objective' (stating facts without personal bias). Please format your classification as follows: <final_answer>your_classification</final_answer>.
@@ -241,6 +298,31 @@ Output: user
 <final_answer> Subjective </final_answer>
 
 Input:",0.8,0.8,0.9,0.8,0.8333333333333334,0.7666666666666667,0.8,0.7333333333333333,0.8,0.8333333333333334
+"Analyze each sentence to figure out if it presents an objective fact, which is a statement that can be proven true or false without any personal bias, or a subjective opinion, which is based on personal feelings, emotions, or judgments that can differ from person to person. Use your knowledge of subjective and objective language to decide if the sentence is giving unbiased, verifiable information or incorporating personal views and emotions. Your task is to categorize each sentence as either 'objective' or 'subjective', indicating whether it is a neutral statement of fact or a personal evaluation. If the sentence is neutral and unbiased, label it as 'objective'. If it contains personal feelings, evaluations, or critiques, label it as 'subjective'. Please format your classification like this: <final_answer>your_classification</final_answer>.
+
+Input: [ n ] o matter how much good will the actors generate , showtime eventually folds under its own thinness .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: seeking a mental escape , simone begins to tune into what 's happening with the other couples around her .
+Output: <final_answer>objective</final_answer>
+
+Input: with nothing to go on but his dreams and gut instinct , vince launches into his own search for ellen . . . or is he really searching for sara ?
+Output: <final_answer>objective</final_answer>
+
+Input: if a horror movie 's primary goal is to frighten and disturb , then they works spectacularly well . . . a shiver-inducing , nerve-rattling ride .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: herzog , a man of detail became enraptured with his subject and was unable to use his editing shears .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: two badly interlocked stories drowned by all too clever complexity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.8,0.7333333333333333,,,,,,,,
 "Analyze each sentence within the dataset to determine if it conveys an objective fact, which is a statement that can be verified as true or false without any bias, or a subjective opinion, which is a personal viewpoint that can differ among individuals. Your job is to label each sentence as either 'objective' or 'subjective'. Make sure to place your final determination between these tags: <final_answer>your_classification</final_answer>.
 
 Input: when she fails to find the `` perfect man `` that will make her happy , she decides to construct him herself , using parts from different people .
@@ -350,6 +432,31 @@ Input: missing her opportunity with him that night , cameron diaz is talked into
 Output: <final_answer>objective</final_answer>
 
 Input:",0.7333333333333333,0.8333333333333334,0.6666666666666666,0.8,0.7333333333333333,0.7,0.7,0.5,,
+"Assess each sentence to identify if it presents verifiable, objective facts or personal, subjective opinions, feelings, and evaluations. Your job is to label each sentence as either 'objective' if it provides impartial information, or 'subjective' if it expresses personal sentiments, judgments, or critiques. Please submit your answer in this structure: <final_answer>your_classification</final_answer>.
+
+Input: land , people and narrative flow together in a stark portrait of motherhood deferred and desire explored .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: an impressively coordinated enterprise that lasts three hours , manages a large cast , and covers a period of 30-odd years while successfully unfolding as a series of scenes from the life of a single character .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: god responds to his challenge and allows bruce to take on his powers to prove himself .
+Output: <final_answer>objective</final_answer>
+
+Input: in the meantime , the british forces , back at the encampment , march off to meet the american forces for a grand battle , which will rage for hours .
+Output: <final_answer>objective</final_answer>
+
+Input: solaris `` is a shapeless inconsequential move relying on the viewer to do most of the work .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: a vivid , spicy footnote to history , and a movie that grips and holds you in rapt attention from start to finish .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.6333333333333333,,,,,,,,,
 "Assess each sentence to see if it is 'subjective' (conveying personal opinions, emotions, or assessments) or 'objective' (stating facts that are unbiased and verifiable). Your job is to analyze the sentences and categorize them as either 'subjective' (expressing personal views, feelings, or evaluations) or 'objective' (presenting facts without personal bias). Decide if the sentence is objective (factual, unbiased, and verifiable) or subjective (opinionated, with personal judgments or feelings). Please format your response as: <final_answer>your classification</final_answer>.
 
 Input: after baptizing their amnesiac boy-toy chris , the infamous pair takes him on a grand tour of their wild nightlife frolic , their spontaneous media extravaganza and their dazzling diva lifestyle in order to help him find his identity and his way home .
@@ -432,6 +539,25 @@ Input: it 's not that waiting for happiness is a bad film , because it is n't . 
 Output: user <final_answer>subjective</final_answer>.
 
 Input:",0.8333333333333334,0.8666666666666667,0.8333333333333334,0.8666666666666667,0.9,0.8,0.8666666666666667,0.7333333333333333,0.8333333333333334,0.8666666666666667
+"Based on your comprehension of subjective and objective language, meticulously analyze each sentence to determine if it expresses an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which is shaped by personal viewpoints that may vary from person to person. Your mission is to classify each sentence as either objective or subjective, deciding whether the sentence presents objective facts that can be confirmed or subjective opinions, feelings, and assessments. Tag each sentence as 'objective' if it is conveyed in a neutral, unbiased manner, or 'subjective' if it encompasses personal feelings, appraisals, or critiques. Please deliver your response in this structure: <final_answer>your_classification</final_answer>.
+
+Input: the question is , will their lives change forever with the riches that come along with professional sports , or will they be destined to live a life in their home country , asking forever , what if ?
+Output: <final_answer>objective</final_answer>
+
+Input: without [ de niro ] , city by the sea would slip under the waves . he drags it back , single-handed .
+Output: user
+This sentence expresses a personal evaluation about the actor's performance and its impact on the film, which cannot be universally proven or measured. It includes subjective sentiments and critiques.
+
+<final_answer>subjective</final_answer>
+
+Input: after a dream of a horrific car crash , kimberly helps save several people and causes another rift in death 's design , but this time its different , since alex walked off the plane death 's design did not only affect the survivors of flight 180 , but every single person they 've come in contact with , now how will they stop it ?
+Output: <final_answer>objective</final_answer>
+
+Input: well , jason 's gone to manhattan and hell , i guess a space station in the year 2455 can be crossed off the list of ideas for the inevitable future sequels ( hey , do n't shoot the messenger ) .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.7,0.7666666666666667,,,,,,,,
 "Based on your comprehension of the differences between subjective and objective language, your task is to evaluate whether the provided sentence is objective—meaning it presents verifiable facts without personal bias—or subjective, indicating it conveys personal opinions, emotions, or judgments. Your goal is to classify each sentence into one of these two categories. Please encapsulate your classification within the markers as follows: <final_answer>your_classification</final_answer>.
 
 Input: soon , annie 's condition helps leoncio 's children realize the essence of a family .
@@ -468,6 +594,61 @@ Output: user
 <final_answer>subjective</final_answer>
 
 Input:",0.7333333333333333,0.7333333333333333,0.8,0.7666666666666667,0.7,0.6666666666666666,0.7333333333333333,,,
+"Based on your knowledge of subjective and objective expressions, carefully examine each sentence to ascertain whether it presents an objective fact, which is a claim that can be proven true or false, or a subjective opinion, which is a personal perspective that may vary from person to person. Tag each sentence as 'objective' if it is stated in a fair, impartial manner, or 'subjective' if it incorporates personal feelings, assessments, or judgments. Please insert your classification within the <final_answer>your_classification</final_answer> tags.
+
+Input: luster is a refreshingly funny and sexy look at unrequited love .
+Output: <final_answer>objective</final_answer>
+
+Input: two badly interlocked stories drowned by all too clever complexity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: . . . comes alive only when it switches gears to the sentimental .
+Output: user
+This sentence expresses a personal perspective on when something comes alive, which is a subjective experience and can vary from person to person. Therefore, it is not an objective fact but a subjective opinion.
+
+<final_answer>subjective</final_answer>
+
+Input: no ill effects are immediately apparent to lena 's relatives in their spacious house on the prosperous side of town .
+Output: <final_answer>objective</final_answer>
+
+Input: the lizard , chaos , scar , heartless and sic inhabit the violent and often bizarre world of backyard wrestling .
+Output: user
+The sentence describes the inhabitants of a specific fictional world, ""Backyard Wrestling,"" which is a subjective creation. However, the statement itself is presented in an objective manner, as it simply lists the entities that exist within this world without incorporating personal feelings, assessments, or judgments. 
+
+<final_answer>objective</final_answer>
+
+Input: without [ de niro ] , city by the sea would slip under the waves . he drags it back , single-handed .
+Output: user
+This sentence expresses a personal evaluation about the actor's performance and its impact on the film, which cannot be universally proven or measured. It includes subjective sentiments and critiques.
+
+<final_answer>subjective</final_answer>
+
+Input: sure , there are flaws , but the moments that do things properly see the screen burst with confidence , rhythm , heat and pizzazz .
+Output: user
+The given sentence expresses personal feelings and judgments about the quality and impact of something on the screen, which can vary from person to person. Therefore, it is a subjective opinion.
+
+<final_answer>subjective</final_answer>
+
+Input: adapted from a monologue in his `` blue jam `` radio series , chris morris ' first short film is a haunting black comedy about a man who no longer uses his name because he 's decided he 's ceased to deserve one , and a dog called rothko who says he is the man 's lawyer .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7333333333333333,,,,,,,,,
+"Based on your knowledge of subjective and objective language, scrutinize each sentence within the dataset to ascertain whether it expresses an objective fact, which is a statement that can be verified as true or false without personal bias, or a subjective opinion, which involves personal perspectives, emotions, judgments, or critiques that can vary among individuals. Tag each sentence as 'objective' if it is conveyed in a neutral, unbiased manner, or 'subjective' if it incorporates personal sentiments or assessments. Please ensure your classification is enclosed within the markers <final_answer>your_classification</final_answer>.
+
+Input: without [ de niro ] , city by the sea would slip under the waves . he drags it back , single-handed .
+Output: user
+This sentence expresses a personal evaluation about the actor's performance and its impact on the film, which cannot be universally proven or measured. It includes subjective sentiments and critiques.
+
+<final_answer>subjective</final_answer>
+
+Input: after an attempt is made on his life by unknown gunmen , whom he kills them all using martal arts skills he did n't know he had , he learns that all of his dreams of a past life are real and that for the past three years he was raised by the couple after finding him in a river , half-dead with five bullet wounds in him .
+Output: <final_answer>objective</final_answer>
+
+Input: at the same time , william has become the object of wrath by a popular but pompous and pridefilled christian radio commentator who brands william as a false prophet and seeks to destroy him .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7333333333333333,0.6666666666666666,,,,,,,,
 "Based on your knowledge of the differences between subjective and objective language, analyze the given sentence and determine if it is 'subjective' (expressing opinions, feelings, or judgments) or 'objective' (stating facts that are free from personal bias). Please insert your determination between the <final_answer>your determination</final_answer> markers.
 
 Input: too stagey , talky -- and long -- for its own good .
@@ -717,6 +898,53 @@ Output: user
 <final_answer> subjective </final_answer>
 
 Input:",0.7,0.7,0.8666666666666667,0.6666666666666666,0.6333333333333333,0.6333333333333333,0.7333333333333333,0.6666666666666666,0.6333333333333333,0.5333333333333333
+"Employing your knowledge of subjective and objective expressions, carefully examine each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which reflects personal views and may differ among individuals. Mark each sentence as 'objective' if it is stated in a fair, impartial way, or 'subjective' if it incorporates personal feelings, judgments, or critiques. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: if a horror movie 's primary goal is to frighten and disturb , then they works spectacularly well . . . a shiver-inducing , nerve-rattling ride .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: a movie that will surely be profane , politically charged music to the ears of cho 's fans .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: after a dream of a horrific car crash , kimberly helps save several people and causes another rift in death 's design , but this time its different , since alex walked off the plane death 's design did not only affect the survivors of flight 180 , but every single person they 've come in contact with , now how will they stop it ?
+Output: <final_answer>objective</final_answer>
+
+Input: without [ de niro ] , city by the sea would slip under the waves . he drags it back , single-handed .
+Output: user
+This sentence expresses a personal evaluation about the actor's performance and its impact on the film, which cannot be universally proven or measured. It includes subjective sentiments and critiques.
+
+<final_answer>subjective</final_answer>
+
+Input: but cousin roberto is n't the tough guy they 'd expected .
+Output: <final_answer>objective</final_answer>
+
+Input: the tuxedo was n't just bad ; it was , as my friend david cross would call it , 'hungry-man portions of bad ' .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: a documentary seven years in the making about women in the film business and how they balance , children , love lives and career -- or how they do n't .
+Output: <final_answer>objective</final_answer>
+
+Input: completely creatively stillborn and executed in a manner that i 'm not sure could be a single iota worse . . . a soulless hunk of exploitative garbage .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.7333333333333333,,,,,,,,,
+"Employing your knowledge of subjective and objective expressions, meticulously analyze each sentence to determine if it presents an objective fact, which is a statement that can be verified as true or false without bias, or a subjective opinion, marked by personal views, emotions, or judgments that may vary from person to person. Tag each sentence as 'objective' if it is conveyed in an unbiased, neutral manner, or 'subjective' if it incorporates personal feelings, assessments, or critiques. Please wrap your classification in the <final_answer>your_classification</final_answer> tags.
+
+Input: this re-do is so dumb and so exploitative in its violence that , ironically , it becomes everything that the rather clumsy original was railing against .
+Output: user
+<final_answer> subjective </final_answer>
+
+Input: without [ de niro ] , city by the sea would slip under the waves . he drags it back , single-handed .
+Output: user
+This sentence expresses a personal evaluation about the actor's performance and its impact on the film, which cannot be universally proven or measured. It includes subjective sentiments and critiques.
+
+<final_answer>subjective</final_answer>
+
+Input:",0.8,0.8333333333333334,0.9,0.8,0.8666666666666667,0.8333333333333334,0.8,0.7333333333333333,0.7333333333333333,0.8
 "Evaluate each sentence to determine if it is 'subjective' (expressing personal opinions, emotions, or assessments) or 'objective' (stating facts that are unbiased and verifiable). Your task is to scrutinize the sentences and label them as either 'subjective' (reflecting personal views, feelings, or evaluations) or 'objective' (presenting facts without personal bias). Determine if the sentence is objective (factual, unbiased, and verifiable) or subjective (opinionated, with personal judgments or feelings). Carefully examine each sentence to decide if it conveys an objective fact (information that is verifiable and unbiased) or a subjective viewpoint (personal feelings, assessments, or emotions that can vary among individuals). Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
 
 Input: missing her opportunity with him that night , cameron diaz is talked into pursuing him to his brother 's wedding .
@@ -858,6 +1086,100 @@ Output: user
 <final_answer>subjective</final_answer>
 
 Input:",0.6333333333333333,,,,,,,,,
+"Examine each sentence carefully to ascertain whether it presents an objective fact, defined as a statement that can be proven true or false, or a subjective opinion, characterized by personal views that can differ from person to person. Employ your understanding of subjective and objective language to label each sentence as 'objective' if it is expressed in a neutral, unbiased way, or 'subjective' if it includes personal sentiments, assessments, or critiques. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: a vivid , spicy footnote to history , and a movie that grips and holds you in rapt attention from start to finish .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: with nothing to go on but his dreams and gut instinct , vince launches into his own search for ellen . . . or is he really searching for sara ?
+Output: <final_answer>objective</final_answer>
+
+Input: the stars may be college kids , but the subject matter is as adult as you can get : the temptations of the flesh are unleashed by a slightly crazed , overtly determined young woman and a one-night swim turns into an ocean of trouble .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: just on the other side of thirty , dave is an unemployed sculptor clumsily going nowhere in a small town .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.8333333333333334,0.8666666666666667,0.6666666666666666,,,,,,,
+"Examine each sentence carefully to ascertain whether it presents an objective fact, defined as a statement that can be proven true or false, or a subjective opinion, characterized by personal views that can differ from person to person. Employ your understanding of subjective and objective language to label each sentence as 'objective' if it is expressed in a neutral, unbiased way, or 'subjective' if it includes personal sentiments, assessments, or critiques. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: after a dream of a horrific car crash , kimberly helps save several people and causes another rift in death 's design , but this time its different , since alex walked off the plane death 's design did not only affect the survivors of flight 180 , but every single person they 've come in contact with , now how will they stop it ?
+Output: <final_answer>objective</final_answer>
+
+Input:",0.6333333333333333,,,,,,,,,
+"Examine each sentence carefully to ascertain whether it presents an objective fact, defined as a verifiable statement independent of personal views, or a subjective opinion, characterized by personal feelings, judgments, or evaluations that may vary from person to person. Use your understanding of subjective and objective language to categorize each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it conveys personal sentiments or assessments. Please structure your response like this: <final_answer>your_classification</final_answer>.
+
+Input: two badly interlocked stories drowned by all too clever complexity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: tong is sent back to fetch some things for devlin and unknowingly tries on devlin 's tuxedo and finds that it gives extraordinary powers to anyone that dons the suit .
+Output: <final_answer>objective</final_answer>
+
+Input: henceforth , he will meet with unexpected situations that give him the idea for the perfect counterpoint in his plot of the absurd .
+Output: <final_answer>objective</final_answer>
+
+Input: too stagey , talky -- and long -- for its own good .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: isidor 's tortilla heaven is the best restaurant in new mexico maybe even the world .
+Output: <final_answer>objective</final_answer>
+
+Input: the stars may be college kids , but the subject matter is as adult as you can get : the temptations of the flesh are unleashed by a slightly crazed , overtly determined young woman and a one-night swim turns into an ocean of trouble .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.7666666666666667,0.8333333333333334,0.8333333333333334,0.7666666666666667,0.7666666666666667,,,,,
+"Examine each sentence carefully to ascertain whether it presents an objective fact, which is a claim that can be proven true or false without personal bias, or a subjective opinion, which is a reflection of personal feelings, emotions, judgments, or evaluations that can differ among individuals. Use your understanding of subjective and objective language to categorize each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it conveys personal feelings, judgments, or evaluations. Your task is to classify each sentence as either 'objective' or 'subjective', determining if it is a neutral statement of fact or a personal viewpoint. Please encapsulate your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: a vivid , spicy footnote to history , and a movie that grips and holds you in rapt attention from start to finish .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: luster is a refreshingly funny and sexy look at unrequited love .
+Output: <final_answer>objective</final_answer>
+
+Input: after collateral damage , you might imagine that most every aggrieved father clichM-i has been unturned . but no .
+Output: user
+This sentence includes personal feelings and assessments, using phrases like ""you might imagine"" and ""most every aggrieved father clichM-i has been unturned,"" which are not verifiable facts but rather subjective interpretations or opinions. Therefore, it should be classified as 'subjective'.
+
+<final_answer>subjective</final_answer>
+
+Input: seeking a mental escape , simone begins to tune into what 's happening with the other couples around her .
+Output: <final_answer>objective</final_answer>
+
+Input: the stars may be college kids , but the subject matter is as adult as you can get : the temptations of the flesh are unleashed by a slightly crazed , overtly determined young woman and a one-night swim turns into an ocean of trouble .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.7666666666666667,0.8,,,,,,,,
+"Examine each sentence carefully to ascertain whether it presents an objective fact, which is a claim that can be proven true or false without personal bias, or a subjective opinion, which is a reflection of personal feelings, emotions, judgments, or evaluations that can differ among individuals. Use your understanding of subjective and objective language to categorize each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it conveys personal feelings, judgments, or evaluations. Your task is to classify each sentence as either 'objective' or 'subjective', determining if it is a neutral statement of fact or a personal viewpoint. Please encapsulate your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: after collateral damage , you might imagine that most every aggrieved father clichM-i has been unturned . but no .
+Output: user
+This sentence includes personal feelings and assessments, using phrases like ""you might imagine"" and ""most every aggrieved father clichM-i has been unturned,"" which are not verifiable facts but rather subjective interpretations or opinions. Therefore, it should be classified as 'subjective'.
+
+<final_answer>subjective</final_answer>
+
+Input: seeking a mental escape , simone begins to tune into what 's happening with the other couples around her .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7666666666666667,0.8,0.9,0.8,0.8,0.7,0.8,0.7333333333333333,0.8,0.8
+"Examine each sentence carefully to ascertain whether it presents an objective fact, which is a verifiable statement, or a subjective opinion, which is a personal viewpoint that may vary. Your job is to label each sentence as either objective or subjective, depending on whether it offers unbiased information or conveys personal sentiments, assessments, or critiques. Please submit your answer in this structure: <final_answer>your_classification</final_answer>.
+
+Input: with nothing to go on but his dreams and gut instinct , vince launches into his own search for ellen . . . or is he really searching for sara ?
+Output: <final_answer>objective</final_answer>
+
+Input: god responds to his challenge and allows bruce to take on his powers to prove himself .
+Output: <final_answer>objective</final_answer>
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user <final_answer>subjective</final_answer>.
+
+Input:",0.7333333333333333,0.8333333333333334,0.9666666666666667,0.7333333333333333,0.7666666666666667,0.7666666666666667,0.9333333333333333,0.7333333333333333,0.8333333333333334,0.9333333333333333
 "Examine each sentence carefully to determine whether it presents an objective fact, defined as a statement that can be proven true or false without bias, or a subjective opinion, characterized by personal feelings, judgments, or assessments that can differ from person to person. Utilize your understanding of subjective and objective language to label each sentence as 'objective' if it is expressed in a neutral, unbiased way, or 'subjective' if it includes personal sentiments or evaluations. Please wrap your classification in the following format: <final_answer>your_classification</final_answer>.
 
 Input: just on the other side of thirty , dave is an unemployed sculptor clumsily going nowhere in a small town .
@@ -914,6 +1236,43 @@ Output: user
 <final_answer> subjective </final_answer>
 
 Input:",0.6333333333333333,,,,,,,,,
+"Examine each sentence to determine whether it presents an objective fact, which is a verifiable statement without personal bias, or a subjective perspective, which is a personal opinion, feeling, or judgment that can vary from person to person. Use your knowledge of the distinctions between subjective and objective language to label the sentence as 'subjective' if it expresses personal opinions or emotions, or 'objective' if it states facts without personal bias. Please wrap your classification in the <final_answer>your_classification</final_answer> tags.
+
+Input: a murder in the camp gives him the chance to set a risky plan in motion .
+Output: user
+Let's analyze the sentence: ""A murder in the camp gives him the chance to set a risky plan in motion.""
+
+This sentence describes a scenario where a murder has occurred in a camp, and as a result, someone is given an opportunity to initiate a risky plan. The sentence does not express any personal opinions or feelings about the situation; it merely states what has happened and the consequence of that event. Therefore, it is an objective statement.
+
+<final_answer>objective</final_answer>
+
+Input: a london website designer ops out of her comfortable but ordinary relationship with a nice boyfriend when she forms a dangerously obsessive bond with a handsome , mysterious mountaineer , who turns out to have some secrets .
+Output: <final_answer>objective</final_answer>
+
+Input: amidst the la-freaks , hollywood wannabes , and outrageous gym culture of los angeles , the now determined bodybuilder struggles to preserve an integrity of the mind , body , and spirit that is so apparently void in this strange new land .
+Output: <final_answer>objective</final_answer>
+
+Input: adapted from a monologue in his `` blue jam `` radio series , chris morris ' first short film is a haunting black comedy about a man who no longer uses his name because he 's decided he 's ceased to deserve one , and a dog called rothko who says he is the man 's lawyer .
+Output: user
+<final_answer>objective</final_answer>
+
+Input: peralta 's mythmaking could have used some informed , adult hindsight .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the woods have n't been this creepy since the blair witch project .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: firefighter gordon brewer is plunged into the complex and dangerous world of international terrorism after he loses his wife and child in a bombing credited to claudio `` the wolf `` perrini .
+Output: user
+<final_answer>objective</final_answer>
+
+Input: matches neorealism 's impact by showing the humanity of a war-torn land filled with people who just want to live their lives .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.6666666666666666,,,,,,,,,
 "Examine the given sentence and determine if it falls under the category of 'subjective' (expressing personal opinions, feelings, or assessments) or 'objective' (stating facts that are measurable and unbiased). Please ensure your response is structured as: <final_answer>your classification</final_answer>
 
 Input: without [ de niro ] , city by the sea would slip under the waves . he drags it back , single-handed .
@@ -1015,6 +1374,36 @@ Output: user
 <final_answer>subjective</final_answer>
 
 Input:",0.7666666666666667,0.8333333333333334,0.8,0.6333333333333333,,,,,,
+"Scrutinize each sentence to ascertain whether it conveys an objective fact, which is a statement that can be verified as true or false without any personal bias, or a subjective opinion, which is influenced by personal feelings, judgments, or viewpoints. Your assignment is to classify each sentence as either subjective or objective based on its content. Identify if the sentence is presenting an objective fact, a statement that can be proven true or false without personal bias, or a subjective opinion, which reflects personal feelings, judgments, or perspectives. Use your comprehension of subjective and objective language to tag each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it incorporates personal sentiments or evaluations. Please structure your response like this: <final_answer>your_classification</final_answer>.
+
+Input: after an attempt is made on his life by unknown gunmen , whom he kills them all using martal arts skills he did n't know he had , he learns that all of his dreams of a past life are real and that for the past three years he was raised by the couple after finding him in a river , half-dead with five bullet wounds in him .
+Output: <final_answer>objective</final_answer>
+
+Input: cac & # 225 ; , a vj who works for s & # 227 ; o paulo mtv , comes to rio de janeiro to make a report about a new band , whose members are poor and live in a slum called morro do alem & # 227 ; o .
+Output: user
+<final_answer>objective</final_answer>
+
+Input: suddenly , a young boy starts to become ill and starts to suffer from the same syndromes that regan from the fist movie suffered .
+Output: user
+<final_answer>objective</final_answer>
+
+Input:",0.7333333333333333,0.7333333333333333,,,,,,,,
+"Scrutinize each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false without regard to personal opinions, or a subjective opinion, which reflects personal feelings or assessments that can vary among individuals. Use your knowledge of subjective and objective language to decide if the sentence offers impartial, verifiable information or includes personal viewpoints and emotions. Your job is to categorize each sentence as either 'objective' or 'subjective', based on whether it provides unbiased, factual information or incorporates personal opinions, emotions, or evaluations. If the sentence is stated in a neutral, unbiased way, label it as 'objective'. If it contains personal feelings, evaluations, or critiques, label it as 'subjective'. Please present your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: without [ de niro ] , city by the sea would slip under the waves . he drags it back , single-handed .
+Output: user
+This sentence expresses a personal evaluation about the actor's performance and its impact on the film, which cannot be universally proven or measured. It includes subjective sentiments and critiques.
+
+<final_answer>subjective</final_answer>
+
+Input: well , jason 's gone to manhattan and hell , i guess a space station in the year 2455 can be crossed off the list of ideas for the inevitable future sequels ( hey , do n't shoot the messenger ) .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: henceforth , he will meet with unexpected situations that give him the idea for the perfect counterpoint in his plot of the absurd .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.6666666666666666,,,,,,,,,
 "Sentence classification task: Does the sentence state facts (objective) or express opinions/feelings (subjective)? Provide your answer using the format <final_answer>your_answer</final_answer>.
 
 Input: a somewhat crudely constructed but gripping , questing look at a person so racked with self-loathing , he becomes an enemy to his own race .
@@ -1066,6 +1455,74 @@ Input: the lizard , chaos , scar , heartless and sic inhabit the violent and oft
 Output: <final_answer>objective</final_answer>
 
 Input:",0.7333333333333333,0.8,0.7333333333333333,0.7333333333333333,0.7,0.6333333333333333,0.7333333333333333,0.6666666666666666,0.8,0.7666666666666667
+"Take a close look at each sentence to decide if it conveys an objective fact, which is a statement that can be proven true or false without any bias, or a subjective opinion, which is based on personal feelings, judgments, or assessments that can differ among individuals. Use your knowledge of subjective and objective language to tag each sentence as 'objective' if it is presented in a neutral, unbiased way, or 'subjective' if it includes personal feelings, judgments, or assessments. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: just on the other side of thirty , dave is an unemployed sculptor clumsily going nowhere in a small town .
+Output: <final_answer>objective</final_answer>
+
+Input: with nothing to go on but his dreams and gut instinct , vince launches into his own search for ellen . . . or is he really searching for sara ?
+Output: <final_answer>objective</final_answer>
+
+Input: an entertaining but unspectacular film . pretty goofy at times - but the slick and gleefully self-indulgent violence will not disappoint the action fan .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: this is scorsese 's finest work , and one of the best films of 2002 .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: two badly interlocked stories drowned by all too clever complexity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: after collateral damage , you might imagine that most every aggrieved father clichM-i has been unturned . but no .
+Output: user
+This sentence includes personal feelings and judgments, as it uses phrases like ""you might imagine"" and ""most every aggrieved father clichM-i has been unturned,"" which are not neutral or unbiased. Therefore, it is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: `` the best disney movie since the lion king ``
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: imagine the cleanflicks version of 'love story , ' with ali macgraw 's profanities replaced by romance-novel platitudes .
+Output: user
+The sentence describes a hypothetical scenario where a movie's content is altered to fit a specific standard, which inherently involves personal judgment and preference. Therefore, it is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input:",0.7,,,,,,,,,
+"Take a close look at each sentence to decide if it conveys an objective fact, which is a statement that can be proven true or false without any bias, or a subjective opinion, which is based on personal feelings, judgments, or assessments that can differ among individuals. Use your knowledge of subjective and objective language to tag each sentence as 'objective' if it is presented in a neutral, unbiased way, or 'subjective' if it includes personal feelings, judgments, or assessments. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: ken russell would love this . in one scene , we get a stab at soccer hooliganism , a double-barreled rip-off of quentin tarantino 's climactic shootout M-^W and meat loaf explodes .
+Output: user
+The given text is a mix of subjective opinions and references to specific scenes in a film. The statement ""ken russell would love this"" is a subjective opinion as it expresses a personal judgment about Ken Russell's taste. The rest of the sentence describes scenes from a film, which could be considered objective if they accurately represent the film's content. However, the use of phrases like ""stab at soccer hooliganism"" and ""rip-off of quentin tarantino's climactic shootout"" introduce subjective judgments about the quality or nature of these scenes. Therefore, the overall sentiment of the sentence is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: the tuxedo was n't just bad ; it was , as my friend david cross would call it , 'hungry-man portions of bad ' .
+Output: user
+This sentence is clearly subjective as it includes a personal judgment and uses a metaphorical expression (""hungry-man portions of bad"") to describe the quality of the tuxedo. It reflects the speaker's personal feelings and is not a neutral, unbiased statement.
+
+<final_answer>subjective</final_answer>
+
+Input: matches neorealism 's impact by showing the humanity of a war-torn land filled with people who just want to live their lives .
+Output: user
+The given sentence is expressing an interpretation or an evaluation of the impact of neorealism, which involves personal judgment and feelings. Therefore, it is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: and what makes lucky invaluable is his ability to teach mudd how to write again .
+Output: <final_answer>objective</final_answer>
+
+Input: the question is , will their lives change forever with the riches that come along with professional sports , or will they be destined to live a life in their home country , asking forever , what if ?
+Output: <final_answer>objective</final_answer>
+
+Input: this harrowing journey into combat hell vividly captures the chaotic insanity and personal tragedies that are all too abundant when human hatred spews forth unchecked .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.5666666666666667,,,,,,,,,
 "Task on identifying subjectivity: Analyze each sentence to ascertain whether it presents objective facts or subjective views and emotions. Please encapsulate your single-word response, either 'subjective' or 'objective', between <final_answer> </final_answer>.
 
 Input: when they goes to the fence to get them , they discover that someone stole them .
@@ -1142,12 +1599,384 @@ Input: god responds to his challenge and allows bruce to take on his powers to p
 Output: <final_answer>objective</final_answer>
 
 Input:",0.7333333333333333,0.8666666666666667,0.8,0.8,0.8,0.6333333333333333,,,,
+"The dataset comprises sentences marked as either subjective or objective. Your assignment is to classify each sentence as either subjective or objective according to its content. Identify whether the sentence conveys an objective fact, which is a statement that can be verified as true or false without personal bias, or a subjective opinion, which conveys personal feelings, judgments, or viewpoints. Scrutinize each sentence to determine if it communicates an objective fact (a statement that can be proven true or false) or a subjective opinion (a personal perspective that can differ from one individual to another). Utilize your comprehension of the distinction between subjective and objective language to categorize each sentence as either 'objective' (presenting information in a neutral, unbiased way) or 'subjective' (expressing personal sentiments, views, or evaluations). Your categorization should specify whether the sentence is 'subjective', indicating it expresses personal views or emotions, or 'objective', indicating it is based on facts and free from bias. Please structure your response as follows: <final_answer>your_classification</final_answer>.
+
+Input:",0.6333333333333333,,,,,,,,,
+"The dataset comprises sentences marked as either subjective or objective. Your assignment is to classify each sentence as either subjective or objective based on its content. Evaluate whether the sentence conveys objective facts that can be verified or subjective opinions, emotions, and judgments. Decide if the sentence offers an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which reflects personal feelings, judgments, or perspectives. Your classification should indicate whether the sentence is 'subjective', meaning it expresses personal views or emotions, or 'objective', meaning it is fact-based and unbiased. Please provide your response in the following format: <final_answer>your_classification</final_answer>.
+
+Input: wanker goths are on the loose ! run for your lives !
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: just when it seems martha 's influence may be having a favorable effect on greg 's attitude , his old ways win out .
+Output: <final_answer>objective</final_answer>
+
+Input: imagine the cleanflicks version of 'love story , ' with ali macgraw 's profanities replaced by romance-novel platitudes .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the documentary will combine an interview with mr . mcnamara discussing some of the tragedies and glories of the 20th century , archival footage , documents , and an original score by philip glass .
+Output: user
+This sentence describes the content of a documentary, including interviews, archival footage, documents, and an original score. These are factual elements that can be verified and do not express personal opinions or emotions. 
+
+<final_answer>objective</final_answer>
+
+Input: solaris `` is a shapeless inconsequential move relying on the viewer to do most of the work .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: `` the best disney movie since the lion king ``
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: isidor 's tortilla heaven is the best restaurant in new mexico maybe even the world .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.9,0.8,0.9666666666666667,0.7666666666666667,0.8666666666666667,0.7666666666666667,0.9,0.6333333333333333,0.8666666666666667,0.8
+"The dataset comprises sentences marked as either subjective or objective. Your assignment is to classify each sentence as either subjective or objective based on its content. Identify whether the sentence conveys an objective fact, which is a statement that can be verified as true or false without personal bias, or a subjective opinion, which conveys personal feelings, judgments, or viewpoints. Use your knowledge of subjective and objective language to thoroughly analyze each sentence to determine if it communicates an objective fact or a subjective opinion that is influenced by personal perspectives and can vary among individuals. Tag each sentence as 'objective' if it is presented in a neutral, unbiased manner, or 'subjective' if it incorporates personal sentiments, assessments, or critiques. Your classification should reveal whether the sentence is 'subjective', indicating it expresses personal views or emotions, or 'objective', indicating it is based on facts and free from bias. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: largely , this is a movie that also does it by the numbers .
+Output: user
+The sentence ""largely, this is a movie that also does it by the numbers"" suggests a personal assessment or opinion about the movie's approach or style, indicating it follows a formula or standard practices. This kind of statement is influenced by personal perspectives and can vary among individuals, making it subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: lieutenant hart must then defend the black pilot against charges before an obviously racist american tribunal ; unaware that the trial itself is only a front for the real secret of the prison camp .
+Output: <final_answer>objective</final_answer>
+
+Input: a london website designer ops out of her comfortable but ordinary relationship with a nice boyfriend when she forms a dangerously obsessive bond with a handsome , mysterious mountaineer , who turns out to have some secrets .
+Output: <final_answer>objective</final_answer>
+
+Input: after a drastic confrontation with the 'normal ' outside world that results in fighting and panic , the group breaks up .
+Output: user
+The sentence describes a scenario that includes specific events such as a confrontation, fighting, and panic, which are presented as occurrences rather than opinions. However, the use of the term 'normal' could be seen as subjective, as it implies a comparison to what is considered typical or standard, which can vary based on personal or cultural perspectives. Despite this, the core of the sentence is describing events that could be observed and verified, making it more aligned with an objective statement.
+
+<final_answer>objective</final_answer>
+
+Input: henceforth , he will meet with unexpected situations that give him the idea for the perfect counterpoint in his plot of the absurd .
+Output: <final_answer>objective</final_answer>
+
+Input: suffering from his flashbacks , vince does n't realize that ellen has also disappeared from the cemetery , right before his eyes .
+Output: user
+<final_answer>objective</final_answer>
+
+Input: but cousin roberto is n't the tough guy they 'd expected .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.6333333333333333,,,,,,,,,
+"The dataset comprises sentences marked as either subjective or objective. Your assignment is to classify each sentence as either subjective or objective based on its content. You need to decide if the sentence conveys an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which is a reflection of personal feelings, judgments, or perspectives. Carefully examine each sentence to determine if it presents an objective fact, which can be verified independently of personal opinions, or a subjective opinion, which conveys personal feelings or judgments. Use your understanding of subjective and objective language to label each sentence as 'objective' for statements that are neutral and unbiased, or 'subjective' for those that express personal sentiments or evaluations. Your classification should reveal whether the sentence is 'subjective', indicating it expresses personal views or emotions, or 'objective', indicating it is based on facts and free from bias. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: a london website designer ops out of her comfortable but ordinary relationship with a nice boyfriend when she forms a dangerously obsessive bond with a handsome , mysterious mountaineer , who turns out to have some secrets .
+Output: <final_answer>objective</final_answer>
+
+Input: when she fails to find the `` perfect man `` that will make her happy , she decides to construct him herself , using parts from different people .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.8333333333333334,0.8666666666666667,0.9666666666666667,0.8333333333333334,0.8,0.8,0.8666666666666667,0.8,0.8666666666666667,0.8333333333333334
+"The dataset comprises sentences marked as either subjective or objective. Your assignment is to classify each sentence as either subjective or objective based on its content. You need to decide if the sentence conveys an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which is a reflection of personal feelings, judgments, or perspectives. Carefully examine each sentence to determine if it presents an objective fact, which can be verified independently of personal opinions, or a subjective opinion, which conveys personal feelings or judgments. Use your understanding of subjective and objective language to label each sentence as 'objective' for statements that are neutral and unbiased, or 'subjective' for those that express personal sentiments or evaluations. Your classification should reveal whether the sentence is 'subjective', indicating it expresses personal views or emotions, or 'objective', indicating it is based on facts and free from bias. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: henceforth , he will meet with unexpected situations that give him the idea for the perfect counterpoint in his plot of the absurd .
+Output: <final_answer>objective</final_answer>
+
+Input: tartakovsky 's team has some freakish powers of visual charm , but the five writers slip into the modern rut of narrative banality .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: kids will love its fantasy and adventure , and grownups should appreciate its whimsical humor .
+Output: user
+The sentence ""kids will love its fantasy and adventure, and grownups should appreciate its whimsical humor."" expresses personal sentiments and evaluations about what different age groups might enjoy or appreciate. It is not a statement of fact that can be proven true or false without personal bias. Therefore, it is classified as subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: sad and alone , caroline wanders the exotic city in search of ansers , finality , and peace of mind .
+Output: <final_answer>objective</final_answer>
+
+Input: but he 's neglecting his work , carping at his mom , and behaving badly toward his loyal friend bobbi .
+Output: <final_answer>objective</final_answer>
+
+Input: with nothing to go on but his dreams and gut instinct , vince launches into his own search for ellen . . . or is he really searching for sara ?
+Output: <final_answer>objective</final_answer>
+
+Input: first kammy meets the 40-year-old danny ( dave wong ) and falls head over heels .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.9,0.7333333333333333,0.8666666666666667,0.7666666666666667,0.6333333333333333,,,,,
+"The dataset comprises sentences marked as either subjective or objective. Your assignment is to classify each sentence as either subjective or objective based on its content. You need to determine if the sentence conveys an objective fact, which is a statement that can be verified as true or false without any personal bias, or a subjective opinion, which conveys personal feelings, judgments, or viewpoints. Scrutinize each sentence to decide whether it presents an objective fact (a claim that can be proven true or false independently of personal opinions) or a subjective opinion (a personal assessment that can differ from one individual to another). Your classification should specify whether the sentence is 'subjective', indicating it expresses personal views or emotions, or 'objective', indicating it is based on facts and free from bias. Please structure your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: an absurd comedy about a parking enforcement officer , who - despite constant abuse from the public - finds truth , honour and serenity in the act of ticketing .
+Output: <final_answer>objective</final_answer>
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: amelia is a jaded top model , nina is a midwestern innocent on her first trip , fernanda is a bisexual supermodel , ellie is the calm , sensible stylist .
+Output: <final_answer>objective</final_answer>
+
+Input: this is scorsese 's finest work , and one of the best films of 2002 .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: an absurd comedy about a parking enforcement officer , who - despite constant abuse from the public - finds truth , honour and serenity in the act of ticketing .
+Output: <final_answer>objective</final_answer>
+
+Input: bluer than the atlantic and more biologically detailed than an autopsy , the movie . . . is , also , frequently hilarious .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.7666666666666667,0.7,,,,,,,,
+"The dataset comprises sentences marked as either subjective or objective. Your assignment is to classify each sentence as either subjective or objective, depending on its content. Carefully examine each sentence to ascertain if it conveys an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which is a reflection of personal feelings, emotions, or judgments that can differ from one person to another. Use your comprehension of subjective and objective language to determine whether the sentence is presenting unbiased, verifiable information or incorporating personal views and emotions. Your classification should indicate whether the sentence is 'subjective', meaning it expresses personal views or emotions, or 'objective', meaning it is fact-based and unbiased. If the sentence is presented in a neutral, unbiased manner, classify it as 'objective'. If it includes personal feelings, assessments, or critiques, classify it as 'subjective'. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: a murder in the camp gives him the chance to set a risky plan in motion .
+Output: user
+The sentence ""a murder in the camp gives him the chance to set a risky plan in motion."" describes an event and its consequence in a neutral, factual manner. There are no personal feelings, emotions, or judgments expressed within the sentence. Therefore, it can be classified as objective.
+
+<final_answer>objective</final_answer>
+
+Input: a london website designer ops out of her comfortable but ordinary relationship with a nice boyfriend when she forms a dangerously obsessive bond with a handsome , mysterious mountaineer , who turns out to have some secrets .
+Output: <final_answer>objective</final_answer>
+
+Input: largely , this is a movie that also does it by the numbers .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the affectionate loopiness that once seemed congenital to demme 's perspective has a tough time emerging from between the badly dated cutesy-pie mystery scenario and the newfangled hollywood post-production effects .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: this is a film version of the play they wrote based on more than 200 interviews they conducted in laramie .
+Output: user
+Let's analyze the sentence: ""This is a film version of the play they wrote based on more than 200 interviews they conducted in Laramie.""
+
+- The sentence provides factual information about the origin of the film, stating that it is based on a play, which in turn is based on interviews conducted in Laramie.
+- It does not express any personal feelings, emotions, or judgments.
+- The information can be verified and is presented in a neutral manner.
+
+Based on this analysis, the sentence is conveying unbiased, verifiable information.
+
+<final_answer>objective</final_answer>
+
+Input: too stagey , talky -- and long -- for its own good .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.7,,,,,,,,,
 "The dataset comprises sentences marked as either subjective or objective. Your assignment is to scrutinize each sentence and classify it as either 'subjective', indicating it conveys personal opinions or emotions, or 'objective', indicating it provides verifiable facts without personal bias. Decide whether the sentence offers an objective fact, which is a statement that can be proven true or false independently of personal views, or a subjective opinion, which is a reflection of personal sentiments or perspectives. Please place your classification within the markers <final_answer>your_classification</final_answer>.
 
 Input: first kammy meets the 40-year-old danny ( dave wong ) and falls head over heels .
 Output: <final_answer>objective</final_answer>
 
 Input:",0.6666666666666666,,,,,,,,,
+"The dataset comprises sentences marked as either subjective or objective. Your mission is to meticulously examine each sentence to ascertain whether it conveys an objective fact, defined as a statement that can be proven true or false, or a subjective opinion, characterized by personal perspectives that can differ from person to person. Employ your understanding of subjective and objective language to label each sentence as 'objective' if it is expressed in a neutral, unbiased way, or 'subjective' if it reflects personal sentiments, evaluations, or opinions. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: two badly interlocked stories drowned by all too clever complexity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: first kammy meets the 40-year-old danny ( dave wong ) and falls head over heels .
+Output: <final_answer>objective</final_answer>
+
+Input: after an attempt is made on his life by unknown gunmen , whom he kills them all using martal arts skills he did n't know he had , he learns that all of his dreams of a past life are real and that for the past three years he was raised by the couple after finding him in a river , half-dead with five bullet wounds in him .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7333333333333333,0.8,,,,,,,,
+"The dataset comprises sentences that are marked as either subjective or objective. Your assignment is to evaluate each sentence and ascertain whether it is subjective or objective. You need to decide if the sentence is conveying objective facts that can be verified or subjective opinions, emotions, and judgments. Specifically, determine if the sentence is stating an objective fact, which is a claim that can be proven true or false without personal bias, or a subjective opinion, which is a reflection of personal feelings, judgments, or perspectives. Examine each sentence to decide if it is presenting a neutral and unbiased statement or if it is expressing personal sentiments or evaluations. Use your understanding of subjective and objective language to categorize each sentence as 'objective' for statements that are based on facts and free from bias, or 'subjective' for those that express personal views or emotions. Carefully analyze each sentence to determine if it is conveying an objective fact, which is a statement that can be verified as true or false, or a subjective opinion, which reflects a personal viewpoint that can vary among individuals. Please encapsulate your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: the stars may be college kids , but the subject matter is as adult as you can get : the temptations of the flesh are unleashed by a slightly crazed , overtly determined young woman and a one-night swim turns into an ocean of trouble .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: with nothing to go on but his dreams and gut instinct , vince launches into his own search for ellen . . . or is he really searching for sara ?
+Output: <final_answer>objective</final_answer>
+
+Input: as reality bleeds into hallucination , rothko decides to take the man for a walk . . .
+Output: <final_answer>objective</final_answer>
+
+Input: his father , aglanar , was happy at his birth that he would have a strong and honorable son to carry on the traditions of the valley .
+Output: <final_answer>objective</final_answer>
+
+Input: it 's a celebration of self-confidence and a slap in the face of a society that cherises impossibly unnatural physical perfection .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the remaining friends must now rescue the captives , while desperately trying to avoid the long arm of the law .
+Output: <final_answer>objective</final_answer>
+
+Input: suffers from the lack of a compelling or comprehensible narrative . still , as a visual treat , the film is almost unsurpassed .
+Output: user
+Let's analyze the given sentence:
+
+""suffers from the lack of a compelling or comprehensible narrative. still, as a visual treat, the film is almost unsurpassed.""
+
+The first part of the sentence, ""suffers from the lack of a compelling or comprehensible narrative,"" expresses a subjective opinion. It reflects a personal judgment about the quality of the narrative in the film, which can vary from person to person.
+
+The second part, ""as a visual treat, the film is almost unsurpassed,"" also conveys a subjective opinion. It expresses a personal view on the visual aspects of the film, which can be appreciated differently by different viewers.
+
+Since both parts of the sentence express personal judgments and opinions, the overall sentence is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input:",0.7333333333333333,,,,,,,,,
+"The dataset comprises sentences that are marked as either subjective or objective. Your assignment is to evaluate each sentence and ascertain whether it is subjective or objective. You need to decide if the sentence is conveying objective facts that can be verified or subjective opinions, emotions, and judgments. Specifically, determine if the sentence is stating an objective fact, which is a claim that can be proven true or false without personal bias, or a subjective opinion, which is a reflection of personal feelings, judgments, or perspectives. Examine each sentence to decide if it is presenting a neutral and unbiased statement or if it is expressing personal sentiments or evaluations. Use your understanding of subjective and objective language to categorize each sentence as 'objective' for statements that are based on facts and free from bias, or 'subjective' for those that express personal views or emotions. Carefully analyze each sentence to determine if it is conveying an objective fact, which is a statement that can be verified as true or false, or a subjective opinion, which reflects a personal viewpoint that can vary among individuals. Please encapsulate your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: thekids will probably stay amused at the kaleidoscope of big , colorful characters . mom and dad can catch some quality naptime along the way .
+Output: user
+This sentence expresses personal feelings and judgments about the potential for kids to be amused and parents to catch a nap. It is not presenting a neutral, verifiable fact but rather a subjective opinion on the experience. 
+
+<final_answer>subjective</final_answer>
+
+Input: land , people and narrative flow together in a stark portrait of motherhood deferred and desire explored .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: bluer than the atlantic and more biologically detailed than an autopsy , the movie . . . is , also , frequently hilarious .
+Output: user
+This sentence contains several subjective elements. The comparison of the movie to the blueness of the Atlantic and the biological detail of an autopsy is a subjective opinion, as these are not literal comparisons but rather a way to express the depth and detail of the film. Additionally, the statement that the movie is ""frequently hilarious"" is also subjective, as humor is a personal experience and can vary from person to person. 
+
+<final_answer>subjective</final_answer>
+
+Input: ronnie schwann , a young man regarded as `` slow , `` has affections for sarah , a young woman who stays at hope house , a facility for the mentally ill .
+Output: user
+<final_answer>objective</final_answer> 
+
+The sentence provides factual information about Ronnie Schwann and Sarah, including their relationship status and the location where Sarah resides. While the term ""slow"" may carry subjective connotations, the sentence itself is primarily conveying objective information that can be verified.
+
+Input: the documentary will combine an interview with mr . mcnamara discussing some of the tragedies and glories of the 20th century , archival footage , documents , and an original score by philip glass .
+Output: user
+This sentence describes the content of a documentary, including interviews, archival footage, documents, and an original score. These are factual elements that can be verified and do not express personal opinions or feelings. Therefore, the sentence is objective.
+
+<final_answer>objective</final_answer>
+
+Input: two badly interlocked stories drowned by all too clever complexity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: after a drastic confrontation with the 'normal ' outside world that results in fighting and panic , the group breaks up .
+Output: user
+The sentence describes a scenario that includes specific events such as a confrontation, fighting, and panic, leading to the group breaking up. While these events are described in a way that might imply certain emotions or reactions, the sentence itself is reporting on a sequence of events rather than expressing a personal opinion or judgment. Therefore, it can be considered an objective statement as it describes actions and events without explicitly conveying personal feelings or evaluations.
+
+<final_answer>objective</final_answer>
+
+Input: a vivid , spicy footnote to history , and a movie that grips and holds you in rapt attention from start to finish .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.43333333333333335,,,,,,,,,
+"The dataset comprises sentences that are marked as either subjective or objective. Your assignment is to evaluate each sentence and decide whether it is subjective or objective. Determine if the sentence is conveying objective facts that can be verified or subjective opinions, emotions, and judgments. Your goal is to discern if the sentence is presenting an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which reflects personal feelings, judgments, or perspectives. Examine each sentence to determine if it is neutral and unbiased, or if it conveys personal sentiments or evaluations. Use your understanding of subjective and objective language to label each sentence as 'objective' for statements that are based on facts and free from bias, or 'subjective' for those that express personal views or emotions. Your classification should indicate whether the sentence is 'subjective', meaning it expresses personal views or emotions, or 'objective', meaning it is based on facts and free from bias. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: ken russell would love this . in one scene , we get a stab at soccer hooliganism , a double-barreled rip-off of quentin tarantino 's climactic shootout M-^W and meat loaf explodes .
+Output: user
+ 
+<final_answer>subjective</final_answer>
+
+Input: but sometimes what we teach our children can be as deadly as not teaching them .
+Output: <final_answer>objective</final_answer>
+
+Input: sure , there are flaws , but the moments that do things properly see the screen burst with confidence , rhythm , heat and pizzazz .
+Output: user
+The sentence provided is an expression of personal views and emotions regarding a film or performance. Words like ""flaws,"" ""confidence,"" ""rhythm,"" ""heat,"" and ""pizzazz"" are subjective terms that convey the writer's feelings and judgments rather than stating verifiable facts. Therefore, the sentence is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: herzog , a man of detail became enraptured with his subject and was unable to use his editing shears .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.7,,,,,,,,,
+"The dataset comprises sentences that are marked as either subjective or objective. Your assignment is to evaluate each sentence and decide whether it is subjective or objective. Determine if the sentence is conveying objective facts that can be verified or subjective opinions, emotions, and judgments. Your goal is to discern if the sentence is presenting an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which reflects personal feelings, judgments, or perspectives. Examine each sentence to determine if it is neutral and unbiased, or if it conveys personal sentiments or evaluations. Use your understanding of subjective and objective language to label each sentence as 'objective' for statements that are based on facts and free from bias, or 'subjective' for those that express personal views or emotions. Your classification should indicate whether the sentence is 'subjective', meaning it expresses personal views or emotions, or 'objective', meaning it is based on facts and free from bias. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: the advantage of a postapocalyptic setting is that it can be made on the cheap . any rock pile will do for a set . reign of fire has the disadvantage of also looking cheap .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: god responds to his challenge and allows bruce to take on his powers to prove himself .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7333333333333333,0.8666666666666667,0.8666666666666667,0.7,,,,,,
+"The dataset comprises sentences that are marked as either subjective or objective. Your assignment is to evaluate each sentence and decide whether it is subjective or objective. Determine if the sentence is conveying objective facts that can be verified or subjective opinions, emotions, and judgments. Your goal is to discern if the sentence is presenting an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which reflects personal feelings, judgments, or perspectives. Examine each sentence to determine if it is neutral and unbiased, or if it conveys personal sentiments or evaluations. Use your understanding of subjective and objective language to label each sentence as 'objective' for statements that are based on facts and free from bias, or 'subjective' for those that express personal views or emotions. Your classification should indicate whether the sentence is 'subjective', meaning it expresses personal views or emotions, or 'objective', meaning it is based on facts and free from bias. Please provide your answer in this format: <final_answer>your_classification</final_answer>.
+
+Input: smart , sassy interpretation of the oscar wilde play .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the tuxedo was n't just bad ; it was , as my friend david cross would call it , 'hungry-man portions of bad ' .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: by presenting an impossible romance in an impossible world , pumpkin dares us to say why either is impossible -- which forces us to confront what 's possible and what we might do to make it so .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user <final_answer>subjective</final_answer>.
+
+Input: a documentary seven years in the making about women in the film business and how they balance , children , love lives and career -- or how they do n't .
+Output: user
+<final_answer>objective</final_answer>
+
+The sentence describes a documentary and its subject matter, which is factual in nature. It does not express personal opinions or emotions, but rather provides information about the content of the documentary. Therefore, it is classified as 'objective'. However, the phrase ""how they balance"" could imply a subjective view on what constitutes a good balance, but the overall sentence is more inclined towards being an objective description of the documentary's content.
+
+Input:",0.8,0.9,0.9,0.7666666666666667,0.8,0.7666666666666667,0.7333333333333333,,,
+"The dataset comprises sentences that are marked as either subjective or objective. Your assignment is to meticulously examine each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which is a personal assessment that can differ from person to person. Your goal is to discern whether the sentence is presenting objective information that can be verified or subjective viewpoints, emotions, and judgments. Evaluate if the sentence is stating an objective fact, which is a claim that can be substantiated without personal bias, or a subjective opinion, which is a reflection of personal feelings, judgments, or perspectives. Carefully analyze each sentence to decide if it is impartial and unbiased, or if it conveys personal sentiments or evaluations. Use your understanding of subjective and objective language to categorize each sentence as 'objective' for statements that are based on facts and devoid of bias, or 'subjective' for those that express personal views or emotions. Please encapsulate your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: in today 's world of facts and figures about smoking related illness and death , one element is greatly overlooked , the consequences that smoking has on the family .
+Output: <final_answer>objective</final_answer>
+
+Input: his family decides to go back on a holiday to india for 2 weeks , when tina discovers the truth about pooja 's e-mails , they decide together that tina will play along with the charade .
+Output: user星巴特：
+assistant星巴特：
+assistant
+The given sentence describes a series of events and decisions made by characters, which are specific occurrences and can be considered as factual within the context they are presented. There is no clear expression of personal feelings, judgments, or perspectives that would make it subjective. Therefore, it can be classified as an objective statement.
+
+<final_answer>objective</final_answer>
+
+Input: marco and melanie , a young married couple , are living a life of passion , with chaotic situations , and all the little frustrations of daily life .
+Output: <final_answer>objective</final_answer>
+
+Input: this is scorsese 's finest work , and one of the best films of 2002 .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: at the end of the worst day of his life , bruce angrily ridicules and rages against god and god responds .
+Output: <final_answer>objective</final_answer>
+
+Input: the affectionate loopiness that once seemed congenital to demme 's perspective has a tough time emerging from between the badly dated cutesy-pie mystery scenario and the newfangled hollywood post-production effects .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: soon , annie 's condition helps leoncio 's children realize the essence of a family .
+Output: <final_answer>objective</final_answer>
+
+Input: a player in a famous orchestra finds sexual experiences with a russian opera singer , which he enjoys much because his wife has just left due to the fact that he has purchased a porno movie .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.8,0.8333333333333334,0.9666666666666667,0.8333333333333334,0.8666666666666667,0.8666666666666667,0.9333333333333333,0.8333333333333334,0.9,0.8
+"The dataset comprises sentences that are marked as either subjective or objective. Your assignment is to scrutinize each sentence and classify it as either subjective or objective based on its content. You need to determine if the sentence conveys an objective fact, which is a statement that can be verified as true or false without any personal bias, or a subjective opinion, which is a reflection of personal feelings, judgments, or perspectives. Examine each sentence to decide if it is neutral and unbiased or if it conveys personal sentiments or evaluations. Use your understanding of subjective and objective language to label each sentence as 'objective' if it is based on facts and free from bias, or 'subjective' if it expresses personal views or emotions. Your classification should reveal whether the sentence is 'subjective', indicating it expresses personal views or emotions, or 'objective', indicating it is fact-based and unbiased. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: he falls for hunky diner owner matt , who falls just as hard back .
+Output: <final_answer>objective</final_answer>
+
+Input: cac & # 225 ; , a vj who works for s & # 227 ; o paulo mtv , comes to rio de janeiro to make a report about a new band , whose members are poor and live in a slum called morro do alem & # 227 ; o .
+Output: user
+The sentence provided is a statement of facts: it describes the role of a person (a VJ for São Paulo MTV), her action (coming to Rio de Janeiro), and the purpose of her action (to report on a new band). It also provides factual information about the band members (they are poor and live in a specific location). There are no expressions of personal opinions or feelings in this sentence. Therefore, the classification for this sentence is 'objective'.
+
+<final_answer>objective</final_answer>
+
+Input: a london website designer ops out of her comfortable but ordinary relationship with a nice boyfriend when she forms a dangerously obsessive bond with a handsome , mysterious mountaineer , who turns out to have some secrets .
+Output: <final_answer>objective</final_answer>
+
+Input: it 's a celebration of self-confidence and a slap in the face of a society that cherises impossibly unnatural physical perfection .
+Output: user
+Let's analyze the sentence: ""It's a celebration of self-confidence and a slap in the face of a society that cherishes impossibly unnatural physical perfection.""
+
+- ""It's a celebration of self-confidence"" - This part of the sentence expresses a personal view or interpretation of what something is, rather than stating a verifiable fact.
+- ""a slap in the face of a society that cherishes impossibly unnatural physical perfection"" - This part also conveys a subjective opinion about society's values and what it cherishes, which is not a neutral or unbiased statement.
+
+Given that the sentence conveys personal feelings and judgments about what something represents and how society values certain things, it is clear that the sentence is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input:",0.7,,,,,,,,,
 "The dataset comprises sentences that are marked as either subjective or objective. Your job is to sort each sentence into one of these categories. Identify whether the sentence is 'subjective', which means it includes opinions, emotions, or judgments, or 'objective', which means it is based on facts and free from personal bias. Make sure to wrap your final decision with these tags: <final_answer>your classification here</final_answer>.
 
 Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
@@ -1168,6 +1997,22 @@ Input: rio danisworo ( marcellius siahaan ) is a rigid `` all about business `` 
 Output: <final_answer>objective</final_answer>
 
 Input:",0.7666666666666667,0.8666666666666667,0.8666666666666667,0.7666666666666667,0.8333333333333334,0.8,0.8333333333333334,0.7,0.8,0.8666666666666667
+"The dataset comprises sentences that are tagged as either subjective or objective. Your assignment is to evaluate each sentence and classify it as either subjective or objective. Determine if the sentence is conveying objective facts that can be verified or subjective opinions, emotions, and judgments. Your goal is to discern whether the sentence is stating an objective fact, which is a claim that can be proven true or false without personal bias, or a subjective opinion, which is a reflection of personal feelings, judgments, or perspectives. Carefully examine each sentence to decide if it is presenting an unbiased, neutral statement or if it is expressing personal sentiments or evaluations. Use your understanding of the difference between subjective and objective language to label each sentence as 'objective' for statements that are based on verifiable facts and free from personal bias, or 'subjective' for those that express personal views or emotions. Your classification should reveal whether the sentence is an objective fact or a subjective opinion. The classification should be enclosed within the markers <final_answer>answer</final_answer>.
+
+Input: sure , there are flaws , but the moments that do things properly see the screen burst with confidence , rhythm , heat and pizzazz .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: this event leads to deep thoughts about marriage , friendship , relationships and last not least life itself .
+Output: <final_answer>objective</final_answer>
+
+Input: there 's only one thing his cousin did n't tell him . . .
+Output: <final_answer>objective</final_answer>
+
+Input: but for trey segal , that dream comes at a cost .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.6666666666666666,0.7333333333333333,,,,,,,,
 "The dataset includes sentences categorized as either subjective or objective. Your task is to determine the nature of each sentence, identifying if it is subjective—containing opinions, feelings, or assessments—or objective—founded on facts and devoid of personal bias. Please encapsulate your classification using these markers: <final_answer>your classification here</final_answer>.
 
 Input: the story of a normal family in which come out the dreams of those who have lost their possibilities and of those who want to realize them .
@@ -1279,6 +2124,109 @@ Output: user
 <final_answer>subjective</final_answer>
 
 Input:",0.6666666666666666,0.7,,,,,,,,
+"The dataset includes sentences that are categorized as either subjective or objective. Your task is to analyze each sentence and determine if it is subjective or objective. Consider whether the sentence presents an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which is a personal viewpoint that can vary from person to person. Use your understanding of subjective and objective language to label each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it conveys personal feelings, judgments, or evaluations. Your classification should indicate whether the sentence is 'subjective', meaning it expresses personal views or emotions, or 'objective', meaning it is based on facts and free from personal bias. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: a hip ride into hyper-time , clockstoppers is a lively and enjoyable adventure for all ages at any time .
+Output: user
+Let's analyze the sentence: ""A hip ride into hyper-time, Clockstoppers is a lively and enjoyable adventure for all ages at any time.""
+
+This sentence contains evaluative language such as ""lively and enjoyable,"" which reflects personal opinions or feelings about the movie ""Clockstoppers."" The use of such terms indicates a subjective viewpoint rather than an objective fact. Therefore, the sentence is expressing a personal judgment about the movie's qualities and appeal.
+
+<final_answer>subjective</final_answer>
+
+Input: a vivid , spicy footnote to history , and a movie that grips and holds you in rapt attention from start to finish .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: adapted from a monologue in his `` blue jam `` radio series , chris morris ' first short film is a haunting black comedy about a man who no longer uses his name because he 's decided he 's ceased to deserve one , and a dog called rothko who says he is the man 's lawyer .
+Output: <final_answer>objective</final_answer>
+
+Input: the stars may be college kids , but the subject matter is as adult as you can get : the temptations of the flesh are unleashed by a slightly crazed , overtly determined young woman and a one-night swim turns into an ocean of trouble .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: his father , aglanar , was happy at his birth that he would have a strong and honorable son to carry on the traditions of the valley .
+Output: <final_answer>objective</final_answer>
+
+Input: this event leads to deep thoughts about marriage , friendship , relationships and last not least life itself .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.6666666666666666,,,,,,,,,
+"The dataset includes sentences that are categorized as either subjective or objective. Your task is to analyze each sentence and determine if it is subjective or objective. Identify whether the sentence conveys objective facts that can be verified or subjective opinions, emotions, and judgments. Decide if the sentence is presenting an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which reflects personal feelings, judgments, or perspectives. Scrutinize each sentence to ascertain if it is neutral and unbiased, or if it conveys personal sentiments or evaluations. Utilize your comprehension of subjective and objective language to label each sentence as 'objective' for statements that are based on facts and free from bias, or 'subjective' for those that express personal views or emotions. Your classification should indicate whether the sentence is 'subjective', meaning it expresses personal views or emotions, or 'objective', meaning it is based on facts and free from bias. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user <final_answer>subjective</final_answer>.
+
+Input:",0.8333333333333334,0.8666666666666667,0.9,0.8333333333333334,0.8666666666666667,0.8,0.8333333333333334,0.7,0.8666666666666667,0.8666666666666667
+"The dataset includes sentences that are categorized as either subjective or objective. Your task is to analyze each sentence and determine if it is subjective or objective. Identify whether the sentence is presenting an objective fact, which is a statement that can be proven true or false without any personal bias, or a subjective opinion, which reflects personal feelings, judgments, or perspectives. Scrutinize each sentence to decide if it conveys an objective fact, a verifiable statement, or a subjective opinion, a personal viewpoint that can differ from person to person. Utilize your comprehension of subjective and objective language to tag each sentence as 'objective' for neutral and unbiased statements, or 'subjective' for those that include personal sentiments or assessments. Your classification should indicate whether the sentence is 'subjective', meaning it expresses personal views or emotions, or 'objective', meaning it is based on facts and devoid of bias. Please provide your answer in this format: <final_answer>your_classification</final_answer>.
+
+Input: his odyssey finally leads him onto a theatre stage .
+Output: <final_answer>objective</final_answer>
+
+Input: steven soderbergh 's digital video experiment is a clever and cutting , quick and dirty look at modern living and movie life .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: after a dream of a horrific car crash , kimberly helps save several people and causes another rift in death 's design , but this time its different , since alex walked off the plane death 's design did not only affect the survivors of flight 180 , but every single person they 've come in contact with , now how will they stop it ?
+Output: <final_answer>objective</final_answer>
+
+Input: they do n't see eye-to-eye on clothes , hair , music , and certainly not in each other 's taste in men .
+Output: <final_answer>objective</final_answer>
+
+Input: after collateral damage , you might imagine that most every aggrieved father clichM-i has been unturned . but no .
+Output: user
+This sentence expresses a personal viewpoint and uses subjective language such as ""you might imagine"" and ""most every aggrieved father clichM-i has been unturned,"" which implies a personal judgment or feeling. Therefore, it is not presenting a verifiable fact but rather a subjective opinion.
+
+<final_answer>subjective</final_answer>
+
+Input: it 's exactly the kind of movie toback 's detractors always accuse him of making .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: a documentary seven years in the making about women in the film business and how they balance , children , love lives and career -- or how they do n't .
+Output: user
+<final_answer>objective</final_answer>
+
+Input:",0.8333333333333334,0.8666666666666667,0.9,0.8,0.8,0.9,0.9333333333333333,0.7666666666666667,0.8666666666666667,0.8
+"The dataset includes sentences that are categorized as either subjective or objective. Your task is to analyze each sentence and determine if it is subjective or objective. Identify whether the sentence is presenting an objective fact, which is a statement that can be proven true or false without any personal bias, or a subjective opinion, which reflects personal feelings, judgments, or perspectives. Scrutinize each sentence to decide if it conveys an objective fact, a verifiable statement, or a subjective opinion, a personal viewpoint that can differ from person to person. Utilize your comprehension of subjective and objective language to tag each sentence as 'objective' for neutral and unbiased statements, or 'subjective' for those that include personal sentiments or assessments. Your classification should indicate whether the sentence is 'subjective', meaning it expresses personal views or emotions, or 'objective', meaning it is based on facts and devoid of bias. Please provide your answer in this format: <final_answer>your_classification</final_answer>.
+
+Input: peralta 's mythmaking could have used some informed , adult hindsight .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the world around him seemingly comes to a stop ; everything and everybody becomes frozen in time .
+Output: <final_answer>objective</final_answer>
+
+Input: firefighter gordon brewer is plunged into the complex and dangerous world of international terrorism after he loses his wife and child in a bombing credited to claudio `` the wolf `` perrini .
+Output: user
+<final_answer>objective</final_answer>
+
+Input:",0.8,0.8666666666666667,0.7333333333333333,0.7666666666666667,0.7,,,,,
+"The dataset includes sentences that are categorized as either subjective or objective. Your task is to analyze each sentence and determine whether it is subjective or objective. Use your knowledge of subjective and objective language to carefully assess each sentence to decide if it presents an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which is a personal perspective that can vary from person to person. Tag each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it includes personal feelings, judgments, or critiques. Your classification should indicate whether the sentence is 'subjective', meaning it conveys personal views or emotions, or 'objective', meaning it is based on facts and lacks bias. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: there is the mother and the father , who do n't seem to have a normal marriage anymore , there 's the daughter , lena , who has a disease and will soon leave the house for medical treatment in switzerland , and her husband harry , who has a mysterious past .
+Output: <final_answer>objective</final_answer>
+
+Input: . . . comes alive only when it switches gears to the sentimental .
+Output: <final_answer>subjective</final_answer>
+
+Input: are the experiences of the main character profound , or simply routine ?
+Output: <final_answer>objective</final_answer>
+
+Input: the actors do n't inhabit their roles -- they 're trapped by them , forced to change behavior in bizarre unjustified fashion and spout dialog that consists mostly of platitudes .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: without [ de niro ] , city by the sea would slip under the waves . he drags it back , single-handed .
+Output: user
+This sentence expresses a personal evaluation about the actor's performance and its impact on the film, which cannot be universally proven or measured. It includes subjective sentiments and critiques.
+
+<final_answer>subjective</final_answer>
+
+Input: a london website designer ops out of her comfortable but ordinary relationship with a nice boyfriend when she forms a dangerously obsessive bond with a handsome , mysterious mountaineer , who turns out to have some secrets .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7333333333333333,0.8666666666666667,0.8333333333333334,,,,,,,
 "The dataset includes sentences that are categorized as either subjective or objective. Your task is to classify each sentence into one of these two categories. Carefully examine each sentence to ascertain whether it presents an objective fact (a statement that can be proven true or false) or a subjective opinion (a personal perspective that may vary from person to person). Determine if the sentence is 'subjective', indicating it contains personal opinions, emotions, or judgments, or 'objective', meaning it is based on verifiable facts and lacks personal bias. Using your understanding of the difference between subjective and objective language, decide if the sentence is objective (conveys information without personal bias) or subjective (expresses personal feelings, opinions, or judgments). Please provide your classification in this format: <final_answer>your_classification</final_answer>.
 
 Input: however , soon they have the cops and the anti-terror corps on their tails .
@@ -1444,6 +2392,30 @@ Input: scott calvin ( tim allen ) has been santa claus for the past eight years 
 Output: user思维过载错误，无法生成答案。请稍后重试。
 
 Input:",0.7333333333333333,0.8,0.7666666666666667,0.8,0.7666666666666667,0.7333333333333333,0.7666666666666667,0.6333333333333333,0.7333333333333333,0.6666666666666666
+"The dataset includes sentences that are tagged as either subjective or objective. Your job is to identify whether each sentence is subjective or objective based on its content. Determine if the sentence is presenting objective facts that can be verified or subjective opinions, emotions, and judgments. Please submit your response in this format: <final_answer>your_classification</final_answer>. Scrutinize each sentence to ascertain if it conveys an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which reflects personal feelings, judgments, or perspectives. Your classification should indicate whether the sentence is 'subjective', meaning it expresses personal views or emotions, or 'objective', meaning it is based on facts and free from bias.
+
+Input: when she fails to find the `` perfect man `` that will make her happy , she decides to construct him herself , using parts from different people .
+Output: <final_answer>objective</final_answer>
+
+Input: the woods have n't been this creepy since the blair witch project .
+Output: user
+Let's analyze the sentence: ""the woods have n't been this creepy since the blair witch project.""
+
+This sentence expresses a feeling or judgment about the woods being creepy, comparing it to the atmosphere created in the movie ""The Blair Witch Project."" The use of the term ""creepy"" is a subjective description, as it pertains to a feeling or perception that can vary from person to person. Additionally, the comparison to a movie is a reference that adds a subjective element to the statement.
+
+<final_answer>subjective</final_answer>
+
+Input: welles groupie/scholar peter bogdanovich took a long time to do it , but he 's finally provided his own broadside at publishing giant william randolph hearst .
+Output: user
+
+<final_answer>subjective</final_answer> 
+
+The sentence expresses a personal perspective on the actions and timing of Peter Bogdanovich, indicating a subjective opinion rather than an objective fact.
+
+Input: a london website designer ops out of her comfortable but ordinary relationship with a nice boyfriend when she forms a dangerously obsessive bond with a handsome , mysterious mountaineer , who turns out to have some secrets .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7666666666666667,0.9,0.8333333333333334,0.7,,,,,,
 "Thoroughly analyze each sentence to ascertain if it conveys an objective fact (information that is verifiable and unbiased) or a subjective viewpoint (personal feelings, assessments, or emotions that can differ among individuals). Your job is to label each sentence as either 'objective' or 'subjective'. Please encapsulate your classification in this manner: <final_answer>your_classification</final_answer>.
 
 Input: an incredibly irritating comedy about thoroughly vacuous people . . . manages to embody the worst excesses of nouvelle vague without any of its sense of fun or energy .
@@ -1516,6 +2488,140 @@ The sentence contains evaluative terms such as ""great"" and ""wonderful,"" whic
 <final_answer>subjective</final_answer>
 
 Input:",0.7,0.8333333333333334,0.8,0.8333333333333334,0.8,0.7666666666666667,0.8,0.7666666666666667,0.7666666666666667,0.7333333333333333
+"Thoroughly analyze each sentence to ascertain whether it presents an objective fact, which is a statement that can be proven true or false without regard to personal opinions, or a subjective opinion, which is a personal viewpoint that may vary from person to person. Use your knowledge of the differences between subjective and objective language to tag each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it includes personal feelings, judgments, or evaluations. Your job is to classify each sentence as either 'objective' or 'subjective', indicating whether it consists of unbiased, verifiable information or includes personal opinions, emotions, or assessments. Please provide your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: they do n't see eye-to-eye on clothes , hair , music , and certainly not in each other 's taste in men .
+Output: <final_answer>objective</final_answer>
+
+Input: now he thinks he is seeing things that are n't there and if things do n't improve , she will take their only son and leave .
+Output: <final_answer>objective</final_answer>
+
+Input: with nothing to go on but his dreams and gut instinct , vince launches into his own search for ellen . . . or is he really searching for sara ?
+Output: <final_answer>objective</final_answer>
+
+Input:",0.8,0.8,0.8666666666666667,0.8,0.8,0.7,0.7666666666666667,,,
+"Thoroughly analyze each sentence to ascertain whether it presents an objective fact, which is a statement that can be proven true or false without regard to personal opinions, or a subjective opinion, which is a personal viewpoint that may vary from person to person. Use your knowledge of the differences between subjective and objective language to tag each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it includes personal feelings, judgments, or evaluations. Your job is to classify each sentence as either 'objective' or 'subjective', indicating whether it consists of unbiased, verifiable information or includes personal opinions, emotions, or assessments. Please provide your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: tom green and an ivy league college should never appear together on a marquee , especially when the payoff is an unschooled comedy like stealing harvard , which fails to keep 80 minutes from seeming like 800 .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: seeking a mental escape , simone begins to tune into what 's happening with the other couples around her .
+Output: <final_answer>objective</final_answer>
+
+Input: the stars may be college kids , but the subject matter is as adult as you can get : the temptations of the flesh are unleashed by a slightly crazed , overtly determined young woman and a one-night swim turns into an ocean of trouble .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: well , jason 's gone to manhattan and hell , i guess a space station in the year 2455 can be crossed off the list of ideas for the inevitable future sequels ( hey , do n't shoot the messenger ) .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.8333333333333334,0.8333333333333334,0.7666666666666667,,,,,,,
+"Thoroughly analyze each sentence to ascertain whether it presents an objective fact, which is a statement that can be proven true or false without regard to personal opinions, or a subjective opinion, which is a personal viewpoint that may vary from person to person. Use your knowledge of the differences between subjective and objective language to tag each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it includes personal feelings, judgments, or evaluations. Your job is to classify each sentence as either 'objective' or 'subjective', indicating whether it consists of unbiased, verifiable information or includes personal opinions, emotions, or assessments. Please provide your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: two badly interlocked stories drowned by all too clever complexity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the stars may be college kids , but the subject matter is as adult as you can get : the temptations of the flesh are unleashed by a slightly crazed , overtly determined young woman and a one-night swim turns into an ocean of trouble .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the story of a normal family in which come out the dreams of those who have lost their possibilities and of those who want to realize them .
+Output: <final_answer>objective</final_answer>
+
+Input: an absurd comedy about a parking enforcement officer , who - despite constant abuse from the public - finds truth , honour and serenity in the act of ticketing .
+Output: <final_answer>objective</final_answer>
+
+Input: if you love the music , and i do , its hard to imagine having more fun watching a documentary . . .
+Output: user
+Let's analyze the sentence: ""if you love the music, and i do, its hard to imagine having more fun watching a documentary...""
+
+- ""if you love the music"" - This part is subjective because it refers to a personal feeling or preference.
+- ""and i do"" - This is also subjective as it expresses a personal opinion or feeling.
+- ""its hard to imagine having more fun watching a documentary"" - This part is subjective because it involves a personal judgment or evaluation of the experience of watching a documentary.
+
+Given that the sentence includes personal feelings, judgments, or evaluations, it cannot be classified as an objective statement.
+
+<final_answer>subjective</final_answer>
+
+Input: largely , this is a movie that also does it by the numbers .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: henceforth , he will meet with unexpected situations that give him the idea for the perfect counterpoint in his plot of the absurd .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7666666666666667,0.8666666666666667,0.7666666666666667,,,,,,,
+"Thoroughly analyze each sentence to ascertain whether it presents an objective fact, which is a verifiable statement independent of personal views, or a subjective opinion, which is influenced by personal feelings or judgments. Use your understanding of subjective and objective language to categorize each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it conveys personal sentiments or assessments. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: amelia is a jaded top model , nina is a midwestern innocent on her first trip , fernanda is a bisexual supermodel , ellie is the calm , sensible stylist .
+Output: <final_answer>objective</final_answer>
+
+Input: a film full of vivid characters , quiet beauty and gentle grace .
+Output: user
+<final_answer> Subjective </final_answer>
+
+Input: often hilarious , well-shot and , importantly , entertaining , hell house is a fascinating document of an event that has to be seen to be believed .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: welles groupie/scholar peter bogdanovich took a long time to do it , but he 's finally provided his own broadside at publishing giant william randolph hearst .
+Output: user
+This sentence contains both factual information and subjective elements. The factual part is that Peter Bogdanovich, who is known as a groupie/scholar of Orson Welles, has produced some work related to William Randolph Hearst. However, the phrase ""took a long time to do it"" and ""finally provided his own broadside"" are subjective, as they imply a personal judgment about the timing and nature of Bogdanovich's work.
+
+<final_answer>subjective</final_answer>
+
+Input: the drama is played out with such aching beauty and truth that it brings tears to your eyes .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: his odyssey finally leads him onto a theatre stage .
+Output: <final_answer>objective</final_answer>
+
+Input: solaris `` is a shapeless inconsequential move relying on the viewer to do most of the work .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.8333333333333334,0.7666666666666667,,,,,,,,
+"Thoroughly analyze each sentence to ascertain whether it presents an objective fact, which is a verifiable statement, or a subjective opinion, which is a personal viewpoint that may vary. Use your knowledge of subjective and objective language to categorize each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it conveys personal feelings, judgments, or assessments. Please encapsulate your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: this film is difficult to watch for the inhumanity it depicts , but important to see for its factual elements and the reminder of both the difficulty and importance of maintaining one 's humanity .
+Output: user
+To analyze the given sentence, let's break it down into its components:
+
+1. ""this film is difficult to watch for the inhumanity it depicts"" - This part of the sentence is subjective because it conveys a personal feeling or judgment about the film's content and its effect on the viewer.
+
+2. ""important to see for its factual elements"" - This part is more objective as it refers to the factual content of the film, which can be verified.
+
+3. ""the reminder of both the difficulty and importance of maintaining one's humanity"" - This part is subjective as it involves a personal interpretation and judgment about the film's message and its impact on the viewer.
+
+Given that the sentence contains a mix of subjective and objective elements, but the overall tone leans more towards a personal viewpoint and judgment, the classification would be subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: the stars may be college kids , but the subject matter is as adult as you can get : the temptations of the flesh are unleashed by a slightly crazed , overtly determined young woman and a one-night swim turns into an ocean of trouble .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: imamura 's delight in the infinite oddity of men and women is goofy ; it 's also , at heart , reverent .
+Output: user
+Let's analyze the sentence: ""Imamura's delight in the infinite oddity of men and women is goofy; it's also, at heart, reverent.""
+
+1. ""Imamura's delight in the infinite oddity of men and women is goofy"" - This part of the sentence is subjective. The term ""goofy"" is a personal judgment and conveys a subjective opinion about Imamura's delight.
+
+2. ""it's also, at heart, reverent"" - This part is also subjective. The term ""reverent"" is a personal assessment of the nature of Imamura's delight and reflects a subjective opinion.
+
+Since both parts of the sentence contain subjective language, the entire sentence is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input:",0.7333333333333333,,,,,,,,,
 "Thoroughly analyze each sentence to ascertain whether it presents an objective fact, which is a verifiable statement, or a subjective opinion, which is a personal viewpoint that may vary. Use your knowledge of subjective and objective language to categorize each sentence as 'objective' if it is stated in a neutral, unbiased manner, or 'subjective' if it conveys personal feelings, judgments, or assessments. Please encapsulate your classification in the following format: <final_answer>your_classification</final_answer>.
 
 Input: with nothing to go on but his dreams and gut instinct , vince launches into his own search for ellen . . . or is he really searching for sara ?
@@ -1680,6 +2786,184 @@ Input: rio danisworo ( marcellius siahaan ) is a rigid `` all about business `` 
 Output: <final_answer>objective</final_answer>
 
 Input:",0.8333333333333334,0.8,0.9,0.8,0.8,0.7,0.7666666666666667,0.7,0.9,0.8
+"Thoroughly analyze each sentence to determine if it conveys an objective fact (a verifiable statement independent of personal opinions) or a subjective opinion (a personal viewpoint that can differ among individuals). Utilizing your knowledge of the distinctions between subjective and objective language, label each sentence as either 'objective' (presenting information in a neutral, unbiased way) or 'subjective' (expressing personal sentiments, views, or evaluations). Your goal is to identify whether the sentence is objective (communicates facts, provides unbiased information) or subjective (conveys personal views, feelings, or judgments). Please wrap your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: after collateral damage , you might imagine that most every aggrieved father clichM-i has been unturned . but no .
+Output: user
+This sentence is expressing a personal viewpoint or evaluation, using phrases like ""you might imagine"" and ""but no,"" which indicate a subjective interpretation rather than a verifiable fact. Therefore, it is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: god responds to his challenge and allows bruce to take on his powers to prove himself .
+Output: <final_answer>objective</final_answer>
+
+Input: finally paula , who ran away from home and got pregnant , is now in a relationship she does n't want .
+Output: <final_answer>objective</final_answer>
+
+Input: the movie has generic virtues , and despite a lot of involved talent , seems done by the numbers .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: seeking a mental escape , simone begins to tune into what 's happening with the other couples around her .
+Output: <final_answer>objective</final_answer>
+
+Input: an absurd comedy about a parking enforcement officer , who - despite constant abuse from the public - finds truth , honour and serenity in the act of ticketing .
+Output: <final_answer>objective</final_answer>
+
+Input: in the meantime , the british forces , back at the encampment , march off to meet the american forces for a grand battle , which will rage for hours .
+Output: user
+This sentence describes a scenario where British forces are marching to meet American forces for a battle. While the sentence uses the term ""grand battle,"" which could be seen as subjective, the primary action and event described (the march to meet for a battle) are presented as factual occurrences. The term ""grand"" does introduce a slight subjective element, but the core of the sentence is an objective description of events.
+
+<final_answer>objective</final_answer>
+
+Input:",0.7666666666666667,0.9,0.9333333333333333,0.8,0.8666666666666667,0.8,0.7666666666666667,0.8,0.7666666666666667,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact (a verifiable statement independent of personal opinions) or a subjective opinion (a personal viewpoint that can differ among individuals). Utilizing your knowledge of the distinctions between subjective and objective language, label each sentence as either 'objective' (presenting information in a neutral, unbiased way) or 'subjective' (expressing personal sentiments, views, or evaluations). Your goal is to identify whether the sentence is objective (communicates facts, provides unbiased information) or subjective (conveys personal views, feelings, or judgments). Please wrap your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: they do n't see eye-to-eye on clothes , hair , music , and certainly not in each other 's taste in men .
+Output: <final_answer>objective</final_answer>
+
+Input: now he thinks he is seeing things that are n't there and if things do n't improve , she will take their only son and leave .
+Output: <final_answer>objective</final_answer>
+
+Input: the movie has generic virtues , and despite a lot of involved talent , seems done by the numbers .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: seeking a mental escape , simone begins to tune into what 's happening with the other couples around her .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7,,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, defined as a statement that can be proven true or false, or a subjective opinion, which reflects a personal perspective that can differ from person to person. Based on your comprehension of subjective and objective language, label each sentence as 'objective' if it is expressed in a neutral and unbiased way, or 'subjective' if it includes personal sentiments, evaluations, or opinions. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: bluer than the atlantic and more biologically detailed than an autopsy , the movie . . . is , also , frequently hilarious .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: huh is taken into custody after kang shoots and wounds him at the scene of the crime .
+Output: user
+<final_answer>objective</final_answer>
+
+Input:",0.7666666666666667,0.7333333333333333,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, defined as a statement that can be proven true or false, or a subjective opinion, which reflects a personal perspective that can differ from person to person. Based on your comprehension of subjective and objective language, label each sentence as 'objective' if it is expressed in a neutral and unbiased way, or 'subjective' if it includes personal sentiments, evaluations, or opinions. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: rarely has so much money delivered so little entertainment .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: with nothing to go on but his dreams and gut instinct , vince launches into his own search for ellen . . . or is he really searching for sara ?
+Output: <final_answer>objective</final_answer>
+
+Input: this film is difficult to watch for the inhumanity it depicts , but important to see for its factual elements and the reminder of both the difficulty and importance of maintaining one 's humanity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: just on the other side of thirty , dave is an unemployed sculptor clumsily going nowhere in a small town .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.8,0.8,0.8333333333333334,0.7333333333333333,0.8666666666666667,0.7,0.8,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, which reflects personal feelings, emotions, or judgments that can vary from one individual to another. Utilize your understanding of subjective and objective language to discern whether the sentence is presenting unbiased, verifiable information or incorporating personal views and emotions. Your goal is to classify each sentence as either 'objective' or 'subjective', indicating whether it is a neutral statement of fact or a personal assessment. If the sentence is presented in a neutral, unbiased manner, classify it as 'objective'. If it includes personal feelings, assessments, or critiques, classify it as 'subjective'. Please format your classification as follows: <final_answer>your_classification</final_answer>.
+
+Input: seeking a mental escape , simone begins to tune into what 's happening with the other couples around her .
+Output: <final_answer>objective</final_answer>
+
+Input: he dies alone at the hospital , and apparently everything nete planned went wrong .
+Output: <final_answer>objective</final_answer>
+
+Input: but all four are having trouble dealing with it , and steve has a job offer in san francisco .
+Output: <final_answer>objective</final_answer>
+
+Input: after collateral damage , you might imagine that most every aggrieved father clichM-i has been unturned . but no .
+Output: user
+This sentence includes personal feelings and assessments, using phrases like ""you might imagine"" and ""most every aggrieved father clichM-i has been unturned,"" which are not verifiable facts but rather subjective interpretations or opinions. Therefore, it should be classified as 'subjective'.
+
+<final_answer>subjective</final_answer>
+
+Input: without [ de niro ] , city by the sea would slip under the waves . he drags it back , single-handed .
+Output: user
+This sentence expresses a personal evaluation about the actor's performance and its impact on the film, which cannot be universally proven or measured. It includes subjective sentiments and critiques.
+
+<final_answer>subjective</final_answer>
+
+Input:",0.8,0.8666666666666667,0.9666666666666667,0.7666666666666667,0.9,0.7666666666666667,0.9,0.8,0.9,0.8333333333333334
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which reflects a personal perspective that can differ from person to person. Utilize your knowledge of subjective and objective language to label each sentence as 'objective' if it is presented in a neutral and unbiased way, or 'subjective' if it includes personal feelings, evaluations, or opinions. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: the movie has generic virtues , and despite a lot of involved talent , seems done by the numbers .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: despite these annoyances , the capable clayburgh and tambor really do a great job of anchoring the characters in the emotional realities of middle age .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the affectionate loopiness that once seemed congenital to demme 's perspective has a tough time emerging from between the badly dated cutesy-pie mystery scenario and the newfangled hollywood post-production effects .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: some body often looks like an episode of the tv show blind date , only less technically proficient and without the pop-up comments .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: vera 's technical prowess ends up selling his film short ; he smoothes over hard truths even as he uncovers them .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: with nothing to go on but his dreams and gut instinct , vince launches into his own search for ellen . . . or is he really searching for sara ?
+Output: <final_answer>objective</final_answer>
+
+Input: two badly interlocked stories drowned by all too clever complexity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.5666666666666667,,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which reflects a personal perspective that can differ from person to person. Utilizing your knowledge of subjective and objective language, label each sentence as 'objective' if it is presented in a neutral and unbiased way, or 'subjective' if it includes personal feelings, evaluations, or opinions. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: marco and melanie , a young married couple , are living a life of passion , with chaotic situations , and all the little frustrations of daily life .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7,0.6666666666666666,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which reflects a personal perspective that can differ from person to person. Utilizing your knowledge of subjective and objective language, label each sentence as 'objective' if it is presented in a neutral and unbiased way, or 'subjective' if it includes personal feelings, evaluations, or opinions. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: some body often looks like an episode of the tv show blind date , only less technically proficient and without the pop-up comments .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the girl 's lover thinks she 's been kidnapped , and goes looking for her .
+Output: user
+<final_answer>objective</final_answer>
+
+Input: imagine the cleanflicks version of 'love story , ' with ali macgraw 's profanities replaced by romance-novel platitudes .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: this film is difficult to watch for the inhumanity it depicts , but important to see for its factual elements and the reminder of both the difficulty and importance of maintaining one 's humanity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: life on the rez is no picnic : this picture shows you why .
+Output: user
+Let's analyze the sentence: ""life on the rez is no picnic : this picture shows you why.""
+
+The first part, ""life on the rez is no picnic,"" is a subjective statement. It expresses a personal evaluation or opinion about the difficulty or quality of life on a reservation (""rez"" is a colloquial term for a reservation). The phrase ""no picnic"" is an idiomatic expression indicating that something is challenging or unpleasant, which is a subjective assessment.
+
+The second part, ""this picture shows you why,"" suggests that there is a visual representation that explains the reasons for the opinion expressed in the first part. However, without seeing the picture, we can't determine if the explanation provided by the image is factual or subjective. The statement itself is subjective because it implies that the picture will confirm a personal viewpoint.
+
+Therefore, the entire sentence is subjective as it conveys a personal perspective and relies on a visual aid to support that perspective.
+
+<final_answer>subjective</final_answer>
+
+Input:",0.7333333333333333,,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which reflects a personal viewpoint that can differ among individuals. Decide whether the sentence in question communicates objective information that can be verified or subjective feelings, opinions, and judgments. Utilizing your knowledge of the distinctions between subjective and objective language, label each sentence as either 'objective' (presenting information in a neutral, unbiased way) or 'subjective' (articulating personal sentiments, perspectives, or evaluations). Please wrap your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: at the end of the worst day of his life , bruce angrily ridicules and rages against god and god responds .
+Output: <final_answer>objective</final_answer>
+
+Input: ronnie schwann , a young man regarded as `` slow , `` has affections for sarah , a young woman who stays at hope house , a facility for the mentally ill .
+Output: <final_answer>objective</final_answer>
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user <final_answer>subjective</final_answer>.
+
+Input:",0.8,0.8,0.8333333333333334,0.8,0.8333333333333334,0.8,0.8666666666666667,0.7,0.8333333333333334,0.8666666666666667
 "Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which reflects a personal viewpoint that can differ among individuals. Utilize your comprehension of the distinctions between subjective and objective language to label each sentence as either 'objective' (presenting information in a neutral, unbiased way and stating verifiable facts) or 'subjective' (articulating personal feelings, views, or judgments and expressing personal opinions, emotions, or evaluations). Please wrap your classification in the following format: <final_answer>your_classification</final_answer>.
 
 Input: after baptizing their amnesiac boy-toy chris , the infamous pair takes him on a grand tour of their wild nightlife frolic , their spontaneous media extravaganza and their dazzling diva lifestyle in order to help him find his identity and his way home .
@@ -1701,9 +2985,194 @@ Input: leoncio 's son robert and daughter marites disapprove of their father 's 
 Output: <final_answer>objective</final_answer>
 
 Input:",0.7333333333333333,0.6666666666666666,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which reflects personal beliefs or feelings. Utilize your understanding of subjective and objective language to identify whether a sentence is 'objective', meaning it is presented in a neutral and unbiased way, or 'subjective', indicating it expresses personal emotions, evaluations, or critiques. Your task is to assign each sentence a label of either 'objective' or 'subjective', based on whether it provides unbiased information or expresses personal sentiments, judgments, or critiques. Please wrap your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: as fran 's requests become more peculiar , chep is thrown into increasingly bizarre situations .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7333333333333333,0.7333333333333333,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be proven true or false, or a subjective opinion, which reflects personal beliefs or feelings. Your task is to identify whether each sentence is objective or subjective based on whether it provides impartial information or expresses personal views, evaluations, or critiques. Utilize your understanding of subjective and objective language to classify each sentence as 'objective' if it is presented in a neutral, unbiased way, or 'subjective' if it includes personal sentiments, judgments, or assessments. Please provide your response in the following format: <final_answer>your_classification</final_answer>.
+
+Input: you have to pay attention to follow all the stories , but they 're each interesting . the movie is well shot and very tragic , and one to ponder after the credits roll .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: just on the other side of thirty , dave is an unemployed sculptor clumsily going nowhere in a small town .
+Output: <final_answer>objective</final_answer>
+
+Input: syd does accept him and befriends him and shows him how to live .
+Output: <final_answer>objective</final_answer>
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user <final_answer>subjective</final_answer>.
+
+Input:",0.7,,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false without personal bias, or a subjective opinion, which reflects a personal viewpoint that can differ among individuals. Utilize your comprehension of the distinctions between subjective and objective language to label each sentence as either 'objective' (presenting information in a neutral, unbiased way) or 'subjective' (articulating personal feelings, views, or evaluations). Your assignment is to classify each sentence as either subjective or objective based on its content. Please wrap your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: blueberry is stationed in the little town of palomito as sheriff .
+Output: user
+To determine whether the sentence ""blueberry is stationed in the little town of palomito as sheriff"" is objective or subjective, we need to analyze its content.
+
+1. The sentence provides specific information about a person named ""blueberry"" and their role as a sheriff in a town called ""palomito.""
+2. The term ""stationed"" suggests a formal assignment or placement, which can be verified.
+3. The description of the town as ""little"" is subjective, as it is a relative term and can vary based on personal perception.
+
+Given these points, the sentence contains both objective and subjective elements. However, the core information about the person's role and location can be verified, making the primary content of the sentence objective. The subjective element (""little"") does not significantly alter the overall classification.
+
+<final_answer>objective</final_answer>
+
+Input: well , jason 's gone to manhattan and hell , i guess a space station in the year 2455 can be crossed off the list of ideas for the inevitable future sequels ( hey , do n't shoot the messenger ) .
+Output: user
+This sentence is expressing a personal viewpoint about the future plans for sequels, which cannot be verified as true or false without personal bias. Therefore, it is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: mark , fresh from college , returns to his boring hometown to work off his gambling debts .
+Output: <final_answer>objective</final_answer>
+
+Input: the question is , will their lives change forever with the riches that come along with professional sports , or will they be destined to live a life in their home country , asking forever , what if ?
+Output: <final_answer>objective</final_answer>
+
+Input: first kammy meets the 40-year-old danny ( dave wong ) and falls head over heels .
+Output: <final_answer>objective</final_answer>
+
+Input: isidor 's tortilla heaven is the best restaurant in new mexico maybe even the world .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.8333333333333334,0.8333333333333334,0.9,0.7333333333333333,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false without personal bias, or a subjective opinion, which reflects a personal viewpoint that can differ among individuals. Utilize your comprehension of the distinctions between subjective and objective language to label each sentence as either 'objective' (presenting information in a neutral, unbiased way) or 'subjective' (articulating personal feelings, views, or evaluations). Your assignment is to classify each sentence as either subjective or objective based on its content. Please wrap your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: no ill effects are immediately apparent to lena 's relatives in their spacious house on the prosperous side of town .
+Output: user
+This sentence presents information in a neutral, unbiased way, describing observable conditions and states without expressing personal feelings or evaluations. Therefore, it is an objective statement.
+
+<final_answer>objective</final_answer>
+
+Input:",0.7,0.6666666666666666,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false without personal bias, or a subjective opinion, which reflects a personal viewpoint that can differ among individuals. Utilize your comprehension of the distinctions between subjective and objective language to label each sentence as either 'objective' (presenting information in a neutral, unbiased way) or 'subjective' (articulating personal feelings, views, or evaluations). Your assignment is to classify each sentence as either subjective or objective based on its content. Please wrap your classification in the following format: <final_answer>your_classification</final_answer>.
+
+Input: the girl 's lover thinks she 's been kidnapped , and goes looking for her .
+Output: user
+<final_answer>objective</final_answer>
+
+Input: often hilarious , well-shot and , importantly , entertaining , hell house is a fascinating document of an event that has to be seen to be believed .
+Output: user
+Let's analyze the sentence:
+
+""Often hilarious, well-shot and, importantly, entertaining, Hell House is a fascinating document of an event that has to be seen to be believed.""
+
+- ""Often hilarious"" is a subjective opinion as it reflects a personal viewpoint on the humor of the content.
+- ""well-shot"" is subjective as it pertains to the quality of the filming, which can vary in perception among individuals.
+- ""entertaining"" is subjective as it is a personal evaluation of the content's ability to entertain.
+- ""Hell House is a fascinating document of an event that has to be seen to be believed"" is subjective as it includes the term ""fascinating,"" which is a personal viewpoint, and the phrase ""has to be seen to be believed,"" which is a subjective recommendation.
+
+Given that the sentence is composed of subjective opinions and personal evaluations, the overall classification of the sentence is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: we see the action of the book as we see kaufman struggle to adapt it into a movie .
+Output: user
+Let's analyze the sentence: ""we see the action of the book as we see kaufman struggle to adapt it into a movie.""
+
+This sentence describes a process or action (seeing the action of the book and Kaufman's struggle to adapt it into a movie) without expressing a personal opinion or judgment. It is describing what is happening in a neutral way, which means it can be verified as true or false based on the actual content of the book and the process of adaptation. Therefore, it is an objective statement.
+
+<final_answer>objective</final_answer>
+
+Input: an entertaining but unspectacular film . pretty goofy at times - but the slick and gleefully self-indulgent violence will not disappoint the action fan .
+Output: user
+Let's analyze each sentence:
+
+1. ""An entertaining but unspectacular film.""
+   - This sentence is subjective. The terms ""entertaining"" and ""unspectacular"" are subjective and can vary from person to person. What one person finds entertaining, another might not.
+
+2. ""Pretty goofy at times - but the slick and gleefully self-indulgent violence will not disappoint the action fan.""
+   - This sentence is also subjective. The terms ""goofy,"" ""slick,"" ""gleefully self-indulgent,"" and ""will not disappoint"" are all subjective and based on personal feelings or opinions.
+
+<final_answer>subjective</final_answer>
+
+Input: a hip ride into hyper-time , clockstoppers is a lively and enjoyable adventure for all ages at any time .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: a murder in the camp gives him the chance to set a risky plan in motion .
+Output: user
+The sentence ""a murder in the camp gives him the chance to set a risky plan in motion"" describes a scenario that could be verified as true or false based on the events that occur. It does not express a personal viewpoint or evaluation, but rather states a fact about a situation. Therefore, it is an objective statement.
+
+<final_answer>objective</final_answer>
+
+Input: douglas mcgrath 's nicholas nickleby does dickens as it should be done cinematically .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.6666666666666666,,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false without regard to personal opinions, or a subjective opinion, which reflects personal feelings, judgments, or evaluations. Your task is to categorize each sentence as either 'objective' or 'subjective', based on whether it provides neutral, verifiable information or expresses personal viewpoints. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: if you love the music , and i do , its hard to imagine having more fun watching a documentary . . .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: but cousin roberto is n't the tough guy they 'd expected .
+Output: <final_answer>objective</final_answer>
+
+Input: god responds to his challenge and allows bruce to take on his powers to prove himself .
+Output: <final_answer>objective</final_answer>
+
+Input: soon she grows increasingly wary about the motives of every man with whom she has contact -- and about her own .
+Output: <final_answer>objective</final_answer>
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user <final_answer>subjective</final_answer>.
+
+Input:",0.9,0.7,0.8,0.7666666666666667,0.7333333333333333,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false without regard to personal opinions, or a subjective opinion, which reflects personal feelings, judgments, or evaluations. Your task is to categorize each sentence as either 'objective' or 'subjective', based on whether it provides neutral, verifiable information or expresses personal viewpoints. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: rio danisworo ( marcellius siahaan ) is a rigid `` all about business `` young profesional .
+Output: <final_answer>objective</final_answer>
+
+Input: the stars may be college kids , but the subject matter is as adult as you can get : the temptations of the flesh are unleashed by a slightly crazed , overtly determined young woman and a one-night swim turns into an ocean of trouble .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: an absurd comedy about a parking enforcement officer , who - despite constant abuse from the public - finds truth , honour and serenity in the act of ticketing .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.7333333333333333,0.7666666666666667,,,,,,,,
 "Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false, or a subjective opinion, which reflects a personal viewpoint that can differ among individuals. Utilize your knowledge of subjective and objective language to label each sentence as either 'objective' for statements presented in a neutral, unbiased way, or 'subjective' for those that express personal feelings, judgments, or evaluations. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
 
 Input:",0.6666666666666666,,,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false, or a subjective opinion, which reflects a personal viewpoint that can differ among individuals. Utilize your knowledge of subjective and objective language to label each sentence as either 'objective' for statements presented in a neutral, unbiased way, or 'subjective' for those that express personal feelings, judgments, or evaluations. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
+
+Input: [ n ] o matter how much good will the actors generate , showtime eventually folds under its own thinness .
+Output: user
+Let's analyze the sentence: ""No matter how much good will the actors generate, showtime eventually folds under its own thinness.""
+
+This sentence contains a subjective evaluation. The phrase ""folds under its own thinness"" is a metaphorical expression that suggests the show lacks substance or depth. This is a judgment about the quality of the show, which is a matter of personal opinion and can vary from person to person. Therefore, this sentence is subjective.
+
+<final_answer>subjective</final_answer>
+
+Input: kids will love its fantasy and adventure , and grownups should appreciate its whimsical humor .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: unlike conventional movies , kill bill is told in chapter format making the narrative flow more like a book than a film .
+Output: <final_answer>objective</final_answer>
+
+Input: a film full of vivid characters , quiet beauty and gentle grace .
+Output: user
+<final_answer> Subjective </final_answer>
+
+Input: henceforth , he will meet with unexpected situations that give him the idea for the perfect counterpoint in his plot of the absurd .
+Output: <final_answer>objective</final_answer>
+
+Input: ken russell would love this . in one scene , we get a stab at soccer hooliganism , a double-barreled rip-off of quentin tarantino 's climactic shootout M-^W and meat loaf explodes .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.7666666666666667,0.9,0.9,0.7666666666666667,0.8,0.8,0.8,,,
 "Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false, or a subjective opinion, which reflects a personal viewpoint that can differ among individuals. Utilize your knowledge of subjective and objective language to label each sentence as either 'objective' for statements presented in a neutral, unbiased way, or 'subjective' for those that express personal feelings, judgments, or evaluations. Please wrap your classification in this format: <final_answer>your_classification</final_answer>.
 
 Input: however , soon they have the cops and the anti-terror corps on their tails .
@@ -1852,6 +3321,32 @@ Output: user
 Input:",0.7,0.7333333333333333,,,,,,,,
 "Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false, or a subjective opinion, which reflects a personal viewpoint that can differ among individuals. Your job is to label each sentence as either 'objective', indicating it delivers information in a fair and unbiased way, or 'subjective', indicating it expresses personal feelings, judgments, or evaluations. Please submit your classification in this structure: <final_answer>your_classification</final_answer>.
 
+Input: some body often looks like an episode of the tv show blind date , only less technically proficient and without the pop-up comments .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: amidst the la-freaks , hollywood wannabes , and outrageous gym culture of los angeles , the now determined bodybuilder struggles to preserve an integrity of the mind , body , and spirit that is so apparently void in this strange new land .
+Output: <final_answer>objective</final_answer>
+
+Input: narrative may be looser than baby teeth , but amy 's orgasm is such a verbosely in-depth exploration of female sensuality and identity .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: matches neorealism 's impact by showing the humanity of a war-torn land filled with people who just want to live their lives .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: the lizard , chaos , scar , heartless and sic inhabit the violent and often bizarre world of backyard wrestling .
+Output: user
+<final_answer>objective</final_answer>
+
+Input: peralta 's mythmaking could have used some informed , adult hindsight .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.7666666666666667,0.8,0.7,,,,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified as true or false, or a subjective opinion, which reflects a personal viewpoint that can differ among individuals. Your job is to label each sentence as either 'objective', indicating it delivers information in a fair and unbiased way, or 'subjective', indicating it expresses personal feelings, judgments, or evaluations. Please submit your classification in this structure: <final_answer>your_classification</final_answer>.
+
 Input: the drama is played out with such aching beauty and truth that it brings tears to your eyes .
 Output: user
 <final_answer>subjective</final_answer>
@@ -1870,6 +3365,39 @@ Input: a player in a famous orchestra finds sexual experiences with a russian op
 Output: <final_answer>objective</final_answer>
 
 Input:",0.8,0.8666666666666667,0.8,0.6666666666666666,0.8,0.6333333333333333,,,,
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified independently of personal opinions, or a subjective opinion, which is based on personal feelings or judgments. Your job is to label each sentence as either 'objective' or 'subjective', depending on whether it offers unbiased, verifiable information or includes personal assessments, emotions, or viewpoints. The dataset comprises sentences marked as either subjective or objective. Decide if the sentence is presenting an objective fact, a claim that can be proven true or false without personal bias, or a subjective opinion, which reflects personal sentiments or perspectives. Your classification should reveal whether the sentence is 'subjective', indicating it expresses personal views or emotions, or 'objective', indicating it is based on facts and free from bias. Please format your classification as follows: <final_answer>your_classification</final_answer>.
+
+Input: his odyssey finally leads him onto a theatre stage .
+Output: user
+<final_answer>objective</final_answer> 
+
+The sentence describes a sequence of events or a journey that concludes with someone appearing on a theatre stage. While it uses the term ""odyssey,"" which can imply a long and adventurous journey, the sentence itself does not express a personal opinion or emotion but rather states a fact about where the journey leads. Therefore, it can be classified as objective.
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: but cousin roberto is n't the tough guy they 'd expected .
+Output: <final_answer>objective</final_answer>
+
+Input:",0.8,0.9333333333333333,0.9333333333333333,0.8,0.8,0.7666666666666667,0.8333333333333334,0.7,0.9,0.8333333333333334
+"Thoroughly analyze each sentence to determine if it conveys an objective fact, which is a statement that can be verified independently of personal opinions, or a subjective opinion, which reflects personal feelings or judgments. Utilize your knowledge of subjective and objective language to label each sentence as either 'objective' for statements presented in a neutral, unbiased way, or 'subjective' for those that express personal sentiments or evaluations. Please format your response as follows: <final_answer>your_classification</final_answer>.
+
+Input: henceforth , he will meet with unexpected situations that give him the idea for the perfect counterpoint in his plot of the absurd .
+Output: <final_answer>objective</final_answer>
+
+Input: now he thinks he is seeing things that are n't there and if things do n't improve , she will take their only son and leave .
+Output: <final_answer>objective</final_answer>
+
+Input: it 's not that waiting for happiness is a bad film , because it is n't . it 's just incredibly dull .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input: though there are many tense scenes in trapped , they prove more distressing than suspenseful .
+Output: user
+<final_answer>subjective</final_answer>
+
+Input:",0.7666666666666667,0.8,0.8666666666666667,0.8333333333333334,0.8,0.8,0.8666666666666667,0.7333333333333333,0.8,0.8333333333333334
 "Thoroughly analyze each sentence to determine whether it presents an objective fact, which is a verifiable statement free from personal bias, or a subjective perspective, which is a personal opinion, emotion, or assessment that can vary from person to person. Use your understanding of the distinctions between subjective and objective language to label the sentence as 'subjective' for personal opinions or feelings, or 'objective' for factual statements without personal bias. Please wrap your classification in the <final_answer>your_classification</final_answer> tags.
 
 Input: lieutenant hart must then defend the black pilot against charges before an obviously racist american tribunal ; unaware that the trial itself is only a front for the real secret of the prison camp .
@@ -2067,6 +3595,58 @@ Output: user
 <final_answer> Subjective </final_answer>
 
 Input:",0.7666666666666667,0.7333333333333333,,,,,,,,
+"Utilizing your expertise in distinguishing between subjective and objective statements, carefully evaluate each sentence to decide if it conveys an objective fact, which is a statement that can be proven true or false without personal bias, or a subjective opinion, characterized by personal views, emotions, or judgments that can differ among individuals. Scrutinize each sentence to determine whether it expresses an objective fact (a statement that can be verified independently of personal opinions) or a subjective opinion (a personal viewpoint that may vary). Based on your understanding of subjective and objective language, classify the sentence as 'objective' if it presents information in a neutral, unbiased way, or 'subjective' if it includes personal feelings, evaluations, or critiques. Please enclose your classification within the <final_answer>your_classification</final_answer> tags.
+
+Input: isidor 's tortilla heaven is the best restaurant in new mexico maybe even the world .
+Output: <final_answer>objective</final_answer>
+
+Input: a london website designer ops out of her comfortable but ordinary relationship with a nice boyfriend when she forms a dangerously obsessive bond with a handsome , mysterious mountaineer , who turns out to have some secrets .
+Output: <final_answer>objective</final_answer>
+
+Input: barney has created a tour de force that is weird , wacky and wonderful .
+Output: user
+Let's analyze the sentence ""Barney has created a tour de force that is weird, wacky and wonderful.""
+
+The sentence contains evaluative terms such as ""weird,"" ""wacky,"" and ""wonderful,"" which are subjective descriptors. These terms express personal feelings and judgments about Barney's creation, and they can vary from person to person. Therefore, this sentence is not presenting an objective fact but rather a subjective opinion.
+
+<final_answer>subjective</final_answer>
+
+Input: a player in a famous orchestra finds sexual experiences with a russian opera singer , which he enjoys much because his wife has just left due to the fact that he has purchased a porno movie .
+Output: <final_answer>objective</final_answer>
+
+Input: with wit and empathy to spare , waydowntown acknowledges the silent screams of workaday inertia but stops short of indulging its characters ' striving solipsism .
+Output: user
+This sentence is expressing a personal viewpoint regarding the portrayal of characters and themes in a work, likely a film or book. It includes evaluations and critiques that are based on personal feelings and interpretations, which can vary among individuals. Therefore, it is a subjective opinion.
+
+<final_answer>subjective</final_answer>
+
+Input: as fran 's requests become more peculiar , chep is thrown into increasingly bizarre situations .
+Output: user
+Let's analyze the sentence: ""As Fran's requests become more peculiar, Chep is thrown into increasingly bizarre situations.""
+
+This sentence describes a progression in the nature of Fran's requests and the resulting situations Chep encounters. While the terms ""peculiar"" and ""bizarre"" are subjective, the sentence itself is describing a sequence of events and changes in circumstances rather than expressing a personal opinion or evaluation. It is presenting a narrative that could be verified through observation or evidence, making it an objective statement.
+
+<final_answer>objective</final_answer>
+
+Input: land , people and narrative flow together in a stark portrait of motherhood deferred and desire explored .
+Output: user
+Let's analyze the sentence: ""Land, people, and narrative flow together in a stark portrait of motherhood deferred and desire explored.""
+
+This sentence contains elements that are open to interpretation and personal evaluation. The terms ""stark portrait,"" ""motherhood deferred,"" and ""desire explored"" are subjective, as they involve personal feelings, evaluations, or critiques. The sentence is describing a narrative or a piece of art in a way that reflects the writer's personal interpretation and emotional response.
+
+<final_answer>subjective</final_answer>
+
+Input: it 's exactly the kind of movie toback 's detractors always accuse him of making .
+Output: user
+Let's analyze the sentence: ""It's exactly the kind of movie Toback's detractors always accuse him of making.""
+
+This sentence is expressing a viewpoint that is based on the opinions of Toback's detractors. It is not presenting a verifiable fact but rather a perception or critique of Toback's work. The use of the term ""detractors"" implies a subjective judgment about Toback's work, and the phrase ""always accuse him of making"" suggests a recurring opinion or criticism, which is inherently subjective.
+
+Therefore, the classification for this sentence is 'subjective'.
+
+<final_answer>subjective</final_answer>
+
+Input:",0.6333333333333333,,,,,,,,,
 "Utilizing your knowledge of the differences between subjective and objective language, carefully examine each sentence to ascertain whether it presents an objective fact (a statement that can be proven true or false without personal bias) or a subjective opinion (a personal perspective that may vary from person to person). Your task is to categorize each sentence as either 'objective' or 'subjective', indicating whether it consists of unbiased, verifiable information or incorporates personal views, feelings, or assessments. Please insert your classification within the <final_answer>your_classification</final_answer> markers.
 
 Input: but for trey segal , that dream comes at a cost .
