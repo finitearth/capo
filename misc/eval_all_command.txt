@@ -1,1 +1,0 @@
-sbatch --partition=mcml-hgx-a100-80x4 --ntasks=1 --gres=gpu:1 --time=0-02:00:00 --qos=mcml --job-name=benchmark_experiment_sst-5_eval_all --output=logs/%x-%j.out --error=logs/%x-%j.err --wrap "poetry run python scripts/evaluate_prompts.py --find-unevaluated --experiment-path results/"
