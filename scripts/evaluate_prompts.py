@@ -45,12 +45,9 @@ def run_experiment(experiment_path: str):
         block_size=experiment_args["block_size"],
         test_size=args.validation_size,
     )
-    # model_id=args.model,
-    # max_model_len=args.max_model_len,
-    # batch_size=args.batch_size,
-    # model_storage_path=args.model_storage_path,
-    # revision=args.model_revision,
-    # seed=args.random_seed,
+    import IPython
+
+    IPython.embed()
     llm = get_llm(
         model_id=experiment_args["model"],
         max_model_len=experiment_args["max_model_len"],
@@ -59,7 +56,6 @@ def run_experiment(experiment_path: str):
         revision=experiment_args["model_revision"],
         seed=experiment_args["random_seed"],
     )
-
     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
 
     scores = test_task.evaluate(prompts, predictor)
