@@ -53,7 +53,9 @@ def get_tasks(
     if len(test_df) >= test_size:
         test_df = test_df.sample(test_size, random_state=seed, replace=False)
     else:
-        raise ValueError("Not enough data in test split")
+        print(
+            f"Not enough data in test split for {dataset_name}. Using all {len(test_df)} samples."
+        )
 
     # Sample and split training data
     if len(train_df) >= (dev_size + fs_size):
