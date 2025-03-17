@@ -29,6 +29,9 @@ def run_experiment(experiment_path: str):
     logger.critical(f"Running experiment with args: {experiment_args}")
     # read experiment results by using the best prompt per step from the step_results.csv
     df = pd.read_csv(f"{experiment_path}step_results.csv")
+    # # VORSICHT, DAS IST NUR DER VERSUCH FÜR DAS QWEN MODEL WEIL WIR HIER EIN PROBLEM HATTEN. UNBEDING LÖSCHEN TODO TODO TODO ❤️‍🔥❤️‍🔥🔥
+    # prompts = [(p + "\n<|im_start|>assistant\n").replace("\r", "") for p in prompts]
+    df["prompt"] = df["prompt"].apply(lambda x: (x + "\n<|im_start|>assistant\n").replace("\r", ""))
 
     # take best per step
     if args.only_best:
@@ -37,8 +40,6 @@ def run_experiment(experiment_path: str):
     else:
         prompts = df["prompt"].unique().tolist()
     logger.critical(f"Found {len(prompts)} unique prompts")
-    # VORSICHT, DAS IST NUR DER VERSUCH FÜR DAS QWEN MODEL WEIL WIR HIER EIN PROBLEM HATTEN. UNBEDING LÖSCHEN TODO TODO TODO ❤️‍🔥❤️‍🔥🔥
-    prompts = [(p + "\n<|im_start|>assistant\n").replace("\r", "") for p in prompts]
     _, _, test_task = get_tasks(
         dataset_name=experiment_args["dataset"],
         optimizer_name=experiment_args["optimizer"],
