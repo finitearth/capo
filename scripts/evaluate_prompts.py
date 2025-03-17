@@ -37,7 +37,8 @@ def run_experiment(experiment_path: str):
     else:
         prompts = df["prompt"].unique().tolist()
     logger.critical(f"Found {len(prompts)} unique prompts")
-
+    # VORSICHT, DAS IST NUR DER VERSUCH FÜR DAS QWEN MODEL WEIL WIR HIER EIN PROBLEM HATTEN. UNBEDING LÖSCHEN TODO TODO TODO ❤️‍🔥❤️‍🔥🔥
+    prompts = [(p + "\n<|im_start|>assistant\n").replace("\r", "") for p in prompts]
     _, _, test_task = get_tasks(
         dataset_name=experiment_args["dataset"],
         optimizer_name=experiment_args["optimizer"],
@@ -45,9 +46,7 @@ def run_experiment(experiment_path: str):
         block_size=experiment_args["block_size"],
         test_size=args.validation_size,
     )
-    import IPython
 
-    IPython.embed()
     llm = get_llm(
         model_id=experiment_args["model"],
         max_model_len=experiment_args["max_model_len"],
@@ -65,7 +64,7 @@ def run_experiment(experiment_path: str):
     # save results to the step_results as extra column by joining on the prompt
     df = df.merge(df_results, on="prompt", how="left")
     # delete the empty file to allow other evaluations
-    df.to_csv(f"{experiment_path}step_results_eval.csv", index=False)
+    df.to_csv(f"{experiment_path}step_results_eval_QWEN_PFUSCH.csv", index=False)
 
     logger.critical(f"Finished evaluation of {experiment_path}")
 
