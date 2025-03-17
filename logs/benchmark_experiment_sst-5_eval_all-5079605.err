@@ -1,0 +1,23 @@
+Running experiment with args: {'experiment_name': 'benchmark_experiment_subj_mistral_CAPO_44', 'random_seed': 44, 'budget_per_run': 10000000, 'output_dir': 'results//subj/mistral/CAPO/seed44/', 'dataset': 'subj', 'model': 'vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE', 'model_revision': '803393813b8fc4046fb663af2e3c56339a5b520b', 'max_model_len': 1024, 'batch_size': None, 'model_storage_path': '../models/', 'optimizer': 'CAPO', 'n_steps': 999, 'population_size': 12, 'n_eval_samples': None, 'evoprompt_ga_template': 'standard', 'block_size': 30, 'length_penalty': 0.05, 'crossovers_per_iter': 4, 'upper_shots': 8, 'max_n_blocks_eval': 10, 'alpha': 0.2, 'shuffle_blocks_per_iter': False}
+Traceback (most recent call last):
+  File "/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/scripts/evaluate_prompts.py", line 90, in <module>
+    run_experiment(args.experiment_path)
+  File "/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/scripts/evaluate_prompts.py", line 31, in run_experiment
+    df = pd.read_csv(f"{experiment_path}step_results.csv")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/08/ra42zak2/miniforge3/envs/py312/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/08/ra42zak2/miniforge3/envs/py312/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/08/ra42zak2/miniforge3/envs/py312/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dss/dsshome1/08/ra42zak2/miniforge3/envs/py312/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/dss/dsshome1/08/ra42zak2/miniforge3/envs/py312/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results//subj/mistral/CAPO/seed44/benchmark_experiment_subj_mistral_CAPO_44/3cd7ade5f5dc0973126526c52c5703495f5f5821930961d8575108faa34f6342/step_results.csv'
