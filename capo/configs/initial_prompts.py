@@ -22,6 +22,7 @@ The corresponding chats with Claude Sonnet 3.7 API are given below:
 - subj: https://claude.ai/share/c11b3edb-e5a0-4c1f-942b-42acacd0bc2b
 - rte: https://claude.ai/share/29166259-0ef0-4cd5-8a84-c68496a1ba6e
 - gsm8k: https://claude.ai/share/94483a7d-9388-4671-bb73-086ef198fce3
+- copa: https://claude.ai/share/2021a909-4e09-4640-aa5c-c4b8f86b1b86
 
 Small changes were adapted after the initial prompts were generated to ensure that the prompts
 are using the correct target labels.
