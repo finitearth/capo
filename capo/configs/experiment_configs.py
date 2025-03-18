@@ -31,7 +31,7 @@ mistral = ModelConfig(
 
 BENCHMARK_CONFIG = ExperimentConfig(
     name="benchmark_experiment",
-    datasets=["sst-5", "agnews", "subj", "rte", "gsm8k"],
+    datasets=["sst-5", "agnews", "subj", "rte", "gsm8k", "copa"],
     models=[llama, qwen, mistral],
     optimizers=[
         OptimizerConfig(
@@ -68,7 +68,7 @@ BENCHMARK_CONFIG = ExperimentConfig(
 
 ABLATION_CONFIG = ExperimentConfig(
     name="ablation_experiment",
-    datasets=["agnews", "rte"],
+    datasets=["agnews", "rte"],  # TODO remove rte
     models=[llama],
     optimizers=[
         OptimizerConfig(
@@ -138,7 +138,7 @@ ncrossovers_grid = [4, 7, 10]
 
 HYPERPARAMETER_CONFIG = ExperimentConfig(
     name="hyperparameter_experiment",
-    datasets=["agnews", "rte"],
+    datasets=["agnews", "rte"],  # TODO remove rte
     models=[llama],
     optimizers=[
         OptimizerConfig(
