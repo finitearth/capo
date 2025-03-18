@@ -49,11 +49,11 @@ BENCHMARK_CONFIG = ExperimentConfig(
             optimizer="CAPO",
             optimizer_params={
                 "n_steps": 999,
-                "population_size": 12,
+                "population_size": 10,
                 "block_size": 30,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
-                "upper_shots": 8,
+                "upper_shots": 5,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
@@ -61,7 +61,7 @@ BENCHMARK_CONFIG = ExperimentConfig(
         ),
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=10_000_000,
+    budget_per_run=5_000_000,
     output_dir="results/",
 )
 
