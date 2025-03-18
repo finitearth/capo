@@ -61,7 +61,7 @@ BENCHMARK_CONFIG = ExperimentConfig(
         ),
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=5_000_000,
+    budget_per_run=10_000_000,
     output_dir="results/",
 )
 
