@@ -28,7 +28,7 @@ def run_experiment(experiment_path: str):
         experiment_args = json.load(f)
     logger.critical(f"Running experiment with args: {experiment_args}")
     # read experiment results by using the best prompt per step from the step_results.csv
-    df = pd.read_csv(f"{experiment_path}step_results.csv")
+    df = pd.read_parquet(f"{experiment_path}step_results.parquet")
 
     # take best per step
     if args.only_best:
@@ -69,13 +69,15 @@ def run_experiment(experiment_path: str):
 
 if __name__ == "__main__":
     if args.find_unevaluated:
-        experiments = glob(f"{args.experiment_path}**/step_results.csv", recursive=True)
+        experiments = glob(f"{args.experiment_path}**/step_results.parquet", recursive=True)
         if args.reverse:
             experiments = experiments[::-1]
         logger.critical(f"Found {len(experiments)} experiments")
         for experiment in experiments:
-            if not os.path.exists(experiment.replace("step_results.csv", "step_results_eval.csv")):
-                experiment_path = experiment.replace("step_results.csv", "")
+            if not os.path.exists(
+                experiment.replace("step_results.parquet", "step_results_eval.parquet")
+            ):
+                experiment_path = experiment.replace("step_results.parquet", "")
                 run_experiment(experiment_path)
             else:
                 logger.critical(f"Skipping {experiment} as it was already evaluated")
