@@ -1,176 +1,0 @@
-Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
-Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:02<00:07,  2.60s/it]
-Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:05<00:05,  2.51s/it]
-Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:06<00:01,  2.00s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:08<00:00,  2.10s/it]
-Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:08<00:00,  2.17s/it]
-
-Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:18,  1.86it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:17,  1.85it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:01<00:16,  1.88it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:02<00:16,  1.90it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:02<00:15,  1.92it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:03<00:15,  1.93it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:03<00:14,  1.94it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:04<00:13,  1.95it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:04<00:13,  1.98it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:05<00:12,  1.99it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:05<00:11,  2.00it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:06<00:11,  2.02it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:06<00:10,  2.03it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:07<00:10,  2.04it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:07<00:09,  2.06it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:08<00:09,  2.06it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:08<00:08,  2.09it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:08<00:08,  2.10it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:09<00:07,  2.12it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:09<00:07,  2.13it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:10<00:06,  2.15it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:10<00:06,  2.15it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:11<00:05,  2.17it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:11<00:05,  2.18it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:12<00:04,  2.21it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:12<00:04,  2.23it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:13<00:03,  2.26it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:13<00:03,  2.28it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:13<00:02,  2.31it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:14<00:02,  2.32it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:14<00:01,  2.32it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:15<00:01,  2.32it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:15<00:00,  2.33it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:16<00:00,  2.28it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:16<00:00,  2.31it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:16<00:00,  2.12it/s]
-Repo card metadata block was not found. Setting CardData to empty.
-Repo card metadata block was not found. Setting CardData to empty.
-/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df.loc[:, "input"] = df[config.input]
-/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:73: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df.loc[:, "target"] = config.target(df)
-/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:70: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df.loc[:, "input"] = df[config.input]
-/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/load_datasets.py:73: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df.loc[:, "target"] = config.target(df)
-/dss/dsshome1/02/ra42vur3/prompt_tuning/promptolution/promptolution/tasks/classification_tasks.py:56: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df[y_column] = df[y_column].str.lower()
-Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:03,  1.29it/s, est. speed input: 93.86 toks/s, output: 56.57 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  5.78it/s, est. speed input: 422.25 toks/s, output: 263.76 toks/s]
-Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:00,  4.29it/s, est. speed input: 261.96 toks/s, output: 42.94 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00, 21.44it/s, est. speed input: 1308.19 toks/s, output: 214.45 toks/s]
-Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:02,  1.42it/s, est. speed input: 92.32 toks/s, output: 58.23 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  7.10it/s, est. speed input: 461.43 toks/s, output: 291.05 toks/s]
-Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:01<00:04,  1.01s/it, est. speed input: 69.57 toks/s, output: 60.63 toks/s]Processed prompts: 100%|██████████| 5/5 [00:01<00:00,  4.97it/s, est. speed input: 347.78 toks/s, output: 303.06 toks/s]
-Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:00<00:01,  2.09it/s, est. speed input: 160.87 toks/s, output: 52.23 toks/s]Processed prompts: 100%|██████████| 5/5 [00:00<00:00,  9.55it/s, est. speed input: 735.34 toks/s, output: 261.66 toks/s]
-🍿Initialized population with 10 prompts: 
- ['Please analyze this movie review and place it in one of five sentiment categories (veryNegative, negative, neutral, positive, or veryPositive). Format your response with <final_answer> followed by your categorization, then </final_answer>.\n\n\n\nInput: ', "Sentiment analysis task: categorize this cinema review as veryNegative, negative, neutral, positive, or veryPositive. Include your final classification within <final_answer> </final_answer>.\n\nInput: overall , it 's a very entertaining , thought-provoking film with a simple message : god is love .\nOutput: <final_answer> veryPositive </final_answer>\n\nInput: the inherent limitations of using a video game as the source material movie are once again made all too clear in this schlocky horror\\/action hybrid .\nOutput: <final_answer> negative </final_answer>\n\nInput: to say that this vapid vehicle is downright doltish and uneventful is just as obvious as telling a country skunk that he has severe body odor .\nOutput: <final_answer> veryNegative </final_answer>\n\nInput: ", 'Quick sentiment check - is this movie review veryNegative, negative, neutral, positive, or veryPositive? Answer within <final_answer> </final_answer>.\n\nInput: the powerful success of read my lips with such provocative material shows why , after only three films , director\\/co-writer jacques audiard , though little known in this country , belongs in the very top rank of french filmmakers .\nOutput: <final_answer> positive </final_answer>\n\nInput: not completely loveable -- but what underdog movie since the bad news bears has been ?\nOutput: <final_answer>negative</final_answer>\n\nInput: ', "Read the movie review and identify its sentiment. Select from these five categories: veryNegative, negative, neutral, positive, or veryPositive. Place your answer inside <final_answer> </final_answer>.\n\nInput: what 's hard to understand is why anybody picked it up .\nOutput: <final_answer> veryNegative </final_answer>\n\nInput: belongs in the too-hot-for-tv direct-to-video\\/dvd category , and this is why i have given it a one-star rating .\nOutput: <final_answer> negative </final_answer>\n\nInput: not completely loveable -- but what underdog movie since the bad news bears has been ?\nOutput: <final_answer> negative </final_answer>\n\nInput: ", 'Analyze the sentiment expressed in this film critique. Categorize it as either veryNegative, negative, neutral, positive, or veryPositive, and present your answer between <final_answer> </final_answer> tags.\n\nInput: cold , pretentious , thoroughly dislikable study in sociopathy .\nOutput: <final_answer> negative </final_answer>\n\nInput: the work of an artist tormented by his heritage , using his storytelling ability to honor the many faceless victims .\nOutput: <final_answer> positive </final_answer>\n\nInput: ', 'Determine the emotional tone of the following movie critique. Is it veryNegative, negative, neutral, positive, or veryPositive? Your classification must be provided between <final_answer> and </final_answer> markers.\n\n\n\nInput: ', 'Given this movie critique, determine whether the overall sentiment is veryNegative, negative, neutral, positive, or veryPositive. Express your answer using the required format: <final_answer> chosen_category </final_answer>.\n\n\n\nInput: ', "How would you describe the sentiment of this movie review? Choose from veryNegative, negative, neutral, positive, or veryPositive. Place your chosen category between <final_answer> and </final_answer>.\n\nInput: a treat for its depiction on not giving up on dreams when you 're a struggling nobody .\nOutput: <final_answer> positive </final_answer>\n\nInput: ", "Evaluate the emotional content of the following film review and classify it into one of five sentiment categories: veryNegative, negative, neutral, positive, or veryPositive. Your classification must be provided between <final_answer> and </final_answer> markers.\n\nInput: you 'll know a star when you see one .\nOutput: <final_answer> positive </final_answer>\n\nInput: it 's virtually impossible to like any of these despicable characters .\nOutput: Based on the content of the film review, the sentiment can be classified as **negative**.\n\n<final_answer>negative</final_answer>\n\nInput: ", "Assess the tone of the provided film review and categorize it as one of the following: veryNegative, negative, neutral, positive, or veryPositive. Your final classification must appear between <final_answer> and </final_answer> tags.\n\nInput: such a wildly uneven hit-and-miss enterprise , you ca n't help suspecting that it was improvised on a day-to-day basis during production .\nOutput: <final_answer> negative </final_answer>\n\nInput: "]
-Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:02,  1.08it/s, est. speed input: 210.36 toks/s, output: 52.86 toks/s]Processed prompts:  50%|█████     | 2/4 [00:01<00:00,  2.09it/s, est. speed input: 386.24 toks/s, output: 100.00 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  3.06it/s, est. speed input: 502.32 toks/s, output: 144.79 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  3.41it/s, est. speed input: 559.27 toks/s, output: 179.88 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.70it/s, est. speed input: 559.27 toks/s, output: 179.88 toks/s]
-Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:01<00:03,  1.03s/it, est. speed input: 152.66 toks/s, output: 56.04 toks/s]Processed prompts:  75%|███████▌  | 3/4 [00:01<00:00,  2.69it/s, est. speed input: 386.18 toks/s, output: 147.77 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  3.16it/s, est. speed input: 459.79 toks/s, output: 187.32 toks/s]Processed prompts: 100%|██████████| 4/4 [00:01<00:00,  2.62it/s, est. speed input: 459.79 toks/s, output: 187.32 toks/s]
-Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:02<00:08,  2.12s/it, est. speed input: 56.73 toks/s, output: 61.93 toks/s]Processed prompts: 100%|██████████| 5/5 [00:02<00:00,  2.35it/s, est. speed input: 281.63 toks/s, output: 308.85 toks/s]
-Processed prompts:   0%|          | 0/5 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  20%|██        | 1/5 [00:03<00:13,  3.28s/it, est. speed input: 25.94 toks/s, output: 64.39 toks/s]Processed prompts: 100%|██████████| 5/5 [00:03<00:00,  1.50it/s, est. speed input: 127.43 toks/s, output: 317.84 toks/s]
-🧟Generated 4 mutated prompts.
-😶Generated Prompts: ["Identify the sentiment of the movie review. Does it fall into the category of very negative, negative, neutral, positive, or very positive? Perform a quick sentiment analysis to determine if the movie review is very negative, negative, neutral, positive, or very positive. Your classification should be enclosed between <final_answer> and </final_answer> markers.\n\nInput: carrying this wafer-thin movie on his nimble shoulders , chan wades through putrid writing , direction and timing with a smile that says , ` if i stay positive , maybe i can channel one of my greatest pictures , drunken master . '\nOutput: <final_answer> negative </final_answer>\n\nInput: not completely loveable -- but what underdog movie since the bad news bears has been ?\nOutput: <final_answer>negative</final_answer>\n\nInput: ", "Analyze the emotional tone of the movie review. Determine if it is very negative, negative, neutral, positive, or very positive. Your classification should be provided between <final_answer> and </final_answer> markers. Task: Classify the movie review into one of the five sentiment categories: very negative, negative, neutral, positive, or very positive. Include your final classification within <final_answer> </final_answer>.\n\nInput: the obligatory break-ups and hook-ups do n't seem to have much emotional impact on the characters .\nOutput: <final_answer> neutral </final_answer>\n\nInput: williams creates a stunning , taxi driver-esque portrayal of a man teetering on the edge of sanity .\nOutput: <final_answer> veryPositive </final_answer>\n\nInput: ", 'Task: Sentiment Analysis - Evaluate the sentiment of the movie review and classify it into one of the following categories: very negative, negative, neutral, positive, or very positive. Provide your final classification within <final_answer> answer </final_answer>.\n\nInput: to say that this vapid vehicle is downright doltish and uneventful is just as obvious as telling a country skunk that he has severe body odor .\nOutput: <final_answer> veryNegative </final_answer>\n\nInput: the powerful success of read my lips with such provocative material shows why , after only three films , director\\/co-writer jacques audiard , though little known in this country , belongs in the very top rank of french filmmakers .\nOutput: <final_answer> positive </final_answer>\n\nInput: ', "Evaluate the emotional tone and sentiment of the given movie review and classify it into one of the following categories: veryNegative, negative, neutral, positive, or veryPositive. Your final classification should be enclosed between <final_answer> and </final_answer> tags.\n\nInput: -lrb- a -rrb- devastatingly powerful and astonishingly vivid holocaust drama .\nOutput: <final_answer> veryPositive </final_answer>\n\nInput: you 'll know a star when you see one .\nOutput: <final_answer> positive </final_answer>\n\nInput: brian tufano 's handsome widescreen photography and paul grabowsky 's excellent music turn this fairly parochial melodrama into something really rather special .\nOutput: <final_answer> veryPositive </final_answer>\n\nInput: "]
-Processed prompts:   0%|          | 0/368 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/368 [00:09<57:23,  9.38s/it, est. speed input: 21.74 toks/s, output: 1.07 toks/s]Processed prompts:  27%|██▋       | 99/368 [00:09<00:19, 14.03it/s, est. speed input: 1208.94 toks/s, output: 100.63 toks/s]Processed prompts:  44%|████▍     | 162/368 [00:14<00:14, 13.89it/s, est. speed input: 1341.89 toks/s, output: 116.73 toks/s]Processed prompts:  46%|████▋     | 171/368 [00:15<00:14, 13.93it/s, est. speed input: 1379.57 toks/s, output: 119.19 toks/s]Processed prompts:  53%|█████▎    | 196/368 [00:15<00:09, 18.10it/s, est. speed input: 1615.10 toks/s, output: 135.38 toks/s]Processed prompts:  55%|█████▌    | 204/368 [00:15<00:08, 18.56it/s, est. speed input: 1671.42 toks/s, output: 143.91 toks/s]Processed prompts:  58%|█████▊    | 215/368 [00:15<00:07, 21.47it/s, est. speed input: 1772.19 toks/s, output: 162.51 toks/s]Processed prompts:  60%|██████    | 222/368 [00:15<00:06, 22.77it/s, est. speed input: 1832.63 toks/s, output: 174.71 toks/s]Processed prompts:  62%|██████▏   | 228/368 [00:16<00:05, 23.82it/s, est. speed input: 1878.72 toks/s, output: 185.52 toks/s]Processed prompts:  63%|██████▎   | 233/368 [00:16<00:05, 25.40it/s, est. speed input: 1911.71 toks/s, output: 195.12 toks/s]Processed prompts:  67%|██████▋   | 247/368 [00:16<00:03, 34.72it/s, est. speed input: 2034.96 toks/s, output: 218.46 toks/s]Processed prompts:  70%|███████   | 259/368 [00:16<00:02, 44.29it/s, est. speed input: 2136.10 toks/s, output: 247.59 toks/s]Processed prompts:  74%|███████▎  | 271/368 [00:16<00:01, 51.63it/s, est. speed input: 2246.48 toks/s, output: 275.92 toks/s]Processed prompts:  76%|███████▌  | 279/368 [00:16<00:01, 53.11it/s, est. speed input: 2321.58 toks/s, output: 294.03 toks/s]Processed prompts:  79%|███████▊  | 289/368 [00:16<00:01, 58.60it/s, est. speed input: 2412.02 toks/s, output: 318.53 toks/s]Processed prompts:  81%|████████  | 297/368 [00:17<00:01, 60.26it/s, est. speed input: 2490.05 toks/s, output: 338.83 toks/s]Processed prompts:  83%|████████▎ | 305/368 [00:17<00:01, 50.21it/s, est. speed input: 2551.88 toks/s, output: 356.61 toks/s]Processed prompts:  85%|████████▍ | 312/368 [00:17<00:01, 37.84it/s, est. speed input: 2573.00 toks/s, output: 375.35 toks/s]Processed prompts:  86%|████████▌ | 317/368 [00:17<00:01, 29.53it/s, est. speed input: 2581.69 toks/s, output: 388.15 toks/s]Processed prompts:  87%|████████▋ | 321/368 [00:18<00:02, 23.22it/s, est. speed input: 2567.84 toks/s, output: 398.95 toks/s]Processed prompts:  88%|████████▊ | 325/368 [00:18<00:02, 18.95it/s, est. speed input: 2556.82 toks/s, output: 412.24 toks/s]Processed prompts:  89%|████████▉ | 328/368 [00:18<00:02, 18.07it/s, est. speed input: 2560.47 toks/s, output: 424.30 toks/s]Processed prompts:  91%|█████████ | 334/368 [00:18<00:01, 23.08it/s, est. speed input: 2612.71 toks/s, output: 456.26 toks/s]Processed prompts:  92%|█████████▏| 338/368 [00:21<00:06,  4.76it/s, est. speed input: 2300.03 toks/s, output: 427.09 toks/s]Processed prompts:  94%|█████████▍| 345/368 [00:21<00:03,  7.10it/s, est. speed input: 2327.89 toks/s, output: 504.77 toks/s]Processed prompts: 100%|██████████| 368/368 [00:21<00:00, 16.75it/s, est. speed input: 2532.72 toks/s, output: 772.73 toks/s]
-Processed prompts:   0%|          | 0/52 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   2%|▏         | 1/52 [00:02<02:23,  2.81s/it, est. speed input: 70.84 toks/s, output: 3.56 toks/s]Processed prompts:  29%|██▉       | 15/52 [00:03<00:05,  6.44it/s, est. speed input: 980.68 toks/s, output: 54.41 toks/s]Processed prompts:  35%|███▍      | 18/52 [00:03<00:05,  6.55it/s, est. speed input: 1030.67 toks/s, output: 73.38 toks/s]Processed prompts:  46%|████▌     | 24/52 [00:03<00:02, 10.02it/s, est. speed input: 1327.84 toks/s, output: 142.50 toks/s]Processed prompts:  54%|█████▍    | 28/52 [00:03<00:02, 10.60it/s, est. speed input: 1412.86 toks/s, output: 185.55 toks/s]Processed prompts:  60%|█████▉    | 31/52 [00:04<00:01, 11.21it/s, est. speed input: 1480.77 toks/s, output: 223.48 toks/s]Processed prompts:  65%|██████▌   | 34/52 [00:04<00:01, 12.27it/s, est. speed input: 1556.03 toks/s, output: 268.87 toks/s]Processed prompts:  73%|███████▎  | 38/52 [00:04<00:00, 14.77it/s, est. speed input: 1675.99 toks/s, output: 335.24 toks/s]Processed prompts:  79%|███████▉  | 41/52 [00:04<00:00, 16.58it/s, est. speed input: 1773.71 toks/s, output: 388.98 toks/s]Processed prompts:  87%|████████▋ | 45/52 [00:04<00:00, 17.08it/s, est. speed input: 1861.96 toks/s, output: 456.64 toks/s]Processed prompts:  92%|█████████▏| 48/52 [00:05<00:00, 12.30it/s, est. speed input: 1836.37 toks/s, output: 489.53 toks/s]Processed prompts:  96%|█████████▌| 50/52 [00:07<00:00,  4.24it/s, est. speed input: 1442.58 toks/s, output: 442.26 toks/s]Processed prompts: 100%|██████████| 52/52 [00:07<00:00,  7.41it/s, est. speed input: 1497.65 toks/s, output: 515.17 toks/s]
-Processed prompts:   0%|          | 0/330 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/330 [00:08<48:59,  8.93s/it, est. speed input: 23.51 toks/s, output: 1.12 toks/s]Processed prompts:  37%|███▋      | 122/330 [00:09<00:11, 18.05it/s, est. speed input: 1511.70 toks/s, output: 129.58 toks/s]Processed prompts:  52%|█████▏    | 170/330 [00:12<00:09, 17.31it/s, est. speed input: 1563.26 toks/s, output: 141.16 toks/s]Processed prompts:  54%|█████▍    | 179/330 [00:12<00:08, 17.36it/s, est. speed input: 1620.03 toks/s, output: 143.86 toks/s]Processed prompts:  62%|██████▏   | 205/330 [00:13<00:05, 23.05it/s, est. speed input: 1973.47 toks/s, output: 163.32 toks/s]Processed prompts:  66%|██████▌   | 218/330 [00:13<00:04, 24.96it/s, est. speed input: 2085.56 toks/s, output: 186.91 toks/s]Processed prompts:  72%|███████▏  | 238/330 [00:13<00:02, 31.78it/s, est. speed input: 2305.66 toks/s, output: 227.81 toks/s]Processed prompts:  76%|███████▌  | 250/330 [00:13<00:02, 32.27it/s, est. speed input: 2383.32 toks/s, output: 252.91 toks/s]Processed prompts:  78%|███████▊  | 259/330 [00:13<00:01, 35.58it/s, est. speed input: 2482.42 toks/s, output: 274.87 toks/s]Processed prompts:  82%|████████▏ | 270/330 [00:14<00:01, 40.90it/s, est. speed input: 2585.37 toks/s, output: 304.78 toks/s]Processed prompts:  85%|████████▍ | 279/330 [00:14<00:01, 43.98it/s, est. speed input: 2669.24 toks/s, output: 329.50 toks/s]Processed prompts:  87%|████████▋ | 287/330 [00:14<00:01, 39.47it/s, est. speed input: 2713.40 toks/s, output: 351.62 toks/s]Processed prompts:  89%|████████▉ | 294/330 [00:14<00:00, 36.55it/s, est. speed input: 2755.54 toks/s, output: 375.03 toks/s]Processed prompts:  91%|█████████ | 300/330 [00:14<00:00, 36.03it/s, est. speed input: 2793.64 toks/s, output: 397.67 toks/s]Processed prompts:  92%|█████████▏| 305/330 [00:15<00:00, 29.26it/s, est. speed input: 2802.85 toks/s, output: 415.42 toks/s]Processed prompts:  94%|█████████▎| 309/330 [00:15<00:00, 28.54it/s, est. speed input: 2821.38 toks/s, output: 434.66 toks/s]Processed prompts:  95%|█████████▍| 313/330 [00:15<00:00, 27.99it/s, est. speed input: 2840.87 toks/s, output: 456.42 toks/s]Processed prompts:  96%|█████████▌| 317/330 [00:15<00:00, 23.11it/s, est. speed input: 2842.63 toks/s, output: 476.32 toks/s]Processed prompts:  97%|█████████▋| 320/330 [00:16<00:00, 16.91it/s, est. speed input: 2809.67 toks/s, output: 489.82 toks/s]Processed prompts:  98%|█████████▊| 323/330 [00:17<00:01,  5.99it/s, est. speed input: 2576.15 toks/s, output: 475.79 toks/s]Processed prompts:  99%|█████████▉| 327/330 [00:17<00:00,  7.76it/s, est. speed input: 2589.03 toks/s, output: 528.82 toks/s]Processed prompts: 100%|██████████| 330/330 [00:17<00:00, 18.37it/s, est. speed input: 2621.12 toks/s, output: 571.57 toks/s]
-🏎️Racing: 10 prompts remain after 1 blocks.
-13-03-25 22:26:22:353565 - ✨Step 1 ended✨
-*** Prompt 0: Score: 0.5966469428007889
-Evaluate the emotional content of the following film review and classify it into one of five sentiment categories: veryNegative, negative, neutral, positive, or veryPositive. Your classification must be provided between <final_answer> and </final_answer> markers.
-
-Input: you 'll know a star when you see one .
-Output: <final_answer> positive </final_answer>
-
-Input: it 's virtually impossible to like any of these despicable characters .
-Output: Based on the content of the film review, the sentiment can be classified as **negative**.
-
-<final_answer>negative</final_answer>
-
-Input: 
-*** Prompt 1: Score: 0.518145956607495
-Evaluate the emotional tone and sentiment of the given movie review and classify it into one of the following categories: veryNegative, negative, neutral, positive, or veryPositive. Your final classification should be enclosed between <final_answer> and </final_answer> tags.
-
-Input: -lrb- a -rrb- devastatingly powerful and astonishingly vivid holocaust drama .
-Output: <final_answer> veryPositive </final_answer>
-
-Input: you 'll know a star when you see one .
-Output: <final_answer> positive </final_answer>
-
-Input: brian tufano 's handsome widescreen photography and paul grabowsky 's excellent music turn this fairly parochial melodrama into something really rather special .
-Output: <final_answer> veryPositive </final_answer>
-
-Input: 
-*** Prompt 2: Score: 0.486094674556213
-Given this movie critique, determine whether the overall sentiment is veryNegative, negative, neutral, positive, or veryPositive. Express your answer using the required format: <final_answer> chosen_category </final_answer>.
-
-
-
-Input: 
-*** Prompt 3: Score: 0.48333333333333334
-Sentiment analysis task: categorize this cinema review as veryNegative, negative, neutral, positive, or veryPositive. Include your final classification within <final_answer> </final_answer>.
-
-Input: overall , it 's a very entertaining , thought-provoking film with a simple message : god is love .
-Output: <final_answer> veryPositive </final_answer>
-
-Input: the inherent limitations of using a video game as the source material movie are once again made all too clear in this schlocky horror\/action hybrid .
-Output: <final_answer> negative </final_answer>
-
-Input: to say that this vapid vehicle is downright doltish and uneventful is just as obvious as telling a country skunk that he has severe body odor .
-Output: <final_answer> veryNegative </final_answer>
-
-Input: 
-*** Prompt 4: Score: 0.4608481262327417
-How would you describe the sentiment of this movie review? Choose from veryNegative, negative, neutral, positive, or veryPositive. Place your chosen category between <final_answer> and </final_answer>.
-
-Input: a treat for its depiction on not giving up on dreams when you 're a struggling nobody .
-Output: <final_answer> positive </final_answer>
-
-Input: 
-*** Prompt 5: Score: 0.4404339250493097
-Read the movie review and identify its sentiment. Select from these five categories: veryNegative, negative, neutral, positive, or veryPositive. Place your answer inside <final_answer> </final_answer>.
-
-Input: what 's hard to understand is why anybody picked it up .
-Output: <final_answer> veryNegative </final_answer>
-
-Input: belongs in the too-hot-for-tv direct-to-video\/dvd category , and this is why i have given it a one-star rating .
-Output: <final_answer> negative </final_answer>
-
-Input: not completely loveable -- but what underdog movie since the bad news bears has been ?
-Output: <final_answer> negative </final_answer>
-
-Input: 
-*** Prompt 6: Score: 0.4341222879684417
-Analyze the sentiment expressed in this film critique. Categorize it as either veryNegative, negative, neutral, positive, or veryPositive, and present your answer between <final_answer> </final_answer> tags.
-
-Input: cold , pretentious , thoroughly dislikable study in sociopathy .
-Output: <final_answer> negative </final_answer>
-
-Input: the work of an artist tormented by his heritage , using his storytelling ability to honor the many faceless victims .
-Output: <final_answer> positive </final_answer>
-
-Input: 
-*** Prompt 7: Score: 0.37130177514792895
-Assess the tone of the provided film review and categorize it as one of the following: veryNegative, negative, neutral, positive, or veryPositive. Your final classification must appear between <final_answer> and </final_answer> tags.
-
-Input: such a wildly uneven hit-and-miss enterprise , you ca n't help suspecting that it was improvised on a day-to-day basis during production .
-Output: <final_answer> negative </final_answer>
-
-Input: 
-*** Prompt 8: Score: 0.3027613412228797
-Determine the emotional tone of the following movie critique. Is it veryNegative, negative, neutral, positive, or veryPositive? Your classification must be provided between <final_answer> and </final_answer> markers.
-
-
-
-Input: 
-*** Prompt 9: Score: 0.30118343195266284
-Task: Sentiment Analysis - Evaluate the sentiment of the movie review and classify it into one of the following categories: very negative, negative, neutral, positive, or very positive. Provide your final classification within <final_answer> answer </final_answer>.
-
-Input: to say that this vapid vehicle is downright doltish and uneventful is just as obvious as telling a country skunk that he has severe body odor .
-Output: <final_answer> veryNegative </final_answer>
-
-Input: the powerful success of read my lips with such provocative material shows why , after only three films , director\/co-writer jacques audiard , though little known in this country , belongs in the very top rank of french filmmakers .
-Output: <final_answer> positive </final_answer>
-
-Input: 
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/scripts/experiment.py", line 155, in <module>
-[rank0]:     best_prompts = optimizer.optimize(n_steps=args.n_steps)
-[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/capo.py", line 353, in optimize
-[rank0]:     continue_optimization = self._on_step_end()
-[rank0]:                             ^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/dss/dsshome1/02/ra42vur3/prompt_tuning/promptolution/promptolution/optimizers/base_optimizer.py", line 68, in _on_step_end
-[rank0]:     continue_optimization &= callback.on_step_end(self)  # if any callback returns False, end the optimization
-[rank0]:                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/dss/dsshome1/02/ra42vur3/prompt_tuning/capo/capo/callbacks.py", line 36, in on_step_end
-[rank0]:     json.dump(eval_dict, f)
-[rank0]:   File "/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/json/__init__.py", line 179, in dump
-[rank0]:     for chunk in iterable:
-[rank0]:                  ^^^^^^^^
-[rank0]:   File "/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/json/encoder.py", line 432, in _iterencode
-[rank0]:     yield from _iterencode_dict(o, _current_indent_level)
-[rank0]:   File "/dss/dsshome1/02/ra42vur3/miniforge3/envs/py312/lib/python3.12/json/encoder.py", line 377, in _iterencode_dict
-[rank0]:     raise TypeError(f'keys must be str, int, float, bool or None, '
-[rank0]: TypeError: keys must be str, int, float, bool or None, not tuple
-[rank0]:[W313 22:26:23.720817354 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

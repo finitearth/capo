@@ -1,54 +1,0 @@
-Running experiment with args: {'experiment_name': 'benchmark_experiment_rte_qwen_EvoPromptGA_43', 'random_seed': 43, 'budget_per_run': 10000000, 'output_dir': 'results//rte/qwen/EvoPromptGA/seed43/', 'dataset': 'rte', 'model': 'vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4', 'model_revision': 'c83e67dfb2664f5039fd4cd99e206799e27dd800', 'max_model_len': 1024, 'batch_size': None, 'model_storage_path': '../models/', 'optimizer': 'EvoPromptGA', 'n_steps': 999, 'population_size': 10, 'n_eval_samples': 300, 'evoprompt_ga_template': 'standard', 'block_size': None, 'length_penalty': None, 'crossovers_per_iter': None, 'upper_shots': None, 'max_n_blocks_eval': None, 'alpha': None, 'shuffle_blocks_per_iter': False}
-Found 28 unique prompts
-Repo card metadata block was not found. Setting CardData to empty.
-Repo card metadata block was not found. Setting CardData to empty.
-/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/capo/load_datasets.py:68: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df.loc[:, "input"] = config.input(df)
-/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/capo/load_datasets.py:73: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df.loc[:, "target"] = config.target(df)
-/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/capo/load_datasets.py:68: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df.loc[:, "input"] = config.input(df)
-/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/capo/load_datasets.py:73: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df.loc[:, "target"] = config.target(df)
-/dss/dsshome1/08/ra42zak2/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/tasks/classification_tasks.py:56: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df[y_column] = df[y_column].str.lower()
-Loading safetensors checkpoint shards:   0% Completed | 0/5 [00:00<?, ?it/s]
-Loading safetensors checkpoint shards:  20% Completed | 1/5 [00:02<00:08,  2.13s/it]
-Loading safetensors checkpoint shards:  40% Completed | 2/5 [00:04<00:07,  2.38s/it]
-Loading safetensors checkpoint shards:  60% Completed | 3/5 [00:06<00:04,  2.32s/it]
-Loading safetensors checkpoint shards:  80% Completed | 4/5 [00:09<00:02,  2.29s/it]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:11<00:00,  2.27s/it]
-Loading safetensors checkpoint shards: 100% Completed | 5/5 [00:11<00:00,  2.28s/it]
-
-Capturing CUDA graph shapes:   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graph shapes:   3%|▎         | 1/35 [00:00<00:22,  1.54it/s]Capturing CUDA graph shapes:   6%|▌         | 2/35 [00:01<00:20,  1.60it/s]Capturing CUDA graph shapes:   9%|▊         | 3/35 [00:01<00:19,  1.64it/s]Capturing CUDA graph shapes:  11%|█▏        | 4/35 [00:02<00:18,  1.65it/s]Capturing CUDA graph shapes:  14%|█▍        | 5/35 [00:03<00:17,  1.67it/s]Capturing CUDA graph shapes:  17%|█▋        | 6/35 [00:03<00:17,  1.68it/s]Capturing CUDA graph shapes:  20%|██        | 7/35 [00:04<00:16,  1.69it/s]Capturing CUDA graph shapes:  23%|██▎       | 8/35 [00:04<00:15,  1.70it/s]Capturing CUDA graph shapes:  26%|██▌       | 9/35 [00:05<00:14,  1.74it/s]Capturing CUDA graph shapes:  29%|██▊       | 10/35 [00:05<00:14,  1.75it/s]Capturing CUDA graph shapes:  31%|███▏      | 11/35 [00:06<00:13,  1.76it/s]Capturing CUDA graph shapes:  34%|███▍      | 12/35 [00:07<00:13,  1.75it/s]Capturing CUDA graph shapes:  37%|███▋      | 13/35 [00:07<00:12,  1.77it/s]Capturing CUDA graph shapes:  40%|████      | 14/35 [00:08<00:11,  1.79it/s]Capturing CUDA graph shapes:  43%|████▎     | 15/35 [00:08<00:11,  1.80it/s]Capturing CUDA graph shapes:  46%|████▌     | 16/35 [00:09<00:10,  1.82it/s]Capturing CUDA graph shapes:  49%|████▊     | 17/35 [00:09<00:09,  1.83it/s]Capturing CUDA graph shapes:  51%|█████▏    | 18/35 [00:10<00:09,  1.85it/s]Capturing CUDA graph shapes:  54%|█████▍    | 19/35 [00:10<00:08,  1.87it/s]Capturing CUDA graph shapes:  57%|█████▋    | 20/35 [00:11<00:07,  1.89it/s]Capturing CUDA graph shapes:  60%|██████    | 21/35 [00:11<00:07,  1.91it/s]Capturing CUDA graph shapes:  63%|██████▎   | 22/35 [00:12<00:06,  1.89it/s]Capturing CUDA graph shapes:  66%|██████▌   | 23/35 [00:12<00:06,  1.92it/s]Capturing CUDA graph shapes:  69%|██████▊   | 24/35 [00:13<00:05,  1.94it/s]Capturing CUDA graph shapes:  71%|███████▏  | 25/35 [00:13<00:05,  1.98it/s]Capturing CUDA graph shapes:  74%|███████▍  | 26/35 [00:14<00:04,  2.02it/s]Capturing CUDA graph shapes:  77%|███████▋  | 27/35 [00:14<00:03,  2.04it/s]Capturing CUDA graph shapes:  80%|████████  | 28/35 [00:15<00:03,  2.06it/s]Capturing CUDA graph shapes:  83%|████████▎ | 29/35 [00:15<00:02,  2.07it/s]Capturing CUDA graph shapes:  86%|████████▌ | 30/35 [00:16<00:02,  2.08it/s]Capturing CUDA graph shapes:  89%|████████▊ | 31/35 [00:16<00:01,  2.08it/s]Capturing CUDA graph shapes:  91%|█████████▏| 32/35 [00:17<00:01,  2.08it/s]Capturing CUDA graph shapes:  94%|█████████▍| 33/35 [00:17<00:00,  2.08it/s]Capturing CUDA graph shapes:  97%|█████████▋| 34/35 [00:18<00:00,  1.55it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:19<00:00,  1.68it/s]Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:19<00:00,  1.82it/s]
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/scripts/evaluate_prompts.py", line 90, in <module>
-[rank0]:     run_experiment(args.experiment_path)
-[rank0]:   File "/dss/dsshome1/08/ra42zak2/prompt_tuning/capo/scripts/evaluate_prompts.py", line 63, in run_experiment
-[rank0]:     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
-[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/dss/dsshome1/08/ra42zak2/miniforge3/envs/py312/lib/python3.12/site-packages/promptolution/predictors/classificator.py", line 95, in __init__
-[rank0]:     assert all([c.islower() for c in classes]), "Class labels should be lowercase."
-[rank0]:                 ^^^^^^^^^
-[rank0]: AttributeError: 'float' object has no attribute 'islower'
-[rank0]:[W316 19:17:16.300610717 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
