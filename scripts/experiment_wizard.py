@@ -70,7 +70,7 @@ if __name__ == "__main__":
     )
     pd.DataFrame({"question": dev_task.xs, "final_answer": dev_task.ys}).to_json(train_file_name)
 
-    with open("promptwizard_config/promptwizard_config.yaml", "r") as f:
+    with open("promptwizard_config/base_config.yaml", "r") as f:
         config = yaml.safe_load(f)        
     config["base_instruction"] = random.sample(dev_task.initial_prompts, 1)[0]
     config["task_description"] = dev_task.description
