@@ -43,6 +43,7 @@ os.environ["SEED"] = str(args.random_seed)
 
 import random
 import pandas as pd
+import json
 import yaml
 
 from capo.promptwizard.glue.promptopt.instantiate import GluePromptOpt
@@ -68,7 +69,11 @@ if __name__ == "__main__":
     dev_task, _, _ = get_tasks(
         args.dataset, args.optimizer, block_size=args.block_size, seed=args.random_seed
     )
-    pd.DataFrame({"question": dev_task.xs, "final_answer": dev_task.ys}).to_json(train_file_name)
+    # write to json in format [{"question": "question", "final_answer": "answer"}, ...] from dev_task.xs and dev_task.ys
+    data = [{"question": q, "final_answer": a} for q, a in zip(dev_task.xs, dev_task.ys)]
+    with open(train_file_name, "w") as f:
+        json.dump(data, f)
+
 
     with open("promptwizard_config/base_config.yaml", "r") as f:
         config = yaml.safe_load(f)        
