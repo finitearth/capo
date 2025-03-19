@@ -60,7 +60,7 @@ _RTE_CONFIG = DatasetConfig(
     name="SetFit/rte",
     alias="rte",
     revision="23f2a468b9bc13030f5595a2e5f9307cb165280c",
-    input=lambda df: "Text 1:\n" + df["text1"] + "\n Text 2:\n" + df["text2"],
+    input=lambda df: "Text 1:\n" + df["text1"] + "\nText 2:\n" + df["text2"],
     target=lambda df: df["label"].map({1: "No Entailment", 0: "Entailment"}),
     splits=SplitConfig(train="train", test="validation"),
     initial_prompts=INITIAL_PROMPTS["rte"],
