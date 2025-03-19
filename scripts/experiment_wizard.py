@@ -1,7 +1,7 @@
 ### This code tries to implement the demos/gsm8k.ipynb notebook in a script format.
 """
 example call:
-python scripts/evaluate_promptwizard.py --experiment-name prompt_wizard --dataset openai/gsm8k --max-model-len 4096 --random-seed 42 --optimizer promptwizard --model vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE --model-revision main --output-dir results/ --n-steps 999 --budget-per-run 1000
+python scripts/experiment_wizard.py --experiment-name prompt_wizard --dataset agnews --max-model-len 4096 --random-seed 42 --optimizer promptwizard --model vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE --model-revision main --output-dir results/ --n-steps 999 --budget-per-run 1000
 """
 from argparse import ArgumentParser
 
@@ -35,6 +35,7 @@ args = parser.parse_args()
 assert args.optimizer == "promptwizard"
 
 import os
+
 os.environ["MODEL"] = args.model
 os.environ["MODEL_REVISION"] = args.model_revision
 os.environ["MAX_MODEL_LEN"] = str(args.max_model_len)
@@ -67,14 +68,14 @@ if __name__ == "__main__":
     )
     pd.DataFrame({"question": dev_task.xs, "final_answer": dev_task.ys}).to_json(train_file_name)
 
-    with open("configs/base_config.yaml", "r") as f:
+    with open("../promptwizard_config/base_config.yaml", "r") as f:
         config = f.read()
     config = config.replace("<initial_prompt>", random.sample(dev_task.initial_prompts, 1)[0])
     config = config.replace("<task_desc>", dev_task.description)
-    with open("configs/temp_config.yaml", "w") as f:
+    with open("../promptwizard_config/temp_config.yaml", "w") as f:
         f.write(config)
 
-    path_to_config = "configs"
+    path_to_config = "../promptwizard_config"
     promptopt_config_path = os.path.join(path_to_config, "temp_config.yaml")
     setup_config_path = os.path.join(path_to_config, "setup_config.yaml")
 
