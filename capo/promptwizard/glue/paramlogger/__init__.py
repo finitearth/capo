@@ -68,10 +68,15 @@ class ParamLogger:
         :return: None
         """
         def wrap(*argv, **kwargs):
-            args_to_log = run_method_get_io_dict(method_obj, self.DEL_SELF_ARG, *argv, **kwargs)
-            args_to_log[LogLiterals.META][LogLiterals.METHOD_NAME] = method_obj.__name__
-            self.CHAINED_LOG.append(args_to_log)
-            return args_to_log[LogLiterals.OUTPUTS]
+            try:
+                args_to_log = run_method_get_io_dict(method_obj, self.DEL_SELF_ARG, *argv, **kwargs)
+                args_to_log[LogLiterals.META][LogLiterals.METHOD_NAME] = method_obj.__name__
+                self.CHAINED_LOG.append(args_to_log)
+                return args_to_log[LogLiterals.OUTPUTS]
+            except Exception as e:
+                print(f"Error in method {method_obj.__name__} : {e}")
+                return {}
+
         return wrap
 
     def log_io_params(self, method_obj, file_name="io_logs"):
