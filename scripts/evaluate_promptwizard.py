@@ -67,14 +67,10 @@ if __name__ == "__main__":
     )
     pd.DataFrame({"question": dev_task.xs, "final_answer": dev_task.ys}).to_json(train_file_name)
 
-    # overwrite config
-    initial_prompt = random.sample(dev_task.initial_prompts, 1)[0]
-    task_desc = dev_task.task_description
-
     with open("configs/base_config.yaml", "r") as f:
         config = f.read()
-    config = config.replace("<initial_prompt>", initial_prompt)
-    config = config.replace("<task_desc>", task_desc)
+    config = config.replace("<initial_prompt>", random.sample(dev_task.initial_prompts, 1)[0])
+    config = config.replace("<task_desc>", dev_task.description)
     with open("configs/temp_config.yaml", "w") as f:
         f.write(config)
 
