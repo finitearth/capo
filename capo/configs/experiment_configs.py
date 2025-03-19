@@ -59,6 +59,20 @@ BENCHMARK_CONFIG = ExperimentConfig(
                 "shuffle_blocks_per_iter": False,
             },
         ),
+        OptimizerConfig(
+            name="OPRO",
+            optimizer="OPRO",
+            optimizer_params={
+                ...: ...,  # TODO fill in
+            },
+        ),
+        OptimizerConfig(
+            name="PromptWizard",
+            optimizer="PromptWizard",
+            optimizer_params={
+                ...: ...,  # TODO fill in
+            },
+        ),
     ],
     random_seeds=[42, 43, 44],
     budget_per_run=10_000_000,
