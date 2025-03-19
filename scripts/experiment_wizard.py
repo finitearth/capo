@@ -60,7 +60,7 @@ if __name__ == "__main__":
     logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
     seed_everything(args.random_seed)
 
-    train_file_name = "../temp/promptwizard/data.jsonl"
+    train_file_name = "temp/promptwizard/data.jsonl"
     # make dir if not exist
     os.makedirs(os.path.dirname(train_file_name), exist_ok=True)
     dev_task, _, _ = get_tasks(
@@ -68,14 +68,14 @@ if __name__ == "__main__":
     )
     pd.DataFrame({"question": dev_task.xs, "final_answer": dev_task.ys}).to_json(train_file_name)
 
-    with open("../promptwizard_config/base_config.yaml", "r") as f:
+    with open("promptwizard_config/base_config.yaml", "r") as f:
         config = f.read()
     config = config.replace("<initial_prompt>", random.sample(dev_task.initial_prompts, 1)[0])
     config = config.replace("<task_desc>", dev_task.description)
-    with open("../promptwizard_config/temp_config.yaml", "w") as f:
+    with open("promptwizard_config/temp_config.yaml", "w") as f:
         f.write(config)
 
-    path_to_config = "../promptwizard_config"
+    path_to_config = "promptwizard_config"
     promptopt_config_path = os.path.join(path_to_config, "temp_config.yaml")
     setup_config_path = os.path.join(path_to_config, "setup_config.yaml")
 
