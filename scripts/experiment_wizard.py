@@ -72,7 +72,7 @@ if __name__ == "__main__":
     )
     # write to json in format [{"question": "question", "final_answer": "answer"}, ...] from dev_task.xs and dev_task.ys
     data = [{"question": q, "final_answer": a} for q, a in zip(dev_task.xs, dev_task.ys)]
-    save_jsonlist(train_file_name, data)
+    save_jsonlist(train_file_name, data, "w")
 
     with open("promptwizard_config/base_config.yaml", "r") as f:
         config = yaml.safe_load(f)        
