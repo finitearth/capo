@@ -42,10 +42,11 @@ os.environ["MAX_MODEL_LEN"] = str(args.max_model_len)
 os.environ["SEED"] = str(args.random_seed)
 
 import random
+import pandas as pd
+import yaml
 
 from capo.promptwizard.glue.promptopt.instantiate import GluePromptOpt
 from capo.promptwizard.glue.promptopt.techniques.common_logic import DatasetSpecificProcessing
-import pandas as pd
 
 from capo.utils import generate_random_hash, seed_everything
 from capo.load_datasets import get_tasks
@@ -55,7 +56,7 @@ class Processor(DatasetSpecificProcessing):
     def extract_final_answer(self, answer: str):
         return answer.split("</final_answer>")[0].split("<final_answer>")[-1].strip()
     def dataset_to_jsonl(self, *args, **kwargs):
-        ":)"
+        pass
 
 if __name__ == "__main__":
     logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
@@ -69,12 +70,13 @@ if __name__ == "__main__":
     )
     pd.DataFrame({"question": dev_task.xs, "final_answer": dev_task.ys}).to_json(train_file_name)
 
-    with open("promptwizard_config/base_config.yaml", "r") as f:
-        config = f.read()
-    config = config.replace("<initial_prompt>", random.sample(dev_task.initial_prompts, 1)[0])
-    config = config.replace("<task_desc>", dev_task.description)
+    with open("promptwizard_config/promptwizard_config.yaml", "r") as f:
+        config = yaml.safe_load(f)        
+    config["base_instruction"] = random.sample(dev_task.initial_prompts, 1)[0]
+    config["task_description"] = dev_task.description
+    
     with open("promptwizard_config/temp_config.yaml", "w") as f:
-        f.write(config)
+        yaml.dump(config, f)
 
     path_to_config = "promptwizard_config"
     promptopt_config_path = os.path.join(path_to_config, "temp_config.yaml")
