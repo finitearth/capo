@@ -54,7 +54,8 @@ from capo.load_datasets import get_tasks
 class Processor(DatasetSpecificProcessing):
     def extract_final_answer(self, answer: str):
         return answer.split("</final_answer>")[0].split("<final_answer>")[-1].strip()
-
+    def dataset_to_jsonl(self, *args, **kwargs):
+        ":)"
 
 if __name__ == "__main__":
     logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
