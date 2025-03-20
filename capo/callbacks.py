@@ -55,7 +55,8 @@ class PromptScoreCallback(Callback):
             csv_path = os.path.join(self.dir, "prompt_scores.csv")
             df["step"] = self.count
             if not os.path.exists(csv_path):
-                df.to_csv(csv_path)
+                all_block_ids = [block_id for block_id, _ in optimizer.task.blocks]
+                df.to_csv(csv_path, header=all_block_ids)
             else:
                 df.to_csv(csv_path, mode="a", header=False)
 
