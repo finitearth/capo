@@ -312,10 +312,20 @@ class CAPOptimizer(BaseOptimizer):
 
         if self.verbosity > 0:
             self.logger.warning(f"🏎️Racing: {len(candidates)} prompts remain after {i} blocks.")
-        scores = np.concatenate(block_scores, axis=1).mean(axis=1)
-        order = np.argsort(-scores)[:k]
+
+        # retrieve scores for all blocks evaluated so far
+        # note that this are not the average scores of the current iteration
+        # they would be calculated like this: np.concatenate(block_scores, axis=1).mean(axis=1)
+        for i, (block_id, _) in enumerate(self.task.blocks):
+            scores = self.task.evaluate_on_block(
+                [c.construct_prompt() for c in candidates], block_id, self.predictor
+            )
+
+        avg_scores = np.mean(np.concatenate(block_scores, axis=1), axis=1)
+
+        order = np.argsort(-avg_scores)[:k]
         candidates = [candidates[i] for i in order]
-        self.scores = scores[order]
+        self.scores = avg_scores[order]
 
         return candidates
 
