@@ -59,9 +59,24 @@ BENCHMARK_CONFIG = ExperimentConfig(
                 "shuffle_blocks_per_iter": False,
             },
         ),
+        OptimizerConfig(
+            name="OPRO",
+            optimizer="OPRO",
+            optimizer_params={
+                "n_steps": 999,
+                "max_num_instructions": 20,
+                "num_instructions_per_step": 8,
+                "num_few_shots": 3,
+            },
+        ),
+        OptimizerConfig(
+            name="PromptWizard",
+            optimizer="PromptWizard",
+            optimizer_params={},
+        ),
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=10_000_000,
+    budget_per_run=5_000_000,
     output_dir="results/",
 )
 
@@ -128,7 +143,7 @@ ABLATION_CONFIG = ExperimentConfig(
         ),
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=10_000_000,
+    budget_per_run=5_000_000,
     output_dir="results/",
 )
 
@@ -195,6 +210,6 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
         for ncrossovers in ncrossovers_grid
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=10_000_000,
+    budget_per_run=5_000_000,
     output_dir="results/",
 )

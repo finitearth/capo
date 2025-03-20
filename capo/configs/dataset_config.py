@@ -98,7 +98,6 @@ ALL_DATASETS = {
     "sst-5": _SST5_CONFIG,
     "agnews": _AGNEWS_CONFIG,
     "subj": _SUBJ_CONFIG,
-    "rte": _RTE_CONFIG,
     "gsm8k": _GSM8K_CONFIG,
     "copa": _COPA_CONFIG,
 }
