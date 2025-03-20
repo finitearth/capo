@@ -22,11 +22,11 @@ parser.add_argument("--reverse", action="store_true")
 args = parser.parse_args()
 
 
-def run_experiment(experiment_path: str):
+def run_evaluation(experiment_path: str):
     # read experiment args
     with open(f"{experiment_path}args.json", "r") as f:
         experiment_args = json.load(f)
-    logger.critical(f"Running experiment with args: {experiment_args}")
+    logger.critical(f"Running evaluation with args: {experiment_args}")
     # read experiment results by using the best prompt per step from the step_results.csv
     df = pd.read_parquet(f"{experiment_path}step_results.parquet")
 
@@ -78,8 +78,8 @@ if __name__ == "__main__":
                 experiment.replace("step_results.parquet", "step_results_eval.parquet")
             ):
                 experiment_path = experiment.replace("step_results.parquet", "")
-                run_experiment(experiment_path)
+                run_evaluation(experiment_path)
             else:
                 logger.critical(f"Skipping {experiment} as it was already evaluated")
     else:
-        run_experiment(args.experiment_path)
+        run_evaluation(args.experiment_path)

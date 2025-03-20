@@ -1,3 +1,4 @@
+import logging
 from typing import Tuple
 
 import pandas as pd
@@ -7,6 +8,8 @@ from promptolution.tasks import ClassificationTask
 from capo.configs.base_config import OptimizerType
 from capo.configs.dataset_config import ALL_DATASETS
 from capo.task import CAPOClassificationTask
+
+logger = logging.getLogger(__name__)
 
 
 def get_tasks(
@@ -53,7 +56,7 @@ def get_tasks(
     if len(test_df) >= test_size:
         test_df = test_df.sample(test_size, random_state=seed, replace=False)
     else:
-        print(
+        logger.warning(
             f"Not enough data in test split for {dataset_name}. Using all {len(test_df)} samples."
         )
 
