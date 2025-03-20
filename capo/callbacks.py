@@ -42,6 +42,9 @@ class PromptScoreCallback(Callback):
                 prompts.add(prompt)
                 block_ids.add(block_id)
 
+            prompts = sorted(list(prompts))
+            block_ids = sorted(list(block_ids))
+
             df = pd.DataFrame(index=prompts, columns=block_ids, dtype=float)
             ordered_columns = [col for col, _ in optimizer.task.blocks if col in df.columns]
             df = df[ordered_columns]
