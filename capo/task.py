@@ -61,10 +61,9 @@ def get_avg_scores(self, prompts):
     prompt_scores = []
     for prompt in prompts:
         scores = []
-        for block_id in range(len(self.blocks)):
-            try:
-                scores.append(self.prompt_score_cache[(prompt, block_id)])
-            except KeyError:
-                pass
+        for block_id, _ in self.blocks:
+            score = self.prompt_score_cache.get((prompt, block_id))
+            if score is not None:
+                scores.append(score)
         prompt_scores.append(np.mean(scores))
     return prompt_scores
