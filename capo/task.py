@@ -47,3 +47,24 @@ class CAPOClassificationTask(ClassificationTask):
         scores = np.array(scores)
 
         return scores
+
+
+def get_avg_scores(self, prompts):
+    """Get the average scores for each prompt across all blocks.
+
+    Args:
+        prompts (List[str]): List of prompts to get scores for.
+
+    Returns:
+        List[float]: List of average scores for each prompt
+    """
+    prompt_scores = []
+    for prompt in prompts:
+        scores = []
+        for block_id in range(len(self.blocks)):
+            try:
+                scores.append(self.prompt_score_cache[(prompt, block_id)])
+            except KeyError:
+                pass
+        prompt_scores.append(np.mean(scores))
+    return prompt_scores
