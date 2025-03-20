@@ -46,9 +46,9 @@ import pandas as pd
 import json
 import yaml
 
-from capo.promptwizard.glue.promptopt.instantiate import GluePromptOpt
-from capo.promptwizard.glue.promptopt.techniques.common_logic import DatasetSpecificProcessing
-from capo.promptwizard.glue.common.utils.file import save_jsonlist
+from promptwizard.glue.promptopt.instantiate import GluePromptOpt
+from promptwizard.glue.promptopt.techniques.common_logic import DatasetSpecificProcessing
+from promptwizard.glue.common.utils.file import save_jsonlist
 
 from capo.utils import generate_random_hash, seed_everything
 from capo.load_datasets import get_tasks
