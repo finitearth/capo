@@ -65,4 +65,4 @@ class CAPOClassificationTask(ClassificationTask):
                 if score is not None:
                     scores.append(score)
             prompt_scores.append(np.mean(scores))
-        return prompt_scores
+        return np.array(prompt_scores)
