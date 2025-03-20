@@ -274,7 +274,7 @@ class CAPOptimizer(BaseOptimizer):
             block_scores.append(new_scores)
             scores = np.concatenate(block_scores, axis=1)
 
-            # boolean matrix C_ij indicating if candidate i is better than candidate j
+            # boolean matrix C_ij indicating if candidate j is better than candidate i
             comparison_matrix = np.array(
                 [
                     [self.test_statistic(other_score, score) for other_score in scores]
