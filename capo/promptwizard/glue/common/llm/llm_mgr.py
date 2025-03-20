@@ -34,6 +34,7 @@ def call_api(messages):
     prediction = llm.get_response(message)
     print(prediction)
     print(f"current token count: {llm.get_token_count()}")
+    os.environ["TOKEN_COUNT"] = str(llm.get_token_count())
     return prediction[0]
 
 

@@ -94,7 +94,7 @@ if __name__ == "__main__":
     )
 
     print(f"Best prompt: {best_prompt} \nExpert profile: {expert_profile}")
-
+    token_counts = dict(os.environ["TOKEN_COUNTS"])
     pd.DataFrame(
-        {"step": [1], "prompt": [best_prompt], "system_prompt": [expert_profile]}
+        {"step": [1], "prompt": [best_prompt], "system_prompt": [expert_profile], "input_tokens_meta_llm": [token_counts["input_tokens"]], "output_tokens_meta_llm": [token_counts["output_tokens"]], "input_tokens_downstream_llm": [0], "output_tokens_downstream_llm": [0]}
     ).to_parquet(logging_dir + "step_results.parquet")
