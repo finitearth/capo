@@ -32,7 +32,7 @@ def generate_individual_configs(config: ExperimentConfig) -> List[ExperimentConf
     return individual_configs
 
 
-def generate_experiment_command(
+def generate_command(
     config: ExperimentConfig,
     evaluate: bool = False,
     partition: str = None,
@@ -57,11 +57,6 @@ def generate_experiment_command(
     command += " --output=logs/%x-%j.out"
     command += " --error=logs/%x-%j.err"
 
-    if config.optimizers[0].name == "PromptWizard":
-        command += ' --wrap "poetry run python scripts/experiment_wizard.py'
-    else:
-        command += ' --wrap "poetry run python scripts/experiment.py'
-
     # Add all the parameters
     def add_param_if_exists(command, param_name, param_value):
         if param_value is not None:
@@ -71,7 +66,10 @@ def generate_experiment_command(
     if evaluate:
         command += f' --wrap "poetry run python scripts/evaluate_prompts.py --experiment-path {config.output_dir}"'
     else:
-        command += ' --wrap "poetry run python scripts/experiment.py'
+        if config.optimizers[0].name == "PromptWizard":
+            command += ' --wrap "poetry run python scripts/experiment_wizard.py'
+        else:
+            command += ' --wrap "poetry run python scripts/experiment.py'
         command = add_param_if_exists(command, "optimizer", config.optimizers[0].optimizer)
         command = add_param_if_exists(
             command, "n-steps", config.optimizers[0].optimizer_params["n_steps"]
