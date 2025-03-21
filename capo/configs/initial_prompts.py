@@ -16,14 +16,6 @@ Explicitly state this expected format as part of the prompts. Create overall 20 
 within quotes as an array:
 '''
 
-The corresponding chats with Claude Sonnet 3.7 API are given below:
-- sst-5: https://claude.ai/share/b3087202-4aea-4f16-9464-0ed2056c7ec6
-- agnews: https://claude.ai/share/7d8d866f-00eb-480d-b117-355f48b818e1
-- subj: https://claude.ai/share/c11b3edb-e5a0-4c1f-942b-42acacd0bc2b
-- rte: https://claude.ai/share/29166259-0ef0-4cd5-8a84-c68496a1ba6e
-- gsm8k: https://claude.ai/share/94483a7d-9388-4671-bb73-086ef198fce3
-- copa: https://claude.ai/share/2021a909-4e09-4640-aa5c-c4b8f86b1b86
-
 Small changes were adapted after the initial prompts were generated to ensure that the prompts
 are using the correct target labels.
 """
@@ -81,28 +73,6 @@ INITIAL_PROMPTS = {
         "Read the following sentence and classify it as either 'subjective' (containing opinions, judgments, or emotions) or 'objective' (presenting verifiable facts without personal bias). Your answer must be formatted as: <final_answer>your classification</final_answer>",
         "Evaluate this sentence and determine if it's presenting objective information (facts that can be verified) or subjective content (opinions, judgments, or emotions). Provide your classification inside <final_answer> </final_answer> markers.",
         "Text classification task: decide if the sentence is objective (fact-based, unbiased, verifiable) or subjective (opinion-based, contains personal judgments or feelings). Format your answer as <final_answer>objective</final_answer> or <final_answer>subjective</final_answer>.",
-    ],
-    "rte": [
-        "Determine if the second sentence logically follows from the first. Answer with 'Entailment' or 'no entailment' between <final_answer> tags.",
-        "Analyze these two sentences and decide if one entails the other. Put your answer (Entailment/no entailment) inside <final_answer> </final_answer> markers.",
-        "Does sentence B logically follow from sentence A? Classify as Entailment or no entailment and place your answer between <final_answer> tags.",
-        "For the given pair of sentences, determine if the meaning of the second sentence can be inferred from the first. Provide your classification (Entailment/no entailment) within <final_answer> </final_answer> tags.",
-        "Textual entailment task: Review the sentence pair and decide whether the second sentence necessarily follows from the first. Your answer must be either 'Entailment' or 'no entailment' enclosed in <final_answer> </final_answer>.",
-        "Simple classification task: Does sentence 2 logically follow from sentence 1? Answer with Entailment or no entailment between <final_answer> tags.",
-        "Evaluate whether the information in the second sentence can be inferred from the first sentence. Classify as either Entailment or no entailment and provide your answer within <final_answer> </final_answer> markers.",
-        "Given two sentences, determine if the second one can be logically inferred from the first. Your classification (Entailment/no entailment) should be placed inside <final_answer> </final_answer>.",
-        "Linguistic inference challenge: Can the meaning of sentence B be derived from sentence A? Indicate Entailment or no entailment in your response, surrounded by <final_answer> </final_answer> tags.",
-        "Read these two sentences carefully and determine if there's a logical entailment relationship between them. Respond with either 'Entailment' or 'no entailment' inside <final_answer> </final_answer> markers.",
-        "Natural language inference task: Decide if the second statement is entailed by the first. Your answer should be either Entailment or no entailment, placed between <final_answer> tags.",
-        "Looking at this sentence pair, would a reasonable person infer the second from the first? Label as Entailment or no entailment and include your answer within <final_answer> </final_answer>.",
-        "Sentence relationship analysis: Does the information in sentence 1 necessarily imply the information in sentence 2? Classify as Entailment or no entailment between <final_answer> </final_answer> tags.",
-        "Determine the logical relationship between these sentences. If the second sentence logically follows from the first, classify as 'Entailment'; otherwise, classify as 'no entailment'. Place your answer inside <final_answer> </final_answer> markers.",
-        "Evaluate this pair of sentences. If the truth of the first sentence guarantees the truth of the second, answer 'Entailment'; otherwise, answer 'no entailment'. Your classification must appear between <final_answer> tags.",
-        "Analyze the semantic relationship between these two sentences. Does the meaning of sentence A entail the meaning of sentence B? Respond with Entailment or no entailment inside <final_answer> </final_answer>.",
-        "Consider these two statements. If statement 2 is necessarily true when statement 1 is true, classify as Entailment; otherwise, classify as no entailment. Format your answer with <final_answer> </final_answer> tags.",
-        "Logical inference detection: Examine whether the second sentence is a logical consequence of the first. Your classification (Entailment/no entailment) should be placed between <final_answer> </final_answer> markers.",
-        "For this pair of sentences, your task is to determine whether the information in the second sentence can be inferred from the information provided in the first sentence. If yes, the classification is 'Entailment'; if no, the classification is 'no entailment'. Please provide your answer between <final_answer> </final_answer> tags.",
-        "Assessment of textual inference: Does sentence 2 follow logically from sentence 1? If it does, the answer is Entailment; if not, the answer is no entailment. Place your classification inside <final_answer> </final_answer> markers.",
     ],
     "gsm8k": [
         "Solve this math word problem using step-by-step reasoning. Put your final answer between <final_answer> tags.",

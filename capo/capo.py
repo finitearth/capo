@@ -274,7 +274,7 @@ class CAPOptimizer(BaseOptimizer):
             block_scores.append(new_scores)
             scores = np.concatenate(block_scores, axis=1)
 
-            # boolean matrix C_ij indicating if candidate i is better than candidate j
+            # boolean matrix C_ij indicating if candidate j is better than candidate i
             comparison_matrix = np.array(
                 [
                     [self.test_statistic(other_score, score) for other_score in scores]
@@ -312,10 +312,11 @@ class CAPOptimizer(BaseOptimizer):
 
         if self.verbosity > 0:
             self.logger.warning(f"🏎️Racing: {len(candidates)} prompts remain after {i} blocks.")
-        scores = np.concatenate(block_scores, axis=1).mean(axis=1)
-        order = np.argsort(-scores)[:k]
+
+        avg_scores = self.task.get_avg_scores([c.construct_prompt() for c in candidates])
+        order = np.argsort(-avg_scores)[:k]
         candidates = [candidates[i] for i in order]
-        self.scores = scores[order]
+        self.scores = avg_scores[order]
 
         return candidates
 
