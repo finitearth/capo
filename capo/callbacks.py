@@ -3,7 +3,7 @@ from datetime import datetime
 
 import dill
 import pandas as pd
-from promptolution.callbacks import Callback, CSVCallback
+from promptolution.callbacks import Callback, FileOutputCallback
 
 
 class PickleCallback(Callback):
@@ -65,9 +65,9 @@ class PromptScoreCallback(Callback):
         return True
 
 
-class CSVCallback(CSVCallback):
+class CSVCallback(FileOutputCallback):
     def __init__(self, dir):
-        """Initialize the CSVCallback.
+        """Initialize the FileOutputCallback.
 
         Args:
         dir (str): Directory the CSV file is saved to.
@@ -127,12 +127,4 @@ class CSVCallback(CSVCallback):
         else:
             df.to_csv(self.dir + "step_results.csv", mode="a", header=False, index=False)
 
-        return True
-
-    def on_train_end(self, optimizer):
-        """Called at the end of training.
-
-        Args:
-        optimizer: The optimizer object that called the callback.
-        """
         return True

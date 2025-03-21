@@ -3,11 +3,11 @@ import argparse
 from logging import getLogger
 
 from datasets import load_dataset
-from promptolution.callbacks import CSVCallback, LoggerCallback
 from promptolution.llms import get_llm
 from promptolution.predictors.classificator import FirstOccurrenceClassificator
 from promptolution.utils.prompt_creation import create_prompts_from_samples
 
+from capo.callbacks import CSVCallback, LoggerCallback
 from capo.capo import CAPOptimizer
 from capo.statistical_tests import paired_t_test
 from capo.task import CAPOClassificationTask
