@@ -1,7 +1,7 @@
 ### This code tries to implement the demos/gsm8k.ipynb notebook in a script format.
 """
 example call:
-python scripts/experiment_wizard.py --experiment-name prompt_wizard --dataset agnews --max-model-len 4096 --random-seed 42 --optimizer promptwizard --model vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE --model-revision main --output-dir results/ --n-steps 999 --budget-per-run 1000
+python scripts/experiment_wizard.py --experiment-name prompt_wizard --dataset subj --max-model-len 4096 --random-seed 42 --optimizer promptwizard --model vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE --model-revision main --output-dir results/ --n-steps 999 --budget-per-run 1000
 """
 from argparse import ArgumentParser
 
@@ -43,7 +43,6 @@ os.environ["SEED"] = str(args.random_seed)
 
 import random
 import pandas as pd
-import json
 import yaml
 
 from promptwizard.glue.promptopt.instantiate import GluePromptOpt
@@ -89,12 +88,10 @@ if __name__ == "__main__":
 
     gp = GluePromptOpt(promptopt_config_path, setup_config_path, train_file_name, Processor())
 
-    best_prompt, expert_profile = gp.get_best_prompt(
-        use_examples=True, run_without_train_examples=False, generate_synthetic_examples=False
+    best_prompt, expert_profile, token_counts = gp.get_best_prompt(
+        use_examples=True, run_without_train_examples=False, generate_synthetic_examples=False, return_token_counts=True
     )
-
     print(f"Best prompt: {best_prompt} \nExpert profile: {expert_profile}")
-    token_counts = dict(os.environ["TOKEN_COUNTS"])
     pd.DataFrame(
         {"step": [1], "prompt": [best_prompt], "system_prompt": [expert_profile], "input_tokens_meta_llm": [token_counts["input_tokens"]], "output_tokens_meta_llm": [token_counts["output_tokens"]], "input_tokens_downstream_llm": [0], "output_tokens_downstream_llm": [0]}
     ).to_parquet(logging_dir + "step_results.parquet")

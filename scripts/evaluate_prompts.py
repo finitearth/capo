@@ -62,7 +62,7 @@ def run_experiment(experiment_path: str):
     # save results to the step_results as extra column by joining on the prompt
     df = df.merge(df_results, on="prompt", how="left")
     # delete the empty file to allow other evaluations
-    df.to_csv(f"{experiment_path}step_results_eval_QWEN_PFUSCH.csv", index=False)
+    df.to_csv(f"{experiment_path}step_results_eval.csv", index=False)
 
     logger.critical(f"Finished evaluation of {experiment_path}")
 
