@@ -53,19 +53,18 @@ class PromptScoreCallback(Callback):
             for (prompt, block_id), score in eval_dict.items():
                 df.at[prompt, block_id] = score.mean()
 
-            csv_path = os.path.join(self.dir, "prompt_scores.csv")
-            df["step"] = self.count
-            if not os.path.exists(csv_path):
-                df.to_csv(csv_path)
+            if self.save_all_steps:
+                parquet_path = os.path.join(self.dir, f"prompt_scores_{self.count}.parquet")
+                df.to_parquet(parquet_path)
+                self.count += 1
             else:
-                df.to_csv(csv_path, mode="a", header=False)
-
-            self.count += 1
+                parquet_path = os.path.join(self.dir, "prompt_scores.parquet")
+                df.to_parquet(parquet_path)
 
         return True
 
 
-class CSVCallback(FileOutputCallback):
+class ParquetCallback(FileOutputCallback):
     def __init__(self, dir):
         """Initialize the FileOutputCallback.
 
@@ -85,7 +84,7 @@ class CSVCallback(FileOutputCallback):
         self.step_time = datetime.now()
 
     def on_step_end(self, optimizer):
-        """Save prompts and scores to csv.
+        """Save prompts and scores to parquet.
 
         Args:
         optimizer: The optimizer object that called the callback
@@ -122,9 +121,9 @@ class CSVCallback(FileOutputCallback):
         df = pd.DataFrame(data)
         self.step_time = datetime.now()
 
-        if not os.path.exists(self.dir + "step_results.csv"):
-            df.to_csv(self.dir + "step_results.csv", index=False)
+        if not os.path.exists(self.dir + "step_results.parquet"):
+            df.to_parquet(self.dir + "step_results.parquet", index=False)
         else:
-            df.to_csv(self.dir + "step_results.csv", mode="a", header=False, index=False)
+            df.to_parquet(self.dir + "step_results.parquet", mode="a", header=False, index=False)
 
         return True

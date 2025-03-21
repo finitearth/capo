@@ -3962,13 +3962,13 @@ wcwidth = "*"
 
 [[package]]
 name = "promptolution"
-version = "1.3.1"
+version = "1.3.2"
 description = ""
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["main"]
 files = [
-    {file = "promptolution-1.3.1-py3-none-any.whl", hash = "sha256:97ab930b1915ca27e2c087298575cb2c069082483b1b8cff7751077d3ec90695"},
+    {file = "promptolution-1.3.2-py3-none-any.whl", hash = "sha256:732141789217a75c7c7c58c77e3ae531676fa0649c071bc96b31dc7e239c6119"},
 ]
 
 [package.dependencies]
@@ -3982,6 +3982,22 @@ pandas = ">=2.2.2,<3.0.0"
 scikit-learn = ">=1.5.2,<2.0.0"
 tqdm = ">=4.66.5,<5.0.0"
 vllm = ">=0.7.3,<0.8.0"
+
+[[package]]
+name = "promptwizard"
+version = "1.0.0"
+description = "Fork with slight customization from promptwizard repo by Agarwal et al., 2024"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = []
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/finitearth/promptwizardIO"
+reference = "HEAD"
+resolved_reference = "119d9218992288e5b771e011859911dced78657a"
 
 [[package]]
 name = "propcache"
@@ -6621,4 +6637,5 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = "~3.12"
-content-hash = "63f2acccf88c35e1961dfe6fe330e4b90132a048e853f1b97d01edcb9acd9c98"
+content-hash = "e7755f6225765d4f798c7474e4344644695c055fec1579a4c759448c10a959fd"
+

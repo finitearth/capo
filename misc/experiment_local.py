@@ -12,7 +12,7 @@ from promptolution.optimizers.base_optimizer import BaseOptimizer
 from promptolution.predictors import MarkerBasedClassificator
 from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
-from capo.callbacks import CSVCallback, PickleCallback, PromptScoreCallback
+from capo.callbacks import ParquetCallback, PickleCallback, PromptScoreCallback
 from capo.capo import CAPOptimizer
 from capo.evopromptga import EvoPromptGAPickable
 from capo.load_datasets import get_tasks
@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
     callbacks = [
         LoggerCallback(logger),
-        CSVCallback(logging_dir),
+        ParquetCallback(logging_dir),
         TokenCountCallback(args.budget_per_run, "input_tokens"),
         PickleCallback(logging_dir),
         PromptScoreCallback(logging_dir, save_all_steps=True),

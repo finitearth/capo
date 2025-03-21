@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Dict, List, Literal
 
 DatasetType = Literal["sst-5", "agnews", "subj", "gsm8k", "copa"]
-OptimizerType = Literal["EvoPromptGA", "CAPO"]
+OptimizerType = Literal["EvoPromptGA", "CAPO", "OPRO", "PromptWizard"]
 ModelType = Literal[
     "shuyuej/Llama-3.3-70B-Instruct-GPTQ",
     "Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4",

@@ -35,16 +35,6 @@ BENCHMARK_CONFIG = ExperimentConfig(
     models=[llama, qwen, mistral],
     optimizers=[
         OptimizerConfig(
-            name="EvoPromptGA",
-            optimizer="EvoPromptGA",
-            optimizer_params={
-                "n_steps": 999,
-                "population_size": 10,
-                "n_eval_samples": 300,
-                "evoprompt_ga_template": "standard",
-            },
-        ),
-        OptimizerConfig(
             name="CAPO",
             optimizer="CAPO",
             optimizer_params={
@@ -57,6 +47,16 @@ BENCHMARK_CONFIG = ExperimentConfig(
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
+            },
+        ),
+        OptimizerConfig(
+            name="EvoPromptGA",
+            optimizer="EvoPromptGA",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "n_eval_samples": 300,
+                "evoprompt_ga_template": "standard",
             },
         ),
         OptimizerConfig(
@@ -125,7 +125,7 @@ ABLATION_CONFIG = ExperimentConfig(
                 "block_size": 300,  # TODO: to be checked
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
-                "upper_shots": 3,
+                "upper_shots": 5,
                 "max_n_blocks_eval": 1,  # TODO: to be checked
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
@@ -165,7 +165,7 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
                 "block_size": 30,
                 "length_penalty": length_penalty,
                 "crossovers_per_iter": 4,
-                "upper_shots": 3,
+                "upper_shots": 5,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
@@ -183,7 +183,7 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
                 "block_size": 30,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
-                "upper_shots": 3,
+                "upper_shots": 5,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
@@ -201,7 +201,7 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
                 "block_size": 30,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": ncrossovers,
-                "upper_shots": 3,
+                "upper_shots": 5,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,

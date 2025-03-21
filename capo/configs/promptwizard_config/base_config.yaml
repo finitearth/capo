@@ -1,0 +1,20 @@
+prompt_technique_name: "critique_n_refine"
+unique_model_id: "<unused_param>"
+mutate_refine_iterations: 3
+mutation_rounds: 3
+refine_instruction: true
+refine_task_eg_iterations: 3
+style_variation: 5
+questions_batch_size: 1
+min_correct_count: 3
+max_eval_batches: 6
+top_n: 1
+task_description: <task_desc>
+base_instruction: <initial_prompt>
+answer_format: "For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags."
+seen_set_size: 25
+few_shot_count: 5
+num_train_examples: 20
+generate_reasoning: true
+generate_expert_identity: true
+generate_intent_keywords: false

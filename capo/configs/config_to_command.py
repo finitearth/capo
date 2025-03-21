@@ -57,6 +57,11 @@ def generate_experiment_command(
     command += " --output=logs/%x-%j.out"
     command += " --error=logs/%x-%j.err"
 
+    if config.optimizers[0].name == "PromptWizard":
+        command += ' --wrap "poetry run python scripts/experiment_wizard.py'
+    else:
+        command += ' --wrap "poetry run python scripts/experiment.py'
+
     # Add all the parameters
     def add_param_if_exists(command, param_name, param_value):
         if param_value is not None:
