@@ -11,6 +11,7 @@ parser.add_argument("--experiment-name", required=True)
 parser.add_argument("--dataset", type=str, required=True)
 parser.add_argument("--model", type=str, required=True)
 parser.add_argument("--model-revision", type=str, default="main")
+parser.add_argument("--model-storage-path", default="../models/")
 parser.add_argument("--output-dir", default="results/")
 parser.add_argument("--max-model-len", type=int, required=True)
 parser.add_argument("--random-seed", type=int, required=True)
@@ -18,6 +19,7 @@ parser.add_argument("--optimizer", required=True)
 
 # ignored arguments
 parser.add_argument("--n-steps", type=int, default=999)
+parser.add_argument("--batch-size", type=int, default=None)
 parser.add_argument("--budget-per-run", type=int, required=True)
 parser.add_argument("--population-size", type=int)
 parser.add_argument("--n-eval-samples", type=int)
@@ -66,7 +68,7 @@ if __name__ == "__main__":
 
     with open(logging_dir + "/args.json", "w") as f:
         json.dump(vars(args), f)
-        
+
     train_file_name = "temp/promptwizard/data.jsonl"
     # make dir if not exist
     os.makedirs(os.path.dirname(train_file_name), exist_ok=True)

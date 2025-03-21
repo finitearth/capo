@@ -55,7 +55,7 @@ def generate_command(
     command += f" --job-name={config.name}"
     command += " --output=logs/%x-%j.out"
     command += " --error=logs/%x-%j.err"
-    if config.optimizers.optimizer == "PromptWizard":
+    if config.optimizers[0].name == "PromptWizard":
         command += ' --wrap "poetry run python scripts/experiment_wizard.py'
     else:
         command += ' --wrap "poetry run python scripts/experiment.py'

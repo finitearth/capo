@@ -6,6 +6,9 @@ from capo.configs.experiment_configs import BENCHMARK_CONFIG
 
 if __name__ == "__main__":
     individual_configs = generate_individual_configs(BENCHMARK_CONFIG)
+    individual_configs = [
+        c for c in individual_configs if c.optimizers[0].name in ["CAPO", "EvoPromptGA"]
+    ]
 
     c = 0
     for config in individual_configs:

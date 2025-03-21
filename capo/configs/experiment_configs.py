@@ -35,16 +35,6 @@ BENCHMARK_CONFIG = ExperimentConfig(
     models=[llama, qwen, mistral],
     optimizers=[
         OptimizerConfig(
-            name="EvoPromptGA",
-            optimizer="EvoPromptGA",
-            optimizer_params={
-                "n_steps": 999,
-                "population_size": 10,
-                "n_eval_samples": 300,
-                "evoprompt_ga_template": "standard",
-            },
-        ),
-        OptimizerConfig(
             name="CAPO",
             optimizer="CAPO",
             optimizer_params={
@@ -57,6 +47,16 @@ BENCHMARK_CONFIG = ExperimentConfig(
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
+            },
+        ),
+        OptimizerConfig(
+            name="EvoPromptGA",
+            optimizer="EvoPromptGA",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "n_eval_samples": 300,
+                "evoprompt_ga_template": "standard",
             },
         ),
         OptimizerConfig(

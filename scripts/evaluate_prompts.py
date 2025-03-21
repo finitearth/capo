@@ -1,3 +1,5 @@
+"example usage: python scripts/evaluate_prompts.py --experiment-path results/ --validation-size 500 --max-tokens 10000000"
+
 import argparse
 import json
 import os
@@ -16,7 +18,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--experiment-path", type=str, default="results/")
 parser.add_argument("--find-unevaluated", action="store_true")
 parser.add_argument("--validation-size", type=int, default=500)
-parser.add_argument("--max-tokens", type=int, default=10000000)
+parser.add_argument("--max-tokens", type=int, default=None)
 parser.add_argument("--only-best", action="store_true")
 parser.add_argument("--reverse", action="store_true")
 args = parser.parse_args()
@@ -35,7 +37,9 @@ def run_experiment(experiment_path: str):
         df = df.groupby("step").apply(lambda x: x.nlargest(1, "score")).reset_index(drop=True)
 
     prompts = df["prompt"].unique().tolist()
-    sys_prompts = df["system_prompt"].unique().tolist() if "system_prompt" in df.columns else None
+    sys_prompts = (
+        df["system_prompt"].unique().tolist()[0] if "system_prompt" in df.columns else None
+    )  # for prompt wizard
     logger.critical(f"Found {len(prompts)} unique prompts")
     _, _, test_task = get_tasks(
         dataset_name=experiment_args["dataset"],
