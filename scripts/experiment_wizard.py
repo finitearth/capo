@@ -85,7 +85,7 @@ if __name__ == "__main__":
     config["base_instruction"] = random.sample(dev_task.initial_prompts, 1)[0]
     config["task_description"] = dev_task.description
     
-    with open("promptwizard_config/temp_config.yaml", "w") as f:
+    with open("capo/configs/promptwizard_config/temp_config.yaml", "w") as f:
         yaml.dump(config, f)
 
     path_to_config = "capo/configs/promptwizard_config"
