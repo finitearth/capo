@@ -80,7 +80,7 @@ if __name__ == "__main__":
     data = [{"question": q, "final_answer": a} for q, a in zip(dev_task.xs, dev_task.ys)]
     save_jsonlist(train_file_name, data, "w")
 
-    with open("promptwizard_config/base_config.yaml", "r") as f:
+    with open("capo/configs/promptwizard_config/base_config.yaml", "r") as f:
         config = yaml.safe_load(f)        
     config["base_instruction"] = random.sample(dev_task.initial_prompts, 1)[0]
     config["task_description"] = dev_task.description
