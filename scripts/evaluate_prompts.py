@@ -45,7 +45,7 @@ def run_evaluation(experiment_path: str):
     _, _, test_task = get_tasks(
         dataset_name=experiment_args["dataset"],
         optimizer_name=experiment_args["optimizer"],
-        seed=experiment_args["random_seed"],
+        seed=42,
         block_size=experiment_args["block_size"],
         test_size=args.n_val_samples,
     )
@@ -56,7 +56,7 @@ def run_evaluation(experiment_path: str):
         batch_size=experiment_args["batch_size"],
         model_storage_path=experiment_args["model_storage_path"],
         revision=experiment_args["model_revision"],
-        seed=experiment_args["random_seed"],
+        seed=42,
     )
     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
 

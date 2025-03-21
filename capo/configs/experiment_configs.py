@@ -102,7 +102,7 @@ ABLATION_CONFIG = ExperimentConfig(
             },
         ),
         OptimizerConfig(
-            name="CAPO_no_length_penalty",
+            name="CAPO_no_lp",
             optimizer="CAPO",
             optimizer_params={
                 "n_steps": 999,
@@ -132,7 +132,7 @@ ABLATION_CONFIG = ExperimentConfig(
             },
         ),
         OptimizerConfig(
-            name="EvoPromptGA_simplified_with_TD",
+            name="EvoPromptGA_TD",
             optimizer="EvoPromptGA",
             optimizer_params={
                 "n_steps": 999,
