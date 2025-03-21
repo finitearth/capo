@@ -43,6 +43,7 @@ os.environ["SEED"] = str(args.random_seed)
 
 import random
 import pandas as pd
+import json
 import yaml
 
 from promptwizard.glue.promptopt.instantiate import GluePromptOpt
@@ -63,6 +64,9 @@ if __name__ == "__main__":
     logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
     seed_everything(args.random_seed)
 
+    with open(logging_dir + "/args.json", "w") as f:
+        json.dump(vars(args), f)
+        
     train_file_name = "temp/promptwizard/data.jsonl"
     # make dir if not exist
     os.makedirs(os.path.dirname(train_file_name), exist_ok=True)

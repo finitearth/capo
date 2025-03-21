@@ -32,10 +32,10 @@ def run_experiment(experiment_path: str):
 
     # take best per step
     if args.only_best:
-        df_best = df.groupby("step").apply(lambda x: x.nlargest(1, "score")).reset_index(drop=True)
-        prompts = df_best["prompt"].unique().tolist()
-    else:
-        prompts = df["prompt"].unique().tolist()
+        df = df.groupby("step").apply(lambda x: x.nlargest(1, "score")).reset_index(drop=True)
+
+    prompts = df["prompt"].unique().tolist()
+    sys_prompts = df["system_prompt"].unique().tolist() if "system_prompt" in df.columns else None
     logger.critical(f"Found {len(prompts)} unique prompts")
     _, _, test_task = get_tasks(
         dataset_name=experiment_args["dataset"],
@@ -55,7 +55,7 @@ def run_experiment(experiment_path: str):
     )
     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
 
-    scores = test_task.evaluate(prompts, predictor)
+    scores = test_task.evaluate(prompts, predictor, system_prompts=sys_prompts)
 
     df_results = pd.DataFrame({"prompt": prompts, "test_score": scores})
 
