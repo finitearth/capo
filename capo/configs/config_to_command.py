@@ -64,7 +64,7 @@ def generate_command(
         return command
 
     if evaluate:
-        command += f' --wrap "poetry run python scripts/evaluate_prompts.py --experiment-path {config.output_dir}"'
+        command += f' --wrap "poetry run python scripts/evaluate_prompts.py --experiment-path {config.output_dir}'
     else:
         if config.optimizers[0].name == "PromptWizard":
             command += ' --wrap "poetry run python scripts/experiment_wizard.py'
@@ -72,7 +72,7 @@ def generate_command(
             command += ' --wrap "poetry run python scripts/experiment.py'
         command = add_param_if_exists(command, "optimizer", config.optimizers[0].optimizer)
         command = add_param_if_exists(
-            command, "n-steps", config.optimizers[0].optimizer_params["n_steps"]
+            command, "n-steps", config.optimizers[0].optimizer_params.get("n_steps")
         )
 
         command = add_param_if_exists(

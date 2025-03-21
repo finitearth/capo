@@ -28,9 +28,19 @@ if __name__ == "__main__":
         # check if config.output_dir already exists, if so, skip
         complete_path = glob(config.output_dir + "**", recursive=True)
         if os.path.exists(config.output_dir) and not any(
-            ["step_results_eval.csv" in c for c in complete_path]
+            ["step_results_eval.parquet" in c for c in complete_path]
         ):
-            command = generate_command(config, evaluate=True)
+            dirs = [c for c in complete_path if "step_results.parquet" in c]
+            if len(dirs) == 0:
+                continue
+            config.output_dir = dirs[0].replace("step_results.parquet", "").replace("\\", "/")
+            command = generate_command(
+                config,
+                evaluate=True,
+                time="0-02:00:00",
+                gres="gpu:1",
+                partition="mcml-hgx-a100-80x4",
+            )
         elif not os.path.exists(config.output_dir):
             command = generate_command(
                 config, time="0-02:00:00", gres="gpu:1", partition="mcml-hgx-a100-80x4"

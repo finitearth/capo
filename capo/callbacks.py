@@ -32,6 +32,8 @@ class PromptScoreCallback(Callback):
         self.dir = dir
         self.count = 0
 
+        self.save_all_steps = False
+
     def on_step_end(self, optimizer):
         if hasattr(optimizer.task, "prompt_score_cache"):
             eval_dict = optimizer.task.prompt_score_cache
