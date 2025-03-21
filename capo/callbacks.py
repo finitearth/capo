@@ -3,7 +3,7 @@ from datetime import datetime
 
 import dill
 import pandas as pd
-from promptolution.callbacks import Callback, CSVCallback
+from promptolution.callbacks import Callback, FileOutputCallback
 
 
 class PickleCallback(Callback):
@@ -63,7 +63,7 @@ class PromptScoreCallback(Callback):
         return True
 
 
-class CSVCallback(CSVCallback):
+class ParquetCallback(FileOutputCallback):
     def __init__(self, dir):
         """Initialize the CSVCallback.
 
@@ -83,7 +83,7 @@ class CSVCallback(CSVCallback):
         self.step_time = datetime.now()
 
     def on_step_end(self, optimizer):
-        """Save prompts and scores to csv.
+        """Save prompts and scores to parquet.
 
         Args:
         optimizer: The optimizer object that called the callback
@@ -120,7 +120,7 @@ class CSVCallback(CSVCallback):
         df = pd.DataFrame(data)
         self.step_time = datetime.now()
 
-        if not os.path.exists(self.dir + "step_results.csv"):
+        if not os.path.exists(self.dir + "step_results.parquet"):
             df.to_parquet(self.dir + "step_results.parquet", index=False)
         else:
             df.to_parquet(self.dir + "step_results.parquet", mode="a", header=False, index=False)
