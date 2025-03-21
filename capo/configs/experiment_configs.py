@@ -67,14 +67,12 @@ BENCHMARK_CONFIG = ExperimentConfig(
                 "max_num_instructions": 20,
                 "num_instructions_per_step": 8,
                 "num_few_shots": 3,
-
             },
         ),
         OptimizerConfig(
             name="PromptWizard",
             optimizer="PromptWizard",
             optimizer_params={},
-
         ),
     ],
     random_seeds=[42, 43, 44],
@@ -127,7 +125,7 @@ ABLATION_CONFIG = ExperimentConfig(
                 "block_size": 300,  # TODO: to be checked
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
-                "upper_shots": 3,
+                "upper_shots": 5,
                 "max_n_blocks_eval": 1,  # TODO: to be checked
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
@@ -167,7 +165,7 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
                 "block_size": 30,
                 "length_penalty": length_penalty,
                 "crossovers_per_iter": 4,
-                "upper_shots": 3,
+                "upper_shots": 5,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
@@ -185,7 +183,7 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
                 "block_size": 30,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
-                "upper_shots": 3,
+                "upper_shots": 5,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
@@ -203,7 +201,7 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
                 "block_size": 30,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": ncrossovers,
-                "upper_shots": 3,
+                "upper_shots": 5,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
