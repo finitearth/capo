@@ -81,6 +81,8 @@ _COPA_CONFIG = DatasetConfig(
     + " B:\n"
     + df["choice2"],
     target=lambda df: df["label"].map({0: "A", 1: "B"}),
+    initial_prompts=INITIAL_PROMPTS["copa"],
+    task_description=TASK_DESCRIPTIONS["copa"],
 )
 
 ALL_DATASETS = {
