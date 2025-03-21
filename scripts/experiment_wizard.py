@@ -1,7 +1,7 @@
 ### This code tries to implement the demos/gsm8k.ipynb notebook in a script format.
 """
 example call:
-python scripts/experiment_wizard.py --experiment-name prompt_wizard --dataset subj --max-model-len 4096 --random-seed 42 --optimizer promptwizard --model vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE --model-revision main --output-dir results/ --n-steps 999 --budget-per-run 1000
+python scripts/experiment_wizard.py --experiment-name prompt_wizard --dataset copa --max-model-len 4096 --random-seed 42 --optimizer promptwizard --model vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE --model-revision main --output-dir results/ --n-steps 999 --budget-per-run 1000
 """
 from argparse import ArgumentParser
 
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     with open("promptwizard_config/temp_config.yaml", "w") as f:
         yaml.dump(config, f)
 
-    path_to_config = "promptwizard_config"
+    path_to_config = "capo/configs/promptwizard_config"
     promptopt_config_path = os.path.join(path_to_config, "temp_config.yaml")
     setup_config_path = os.path.join(path_to_config, "setup_config.yaml")
 
