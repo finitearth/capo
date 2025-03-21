@@ -25,12 +25,11 @@ class PickleCallback(Callback):
 
 
 class PromptScoreCallback(Callback):
-    def __init__(self, dir, save_all_steps=False):
+    def __init__(self, dir):
         """Initialize the PromptScoreCallback."""
         if not os.path.exists(dir):
             os.makedirs(dir)
         self.dir = dir
-        self.save_all_steps = save_all_steps
         self.count = 0
 
     def on_step_end(self, optimizer):
@@ -46,20 +45,22 @@ class PromptScoreCallback(Callback):
             prompts = sorted(list(prompts))
             block_ids = sorted(list(block_ids))
 
-            df = pd.DataFrame(index=prompts, columns=block_ids, dtype=float)
+            all_block_ids = [block_id for block_id, _ in optimizer.task.blocks]
+            df = pd.DataFrame(index=prompts, columns=all_block_ids, dtype=float)
             ordered_columns = [col for col, _ in optimizer.task.blocks if col in df.columns]
             df = df[ordered_columns]
 
             for (prompt, block_id), score in eval_dict.items():
                 df.at[prompt, block_id] = score.mean()
 
-            if self.save_all_steps:
-                csv_path = os.path.join(self.dir, f"prompt_scores_{self.count}.csv")
+            csv_path = os.path.join(self.dir, "prompt_scores.csv")
+            df["step"] = self.count
+            if not os.path.exists(csv_path):
                 df.to_csv(csv_path)
-                self.count += 1
             else:
-                csv_path = os.path.join(self.dir, "prompt_scores.csv")
-                df.to_csv(csv_path)
+                df.to_csv(csv_path, mode="a", header=False)
+
+            self.count += 1
 
         return True
 

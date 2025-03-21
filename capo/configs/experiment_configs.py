@@ -5,7 +5,7 @@ from capo.configs.base_config import ExperimentConfig, ModelConfig, OptimizerCon
 llama = ModelConfig(
     model="vllm-shuyuej/Llama-3.3-70B-Instruct-GPTQ",
     alias="llama",
-    max_model_len=1024,
+    max_model_len=2048,
     batch_size=None,
     model_storage_path="../models/",
     revision="3a7f7f7d46e362291821aaefb0a38b632f1190a8",
@@ -14,7 +14,7 @@ llama = ModelConfig(
 qwen = ModelConfig(
     model="vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4",
     alias="qwen",
-    max_model_len=1024,
+    max_model_len=2048,
     batch_size=None,
     model_storage_path="../models/",
     revision="c83e67dfb2664f5039fd4cd99e206799e27dd800",
@@ -23,7 +23,7 @@ qwen = ModelConfig(
 mistral = ModelConfig(
     model="vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE",
     alias="mistral",
-    max_model_len=1024,
+    max_model_len=2048,
     batch_size=None,
     model_storage_path="../models/",
     revision="803393813b8fc4046fb663af2e3c56339a5b520b",
@@ -31,7 +31,7 @@ mistral = ModelConfig(
 
 BENCHMARK_CONFIG = ExperimentConfig(
     name="benchmark_experiment",
-    datasets=["sst-5", "agnews", "subj", "rte", "gsm8k"],
+    datasets=["sst-5", "agnews", "subj", "gsm8k", "copa"],
     models=[llama, qwen, mistral],
     optimizers=[
         OptimizerConfig(
@@ -59,16 +59,31 @@ BENCHMARK_CONFIG = ExperimentConfig(
                 "shuffle_blocks_per_iter": False,
             },
         ),
+        OptimizerConfig(
+            name="OPRO",
+            optimizer="OPRO",
+            optimizer_params={
+                "n_steps": 999,
+                "max_num_instructions": 20,
+                "num_instructions_per_step": 8,
+                "num_few_shots": 3,
+            },
+        ),
+        OptimizerConfig(
+            name="PromptWizard",
+            optimizer="PromptWizard",
+            optimizer_params={},
+        ),
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=10_000_000,
+    budget_per_run=5_000_000,
     output_dir="results/",
 )
 
 
 ABLATION_CONFIG = ExperimentConfig(
     name="ablation_experiment",
-    datasets=["agnews", "rte"],
+    datasets=["agnews", "gsm8k"],
     models=[llama],
     optimizers=[
         OptimizerConfig(
@@ -128,7 +143,7 @@ ABLATION_CONFIG = ExperimentConfig(
         ),
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=10_000_000,
+    budget_per_run=5_000_000,
     output_dir="results/",
 )
 
@@ -138,7 +153,7 @@ ncrossovers_grid = [4, 7, 10]
 
 HYPERPARAMETER_CONFIG = ExperimentConfig(
     name="hyperparameter_experiment",
-    datasets=["agnews", "rte"],
+    datasets=["agnews", "gsm8k"],
     models=[llama],
     optimizers=[
         OptimizerConfig(
@@ -195,6 +210,6 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
         for ncrossovers in ncrossovers_grid
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=10_000_000,
+    budget_per_run=5_000_000,
     output_dir="results/",
 )

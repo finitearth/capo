@@ -225,17 +225,18 @@ class CAPOptimizer(BaseOptimizer):
         mutated = []
         for new_instruction, prompt in zip(new_instructions, offsprings):
             new_instruction = new_instruction.split("<prompt>")[-1].split("</prompt>")[0].strip()
-            num_fewshots = random.randint(0, self.upper_shots)
-            num_new_fewshots = random.randint(
-                max(0, num_fewshots - len(prompt.few_shots)), num_fewshots
-            )
-            new_few_shots = self._create_few_shot_examples(new_instruction, num_new_fewshots)
-            # combine the new shots with some existing from the prompt
-            old_examples = random.sample(prompt.few_shots, num_fewshots - num_new_fewshots)
+            p = random.random()
 
-            combined_examples = old_examples + new_few_shots
-            random.shuffle(combined_examples)
-            mutated.append(Prompt(new_instruction, combined_examples))
+            if p < 1 / 3 and len(prompt.few_shots) < self.upper_shots:  # add a random few shot
+                new_few_shot = self._create_few_shot_examples(new_instruction, 1)
+                new_few_shots = prompt.few_shots + new_few_shot
+            if 1 / 3 <= p < 2 / 3 and len(prompt.few_shots) > 0:  # remove a random few shot
+                new_few_shots = random.sample(prompt.few_shots, len(prompt.few_shots) - 1)
+            else:  # do not change few shots, but shuffle
+                new_few_shots = prompt.few_shots
+
+            random.shuffle(new_few_shots)
+            mutated.append(Prompt(new_instruction, new_few_shots))
 
         if self.verbosity > 0:
             self.logger.warning(f"🧟Generated {len(mutated)} mutated prompts.")
@@ -273,7 +274,7 @@ class CAPOptimizer(BaseOptimizer):
             block_scores.append(new_scores)
             scores = np.concatenate(block_scores, axis=1)
 
-            # boolean matrix C_ij indicating if candidate i is better than candidate j
+            # boolean matrix C_ij indicating if candidate j is better than candidate i
             comparison_matrix = np.array(
                 [
                     [self.test_statistic(other_score, score) for other_score in scores]
@@ -311,10 +312,11 @@ class CAPOptimizer(BaseOptimizer):
 
         if self.verbosity > 0:
             self.logger.warning(f"🏎️Racing: {len(candidates)} prompts remain after {i} blocks.")
-        scores = np.concatenate(block_scores, axis=1).mean(axis=1)
-        order = np.argsort(-scores)[:k]
+
+        avg_scores = self.task.get_avg_scores([c.construct_prompt() for c in candidates])
+        order = np.argsort(-avg_scores)[:k]
         candidates = [candidates[i] for i in order]
-        self.scores = scores[order]
+        self.scores = avg_scores[order]
 
         return candidates
 

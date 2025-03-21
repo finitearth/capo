@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Literal
 
-DatasetType = Literal["sst-5", "agnews", "subj", "rte", "gsm8k"]
+DatasetType = Literal["sst-5", "agnews", "subj", "gsm8k", "copa"]
 OptimizerType = Literal["EvoPromptGA", "CAPO"]
 ModelType = Literal[
     "shuyuej/Llama-3.3-70B-Instruct-GPTQ",
