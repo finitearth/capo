@@ -36,13 +36,17 @@ class PromptScoreCallback(Callback):
         if hasattr(optimizer.task, "prompt_score_cache"):
             eval_dict = optimizer.task.prompt_score_cache
 
-            prompts = []
-            block_ids = []
+            prompts = set()
+            block_ids = set()
             for prompt, block_id in eval_dict.keys():
-                prompts.append(prompt)
-                block_ids.append(block_id)
+                prompts.add(prompt)
+                block_ids.add(block_id)
 
-            df = pd.DataFrame(index=prompts, columns=block_ids, dtype=float)
+            prompts = sorted(list(prompts))
+            block_ids = sorted(list(block_ids))
+
+            all_block_ids = [block_id for block_id, _ in optimizer.task.blocks]
+            df = pd.DataFrame(index=prompts, columns=all_block_ids, dtype=float)
             ordered_columns = [col for col, _ in optimizer.task.blocks if col in df.columns]
             df = df[ordered_columns]
 

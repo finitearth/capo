@@ -15,8 +15,8 @@ logger = getLogger(__name__)
 parser = argparse.ArgumentParser()
 parser.add_argument("--experiment-path", type=str, default="results/")
 parser.add_argument("--find-unevaluated", action="store_true")
-parser.add_argument("--validation-size", type=int, default=500)
-parser.add_argument("--max-tokens", type=int, default=10000000)
+parser.add_argument("--n-val-samples", type=int, default=500)
+parser.add_argument("--max-tokens", type=int, default=5000000)
 parser.add_argument("--only-best", action="store_true")
 parser.add_argument("--reverse", action="store_true")
 args = parser.parse_args()
@@ -47,7 +47,7 @@ def run_evaluation(experiment_path: str):
         optimizer_name=experiment_args["optimizer"],
         seed=experiment_args["random_seed"],
         block_size=experiment_args["block_size"],
-        test_size=args.validation_size,
+        test_size=args.n_val_samples,
     )
 
     llm = get_llm(
@@ -67,7 +67,7 @@ def run_evaluation(experiment_path: str):
     # save results to the step_results as extra column by joining on the prompt
     df = df.merge(df_results, on="prompt", how="left")
     # delete the empty file to allow other evaluations
-    df.to_csv(f"{experiment_path}step_results_eval_QWEN_PFUSCH.csv", index=False)
+    df.to_csv(f"{experiment_path}step_results_eval.csv", index=False)
 
     logger.critical(f"Finished evaluation of {experiment_path}")
 
