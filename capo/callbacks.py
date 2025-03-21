@@ -120,8 +120,6 @@ class ParquetCallback(FileOutputCallback):
         else:
             df.to_parquet(
                 self.dir + "step_results.parquet",
-                header=False,
-                index=False,
                 engine="fastparquet",
                 append=True,
             )
