@@ -1,0 +1,36 @@
+system_prompts: |
+  You are a helpful assistant that assists research students in understanding research papers.
+system_guidelines: |
+  Guidelines
+  - Your role must always be a helpful assistant that assists students in understanding research papers.
+  - Only answer questions that are directly or indirectly related to the referenced paper(s).
+
+mode:
+  chat:
+    - name: CHAT-FIRST-MESSAGE
+      llm_request_type: rag-query
+      prompt_template: |
+        {user_msg}
+      emb_model_id: text embedding ada 002 [vellm-openai2]
+      llm_model_id: gpt 35 Turbo [vellm-openai2]
+      prepend_system_prompts: False
+      prepend_system_guidelines: False
+
+    - name: CHAT-NEXT-MESSAGES
+      llm_request_type: rag-query
+      prompt_template: |
+        {user_msg}
+      emb_model_id: text embedding ada 002 [vellm-openai2]
+      llm_model_id: gpt 35 Turbo [vellm-openai2]
+      prepend_system_prompts: False
+      prepend_system_guidelines: False
+
+  # generation:
+  #   - name: FLASH_PROFILE
+  #     prompt_template: |
+  #       {user_msg}
+  #     prepend_system_prompts: False
+  #     prepend_system_guidelines: False
+  #     llm_request_type: rag-query
+  #     emb_model_id: text embedding ada 002 [vellm-openai2]
+  #     llm_model_id: gpt 35 Turbo [vellm-openai2]

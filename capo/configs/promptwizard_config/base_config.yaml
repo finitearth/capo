@@ -1,0 +1,49 @@
+# Specify one or more prompt refinement technique to be used. If you specify more than one prompt refinement techniques,
+# all these technique would run on same seed data. Result, iterations needed & cost incurred for each of these
+# technique would be logged. And winning technique for each data instance and overall would be logged.
+
+# Supported prompt refinement techniques: Basic, RecursiveEval, MedPrompt
+# Uncomment techniques that you want to use
+############################ Critique Task Description Start ############################
+prompt_technique_name: "critique_n_refine"
+# unique_model_id of model defined in llm_config.yaml
+unique_model_id: gpt-4o
+# Number of iterations for conducting <mutation_rounds>  rounds of mutation of task description
+# followed by refinement of instructions
+mutate_refine_iterations: 3
+# Number of rounds of mutation to be performed when generating different styles
+mutation_rounds: 3
+# Refine instruction post mutation
+refine_instruction: true
+# Number of iterations for refining task description and in context examples for few-shot
+refine_task_eg_iterations: 3
+# Number of variations of prompts to generate in given iteration
+style_variation: 5
+# Number of questions to be asked to LLM in a single batch, during training step
+questions_batch_size: 1
+# Number of batches of questions to correctly answered, for a prompt to be considered as performing good
+min_correct_count: 3
+# Max number of mini-batches on which we should evaluate our prompt
+max_eval_batches: 6
+# Number of top best performing prompts to be considered for next iterations
+top_n: 1
+# Description of task. This will be fed to prompt
+task_description: <task_desc>
+# Base instruction, in line with your dataset. This will be fed to prompt
+base_instruction: <initial_prompt>
+# Instruction for specifying answer format
+answer_format: "For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags."
+# Number of samples from dataset, set aside as training data. In every iteration we would be drawing
+# `questions_batch_size` examples from training data with replacement.
+seen_set_size: 25
+# Number of examples to be given for few shots
+few_shot_count: 5
+# Number of synthetic training examples to be generated
+num_train_examples: 20
+# Generate synthetic reasoning
+generate_reasoning: true
+# Generate description of an expert which can solve the task at hand
+generate_expert_identity: true
+# Generate keywords that describe the intent of the task
+generate_intent_keywords: false
+############################ Critique Task Description End ############################

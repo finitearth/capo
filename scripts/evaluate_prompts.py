@@ -1,3 +1,5 @@
+"example usage: python scripts/evaluate_prompts.py --experiment-path results/ --validation-size 500 --max-tokens 10000000"
+
 import argparse
 import json
 import os
@@ -36,11 +38,9 @@ def run_evaluation(experiment_path: str):
 
     prompts = df["prompt"].unique().tolist()
 
-    if "system_prompt" in df.columns:
-        system_prompts = df["system_prompt"].unique().tolist()
-    else:
-        system_prompts = None
-
+    sys_prompt = (
+        df["system_prompt"].unique().tolist()[0] if "system_prompt" in df.columns else None
+    )  # for prompt wizard
     logger.critical(f"Found {len(prompts)} unique prompts")
     _, _, test_task = get_tasks(
         dataset_name=experiment_args["dataset"],
@@ -60,7 +60,7 @@ def run_evaluation(experiment_path: str):
     )
     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
 
-    scores = test_task.evaluate(prompts, predictor, system_prompts)
+    scores = test_task.evaluate(prompts, predictor, system_prompts=sys_prompt)
 
     df_results = pd.DataFrame({"prompt": prompts, "test_score": scores})
 
