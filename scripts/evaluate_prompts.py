@@ -17,18 +17,18 @@ logger = getLogger(__name__)
 parser = argparse.ArgumentParser()
 parser.add_argument("--experiment-path", type=str, default="results/")
 parser.add_argument("--find-unevaluated", action="store_true")
-parser.add_argument("--validation-size", type=int, default=500)
-parser.add_argument("--max-tokens", type=int, default=None)
+parser.add_argument("--n-val-samples", type=int, default=500)
+parser.add_argument("--max-tokens", type=int, default=5000000)
 parser.add_argument("--only-best", action="store_true")
 parser.add_argument("--reverse", action="store_true")
 args = parser.parse_args()
 
 
-def run_experiment(experiment_path: str):
+def run_evaluation(experiment_path: str):
     # read experiment args
     with open(f"{experiment_path}args.json", "r") as f:
         experiment_args = json.load(f)
-    logger.critical(f"Running experiment with args: {experiment_args}")
+    logger.critical(f"Running evaluation with args: {experiment_args}")
     # read experiment results by using the best prompt per step from the step_results.csv
     df = pd.read_parquet(f"{experiment_path}step_results.parquet")
 
@@ -37,7 +37,8 @@ def run_experiment(experiment_path: str):
         df = df.groupby("step").apply(lambda x: x.nlargest(1, "score")).reset_index(drop=True)
 
     prompts = df["prompt"].unique().tolist()
-    sys_prompts = (
+
+    sys_prompt = (
         df["system_prompt"].unique().tolist()[0] if "system_prompt" in df.columns else None
     )  # for prompt wizard
     logger.critical(f"Found {len(prompts)} unique prompts")
@@ -46,7 +47,7 @@ def run_experiment(experiment_path: str):
         optimizer_name=experiment_args["optimizer"],
         seed=experiment_args["random_seed"],
         block_size=experiment_args["block_size"],
-        test_size=args.validation_size,
+        test_size=args.n_val_samples,
     )
 
     llm = get_llm(
@@ -59,7 +60,7 @@ def run_experiment(experiment_path: str):
     )
     predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
 
-    scores = test_task.evaluate(prompts, predictor, system_prompts=sys_prompts)
+    scores = test_task.evaluate(prompts, predictor, system_prompts=sys_prompt)
 
     df_results = pd.DataFrame({"prompt": prompts, "test_score": scores})
 
@@ -82,8 +83,8 @@ if __name__ == "__main__":
                 experiment.replace("step_results.parquet", "step_results_eval.parquet")
             ):
                 experiment_path = experiment.replace("step_results.parquet", "")
-                run_experiment(experiment_path)
+                run_evaluation(experiment_path)
             else:
                 logger.critical(f"Skipping {experiment} as it was already evaluated")
     else:
-        run_experiment(args.experiment_path)
+        run_evaluation(args.experiment_path)

@@ -31,7 +31,7 @@ mistral = ModelConfig(
 
 BENCHMARK_CONFIG = ExperimentConfig(
     name="benchmark_experiment",
-    datasets=["sst-5", "agnews", "subj", "rte", "gsm8k", "copa"],
+    datasets=["sst-5", "agnews", "subj", "gsm8k", "copa"],
     models=[llama, qwen, mistral],
     optimizers=[
         OptimizerConfig(
@@ -63,26 +63,29 @@ BENCHMARK_CONFIG = ExperimentConfig(
             name="OPRO",
             optimizer="OPRO",
             optimizer_params={
-                ...: ...,  # TODO fill in
+                "n_steps": 999,
+                "max_num_instructions": 20,
+                "num_instructions_per_step": 8,
+                "num_few_shots": 3,
+
             },
         ),
         OptimizerConfig(
             name="PromptWizard",
             optimizer="PromptWizard",
-            optimizer_params={
-                ...: ...,  # TODO fill in
-            },
+            optimizer_params={},
+
         ),
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=10_000_000,
+    budget_per_run=5_000_000,
     output_dir="results/",
 )
 
 
 ABLATION_CONFIG = ExperimentConfig(
     name="ablation_experiment",
-    datasets=["agnews", "rte"],  # TODO remove rte
+    datasets=["agnews", "gsm8k"],
     models=[llama],
     optimizers=[
         OptimizerConfig(
@@ -142,7 +145,7 @@ ABLATION_CONFIG = ExperimentConfig(
         ),
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=10_000_000,
+    budget_per_run=5_000_000,
     output_dir="results/",
 )
 
@@ -152,7 +155,7 @@ ncrossovers_grid = [4, 7, 10]
 
 HYPERPARAMETER_CONFIG = ExperimentConfig(
     name="hyperparameter_experiment",
-    datasets=["agnews", "rte"],  # TODO remove rte
+    datasets=["agnews", "gsm8k"],
     models=[llama],
     optimizers=[
         OptimizerConfig(
@@ -209,6 +212,6 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
         for ncrossovers in ncrossovers_grid
     ],
     random_seeds=[42, 43, 44],
-    budget_per_run=10_000_000,
+    budget_per_run=5_000_000,
     output_dir="results/",
 )

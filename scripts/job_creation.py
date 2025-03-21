@@ -1,7 +1,7 @@
 import os
 from glob import glob
 
-from capo.configs.config_to_command import generate_command, generate_individual_configs
+from capo.configs.config_to_command import generate_experiment_command, generate_individual_configs
 from capo.configs.experiment_configs import BENCHMARK_CONFIG
 
 if __name__ == "__main__":
@@ -17,9 +17,9 @@ if __name__ == "__main__":
         if os.path.exists(config.output_dir) and not any(
             ["step_results_eval.csv" in c for c in complete_path]
         ):
-            command = f"""sbatch --partition=mcml-hgx-a100-80x4 --ntasks=1 --gres=gpu:1 --time=0-02:00:00 --qos=mcml --job-name=benchmark_experiment_sst-5_eval_all --output=logs/%x-%j.out --error=logs/%x-%j.err --wrap "poetry run python scripts/evaluate_prompts.py --experiment-path {complete_path[2].replace("\\", "/")}/\""""
+            command = generate_experiment_command(config, evaluate=True)
         elif not os.path.exists(config.output_dir):
-            command = generate_command(
+            command = generate_experiment_command(
                 config, time="0-02:00:00", gres="gpu:1", partition="mcml-hgx-a100-80x4"
             )
         else:
