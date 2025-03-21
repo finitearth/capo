@@ -30,9 +30,6 @@ class PromptScoreCallback(Callback):
         if not os.path.exists(dir):
             os.makedirs(dir)
         self.dir = dir
-        self.count = 0
-
-        self.save_all_steps = False
 
     def on_step_end(self, optimizer):
         if hasattr(optimizer.task, "prompt_score_cache"):
@@ -55,13 +52,8 @@ class PromptScoreCallback(Callback):
             for (prompt, block_id), score in eval_dict.items():
                 df.at[prompt, block_id] = score.mean()
 
-            if self.save_all_steps:
-                parquet_path = os.path.join(self.dir, f"prompt_scores_{self.count}.parquet")
-                df.to_parquet(parquet_path)
-                self.count += 1
-            else:
-                parquet_path = os.path.join(self.dir, "prompt_scores.parquet")
-                df.to_parquet(parquet_path)
+            parquet_path = os.path.join(self.dir, "prompt_scores.parquet")
+            df.to_parquet(parquet_path)
 
         return True
 
@@ -126,6 +118,12 @@ class ParquetCallback(FileOutputCallback):
         if not os.path.exists(self.dir + "step_results.parquet"):
             df.to_parquet(self.dir + "step_results.parquet", index=False)
         else:
-            df.to_parquet(self.dir + "step_results.parquet", mode="a", header=False, index=False)
+            df.to_parquet(
+                self.dir + "step_results.parquet",
+                header=False,
+                index=False,
+                engine="fastparquet",
+                append=True,
+            )
 
         return True
