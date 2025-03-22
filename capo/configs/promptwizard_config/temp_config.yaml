@@ -1,8 +1,8 @@
 answer_format: For each question present the reasoning followed by the correct answer
   within <final_answer> </final_answer> tags.
-base_instruction: Pick A or B based on which has the stronger causal connection to
-  the provided context. Ensure your answer is formatted as <final_answer>A</final_answer>
-  or <final_answer>B</final_answer>.
+base_instruction: Read the following news article and determine if it belongs to World,
+  Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer>
+  tags.
 few_shot_count: 5
 generate_expert_identity: true
 generate_intent_keywords: false
@@ -18,9 +18,9 @@ refine_instruction: true
 refine_task_eg_iterations: 3
 seen_set_size: 25
 style_variation: 5
-task_description: The dataset consists of premises and two possible choices for the
-  effect or cause of the premise. The task is to determine which of the two choices
-  (A or B) is the correct effect of the premise. The class will be extracted between
-  the markers <final_answer>answer</final_answer>.
+task_description: 'The dataset contains news articles categorized into four classes:
+  World, Sports, Business, and Sci/Tech. The task is to classify each news article
+  into one of the four categories. The class will be extracted between the markers
+  <final_answer>answer</final_answer>.'
 top_n: 1
 unique_model_id: <unused_param>
