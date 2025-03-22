@@ -65,14 +65,16 @@ class Processor(DatasetSpecificProcessing):
 if __name__ == "__main__":
     logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
     seed_everything(args.random_seed)
+    
+    
+    train_file_name = "temp/promptwizard/data.jsonl"
+    os.makedirs(os.path.dirname(train_file_name), exist_ok=True)
+    os.makedirs(logging_dir, exist_ok=True)
 
     with open(logging_dir + "/args.json", "w") as f:
         json.dump(vars(args), f)
 
-    train_file_name = "temp/promptwizard/data.jsonl"
     # make dir if not exist
-    os.makedirs(os.path.dirname(train_file_name), exist_ok=True)
-    os.makedirs(logging_dir, exist_ok=True)
     dev_task, _, _ = get_tasks(
         args.dataset, args.optimizer, block_size=args.block_size, seed=args.random_seed
     )
