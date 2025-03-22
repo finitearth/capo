@@ -26,6 +26,7 @@ from capo.callbacks import ParquetCallback, PickleCallback, PromptScoreCallback
 from capo.capo import CAPOptimizer
 from capo.evopromptga import EvoPromptGAPickable
 from capo.load_datasets import get_tasks
+from capo.opro import OproPickable
 from capo.statistical_tests import paired_t_test
 from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
 from capo.utils import copy_llm, generate_random_hash, seed_everything
@@ -153,6 +154,14 @@ if __name__ == "__main__":
             test_statistic=lambda x, y: paired_t_test(x, y, alpha=args.alpha),
             shuffle_blocks_per_iter=args.shuffle_blocks_per_iter,
             verbosity=1,
+        )
+    elif args.optimizer == "OPRO":
+        optimizer = OproPickable(
+            meta_llm=meta_llm,
+            initial_prompts=initial_prompts,
+            callbacks=callbacks,
+            predictor=predictor,
+            task=dev_task,
         )
     else:
         raise ValueError(f"Optimizer {args.optimizer} not supported.")

@@ -65,14 +65,19 @@ BENCHMARK_CONFIG = ExperimentConfig(
             optimizer_params={
                 "n_steps": 999,
                 "max_num_instructions": 20,
+                "population_size": 10,
                 "num_instructions_per_step": 8,
                 "num_few_shots": 3,
+                "evoprompt_ga_template": "standard",
             },
         ),
         OptimizerConfig(
             name="PromptWizard",
             optimizer="PromptWizard",
-            optimizer_params={},
+            optimizer_params={
+                "population_size": 10,
+                "evoprompt_ga_template": "standard",
+            },
         ),
     ],
     random_seeds=[42, 43, 44],
