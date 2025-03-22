@@ -1,8 +1,8 @@
 answer_format: For each question present the reasoning followed by the correct answer
   within <final_answer> </final_answer> tags.
-base_instruction: Examine the following news text and identify whether it should be
-  classified as World, Sports, Business, or Sci/Tech content. Your classification
-  must be formatted with <final_answer> tags for automated extraction by our system.
+base_instruction: 'Sentence classification task: Does the sentence state facts (objective)
+  or express opinions/feelings (subjective)? Provide your answer using the format
+  <final_answer>your_answer</final_answer>.'
 few_shot_count: 5
 generate_expert_identity: true
 generate_intent_keywords: false
@@ -18,9 +18,8 @@ refine_instruction: true
 refine_task_eg_iterations: 3
 seen_set_size: 25
 style_variation: 5
-task_description: 'The dataset contains news articles categorized into four classes:
-  World, Sports, Business, and Sci/Tech. The task is to classify each news article
-  into one of the four categories. The class will be extracted between the markers
-  <final_answer>answer</final_answer>.'
+task_description: The dataset contains sentences labeled as either subjective or objective.
+  The task is to classify each sentence as either subjective or objective. The class
+  will be extracted between the markers <final_answer>answer</final_answer>.
 top_n: 1
 unique_model_id: <unused_param>
