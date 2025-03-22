@@ -16,7 +16,6 @@ if __name__ == "__main__":
             continue
         df_eval = pd.read_csv(path)
         df_dev = pd.read_parquet(path.replace("step_results_eval.csv", "step_results.parquet"))
-
         if len(df_eval) != len(df_dev):
             print(f"{path}: length mismatch")
         c += 1
