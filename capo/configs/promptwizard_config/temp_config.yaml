@@ -1,8 +1,8 @@
 answer_format: For each question present the reasoning followed by the correct answer
   within <final_answer> </final_answer> tags.
-base_instruction: Read the following news article and determine if it belongs to World,
-  Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer>
-  tags.
+base_instruction: Examine the following news text and identify whether it should be
+  classified as World, Sports, Business, or Sci/Tech content. Your classification
+  must be formatted with <final_answer> tags for automated extraction by our system.
 few_shot_count: 5
 generate_expert_identity: true
 generate_intent_keywords: false
