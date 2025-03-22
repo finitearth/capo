@@ -7,6 +7,7 @@ from capo.configs.experiment_configs import ABLATION_CONFIG, BENCHMARK_CONFIG, H
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--optimizer", default=None)
+parser.add_argument("--no-evals", action="store_true")
 parser.add_argument("--run-ablations", action="store_true")
 parser.add_argument("--run-hp", action="store_true")
 args = parser.parse_args()
@@ -27,8 +28,10 @@ if __name__ == "__main__":
     for config in individual_configs:
         # check if config.output_dir already exists, if so, skip
         complete_path = glob(config.output_dir + "**", recursive=True)
-        if os.path.exists(config.output_dir) and not any(
-            ["step_results_eval.parquet" in c for c in complete_path]
+        if (
+            os.path.exists(config.output_dir)
+            and not any(["step_results_eval.parquet" in c for c in complete_path])
+            and not args.no_evals
         ):
             dirs = [c for c in complete_path if "step_results.parquet" in c]
             if len(dirs) == 0:
