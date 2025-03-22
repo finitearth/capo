@@ -34,7 +34,7 @@ parser.add_argument("--shuffle-blocks-per-iter", action="store_true", default=Fa
 
 args = parser.parse_args()
 
-assert args.optimizer == "promptwizard"
+assert args.optimizer == "PromptWizard"
 
 import os
 
