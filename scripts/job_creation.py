@@ -30,7 +30,7 @@ if __name__ == "__main__":
         complete_path = glob(config.output_dir + "**", recursive=True)
         if (
             os.path.exists(config.output_dir)
-            and not any(["step_results_eval.parquet" in c for c in complete_path])
+            and not any(["step_results_eval.csv" in c for c in complete_path])
             and not args.no_evals
         ):
             dirs = [c for c in complete_path if "step_results.parquet" in c]
@@ -40,7 +40,7 @@ if __name__ == "__main__":
             command = generate_command(
                 config,
                 evaluate=True,
-                time="0-02:00:00",
+                time="0-04:00:00",
                 gres="gpu:1",
                 partition="mcml-hgx-a100-80x4",
             )
