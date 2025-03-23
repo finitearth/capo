@@ -1,0 +1,73 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"
+To solve the sentence classification task, we need to develop a step-by-step approach. First, identify key features that distinguish subjective and objective sentences. Subjective sentences often contain emotional content, personal experiences, and subjective opinions. Objective sentences are factual, neutral, and based on objective data.
+
+Create a dataset with sentences labeled as subjective or objective. Use machine learning algorithms to classify these sentences. Measure progress by comparing the accuracy of our classifications. Simplify the problem by starting with a smaller dataset and gradually increasing the complexity. The key assumptions are that sentences can be clearly categorized based on their content.
+
+To devise an experiment, start by creating a dataset of sentences labeled as subjective or objective. Use machine learning algorithms to classify these sentences. Measure progress by comparing the accuracy of our classifications. Simplify the problem by starting with a smaller dataset and gradually increasing the complexity. The key assumptions are that sentences can be clearly categorized based on their content.
+
+### Refined Promrompt 2:
+
+
+
+[Question] In the 20th century, a scientist named Dr. Emily Johnson discovers a new element that could revolutionize the field of medicine.
+[Answer] To determine whether the sentence is subjective or objective, we need to analyze the content and identify key features that distinguish between the two types of sentences. Here is a step-by-step reasoning chain to classify the given sentence:
+
+1. **Identify the Content**: The sentence discusses a scientific discovery made by Dr. Emily Johnson in the 20th century. The discovery involves a new element that could revolutionize the field of medicine.
+
+2. **Analyze the Nature of the Content:
+   - **Subjective Content**: This includes emotional content, personal experiences, and subjective opinions.
+    - **Objective content**: This includes factual, neutral, and based on objective data.
+
+3. **Determine the Nature of the Content:
+   - The sentence describes a scientific discovery, which is factual and based on objective data.
+    - The discovery is described in a neutral and objective manner, without any emotional content or personal experiences.
+
+4. **Classify the Sentence:
+   - Based on the analysis, the sentence is objective because it describes a factual discovery in a neutral and objective manner.
+
+5. **Final Answer:
+   - The sentence is objective.
+
+<final_answer>objective</final_answer> <ANS_START>objective<ANS_END>
+
+[Question] During her research, Dr. Johnson encounters mysterious phenomena that challenge her understanding of the natural world.
+[Answer] To determine whether the sentence is subjective or objective, we need to analyze the content and identify key features that distinguish subjective and objective sentences. Here is the reasoning chain to classify the sentence:
+
+1. **Identify the Content**: The sentence describes Dr. Johnson encountering mysterious phenomena that challenge her understanding of the natural world.
+2. **Analyze the Nature of the Content**:
+   - **Subjective Content**: This includes emotional content, personal experiences, and subjective opinions.
+    - **Objective content**: This includes factual, neutral, and based on objective data.
+3. **Determine the Nature of the Content**:
+    - The sentence describes phenomena that challenge Dr. Johnson's understanding of the natural world. This is factual and based on objective data.
+4. **Classify the Sentence**:
+    - Since the sentence is based on factual data and neutral observations, it is objective.
+
+Therefore, the final answer is:
+
+<final_answer>objective</final_answer> <ANS_START>objective<ANS_END>
+
+[Question] The story of Dr. Johnson's discovery is filled with emotional and personal experiences that make it a compelling narrative.
+[Answer] To determine whether the sentence is subjective or objective, we need to analyze the content and identify key features that distinguish subjective and objective sentences. Here is the reasoning chain to classify the given sentence:
+
+1. **Identify Key Features**:
+   - **Subjective Features**: Emotional content, personal experiences, subjective opinions.
+   - **Objective Features**: Factual, neutral, based on objective data.
+
+2. **Analyze the Sentence**:
+   - The sentence is: ""The story of Dr. Johnson's discovery is filled with emotional and personal experiences that make it a compelling narrative.""
+
+3. **Identify Key Words and phrases**:
+   - ""emotional and personal experiences""
+    - ""compelling narrative""
+
+4. **Determine the nature of the content:
+   - The sentence contains emotional and personal experiences, which are characteristic of subjective content.
+    - The narrative is described as compelling, which suggests a subjective interpretation.
+
+5. **Conclusion:
+   - Based on the presence of emotional and personal experiences, the sentence is classified as subjective.
+
+[final_answer]subjective[final_answer] <ANS_START>subjective<ANS_END>
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a data scientist with a strong background in natural language processing and machine learning. You have extensive experience in analyzing and classifying text data, and you are proficient in using various algorithms and models to identify patterns and categorize information. Your expertise in natural language processing allows you to accurately classify sentences as either subjective or objective. You can use techniques such as sentiment analysis, text classification, and machine learning models to determine the nature of each sentence. Your ability to interpret and categorize text data is crucial for tasks that require accurate classification and analysis. You can provide detailed explanations of the classification process and ensure that the results are accurate and reliable. Your skills in data analysis and machine learning make you an valuable asset in tasks that involve text classification and data interpretation.",21243,16038,0,0,0.552

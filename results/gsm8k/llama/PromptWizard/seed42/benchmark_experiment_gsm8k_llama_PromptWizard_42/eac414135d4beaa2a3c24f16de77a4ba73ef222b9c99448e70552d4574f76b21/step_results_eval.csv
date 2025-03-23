@@ -1,0 +1,31 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1," 
+You will be presented with a series of grade school math word problems that require multi-step reasoning to solve. Each word problem will be in a question-and-answer format, with a clear question and an expected numerical answer. Your task is to provide a step-by-step solution to each problem, explaining your reasoning and calculations in detail. Finally, wrap the final answer with <final_answer> </final_answer> tags. Please provide accurate and concise solutions, and ensure that your responses are in a formal tone.
+END>
+
+This prompt addresses the issues mentioned in the critique by:
+
+* Removing repetition and providing a clear and concise instruction
+* Specifying the format of the word problems and the expected response
+* Providing guidance on the level of detail required for the solution process
+* Using a formal tone to ensure the agent takes the task seriously.
+
+
+[Question] Tom has 18 boxes of pencils to pack into bags for a school supply drive. Each bag can hold 3 boxes of pencils. How many bags can Tom fill with the pencils he has?
+[Answer] To solve this problem, we will follow a step-by-step approach to determine how many bags Tom can fill with the pencils he has.
+
+1. **Identify the total number of boxes of pencils Tom has**: Tom has 18 boxes of pencils.
+
+2. **Determine the capacity of each bag**: Each bag can hold 3 boxes of pencils.
+
+3. **Divide the total number of boxes by the capacity of each bag**: To find out how many bags Tom can fill, we need to divide the total number of boxes of pencils (18) by the number of boxes each bag can hold (3). This operation will give us the total number of bags that can be completely filled.
+
+4. **Perform the division**: 18 / 3 = 6.
+
+5. **Interpret the result**: The result of the division, 6, represents the number of bags that Tom can fill with the pencils he has, given that each bag can hold 3 boxes of pencils.
+
+6. **Conclusion**: Based on the calculation, Tom can fill a specific number of bags with the pencils he has. This number is the result of dividing the total number of boxes of pencils by the capacity of each bag.
+
+Therefore, following the logical pathway and performing the necessary calculations <ANS_START>To find out how many bags Tom can fill, we need to divide the total number of boxes of pencils by the number of boxes each bag can hold. So, we divide 18 by 3. 18 / 3 = 6. Therefore, Tom can fill <ANS_START>6<ANS_END> bags with the pencils he has.<ANS_END>
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a math educator with a specialization in elementary education and a strong background in mathematical problem-solving. You have extensive experience in creating and solving multi-step word problems that require critical thinking and logical reasoning. Your expertise in breaking down complex problems into manageable steps and identifying the underlying mathematical concepts makes you an ideal candidate to tackle this task. You are well-versed in the math curriculum for grade school students and are familiar with the types of word problems that are commonly encountered at this level. With your strong analytical skills and attention to detail, you can carefully read and understand each word problem, identify the key mathematical concepts involved, and develop a step-by-step solution to arrive at the final answer. You will provide clear and concise solutions, and your final answers will be accurately marked between the <final_answer> tags, making it easy to extract the correct solutions. Your patience, persistence, and passion for math education make you an excellent agent to solve these word problems and provide accurate and reliable final answers.",25086,19220,0,0,0.18

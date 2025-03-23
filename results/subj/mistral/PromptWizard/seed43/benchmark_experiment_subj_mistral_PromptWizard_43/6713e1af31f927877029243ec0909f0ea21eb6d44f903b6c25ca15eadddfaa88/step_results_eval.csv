@@ -1,0 +1,90 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"
+
+### Task Description
+The task is to classify sentences as either subjective or objective. The classification will be extracted between the markers `<final_answer>answer</final_answer>.
+
+### Criteria for Classification
+1. **Subjective Sentences**: These sentences express personal opinions, emotions, or experiences. They are often subjective and can vary based on individual perspectives.
+2. **Objective Sentences**: These sentences provide factual information, data, or objective observations. They are based on objective facts and do not depend on personal opinions.
+
+### Instructions
+1. **Define the Criteria**: Clearly define what makes a sentence subjective or objective. Provide examples of subjective and objective sentences.
+2. **Create a Dataset**: Develop a dataset of sentences labeled as subjective or objective. Ensure the dataset includes a variety of sentences to cover different contexts.
+3. **Train the Model: Use machine learning algorithms to train a model to classify new sentences. Ensure the training data is representative of the actual data.
+4. **Evaluate the Model: Measure the performance of the model using metrics such as accuracy, precision, and recall. Ensure the evaluation is comprehensive and covers various scenarios.
+
+### Examples:
+- **Subjective Sentence**: ""I feel happy today because the weather
+
+
+[Question] The new book by Jane Doe has received critical acclaim for its detailed narrative and engaging characters.
+[Answer] To classify the sentence ""The new book by Jane Doe has received critical acclaim for its detailed narrative and engaging characters"" as either subjective or objective, follow these steps:
+
+1. **Identify the Content of the Sentence**:
+   - The sentence discusses a book by Jane Doe.
+   - It mentions critical acclaim, detailed narrative, and engaging characters.
+
+2. **Determine the Nature of the Content:
+   - The sentence provides factual information about a book.
+   - It mentions specific details such as critical acclaim, detailed narrative, and engaging characters.
+   - These details are based on objective facts and observations.
+
+3. **Classify the Sentence:
+   - Since the sentence provides factual information and details based on objective facts, it is classified as objective.
+
+4. **Final Answer:
+   - The sentence is objective.
+
+<final_answer>objective</final_answer> <ANS_START>objective
+The sentence provides factual information about a book, which is objective. It discusses the critical acclaim and details of the book, which are based on objective facts.
+<ANS_START>objective<ANS_END>
+
+[Question] The feeling of joy is overwhelming when you spend time with loved ones, creating memories that last a lifetime.
+[Answer] To classify the sentence ""The feeling of joy is overwhelming when you spend time with loved ones, creating memories that last a lifetime"" as either subjective or objective, follow these steps:
+
+### Step 1: Understand the Criteria
+- **Subjective Sentences**: These sentences express personal opinions, emotions, or experiences. They are subjective and can vary based on individual perspectives.
+- **Objective Sentences**: These sentences provide factual information, data, or objective observations. They are based on objective facts and do not depend on personal opinions.
+
+### Step 2: Analyze the Sentence
+- The sentence ""The feeling of joy is overwhelming when you spend time with loved ones, creating memories that last a lifetime"" describes personal emotions and experiences.
+- The sentence focuses on the feeling of joy and the creation of memories, which are based on individual perspectives.
+
+### Step 3: Determine the Classification
+- The sentence is subjective because it expresses personal emotions and experiences. It describes the feeling of joy and the creation of memories, which are based on individual perspectives.
+
+### Step 4: Final Answer
+- Based on the analysis, the sentence is classified as subjective.
+
+<final_answer>subjective</final_answer> <ANS_START>subjective
+The sentence expresses personal emotions and experiences, which are subjective. It describes the feeling of joy and the creation of memories, which are based on individual perspectives.
+<ANSWER>subjective<ANS_END>
+
+[Question] The new technology has revolutionized the way we communicate, making it easier to connect with people around the world.
+[Answer] To classify the sentence ""The new technology has revolutionized the way we communicate, making it easier to connect with people around the world"" as either subjective or objective, follow these steps:
+
+### Step 1: Understand the Criteria
+- **Subjective Sentences**: These sentences express personal opinions, emotions, or experiences. They are subjective and can vary based on individual perspectives.
+- **Objective Sentences**: These sentences provide factual information, data, or objective observations. They are based on objective facts and do not depend on personal opinions.
+
+### Step 2: Analyze the Sentence
+- The sentence is: ""The new technology has revolutionized the way we communicate, making it easier to connect with people around the world.""
+
+### Step 3: Identify the Content
+- The sentence discusses technological advancements.
+- It provides factual information about how technology has changed communication.
+- The information is based on objective facts and does not depend on personal opinions.
+
+### Step 4: Determine the Classification
+- Since the sentence provides factual information and does not depend on personal opinions, it is objective.
+
+### Step 5: Conclusion
+- The sentence is classified as objective.
+
+### Final Answer:
+<final_answer>objective</final_answer> <ANS_START>objective
+The sentence discusses technological advancements, which are objective. It provides factual information about how technology has changed communication, which is based on objective facts.
+<ANSWER>objective<ANS_END>
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a data scientist with a strong background in natural language processing and machine learning. You have extensive experience in analyzing and classifying text data, and you are proficient in using various algorithms and models to identify patterns and categorize information. Your expertise in natural language processing allows you to effectively classify sentences as either subjective or objective. You can use techniques such as sentiment analysis, text classification, and machine learning models to accurately determine the nature of each sentence. Your knowledge of data analysis and machine learning enables you to extract the class between the markers <final_answer>answer</final_answer>. Your skills are invaluable in understanding and categorizing text data, making you a valuable asset in data analysis and natural language processing.",30390,16955,0,0,0.556
