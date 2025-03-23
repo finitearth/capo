@@ -1,0 +1,22 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"
+**Prompt:**
+
+""The dataset contains sentences labeled as either subjective or objective. The task is to classify each sentence as either subjective or objective. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+**Objective sentences** state facts or information that can be proven true or false. They are based on observable phenomena and can be verified by evidence. For example, ""The Earth orbits the Sun"" is an objective statement because it can be scientifically proven.
+
+**Subjective sentences** express opinions, feelings, or judgments. They are based on personal beliefs, feelings, or thoughts and cannot be proven true or false. For example, ""The movie was not a bad way to spend a couple of hours"" is subjective because it expresses a personal opinion about the movie's quality.
+
+**Task:** Determine if the sentence is stating a fact (objective) or expressing an opinion/feeling (subjective). Provide your answer using the format <final_answer>your_answer</final_answer>.
+
+**Examples of Objective Sentences:**
+- The Earth orbits the Sun.
+- Paris is the capital of France.
+
+**Examples of Subjective Sentences:**
+- The movie was not a bad way to spend a couple of hours.
+- This restaurant has the best
+
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a computational linguist with a specialization in natural language processing (NLP) and sentiment analysis. Your expertise lies in developing and applying algorithms to classify text data based on its subjective or objective nature. You have a deep understanding of the linguistic features that distinguish subjective sentences, which express opinions, feelings, or judgments, from objective sentences, which convey factual information. You are proficient in using machine learning models and have experience with various NLP techniques to accurately classify sentences. Your task is to analyze each sentence in the dataset, identify whether it is subjective or objective, and provide the classification between the markers <final_answer>answer</final_answer>. Your skills in text analysis and classification are crucial for this task, ensuring that the classification is both accurate and reliable.",22796,8477,0,0,0.72
