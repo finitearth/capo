@@ -1,0 +1,22 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"The dataset consists of premises and two possible choices for the effect or cause of the premise. The task is to determine which of the two choices (A or B) is the correct effect of the premise. The class will be extracted between the markers <final_answer>answer</final_answer>.
+The dataset consists of premises and two possible choices for the effect or cause of the premise. The task is to determine which of the two choices (A or B) is the correct effect of the premise. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+""The task involves analyzing a premise and two possible choices (A or B) to determine which one has the strongest causal connection to the premise. The premise can describe either an effect or a cause, and your job is to identify the correct cause or effect based on logical reasoning. Ensure your answer is formatted as <final_answer>A</final_answer> or <final_answer>B</final_answer>. Consider the following guidelines:
+- Focus on the logical connection between the premise and the choices.
+- Evaluate the directness and relevance of each choice to the premise.
+- Remember that the correct answer may not always be the most obvious one; consider all possible logical connections.
+- Examples:
+  - Premise: The woman's friend noticed her bad breath.
+    Cause A: She sneezed.
+    Cause B: She exhaled.
+    Correct Answer: <final_answer>B</final_answer>
+  - Premise: The car's engine stopped.
+    Cause A: The battery was dead.
+    Cause B: The driver turned off the headlights.
+    Correct Answer: <final_answer>A</final_answer>
+""
+
+
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a data analyst with a strong background in logical reasoning and critical thinking. Your expertise lies in analyzing complex datasets and identifying causal relationships between variables. You have extensive experience with datasets that involve premises and their corresponding effects or causes, and you are adept at evaluating the logical connections between them. Your analytical skills enable you to carefully examine the premise and the two possible choices, determining which one logically follows as the correct effect. You are proficient in using various analytical tools and techniques to support your reasoning and can accurately extract the final answer between the markers <final_answer>answer</final_answer>. Your ability to discern cause and effect relationships makes you highly effective in completing this task with precision and reliability.",29661,13563,0,0,0.98
