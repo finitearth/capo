@@ -1,0 +1,3123 @@
+step,timestamp,time_elapsed,score,prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,2025-03-23 16:59:03.908567,969.805207,0.62,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Examine and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1340,434,2229201,696931,0.578
+1,2025-03-23 16:59:03.908567,969.805207,0.61,"Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Diana gets 30 minutes of video game time for every hour she reads. Her dad decided to raise her reward by 20%. Diana read for 12 hours this week. How many more minutes of video game time will she get as a result of her raise?
+Output:
+<final_answer>72</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+Cheryl got angry with her sister and decided to run away from home. She walked 2 miles every hour for 3 hours. Then she got homesick and walked back home. How many miles did Cheryl walk in total?
+Output:
+<final_answer>12</final_answer>
+
+Input:
+Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output:
+To solve this problem, we need to follow the steps of cutting the pizza and distributing the slices to Phil's friends. Let's break it down step by step:
+
+1. **Initial Cut**: Phil cuts the pizza in half.
+   - Number of slices: 2
+
+2. **Second Cut: Phil cuts both halves in half.
+   - Number of slices: 2 + 2 = 4
+
+3. **Third cut: Phil cuts each slice in half.
+   - Number of slices: 4 + 4 = 8
+
+4. **Distribution: Phil passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.
+   - Number of slices given to 3 friends: 3 * 1 = 3
+   - Number of slices given to 2 friends: 2 * 2 = 4
+   - Total slices given: 3 + 4 = 7
+
+5. **Remaining slices: Subtract the distributed slices from the total number of slices.
+   - Remaining slices: 8 - 7 = 1
+
+<final_answer>
+1
+</final_answer>
+
+Input:",1340,434,2229201,696931,0.624
+1,2025-03-23 16:59:03.908567,969.805207,0.61,"I need your help with solving this elementary math word problem. Please break down the problem and solve it step by step, explaining each part of your reasoning. Ensure the final solution is formatted within <final_answer> </final_answer> markers.
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1340,434,2229201,696931,0.6
+1,2025-03-23 16:59:03.908567,969.805207,0.5966666666666667,"Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Your final answer must be contained within <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:",1340,434,2229201,696931,0.578
+1,2025-03-23 16:59:03.908567,969.805207,0.59,"I'm having trouble with this grade school math word problem. Can you provide a detailed solution? Make sure to put your final answer between <final_answer> and </final_answer> markers so I can easily identify it.
+
+Input:
+Marcy uses 6 ounces of pet cleaner to clean up a dog stain, 4 ounces to clean up a cat stain, and 1 ounce to clean up a rabbit stain. How much cleaner does she need to clean up after 6 dogs, 3 cats and 1 rabbit?
+Output:
+<final_answer>49</final_answer>
+
+Input:
+Billy ate 20 apples this week. On Monday, he ate 2 apples. On Tuesday, he ate twice as many as he ate the day before. He’s not sure what he ate on Wednesday. On Thursday, he ate four times as many as he ate on Friday. On Friday, he ate half of the amount he ate on Monday.  How many apples did he eat on Wednesday?
+Output:
+<final_answer>9</final_answer>
+
+Input:
+Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output:
+To solve this problem, we need to determine the total number of pizza slices and then subtract the slices given to the friends.
+
+1. **Initial Cut**: Phill cuts the pizza in half.
+   - This results in 2 slices.
+
+2. **Second Cut: Phil cuts both halves in half.
+   - This results in 4 slices.
+
+3. **Third cut: Phil cuts each slice in half.
+   - This results in 8 slices.
+
+4. **Distributing the slices:
+   - 3 friends each get 1 slice: 3 slices.
+   - 2 friends each get 2 slices: 4 slices.
+
+5. **Total slices given to friends:**
+   - 3 + 4 = 7 slices.
+
+6. **Remaining slices for Phil:**
+   - 8 - 7 = 1 slice.
+
+<final_answer>1</final_answer>
+
+Input:
+Jimmy's father receives 20 emails a day. Halfway through April, he subscribed to a news channel that sent 5 more emails per day to his email. What's the total number of emails Jimmy's father had at the end of the month?
+Output:
+<final_answer>675</final_answer>
+
+Input:",1340,434,2229201,696931,0.632
+1,2025-03-23 16:59:03.908567,969.805207,0.5833333333333334,"Examine and solve the following elementary school math problem that requires multiple steps of reasoning. Your explanation should be clear, and your final answer must be enclosed within <final_answer> </final_answer> tags as specified.
+
+Input:
+Billy has $25 less than twice the money Sam has. If Sam has $75, how much money do they have together?
+Output:
+<final_answer>200</final_answer>
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:
+Barry wants to make a huge salad using only cucumbers and tomatoes. He will use a total of 280 pieces of vegetables. If there are thrice as many tomatoes as cucumbers, how many cucumbers will be used in the salad?
+Output:
+To solve this problem, we can follow these steps:
+
+1. **Define the variables**:
+   Let \( c$ be the number of cucumbers.
+   Let $t$ be the number of tomatoes.
+
+2. **Set up the equations based on the problem:
+   - The total number of vegetables is 280.
+   - There are three times as many tomatoes as cucumbers.
+
+   Therefore, we have:
+   \[ c + t = 280 \]
+   \[ t = 3c \]
+
+3. **Substitute the second equation into the first equation:
+   \[ c + 3c = 280 \]
+   \[ 4c = 280\]
+
+4. **Solve for $c$:
+   \[ c = \frac{280}{4} \]
+    \[ c = 70\]
+
+So, the number of cucumbers used in the salad is <final_answer>70</final_answer>.
+
+Input:",1340,434,2229201,696931,0.562
+1,2025-03-23 16:59:03.908567,969.805207,0.5766666666666667,"Solve step-by-step. Final answer between <final_answer> tags.
+
+Input:
+Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
+Output:
+<final_answer>8</final_answer>
+
+Input:
+Lucia is a dancer. She takes 2 hip-hop classes a week, 2 ballet classes a week, and 1 jazz class a week. One hip-hop class costs $10. One ballet class costs $12, and one jazz class costs $8. What is the total cost of Lucia’s dance classes in one week?
+Output:
+To calculate the total cost of Lucia's dance classes in one week, we need to calculate the cost of each type of class and then sum them up.
+
+1. **Hip-hop classes:**
+   - Lucia takes 2 hip-hop classes a week.
+   - Each hip-hop class costs $10.
+   - Total cost for hip-hop classes: \(2 \times 10 = 20$
+
+2. **Ballet classes:**
+   - Lucia takes 2 ballet classes a week.
+   - Each ballet class costs $12.
+   - Total cost for ballet classes: \(2 \times 12 = 24\)
+
+3. **Jazz classes:**
+   - Lucia takes 1 jazz class a week.
+   - Each jazz class costs $8.
+   - Total cost for jazz classes: \(1 \times 8 = 8$
+
+4. **Total cost for all classes:**
+   - Sum of all costs: \(20 + 24 + 8 = 52$
+
+<final_answer>52</final_answer>
+
+Input:
+At a coffee shop, 7 customers order coffee at $5 each and 8 customers order tea at $4 each. How much money did the coffee shop make?
+Output:
+To calculate the total amount of money the coffee shop made, we need to follow these steps:
+
+1. **Calculate the total revenue from coffee sales:**
+   - Number of customers ordering coffee: 7
+   - Price of coffee: $5
+   - Total revenue from coffee: \( 7 \times 5 = 35 \)
+
+2. **Calculate the total revenue from tea sales:**
+   - Number of customers ordering tea: 8
+   - Price of tea: $4
+   - Total revenue from tea: \( 8 \times 4 = 32 \)
+
+3. **Calculate the total revenue from all sales:**
+   - Total revenue from coffee: $35
+   - Total revenue from tea: $32
+   - Total revenue: \( 35 + 32 = 67 \)
+
+<final_answer>67</final_answer>
+
+Input:
+James has 20 pairs of red socks and half as many black socks.  He has twice as many white socks as red and black combined.  How many total socks does he have combined?
+Output:
+<final_answer>90</final_answer>
+
+Input:
+Tony's dad is very strict about the washing machine and family members are only allowed to wash 50 total ounces of clothing at a time. Tony doesn't want to break the rules, so he weighs his clothes and finds that a pair of socks weighs 2 ounces, underwear weighs 4 ounces, a shirt weighs 5 ounces, shorts weigh 8 ounces, and pants weigh 10 ounces. Tony is washing a pair of pants, 2 shirts, a pair of shorts, and 3 pairs of socks. How many more pairs of underwear can he add to the wash and not break the rule?
+Output:
+<final_answer>4</final_answer>
+
+Input:",1340,434,2229201,696931,0.568
+1,2025-03-23 16:59:03.908567,969.805207,0.55,"Calling all math wizards! I need help with this tricky multi-step word problem. Walk me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:
+Betty ordered 18 items in an online shop via cash on delivery. She ordered 6 pieces of slippers that cost $2.5 each, 4 pieces of lipstick for $1.25 each, and 8 pieces of hair color for $3 each. How much did Betty pay in total when it was delivered?
+Output:
+To solve this problem, we need to calculate the total cost of each type of item and then sum these costs to find the total amount Betty paid.
+
+1. **Calculate the cost of slippers:**
+   - Number of slippers: 6
+   - Cost per slopper: $2.5
+   - Total cost for slippers: \(6 \times 2.5 = 15\)
+
+2. **Calculate the cost of lipstick:**
+   - Number of lipsticks: 4
+   - Cost per lipstick: $1.25
+   - Total cost for lipsticks: \(4 \times 1.25 = 5\)
+
+3. **Calculate the cost of hair color:**
+   - Number of hair colors: 8
+    - Cost per hair color: $3
+    - Total cost for hair colors: \(8 \times 3 = 24\)
+
+4. **Calculate the total cost:**
+   - Total cost = cost of slippers + cost of lipsticks + cost of hair colors
+    - Total cost = \(15 + 5 + 24 = 44$
+
+<final_answer>44</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output:
+<final_answer>80</final_answer>
+
+Input:",1340,434,2229201,696931,0.554
+1,2025-03-23 16:59:03.908567,969.805207,0.52,"I'd appreciate your assistance with this elementary math word problem. Please explain each step of your reasoning and make sure to format the final solution inside <final_answer> </final_answer> markers.
+
+Input:
+Mark wants to build a pyramid of soda cases that's four levels tall. Each level of the pyramid has a square base where each side is one case longer than the level above it. The top level is just one case. How many cases of soda does Mark need?
+Output:
+<final_answer>30</final_answer>
+
+Input:
+Two alien spacecraft on a sightseeing tour of Earth left New Orleans airport at 3:00 pm to travel the 448-mile distance to Dallas by air.  Traveling nonstop, the first spacecraft landed in Dallas at 3:30 pm, while the second spacecraft landed in Dallas thirty minutes later. Assuming both spacecraft traveled at constant speed, what was the difference in speed, in miles per hour, between the two spacecraft?
+Output:
+<final_answer>448</final_answer>
+
+Input:
+Martha buys 1 latte for $4.00 every morning, 5 days a week.  3 days a week, she buys an iced coffee for $2.00.  Her goal for the entire year is to cut her coffee spending by 25%.  How much will she save?
+Output:
+<final_answer>338</final_answer>
+
+Input:
+Carrie worked for 2 hours a day for 4 days to make and decorate a wedding cake. She was paid $22 an hour. The cost for supplies to make the cake was $54. How much profit did Carrie earn on the cake?
+Output:
+<final_answer>122</final_answer>
+
+Input:",1340,434,2229201,696931,0.54
+1,2025-03-23 16:59:03.908567,969.805207,0.52,"I'm seeking assistance with a complex grade school math problem that requires multiple steps to solve. Can you guide me through the solution, explaining each step of your reasoning? Ensure the final answer is formatted within <final_answer> answer </final_answer> markers.
+
+Input:
+Carrie worked for 2 hours a day for 4 days to make and decorate a wedding cake. She was paid $22 an hour. The cost for supplies to make the cake was $54. How much profit did Carrie earn on the cake?
+Output:
+<final_answer>122</final_answer>
+
+Input:
+Mark wants to build a pyramid of soda cases that's four levels tall. Each level of the pyramid has a square base where each side is one case longer than the level above it. The top level is just one case. How many cases of soda does Mark need?
+Output:
+<final_answer>30</final_answer>
+
+Input:",1340,434,2229201,696931,0.522
+2,2025-03-23 17:03:11.897241,247.986827,0.62,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Examine and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1411,494,512269,203967,0.578
+2,2025-03-23 17:03:11.897241,247.986827,0.61,"Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Diana gets 30 minutes of video game time for every hour she reads. Her dad decided to raise her reward by 20%. Diana read for 12 hours this week. How many more minutes of video game time will she get as a result of her raise?
+Output:
+<final_answer>72</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+Cheryl got angry with her sister and decided to run away from home. She walked 2 miles every hour for 3 hours. Then she got homesick and walked back home. How many miles did Cheryl walk in total?
+Output:
+<final_answer>12</final_answer>
+
+Input:
+Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output:
+To solve this problem, we need to follow the steps of cutting the pizza and distributing the slices to Phil's friends. Let's break it down step by step:
+
+1. **Initial Cut**: Phil cuts the pizza in half.
+   - Number of slices: 2
+
+2. **Second Cut: Phil cuts both halves in half.
+   - Number of slices: 2 + 2 = 4
+
+3. **Third cut: Phil cuts each slice in half.
+   - Number of slices: 4 + 4 = 8
+
+4. **Distribution: Phil passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.
+   - Number of slices given to 3 friends: 3 * 1 = 3
+   - Number of slices given to 2 friends: 2 * 2 = 4
+   - Total slices given: 3 + 4 = 7
+
+5. **Remaining slices: Subtract the distributed slices from the total number of slices.
+   - Remaining slices: 8 - 7 = 1
+
+<final_answer>
+1
+</final_answer>
+
+Input:",1411,494,512269,203967,0.624
+2,2025-03-23 17:03:11.897241,247.986827,0.61,"I need your help with solving this elementary math word problem. Please break down the problem and solve it step by step, explaining each part of your reasoning. Ensure the final solution is formatted within <final_answer> </final_answer> markers.
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1411,494,512269,203967,0.6
+2,2025-03-23 17:03:11.897241,247.986827,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Please solve this math story problem. Walk me through your solution process and show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output:
+<final_answer>80</final_answer>
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:",1411,494,512269,203967,0.636
+2,2025-03-23 17:03:11.897241,247.986827,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1411,494,512269,203967,0.564
+2,2025-03-23 17:03:11.897241,247.986827,0.5966666666666667,"Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Your final answer must be contained within <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:",1411,494,512269,203967,0.578
+2,2025-03-23 17:03:11.897241,247.986827,0.59,"I'm having trouble with this grade school math word problem. Can you provide a detailed solution? Make sure to put your final answer between <final_answer> and </final_answer> markers so I can easily identify it.
+
+Input:
+Marcy uses 6 ounces of pet cleaner to clean up a dog stain, 4 ounces to clean up a cat stain, and 1 ounce to clean up a rabbit stain. How much cleaner does she need to clean up after 6 dogs, 3 cats and 1 rabbit?
+Output:
+<final_answer>49</final_answer>
+
+Input:
+Billy ate 20 apples this week. On Monday, he ate 2 apples. On Tuesday, he ate twice as many as he ate the day before. He’s not sure what he ate on Wednesday. On Thursday, he ate four times as many as he ate on Friday. On Friday, he ate half of the amount he ate on Monday.  How many apples did he eat on Wednesday?
+Output:
+<final_answer>9</final_answer>
+
+Input:
+Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output:
+To solve this problem, we need to determine the total number of pizza slices and then subtract the slices given to the friends.
+
+1. **Initial Cut**: Phill cuts the pizza in half.
+   - This results in 2 slices.
+
+2. **Second Cut: Phil cuts both halves in half.
+   - This results in 4 slices.
+
+3. **Third cut: Phil cuts each slice in half.
+   - This results in 8 slices.
+
+4. **Distributing the slices:
+   - 3 friends each get 1 slice: 3 slices.
+   - 2 friends each get 2 slices: 4 slices.
+
+5. **Total slices given to friends:**
+   - 3 + 4 = 7 slices.
+
+6. **Remaining slices for Phil:**
+   - 8 - 7 = 1 slice.
+
+<final_answer>1</final_answer>
+
+Input:
+Jimmy's father receives 20 emails a day. Halfway through April, he subscribed to a news channel that sent 5 more emails per day to his email. What's the total number of emails Jimmy's father had at the end of the month?
+Output:
+<final_answer>675</final_answer>
+
+Input:",1411,494,512269,203967,0.632
+2,2025-03-23 17:03:11.897241,247.986827,0.5766666666666667,"Solve step-by-step. Final answer between <final_answer> tags.
+
+Input:
+Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
+Output:
+<final_answer>8</final_answer>
+
+Input:
+Lucia is a dancer. She takes 2 hip-hop classes a week, 2 ballet classes a week, and 1 jazz class a week. One hip-hop class costs $10. One ballet class costs $12, and one jazz class costs $8. What is the total cost of Lucia’s dance classes in one week?
+Output:
+To calculate the total cost of Lucia's dance classes in one week, we need to calculate the cost of each type of class and then sum them up.
+
+1. **Hip-hop classes:**
+   - Lucia takes 2 hip-hop classes a week.
+   - Each hip-hop class costs $10.
+   - Total cost for hip-hop classes: \(2 \times 10 = 20$
+
+2. **Ballet classes:**
+   - Lucia takes 2 ballet classes a week.
+   - Each ballet class costs $12.
+   - Total cost for ballet classes: \(2 \times 12 = 24\)
+
+3. **Jazz classes:**
+   - Lucia takes 1 jazz class a week.
+   - Each jazz class costs $8.
+   - Total cost for jazz classes: \(1 \times 8 = 8$
+
+4. **Total cost for all classes:**
+   - Sum of all costs: \(20 + 24 + 8 = 52$
+
+<final_answer>52</final_answer>
+
+Input:
+At a coffee shop, 7 customers order coffee at $5 each and 8 customers order tea at $4 each. How much money did the coffee shop make?
+Output:
+To calculate the total amount of money the coffee shop made, we need to follow these steps:
+
+1. **Calculate the total revenue from coffee sales:**
+   - Number of customers ordering coffee: 7
+   - Price of coffee: $5
+   - Total revenue from coffee: \( 7 \times 5 = 35 \)
+
+2. **Calculate the total revenue from tea sales:**
+   - Number of customers ordering tea: 8
+   - Price of tea: $4
+   - Total revenue from tea: \( 8 \times 4 = 32 \)
+
+3. **Calculate the total revenue from all sales:**
+   - Total revenue from coffee: $35
+   - Total revenue from tea: $32
+   - Total revenue: \( 35 + 32 = 67 \)
+
+<final_answer>67</final_answer>
+
+Input:
+James has 20 pairs of red socks and half as many black socks.  He has twice as many white socks as red and black combined.  How many total socks does he have combined?
+Output:
+<final_answer>90</final_answer>
+
+Input:
+Tony's dad is very strict about the washing machine and family members are only allowed to wash 50 total ounces of clothing at a time. Tony doesn't want to break the rules, so he weighs his clothes and finds that a pair of socks weighs 2 ounces, underwear weighs 4 ounces, a shirt weighs 5 ounces, shorts weigh 8 ounces, and pants weigh 10 ounces. Tony is washing a pair of pants, 2 shirts, a pair of shorts, and 3 pairs of socks. How many more pairs of underwear can he add to the wash and not break the rule?
+Output:
+<final_answer>4</final_answer>
+
+Input:",1411,494,512269,203967,0.568
+2,2025-03-23 17:03:11.897241,247.986827,0.55,"Calling all math wizards! I need help with this tricky multi-step word problem. Walk me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:
+Betty ordered 18 items in an online shop via cash on delivery. She ordered 6 pieces of slippers that cost $2.5 each, 4 pieces of lipstick for $1.25 each, and 8 pieces of hair color for $3 each. How much did Betty pay in total when it was delivered?
+Output:
+To solve this problem, we need to calculate the total cost of each type of item and then sum these costs to find the total amount Betty paid.
+
+1. **Calculate the cost of slippers:**
+   - Number of slippers: 6
+   - Cost per slopper: $2.5
+   - Total cost for slippers: \(6 \times 2.5 = 15\)
+
+2. **Calculate the cost of lipstick:**
+   - Number of lipsticks: 4
+   - Cost per lipstick: $1.25
+   - Total cost for lipsticks: \(4 \times 1.25 = 5\)
+
+3. **Calculate the cost of hair color:**
+   - Number of hair colors: 8
+    - Cost per hair color: $3
+    - Total cost for hair colors: \(8 \times 3 = 24\)
+
+4. **Calculate the total cost:**
+   - Total cost = cost of slippers + cost of lipsticks + cost of hair colors
+    - Total cost = \(15 + 5 + 24 = 44$
+
+<final_answer>44</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output:
+<final_answer>80</final_answer>
+
+Input:",1411,494,512269,203967,0.554
+2,2025-03-23 17:03:11.897241,247.986827,0.52,"I'd appreciate your assistance with this elementary math word problem. Please explain each step of your reasoning and make sure to format the final solution inside <final_answer> </final_answer> markers.
+
+Input:
+Mark wants to build a pyramid of soda cases that's four levels tall. Each level of the pyramid has a square base where each side is one case longer than the level above it. The top level is just one case. How many cases of soda does Mark need?
+Output:
+<final_answer>30</final_answer>
+
+Input:
+Two alien spacecraft on a sightseeing tour of Earth left New Orleans airport at 3:00 pm to travel the 448-mile distance to Dallas by air.  Traveling nonstop, the first spacecraft landed in Dallas at 3:30 pm, while the second spacecraft landed in Dallas thirty minutes later. Assuming both spacecraft traveled at constant speed, what was the difference in speed, in miles per hour, between the two spacecraft?
+Output:
+<final_answer>448</final_answer>
+
+Input:
+Martha buys 1 latte for $4.00 every morning, 5 days a week.  3 days a week, she buys an iced coffee for $2.00.  Her goal for the entire year is to cut her coffee spending by 25%.  How much will she save?
+Output:
+<final_answer>338</final_answer>
+
+Input:
+Carrie worked for 2 hours a day for 4 days to make and decorate a wedding cake. She was paid $22 an hour. The cost for supplies to make the cake was $54. How much profit did Carrie earn on the cake?
+Output:
+<final_answer>122</final_answer>
+
+Input:",1411,494,512269,203967,0.54
+3,2025-03-23 17:07:49.031888,277.133191,0.62,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Examine and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1494,579,610909,221466,0.578
+3,2025-03-23 17:07:49.031888,277.133191,0.61,"Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Diana gets 30 minutes of video game time for every hour she reads. Her dad decided to raise her reward by 20%. Diana read for 12 hours this week. How many more minutes of video game time will she get as a result of her raise?
+Output:
+<final_answer>72</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+Cheryl got angry with her sister and decided to run away from home. She walked 2 miles every hour for 3 hours. Then she got homesick and walked back home. How many miles did Cheryl walk in total?
+Output:
+<final_answer>12</final_answer>
+
+Input:
+Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output:
+To solve this problem, we need to follow the steps of cutting the pizza and distributing the slices to Phil's friends. Let's break it down step by step:
+
+1. **Initial Cut**: Phil cuts the pizza in half.
+   - Number of slices: 2
+
+2. **Second Cut: Phil cuts both halves in half.
+   - Number of slices: 2 + 2 = 4
+
+3. **Third cut: Phil cuts each slice in half.
+   - Number of slices: 4 + 4 = 8
+
+4. **Distribution: Phil passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.
+   - Number of slices given to 3 friends: 3 * 1 = 3
+   - Number of slices given to 2 friends: 2 * 2 = 4
+   - Total slices given: 3 + 4 = 7
+
+5. **Remaining slices: Subtract the distributed slices from the total number of slices.
+   - Remaining slices: 8 - 7 = 1
+
+<final_answer>
+1
+</final_answer>
+
+Input:",1494,579,610909,221466,0.624
+3,2025-03-23 17:07:49.031888,277.133191,0.61,"I need your help with solving this elementary math word problem. Please break down the problem and solve it step by step, explaining each part of your reasoning. Ensure the final solution is formatted within <final_answer> </final_answer> markers.
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1494,579,610909,221466,0.6
+3,2025-03-23 17:07:49.031888,277.133191,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Please solve this math story problem. Walk me through your solution process and show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output:
+<final_answer>80</final_answer>
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:",1494,579,610909,221466,0.636
+3,2025-03-23 17:07:49.031888,277.133191,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1494,579,610909,221466,0.564
+3,2025-03-23 17:07:49.031888,277.133191,0.5966666666666667,"Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Your final answer must be contained within <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:",1494,579,610909,221466,0.578
+3,2025-03-23 17:07:49.031888,277.133191,0.5866666666666667,"Math lovers, I need your help with a complex multi-step word problem. I'm looking for assistance with this elementary math problem that requires multiple steps of reasoning. Please analyze and solve the following elementary school math problem. Explain each step of your reasoning and guide me through your solution process. Make sure to format the final solution inside <final_answer> </final_answer> markers.
+
+Input:
+Martha buys 1 latte for $4.00 every morning, 5 days a week.  3 days a week, she buys an iced coffee for $2.00.  Her goal for the entire year is to cut her coffee spending by 25%.  How much will she save?
+Output:
+<final_answer>338</final_answer>
+
+Input:
+Two alien spacecraft on a sightseeing tour of Earth left New Orleans airport at 3:00 pm to travel the 448-mile distance to Dallas by air.  Traveling nonstop, the first spacecraft landed in Dallas at 3:30 pm, while the second spacecraft landed in Dallas thirty minutes later. Assuming both spacecraft traveled at constant speed, what was the difference in speed, in miles per hour, between the two spacecraft?
+Output:
+<final_answer>448</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1494,579,610909,221466,0.63
+3,2025-03-23 17:07:49.031888,277.133191,0.5766666666666667,"Solve step-by-step. Final answer between <final_answer> tags.
+
+Input:
+Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
+Output:
+<final_answer>8</final_answer>
+
+Input:
+Lucia is a dancer. She takes 2 hip-hop classes a week, 2 ballet classes a week, and 1 jazz class a week. One hip-hop class costs $10. One ballet class costs $12, and one jazz class costs $8. What is the total cost of Lucia’s dance classes in one week?
+Output:
+To calculate the total cost of Lucia's dance classes in one week, we need to calculate the cost of each type of class and then sum them up.
+
+1. **Hip-hop classes:**
+   - Lucia takes 2 hip-hop classes a week.
+   - Each hip-hop class costs $10.
+   - Total cost for hip-hop classes: \(2 \times 10 = 20$
+
+2. **Ballet classes:**
+   - Lucia takes 2 ballet classes a week.
+   - Each ballet class costs $12.
+   - Total cost for ballet classes: \(2 \times 12 = 24\)
+
+3. **Jazz classes:**
+   - Lucia takes 1 jazz class a week.
+   - Each jazz class costs $8.
+   - Total cost for jazz classes: \(1 \times 8 = 8$
+
+4. **Total cost for all classes:**
+   - Sum of all costs: \(20 + 24 + 8 = 52$
+
+<final_answer>52</final_answer>
+
+Input:
+At a coffee shop, 7 customers order coffee at $5 each and 8 customers order tea at $4 each. How much money did the coffee shop make?
+Output:
+To calculate the total amount of money the coffee shop made, we need to follow these steps:
+
+1. **Calculate the total revenue from coffee sales:**
+   - Number of customers ordering coffee: 7
+   - Price of coffee: $5
+   - Total revenue from coffee: \( 7 \times 5 = 35 \)
+
+2. **Calculate the total revenue from tea sales:**
+   - Number of customers ordering tea: 8
+   - Price of tea: $4
+   - Total revenue from tea: \( 8 \times 4 = 32 \)
+
+3. **Calculate the total revenue from all sales:**
+   - Total revenue from coffee: $35
+   - Total revenue from tea: $32
+   - Total revenue: \( 35 + 32 = 67 \)
+
+<final_answer>67</final_answer>
+
+Input:
+James has 20 pairs of red socks and half as many black socks.  He has twice as many white socks as red and black combined.  How many total socks does he have combined?
+Output:
+<final_answer>90</final_answer>
+
+Input:
+Tony's dad is very strict about the washing machine and family members are only allowed to wash 50 total ounces of clothing at a time. Tony doesn't want to break the rules, so he weighs his clothes and finds that a pair of socks weighs 2 ounces, underwear weighs 4 ounces, a shirt weighs 5 ounces, shorts weigh 8 ounces, and pants weigh 10 ounces. Tony is washing a pair of pants, 2 shirts, a pair of shorts, and 3 pairs of socks. How many more pairs of underwear can he add to the wash and not break the rule?
+Output:
+<final_answer>4</final_answer>
+
+Input:",1494,579,610909,221466,0.568
+3,2025-03-23 17:07:49.031888,277.133191,0.57,"Math lovers, I need your help with a complex multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Break down the problem and solve it step by step, explaining each part of your reasoning. Walk me through your solution process and ensure the final solution is formatted within <final_answer> </final_answer> markers.
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1494,579,610909,221466,0.554
+3,2025-03-23 17:07:49.031888,277.133191,0.5533333333333333,"Calling all math enthusiasts and problem solvers! I need assistance with this challenging multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Walk me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output:
+<final_answer>80</final_answer>
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:",1494,579,610909,221466,0.578
+4,2025-03-23 17:12:54.882945,305.849621,0.62,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Examine and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1529,594,720209,209221,0.578
+4,2025-03-23 17:12:54.882945,305.849621,0.61,"Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Diana gets 30 minutes of video game time for every hour she reads. Her dad decided to raise her reward by 20%. Diana read for 12 hours this week. How many more minutes of video game time will she get as a result of her raise?
+Output:
+<final_answer>72</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+Cheryl got angry with her sister and decided to run away from home. She walked 2 miles every hour for 3 hours. Then she got homesick and walked back home. How many miles did Cheryl walk in total?
+Output:
+<final_answer>12</final_answer>
+
+Input:
+Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output:
+To solve this problem, we need to follow the steps of cutting the pizza and distributing the slices to Phil's friends. Let's break it down step by step:
+
+1. **Initial Cut**: Phil cuts the pizza in half.
+   - Number of slices: 2
+
+2. **Second Cut: Phil cuts both halves in half.
+   - Number of slices: 2 + 2 = 4
+
+3. **Third cut: Phil cuts each slice in half.
+   - Number of slices: 4 + 4 = 8
+
+4. **Distribution: Phil passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.
+   - Number of slices given to 3 friends: 3 * 1 = 3
+   - Number of slices given to 2 friends: 2 * 2 = 4
+   - Total slices given: 3 + 4 = 7
+
+5. **Remaining slices: Subtract the distributed slices from the total number of slices.
+   - Remaining slices: 8 - 7 = 1
+
+<final_answer>
+1
+</final_answer>
+
+Input:",1529,594,720209,209221,0.624
+4,2025-03-23 17:12:54.882945,305.849621,0.61,"I need your help with solving this elementary math word problem. Please break down the problem and solve it step by step, explaining each part of your reasoning. Ensure the final solution is formatted within <final_answer> </final_answer> markers.
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1529,594,720209,209221,0.6
+4,2025-03-23 17:12:54.882945,305.849621,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Please solve this math story problem. Walk me through your solution process and show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output:
+<final_answer>80</final_answer>
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:",1529,594,720209,209221,0.636
+4,2025-03-23 17:12:54.882945,305.849621,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1529,594,720209,209221,0.564
+4,2025-03-23 17:12:54.882945,305.849621,0.5866666666666667,"Math lovers, I need your help with a complex multi-step word problem. I'm looking for assistance with this elementary math problem that requires multiple steps of reasoning. Please analyze and solve the following elementary school math problem. Explain each step of your reasoning and guide me through your solution process. Make sure to format the final solution inside <final_answer> </final_answer> markers.
+
+Input:
+Martha buys 1 latte for $4.00 every morning, 5 days a week.  3 days a week, she buys an iced coffee for $2.00.  Her goal for the entire year is to cut her coffee spending by 25%.  How much will she save?
+Output:
+<final_answer>338</final_answer>
+
+Input:
+Two alien spacecraft on a sightseeing tour of Earth left New Orleans airport at 3:00 pm to travel the 448-mile distance to Dallas by air.  Traveling nonstop, the first spacecraft landed in Dallas at 3:30 pm, while the second spacecraft landed in Dallas thirty minutes later. Assuming both spacecraft traveled at constant speed, what was the difference in speed, in miles per hour, between the two spacecraft?
+Output:
+<final_answer>448</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1529,594,720209,209221,0.63
+4,2025-03-23 17:12:54.882945,305.849621,0.5866666666666667,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1529,594,720209,209221,0.544
+4,2025-03-23 17:12:54.882945,305.849621,0.5766666666666667,"Solve step-by-step. Final answer between <final_answer> tags.
+
+Input:
+Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
+Output:
+<final_answer>8</final_answer>
+
+Input:
+Lucia is a dancer. She takes 2 hip-hop classes a week, 2 ballet classes a week, and 1 jazz class a week. One hip-hop class costs $10. One ballet class costs $12, and one jazz class costs $8. What is the total cost of Lucia’s dance classes in one week?
+Output:
+To calculate the total cost of Lucia's dance classes in one week, we need to calculate the cost of each type of class and then sum them up.
+
+1. **Hip-hop classes:**
+   - Lucia takes 2 hip-hop classes a week.
+   - Each hip-hop class costs $10.
+   - Total cost for hip-hop classes: \(2 \times 10 = 20$
+
+2. **Ballet classes:**
+   - Lucia takes 2 ballet classes a week.
+   - Each ballet class costs $12.
+   - Total cost for ballet classes: \(2 \times 12 = 24\)
+
+3. **Jazz classes:**
+   - Lucia takes 1 jazz class a week.
+   - Each jazz class costs $8.
+   - Total cost for jazz classes: \(1 \times 8 = 8$
+
+4. **Total cost for all classes:**
+   - Sum of all costs: \(20 + 24 + 8 = 52$
+
+<final_answer>52</final_answer>
+
+Input:
+At a coffee shop, 7 customers order coffee at $5 each and 8 customers order tea at $4 each. How much money did the coffee shop make?
+Output:
+To calculate the total amount of money the coffee shop made, we need to follow these steps:
+
+1. **Calculate the total revenue from coffee sales:**
+   - Number of customers ordering coffee: 7
+   - Price of coffee: $5
+   - Total revenue from coffee: \( 7 \times 5 = 35 \)
+
+2. **Calculate the total revenue from tea sales:**
+   - Number of customers ordering tea: 8
+   - Price of tea: $4
+   - Total revenue from tea: \( 8 \times 4 = 32 \)
+
+3. **Calculate the total revenue from all sales:**
+   - Total revenue from coffee: $35
+   - Total revenue from tea: $32
+   - Total revenue: \( 35 + 32 = 67 \)
+
+<final_answer>67</final_answer>
+
+Input:
+James has 20 pairs of red socks and half as many black socks.  He has twice as many white socks as red and black combined.  How many total socks does he have combined?
+Output:
+<final_answer>90</final_answer>
+
+Input:
+Tony's dad is very strict about the washing machine and family members are only allowed to wash 50 total ounces of clothing at a time. Tony doesn't want to break the rules, so he weighs his clothes and finds that a pair of socks weighs 2 ounces, underwear weighs 4 ounces, a shirt weighs 5 ounces, shorts weigh 8 ounces, and pants weigh 10 ounces. Tony is washing a pair of pants, 2 shirts, a pair of shorts, and 3 pairs of socks. How many more pairs of underwear can he add to the wash and not break the rule?
+Output:
+<final_answer>4</final_answer>
+
+Input:",1529,594,720209,209221,0.568
+4,2025-03-23 17:12:54.882945,305.849621,0.5733333333333334,"Attention all math lovers and problem solvers! I need your help with this complex multi-step word problem. Examine and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and show each step of your thought process. Make sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:",1529,594,720209,209221,0.59
+4,2025-03-23 17:12:54.882945,305.849621,0.57,"Math lovers, I need your help with a complex multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Break down the problem and solve it step by step, explaining each part of your reasoning. Walk me through your solution process and ensure the final solution is formatted within <final_answer> </final_answer> markers.
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1529,594,720209,209221,0.554
+5,2025-03-23 17:16:11.925838,197.041498,0.6333333333333333,"Math lovers, I need your help with a complex multi-step word problem. Please tackle this math story problem. Walk me through your solution process and show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers. Solve step-by-step.
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
+Output:
+<final_answer>8</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:",1558,640,434331,131608,0.634
+5,2025-03-23 17:16:11.925838,197.041498,0.63,"Calling all math enthusiasts and problem solvers! I need your assistance with this intricate multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Break down the problem and solve it step by step, explaining each part of your reasoning. Guide me through your solution process and show each step of your thought process. Ensure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:",1558,640,434331,131608,0.628
+5,2025-03-23 17:16:11.925838,197.041498,0.62,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Examine and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1558,640,434331,131608,0.578
+5,2025-03-23 17:16:11.925838,197.041498,0.61,"Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Diana gets 30 minutes of video game time for every hour she reads. Her dad decided to raise her reward by 20%. Diana read for 12 hours this week. How many more minutes of video game time will she get as a result of her raise?
+Output:
+<final_answer>72</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+Cheryl got angry with her sister and decided to run away from home. She walked 2 miles every hour for 3 hours. Then she got homesick and walked back home. How many miles did Cheryl walk in total?
+Output:
+<final_answer>12</final_answer>
+
+Input:
+Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output:
+To solve this problem, we need to follow the steps of cutting the pizza and distributing the slices to Phil's friends. Let's break it down step by step:
+
+1. **Initial Cut**: Phil cuts the pizza in half.
+   - Number of slices: 2
+
+2. **Second Cut: Phil cuts both halves in half.
+   - Number of slices: 2 + 2 = 4
+
+3. **Third cut: Phil cuts each slice in half.
+   - Number of slices: 4 + 4 = 8
+
+4. **Distribution: Phil passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.
+   - Number of slices given to 3 friends: 3 * 1 = 3
+   - Number of slices given to 2 friends: 2 * 2 = 4
+   - Total slices given: 3 + 4 = 7
+
+5. **Remaining slices: Subtract the distributed slices from the total number of slices.
+   - Remaining slices: 8 - 7 = 1
+
+<final_answer>
+1
+</final_answer>
+
+Input:",1558,640,434331,131608,0.624
+5,2025-03-23 17:16:11.925838,197.041498,0.61,"I need your help with solving this elementary math word problem. Please break down the problem and solve it step by step, explaining each part of your reasoning. Ensure the final solution is formatted within <final_answer> </final_answer> markers.
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1558,640,434331,131608,0.6
+5,2025-03-23 17:16:11.925838,197.041498,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Please solve this math story problem. Walk me through your solution process and show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output:
+<final_answer>80</final_answer>
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:",1558,640,434331,131608,0.636
+5,2025-03-23 17:16:11.925838,197.041498,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1558,640,434331,131608,0.564
+5,2025-03-23 17:16:11.925838,197.041498,0.5866666666666667,"Math lovers, I need your help with a complex multi-step word problem. I'm looking for assistance with this elementary math problem that requires multiple steps of reasoning. Please analyze and solve the following elementary school math problem. Explain each step of your reasoning and guide me through your solution process. Make sure to format the final solution inside <final_answer> </final_answer> markers.
+
+Input:
+Martha buys 1 latte for $4.00 every morning, 5 days a week.  3 days a week, she buys an iced coffee for $2.00.  Her goal for the entire year is to cut her coffee spending by 25%.  How much will she save?
+Output:
+<final_answer>338</final_answer>
+
+Input:
+Two alien spacecraft on a sightseeing tour of Earth left New Orleans airport at 3:00 pm to travel the 448-mile distance to Dallas by air.  Traveling nonstop, the first spacecraft landed in Dallas at 3:30 pm, while the second spacecraft landed in Dallas thirty minutes later. Assuming both spacecraft traveled at constant speed, what was the difference in speed, in miles per hour, between the two spacecraft?
+Output:
+<final_answer>448</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1558,640,434331,131608,0.63
+5,2025-03-23 17:16:11.925838,197.041498,0.5866666666666667,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1558,640,434331,131608,0.544
+5,2025-03-23 17:16:11.925838,197.041498,0.5733333333333334,"Attention all math lovers and problem solvers! I need your help with this complex multi-step word problem. Examine and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and show each step of your thought process. Make sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:",1558,640,434331,131608,0.59
+6,2025-03-23 17:19:35.728721,203.801448,0.6333333333333333,"Math lovers, I need your help with a complex multi-step word problem. Please tackle this math story problem. Walk me through your solution process and show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers. Solve step-by-step.
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
+Output:
+<final_answer>8</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:",1629,679,429559,149469,0.634
+6,2025-03-23 17:19:35.728721,203.801448,0.63,"Calling all math enthusiasts and problem solvers! I need your assistance with this intricate multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Break down the problem and solve it step by step, explaining each part of your reasoning. Guide me through your solution process and show each step of your thought process. Ensure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:",1629,679,429559,149469,0.628
+6,2025-03-23 17:19:35.728721,203.801448,0.62,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Examine and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1629,679,429559,149469,0.578
+6,2025-03-23 17:19:35.728721,203.801448,0.6133333333333333,"Attention all math lovers and problem solvers! I need your help with this complex multi-step word problem. Dive into and solve the following elementary school math problem that requires multiple steps of reasoning. Break down the problem and solve it step by step, explaining each part of your reasoning. Walk me through your solution process and show each step of your thought process. Ensure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:",1629,679,429559,149469,0.668
+6,2025-03-23 17:19:35.728721,203.801448,0.61,"I need your help with solving this elementary math word problem. Please break down the problem and solve it step by step, explaining each part of your reasoning. Ensure the final solution is formatted within <final_answer> </final_answer> markers.
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1629,679,429559,149469,0.6
+6,2025-03-23 17:19:35.728721,203.801448,0.61,"Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Diana gets 30 minutes of video game time for every hour she reads. Her dad decided to raise her reward by 20%. Diana read for 12 hours this week. How many more minutes of video game time will she get as a result of her raise?
+Output:
+<final_answer>72</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+Cheryl got angry with her sister and decided to run away from home. She walked 2 miles every hour for 3 hours. Then she got homesick and walked back home. How many miles did Cheryl walk in total?
+Output:
+<final_answer>12</final_answer>
+
+Input:
+Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output:
+To solve this problem, we need to follow the steps of cutting the pizza and distributing the slices to Phil's friends. Let's break it down step by step:
+
+1. **Initial Cut**: Phil cuts the pizza in half.
+   - Number of slices: 2
+
+2. **Second Cut: Phil cuts both halves in half.
+   - Number of slices: 2 + 2 = 4
+
+3. **Third cut: Phil cuts each slice in half.
+   - Number of slices: 4 + 4 = 8
+
+4. **Distribution: Phil passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.
+   - Number of slices given to 3 friends: 3 * 1 = 3
+   - Number of slices given to 2 friends: 2 * 2 = 4
+   - Total slices given: 3 + 4 = 7
+
+5. **Remaining slices: Subtract the distributed slices from the total number of slices.
+   - Remaining slices: 8 - 7 = 1
+
+<final_answer>
+1
+</final_answer>
+
+Input:",1629,679,429559,149469,0.624
+6,2025-03-23 17:19:35.728721,203.801448,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1629,679,429559,149469,0.564
+6,2025-03-23 17:19:35.728721,203.801448,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Please solve this math story problem. Walk me through your solution process and show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output:
+<final_answer>80</final_answer>
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:",1629,679,429559,149469,0.636
+6,2025-03-23 17:19:35.728721,203.801448,0.59,"Attention all math lovers! I need your help with solving a complex multi-step word problem. I need your assistance in solving this elementary math word problem. Break down the problem and solve it step by step, explaining each part of your reasoning. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1629,679,429559,149469,0.648
+6,2025-03-23 17:19:35.728721,203.801448,0.5866666666666667,"Math lovers, I need your help with a complex multi-step word problem. I'm looking for assistance with this elementary math problem that requires multiple steps of reasoning. Please analyze and solve the following elementary school math problem. Explain each step of your reasoning and guide me through your solution process. Make sure to format the final solution inside <final_answer> </final_answer> markers.
+
+Input:
+Martha buys 1 latte for $4.00 every morning, 5 days a week.  3 days a week, she buys an iced coffee for $2.00.  Her goal for the entire year is to cut her coffee spending by 25%.  How much will she save?
+Output:
+<final_answer>338</final_answer>
+
+Input:
+Two alien spacecraft on a sightseeing tour of Earth left New Orleans airport at 3:00 pm to travel the 448-mile distance to Dallas by air.  Traveling nonstop, the first spacecraft landed in Dallas at 3:30 pm, while the second spacecraft landed in Dallas thirty minutes later. Assuming both spacecraft traveled at constant speed, what was the difference in speed, in miles per hour, between the two spacecraft?
+Output:
+<final_answer>448</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1629,679,429559,149469,0.63
+7,2025-03-23 17:22:21.764238,166.034128,0.6333333333333333,"Math lovers, I need your help with a complex multi-step word problem. Please tackle this math story problem. Walk me through your solution process and show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers. Solve step-by-step.
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?
+Output:
+<final_answer>8</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:",1767,755,330488,138066,0.634
+7,2025-03-23 17:22:21.764238,166.034128,0.6266666666666667,"Attention all math lovers! I need your help with this complex multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Walk me through your solution process and show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:",1767,755,330488,138066,0.616
+7,2025-03-23 17:22:21.764238,166.034128,0.62,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Examine and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:",1767,755,330488,138066,0.578
+7,2025-03-23 17:22:21.764238,166.034128,0.6133333333333333,"Attention all math lovers and problem solvers! I need your help with this complex multi-step word problem. Dive into and solve the following elementary school math problem that requires multiple steps of reasoning. Break down the problem and solve it step by step, explaining each part of your reasoning. Walk me through your solution process and show each step of your thought process. Ensure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:",1767,755,330488,138066,0.668
+7,2025-03-23 17:22:21.764238,166.034128,0.61,"Please solve this math story problem. Show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+Diana gets 30 minutes of video game time for every hour she reads. Her dad decided to raise her reward by 20%. Diana read for 12 hours this week. How many more minutes of video game time will she get as a result of her raise?
+Output:
+<final_answer>72</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+Cheryl got angry with her sister and decided to run away from home. She walked 2 miles every hour for 3 hours. Then she got homesick and walked back home. How many miles did Cheryl walk in total?
+Output:
+<final_answer>12</final_answer>
+
+Input:
+Phill had some friends over for pizza.  He opens the pizza box and discovers it hasn't been sliced.  Phill cuts the pizza in half, and then cuts both halves in half, and then cuts each slice in half again.  Phill then passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.  How many slices of pizza are left for Phill?
+Output:
+To solve this problem, we need to follow the steps of cutting the pizza and distributing the slices to Phil's friends. Let's break it down step by step:
+
+1. **Initial Cut**: Phil cuts the pizza in half.
+   - Number of slices: 2
+
+2. **Second Cut: Phil cuts both halves in half.
+   - Number of slices: 2 + 2 = 4
+
+3. **Third cut: Phil cuts each slice in half.
+   - Number of slices: 4 + 4 = 8
+
+4. **Distribution: Phil passes out 1 slice to 3 of his friends and 2 slices to 2 of his friends.
+   - Number of slices given to 3 friends: 3 * 1 = 3
+   - Number of slices given to 2 friends: 2 * 2 = 4
+   - Total slices given: 3 + 4 = 7
+
+5. **Remaining slices: Subtract the distributed slices from the total number of slices.
+   - Remaining slices: 8 - 7 = 1
+
+<final_answer>
+1
+</final_answer>
+
+Input:",1767,755,330488,138066,0.624
+7,2025-03-23 17:22:21.764238,166.034128,0.61,"I need your help with solving this elementary math word problem. Please break down the problem and solve it step by step, explaining each part of your reasoning. Ensure the final solution is formatted within <final_answer> </final_answer> markers.
+
+Input:
+Hash has nine more than half as many toys as Bill has. If Bill has 60 toys, how many total toys do the boys have?
+Output:
+To solve this problem, we need to follow these steps:
+
+1. **Calculate half of the number of toys Bill has.**
+2. ** Determine how many more toys Hash has than half of Bill's toys.
+3. ** Calculate the total number of toys Hash has.
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys.
+
+Let's go through each step:
+
+1. **Calculate half of the number of toys Bill has:**
+   \[ \text{Half of Bill's toys} = \frac{60}{2} = 30 \]
+
+2. ** Determine how many more toys Hash has than half of Bill's toys:**
+   \[ \textMore toys Hash has = 30 + 9 = 39 \]
+
+3. ** Calculate the total number of toys Hash has:**
+   \[ \textTotal toys Hash has = 39 \]
+
+4. ** Add the total number of toys Hash has to the number of toys Bill has to find the total number of toys:
+   \[ \textTotal toys = 60 + 39 = 99 \]
+
+<final_answer>99</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1767,755,330488,138066,0.6
+7,2025-03-23 17:22:21.764238,166.034128,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Please solve this math story problem. Walk me through your solution process and show each step of your thought process. Be sure to include your final answer between <final_answer> and </final_answer> markers.
+
+Input:
+A hot air balloon with 200 balloons is blowing up. After about half an hour, 1/5 of the total number of balloons in the hot air balloon have blown up. After another hour, twice the number of balloons that had already blown up also blow up. How many balloons in the hot air balloon remain intact?
+Output:
+<final_answer>80</final_answer>
+
+Input:
+Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?
+Output:
+<final_answer>56</final_answer>
+
+Input:
+Calvin is a bug collector.  In his collection, he has 12 giant roaches, 3 scorpions, half as many crickets as roaches, and twice as many caterpillars as scorpions.  How many insects does Calvin have in his collection?
+Output:
+To solve this problem, we need to calculate the number of each type of insect and then sum them up.
+
+1. **Giant Roaches**: Calvin has 12 giant roaches.
+2. **Scorpions**: Calvin has 3 scorpions.
+3. **Crickets**: Calvin has half as many crickets as roaches. Since he has 12 roaches, he has \( \frac{12}{2} = 6 \) crickets.
+4. **Caterpillars**: Calvin has twice as many caterpillars as scorpions. Since he has 3 scorpions, he has \( 2 \times 3 = 6 \) caterpillars.
+
+Now, we sum up all the insects:
+\[ 12 + 3 + 6 + 6 = 27 \]
+
+<final_answer>27</final_answer>
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:",1767,755,330488,138066,0.636
+7,2025-03-23 17:22:21.764238,166.034128,0.6,"Calling all math enthusiasts! I need assistance with this challenging multi-step word problem. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+Alice wants 1000 folded paper cranes. She folds half by herself, and a friend folds a fifth of the remaining paper cranes for her. How many paper cranes does Alice still need to fold?
+Output:
+To solve this problem, we need to break it down into steps:
+
+1. **Calculate the number of paper cranes Alice folds herself:**
+   Alice folds half of the 1000 paper cranes.
+   \[ \text{Paper cranes Alice folds} = \frac{1000}{2} = 500 \]
+
+2. **Calculate the remaining paper cranes after Alice folds her portion:**
+   \[ \textRemaining paper cranes} = 1000 - 500 = 500 \]
+
+3. **Calculate the number of paper cranes the friend folds:**
+   The friend folds a fifth of the remaining 500 paper cranes.
+   \[ \textPaper cranes friend folds} = \frac{500}{5} = 100 \]
+
+4. **Calculate the remaining paper cranes after the friend folds her portion:**
+   \[ \textRemaining paper cranes} = 500 - 100 = 400\]
+
+Therefore, Alice still needs to fold 400 paper cranines.
+
+<final_answer>400</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1767,755,330488,138066,0.564
+7,2025-03-23 17:22:21.764238,166.034128,0.59,"Attention all math lovers! I need your help with solving a complex multi-step word problem. I need your assistance in solving this elementary math word problem. Break down the problem and solve it step by step, explaining each part of your reasoning. Analyze and solve the following elementary school math problem that requires multiple steps of reasoning. Guide me through your solution process and wrap the final answer with <final_answer> </final_answer> tags.
+
+Input:
+On a road map, 1/4 inch represents 8 miles of actual road distance. The towns of Pence and Hillcrest are represented by points 3 3/8 inches apart on the map. What is the actual distance, in miles, between the towns?
+Output:
+<final_answer>108</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1767,755,330488,138066,0.648
+7,2025-03-23 17:22:21.764238,166.034128,0.5866666666666667,"Math lovers, I need your help with a complex multi-step word problem. I'm looking for assistance with this elementary math problem that requires multiple steps of reasoning. Please analyze and solve the following elementary school math problem. Explain each step of your reasoning and guide me through your solution process. Make sure to format the final solution inside <final_answer> </final_answer> markers.
+
+Input:
+Martha buys 1 latte for $4.00 every morning, 5 days a week.  3 days a week, she buys an iced coffee for $2.00.  Her goal for the entire year is to cut her coffee spending by 25%.  How much will she save?
+Output:
+<final_answer>338</final_answer>
+
+Input:
+Two alien spacecraft on a sightseeing tour of Earth left New Orleans airport at 3:00 pm to travel the 448-mile distance to Dallas by air.  Traveling nonstop, the first spacecraft landed in Dallas at 3:30 pm, while the second spacecraft landed in Dallas thirty minutes later. Assuming both spacecraft traveled at constant speed, what was the difference in speed, in miles per hour, between the two spacecraft?
+Output:
+<final_answer>448</final_answer>
+
+Input:
+Claire is scheduling her day. She has four hours to clean and two hours to cook, then divides the rest of her working day equally between crafting and tailoring. She then sleeps eight hours. If all of this takes place within one day, how many hours did Claire spend crafting?
+Output:
+To solve this problem, we need to break down Claire's activities and calculate the time spent on each activity.
+
+1. **Cleaning**: Claire spends 4 hours cleaning.
+2. **Cooking**: Claire spends 2 hours cooking.
+3. **Sleeping**: Claire spends 8 hours sleeping.
+
+Now, let's calculate the remaining time for crafting and tailoring.
+
+The total time in a day is 24 hours.
+
+So, the remaining time for crafting and tailoring is:
+\[ 24 - 4 - 2 - 8 = 10 \]
+
+Since Claire divides the remaining time equally between crafting and tailoring, the time spent on crafting is:
+\[ \frac{10}{2} = 5 \]
+
+Therefore, Claire spends 5 hours crafting.
+
+<final_answer>5</final_answer>
+
+Input:",1767,755,330488,138066,0.63
