@@ -1,0 +1,108 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"
+To tackle the problem of classifying movie reviews into sentiment categories, we need to develop a machine learning model that can accurately classify the sentiment of each review. We will use a pre-trained model like BERT or RoBERTert to fine-tune on the dataset. The sentiment categories will be reduced to three: negative, neutral, and positive.
+
+### Key Assumptions:
+1. The sentiment of a review can be accurately classified using a machine learning model.
+2. The sentiment categories are distinct and well-defined.
+
+### Steps:
+1. **Data Preparation**: Collect a dataset of movie reviews.
+2. **Model Selection: Use a pre-trained model like BERT or RoBERTert.
+3. **Fine-Tuning: Fine-tune the model on the dataset.
+4. **Evaluation: Measure the accuracy of the model on a validation set.
+5. **Simplify the Model: Use a simpler model like a logistic regression or a decision tree if necessary.
+
+### Examples:
+1. **Input:** ""It's a great performance and a reminder of Dickens' grandeur.""
+   **Output:** Positive
+
+2. **Input: ""The movie was boring and lacked depth.""
+   **Output: Negative
+
+3.
+
+
+[Question] The movie was a masterpiece, with stunning visual effects and a compelling storyline.
+[Answer] To classify the movie review into one of the sentiment categories, we follow a structured reasoning chain that involves several steps. Here is the detailed reasoning chain:
+
+### Step 1: Data Preparation
+- **Collect the dataset**: Gather a dataset of movie reviews. Ensure the dataset includes a variety of reviews with different sentiment levels.
+
+### Step 2: Model Selection
+- **Choose a pre-trained model**: Use a pre-trained model like BERT or RoBERTert. These models are pre-trained on a large dataset and can be fine-tuned for specific tasks.
+
+### Step 3: Fine-Tuning
+- **Fine-tune the model**: Train the model on the dataset of movie reviews. This involves adjusting the model parameters to better capture the sentiment of the reviews.
+
+### Step 4: Evaluation
+- **Measure the accuracy**: Evaluate the model's performance on a validation set. This involves testing the model on a set of reviews to measure its accuracy in classifying sentiment.
+
+### Step 5: Simplify the Model
+- **Use a simpler model if necessary**: If the pre-trained model is too complex, consider using a simpler model like a logistic regression or a decision tree. This can simplify the process and improve efficiency.
+
+### Step 6: Class <ANS_START>The movie is very positive. The review highlights the movie's strengths, such as visual effects and storytelling, which are indicative of a very positive sentiment.
+<ANS_START>very positive<ANS_END><ANS_END>
+
+[Question] The film was boring and lacked depth, with characters that were not well developed.
+[Answer] To classify the movie review into one of the sentiment categories, we follow a structured reasoning chain that involves several steps. Here is the detailed reasoning chain:
+
+### Step 1: Data Preparation
+- **Collect the movie review**: The input is ""The film was boring and lacked depth, with characters that were not well developed.""
+- **Preprocess the data**: Clean the text to remove any unnecessary characters and ensure the text is in a readable format.
+
+### Step 2: Model Selection
+- **Choose a pre-trained model**: Use a pre-trained model like BERT or RoBERTert, which is capable of understanding the context and sentiment of the text.
+
+### Step 3: Fine-Tuning
+- **Fine-tune the model**: Train the model on a dataset of movie reviews with sentiment labels. This involves adjusting the model parameters to better understand the sentiment of the text.
+
+### Step 4: Evaluation
+- **Measure the accuracy**: Evaluate the model on a validation set to ensure it accurately classifies the sentiment of the reviews.
+
+### Step 5: Simplify the Model
+- **Use a simpler model if necessary**: If the pre-trained model is too complex, use a simpler model like a logistic regression or a decision tree to classify the sentiment <ANS_START>The review is very negative. The film is described as boring and lacking depth, which indicates a very negative sentiment.
+<ANS_START>very negative<ANSE_END><ANS_END>
+
+[Question] The movie had a complex narrative with intricate characters and a deep emotional impact.
+[Answer] To classify the sentiment of the movie review, we will follow a structured reasoning chain that involves several steps. Here is the detailed reasoning chain:
+
+### Step 1: Data Preparation
+- **Collect the dataset**: Gather a dataset of movie reviews. Ensure the dataset includes a variety of reviews with different sentiment labels.
+- **Preprocess the data**: Clean the data by removing any irrelevant information and ensuring the data is in a format suitable for training a machine learning model.
+
+### Step 2: Model Selection
+- **Choose a pre-trained model**: Use a pre-trained model like BERT or RoBERTert. These models are pre-trained on a large dataset and can be fine-tuned for specific tasks.
+- **Load the model: Load the pre-trained model into the environment.
+
+### Step 3: Fine-Tuning
+- **Fine-tune the model: Fine-tune the model on the dataset. This involves training the model on the dataset to learn the sentiment categories.
+- **Train the model: Use the dataset to train the model. Ensure the model is trained on a variety of reviews to capture the nuances of sentiment.
+
+### Step 4: Evaluation
+- **Measure the accuracy: Evaluate the model's performance on a validation set. Use metrics like <ANS_START>The review is positive. The movie is described as having a complex narrative and deep emotional impact, which indicates a positive sentiment.
+<ANS_START>positive<ANSE_END><ANS_END>
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a data scientist special with expertise in natural language processing and sentiment analysis. You have a deep understanding of machine learning algorithms and techniques for analyzing text data. Your skills include developing models that can classify sentiment in text, such as movie reviews. You are proficient in using various tools and libraries, such as Python, TensorFlow, and scikit-lelearn, to build and train models that can accurately classify sentiment. Your expertise in natural language processing and sentiment analysis makes you well-suited to classify movie reviews into five sentiment categories: very negative, negative, neutral, positive, and very positive. You can extract the sentiment from the text and provide a clear and accurate classification for each movie review.
+
+Here is a sample of how you can classify a movie review:
+
+```python
+import nltp
+from nltp import sentiment
+
+def classify_sentiment(review):
+    sentiment = sentiment(rereview)
+    if sentiment < -0.5:
+        return ""very negative""
+    elif sentiment < 0:
+        return ""negative""
+    elif sentiment == 0:
+        return ""neutral""
+    elif sentiment > 0:
+        return ""positive""
+    else:
+        return ""very positive""
+
+# Example usage
+review = ""The movie was amazing and the acting",23287,11906,0,0,0.278
