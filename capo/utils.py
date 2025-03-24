@@ -89,18 +89,38 @@ def get_results(dataset, model, optim):
     return df
 
 
-def aggregate_results(df: pd.DataFrame, how="mean"):
+def aggregate_results(df: pd.DataFrame, how="mean", ffill_col=None):
     """Aggregate the results for each step."""
+
+    if ffill_col is not None:
+        unique_token_counts = df[ffill_col].unique()
+        seeds = df["seed"].unique()
+        pseudo_steps = pd.DataFrame(
+            {
+                ffill_col: np.repeat(unique_token_counts, len(seeds)),
+                "seed": np.tile(seeds, len(unique_token_counts)),
+            }
+        )
+
+        # merge the pseudo steps with the original dataframe
+        df = pseudo_steps.merge(df, on=[ffill_col, "seed"], how="left")
+        df = df.sort_values(["seed", ffill_col])
+
+        # fill the missing values with the previous step values
+        df = df.ffill()
+        # reset index
+        df = df.reset_index()
+
     if how == "mean":
-        return df.groupby(["step", "seed"], as_index=False).mean(numeric_only=True)
+        return df.groupby([ffill_col, "seed"], as_index=False).mean(numeric_only=True)
     elif how == "median":
-        return df.groupby(["step", "seed"], as_index=False).median(numeric_only=True)
+        return df.groupby([ffill_col, "seed"], as_index=False).median(numeric_only=True)
     elif how == "best_test":
-        return df.groupby(["step", "seed"], as_index=False).apply(
+        return df.groupby([ffill_col, "seed"], as_index=False).apply(
             lambda x: x.loc[x["test_score"].idxmax()]
         )
     elif how == "best_train":
-        return df.groupby(["step", "seed"], as_index=False).apply(
+        return df.groupby([ffill_col, "seed"], as_index=False).apply(
             lambda x: x.loc[x["score"].idxmax()]
         )
     else:
