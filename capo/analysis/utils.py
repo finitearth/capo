@@ -76,4 +76,7 @@ def aggregate_results(df: pd.DataFrame, how="mean", ffill_col="step"):
 
         df = df.groupby("seed").apply(lambda x: x.ffill()).reset_index(drop=True)
 
+        # drop rows with NaN values
+        df = df.dropna(subset=["score"])
+
     return df
