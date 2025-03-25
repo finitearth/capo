@@ -32,9 +32,10 @@ if __name__ == "__main__":
             _, _, test_task = get_tasks(
                 dataset_name=dataset,
                 optimizer_name="initial",
-                seed=42
+                seed=42,
+                block_size=30
             )
-            
+
             predictor = MarkerBasedClassificator(llm=llm, classes=dev_task.classes)
 
             prompts = test_task.initial_prompts + [
