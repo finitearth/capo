@@ -29,13 +29,13 @@ if __name__ == "__main__":
         for dataset in datasets:
             seed_everything(42)
 
-            predictor = MarkerBasedClassificator(llm=llm, classes=dev_task.classes)
-            
             _, _, test_task = get_tasks(
                 dataset_name=dataset,
                 optimizer_name="initial",
                 seed=42
             )
+            
+            predictor = MarkerBasedClassificator(llm=llm, classes=dev_task.classes)
 
             prompts = test_task.initial_prompts + [
                 "Let's think step by step.",
