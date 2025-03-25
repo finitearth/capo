@@ -68,6 +68,9 @@ def get_results(dataset, model, optim):
     df["is_last_occ"] = (~df.groupby(["seed", "prompt"]).cumcount(ascending=False).astype(bool)) & (
         df["step"] != df["step"].max()
     )
+    if isinstance(df, pd.Series):
+        df = df.to_frame()
+
     return df
 
 
@@ -86,6 +89,8 @@ def aggregate_results(
             lambda x: x.loc[x["test_score"].idxmax()]
         )
     elif how == "best_train":
+        # fill score col
+        df["score"] = df["score"].fillna(0)
         df = df.groupby([ffill_col, "seed"], as_index=False).apply(
             lambda x: x.loc[x["score"].idxmax()]
         )
