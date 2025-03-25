@@ -40,7 +40,7 @@ def plot_population_scores(
                     y=score_col,
                     linestyle=seed_linestyle,
                     # label=f"{optim} - Seed {seed}",
-                    drawstyle="steps-pre",
+                    drawstyle="steps-post",
                     ax=ax,
                     color=color,
                     alpha=0.5,
@@ -74,7 +74,7 @@ def plot_population_scores(
             mean_df[score_col],
             linewidth=2.5,
             markersize=4,
-            drawstyle="steps-pre",
+            drawstyle="steps-post",
             label=f"{optim}",
             color=color,
         )
@@ -88,7 +88,7 @@ def plot_population_scores(
                 mean_df[score_col] + std_df[score_col],
                 alpha=0.3,
                 color=color,
-                step="pre",
+                step="post",
             )
 
     return ax
@@ -105,7 +105,7 @@ def plot_population_scores_comparison(
     x_col="step",
     seed_linestyle="--",
 ):
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots(figsize=(6, 8))
 
     # Plot each optimizer on the same axes
     for i, optim in enumerate(optims):
@@ -124,7 +124,7 @@ def plot_population_scores_comparison(
         )
 
     # Set title and layout for the comparison plot
-    # ax.set_title(f"Score Comparison ({agg}) on {dataset} using {model}", y=1.25)
+    ax.set_title(f"Score Comparison ({agg}) on {dataset} using {model}", y=1.25)
     ax.set_xlabel(x_col)
     ax.set_ylabel(score_col)
 
