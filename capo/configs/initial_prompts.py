@@ -108,4 +108,23 @@ INITIAL_PROMPTS = {
         "The Bala-COPA dataset tests commonsense causal reasoning abilities. Review the given scenario and decide whether Text A or Text B is the correct cause/effect. Your answer must be either <final_answer>A</final_answer> or <final_answer>B</final_answer>.",
         "Assess the causal relationship in the given context. Choose between options A and B, and provide your selection in the format <final_answer>A</final_answer> or <final_answer>B</final_answer>.",
     ],
+    "generic": [
+        [
+        "Create a step-by-step guide for this process, providing your response within <answer></answer> tags.",
+        "Please explain how to do this in simple terms. Format your response using <answer> and </answer> tags.",
+        "I need comprehensive instructions for the following task. Be thorough and include all relevant details. Place your complete answer between <answer> and </answer> tags.",
+        "Kindly provide a brief explanation about this. Ensure your response is enclosed within <answer></answer> tags.",
+        "Could you elucidate the methodology for accomplishing this objective? Your elucidation should be presented betwixt <answer> and </answer> demarcations.",
+        "How would someone go about doing this? Keep it short and sweet. Put your answer in <answer></answer> tags.",
+        "Write instructions that a complete beginner could follow. Don't assume any prior knowledge. Format with <answer></answer> tags.",
+        "What's the best approach for this? Give me the main points only, wrapped in <answer></answer> tags.",
+        "Describe the process from start to finish, highlighting any potential challenges and how to overcome them. Provide your detailed response within <answer> and </answer> tags.",
+        "I'm looking for quick tips on this subject. Nothing fancy, just the basics. Put your response between <answer> and </answer> tags.",
+        "Would you mind sharing a methodical breakdown of this task? Please organize your thoughts clearly and place the entire response within <answer></answer> tags.",
+        "Draft instructions for this that balance detail with conciseness. Your response must be enclosed in <answer> and </answer> tags.",
+        "Elaborate on how this is typically done, including any variations or alternative approaches. Format using <answer></answer> tags.",
+        "What would be your advice for someone attempting this for the first time? Present your guidance within <answer> and </answer> tags.",
+        "Please furnish me with both fundamental and advanced techniques pertaining to this matter. Your comprehensive dissertation must be contained within <answer></answer> tags for proper formatting."
+        ],
+    ]
 }
