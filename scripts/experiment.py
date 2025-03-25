@@ -30,6 +30,7 @@ from capo.opro import OproPickable
 from capo.statistical_tests import paired_t_test
 from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
 from capo.utils import copy_llm, generate_random_hash, seed_everything
+from capo.configs.initial_prompts import INITIAL_PROMPTS
 
 parser = argparse.ArgumentParser()
 
@@ -38,6 +39,7 @@ parser.add_argument("--experiment-name", required=True)
 parser.add_argument("--random-seed", type=int, required=True)
 parser.add_argument("--budget-per-run", type=int, required=True)
 parser.add_argument("--output-dir", default="results/")
+parser.add_argument("--generic-init-prompts", action="store_true")
 
 # dataset parameters
 parser.add_argument("--dataset", required=True)
@@ -68,6 +70,7 @@ parser.add_argument("--upper-shots", type=int)
 parser.add_argument("--max-n-blocks-eval", type=int)
 parser.add_argument("--alpha", type=float)
 parser.add_argument("--shuffle-blocks-per-iter", action="store_true", default=False)
+
 
 args = parser.parse_args()
 
@@ -114,7 +117,8 @@ if __name__ == "__main__":
     predictor = MarkerBasedClassificator(downstream_llm, dev_task.classes)
 
     # initialize population
-    initial_prompts = random.sample(dev_task.initial_prompts, args.population_size)
+    initial_prompts_pool = dev_task.initial_prompts if not args.generic_init_prompts else INITIAL_PROMPTS["generic"]
+    initial_prompts = random.sample(initial_prompts_pool, args.population_size)
 
     # set-up EvoPromptGA template
     if args.evoprompt_ga_template == "standard":

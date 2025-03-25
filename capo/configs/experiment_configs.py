@@ -160,6 +160,33 @@ ABLATION_CONFIG = ExperimentConfig(
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": True,
             },
+        ),
+        OptimizerConfig(
+            name="CAPO_generic_init",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "block_size": 30,
+                "length_penalty": 0.05,
+                "crossovers_per_iter": 4,
+                "upper_shots": 5,
+                "max_n_blocks_eval": 10,
+                "alpha": 0.2,
+                "shuffle_blocks_per_iter": False,
+                "generic_init_prompts": True,
+            },
+        ),
+        OptimizerConfig(
+            name="EvoPromptGA_generic_init",
+            optimizer="EvoPromptGA",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "n_eval_samples": 300,
+                "evoprompt_ga_template": "standard",
+                "generic_init_prompts": True,
+            },
         )
     ],
     random_seeds=[42, 43, 44],
