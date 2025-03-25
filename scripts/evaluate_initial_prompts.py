@@ -17,14 +17,14 @@ if __name__ == "__main__":
     datasets = ["agnews", "gsm8k", "subj", "copa", "sst-5"]
     llms = ["qwen", "llama", "mistral"]
     for revision, llm in llms:       
-            llm = get_llm(
-                model_id=llm,
-                max_model_len=2048,
-                batch_size=None,
-                model_storage_path="../models/",
-                revision=revision,
-                seed=42,
-            )
+        llm = get_llm(
+            model_id=llm,
+            max_model_len=2048,
+            batch_size=None,
+            model_storage_path="../models/",
+            revision=revision,
+            seed=42,
+        )
         for dataset in datasets:
             seed_everything(42)
 
