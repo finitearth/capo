@@ -38,6 +38,10 @@ def get_results(dataset, model, optim):
     df["instr_len"] = df["prompt"].str.split("Input:").apply(lambda x: x[0]).str.split().apply(len)
     df["prompt_len"] = df["prompt"].str.split().apply(len)
 
+    df["is_new"] = ~df.groupby(["seed", "prompt"]).cumcount().astype(bool)
+    df["is_last_occ"] = (~df.groupby(["seed", "prompt"]).cumcount(ascending=False).astype(bool)) & (
+        df["step"] != df["step"].max()
+    )
     if isinstance(df, pd.Series):
         df = df.to_frame()
 
@@ -84,4 +88,18 @@ def aggregate_results(df: pd.DataFrame, how="mean", ffill_col="step"):
         # drop rows with NaN values
         df = df.dropna(subset=["score"])
 
+    return df
+
+
+def get_prompt_scores(dataset, model, optim):
+    """Get the scores for each prompt and block."""
+    files = glob(
+        f"../results/{dataset}/{model}/{optim}/*/*/*/prompt_scores.parquet", recursive=True
+    )
+
+    if not files:
+        return pd.DataFrame()
+
+    seeds = [int(f.replace("sst-5", "sst5").split("\\")[-4].split("seed")[-1]) for f in files]
+    df = pd.concat([pd.read_parquet(p).assign(seed=seed) for seed, p in zip(seeds, files)], axis=0)
     return df
