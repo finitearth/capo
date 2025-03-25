@@ -89,8 +89,23 @@ def get_results(dataset, model, optim):
     return df
 
 
-def aggregate_results(df: pd.DataFrame, how="mean", ffill_col=None):
+def aggregate_results(df: pd.DataFrame, how="mean", ffill_col="step"):
     """Aggregate the results for each step."""
+
+    if how == "mean":
+        df = df.groupby([ffill_col, "seed"], as_index=False).mean(numeric_only=True)
+    elif how == "median":
+        df = df.groupby([ffill_col, "seed"], as_index=False).median(numeric_only=True)
+    elif how == "best_test":
+        df = df.groupby([ffill_col, "seed"], as_index=False).apply(
+            lambda x: x.loc[x["test_score"].idxmax()]
+        )
+    elif how == "best_train":
+        df = df.groupby([ffill_col, "seed"], as_index=False).apply(
+            lambda x: x.loc[x["score"].idxmax()]
+        )
+    else:
+        raise ValueError(f"Unknown aggregation method: {how}")
 
     if ffill_col is not None:
         unique_token_counts = df[ffill_col].unique()
@@ -104,24 +119,9 @@ def aggregate_results(df: pd.DataFrame, how="mean", ffill_col=None):
 
         # merge the pseudo steps with the original dataframe
         df = pseudo_steps.merge(df, on=[ffill_col, "seed"], how="left")
-        df = df.sort_values(["seed", ffill_col])
 
-        # fill the missing values with the previous step values
-        df = df.ffill()
-        # reset index
-        df = df.reset_index()
+        # group the dataframe by seed and sort by ffill column then call ffill for each group
+        df = df.sort_values(by=["seed", ffill_col])
+        df = df.groupby("seed").apply(lambda x: x.ffill()).reset_index(drop=True)
 
-    if how == "mean":
-        return df.groupby([ffill_col, "seed"], as_index=False).mean(numeric_only=True)
-    elif how == "median":
-        return df.groupby([ffill_col, "seed"], as_index=False).median(numeric_only=True)
-    elif how == "best_test":
-        return df.groupby([ffill_col, "seed"], as_index=False).apply(
-            lambda x: x.loc[x["test_score"].idxmax()]
-        )
-    elif how == "best_train":
-        return df.groupby([ffill_col, "seed"], as_index=False).apply(
-            lambda x: x.loc[x["score"].idxmax()]
-        )
-    else:
-        raise ValueError(f"Unknown aggregation method: {how}")
+    return df
