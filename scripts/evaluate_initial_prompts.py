@@ -29,7 +29,7 @@ if __name__ == "__main__":
         for dataset in datasets:
             seed_everything(42)
 
-            predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
+            predictor = MarkerBasedClassificator(llm=llm, classes=dev_task.classes)
             
             _, _, test_task = get_tasks(
                 dataset_name=dataset,
