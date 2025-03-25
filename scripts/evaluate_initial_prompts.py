@@ -16,10 +16,7 @@ logger = getLogger(__name__)
 if __name__ == "__main__":
     datasets = ["agnews", "gsm8k", "subj", "copa", "sst-5"]
     llms = ["qwen", "llama", "mistral"]
-    for dataset in datasets:
-        for revision, llm in llms:
-            seed_everything(42)
-            
+    for revision, llm in llms:       
             llm = get_llm(
                 model_id=llm,
                 max_model_len=2048,
@@ -28,21 +25,24 @@ if __name__ == "__main__":
                 revision=revision,
                 seed=42,
             )
+        for dataset in datasets:
+            seed_everything(42)
 
             predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
             
-            dev_task, _, test_task = get_tasks(
+            _, _, test_task = get_tasks(
                 dataset_name=dataset,
                 optimizer_name="initial",
                 seed=42
             )
 
-            prompts = dev_task.initial_prompts + [
+            prompts = test_task.initial_prompts + [
                 "Let's think step by step.",
                 "Let's work this out in a step by step way to be sure we have the right answer.",
                 ""
             ]
 
+            logger.critical(f"Evaluating {len(prompts)} unique prompts on {dataset} with {llm}")
             scores = test_task.evaluate(prompts, predictor)
 
             df = pd.DataFrame({
