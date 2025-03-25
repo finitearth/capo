@@ -5,6 +5,9 @@ import seaborn as sns
 
 from capo.utils import aggregate_results, get_results
 
+from capo.analysis.style import set_style
+
+set_style()
 
 def plot_population_scores(
     dataset,
