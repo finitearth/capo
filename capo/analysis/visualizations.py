@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pandas as pd
+import numpy as np
 
 from capo.analysis.style import set_style
 from capo.analysis.utils import aggregate_results, get_results
@@ -140,3 +142,46 @@ def plot_population_members(dataset, model, optim, x_col="step", score_col="test
 
     plt.tight_layout()
     return fig
+
+def plot_performance_profile_curve(
+        datasets=["sst-5", "agnews", "copa", "subj", "gsm8k"],
+        models=["llama", "qwen", "mistral"],
+        optims=["CAPO", "EvoPromptGA", "OPRO", "PromptWizard"]
+    ):
+    # get all results
+    dfs = []
+    for dataset in datasets:
+        for model in models:
+            for optim in optims:
+                try:
+                    df = get_results(dataset, model, optim)
+                except:
+                    print(f"Failed to load {dataset} {model} {optim}")
+                    continue
+                df = aggregate_results(df, how="best_train", ffill_col="step")
+                df = df.assign(dataset=dataset, model=model, optim=optim)
+                dfs.append(df)
+
+    df = pd.concat(dfs)
+    # avg across seeds
+    df = df.groupby(["dataset", "model", "optim"], as_index=False).mean(numeric_only=True)
+
+    # calculate the difference to the best score
+    df["diff"] = df.groupby(["dataset", "model"])["test_score"].transform(lambda x: x.max() - x)
+    taus = np.linspace(0, 0.3, 100)
+    performance_profiles = []
+    for optim in optims:
+        for tau in taus:
+            performance_profile = (df.loc[df["optim"] == optim, "diff"] <= tau).mean()
+            performance_profiles.append(dict(optim=optim, tau=tau, performance_profile=performance_profile))
+
+    df = pd.DataFrame(performance_profiles)
+    fig, ax = plt.subplots()
+    sns.lineplot(data=df, x="tau", y="performance_profile", hue="optim", ax=ax, drawstyle="steps-post")
+    ax.legend(loc="best")
+
+    # zoom into x-axis: 0 to 0.3
+    ax.set_xlim(0, 0.3)
+    ax.set_ylim(0, 1)
+
+    plt.show()
