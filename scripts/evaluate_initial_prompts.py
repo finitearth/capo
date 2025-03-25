@@ -36,7 +36,7 @@ if __name__ == "__main__":
                 block_size=30
             )
 
-            predictor = MarkerBasedClassificator(llm=llm, classes=dev_task.classes)
+            predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
 
             prompts = test_task.initial_prompts + [
                 "Let's think step by step.",
