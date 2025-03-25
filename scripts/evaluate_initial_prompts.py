@@ -8,6 +8,7 @@ from promptolution.llms import get_llm
 from promptolution.predictors import MarkerBasedClassificator
 from capo.utils import seed_everything
 
+from capo.configs.experiment_configs import llama, qwen, mistral
 
 from capo.load_datasets import get_tasks
 
@@ -15,7 +16,7 @@ logger = getLogger(__name__)
 
 if __name__ == "__main__":
     datasets = ["agnews", "gsm8k", "subj", "copa", "sst-5"]
-    llms = ["qwen", "llama", "mistral"]
+    llms = [(llama.model, llama.revision), (qwen.model, qwen.revision), (mistral.model, mistral.revision)]
     for revision, llm in llms:       
         llm = get_llm(
             model_id=llm,
