@@ -28,6 +28,12 @@ if __name__ == "__main__":
             seed=42,
         )
         for dataset in datasets:
+            path = f"init_results/{dataset}/{llm}"
+            if os.path.exists(path):
+                logger.critical(f"Skipping {dataset} with {llm} as it already exists")
+                continue
+            else:
+                os.makedirs(path, exist_ok=True)
             seed_everything(42)
 
             _, _, test_task = get_tasks(
@@ -47,5 +53,4 @@ if __name__ == "__main__":
 
             df = pd.DataFrame({"prompt": prompts, "score": scores})
 
-            os.makedirs(f"init_results/{dataset}/{llm}", exist_ok=True)
-            df.to_csv(f"init_results/{dataset}/{llm}/results.csv")
+            df.to_csv(path)
