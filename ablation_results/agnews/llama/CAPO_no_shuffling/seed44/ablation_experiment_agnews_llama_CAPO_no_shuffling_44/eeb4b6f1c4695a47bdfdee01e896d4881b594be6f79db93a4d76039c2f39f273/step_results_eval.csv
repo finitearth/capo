@@ -1,0 +1,2186 @@
+step,timestamp,time_elapsed,score,prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,2025-03-26 11:30:41.270427,1149.273364,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1543,619,1156812,54459,0.894
+1,2025-03-26 11:30:41.270427,1149.273364,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1543,619,1156812,54459,0.884
+1,2025-03-26 11:30:41.270427,1149.273364,0.8966666666666666,"Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For proper data extraction, format your answer as <final_answer> category </final_answer>.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+PC Report: Enterprise, Notebook Sales Drive 12 Increase PC shipments grew between nearly 10 and 12 percent in the third quarter, paced by shipments to enterprise organizations, according to announcements from two market-research firms on Tuesday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Pakistan officials tout victory Pakistani officials declared an important victory against al-Qaida yesterday after police shot dead Amjad Farooqi, who was suspected of roles in the execution of Wall 
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",1543,619,1156812,54459,0.876
+1,2025-03-26 11:30:41.270427,1149.273364,0.8966666666666666,"We're building a news classifier and need your help categorizing articles. Read the text below and decide if it belongs to World, Sports, Business, or Sci/Tech. Important: place your single-word answer inside <final_answer> </final_answer> tags.
+
+Input:
+Regular Folks Question the Candidates (AP) AP - They wondered if Sen. John Kerry really is too wishy-washy, how he would protect America from another terrorist attack and whether he wants to raise taxes on the middle class. They challenged President Bush to find three mistakes he's made, to say how he'd heal anti-American aggravation in the world and to rate his environmental record.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Blair presses Sudan over Darfur KHARTOUM: Britains Prime Minister Tony Blair pressed Sudanese President Omar Hassan Al Bashir on Wednesday to end violence in Darfur on the highest-level visit from a Western government official since the crisis erupted.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Veritas to buy KVault Software in \$225m deal Veritas Software is to acquire email archiving firm KVault Software (KVS) to bolster its utility computing abilities. The traditional storage management giant will pay \$225m for KVS, which will be operate 
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1543,619,1156812,54459,0.898
+1,2025-03-26 11:30:41.270427,1149.273364,0.8966666666666666,"I'm working on a news classification project. Could you read this article and tell me if it's about World, Sports, Business, or Sci/Tech? Please put your answer between <final_answer> </final_answer> markers.
+
+Input:
+Google Saves Kidnapped Journalist in Iraq Google Saves Kidnapped Journalist in Iraq\\Google can claim another life saved after a kidnapped Australian journalist was freed by his captors in Iraq earlier today. Freelance journalist John Martinkus was abducted by gunmen on Saturday outside a hotel near the Australian embassy. Apparently Martinkus was able to convince his captors ...
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+Asian Elephants Threatened by Poachers, Western Zoos (Reuters) Reuters - Illegal poaching and demand from\Western zoos are fueling the extinction of the Asian elephant,\animal welfare groups said Thursday.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+New Class of Planets Found Around Two Other Stars (Reuters) Reuters - A new class of planets has been\found orbiting stars besides our sun, in a possible giant leap\forward in the search for Earth-like planets that might harbor\life, scientists said on Tuesday.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1543,619,1156812,54459,0.9
+1,2025-03-26 11:30:41.270427,1149.273364,0.8966666666666666,"Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input:",1543,619,1156812,54459,0.886
+1,2025-03-26 11:30:41.270427,1149.273364,0.8966666666666666,"You are a news categorization system. Read the article below and assign it to one of these categories: World, Sports, Business, or Sci/Tech. Format: <final_answer> category </final_answer>
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Microsoft Doubles Blocking Time For SP2 Microsoft has doubled the time that businesses can block Windows XP SP2 from downloading automatically, giving them until mid-April to test the update.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+Wal-Mart Clarifies Policy Regarding Unions (AP) AP - Although Wal-Mart prefers to handle labor negotiations directly with individual employees, the world's largest retailer does not have a global anti-union policy, a company spokeswoman said Friday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1543,619,1156812,54459,0.888
+1,2025-03-26 11:30:41.270427,1149.273364,0.89,"Read the following news text and determine which category it belongs to. Choose from: World, Sports, Business, or Sci/Tech. Your final answer must be enclosed in <final_answer> </final_answer> tags for automated extraction.
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Ginseng Paradox Explained Study finds ginseng both promotes, limits blood vessel growth    HealthDayNews -- An international study is the first to explain how ginseng can both promote the growth of blood vessels and also limit blood vessel growth.    These dual effects can be important...
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1543,619,1156812,54459,0.892
+1,2025-03-26 11:30:41.270427,1149.273364,0.89,"For a news categorization task, a dataset of articles is provided, each requiring classification into one of four predefined categories: World, Sports, Business, or Sci/Tech. The goal is to read a given news article and assign it to the most suitable category from the provided options. The selected category should be formatted for easy extraction by placing it between <final_answer> and </final_answer> tags. Can you classify the following news text into its appropriate category and format your response accordingly?
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Google Saves Kidnapped Journalist in Iraq Google Saves Kidnapped Journalist in Iraq\\Google can claim another life saved after a kidnapped Australian journalist was freed by his captors in Iraq earlier today. Freelance journalist John Martinkus was abducted by gunmen on Saturday outside a hotel near the Australian embassy. Apparently Martinkus was able to convince his captors ...
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1543,619,1156812,54459,0.89
+1,2025-03-26 11:30:41.270427,1149.273364,0.8866666666666667,"I need you to classify this news content into one of four categories (World, Sports, Business, Sci/Tech). Place only your final classification within <final_answer> </final_answer> tags.
+
+Input:",1543,619,1156812,54459,0.876
+2,2025-03-26 11:35:08.018019,266.745858,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1487,564,311750,9399,0.896
+2,2025-03-26 11:35:08.018019,266.745858,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1487,564,311750,9399,0.894
+2,2025-03-26 11:35:08.018019,266.745858,0.9033333333333333,"We are developing an automated news classification system and require assistance with assigning news articles to their respective categories. Your task is to read the provided text and determine whether it falls under the category of World, Sports, Business, or Sci/Tech. Once you've made your decision, insert your chosen category, as a single word, within the <final_answer> </final_answer> tags, adhering to the format: <final_answer> category </final_answer>, to indicate the classification of the news article.
+
+Input:
+Blair presses Sudan over Darfur KHARTOUM: Britains Prime Minister Tony Blair pressed Sudanese President Omar Hassan Al Bashir on Wednesday to end violence in Darfur on the highest-level visit from a Western government official since the crisis erupted.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+Wal-Mart Clarifies Policy Regarding Unions (AP) AP - Although Wal-Mart prefers to handle labor negotiations directly with individual employees, the world's largest retailer does not have a global anti-union policy, a company spokeswoman said Friday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1487,564,311750,9399,0.896
+2,2025-03-26 11:35:08.018019,266.745858,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1487,564,311750,9399,0.884
+2,2025-03-26 11:35:08.018019,266.745858,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1487,564,311750,9399,0.884
+2,2025-03-26 11:35:08.018019,266.745858,0.8966666666666666,"Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input:",1487,564,311750,9399,0.886
+2,2025-03-26 11:35:08.018019,266.745858,0.8966666666666666,"Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For proper data extraction, format your answer as <final_answer> category </final_answer>.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+PC Report: Enterprise, Notebook Sales Drive 12 Increase PC shipments grew between nearly 10 and 12 percent in the third quarter, paced by shipments to enterprise organizations, according to announcements from two market-research firms on Tuesday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Pakistan officials tout victory Pakistani officials declared an important victory against al-Qaida yesterday after police shot dead Amjad Farooqi, who was suspected of roles in the execution of Wall 
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",1487,564,311750,9399,0.876
+2,2025-03-26 11:35:08.018019,266.745858,0.8966666666666666,"I'm working on a news classification project. Could you read this article and tell me if it's about World, Sports, Business, or Sci/Tech? Please put your answer between <final_answer> </final_answer> markers.
+
+Input:
+Google Saves Kidnapped Journalist in Iraq Google Saves Kidnapped Journalist in Iraq\\Google can claim another life saved after a kidnapped Australian journalist was freed by his captors in Iraq earlier today. Freelance journalist John Martinkus was abducted by gunmen on Saturday outside a hotel near the Australian embassy. Apparently Martinkus was able to convince his captors ...
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+Asian Elephants Threatened by Poachers, Western Zoos (Reuters) Reuters - Illegal poaching and demand from\Western zoos are fueling the extinction of the Asian elephant,\animal welfare groups said Thursday.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+New Class of Planets Found Around Two Other Stars (Reuters) Reuters - A new class of planets has been\found orbiting stars besides our sun, in a possible giant leap\forward in the search for Earth-like planets that might harbor\life, scientists said on Tuesday.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1487,564,311750,9399,0.9
+2,2025-03-26 11:35:08.018019,266.745858,0.8966666666666666,"Your task is to assign a news article to its corresponding category, choosing from the following options: World, Sports, Business, or Sci/Tech, and then format your response as <final_answer>selected category</final_answer> to indicate the classification of the provided news content.
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Wal-Mart Clarifies Policy Regarding Unions (AP) AP - Although Wal-Mart prefers to handle labor negotiations directly with individual employees, the world's largest retailer does not have a global anti-union policy, a company spokeswoman said Friday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1487,564,311750,9399,0.894
+2,2025-03-26 11:35:08.018019,266.745858,0.89,"Read the following news text and determine which category it belongs to. Choose from: World, Sports, Business, or Sci/Tech. Your final answer must be enclosed in <final_answer> </final_answer> tags for automated extraction.
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Ginseng Paradox Explained Study finds ginseng both promotes, limits blood vessel growth    HealthDayNews -- An international study is the first to explain how ginseng can both promote the growth of blood vessels and also limit blood vessel growth.    These dual effects can be important...
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1487,564,311750,9399,0.892
+3,2025-03-26 11:41:39.395249,391.375751,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1599,716,312933,31947,0.896
+3,2025-03-26 11:41:39.395249,391.375751,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1599,716,312933,31947,0.894
+3,2025-03-26 11:41:39.395249,391.375751,0.9033333333333333,"We are developing an automated news classification system and require assistance with assigning news articles to their respective categories. Your task is to read the provided text and determine whether it falls under the category of World, Sports, Business, or Sci/Tech. Once you've made your decision, insert your chosen category, as a single word, within the <final_answer> </final_answer> tags, adhering to the format: <final_answer> category </final_answer>, to indicate the classification of the news article.
+
+Input:
+Blair presses Sudan over Darfur KHARTOUM: Britains Prime Minister Tony Blair pressed Sudanese President Omar Hassan Al Bashir on Wednesday to end violence in Darfur on the highest-level visit from a Western government official since the crisis erupted.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+Wal-Mart Clarifies Policy Regarding Unions (AP) AP - Although Wal-Mart prefers to handle labor negotiations directly with individual employees, the world's largest retailer does not have a global anti-union policy, a company spokeswoman said Friday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1599,716,312933,31947,0.896
+3,2025-03-26 11:41:39.395249,391.375751,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1599,716,312933,31947,0.884
+3,2025-03-26 11:41:39.395249,391.375751,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1599,716,312933,31947,0.884
+3,2025-03-26 11:41:39.395249,391.375751,0.8966666666666666,"Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input:",1599,716,312933,31947,0.886
+3,2025-03-26 11:41:39.395249,391.375751,0.8966666666666666,"Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For proper data extraction, format your answer as <final_answer> category </final_answer>.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+PC Report: Enterprise, Notebook Sales Drive 12 Increase PC shipments grew between nearly 10 and 12 percent in the third quarter, paced by shipments to enterprise organizations, according to announcements from two market-research firms on Tuesday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Pakistan officials tout victory Pakistani officials declared an important victory against al-Qaida yesterday after police shot dead Amjad Farooqi, who was suspected of roles in the execution of Wall 
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",1599,716,312933,31947,0.876
+3,2025-03-26 11:41:39.395249,391.375751,0.8966666666666666,"I'm working on a news classification project. Could you read this article and tell me if it's about World, Sports, Business, or Sci/Tech? Please put your answer between <final_answer> </final_answer> markers.
+
+Input:
+Google Saves Kidnapped Journalist in Iraq Google Saves Kidnapped Journalist in Iraq\\Google can claim another life saved after a kidnapped Australian journalist was freed by his captors in Iraq earlier today. Freelance journalist John Martinkus was abducted by gunmen on Saturday outside a hotel near the Australian embassy. Apparently Martinkus was able to convince his captors ...
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+Asian Elephants Threatened by Poachers, Western Zoos (Reuters) Reuters - Illegal poaching and demand from\Western zoos are fueling the extinction of the Asian elephant,\animal welfare groups said Thursday.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+New Class of Planets Found Around Two Other Stars (Reuters) Reuters - A new class of planets has been\found orbiting stars besides our sun, in a possible giant leap\forward in the search for Earth-like planets that might harbor\life, scientists said on Tuesday.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1599,716,312933,31947,0.9
+3,2025-03-26 11:41:39.395249,391.375751,0.8966666666666666,"Your task is to assign a news article to its corresponding category, choosing from the following options: World, Sports, Business, or Sci/Tech, and then format your response as <final_answer>selected category</final_answer> to indicate the classification of the provided news content.
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Wal-Mart Clarifies Policy Regarding Unions (AP) AP - Although Wal-Mart prefers to handle labor negotiations directly with individual employees, the world's largest retailer does not have a global anti-union policy, a company spokeswoman said Friday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1599,716,312933,31947,0.894
+3,2025-03-26 11:41:39.395249,391.375751,0.88,"Function as a news categorization tool, where your task is to read an article and determine whether it belongs to the realm of global events, athletic competitions, corporate affairs, or scientific and technological advancements, and then clearly indicate your chosen category by wrapping it in <final_answer> tags, such as <final_answer>World</final_answer>, <final_answer>Sports</final_answer>, <final_answer>Business</final_answer>, or <final_answer>Sci/Tech</final_answer>, to simplify the process of identifying your classification decision.
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1599,716,312933,31947,0.88
+4,2025-03-26 11:45:44.158171,244.761428,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1554,642,195589,12267,0.896
+4,2025-03-26 11:45:44.158171,244.761428,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1554,642,195589,12267,0.89
+4,2025-03-26 11:45:44.158171,244.761428,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1554,642,195589,12267,0.902
+4,2025-03-26 11:45:44.158171,244.761428,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1554,642,195589,12267,0.894
+4,2025-03-26 11:45:44.158171,244.761428,0.9033333333333333,"We are developing an automated news classification system and require assistance with assigning news articles to their respective categories. Your task is to read the provided text and determine whether it falls under the category of World, Sports, Business, or Sci/Tech. Once you've made your decision, insert your chosen category, as a single word, within the <final_answer> </final_answer> tags, adhering to the format: <final_answer> category </final_answer>, to indicate the classification of the news article.
+
+Input:
+Blair presses Sudan over Darfur KHARTOUM: Britains Prime Minister Tony Blair pressed Sudanese President Omar Hassan Al Bashir on Wednesday to end violence in Darfur on the highest-level visit from a Western government official since the crisis erupted.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+Wal-Mart Clarifies Policy Regarding Unions (AP) AP - Although Wal-Mart prefers to handle labor negotiations directly with individual employees, the world's largest retailer does not have a global anti-union policy, a company spokeswoman said Friday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1554,642,195589,12267,0.896
+4,2025-03-26 11:45:44.158171,244.761428,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1554,642,195589,12267,0.884
+4,2025-03-26 11:45:44.158171,244.761428,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1554,642,195589,12267,0.884
+4,2025-03-26 11:45:44.158171,244.761428,0.8966666666666666,"Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input:",1554,642,195589,12267,0.886
+4,2025-03-26 11:45:44.158171,244.761428,0.8966666666666666,"I'm working on a news classification project. Could you read this article and tell me if it's about World, Sports, Business, or Sci/Tech? Please put your answer between <final_answer> </final_answer> markers.
+
+Input:
+Google Saves Kidnapped Journalist in Iraq Google Saves Kidnapped Journalist in Iraq\\Google can claim another life saved after a kidnapped Australian journalist was freed by his captors in Iraq earlier today. Freelance journalist John Martinkus was abducted by gunmen on Saturday outside a hotel near the Australian embassy. Apparently Martinkus was able to convince his captors ...
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+Asian Elephants Threatened by Poachers, Western Zoos (Reuters) Reuters - Illegal poaching and demand from\Western zoos are fueling the extinction of the Asian elephant,\animal welfare groups said Thursday.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+New Class of Planets Found Around Two Other Stars (Reuters) Reuters - A new class of planets has been\found orbiting stars besides our sun, in a possible giant leap\forward in the search for Earth-like planets that might harbor\life, scientists said on Tuesday.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1554,642,195589,12267,0.9
+4,2025-03-26 11:45:44.158171,244.761428,0.8966666666666666,"Classification task: Analyze the news content below and determine its category (World, Sports, Business, or Sci/Tech). For proper data extraction, format your answer as <final_answer> category </final_answer>.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+PC Report: Enterprise, Notebook Sales Drive 12 Increase PC shipments grew between nearly 10 and 12 percent in the third quarter, paced by shipments to enterprise organizations, according to announcements from two market-research firms on Tuesday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Pakistan officials tout victory Pakistani officials declared an important victory against al-Qaida yesterday after police shot dead Amjad Farooqi, who was suspected of roles in the execution of Wall 
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",1554,642,195589,12267,0.876
+5,2025-03-26 11:48:53.238448,189.078811,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1794,817,164640,9928,0.896
+5,2025-03-26 11:48:53.238448,189.078811,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1794,817,164640,9928,0.89
+5,2025-03-26 11:48:53.238448,189.078811,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1794,817,164640,9928,0.902
+5,2025-03-26 11:48:53.238448,189.078811,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1794,817,164640,9928,0.894
+5,2025-03-26 11:48:53.238448,189.078811,0.9033333333333333,"We are developing an automated news classification system and require assistance with assigning news articles to their respective categories. Your task is to read the provided text and determine whether it falls under the category of World, Sports, Business, or Sci/Tech. Once you've made your decision, insert your chosen category, as a single word, within the <final_answer> </final_answer> tags, adhering to the format: <final_answer> category </final_answer>, to indicate the classification of the news article.
+
+Input:
+Blair presses Sudan over Darfur KHARTOUM: Britains Prime Minister Tony Blair pressed Sudanese President Omar Hassan Al Bashir on Wednesday to end violence in Darfur on the highest-level visit from a Western government official since the crisis erupted.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+Wal-Mart Clarifies Policy Regarding Unions (AP) AP - Although Wal-Mart prefers to handle labor negotiations directly with individual employees, the world's largest retailer does not have a global anti-union policy, a company spokeswoman said Friday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1794,817,164640,9928,0.896
+5,2025-03-26 11:48:53.238448,189.078811,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1794,817,164640,9928,0.884
+5,2025-03-26 11:48:53.238448,189.078811,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1794,817,164640,9928,0.884
+5,2025-03-26 11:48:53.238448,189.078811,0.9,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by examining the article's subject matter and overall theme. Upon determining the most suitable category, encapsulate your chosen category within <final_answer> tags, for example, <final_answer>World</final_answer>, to facilitate easy extraction of the classification result.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",1794,817,164640,9928,0.89
+5,2025-03-26 11:48:53.238448,189.078811,0.8966666666666666,"Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input:",1794,817,164640,9928,0.886
+5,2025-03-26 11:48:53.238448,189.078811,0.8966666666666666,"I'm working on a news classification project. Could you read this article and tell me if it's about World, Sports, Business, or Sci/Tech? Please put your answer between <final_answer> </final_answer> markers.
+
+Input:
+Google Saves Kidnapped Journalist in Iraq Google Saves Kidnapped Journalist in Iraq\\Google can claim another life saved after a kidnapped Australian journalist was freed by his captors in Iraq earlier today. Freelance journalist John Martinkus was abducted by gunmen on Saturday outside a hotel near the Australian embassy. Apparently Martinkus was able to convince his captors ...
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+Asian Elephants Threatened by Poachers, Western Zoos (Reuters) Reuters - Illegal poaching and demand from\Western zoos are fueling the extinction of the Asian elephant,\animal welfare groups said Thursday.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+New Class of Planets Found Around Two Other Stars (Reuters) Reuters - A new class of planets has been\found orbiting stars besides our sun, in a possible giant leap\forward in the search for Earth-like planets that might harbor\life, scientists said on Tuesday.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1794,817,164640,9928,0.9
+6,2025-03-26 11:55:22.068466,388.828607,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1825,909,317005,30973,0.896
+6,2025-03-26 11:55:22.068466,388.828607,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1825,909,317005,30973,0.89
+6,2025-03-26 11:55:22.068466,388.828607,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1825,909,317005,30973,0.902
+6,2025-03-26 11:55:22.068466,388.828607,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1825,909,317005,30973,0.894
+6,2025-03-26 11:55:22.068466,388.828607,0.9033333333333333,"We are developing an automated news classification system and require assistance with assigning news articles to their respective categories. Your task is to read the provided text and determine whether it falls under the category of World, Sports, Business, or Sci/Tech. Once you've made your decision, insert your chosen category, as a single word, within the <final_answer> </final_answer> tags, adhering to the format: <final_answer> category </final_answer>, to indicate the classification of the news article.
+
+Input:
+Blair presses Sudan over Darfur KHARTOUM: Britains Prime Minister Tony Blair pressed Sudanese President Omar Hassan Al Bashir on Wednesday to end violence in Darfur on the highest-level visit from a Western government official since the crisis erupted.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+Wal-Mart Clarifies Policy Regarding Unions (AP) AP - Although Wal-Mart prefers to handle labor negotiations directly with individual employees, the world's largest retailer does not have a global anti-union policy, a company spokeswoman said Friday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1825,909,317005,30973,0.896
+6,2025-03-26 11:55:22.068466,388.828607,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1825,909,317005,30973,0.884
+6,2025-03-26 11:55:22.068466,388.828607,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1825,909,317005,30973,0.884
+6,2025-03-26 11:55:22.068466,388.828607,0.9,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by examining the article's subject matter and overall theme. Upon determining the most suitable category, encapsulate your chosen category within <final_answer> tags, for example, <final_answer>World</final_answer>, to facilitate easy extraction of the classification result.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",1825,909,317005,30973,0.89
+6,2025-03-26 11:55:22.068466,388.828607,0.9,"Function as a news categorization tool, where you will read an article and then determine which of the four main categories - World, Sports, Business, or Sci/Tech - it best aligns with, based on the information presented within the article. Your goal is to evaluate the content of the given news story and assign it to the most appropriate category from the provided options. Once you have made your determination, please enclose your chosen category within <final_answer> tags, such as <final_answer>World</final_answer>, <final_answer>Sports</final_answer>, <final_answer>Business</final_answer>, or <final_answer>Sci/Tech</final_answer>, to clearly indicate the category you believe the article belongs to, thereby facilitating the easy identification and extraction of your classification response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1825,909,317005,30973,0.898
+6,2025-03-26 11:55:22.068466,388.828607,0.8966666666666666,"Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Input:",1825,909,317005,30973,0.886
+7,2025-03-26 11:58:07.943242,165.873306,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",2050,1214,120615,18235,0.896
+7,2025-03-26 11:58:07.943242,165.873306,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",2050,1214,120615,18235,0.89
+7,2025-03-26 11:58:07.943242,165.873306,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2050,1214,120615,18235,0.902
+7,2025-03-26 11:58:07.943242,165.873306,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",2050,1214,120615,18235,0.892
+7,2025-03-26 11:58:07.943242,165.873306,0.9033333333333333,"We are developing an automated news classification system and require assistance with assigning news articles to their respective categories. Your task is to read the provided text and determine whether it falls under the category of World, Sports, Business, or Sci/Tech. Once you've made your decision, insert your chosen category, as a single word, within the <final_answer> </final_answer> tags, adhering to the format: <final_answer> category </final_answer>, to indicate the classification of the news article.
+
+Input:
+Blair presses Sudan over Darfur KHARTOUM: Britains Prime Minister Tony Blair pressed Sudanese President Omar Hassan Al Bashir on Wednesday to end violence in Darfur on the highest-level visit from a Western government official since the crisis erupted.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+Wal-Mart Clarifies Policy Regarding Unions (AP) AP - Although Wal-Mart prefers to handle labor negotiations directly with individual employees, the world's largest retailer does not have a global anti-union policy, a company spokeswoman said Friday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2050,1214,120615,18235,0.896
+7,2025-03-26 11:58:07.943242,165.873306,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2050,1214,120615,18235,0.894
+7,2025-03-26 11:58:07.943242,165.873306,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",2050,1214,120615,18235,0.884
+7,2025-03-26 11:58:07.943242,165.873306,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",2050,1214,120615,18235,0.884
+7,2025-03-26 11:58:07.943242,165.873306,0.9,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by examining the article's subject matter and overall theme. Upon determining the most suitable category, encapsulate your chosen category within <final_answer> tags, for example, <final_answer>World</final_answer>, to facilitate easy extraction of the classification result.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",2050,1214,120615,18235,0.89
+7,2025-03-26 11:58:07.943242,165.873306,0.9,"Function as a news categorization tool, where you will read an article and then determine which of the four main categories - World, Sports, Business, or Sci/Tech - it best aligns with, based on the information presented within the article. Your goal is to evaluate the content of the given news story and assign it to the most appropriate category from the provided options. Once you have made your determination, please enclose your chosen category within <final_answer> tags, such as <final_answer>World</final_answer>, <final_answer>Sports</final_answer>, <final_answer>Business</final_answer>, or <final_answer>Sci/Tech</final_answer>, to clearly indicate the category you believe the article belongs to, thereby facilitating the easy identification and extraction of your classification response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2050,1214,120615,18235,0.898
+8,2025-03-26 12:00:57.783808,169.839145,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",2329,1196,97890,21399,0.896
+8,2025-03-26 12:00:57.783808,169.839145,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",2329,1196,97890,21399,0.89
+8,2025-03-26 12:00:57.783808,169.839145,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2329,1196,97890,21399,0.902
+8,2025-03-26 12:00:57.783808,169.839145,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",2329,1196,97890,21399,0.892
+8,2025-03-26 12:00:57.783808,169.839145,0.9033333333333333,"We are developing an automated news classification system and require assistance with assigning news articles to their respective categories. Your task is to read the provided text and determine whether it falls under the category of World, Sports, Business, or Sci/Tech. Once you've made your decision, insert your chosen category, as a single word, within the <final_answer> </final_answer> tags, adhering to the format: <final_answer> category </final_answer>, to indicate the classification of the news article.
+
+Input:
+Blair presses Sudan over Darfur KHARTOUM: Britains Prime Minister Tony Blair pressed Sudanese President Omar Hassan Al Bashir on Wednesday to end violence in Darfur on the highest-level visit from a Western government official since the crisis erupted.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+Wal-Mart Clarifies Policy Regarding Unions (AP) AP - Although Wal-Mart prefers to handle labor negotiations directly with individual employees, the world's largest retailer does not have a global anti-union policy, a company spokeswoman said Friday.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2329,1196,97890,21399,0.896
+8,2025-03-26 12:00:57.783808,169.839145,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2329,1196,97890,21399,0.894
+8,2025-03-26 12:00:57.783808,169.839145,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",2329,1196,97890,21399,0.884
+8,2025-03-26 12:00:57.783808,169.839145,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",2329,1196,97890,21399,0.884
+8,2025-03-26 12:00:57.783808,169.839145,0.9,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by examining the article's subject matter and overall theme. Upon determining the most suitable category, encapsulate your chosen category within <final_answer> tags, for example, <final_answer>World</final_answer>, to facilitate easy extraction of the classification result.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",2329,1196,97890,21399,0.89
+8,2025-03-26 12:00:57.783808,169.839145,0.9,"Function as a news categorization tool, where you will read an article and then determine which of the four main categories - World, Sports, Business, or Sci/Tech - it best aligns with, based on the information presented within the article. Your goal is to evaluate the content of the given news story and assign it to the most appropriate category from the provided options. Once you have made your determination, please enclose your chosen category within <final_answer> tags, such as <final_answer>World</final_answer>, <final_answer>Sports</final_answer>, <final_answer>Business</final_answer>, or <final_answer>Sci/Tech</final_answer>, to clearly indicate the category you believe the article belongs to, thereby facilitating the easy identification and extraction of your classification response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2329,1196,97890,21399,0.898
+9,2025-03-26 12:08:36.340130,458.554877,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",2124,1125,347621,43438,0.896
+9,2025-03-26 12:08:36.340130,458.554877,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",2124,1125,347621,43438,0.89
+9,2025-03-26 12:08:36.340130,458.554877,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2124,1125,347621,43438,0.902
+9,2025-03-26 12:08:36.340130,458.554877,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",2124,1125,347621,43438,0.892
+9,2025-03-26 12:08:36.340130,458.554877,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2124,1125,347621,43438,0.894
+9,2025-03-26 12:08:36.340130,458.554877,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",2124,1125,347621,43438,0.884
+9,2025-03-26 12:08:36.340130,458.554877,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",2124,1125,347621,43438,0.884
+9,2025-03-26 12:08:36.340130,458.554877,0.9,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by examining the article's subject matter and overall theme. Upon determining the most suitable category, encapsulate your chosen category within <final_answer> tags, for example, <final_answer>World</final_answer>, to facilitate easy extraction of the classification result.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",2124,1125,347621,43438,0.89
+9,2025-03-26 12:08:36.340130,458.554877,0.8966666666666666,"Develop a categorization tool for news articles, where each story is assigned to one of four distinct groups: World, Sports, Business, or Sci/Tech, based on the information it contains. To support the development of an automated news sorting system, we need help in categorizing news articles into their respective categories. Your role is to analyze the given text and decide which category - World, Sports, Business, or Sci/Tech - it best fits into. After assessing the article, provide your chosen category in the specified format, <final_answer>answer</final_answer>, to enable straightforward extraction of your classification, with the answer being the category that you believe the news article belongs to.
+
+Input:
+Blair presses Sudan over Darfur KHARTOUM: Britains Prime Minister Tony Blair pressed Sudanese President Omar Hassan Al Bashir on Wednesday to end violence in Darfur on the highest-level visit from a Western government official since the crisis erupted.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+No. 13 Vanderbilt Routs St. Francis 102-47 Carla Thomas scored 23 points, Ashley Earley 22 and Dee Davis a career-high 21 as No. 13 Vanderbilt opened the season with a 102-47 victory over St.
+Output:
+<final_answer>Sports</final_answer>
+
+Input:
+Oil Platforms in Gulf Make Ready for Ivan Description: With Hurricane Ivan approaching, oil companies evacuate hundreds of oil workers from drilling platforms in the Gulf of Mexico.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",2124,1125,347621,43438,0.896
+9,2025-03-26 12:08:36.340130,458.554877,0.8766666666666667,"We need help building a news categorization tool that can accurately sort articles into four main categories: World, Sports, Business, and Sci/Tech. Your task is to read the given news article, analyze its content, and then classify it into one of these categories based on its main topic. After deciding on the category, please enclose your chosen category in the <final_answer> </final_answer> tags, like <final_answer>World</final_answer>, to clearly mark the classification of the article for easy extraction.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Blair presses Sudan over Darfur KHARTOUM: Britains Prime Minister Tony Blair pressed Sudanese President Omar Hassan Al Bashir on Wednesday to end violence in Darfur on the highest-level visit from a Western government official since the crisis erupted.
+Output:
+<final_answer>World</final_answer>
+
+Input:",2124,1125,347621,43438,0.882
+10,2025-03-26 12:15:13.909668,397.568105,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1704,756,357911,31360,0.896
+10,2025-03-26 12:15:13.909668,397.568105,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1704,756,357911,31360,0.89
+10,2025-03-26 12:15:13.909668,397.568105,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1704,756,357911,31360,0.902
+10,2025-03-26 12:15:13.909668,397.568105,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1704,756,357911,31360,0.892
+10,2025-03-26 12:15:13.909668,397.568105,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1704,756,357911,31360,0.894
+10,2025-03-26 12:15:13.909668,397.568105,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1704,756,357911,31360,0.884
+10,2025-03-26 12:15:13.909668,397.568105,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1704,756,357911,31360,0.884
+10,2025-03-26 12:15:13.909668,397.568105,0.9,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by examining the article's subject matter and overall theme. Upon determining the most suitable category, encapsulate your chosen category within <final_answer> tags, for example, <final_answer>World</final_answer>, to facilitate easy extraction of the classification result.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",1704,756,357911,31360,0.89
+10,2025-03-26 12:15:13.909668,397.568105,0.8925925925925926,"Function as a textual categorization engine, tasked with sorting news articles into four distinct thematic groups, namely World, Sports, Business, and Sci/Tech, by analyzing the content and primary themes presented within each article. Upon reviewing a given news piece, identify the category that best aligns with its subject matter, selecting from the provided options, and clearly denote your chosen category using the <final_answer>category name</final_answer> format for straightforward extraction, thereby enabling the organization of news articles into their respective categories of World, Sports, Business, or Sci/Tech based on the topics they address.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1704,756,357911,31360,0.894
+10,2025-03-26 12:15:13.909668,397.568105,0.8851851851851852,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly denote your selected category by enclosing it within <final_answer> tags, leveraging advanced AI capabilities to ensure precise classification and facilitate easy identification of the chosen category.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1704,756,357911,31360,0.88
+11,2025-03-26 12:17:52.283580,158.372492,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1798,774,135086,9354,0.896
+11,2025-03-26 12:17:52.283580,158.372492,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1798,774,135086,9354,0.89
+11,2025-03-26 12:17:52.283580,158.372492,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1798,774,135086,9354,0.902
+11,2025-03-26 12:17:52.283580,158.372492,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1798,774,135086,9354,0.892
+11,2025-03-26 12:17:52.283580,158.372492,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1798,774,135086,9354,0.892
+11,2025-03-26 12:17:52.283580,158.372492,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1798,774,135086,9354,0.894
+11,2025-03-26 12:17:52.283580,158.372492,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1798,774,135086,9354,0.884
+11,2025-03-26 12:17:52.283580,158.372492,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1798,774,135086,9354,0.884
+11,2025-03-26 12:17:52.283580,158.372492,0.9,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by examining the article's subject matter and overall theme. Upon determining the most suitable category, encapsulate your chosen category within <final_answer> tags, for example, <final_answer>World</final_answer>, to facilitate easy extraction of the classification result.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",1798,774,135086,9354,0.89
+11,2025-03-26 12:17:52.283580,158.372492,0.8933333333333333,"For the given news article, your role is to identify and assign it to one of four predefined categories - World, Sports, Business, or Sci/Tech - based on its content and underlying theme. Once you've identified the most appropriate category, please encapsulate your chosen category within <final_answer> tags, such as <final_answer>Sports</final_answer>, to clearly denote the classification outcome and ensure the article is correctly grouped within its respective domain, thereby facilitating efficient categorization and retrieval of news based on their subject matter.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1798,774,135086,9354,0.86
+12,2025-03-26 12:23:37.545559,345.260579,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1735,752,207209,54982,0.896
+12,2025-03-26 12:23:37.545559,345.260579,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1735,752,207209,54982,0.89
+12,2025-03-26 12:23:37.545559,345.260579,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1735,752,207209,54982,0.902
+12,2025-03-26 12:23:37.545559,345.260579,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1735,752,207209,54982,0.892
+12,2025-03-26 12:23:37.545559,345.260579,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1735,752,207209,54982,0.892
+12,2025-03-26 12:23:37.545559,345.260579,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1735,752,207209,54982,0.894
+12,2025-03-26 12:23:37.545559,345.260579,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1735,752,207209,54982,0.884
+12,2025-03-26 12:23:37.545559,345.260579,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1735,752,207209,54982,0.884
+12,2025-03-26 12:23:37.545559,345.260579,0.9,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by examining the article's subject matter and overall theme. Upon determining the most suitable category, encapsulate your chosen category within <final_answer> tags, for example, <final_answer>World</final_answer>, to facilitate easy extraction of the classification result.
+
+Input:
+957 reported dead in '04 as Afghan election looms KANDAHAR, Afghanistan -- The killing in Afghanistan spirals onward, undermining US contentions of success in pacifying the country with less than a week to go before a historic experiment with democracy: direct presidential elections.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",1735,752,207209,54982,0.89
+12,2025-03-26 12:23:37.545559,345.260579,0.8933333333333333,"Function as a categorization tool to determine the appropriate classification for a given news article, selecting from the four available categories of World, Sports, Business, or Sci/Tech, based on the content and underlying theme of the article, and then clearly indicate your chosen category by wrapping it in <final_answer> tags, such as <final_answer>Sports</final_answer>, to enable straightforward extraction of the classification outcome.
+
+Input:
+Big Ten gears defenses to stop run For a conference rooted in offensive muscle, the Big Ten seems a little frail in the running department this season. Ohio State and Michigan, which built their reputations on power football, rank 
+Output:
+<final_answer>Sports</final_answer>
+
+Input:",1735,752,207209,54982,0.888
+13,2025-03-26 12:27:51.320389,253.773404,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1686,646,247387,13221,0.896
+13,2025-03-26 12:27:51.320389,253.773404,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1686,646,247387,13221,0.89
+13,2025-03-26 12:27:51.320389,253.773404,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1686,646,247387,13221,0.902
+13,2025-03-26 12:27:51.320389,253.773404,0.91,"Function as a news categorization tool, where your role is to sort individual news articles into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the thematic content of each piece. Upon reviewing a given news article, identify the most suitable category from the provided options and encapsulate your chosen category within <final_answer> markers, adhering to the <final_answer>category name</final_answer> format to ensure clarity and effortless extraction of your classification response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1686,646,247387,13221,0.9
+13,2025-03-26 12:27:51.320389,253.773404,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1686,646,247387,13221,0.892
+13,2025-03-26 12:27:51.320389,253.773404,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1686,646,247387,13221,0.892
+13,2025-03-26 12:27:51.320389,253.773404,0.9033333333333333,"Categorize the given news article into its corresponding field, choosing from the options World, Sports, Business, or Sci/Tech, and place your selected category between <final_answer> tags for clear designation.
+
+Input:",1686,646,247387,13221,0.89
+13,2025-03-26 12:27:51.320389,253.773404,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1686,646,247387,13221,0.894
+13,2025-03-26 12:27:51.320389,253.773404,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1686,646,247387,13221,0.884
+13,2025-03-26 12:27:51.320389,253.773404,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1686,646,247387,13221,0.884
+14,2025-03-26 12:33:14.264386,322.942498,0.9233333333333333,"To categorize the provided news article, determine which of the four domains - World, Sports, Business, or Sci/Tech - it best fits into, and then encapsulate your selected category within <final_answer> tags for clear and effortless identification of your chosen classification.
+
+Input:",1736,740,161981,61672,0.898
+14,2025-03-26 12:33:14.264386,322.942498,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1736,740,161981,61672,0.896
+14,2025-03-26 12:33:14.264386,322.942498,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1736,740,161981,61672,0.902
+14,2025-03-26 12:33:14.264386,322.942498,0.91,"Your task is to categorize the given news article into its corresponding domain, choosing from the options World, Sports, Business, or Sci/Tech, and then format your response with the selected category enclosed within <final_answer> tags for straightforward extraction, ensuring the news piece is accurately classified within its relevant field of interest.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1736,740,161981,61672,0.89
+14,2025-03-26 12:33:14.264386,322.942498,0.91,"Function as a news categorization tool, where your role is to sort individual news articles into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the thematic content of each piece. Upon reviewing a given news article, identify the most suitable category from the provided options and encapsulate your chosen category within <final_answer> markers, adhering to the <final_answer>category name</final_answer> format to ensure clarity and effortless extraction of your classification response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1736,740,161981,61672,0.9
+14,2025-03-26 12:33:14.264386,322.942498,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1736,740,161981,61672,0.892
+14,2025-03-26 12:33:14.264386,322.942498,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1736,740,161981,61672,0.892
+14,2025-03-26 12:33:14.264386,322.942498,0.9033333333333333,"Categorize the given news article into its corresponding field, choosing from the options World, Sports, Business, or Sci/Tech, and place your selected category between <final_answer> tags for clear designation.
+
+Input:",1736,740,161981,61672,0.89
+14,2025-03-26 12:33:14.264386,322.942498,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1736,740,161981,61672,0.894
+14,2025-03-26 12:33:14.264386,322.942498,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1736,740,161981,61672,0.884
+15,2025-03-26 12:37:23.980837,249.715019,0.9233333333333333,"To categorize the provided news article, determine which of the four domains - World, Sports, Business, or Sci/Tech - it best fits into, and then encapsulate your selected category within <final_answer> tags for clear and effortless identification of your chosen classification.
+
+Input:",1700,765,177459,23056,0.898
+15,2025-03-26 12:37:23.980837,249.715019,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1700,765,177459,23056,0.896
+15,2025-03-26 12:37:23.980837,249.715019,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1700,765,177459,23056,0.902
+15,2025-03-26 12:37:23.980837,249.715019,0.91,"Function as a news categorization tool, where your role is to sort individual news articles into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the thematic content of each piece. Upon reviewing a given news article, identify the most suitable category from the provided options and encapsulate your chosen category within <final_answer> markers, adhering to the <final_answer>category name</final_answer> format to ensure clarity and effortless extraction of your classification response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1700,765,177459,23056,0.9
+15,2025-03-26 12:37:23.980837,249.715019,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1700,765,177459,23056,0.892
+15,2025-03-26 12:37:23.980837,249.715019,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1700,765,177459,23056,0.892
+15,2025-03-26 12:37:23.980837,249.715019,0.9066666666666666,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by analyzing the article's content and theme. Upon determining the most appropriate category, format your response by placing the category name within <final_answer> tags, such as <final_answer>category_name</final_answer>, to facilitate the extraction of your chosen category and provide a clear classification result.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1700,765,177459,23056,0.882
+15,2025-03-26 12:37:23.980837,249.715019,0.9033333333333333,"Categorize the given news article into its corresponding field, choosing from the options World, Sports, Business, or Sci/Tech, and place your selected category between <final_answer> tags for clear designation.
+
+Input:",1700,765,177459,23056,0.89
+15,2025-03-26 12:37:23.980837,249.715019,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1700,765,177459,23056,0.894
+15,2025-03-26 12:37:23.980837,249.715019,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1700,765,177459,23056,0.884
+16,2025-03-26 12:40:59.754328,215.772062,0.9233333333333333,"To categorize the provided news article, determine which of the four domains - World, Sports, Business, or Sci/Tech - it best fits into, and then encapsulate your selected category within <final_answer> tags for clear and effortless identification of your chosen classification.
+
+Input:",1817,800,94634,42395,0.898
+16,2025-03-26 12:40:59.754328,215.772062,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1817,800,94634,42395,0.896
+16,2025-03-26 12:40:59.754328,215.772062,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1817,800,94634,42395,0.902
+16,2025-03-26 12:40:59.754328,215.772062,0.91,"Function as a news categorization tool, where your role is to sort individual news articles into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the thematic content of each piece. Upon reviewing a given news article, identify the most suitable category from the provided options and encapsulate your chosen category within <final_answer> markers, adhering to the <final_answer>category name</final_answer> format to ensure clarity and effortless extraction of your classification response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1817,800,94634,42395,0.9
+16,2025-03-26 12:40:59.754328,215.772062,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1817,800,94634,42395,0.892
+16,2025-03-26 12:40:59.754328,215.772062,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1817,800,94634,42395,0.892
+16,2025-03-26 12:40:59.754328,215.772062,0.9066666666666666,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by analyzing the article's content and theme. Upon determining the most appropriate category, format your response by placing the category name within <final_answer> tags, such as <final_answer>category_name</final_answer>, to facilitate the extraction of your chosen category and provide a clear classification result.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1817,800,94634,42395,0.882
+16,2025-03-26 12:40:59.754328,215.772062,0.9033333333333333,"Categorize the given news article into its corresponding field, choosing from the options World, Sports, Business, or Sci/Tech, and place your selected category between <final_answer> tags for clear designation.
+
+Input:",1817,800,94634,42395,0.89
+16,2025-03-26 12:40:59.754328,215.772062,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1817,800,94634,42395,0.894
+16,2025-03-26 12:40:59.754328,215.772062,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1817,800,94634,42395,0.884
+17,2025-03-26 12:44:31.999317,212.243552,0.9233333333333333,"To categorize the provided news article, determine which of the four domains - World, Sports, Business, or Sci/Tech - it best fits into, and then encapsulate your selected category within <final_answer> tags for clear and effortless identification of your chosen classification.
+
+Input:",1653,703,132162,25192,0.898
+17,2025-03-26 12:44:31.999317,212.243552,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1653,703,132162,25192,0.896
+17,2025-03-26 12:44:31.999317,212.243552,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1653,703,132162,25192,0.902
+17,2025-03-26 12:44:31.999317,212.243552,0.91,"Function as a news categorization tool, where your role is to sort individual news articles into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the thematic content of each piece. Upon reviewing a given news article, identify the most suitable category from the provided options and encapsulate your chosen category within <final_answer> markers, adhering to the <final_answer>category name</final_answer> format to ensure clarity and effortless extraction of your classification response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1653,703,132162,25192,0.9
+17,2025-03-26 12:44:31.999317,212.243552,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1653,703,132162,25192,0.892
+17,2025-03-26 12:44:31.999317,212.243552,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1653,703,132162,25192,0.892
+17,2025-03-26 12:44:31.999317,212.243552,0.9066666666666666,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by analyzing the article's content and theme. Upon determining the most appropriate category, format your response by placing the category name within <final_answer> tags, such as <final_answer>category_name</final_answer>, to facilitate the extraction of your chosen category and provide a clear classification result.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1653,703,132162,25192,0.882
+17,2025-03-26 12:44:31.999317,212.243552,0.9033333333333333,"Categorize the given news article into its corresponding field, choosing from the options World, Sports, Business, or Sci/Tech, and place your selected category between <final_answer> tags for clear designation.
+
+Input:",1653,703,132162,25192,0.89
+17,2025-03-26 12:44:31.999317,212.243552,0.9033333333333333,"As an AI assistant, please help classify this news article into one of the following four categories: World, Sports, Business, or Sci/Tech. Remember to place your classification within <final_answer> </final_answer> tags.
+
+Input:
+Fallujah Insurgents Fight US Marines for Second Day (Update1) US Marines engaged rebels on the outskirts of the Iraqi insurgent stronghold of Fallujah for a second day, the US military said in an e-mailed statement.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Report: Citigroup to Bid for Cazenove  LONDON (Reuters) - U.S. investment bank Citigroup is set to  bid for UK stockbroker Cazenove &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=CAZ.UL target=/stocks/quickinfo/fullquote""&gt;CAZ.UL&lt;/A&gt;, challenging rivals JP  Morgan &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=JPM.L target=/stocks/quickinfo/fullquote""&gt;JPM.L&lt;/A&gt; and Lehman Brothers &lt;A HREF=""http://www.investor.reuters.com/FullQuote.aspx?ticker=LEH.N target=/stocks/quickinfo/fullquote""&gt;LEH.N&lt;/A&gt; for the City's most  venerable institution, the Observer reported.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1653,703,132162,25192,0.894
+17,2025-03-26 12:44:31.999317,212.243552,0.9,"Classify the provided news article into its respective domain by selecting one of the following categories: World, Sports, Business, or Sci/Tech, and enclose your chosen category within <final_answer> tags for easy identification.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1653,703,132162,25192,0.884
+18,2025-03-26 12:49:04.036262,272.035436,0.9233333333333333,"To categorize the provided news article, determine which of the four domains - World, Sports, Business, or Sci/Tech - it best fits into, and then encapsulate your selected category within <final_answer> tags for clear and effortless identification of your chosen classification.
+
+Input:",1683,668,220257,25170,0.898
+18,2025-03-26 12:49:04.036262,272.035436,0.9233333333333333,"To categorize the provided news article, determine which of the four domains - World, Sports, Business, or Sci/Tech - it best fits into, and then encapsulate your selected category within <final_answer> tags for clear and effortless identification of your chosen classification.
+
+Input:",1683,668,220257,25170,0.898
+18,2025-03-26 12:49:04.036262,272.035436,0.92,"Act as a classifier for news stories, assigning each article to one of four predefined categories: World, Sports, Business, or Sci/Tech, based on its content. After evaluating the article provided, specify the category you believe it fits into, using the format <final_answer>selected category</final_answer> to facilitate easy extraction of your response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1683,668,220257,25170,0.896
+18,2025-03-26 12:49:04.036262,272.035436,0.91,"Function as a news categorization tool, where your task is to sort individual news pieces into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the themes and topics they cover. For the given news article, determine its appropriate category from the provided options and format your response by placing the chosen category within <final_answer> tags, such as <final_answer>selected category</final_answer>, to clearly indicate your classification choice for straightforward extraction.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1683,668,220257,25170,0.902
+18,2025-03-26 12:49:04.036262,272.035436,0.91,"Function as a news categorization tool, where your role is to sort individual news articles into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the thematic content of each piece. Upon reviewing a given news article, identify the most suitable category from the provided options and encapsulate your chosen category within <final_answer> markers, adhering to the <final_answer>category name</final_answer> format to ensure clarity and effortless extraction of your classification response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1683,668,220257,25170,0.9
+18,2025-03-26 12:49:04.036262,272.035436,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1683,668,220257,25170,0.892
+18,2025-03-26 12:49:04.036262,272.035436,0.9066666666666666,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by analyzing the article's content and theme. Upon determining the most appropriate category, format your response by placing the category name within <final_answer> tags, such as <final_answer>category_name</final_answer>, to facilitate the extraction of your chosen category and provide a clear classification result.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1683,668,220257,25170,0.882
+18,2025-03-26 12:49:04.036262,272.035436,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1683,668,220257,25170,0.892
+18,2025-03-26 12:49:04.036262,272.035436,0.9033333333333333,"Categorize the given news article into its corresponding field, choosing from the options World, Sports, Business, or Sci/Tech, and place your selected category between <final_answer> tags for clear designation.
+
+Input:",1683,668,220257,25170,0.89
+18,2025-03-26 12:49:04.036262,272.035436,0.9033333333333333,"Act as a news article classifier, responsible for assigning a category label to each given news piece, selecting from the four available categories: World, Sports, Business, or Sci/Tech, based on the content and theme of the article. Upon reviewing a news article, identify the most suitable category from the provided options and clearly denote your chosen category using the <final_answer>answer</final_answer> format, allowing for straightforward extraction of your classification decision.
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1683,668,220257,25170,0.9
+19,2025-03-26 12:56:30.247256,446.209565,0.9233333333333333,"To categorize the provided news article, determine which of the four domains - World, Sports, Business, or Sci/Tech - it best fits into, and then encapsulate your selected category within <final_answer> tags for clear and effortless identification of your chosen classification.
+
+Input:",1887,900,333780,42103,0.898
+19,2025-03-26 12:56:30.247256,446.209565,0.9233333333333333,"To categorize the provided news article, determine which of the four domains - World, Sports, Business, or Sci/Tech - it best fits into, and then encapsulate your selected category within <final_answer> tags for clear and effortless identification of your chosen classification.
+
+Input:",1887,900,333780,42103,0.898
+19,2025-03-26 12:56:30.247256,446.209565,0.91,"Function as a news categorization tool, where your role is to sort individual news articles into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the thematic content of each piece. Upon reviewing a given news article, identify the most suitable category from the provided options and encapsulate your chosen category within <final_answer> markers, adhering to the <final_answer>category name</final_answer> format to ensure clarity and effortless extraction of your classification response.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1887,900,333780,42103,0.9
+19,2025-03-26 12:56:30.247256,446.209565,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1887,900,333780,42103,0.892
+19,2025-03-26 12:56:30.247256,446.209565,0.9066666666666666,"Act as a classifier to assign a news article to its corresponding category, which can be World, Sports, Business, or Sci/Tech, by analyzing the article's content and theme. Upon determining the most appropriate category, format your response by placing the category name within <final_answer> tags, such as <final_answer>category_name</final_answer>, to facilitate the extraction of your chosen category and provide a clear classification result.
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1887,900,333780,42103,0.882
+19,2025-03-26 12:56:30.247256,446.209565,0.9066666666666666,"For the given news article, determine its categorization among the four specified domains - World, Sports, Business, or Sci/Tech - and clearly indicate your selected category by wrapping it in <final_answer> tags to facilitate straightforward recognition of your response.
+
+Input:",1887,900,333780,42103,0.892
+19,2025-03-26 12:56:30.247256,446.209565,0.9033333333333333,"Categorize the given news article into its corresponding field, choosing from the options World, Sports, Business, or Sci/Tech, and place your selected category between <final_answer> tags for clear designation.
+
+Input:",1887,900,333780,42103,0.89
+19,2025-03-26 12:56:30.247256,446.209565,0.9033333333333333,"Act as a news article classifier, responsible for assigning a category label to each given news piece, selecting from the four available categories: World, Sports, Business, or Sci/Tech, based on the content and theme of the article. Upon reviewing a news article, identify the most suitable category from the provided options and clearly denote your chosen category using the <final_answer>answer</final_answer> format, allowing for straightforward extraction of your classification decision.
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Sirius posts wider loss amid rising costs NEW YORK (Dow Jones/AP) -- Sirius Satellite Radio Inc. on Wednesday said it posted a wider loss for the third quarter from a year earlier, as higher expenses -- particularly for National Football League programming -- more than offset a surge in revenue.
+Output:
+<final_answer>Business</final_answer>
+
+Input:",1887,900,333780,42103,0.9
+19,2025-03-26 12:56:30.247256,446.209565,0.8933333333333333,"Your task is to categorize news articles into one of four predefined categories - World, Sports, Business, or Sci/Tech - by analyzing the content of each article and determining which category it best fits into. Once you've made your decision, clearly mark your chosen category between <final_answer> and </final_answer> tags, ensuring it's easily identifiable as your classification choice, using the specified format to highlight the selected category from the available options: World, Sports, Business, or Sci/Tech, for straightforward extraction of your decision.
+
+Input:
+Airgo Says Linksys to Use Chips for Wireless Gear (Reuters) Reuters - Airgo Networks said on Monday the\Linksys unit of Cisco System Inc. will use its chips in\equipment for high-speed wireless networking, bolstering\support for the start-up chip maker's technology.
+Output:
+<final_answer>Sci/Tech</final_answer>
+
+Input:",1887,900,333780,42103,0.886
+19,2025-03-26 12:56:30.247256,446.209565,0.89,"Function as a news categorization tool, where your role is to sort individual news articles into distinct groups labeled as World, Sports, Business, or Sci/Tech, according to the thematic content of each piece. Upon reviewing a given news article, identify the most suitable category from the provided options and encapsulate your chosen category within <final_answer> tags, adhering to the <final_answer>category name</final_answer> format, thereby ensuring a clear and easily extractable response that directly signifies your classification decision.
+
+Input:
+Oil Slides as U.S. Supplies Seen Growing  NEW YORK (Reuters) - Oil prices extended a streak of losses  on Tuesday as dealers anticipated that strong OPEC output and  recovering production in the United States would boost lean  stockpiles in time for peak winter heating demand.
+Output:
+<final_answer>Business</final_answer>
+
+Input:
+Porsche wants to cut jobs, extend working hours (AFP) AFP - Porsche, the German maker of luxury sports cars, wants to extend working hours and cut jobs, its chairman said in a newspaper interview at a time when other car makers in Germany are also drastically reducing their workforce in an attempt to drive down costs.
+Output:
+<final_answer>World</final_answer>
+
+Input:",1887,900,333780,42103,0.89
