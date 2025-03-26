@@ -5,12 +5,12 @@ import numpy as np
 import pandas as pd
 
 
-def get_results(dataset, model, optim, path_prefix="../results/"):
+def get_results(dataset, model, optim, path_prefix=".."):
     """Get the evaluated step results for a given combination."""
     paths = [
-        f"{path_prefix}{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
-        f"../ablation_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
-        f"../hp_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
+        f"{path_prefix}/results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
+        f"{path_prefix}/ablation_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
+        f"{path_prefix}/hp_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
     ]
     files = []
     for path in paths:
