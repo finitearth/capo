@@ -21,9 +21,14 @@ def plot_population_scores(
     score_col="test_score",
     x_col="step",
     seed_linestyle="--",
+    mean_linestyle="-",
     ax=None,
     color=None,
+    add_title=False,
+    add_legend=False,
     path_prefix="../results/",
+    label_suffix="",
+    fillstyle=None,
 ):
     if ax is None:
         fig, ax = plt.subplots()
@@ -71,7 +76,8 @@ def plot_population_scores(
             linestyle=seed_linestyle,
             markersize=10,
             color=color,
-            label=f"{optim}",
+            fillstyle="full" if fillstyle is None else fillstyle,
+            label=f"{optim}{label_suffix}",
         )
 
         if plot_stddev:
@@ -92,7 +98,8 @@ def plot_population_scores(
             linewidth=2.5,
             markersize=4,
             drawstyle="steps-post",
-            label=f"{optim}",
+            linestyle=mean_linestyle,
+            label=f"{optim}{label_suffix}",
             color=color,
         )
 
@@ -107,6 +114,11 @@ def plot_population_scores(
                 color=color,
                 step="post",
             )
+
+    if add_title:
+        ax.set_title(f"{optim} on {dataset} using {model}")
+    if add_legend:
+        ax.legend(loc="best")
 
     return ax
 
@@ -144,13 +156,13 @@ def plot_population_scores_comparison(
 
     # Set title and layout for the comparison plot
     ax.set_title(f"Score Comparison ({agg}) on {dataset} using {model}", y=1.25)
-    ax.set_xlabel(x_col)
-    ax.set_ylabel(score_col)
+    ax.set_xlabel(x_col.replace("_", " ").capitalize())
+    ax.set_ylabel(score_col.replace("_", " ").capitalize())
 
     # Improve legend placement and formatting
     ax.legend(ncols=min(len(optims), 2), loc="upper center", bbox_to_anchor=(0.5, -0.25))
-
     plt.tight_layout()
+
     return fig
 
 
@@ -224,15 +236,12 @@ def plot_population_members(
         alpha=0.7,
     )
 
-    # Customize the plot
-    ax.set_xlabel(x_col)
-    ax.set_ylabel(score_col)
+    ax.set_xlabel(x_col.replace("_", " ").capitalize())
+    ax.set_ylabel(score_col.replace("_", " ").capitalize())
     ax.set_title(f"Score of {optim} on {dataset} using {model}")
 
-    # Adjust legend
     ax.legend(ncols=min(len(optim), 3), loc="upper center", bbox_to_anchor=(0.5, -0.25))
 
-    plt.tight_layout()
     return fig
 
 
@@ -277,9 +286,8 @@ def plot_length_score(
     ax.set_xlabel("Prompt Length")
     ax.set_ylabel("Score")
     ax.set_title(f"Score vs. Number of Tokens on {dataset} using {model}")
-    ax.legend(ncols=min(len(optims), 2), loc="upper center", bbox_to_anchor=(0.5, -0.25))
+    ax.legend(ncols=min(len(optims), len(optims)), loc="upper center", bbox_to_anchor=(0.5, -0.25))
 
-    plt.tight_layout()
     return fig
 
 
@@ -319,10 +327,69 @@ def plot_performance_profile_curve(
     sns.lineplot(
         data=df, x="tau", y="performance_profile", hue="optim", ax=ax, drawstyle="steps-post"
     )
-    ax.legend(loc="best")
+    ax.set_ylabel("Performance Profile")
+
+    ax.legend(ncols=min(len(optims), 2), loc="upper center", bbox_to_anchor=(0.5, -0.25))
 
     # zoom into x-axis: 0 to 0.3
     ax.set_xlim(0, 0.3)
-    ax.set_ylim(0, 1)
+    ax.set_ylim(0, 1.01)
 
     plt.show()
+
+
+def plot_train_test_comparison(
+    dataset,
+    model,
+    optims,
+    agg="mean",
+    plot_seeds=False,
+    plot_stddev=False,
+    x_col="step",
+    seed_linestyle="--",
+    path_prefix="../results/",
+):
+    fig, ax = plt.subplots()
+
+    # Plot each optimizer on the same axes
+    for i, optim in enumerate(optims):
+        plot_population_scores(
+            dataset,
+            model,
+            optim,
+            agg=agg,
+            plot_seeds=plot_seeds,
+            plot_stddev=plot_stddev,
+            score_col="score",
+            x_col=x_col,
+            seed_linestyle=seed_linestyle,
+            color=sns.color_palette("Dark2")[i],
+            ax=ax,
+            path_prefix=path_prefix,
+            mean_linestyle="--",
+            label_suffix=" (Train)",
+            fillstyle="none",
+        )
+        plot_population_scores(
+            dataset,
+            model,
+            optim,
+            agg=agg,
+            plot_seeds=plot_seeds,
+            plot_stddev=plot_stddev,
+            score_col="test_score",
+            x_col=x_col,
+            seed_linestyle=seed_linestyle,
+            color=sns.color_palette("Dark2")[i],
+            ax=ax,
+            path_prefix=path_prefix,
+            label_suffix=" (Test)",
+        )
+
+    ax.set_title(f"Train/Test Score Comparison ({agg}) on {dataset} using {model}", y=1.25)
+    ax.set_xlabel(x_col.replace("_", " ").capitalize())
+    ax.set_ylabel("Score")
+
+    ax.legend(ncols=min(len(optims), 3), loc="upper center", bbox_to_anchor=(0.5, -0.25))
+
+    return fig

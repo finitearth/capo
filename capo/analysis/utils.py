@@ -7,9 +7,15 @@ import pandas as pd
 
 def get_results(dataset, model, optim, path_prefix="../results/"):
     """Get the evaluated step results for a given combination."""
-    files = glob(
-        f"{path_prefix}{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv", recursive=True
-    )
+    paths = [
+        f"{path_prefix}{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
+        f"../ablation_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
+        f"../hp_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
+    ]
+    files = []
+    for path in paths:
+        files.extend(glob(path))
+
     seeds = [int(f.replace("sst-5", "sst5").split("\\")[-4].split("seed")[-1]) for f in files]
     try:
         df = pd.concat([pd.read_csv(p).assign(seed=seed) for seed, p in zip(seeds, files)], axis=0)
