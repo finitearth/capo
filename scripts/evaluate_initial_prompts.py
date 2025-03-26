@@ -53,4 +53,4 @@ if __name__ == "__main__":
 
             df = pd.DataFrame({"prompt": prompts, "score": scores})
 
-            df.to_csv(path)
+            df.to_csv(path + "eval.csv")
