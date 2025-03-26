@@ -18,9 +18,9 @@ if __name__ == "__main__":
         (qwen.model, qwen.revision),
         (mistral.model, mistral.revision),
     ]
-    for llm, revision in llms:
+    for llm_name, revision in llms:
         llm = get_llm(
-            model_id=llm,
+            model_id=llm_name,
             max_model_len=2048,
             batch_size=None,
             model_storage_path="../models/",
@@ -28,9 +28,9 @@ if __name__ == "__main__":
             seed=42,
         )
         for dataset in datasets:
-            path = f"init_results/{dataset}/{llm}"
+            path = f"init_results/{dataset}/{llm_name}"
             if os.path.exists(path):
-                logger.critical(f"Skipping {dataset} with {llm} as it already exists")
+                logger.critical(f"Skipping {dataset} with {llm_name} as it already exists")
                 continue
             else:
                 os.makedirs(path, exist_ok=True)
@@ -48,9 +48,11 @@ if __name__ == "__main__":
                 "",
             ]
 
-            logger.critical(f"Evaluating {len(prompts)} unique prompts on {dataset} with {llm}")
+            logger.critical(
+                f"Evaluating {len(prompts)} unique prompts on {dataset} with {llm_name}"
+            )
             scores = test_task.evaluate(prompts, predictor)
 
-            df = pd.DataFrame({"prompt": prompts, "score": scores})
+            df = pd.DataFrame({"prompt": prompts, "score": scores, "llm": llm_name})
 
             df.to_csv(path + "eval.csv")
