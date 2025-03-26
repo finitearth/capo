@@ -5,10 +5,10 @@ import numpy as np
 import pandas as pd
 
 
-def get_results(dataset, model, optim):
+def get_results(dataset, model, optim, path_prefix="../results/"):
     """Get the evaluated step results for a given combination."""
     files = glob(
-        f"../results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv", recursive=True
+        f"{path_prefix}{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv", recursive=True
     )
     seeds = [int(f.replace("sst-5", "sst5").split("\\")[-4].split("seed")[-1]) for f in files]
     try:
@@ -121,10 +121,10 @@ def aggregate_results(
     return df
 
 
-def get_prompt_scores(dataset, model, optim):
+def get_prompt_scores(dataset, model, optim, path_prefix="../results/"):
     """Get the scores for each prompt and block."""
     files = glob(
-        f"../results/{dataset}/{model}/{optim}/*/*/*/prompt_scores.parquet", recursive=True
+        f"{path_prefix}{dataset}/{model}/{optim}/*/*/*/prompt_scores.parquet", recursive=True
     )
 
     if not files:
@@ -140,12 +140,13 @@ def generate_comparison_table(
     optims=["CAPO", "EvoPromptGA", "OPRO", "PromptWizard"],
     model: Literal["llama", "mistral", "qwen"] = "llama",
     cutoff_tokens: int = 5_000_000,
+    path_prefix="../results/",
 ):
     """Generate a comparison table for the given datasets and optimizers."""
     results = {"optimizer": [], "dataset": [], "mean": [], "std": []}
     for optim in optims:
         for dataset in datasets:
-            df = get_results(dataset, model, optim)
+            df = get_results(dataset, model, optim, path_prefix)
             if len(df) == 0:
                 print(f"No results found for {dataset} and {optim}")
                 continue

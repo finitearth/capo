@@ -23,11 +23,12 @@ def plot_population_scores(
     seed_linestyle="--",
     ax=None,
     color=None,
+    path_prefix="../results/",
 ):
     if ax is None:
         fig, ax = plt.subplots()
 
-    df = get_results(dataset, model, optim)
+    df = get_results(dataset, model, optim, path_prefix)
     if len(df) == 0:
         return ax
     df = aggregate_results(df, how=agg, ffill_col=x_col)
@@ -120,6 +121,7 @@ def plot_population_scores_comparison(
     score_col="test_score",
     x_col="step",
     seed_linestyle="--",
+    path_prefix="../results/",
 ):
     fig, ax = plt.subplots(figsize=(6, 8))
 
@@ -137,6 +139,7 @@ def plot_population_scores_comparison(
             seed_linestyle=seed_linestyle,
             color=sns.color_palette("Dark2")[i],
             ax=ax,
+            path_prefix=path_prefix,
         )
 
     # Set title and layout for the comparison plot
@@ -152,10 +155,16 @@ def plot_population_scores_comparison(
 
 
 def plot_population_members(
-    dataset, model, optim, x_col="step", score_col="test_score", seeds=[42, 43, 44]
+    dataset,
+    model,
+    optim,
+    x_col="step",
+    score_col="test_score",
+    seeds=[42, 43, 44],
+    path_prefix="../results/",
 ):
     fig, ax = plt.subplots()
-    df = get_results(dataset, model, optim)
+    df = get_results(dataset, model, optim, path_prefix)
 
     # Filter the dataframe to only include the specified seeds
     df = df[df["seed"].isin(seeds)]
@@ -234,13 +243,14 @@ def plot_length_score(
     x_col: Literal["prompt_len", "instr_len"],
     score_col: Literal["score", "test_score"],
     log_scale=True,
+    path_prefix="../results/",
 ):
     fig, ax = plt.subplots(figsize=(6, 5))
 
     colors = sns.color_palette("Dark2")
 
     for i, optim in enumerate(optims):
-        df = get_results(dataset, model, optim)
+        df = get_results(dataset, model, optim, path_prefix)
         df = df.sort_values(by=["step", score_col])
 
         df_last_step = df.groupby(["seed"]).last()
@@ -277,13 +287,14 @@ def plot_performance_profile_curve(
     datasets=["sst-5", "agnews", "copa", "subj", "gsm8k"],
     models=["llama", "qwen", "mistral"],
     optims=["CAPO", "EvoPromptGA", "OPRO", "PromptWizard"],
+    path_prefix="../results/",
 ):
     # get all results
     dfs = []
     for dataset in datasets:
         for model in models:
             for optim in optims:
-                df = get_results(dataset, model, optim)
+                df = get_results(dataset, model, optim, path_prefix)
                 df = aggregate_results(df, how="best_train", ffill_col="step")
                 df = df.assign(dataset=dataset, model=model, optim=optim)
                 dfs.append(df)
