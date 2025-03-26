@@ -61,6 +61,9 @@ def get_results(dataset, model, optim, path_prefix="../results/"):
     # caluclate prompt lengths
     if "system_prompt" not in df.columns:
         df["system_prompt"] = "You are a helpful assistant."
+    
+    df["few_shots"] = df["prompt"].str.split(r"\[Question\]|Input:").apply(lambda x: x[1:])
+
     df["instr_len"] = (
         (df["system_prompt"] + " " + df["prompt"])
         .str.split("Input:")
