@@ -393,3 +393,68 @@ def plot_train_test_comparison(
     ax.legend(ncols=min(len(optims), 3), loc="upper center", bbox_to_anchor=(0.5, -0.25))
 
     return fig
+
+
+def plot_few_shot_boxplots(dataset, model, optim, seed=42, score_column='test_score', top_k=3):
+    df = get_results(dataset, model, optim)
+
+    # Calculate mean test score for each feature when it's True
+    feature_scores = {}
+    number_occ = {}
+
+    unique_few_shots = df["few_shots"].explode().dropna().unique()
+
+    few_shots = []
+    for x in unique_few_shots:
+        x = x.split("Output:")[0].strip()
+        if x != "":
+            few_shots.append(x)
+
+    for element_id, element in enumerate(few_shots):
+        df[f'has_{element_id}'] = df['few_shots'].apply(lambda x: any([element in y for y in x]))
+
+    df["has_none"] = df["few_shots"].apply(lambda x: len(x) == 0)
+    
+
+    for feature_id, _ in enumerate(few_shots):
+        feature_name = f'has_{feature_id}'
+        # Get only True values and calculate mean score
+        scores = df.loc[df[feature_name], score_column]
+        if len(scores) >= 3:  # Only consider features with enough data
+            feature_scores[feature_id] = scores.mean()
+            number_occ[feature_id] = len(scores)
+    
+    # Sort features by mean score and get top k
+    top_features = sorted(feature_scores.items(), key=lambda x: x[1], reverse=True)[:top_k]
+    top_feature_ids = [feature_id for feature_id, _ in top_features]
+    
+    # Create a long-format dataframe for seaborn with only top features
+    plot_data = []
+    
+    # Add "ALL" population data first
+    for score in df[score_column]:
+        plot_data.append({'few_shot': 'ALL', 'Score': score, "Occurences": pd.NA})
+
+    # Add "NONE" population data
+    for score in df.loc[df["has_none"], score_column]:
+        plot_data.append({'few_shot': 'NONE', 'Score': score, "Occurence": pd.NA})
+    
+    # Then add top features
+    for feature_id in top_feature_ids:
+        feature_name = f'has_{feature_id}'
+        scores = df.loc[df[feature_name], score_column]
+        
+        # Add each score with its feature label
+        for score in scores:
+            plot_data.append({'few_shot': feature_id, 'Score': score, "Occurences": number_occ[feature_id]})
+    
+    plot_df = pd.DataFrame(plot_data)
+    
+    # Create the single plot with ALL population and top features
+    plt.figure(figsize=(12, 6))
+
+    # Plot with custom palette
+    sns.boxplot(x='few_shot', y='Score', data=plot_df, hue='few_shot', legend=False)
+    
+    plt.tight_layout()
+    plt.show()
