@@ -28,6 +28,8 @@ def plot_population_scores(
         fig, ax = plt.subplots()
 
     df = get_results(dataset, model, optim)
+    if len(df) == 0:
+        return ax
     df = aggregate_results(df, how=agg, ffill_col=x_col)
 
     # Plot individual seeds if requested
@@ -52,6 +54,7 @@ def plot_population_scores(
     grouped = df.groupby(x_col)
     filtered_df = grouped.filter(lambda x: len(x) == seeds_count)
     mean_df = filtered_df.groupby(x_col)[score_col].agg("mean").reset_index()
+    std_df = filtered_df.groupby(x_col)[score_col].agg("std").reset_index()
 
     if "tokens" in x_col:
         ax.set_xlim(0, 5_000_000)
@@ -59,7 +62,7 @@ def plot_population_scores(
     if len(mean_df) == 1:
         y_value = mean_df[score_col].iloc[0]
         ax.axhline(y=y_value, color=color, linewidth=1.5, linestyle=seed_linestyle)
-        # add a marker at the single point
+        # add a marker at the single point and std dev if requested
         ax.plot(
             mean_df[x_col],
             mean_df[score_col],
@@ -69,6 +72,17 @@ def plot_population_scores(
             color=color,
             label=f"{optim}",
         )
+
+        if plot_stddev:
+            ax.errorbar(
+                mean_df[x_col],
+                mean_df[score_col],
+                yerr=std_df[score_col],
+                color=color,
+                linestyle=seed_linestyle,
+                capsize=5,
+                alpha=0.5,
+            )
     else:
         # Plot the mean line as before
         ax.plot(

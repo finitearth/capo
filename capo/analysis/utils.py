@@ -145,12 +145,11 @@ def generate_comparison_table(
     results = {"optimizer": [], "dataset": [], "mean": [], "std": []}
     for optim in optims:
         for dataset in datasets:
-            try:
-                df = get_results(dataset, model, optim)
-                df = aggregate_results(df, how="best_train", ffill_col="step")
-            except Exception as e:
-                print(f"Failed to load {dataset} for {optim}: {e}")
+            df = get_results(dataset, model, optim)
+            if len(df) == 0:
+                print(f"No results found for {dataset} and {optim}")
                 continue
+            df = aggregate_results(df, how="best_train", ffill_col="step")
             steps_data = []
             for seed in df.seed.unique():
                 df_seed = df[df.seed == seed]
