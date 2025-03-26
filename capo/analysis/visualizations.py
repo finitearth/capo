@@ -26,7 +26,7 @@ def plot_population_scores(
     color=None,
     add_title=False,
     add_legend=False,
-    path_prefix="../results/",
+    path_prefix="..",
     label_suffix="",
     fillstyle=None,
 ):
@@ -133,7 +133,7 @@ def plot_population_scores_comparison(
     score_col="test_score",
     x_col="step",
     seed_linestyle="--",
-    path_prefix="../results/",
+    path_prefix="..",
 ):
     fig, ax = plt.subplots(figsize=(6, 8))
 
@@ -173,7 +173,7 @@ def plot_population_members(
     x_col="step",
     score_col="test_score",
     seeds=[42, 43, 44],
-    path_prefix="../results/",
+    path_prefix="..",
 ):
     fig, ax = plt.subplots()
     df = get_results(dataset, model, optim, path_prefix)
@@ -252,7 +252,7 @@ def plot_length_score(
     x_col: Literal["prompt_len", "instr_len"],
     score_col: Literal["score", "test_score"],
     log_scale=True,
-    path_prefix="../results/",
+    path_prefix="..",
 ):
     fig, ax = plt.subplots(figsize=(6, 5))
 
@@ -295,7 +295,7 @@ def plot_performance_profile_curve(
     datasets=["sst-5", "agnews", "copa", "subj", "gsm8k"],
     models=["llama", "qwen", "mistral"],
     optims=["CAPO", "EvoPromptGA", "OPRO", "PromptWizard"],
-    path_prefix="../results/",
+    path_prefix="..",
 ):
     # get all results
     dfs = []
@@ -347,7 +347,7 @@ def plot_train_test_comparison(
     plot_stddev=False,
     x_col="step",
     seed_linestyle="--",
-    path_prefix="../results/",
+    path_prefix="..",
 ):
     fig, ax = plt.subplots()
 
