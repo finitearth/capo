@@ -14,9 +14,9 @@ logger = getLogger(__name__)
 if __name__ == "__main__":
     datasets = ["agnews", "gsm8k", "subj", "copa", "sst-5"]
     llms = [
-        (llama.model, llama.revision, llama.alias),
         (qwen.model, qwen.revision, qwen.alias),
         (mistral.model, mistral.revision, mistral.alias),
+        (llama.model, llama.revision, llama.alias),
     ]
     for llm_name, revision, alias in llms:
         llm = get_llm(
@@ -55,3 +55,5 @@ if __name__ == "__main__":
             df = pd.DataFrame({"prompt": prompts, "score": scores, "llm": llm_name})
 
             df.to_csv(path + "eval.csv")
+
+        del llm
