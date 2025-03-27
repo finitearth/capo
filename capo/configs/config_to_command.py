@@ -126,11 +126,8 @@ def generate_command(
             command, "model-storage-path", config.models[0].model_storage_path
         )
 
-        command = add_param_if_exists(
-            command,
-            "generic-init-prompts",
-            config.optimizers[0].optimizer_params.get("generic_init_prompts"),
-        )
+        if config.optimizers[0].optimizer_params.get("generic_init_prompts"):
+            command += " --generic-init-prompts"
 
         if config.optimizers[0].optimizer_params.get("shuffle_blocks_per_iter"):
             command += " --shuffle-blocks-per-iter"
