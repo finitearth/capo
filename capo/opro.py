@@ -1,4 +1,4 @@
-"""Module for EvoPromptGA optimizer."""
+"""Module for Opro optimizer."""
 
 from logging import Logger, getLogger
 
@@ -8,7 +8,7 @@ logger = Logger(__name__)
 
 
 class OproPickable(Opro):
-    """Inherit from EvoPromptGA and make it pickable, and create attribute for downstream LLM."""
+    """Inherit from Opro and make it pickable, and create attribute for downstream LLM."""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
