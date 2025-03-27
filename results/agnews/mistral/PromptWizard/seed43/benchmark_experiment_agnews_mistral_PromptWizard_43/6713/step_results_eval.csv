@@ -1,0 +1,59 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"
+The dataset contains news articles categorized into four classes: World, Sports, Business, and Sci/Tech. The task is to classify each news article into one of the four categories. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+The classification should be based on the main topic of the article. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+Read the following news article and determine if it belongs to World, Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer> tags.
+
+Example:
+[Question] Briefly: Microsoft IPTV to woo Swiss test group roundup Plus: Sony speeds up Memory Stick cards... Real touts one week, 1 million songs... Chipmaker Fujitsu prepares WiMax chip.
+[Answer] <final_answer>sci/tech</final_answer>
+
+Use the following criteria to classify the news articles:
+1. **World**: Articles related to global events, politics, and international news.
+2. **Sports**: Articles about sports events, athletes, and sports news.
+3. **Business**: Articles about business, finance, and economic news.
+4. **Sciteech**: Articles about technology, innovation, and scientific
+
+
+[Question] The recent advancements in quantum computing have opened new possibilities for solving complex problems in various fields. Quantum computers are being used to simulate molecular structures and optimize data processing, leading to breakthrough discoveries in medicine and technology.
+[Answer] To classify the news article into one of the four categories (World, Sports, Business, or Sci/Tech), we follow a logical pathway that involves identifying the main topic of the article and matching it to the appropriate category. Here is the reasoning chain:
+
+1. **Identify the Main Topic**: Read the news article to identify the main topic. In this case, the article discusses advancements in quantum computing.
+
+2. ** Categorize the Topic: Determine which category the main topic falls into. Quantum computing is related to technology and innovation.
+
+3. ** Match the Category: Based on the criteria provided:
+   - **World**: Articles related to global events, politics, and international news.
+   - **Sports**: articles about sports events, athletes, and sports news.
+   - **Business**: articles about business, finance, and economic news.
+   - **Sciteech**: articles about technology, innovation, and scientific.
+
+4. **Conclusion: The article discusses advancements in quantum computing, which falls under the category of Sci/Tech.
+
+Therefore, the classification is <final_answer>sci/tech</final_answer>. <ANS_START>The article discusses advancements in quantum computing, which is a topic related to technology and innovation. Therefore, the category is sci/tech.
+<ANS_START>sci/tech<ANS_END>
+
+[Question] The global economy is facing significant challenges due to the recent economic downturn. Experts are predicting a slow recovery, and governments are implementing measures to stabilize the economy. For instance, the European Union is implementing new policies to reduce unemployment and stimulate economic growth.
+[Answer] To classify the news article into one of the four categories (World, Sports, Business, Sci/Tech), we follow a logical pathway that involves identifying the main topic of the article and matching it to the appropriate category. Here is the reasoning chain:
+
+1. **Identify the Main Topic**: Read the news article to identify the main topic. In this case, the article discusses economic challenges and recovery measures.
+
+2. **Analyze the Content: Determine the specific aspects of the article. The article mentions economic downturn, recovery measures, and policies to stabilize the economy.
+
+3. **Match the Content to the Category: Based on the content, identify which category the article falls into. The article discusses economic challenges and recovery measures, which are related to business and finance.
+
+4. **Conclusion: The category is business.
+
+Here is the reasoning chain for the given example:
+
+1. **Identify the Main Topic**: The article discusses economic challenges and recovery measures.
+2. **Analyze the Content: The article mentions economic downturn, recovery measures, and policies to stabilize the economy.
+3. **Match the Content to the Category: The article discusses economic challenges and recovery measures, which are related to business and finance.
+4. **Conclusion: The category is business.
+
+< <ANS_START>The article discusses economic challenges and recovery measures, which are related to business and finance. Therefore, the category is business.
+<ANS_START>business<ANS_END>
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a data scientist specializing in natural language processing and machine learning. You have extensive experience in developing and implementing models to classify text data. Your expertise includes using algorithms such as neural networks, decision trees, and support vector machines to analyze and categorize text data. You are proficient in using libraries such as TensorFlow, PyTorch, and scikit-leear to build models that can accurately classify news articles into categories such as World, Sports, Business, and Sci/Tech. Your ability to preprocess data, train models, and evaluate their performance makes you highly capable in classifying news articles accurately. Your knowledge and skills are invaluable in developing models that can effectively categorize text data.",28242,10898,0,0,0.248
