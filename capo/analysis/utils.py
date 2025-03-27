@@ -61,7 +61,7 @@ def get_results(dataset, model, optim, path_prefix=".."):
     # caluclate prompt lengths
     if "system_prompt" not in df.columns:
         df["system_prompt"] = "You are a helpful assistant."
-    
+
     df["few_shots"] = df["prompt"].str.split(r"\[Question\]|Input:").apply(lambda x: x[1:])
 
     df["instr_len"] = (
@@ -149,6 +149,7 @@ def generate_comparison_table(
     optims=["CAPO", "EvoPromptGA", "OPRO", "PromptWizard"],
     model: Literal["llama", "mistral", "qwen"] = "llama",
     cutoff_tokens: int = 5_000_000,
+    score_col: str = "test_score",
     path_prefix="../results/",
 ):
     """Generate a comparison table for the given datasets and optimizers."""
@@ -171,15 +172,21 @@ def generate_comparison_table(
             combined_df = pd.concat(steps_data)
             results["optimizer"].append(optim)
             results["dataset"].append(dataset)
-            results["mean"].append(combined_df["test_score"].mean())
-            results["std"].append(combined_df["test_score"].std())
+            results["mean"].append(combined_df[score_col].mean())
+            results["std"].append(combined_df[score_col].std())
 
     df = pd.DataFrame(results)
     df = df.set_index("optimizer")
     df = df.pivot(columns="dataset")
-    df["avg"] = df["mean"].mean(axis=1).mul(100).round(2).astype(str)
-    df["mean"] = df["mean"].mul(100).round(1)
-    df["std"] = df["std"].mul(100).round(1)
+    df["avg"] = df["mean"].mean(axis=1)
+    if "score" in score_col:
+        df["avg"] = df["avg"].mul(100)
+        df["mean"] = df["mean"].mul(100)
+        df["std"] = df["std"].mul(100)
+
+    df["avg"] = df["avg"].round(2).astype(str)
+    df["mean"] = df["mean"].round(2)
+    df["std"] = df["std"].round(2)
     df["mean"] = (
         df["mean"].astype(str).apply(lambda x: x[:5])
         + "±"
