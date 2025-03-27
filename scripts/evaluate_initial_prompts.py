@@ -14,8 +14,8 @@ logger = getLogger(__name__)
 if __name__ == "__main__":
     datasets = ["agnews", "gsm8k", "subj", "copa", "sst-5"]
     llms = [
-        (qwen.model, qwen.revision, qwen.alias),
         (mistral.model, mistral.revision, mistral.alias),
+        (qwen.model, qwen.revision, qwen.alias),
         (llama.model, llama.revision, llama.alias),
     ]
     for llm_name, revision, alias in llms:
@@ -52,7 +52,7 @@ if __name__ == "__main__":
             logger.critical(f"Evaluating {len(prompts)} unique prompts on {dataset} with {alias}")
             scores = test_task.evaluate(prompts, predictor)
 
-            df = pd.DataFrame({"prompt": prompts, "score": scores, "llm": llm_name})
+            df = pd.DataFrame({"prompt": prompts, "test_score": scores, "llm": llm_name})
 
             df.to_csv(path + "eval.csv")
 

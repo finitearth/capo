@@ -4,6 +4,12 @@ from typing import Literal
 import numpy as np
 import pandas as pd
 
+UNINFORMATIVE_INIT_PROMPTS = [
+    "Let's think step by step.",
+    "",
+    "Let's work this out in a step by step way to be sure we have the right answer.",
+]
+
 
 def get_results(dataset, model, optim, path_prefix=".."):
     """Get the evaluated step results for a given combination."""
@@ -12,11 +18,21 @@ def get_results(dataset, model, optim, path_prefix=".."):
         f"{path_prefix}/ablation_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
         f"{path_prefix}/hp_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
     ]
+
+    if optim == "init":
+        paths += [f"{path_prefix}/init_results/{dataset}/{model}/eval.csv"]
+
     files = []
     for path in paths:
         files.extend(glob(path))
+    seeds = []
+    for f in files:
+        if "init" not in optim:
+            seed = int(f.replace("sst-5", "sst5").split("\\")[-4].split("seed")[-1])
+            seeds.append(seed)
+        else:
+            seeds.append(0)
 
-    seeds = [int(f.replace("sst-5", "sst5").split("\\")[-4].split("seed")[-1]) for f in files]
     try:
         df = pd.concat([pd.read_csv(p).assign(seed=seed) for seed, p in zip(seeds, files)], axis=0)
     except Exception as e:
@@ -40,8 +56,21 @@ def get_results(dataset, model, optim, path_prefix=".."):
     if "score" not in df.columns:
         df["score"] = 0
 
-    df["input_tokens_sum"] = df["input_tokens_meta_llm"] + df["input_tokens_downstream_llm"]
-    df["output_tokens_sum"] = df["output_tokens_meta_llm"] + df["output_tokens_downstream_llm"]
+    if optim == "init":
+        df["step"] = 0
+        df["prompt"] = df["prompt"].fillna("")  # is actually empty string
+        # drop uninformative prompts
+        # print(df["prompt"])
+        df = df[~df["prompt"].isin(UNINFORMATIVE_INIT_PROMPTS)]
+        # treat each prompt as its own seed
+        df["seed"] = df["prompt"]
+
+    df["input_tokens_sum"] = (
+        df["input_tokens_meta_llm"] + df["input_tokens_downstream_llm"] if optim != "init" else 0
+    )
+    df["output_tokens_sum"] = (
+        df["output_tokens_meta_llm"] + df["output_tokens_downstream_llm"] if optim != "init" else 0
+    )
 
     # calculate the cumulative sum of tokens
     tokens_df = (
@@ -79,7 +108,6 @@ def get_results(dataset, model, optim, path_prefix=".."):
     )
     if isinstance(df, pd.Series):
         df = df.to_frame()
-
     return df
 
 
@@ -146,7 +174,7 @@ def get_prompt_scores(dataset, model, optim, path_prefix="../results/"):
 
 def generate_comparison_table(
     datasets=["sst-5", "agnews", "copa", "gsm8k", "subj"],
-    optims=["CAPO", "EvoPromptGA", "OPRO", "PromptWizard"],
+    optims=["CAPO", "EvoPromptGA", "OPRO", "PromptWizard", "init"],
     model: Literal["llama", "mistral", "qwen"] = "llama",
     cutoff_tokens: int = 5_000_000,
     score_col: str = "test_score",
