@@ -65,6 +65,8 @@ def get_results(dataset, model, optim, path_prefix=".."):
         # treat each prompt as its own seed
         df["seed"] = df["prompt"]
 
+    df = df.dropna(subset=["prompt"])
+
     df["input_tokens_sum"] = (
         df["input_tokens_meta_llm"] + df["input_tokens_downstream_llm"] if optim != "init" else 0
     )
@@ -91,8 +93,11 @@ def get_results(dataset, model, optim, path_prefix=".."):
     if "system_prompt" not in df.columns:
         df["system_prompt"] = "You are a helpful assistant."
 
-    df["few_shots"] = df["prompt"].str.split(r"\[Question\]|Input:").apply(lambda x: x[1:])
-
+    try:
+        df["few_shots"] = df["prompt"].str.split(r"\[Question\]|Input:").apply(lambda x: x[1:])
+    except Exception as e:
+        print(e)
+        df["few_shots"] = [[]] * len(df)
     df["instr_len"] = (
         (df["system_prompt"] + " " + df["prompt"])
         .str.split("Input:")
