@@ -14,11 +14,11 @@ logger = getLogger(__name__)
 if __name__ == "__main__":
     datasets = ["agnews", "gsm8k", "subj", "copa", "sst-5"]
     llms = [
-        (llama.model, llama.revision),
-        (qwen.model, qwen.revision),
-        (mistral.model, mistral.revision),
+        (llama.model, llama.revision, llama.alias),
+        (qwen.model, qwen.revision, qwen.alias),
+        (mistral.model, mistral.revision, mistral.alias),
     ]
-    for llm_name, revision in llms:
+    for llm_name, revision, alias in llms:
         llm = get_llm(
             model_id=llm_name,
             max_model_len=2048,
@@ -28,12 +28,13 @@ if __name__ == "__main__":
             seed=42,
         )
         for dataset in datasets:
-            path = f"init_results/{dataset}/{llm_name}"
+            path = f"init_results/{dataset}/{alias}/"
             if os.path.exists(path):
-                logger.critical(f"Skipping {dataset} with {llm_name} as it already exists")
+                logger.critical(f"Skipping {dataset} with {alias} as it already exists")
                 continue
             else:
                 os.makedirs(path, exist_ok=True)
+
             seed_everything(42)
 
             _, _, test_task = get_tasks(
@@ -48,9 +49,7 @@ if __name__ == "__main__":
                 "",
             ]
 
-            logger.critical(
-                f"Evaluating {len(prompts)} unique prompts on {dataset} with {llm_name}"
-            )
+            logger.critical(f"Evaluating {len(prompts)} unique prompts on {dataset} with {alias}")
             scores = test_task.evaluate(prompts, predictor)
 
             df = pd.DataFrame({"prompt": prompts, "score": scores, "llm": llm_name})
