@@ -306,6 +306,8 @@ def plot_performance_profile_curve(
             for optim in optims:
                 df = get_results(dataset, model, optim, path_prefix)
                 df = aggregate_results(df, how="best_train", ffill_col="step")
+                # only take last step per seed
+                df = df.groupby("seed").last().reset_index()
                 df = df.assign(dataset=dataset, model=model, optim=optim)
                 dfs.append(df)
 
@@ -315,11 +317,13 @@ def plot_performance_profile_curve(
 
     # calculate the difference to the best score
     df["diff"] = df.groupby(["dataset", "model"])["test_score"].transform(lambda x: x.max() - x)
-    taus = np.linspace(0, 0.3, 100)
+    taus = np.linspace(0, 1, 100)
     performance_profiles = []
     for optim in optims:
         for tau in taus:
-            performance_profile = (df.loc[df["optim"] == optim, "diff"] <= tau).mean()
+            performance_profile = (
+                df.loc[df["optim"] == optim, "diff"] <= tau
+            ).mean()  # fraction of datasets where the difference is less than tau
             performance_profiles.append(
                 dict(optim=optim, tau=tau, performance_profile=performance_profile)
             )
@@ -334,7 +338,7 @@ def plot_performance_profile_curve(
     ax.legend(ncols=min(len(optims), 2), loc="upper center", bbox_to_anchor=(0.5, -0.25))
 
     # zoom into x-axis: 0 to 0.3
-    ax.set_xlim(0, 0.3)
+    ax.set_xlim(0, 0.5)
     ax.set_ylim(0, 1.01)
 
     plt.show()
