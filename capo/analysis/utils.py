@@ -180,8 +180,8 @@ def get_prompt_scores(dataset, model, optim, path_prefix="../results/"):
 
 
 def generate_comparison_table(
-    datasets=["sst-5", "agnews", "copa", "gsm8k", "subj"],
-    optims=["CAPO", "EvoPromptGA", "OPRO", "PromptWizard", "Initial"],
+    datasets=["sst-5", "agnews", "subj", "gsm8k", "copa"],
+    optims=["Initial", "OPRO", "PromptWizard", "EvoPromptGA", "CAPO"],
     model: Literal["llama", "mistral", "qwen"] = "llama",
     cutoff_tokens: int = 5_000_000,
     score_col: str = "test_score",
@@ -211,6 +211,8 @@ def generate_comparison_table(
             results["std"].append(combined_df[score_col].std())
 
     df = pd.DataFrame(results)
+    df["optimizer"] = pd.Categorical(df["optimizer"], categories=optims, ordered=True)
+    df["dataset"] = pd.Categorical(df["dataset"], categories=datasets, ordered=True)
     df = df.set_index("optimizer")
     df = df.pivot(columns="dataset")
     df["avg"] = df["mean"].mean(axis=1)
@@ -219,14 +221,14 @@ def generate_comparison_table(
         df["mean"] = df["mean"].mul(100)
         df["std"] = df["std"].mul(100)
 
-    df["avg"] = df["avg"].round(2).astype(str)
+    # For the avg column
+    df["avg"] = df["avg"].round(2)
+    df["avg"] = df["avg"].map(lambda x: f"{x:.2f}")  # Use map instead of apply
+
+    # For the mean and std columns
     df["mean"] = df["mean"].round(2)
     df["std"] = df["std"].round(2)
-    df["mean"] = (
-        df["mean"].astype(str).apply(lambda x: x[:5])
-        + "±"
-        + df["std"].astype(str).apply(lambda x: x[:5])
-    )
+    df["mean"] = df["mean"].map(lambda x: f"{x:.2f}") + "±" + df["std"].map(lambda x: f"{x:.2f}")
     df = df.drop(columns=["std"])
     df.columns = [col[1] if col[0] == "mean" else col[0] for col in df.columns]
     df.index.name = None

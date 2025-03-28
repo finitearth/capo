@@ -158,8 +158,9 @@ def plot_population_scores_comparison(
     x_col="step",
     seed_linestyle="--",
     path_prefix="..",
+    figsize=(5.4, 3.6),
 ):
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=figsize)
 
     # Plot each optimizer on the same axes
     for i, optim in enumerate(optims):
@@ -189,8 +190,8 @@ def plot_population_scores_comparison(
     ax.set_ylabel(score_col.replace("_", " ").capitalize())
 
     # Improve legend placement and formatting
-    ax.legend(ncols=min(len(optims), 3), loc="upper center", bbox_to_anchor=(0.5, 1.4))
-    plt.tight_layout()
+    ax.legend(ncols=min(len(optims), 3), loc="upper center", bbox_to_anchor=(0.5, 1.25))
+    # plt.tight_layout()
 
     return fig
 
@@ -288,13 +289,13 @@ def plot_length_score(
     log_scale=True,
     path_prefix="..",
 ):
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots()
 
     colors = sns.color_palette("Dark2")
 
     for i, optim in enumerate(optims):
         df = get_results(dataset, model, optim, path_prefix)
-        df = df.sort_values(by=["step", score_col])
+        df = df.sort_values(by=["step", "score"])
 
         df_last_step = df.groupby(["seed"]).last()
         df = df[~df.index.isin(df_last_step.index)]
@@ -313,16 +314,17 @@ def plot_length_score(
             marker="*",
             s=300,
             edgecolor="black",
-            label=f"Best per Seed - {optim}",
         )
 
     if log_scale:
         ax.set_xscale("log")
 
-    ax.set_xlabel("Prompt Length")
-    ax.set_ylabel("Score")
-    ax.set_title(f"Score vs. Number of Tokens on {dataset} using {model}")
-    ax.legend(ncols=min(len(optims), len(optims)), loc="upper center", bbox_to_anchor=(0.5, -0.25))
+    ax.scatter([], [], marker="*", s=300, edgecolor="black", facecolor="none", label="Best")
+    ax.set_xlabel("Prompt length")
+    ax.set_ylabel(score_col.replace("_", " ").capitalize())
+    # ax.set_title(f"Score vs. Number of Tokens on {dataset} using {model}")
+    ax.legend(ncols=min(len(optims), 3), loc="upper center", bbox_to_anchor=(0.5, 1.25))
+    # plt.tight_layout()
 
     return fig
 
@@ -330,7 +332,7 @@ def plot_length_score(
 def plot_performance_profile_curve(
     datasets=["sst-5", "agnews", "copa", "subj", "gsm8k"],
     models=["llama", "qwen", "mistral"],
-    optims=["CAPO", "EvoPromptGA", "OPRO", "PromptWizard"],
+    optims=["CAPO", "OPRO", "EvoPromptGA", "PromptWizard"],
     path_prefix="..",
 ):
     # get all results
@@ -351,6 +353,7 @@ def plot_performance_profile_curve(
 
     # calculate the difference to the best score
     df["diff"] = df.groupby(["dataset", "model"])["test_score"].transform(lambda x: x.max() - x)
+
     taus = np.linspace(0, 1, 100)
     performance_profiles = []
     for optim in optims:
@@ -367,15 +370,16 @@ def plot_performance_profile_curve(
     sns.lineplot(
         data=df, x="tau", y="performance_profile", hue="optim", ax=ax, drawstyle="steps-post"
     )
-    ax.set_ylabel("Performance Profile")
+    ax.set_xlabel(r"$\tau$")
+    ax.set_ylabel(r"$\rho(\tau)$")
 
-    ax.legend(ncols=min(len(optims), 2), loc="upper center", bbox_to_anchor=(0.5, -0.25))
+    ax.legend(ncols=min(len(optims), 2), loc="upper center", bbox_to_anchor=(0.5, 1.25))
 
     # zoom into x-axis: 0 to 0.3
-    ax.set_xlim(0, 0.5)
+    ax.set_xlim(0, 1)
     ax.set_ylim(0, 1.01)
 
-    plt.show()
+    return fig
 
 
 def plot_train_test_comparison(
