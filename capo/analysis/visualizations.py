@@ -68,11 +68,12 @@ def plot_population_scores(
     if len(mean_df) == 1:
         y_value = mean_df[score_col].iloc[0]
         ax.axhline(y=y_value, color=color, linewidth=1.5, linestyle=seed_linestyle)
+
         # add a marker at the single point and std dev if requested
         ax.plot(
             mean_df[x_col],
             mean_df[score_col],
-            marker="*",
+            marker=None if optim == "Initial" else "*",
             linestyle=seed_linestyle,
             markersize=10,
             color=color,
@@ -80,7 +81,7 @@ def plot_population_scores(
             label=f"{optim}{label_suffix}",
         )
 
-        if plot_stddev:
+        if plot_stddev and optim != "Initial":
             ax.errorbar(
                 mean_df[x_col],
                 mean_df[score_col],
@@ -95,13 +96,21 @@ def plot_population_scores(
         ax.plot(
             mean_df[x_col],
             mean_df[score_col],
-            linewidth=2.5,
             markersize=4,
             drawstyle="steps-post",
             linestyle=mean_linestyle,
             label=f"{optim}{label_suffix}",
             color=color,
         )
+
+        # if the max x_col is less than 5_000_00 (if tokens) then plot a horizontal line at the last y value (from the last x value up to 5_000_000)
+        if "tokens" in x_col and mean_df[x_col].max() < 5_000_000:
+            ax.plot(
+                [mean_df[x_col].max(), 5_000_000],
+                [mean_df[score_col].iloc[-1], mean_df[score_col].iloc[-1]],
+                linestyle=seed_linestyle,
+                color=color,
+            )
 
         # Add standard deviation shading if requested
         if plot_stddev:
@@ -112,8 +121,23 @@ def plot_population_scores(
                 mean_df[score_col] + std_df[score_col],
                 alpha=0.3,
                 color=color,
+                edgecolor="w",
                 step="post",
             )
+
+            if "tokens" in x_col and mean_df[x_col].max() < 5_000_000:
+                ax.fill_between(
+                    [mean_df[x_col].max(), 5_000_000],
+                    mean_df[score_col].iloc[-1] - std_df[score_col].iloc[-1],
+                    mean_df[score_col].iloc[-1] + std_df[score_col].iloc[-1],
+                    alpha=0.1,
+                    color=color,
+                    edgecolor=color,
+                    linewidth=0,
+                    hatch_linewidth=2,
+                    hatch="///",
+                    step="post",
+                )
 
     if add_title:
         ax.set_title(f"{optim} on {dataset} using {model}")
@@ -155,12 +179,17 @@ def plot_population_scores_comparison(
         )
 
     # Set title and layout for the comparison plot
-    ax.set_title(f"Score Comparison ({agg}) on {dataset} using {model}", y=1.05)
-    ax.set_xlabel(x_col.replace("_", " ").capitalize())
+    # ax.set_title(f"Score Comparison ({agg}) on {dataset} using {model}", y=1.05)
+    x_col = (
+        " ".join(x_col.split("_")[:-1]).capitalize()
+        if "cum" in x_col
+        else x_col.replace("_", " ").capitalize()
+    )
+    ax.set_xlabel(x_col)
     ax.set_ylabel(score_col.replace("_", " ").capitalize())
 
     # Improve legend placement and formatting
-    ax.legend(ncols=min(len(optims), 2), loc="upper center", bbox_to_anchor=(0.5, -0.25))
+    ax.legend(ncols=min(len(optims), 3), loc="upper center", bbox_to_anchor=(0.5, 1.4))
     plt.tight_layout()
 
     return fig
@@ -236,7 +265,12 @@ def plot_population_members(
         alpha=0.7,
     )
 
-    ax.set_xlabel(x_col.replace("_", " ").capitalize())
+    x_col = (
+        " ".join(x_col.split("_")[:-1]).capitalize()
+        if "cum" in x_col
+        else x_col.replace("_", " ").capitalize()
+    )
+    ax.set_xlabel(x_col)
     ax.set_ylabel(score_col.replace("_", " ").capitalize())
     ax.set_title(f"Score of {optim} on {dataset} using {model}")
 
@@ -393,7 +427,12 @@ def plot_train_test_comparison(
         )
 
     ax.set_title(f"Train/Test Score Comparison ({agg}) on {dataset} using {model}", y=1.25)
-    ax.set_xlabel(x_col.replace("_", " ").capitalize())
+    x_col = (
+        " ".join(x_col.split("_")[:-1]).capitalize()
+        if "cum" in x_col
+        else x_col.replace("_", " ").capitalize()
+    )
+    ax.set_xlabel(x_col)
     ax.set_ylabel("Score")
 
     ax.legend(ncols=min(len(optims), 3), loc="upper center", bbox_to_anchor=(0.5, -0.25))
