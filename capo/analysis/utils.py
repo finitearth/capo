@@ -19,7 +19,7 @@ def get_results(dataset, model, optim, path_prefix=".."):
         f"{path_prefix}/hp_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
     ]
 
-    if optim == "Initial":
+    if "init" in optim.lower():
         paths += [f"{path_prefix}/init_results/{dataset}/{model}/eval.csv"]
 
     files = []
@@ -27,7 +27,7 @@ def get_results(dataset, model, optim, path_prefix=".."):
         files.extend(glob(path))
     seeds = []
     for f in files:
-        if "Initial" not in optim:
+        if "init" not in optim.lower():
             seed = int(f.replace("sst-5", "sst5").split("\\")[-4].split("seed")[-1])
             seeds.append(seed)
         else:
@@ -56,7 +56,7 @@ def get_results(dataset, model, optim, path_prefix=".."):
     if "score" not in df.columns:
         df["score"] = 0
 
-    if optim == "Initial":
+    if "init" in optim.lower():
         df["step"] = 0
         df["prompt"] = df["prompt"].fillna("")  # is actually empty string
         # drop uninformative prompts
@@ -68,11 +68,13 @@ def get_results(dataset, model, optim, path_prefix=".."):
     df = df.dropna(subset=["prompt"])
 
     df["input_tokens_sum"] = (
-        df["input_tokens_meta_llm"] + df["input_tokens_downstream_llm"] if optim != "Initial" else 0
+        df["input_tokens_meta_llm"] + df["input_tokens_downstream_llm"]
+        if "init" not in optim.lower()
+        else 0
     )
     df["output_tokens_sum"] = (
         df["output_tokens_meta_llm"] + df["output_tokens_downstream_llm"]
-        if optim != "Initial"
+        if "init" not in optim.lower()
         else 0
     )
 
