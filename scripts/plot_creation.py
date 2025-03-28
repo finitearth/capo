@@ -67,3 +67,100 @@ if __name__ == "__main__":
         path_prefix=".",
     )
     fig.savefig("./results/plots/gsm8k_mistral_prompt_length_score.png", bbox_inches="tight")
+
+    # HYPERPARAMETER TUNING PLOTS
+    # Length penalty
+    hp_runs = [
+        "CAPO_no_lp",
+        "CAPO_gamma_0.01",
+        "CAPO_gamma_0.02",
+        "CAPO_gamma_0.05",
+        "dummy",
+        "dummy",
+        "CAPO_gamma_0.1",
+    ]
+    markers = ["8", "s", "d", "o", None, None, "p"]
+    labels = [
+        r"$\gamma=0$",
+        r"$\gamma=0.01$",
+        r"$\gamma=0.02$",
+        r"$\gamma=0.05$ (CAPO)",
+        "Dummy",
+        "Dummy",
+        r"$\gamma=0.1$",
+    ]
+
+    for dataset in ["agnews", "gsm8k"]:
+        for score_col in ["test_score", "prompt_len"]:
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                hp_runs,
+                "mean",
+                plot_seeds=False,
+                plot_stddev=False,
+                x_col="step",
+                path_prefix=".",
+                score_col=score_col,
+                continuous_colors=True,
+                markers=markers,
+                labels=labels,
+                figsize=(5.4, 3),
+            )
+            fig.savefig(
+                f"./results/plots/hyperparameter_tuning_lp_{dataset}_{score_col}.png",
+                bbox_inches="tight",
+            )
+
+    # Population size
+    hp_runs = ["CAPO_pop_6", "CAPO_pop_8", "CAPO_pop_10", None, "CAPO_pop_12"]
+    markers = ["8", "s", "o", None, "p"]
+    labels = [r"$\mu=6$", r"$\mu=8$", r"$\mu=10$ (CAPO)", "Dummy", r"$\mu=12$"]
+
+    for dataset in ["agnews", "gsm8k"]:
+        plot_population_scores_comparison(
+            dataset,
+            "llama",
+            hp_runs,
+            "mean",
+            plot_seeds=False,
+            plot_stddev=True,
+            x_col="step",
+            path_prefix="../..",
+            score_col="test_score",
+            continuous_colors=True,
+            markers=markers,
+            labels=labels,
+            ncols=2,
+            figsize=(5.4, 3),
+        )
+        fig.savefig(
+            f"./results/plots/hyperparameter_tuning_pop_{dataset}.png",
+            bbox_inches="tight",
+        )
+
+    # Number of crossovers
+    hp_runs = ["CAPO_ncrossovers_4", "CAPO_ncrossovers_7", "CAPO_ncrossovers_10", "Dummy", "Dummy"]
+    markers = ["8", "s", "o", None, None]
+    labels = [r"$c=4$", r"$c=7$", r"$c=10$ (CAPO)", "Dummy", "Dummy"]
+
+    for dataset in ["agnews", "gsm8k"]:
+        plot_population_scores_comparison(
+            dataset,
+            "llama",
+            hp_runs,
+            "mean",
+            plot_seeds=False,
+            plot_stddev=True,
+            x_col="step",
+            path_prefix=".",
+            score_col="test_score",
+            continuous_colors=True,
+            markers=markers,
+            labels=labels,
+            figsize=(5.4, 3),
+        )
+        fig.savefig(
+            f"./results/plots/hyperparameter_tuning_cross_{dataset}.png",
+            bbox_inches="tight",
+        )
