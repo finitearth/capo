@@ -95,4 +95,7 @@ Overview of relevant files and directories:
     ├── experiment.py  # script to run all experiments (benchmark, ablation, hyperparam) for CAPO, OPRO, and EvoPrompt
     └── job_creation.py  # script to automatically generate commands to execute jobs (note: based on our infrastructure)
 ```
-    
+
+## Dependencies
+
+Exact dependencies are documented in the poetry.lock. Executing `poetry install`` will produce an environment with exactly the dependencies used for our experiments.
