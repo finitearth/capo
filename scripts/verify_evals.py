@@ -3,9 +3,9 @@ from glob import glob
 import pandas as pd
 
 if __name__ == "__main__":
-    complete_path = glob("results/**/*.csv", recursive=True)
-    # complete_path += glob("ablation_results/**/*.csv", recursive=True)
-    # complete_path += glob("hp_results/**/*.csv", recursive=True)
+    # complete_path = glob("results/**/*.csv", recursive=True)
+    complete_path = glob("ablation_results/**/*.csv", recursive=True)
+    complete_path += glob("hp_results/**/*.csv", recursive=True)
     results = pd.DataFrame()
     c = 0
     for path in complete_path:
@@ -16,7 +16,7 @@ if __name__ == "__main__":
         df_dev = pd.read_parquet(path.replace("step_results_eval.csv", "step_results.parquet"))
 
         if len(df_eval) != len(df_dev):
-            print(f"{path}: length mismatch")
+            print(f"{path}: length mismatch: {len(df_eval)} vs {len(df_dev)}")
             continue
 
         df_dev["input_tokens"] = (
