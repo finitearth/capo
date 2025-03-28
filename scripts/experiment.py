@@ -5,9 +5,9 @@ python scripts/experiment.py --experiment-name test --random-seed 42 \
     --budget-per-run 1000000 --output-dir results/ --dataset subj \
     --model vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4\
     --model-revision c83e67dfb2664f5039fd4cd99e206799e27dd800 \
-    --max-model-len 1024 --optimizer CAPO --n-steps 10 --population-size 10 \
-    --n-eval-samples 10 --block-size 30 --length-penalty 0.01 \
-    --crossovers-per-iter 4 --upper-shots 10 --max-n-blocks-eval 10 --alpha 0.2
+    --max-model-len 2048 --optimizer CAPO --n-steps 10 --population-size 10 \
+    --max-n-blocks-eval 10 --block-size 30 --length-penalty 0.05 \
+    --crossovers-per-iter 4 --upper-shots 5 --alpha 0.2
 """
 
 import argparse
