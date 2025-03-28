@@ -29,6 +29,8 @@ def plot_population_scores(
     path_prefix="..",
     label_suffix="",
     fillstyle=None,
+    marker=None,
+    label=None,
 ):
     if ax is None:
         fig, ax = plt.subplots()
@@ -78,7 +80,7 @@ def plot_population_scores(
             markersize=10,
             color=color,
             fillstyle="full" if fillstyle is None else fillstyle,
-            label=f"{optim}{label_suffix}",
+            label=label if label is not None else f"{optim}{label_suffix}",
         )
 
         if plot_stddev and optim != "Initial":
@@ -96,10 +98,11 @@ def plot_population_scores(
         ax.plot(
             mean_df[x_col],
             mean_df[score_col],
-            markersize=4,
+            markersize=3,
+            marker=marker,
             drawstyle="steps-post",
             linestyle=mean_linestyle,
-            label=f"{optim}{label_suffix}",
+            label=label if label is not None else f"{optim}{label_suffix}",
             color=color,
         )
 
@@ -159,8 +162,18 @@ def plot_population_scores_comparison(
     seed_linestyle="--",
     path_prefix="..",
     figsize=(5.4, 3.6),
+    continuous_colors=False,
+    markers=False,
+    labels=None,
+    ncols=3,
 ):
     fig, ax = plt.subplots(figsize=figsize)
+
+    if continuous_colors:
+        cmap = sns.color_palette("blend:#001843,#006C7C,#1B9E77,#66D874,#DAF9CC", as_cmap=True)
+        colors = [cmap(i / len(optims)) for i in range(len(optims) + 1)]
+    else:
+        colors = sns.color_palette("Dark2")
 
     # Plot each optimizer on the same axes
     for i, optim in enumerate(optims):
@@ -174,9 +187,11 @@ def plot_population_scores_comparison(
             score_col=score_col,
             x_col=x_col,
             seed_linestyle=seed_linestyle,
-            color=sns.color_palette("Dark2")[i],
+            color=colors[i],
             ax=ax,
             path_prefix=path_prefix,
+            marker=markers[i] if markers else None,
+            label=labels[i] if labels else None,
         )
 
     # Set title and layout for the comparison plot
@@ -187,10 +202,15 @@ def plot_population_scores_comparison(
         else x_col.replace("_", " ").capitalize()
     )
     ax.set_xlabel(x_col)
-    ax.set_ylabel(score_col.replace("_", " ").capitalize())
+    y_col = (
+        score_col.replace("len", "length").replace("_", " ").capitalize()
+        if "len" in score_col
+        else score_col.replace("_", " ").capitalize()
+    )
+    ax.set_ylabel(y_col)
 
     # Improve legend placement and formatting
-    ax.legend(ncols=min(len(optims), 3), loc="upper center", bbox_to_anchor=(0.5, 1.25))
+    ax.legend(ncols=min(len(optims), ncols), loc="upper center", bbox_to_anchor=(0.5, 1.25))
     # plt.tight_layout()
 
     return fig
