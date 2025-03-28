@@ -62,37 +62,40 @@ poetry run python scripts/experiment.py --experiment-name test --random-seed 42 
 
 Overview of relevant files and directories:
 
+```python
+├── capo/  # package with all functions and classes, including the CAPO algorithm, and configs and utilities for the experiments and analysis
+│   ├── analysis/  # function for analysis in visualization
+│   │   ├── style.py  # styling of plots
+│   │   ├── utils.py  # utilities for plotting: preparation and aggregation of the raw results
+│   │   └── visualizations.py  # plot functions for all visualizations in the paper
+│   ├── configs/  # experiment configuration
+│   │   ├── promptwizard_config/  # configuration file for PromptWizard
+│   │   ├── base_config.py  # base dataclasses for configs
+│   │   ├── config_to_command.py  # functions to split a large experiment config into separate configs and generate commands to execute the experiments
+│   │   ├── dataset_config.py  # dataset configurations, defining huggingface ID, revision, columns, splits, etc.
+│   │   ├── experiment_configs.py  # configs of all our experiments in the paper, including benchmark experiments, ablation studies, and hyperparam analysis
+│   │   ├── initial_prompts.py  # initial instructions for each dataset
+│   │   └── task_descriptions.py  # task descriptions for each dataset
+│   ├── callbacks.py  # modified callbacks to track experiment results
+│   ├── capo.py  # implementation of the CAPO algorithm
+│   ├── evopromptga.py  # wrapper for EvoPromptGA
+│   ├── load_datasets.py  # function to load a dataset based on a config
+│   ├── opro.py  # wrapper for OPRO
+│   ├── prompt.py  # prompt class
+│   ├── statistical_tests.py  # implementation of statistical tests for racing
+│   ├── task.py  # task class specifically for CAPO
+│   ├── templates.py  # prompt templates
+│   └── utils.py  # utility files for seeding, hashing, copying, etc.
+├── notebooks/  # notebooks to display and analyze all plots and tables
+├── results/  # raw results obtained from the experiments and evaluations
+└── scripts/  # scripts to execute experiments and evaluation
+    ├── evaluate_initial_prompts.py  # script to evaluate initial prompts (on unseen test data)
+    ├── evaluate_prompts.py  # script to evaluate prompts resulting from the experiments (on unseen test data)
+    ├── experiment_wizard.py  # script to run the experiments with PromptWizard
+    ├── experiment.py  # script to run all experiments (benchmark, ablation, hyperparam) for CAPO, OPRO, and EvoPrompt
+    └── job_creation.py  # script to automatically generate commands to execute jobs (note: based on our infrastructure)
 ```
-├── capo/  (package with all functions and classes, including the CAPO algorithm, and configs and utilities for the experiments and analysis)
-│   ├── analysis/  (function for analysis in visualization)
-│   │   ├── style.py  (styling of plots)
-│   │   ├── utils.py  (utilities for plotting: preparation and aggregation of the raw results)
-│   │   └── visualizations.py  (plot functions for all visualizations in the paper)
-│   ├── configs/  
-│   │   ├── promptwizard_config/
-│   │   ├── base_config.py
-│   │   ├── config_to_command.py
-│   │   ├── dataset_config.py
-│   │   ├── experiment_configs.py
-│   │   ├── initial_prompts.py
-│   │   └── task_descriptions.py
-│   ├── callbacks.py
-│   ├── capo.py
-│   ├── evopromptga.py
-│   ├── load_datasets.py
-│   ├── opro.py
-│   ├── prompt.py
-│   ├── statistical_tests.py
-│   ├── task.py
-│   ├── templates.py
-│   └── utils.py
-├── notebooks/
-├── results/
-└── scripts/
-    ├── evaluate_initial_prompts.py
-    ├── evaluate_prompts.py
-    ├── experiment_wizard.py
-    ├── experiment.py
-    └── job_creation.py
-```
-    
+
+## Dependencies
+
+Exact dependencies are documented in the poetry.lock. Executing `poetry install`` will produce an environment with exactly the dependencies used for our experiments.
