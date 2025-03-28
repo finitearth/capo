@@ -57,3 +57,42 @@ poetry run python scripts/experiment.py --experiment-name test --random-seed 42 
     --max-n-blocks-eval 10 --block-size 30 --length-penalty 0.05 \
     --crossovers-per-iter 4 --upper-shots 5 --alpha 0.2
 ```
+
+## Repository Structure
+
+Overview of relevant files and directories:
+
+```
+├── capo/  (package with all functions and classes, including the CAPO algorithm, and configs and utilities for the experiments and analysis)
+│   ├── analysis/  (function for analysis in visualization)
+│   │   ├── style.py  (styling of plots)
+│   │   ├── utils.py  (utilities for plotting: preparation and aggregation of the raw results)
+│   │   └── visualizations.py  (plot functions for all visualizations in the paper)
+│   ├── configs/  
+│   │   ├── promptwizard_config/
+│   │   ├── base_config.py
+│   │   ├── config_to_command.py
+│   │   ├── dataset_config.py
+│   │   ├── experiment_configs.py
+│   │   ├── initial_prompts.py
+│   │   └── task_descriptions.py
+│   ├── callbacks.py
+│   ├── capo.py
+│   ├── evopromptga.py
+│   ├── load_datasets.py
+│   ├── opro.py
+│   ├── prompt.py
+│   ├── statistical_tests.py
+│   ├── task.py
+│   ├── templates.py
+│   └── utils.py
+├── notebooks/
+├── results/
+└── scripts/
+    ├── evaluate_initial_prompts.py
+    ├── evaluate_prompts.py
+    ├── experiment_wizard.py
+    ├── experiment.py
+    └── job_creation.py
+```
+    
