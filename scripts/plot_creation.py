@@ -139,7 +139,7 @@ if __name__ == "__main__":
                     hp_runs,
                     "mean",
                     plot_seeds=False,
-                    plot_stddev=False,
+                    plot_stddev=True,
                     x_col="step",
                     path_prefix=".",
                     score_col=score_col,
@@ -214,7 +214,6 @@ if __name__ == "__main__":
 
     if args.ablation or args.all:
         DATASETS = ["agnews", "gsm8k"]
-        # CAPO    # EVO     # CAPO_MUT    # EVO_MUT
         colors = ["#1b9e77", "#7570b3", "#66D874", "#9570b2"]
         markers = ["o", "o", "d", "d"]
 
@@ -242,8 +241,9 @@ if __name__ == "__main__":
                 "llama",
                 ["CAPO", "", "CAPO_no_racing"],
                 labels=["CAPO", "", "CAPO w/o racing"],
-                path_prefix="../..",
+                path_prefix=".",
                 plot_stddev=True,
+                plot_seeds=False,
                 x_col="step",
                 colors=colors,
                 markers=markers,
@@ -260,7 +260,7 @@ if __name__ == "__main__":
                 "llama",
                 ["CAPO", "", "CAPO_no_racing"],
                 labels=["CAPO", "", "CAPO w/o racing"],
-                path_prefix="../..",
+                path_prefix=".",
                 plot_stddev=True,
                 plot_seeds=False,
                 x_col="input_tokens_cum",
@@ -277,8 +277,9 @@ if __name__ == "__main__":
                 dataset,
                 "llama",
                 ["CAPO", "nan", "CAPO_shuffling"],
-                path_prefix="../..",
+                path_prefix=".",
                 plot_stddev=True,
+                plot_seeds=False,
                 x_col="step",
                 colors=colors,
                 markers=markers,
@@ -296,9 +297,9 @@ if __name__ == "__main__":
                 "llama",
                 ["CAPO", "EvoPromptGA", "CAPO_zero_shot"],
                 labels=["CAPO", "EvoPromptGA", "CAPO zero shot"],
-                path_prefix="../..",
+                path_prefix=".",
                 plot_stddev=True,
-                plot_seeds=True,
+                plot_seeds=False,
                 x_col="step",
                 colors=colors,
                 markers=markers,
@@ -315,9 +316,9 @@ if __name__ == "__main__":
                 "llama",
                 ["CAPO", "EvoPromptGA", "CAPO_zero_shot"],
                 labels=["CAPO", "EvoPromptGA", "CAPO zero shot"],
-                path_prefix="../..",
+                path_prefix=".",
                 plot_stddev=True,
-                plot_seeds=True,
+                plot_seeds=False,
                 x_col="input_tokens_cum",
                 colors=colors,
                 markers=markers,
@@ -335,7 +336,7 @@ if __name__ == "__main__":
                 ["CAPO", "EvoPromptGA", "CAPO_generic_init"],
                 x_col="prompt_len",
                 score_col="test_score",
-                path_prefix="../..",
+                path_prefix=".",
                 log_scale=False,
             )
 
@@ -353,8 +354,9 @@ if __name__ == "__main__":
                     "EvoPromptGA",
                     "CAPO w/ generic init",
                 ],  # , "EvoPromptGA w/ generic init"],
-                path_prefix="../../",
+                path_prefix=".",
                 plot_stddev=True,
+                plot_seeds=False,
                 x_col="input_tokens_cum",
                 colors=colors,
                 markers=markers,
@@ -372,7 +374,7 @@ if __name__ == "__main__":
                 ["CAPO", "EvoPromptGA", "CAPO_generic_init"],
                 x_col="prompt_len",
                 score_col="test_score",
-                path_prefix="../..",
+                path_prefix=".",
                 log_scale=False,
             )
 
@@ -385,8 +387,9 @@ if __name__ == "__main__":
                 dataset,
                 "llama",
                 ["nan", "EvoPromptGA", "nan", "EvoPromptGA_TD"],
-                path_prefix="../..",
+                path_prefix=".",
                 plot_stddev=True,
+                plot_seeds=False,
                 x_col="input_tokens_cum",
                 colors=colors,
                 markers=markers,
