@@ -1,4 +1,5 @@
 import os
+from argparse import ArgumentParser
 
 from capo.analysis.visualizations import (
     plot_length_score,
@@ -9,6 +10,12 @@ from capo.analysis.visualizations import (
 OPTIMS = ["CAPO", "OPRO", "EvoPromptGA", "PromptWizard", "Initial"]
 DATASETS = ["sst-5", "agnews", "copa", "gsm8k", "subj"]
 MODELS = ["llama", "mistral", "qwen"]
+
+parser = ArgumentParser()
+parser.add_argument("--run-all", action="store_true", help="Run all plots")
+parser.add_argument("--run-main", action="store_true", help="Run main plots")
+parser.add_argument("--run-ablation", action="store_true", help="Run ablation plots")
+parser.add_argument("--run-hp", action="store_true", help="Run hyperparameter tuning plots")
 
 if __name__ == "__main__":
     os.makedirs("./results/plots", exist_ok=True)
