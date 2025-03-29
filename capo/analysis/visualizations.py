@@ -31,7 +31,7 @@ def plot_population_scores(
     fillstyle=None,
     marker=None,
     label=None,
-    n_seeds_to_plot_std=1,
+    n_seeds_to_plot_std=2,
 ):
     if ax is None:
         fig, ax = plt.subplots()
@@ -167,7 +167,7 @@ def plot_population_scores_comparison(
     continuous_colors=False,
     markers=False,
     labels=None,
-    n_seeds_to_plot_std=1,
+    n_seeds_to_plot_std=2,
     ncols=3,
 ):
     fig, ax = plt.subplots(figsize=figsize)

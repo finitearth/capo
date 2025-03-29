@@ -147,7 +147,7 @@ ABLATION_CONFIG = ExperimentConfig(
             },
         ),
         OptimizerConfig(
-            name="CAPO_no_shuffling",
+            name="CAPO_shuffling",
             optimizer="CAPO",
             optimizer_params={
                 "n_steps": 999,
@@ -187,7 +187,7 @@ ABLATION_CONFIG = ExperimentConfig(
                 "evoprompt_ga_template": "standard",
                 "generic_init_prompts": True,
             },
-        )
+        ),
     ],
     random_seeds=[42, 43, 44],
     budget_per_run=5_000_000,
