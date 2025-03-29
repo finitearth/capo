@@ -227,8 +227,9 @@ def plot_population_members(
     score_col="test_score",
     seeds=[42, 43, 44],
     path_prefix="..",
+    figsize=(5.4, 3.6),
 ):
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=figsize)
     df = get_results(dataset, model, optim, path_prefix)
 
     # Filter the dataframe to only include the specified seeds
@@ -298,9 +299,9 @@ def plot_population_members(
     )
     ax.set_xlabel(x_col)
     ax.set_ylabel(score_col.replace("_", " ").capitalize())
-    ax.set_title(f"Score of {optim} on {dataset} using {model}")
+    # ax.set_title(f"Score of {optim} on {dataset} using {model}")
 
-    ax.legend(ncols=min(len(optim), 3), loc="upper center", bbox_to_anchor=(0.5, -0.25))
+    ax.legend(ncols=min(len(optim), 3), loc="upper center", bbox_to_anchor=(0.5, 1.15))
 
     return fig
 
