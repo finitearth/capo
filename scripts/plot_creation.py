@@ -4,6 +4,7 @@ import os
 from capo.analysis.visualizations import (
     plot_length_score,
     plot_performance_profile_curve,
+    plot_population_members,
     plot_population_scores_comparison,
 )
 
@@ -82,6 +83,30 @@ if __name__ == "__main__":
             path_prefix=".",
         )
         fig.savefig("./results/plots/gsm8k_mistral_prompt_length_score.png", bbox_inches="tight")
+
+        fig = plot_population_members(
+            "sst-5",
+            "mistral",
+            "CAPO",
+            x_col="input_tokens_cum",
+            score_col="test_score",
+            path_prefix=".",
+            seeds=[42],
+            figsize=(5.4, 3),
+        )
+        fig.savefig("./results/plots/sst-5_mistral_42_population_members.png", bbox_inches="tight")
+
+        plot_population_members(
+            "subj",
+            "qwen",
+            "CAPO",
+            x_col="step",
+            score_col="test_score",
+            path_prefix=".",
+            seeds=[42],
+            figsize=(5.4, 3),
+        )
+        fig.savefig("./results/plots/subj_qwen_42_population_members.png", bbox_inches="tight")
 
     if args.hp or args.all:
         hp_runs = [
