@@ -162,6 +162,7 @@ def plot_population_scores_comparison(
     seed_linestyle="--",
     path_prefix="..",
     figsize=(5.4, 3.6),
+    colors=None,
     continuous_colors=False,
     markers=False,
     labels=None,
@@ -172,7 +173,7 @@ def plot_population_scores_comparison(
     if continuous_colors:
         cmap = sns.color_palette("blend:#001843,#006C7C,#1B9E77,#66D874,#DAF9CC", as_cmap=True)
         colors = [cmap(i / len(optims)) for i in range(len(optims) + 1)]
-    else:
+    elif colors is None:
         colors = sns.color_palette("Dark2")
 
     # Plot each optimizer on the same axes
