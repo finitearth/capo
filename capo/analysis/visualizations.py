@@ -117,7 +117,7 @@ def plot_population_scores(
 
         # Add standard deviation shading if requested
         if plot_stddev:
-            std_df = filtered_df.groupby(x_col)[score_col].agg("std").reset_index()
+            std_df = filtered_df.groupby(x_col)[score_col].std(ddof=0).reset_index()
             ax.fill_between(
                 mean_df[x_col],
                 mean_df[score_col] - std_df[score_col],
