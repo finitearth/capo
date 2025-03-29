@@ -113,7 +113,7 @@ if __name__ == "__main__":
             )
 
     # Population size
-    hp_runs = ["CAPO_pop_6", "CAPO_pop_8", "CAPO_pop_10", None, "CAPO_pop_12"]
+    hp_runs = ["CAPO_pop_6", "CAPO_pop_8", "CAPO_pop_10", "Dummy", "CAPO_pop_12"]
     markers = ["8", "s", "o", None, "p"]
     labels = [r"$\mu=6$", r"$\mu=8$", r"$\mu=10$ (CAPO)", "Dummy", r"$\mu=12$"]
 
