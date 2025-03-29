@@ -113,12 +113,12 @@ if __name__ == "__main__":
             )
 
     # Population size
-    hp_runs = ["CAPO_pop_6", "CAPO_pop_8", "CAPO_pop_10", None, "CAPO_pop_12"]
+    hp_runs = ["CAPO_pop_6", "CAPO_pop_8", "CAPO_pop_10", "Dummy", "CAPO_pop_12"]
     markers = ["8", "s", "o", None, "p"]
     labels = [r"$\mu=6$", r"$\mu=8$", r"$\mu=10$ (CAPO)", "Dummy", r"$\mu=12$"]
 
     for dataset in ["agnews", "gsm8k"]:
-        plot_population_scores_comparison(
+        fig = plot_population_scores_comparison(
             dataset,
             "llama",
             hp_runs,
@@ -126,7 +126,7 @@ if __name__ == "__main__":
             plot_seeds=False,
             plot_stddev=True,
             x_col="step",
-            path_prefix="../..",
+            path_prefix=".",
             score_col="test_score",
             continuous_colors=True,
             markers=markers,
@@ -140,12 +140,12 @@ if __name__ == "__main__":
         )
 
     # Number of crossovers
-    hp_runs = ["CAPO_ncrossovers_4", "CAPO_ncrossovers_7", "CAPO_ncrossovers_10", "Dummy", "Dummy"]
-    markers = ["8", "s", "o", None, None]
-    labels = [r"$c=4$", r"$c=7$", r"$c=10$ (CAPO)", "Dummy", "Dummy"]
+    hp_runs = ["Dummy", "Dummy", "CAPO_ncrossovers_4", "CAPO_ncrossovers_7", "CAPO_ncrossovers_10"]
+    markers = [None, None, "o", "p", "d"]
+    labels = ["Dummy", "Dummy", r"$c=4$ (CAPO)", r"$c=7$", r"$c=10$"]
 
     for dataset in ["agnews", "gsm8k"]:
-        plot_population_scores_comparison(
+        fig = plot_population_scores_comparison(
             dataset,
             "llama",
             hp_runs,
