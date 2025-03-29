@@ -110,9 +110,7 @@ def get_results(dataset, model, optim, path_prefix=".."):
     df["prompt_len"] = (df["system_prompt"] + " " + df["prompt"]).str.split().apply(len)
 
     df["is_new"] = ~df.groupby(["seed", "prompt"]).cumcount().astype(bool)
-    df["is_last_occ"] = (~df.groupby(["seed", "prompt"]).cumcount(ascending=False).astype(bool)) & (
-        df["step"] != df["step"].max()
-    )
+    df["is_last_occ"] = ~df.groupby(["seed", "prompt"]).cumcount(ascending=False).astype(bool)
     if isinstance(df, pd.Series):
         df = df.to_frame()
     return df

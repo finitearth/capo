@@ -1,5 +1,5 @@
+import argparse
 import os
-from argparse import ArgumentParser
 
 from capo.analysis.visualizations import (
     plot_length_score,
@@ -11,166 +11,343 @@ OPTIMS = ["CAPO", "OPRO", "EvoPromptGA", "PromptWizard", "Initial"]
 DATASETS = ["sst-5", "agnews", "copa", "gsm8k", "subj"]
 MODELS = ["llama", "mistral", "qwen"]
 
-parser = ArgumentParser()
-parser.add_argument("--run-all", action="store_true", help="Run all plots")
-parser.add_argument("--run-main", action="store_true", help="Run main plots")
-parser.add_argument("--run-ablation", action="store_true", help="Run ablation plots")
-parser.add_argument("--run-hp", action="store_true", help="Run hyperparameter tuning plots")
+parser = argparse.ArgumentParser()
+
+# general parameters
+parser.add_argument("--all", action="store_true")
+parser.add_argument("--benchmark", action="store_true")
+parser.add_argument("--hp", action="store_true")
+parser.add_argument("--ablation", action="store_true")
+
 args = parser.parse_args()
 
-assert any([args.run_all, args.run_main, args.run_ablation, args.run_hp])
+assert any([args.all, args.benchmark, args.hp, args.ablation])
+
 
 if __name__ == "__main__":
     os.makedirs("./results/plots", exist_ok=True)
 
-    for model in MODELS:
-        for dataset in DATASETS:
-            fig = plot_population_scores_comparison(
-                dataset,
-                model,
-                OPTIMS,
-                agg="mean",
-                plot_seeds=False,
-                plot_stddev=True,
-                x_col="input_tokens_cum",
-                path_prefix=".",
-                figsize=(5.4, 3),
-            )
-            fig.savefig(
-                f"./results/plots/{dataset}_{model}_population_scores.png", bbox_inches="tight"
-            )
+    if args.benchmark or args.all:
+        for model in MODELS:
+            for dataset in DATASETS:
+                fig = plot_population_scores_comparison(
+                    dataset,
+                    model,
+                    OPTIMS,
+                    agg="mean",
+                    plot_seeds=False,
+                    plot_stddev=True,
+                    x_col="input_tokens_cum",
+                    path_prefix=".",
+                    figsize=(5.4, 3),
+                )
+                fig.savefig(
+                    f"./results/plots/{dataset}_{model}_population_scores.png", bbox_inches="tight"
+                )
 
-    fig = plot_population_scores_comparison(
-        "gsm8k",
-        "mistral",
-        optims=OPTIMS,
-        agg="mean",
-        plot_seeds=False,
-        plot_stddev=True,
-        x_col="input_tokens_cum",
-        path_prefix=".",
-    )
-    fig.savefig("./results/plots/gsm8k_mistral_population_scores_main.png", bbox_inches="tight")
+        fig = plot_population_scores_comparison(
+            "gsm8k",
+            "mistral",
+            optims=OPTIMS,
+            agg="mean",
+            plot_seeds=False,
+            plot_stddev=True,
+            x_col="input_tokens_cum",
+            path_prefix=".",
+        )
+        fig.savefig("./results/plots/gsm8k_mistral_population_scores_main.png", bbox_inches="tight")
 
-    fig = plot_population_scores_comparison(
-        "subj",
-        "qwen",
-        optims=OPTIMS,
-        agg="mean",
-        plot_seeds=False,
-        plot_stddev=True,
-        x_col="input_tokens_cum",
-        path_prefix=".",
-    )
-    fig.savefig("./results/plots/subj_qwen_population_scores_main.png", bbox_inches="tight")
+        fig = plot_population_scores_comparison(
+            "subj",
+            "qwen",
+            optims=OPTIMS,
+            agg="mean",
+            plot_seeds=False,
+            plot_stddev=True,
+            x_col="input_tokens_cum",
+            path_prefix=".",
+        )
+        fig.savefig("./results/plots/subj_qwen_population_scores_main.png", bbox_inches="tight")
 
-    fig = plot_performance_profile_curve(path_prefix=".")
-    fig.savefig("./results/plots/performance_profile_curve.png", bbox_inches="tight")
+        fig = plot_performance_profile_curve(path_prefix=".")
+        fig.savefig("./results/plots/performance_profile_curve.png", bbox_inches="tight")
 
-    fig = plot_length_score(
-        "gsm8k",
-        "mistral",
-        ["CAPO", "OPRO", "EvoPromptGA", "PromptWizard"],
-        x_col="prompt_len",
-        score_col="test_score",
-        log_scale=False,
-        path_prefix=".",
-    )
-    fig.savefig("./results/plots/gsm8k_mistral_prompt_length_score.png", bbox_inches="tight")
+        fig = plot_length_score(
+            "gsm8k",
+            "mistral",
+            ["CAPO", "OPRO", "EvoPromptGA", "PromptWizard"],
+            x_col="prompt_len",
+            score_col="test_score",
+            log_scale=False,
+            path_prefix=".",
+        )
+        fig.savefig("./results/plots/gsm8k_mistral_prompt_length_score.png", bbox_inches="tight")
 
-    # HYPERPARAMETER TUNING PLOTS
-    # Length penalty
-    hp_runs = [
-        "CAPO_no_lp",
-        "CAPO_gamma_0.01",
-        "CAPO_gamma_0.02",
-        "CAPO_gamma_0.05",
-        "dummy",
-        "dummy",
-        "CAPO_gamma_0.1",
-    ]
-    markers = ["8", "s", "d", "o", None, None, "p"]
-    labels = [
-        r"$\gamma=0$",
-        r"$\gamma=0.01$",
-        r"$\gamma=0.02$",
-        r"$\gamma=0.05$ (CAPO)",
-        "Dummy",
-        "Dummy",
-        r"$\gamma=0.1$",
-    ]
+    if args.hp or args.all:
+        hp_runs = [
+            "CAPO_no_lp",
+            "CAPO_gamma_0.01",
+            "CAPO_gamma_0.02",
+            "CAPO_gamma_0.05",
+            "dummy",
+            "dummy",
+            "CAPO_gamma_0.1",
+        ]
+        markers = ["8", "s", "d", "o", None, None, "p"]
+        labels = [
+            r"$\gamma=0$",
+            r"$\gamma=0.01$",
+            r"$\gamma=0.02$",
+            r"$\gamma=0.05$ (CAPO)",
+            "Dummy",
+            "Dummy",
+            r"$\gamma=0.1$",
+        ]
 
-    for dataset in ["agnews", "gsm8k"]:
-        for score_col in ["test_score", "prompt_len"]:
+        for dataset in ["agnews", "gsm8k"]:
+            for score_col in ["test_score", "prompt_len"]:
+                fig = plot_population_scores_comparison(
+                    dataset,
+                    "llama",
+                    hp_runs,
+                    "mean",
+                    plot_seeds=False,
+                    plot_stddev=False,
+                    x_col="step",
+                    path_prefix=".",
+                    score_col=score_col,
+                    continuous_colors=True,
+                    markers=markers,
+                    labels=labels,
+                    figsize=(5.4, 3),
+                )
+                fig.savefig(
+                    f"./results/plots/hyperparameter_tuning_lp_{dataset}_{score_col}.png",
+                    bbox_inches="tight",
+                )
+
+        # Population size
+        hp_runs = ["CAPO_pop_6", "CAPO_pop_8", "CAPO_pop_10", "Dummy", "CAPO_pop_12"]
+        markers = ["8", "s", "o", None, "p"]
+        labels = [r"$\mu=6$", r"$\mu=8$", r"$\mu=10$ (CAPO)", "Dummy", r"$\mu=12$"]
+
+        for dataset in ["agnews", "gsm8k"]:
             fig = plot_population_scores_comparison(
                 dataset,
                 "llama",
                 hp_runs,
                 "mean",
                 plot_seeds=False,
-                plot_stddev=False,
+                plot_stddev=True,
                 x_col="step",
                 path_prefix=".",
-                score_col=score_col,
+                score_col="test_score",
+                continuous_colors=True,
+                markers=markers,
+                labels=labels,
+                ncols=2,
+                figsize=(5.4, 3),
+            )
+            fig.savefig(
+                f"./results/plots/hyperparameter_tuning_pop_{dataset}.png",
+                bbox_inches="tight",
+            )
+
+        # Number of crossovers
+        hp_runs = [
+            "Dummy",
+            "Dummy",
+            "CAPO_ncrossovers_4",
+            "CAPO_ncrossovers_7",
+            "CAPO_ncrossovers_10",
+        ]
+        markers = [None, None, "o", "p", "d"]
+        labels = ["Dummy", "Dummy", r"$c=4$ (CAPO)", r"$c=7$", r"$c=10$"]
+
+        for dataset in ["agnews", "gsm8k"]:
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                hp_runs,
+                "mean",
+                plot_seeds=False,
+                plot_stddev=True,
+                x_col="step",
+                path_prefix=".",
+                score_col="test_score",
                 continuous_colors=True,
                 markers=markers,
                 labels=labels,
                 figsize=(5.4, 3),
             )
             fig.savefig(
-                f"./results/plots/hyperparameter_tuning_lp_{dataset}_{score_col}.png",
+                f"./results/plots/hyperparameter_tuning_cross_{dataset}.png",
                 bbox_inches="tight",
             )
 
-    # Population size
-    hp_runs = ["CAPO_pop_6", "CAPO_pop_8", "CAPO_pop_10", "Dummy", "CAPO_pop_12"]
-    markers = ["8", "s", "o", None, "p"]
-    labels = [r"$\mu=6$", r"$\mu=8$", r"$\mu=10$ (CAPO)", "Dummy", r"$\mu=12$"]
+    if args.ablation or args.all:
+        DATASETS = ["agnews", "gsm8k"]
+        # CAPO    # EVO     # CAPO_MUT    # EVO_MUT
+        colors = ["#1b9e77", "#7570b3", "#66D874", "#9570b2"]
+        markers = ["o", "o", "d", "d"]
+        for dataset in DATASETS:
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "", "CAPO_no_racing"],
+                labels=["CAPO", "", "CAPO w/o racing"],
+                path_prefix="../..",
+                plot_stddev=True,
+                x_col="step",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
 
-    for dataset in ["agnews", "gsm8k"]:
-        fig = plot_population_scores_comparison(
-            dataset,
-            "llama",
-            hp_runs,
-            "mean",
-            plot_seeds=False,
-            plot_stddev=True,
-            x_col="step",
-            path_prefix=".",
-            score_col="test_score",
-            continuous_colors=True,
-            markers=markers,
-            labels=labels,
-            ncols=2,
-            figsize=(5.4, 3),
-        )
-        fig.savefig(
-            f"./results/plots/hyperparameter_tuning_pop_{dataset}.png",
-            bbox_inches="tight",
-        )
+            fig.savefig(
+                f"./results/plots/capo_ablation_racing_{dataset}.png",
+                bbox_inches="tight",
+            )
 
-    # Number of crossovers
-    hp_runs = ["Dummy", "Dummy", "CAPO_ncrossovers_4", "CAPO_ncrossovers_7", "CAPO_ncrossovers_10"]
-    markers = [None, None, "o", "p", "d"]
-    labels = ["Dummy", "Dummy", r"$c=4$ (CAPO)", r"$c=7$", r"$c=10$"]
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "", "CAPO_no_racing"],
+                labels=["CAPO", "", "CAPO w/o racing"],
+                path_prefix="../..",
+                plot_stddev=True,
+                plot_seeds=False,
+                x_col="input_tokens_cum",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+            fig.savefig(
+                f"./results/plots/capo_ablation_racing_{dataset}_cum.png",
+                bbox_inches="tight",
+            )
 
-    for dataset in ["agnews", "gsm8k"]:
-        fig = plot_population_scores_comparison(
-            dataset,
-            "llama",
-            hp_runs,
-            "mean",
-            plot_seeds=False,
-            plot_stddev=True,
-            x_col="step",
-            path_prefix=".",
-            score_col="test_score",
-            continuous_colors=True,
-            markers=markers,
-            labels=labels,
-            figsize=(5.4, 3),
-        )
-        fig.savefig(
-            f"./results/plots/hyperparameter_tuning_cross_{dataset}.png",
-            bbox_inches="tight",
-        )
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "nan", "CAPO_shuffling"],
+                path_prefix="../..",
+                plot_stddev=True,
+                x_col="step",
+                colors=colors,
+                markers=markers,
+                labels=["CAPO", "", "CAPO w/ shuffling"],
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_shuffling_{dataset}.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_zero_shot"],
+                labels=["CAPO", "EvoPromptGA", "CAPO zero shot"],
+                path_prefix="../..",
+                plot_stddev=True,
+                plot_seeds=True,
+                x_col="step",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_{dataset}.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_zero_shot"],
+                labels=["CAPO", "EvoPromptGA", "CAPO zero shot"],
+                path_prefix="../..",
+                plot_stddev=True,
+                plot_seeds=True,
+                x_col="input_tokens_cum",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_{dataset}_cum.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_length_score(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],
+                x_col="prompt_len",
+                score_col="test_score",
+                path_prefix="../..",
+                log_scale=False,
+            )
+
+            fig.savefig(
+                f"./results/plots/{dataset}_zero_shot_len_obj.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],  # , "EvoPromptGA_generic_init"],
+                labels=[
+                    "CAPO",
+                    "EvoPromptGA",
+                    "CAPO w/ generic init",
+                ],  # , "EvoPromptGA w/ generic init"],
+                path_prefix="../../",
+                plot_stddev=True,
+                x_col="input_tokens_cum",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_generic_init_{dataset}.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_length_score(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],
+                x_col="prompt_len",
+                score_col="test_score",
+                path_prefix="../..",
+                log_scale=False,
+            )
+
+            fig.savefig(
+                f"./results/plots/{dataset}_llama_generic_prompt_length_score.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["nan", "EvoPromptGA", "nan", "EvoPromptGA_TD"],
+                path_prefix="../..",
+                plot_stddev=True,
+                x_col="input_tokens_cum",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_evo_td_{dataset}.png",
+                bbox_inches="tight",
+            )

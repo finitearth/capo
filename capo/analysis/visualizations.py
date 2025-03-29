@@ -31,7 +31,7 @@ def plot_population_scores(
     fillstyle=None,
     marker=None,
     label=None,
-    n_seeds_to_plot_std=2,
+    n_seeds_to_plot_std=1,
 ):
     if ax is None:
         fig, ax = plt.subplots()
@@ -239,12 +239,15 @@ def plot_population_members(
     df_old_prompt = df[(~df["is_new"]) & (~df["is_last_occ"])].copy()
     df_old_prompt["category"] = "survived"
 
+    df_last_occ = df[df["is_last_occ"]].copy()
+
+    for seed in seeds:
+        max_step = df[df["seed"] == str(seed)]["step"].max()
+        df_last_occ = df_last_occ[~df_last_occ["step"].isin([max_step])]
+        df_last_occ["category"] = "killed"
+
     df_new_prompt = df[(df["is_new"]) & (~df["is_last_occ"])].copy()
     df_new_prompt["category"] = "new"
-
-    df_last_occ = df[df["is_last_occ"]].copy()
-    df_last_occ["category"] = "killed"
-
     # Plot each category
     sns.scatterplot(
         data=df_old_prompt,
