@@ -236,17 +236,16 @@ def plot_population_members(
     df = df[df["seed"].isin(seeds)]
     df["seed"] = df["seed"].astype(str)
 
-    df_old_prompt = df[(~df["is_new"]) & (~df["is_last_occ"])].copy()
-    df_old_prompt["category"] = "survived"
-
     df_last_occ = df[df["is_last_occ"]].copy()
-
     for seed in seeds:
         max_step = df[df["seed"] == str(seed)]["step"].max()
         df_last_occ = df_last_occ[~df_last_occ["step"].isin([max_step])]
         df_last_occ["category"] = "killed"
 
-    df_new_prompt = df[(df["is_new"]) & (~df["is_last_occ"])].copy()
+    df_old_prompt = df[(~df["is_new"]) & (~df.index.isin(df_last_occ.index))].copy()
+    df_old_prompt["category"] = "survived"
+
+    df_new_prompt = df[(df["is_new"]) & (~df.index.isin(df_last_occ.index))].copy()
     df_new_prompt["category"] = "new"
     # Plot each category
     sns.scatterplot(
@@ -408,25 +407,16 @@ def plot_performance_profile_curve(
     fig, ax = plt.subplots()
     for i, optim in enumerate(optims):
         optim_data = df[df["optim"] == optim]
-
-        # First draw line
         ax.step(
             optim_data["tau"],
             optim_data["performance_profile"],
             where="post",
             color=sns.color_palette("Dark2")[i],
-            label=optim,
-            linewidth=3,
-        )
-
-        ax.plot(
-            optim_data["tau"],
-            optim_data["performance_profile"],
             marker=markers[i],
             markersize=8,
-            color=sns.color_palette("Dark2")[i],
-            linestyle="none",
-            label="_nolegend_",
+            alpha=0.6,
+            label=optim,
+            linewidth=3,
         )
     ax.set_xlabel(r"$\tau$")
     ax.set_ylabel(r"$\rho(\tau)$")
