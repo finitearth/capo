@@ -357,6 +357,8 @@ def plot_performance_profile_curve(
     datasets=["sst-5", "agnews", "copa", "subj", "gsm8k"],
     models=["llama", "qwen", "mistral"],
     optims=["CAPO", "OPRO", "EvoPromptGA", "PromptWizard"],
+    markers=["o", "s", "p", "d"],
+    x_max=0.5,
     path_prefix="..",
 ):
     # get all results
@@ -390,18 +392,47 @@ def plot_performance_profile_curve(
             )
 
     df = pd.DataFrame(performance_profiles)
+
+    # drop rows where the performance profile does not change compared to the previous one
+    df = df[df["performance_profile"].diff().ne(0)]
+    # add a row for each optim with tau=1 and performance_profile=1
+    for optim in optims:
+        df = pd.concat(
+            [df, pd.DataFrame({"optim": [optim], "tau": [1], "performance_profile": [1]})],
+            ignore_index=True,
+        )
+
     fig, ax = plt.subplots()
-    sns.lineplot(
-        data=df, x="tau", y="performance_profile", hue="optim", ax=ax, drawstyle="steps-post"
-    )
+    for i, optim in enumerate(optims):
+        optim_data = df[df["optim"] == optim]
+
+        # First draw line
+        ax.step(
+            optim_data["tau"],
+            optim_data["performance_profile"],
+            where="post",
+            color=sns.color_palette("Dark2")[i],
+            label=optim,
+            linewidth=3,
+        )
+
+        ax.plot(
+            optim_data["tau"],
+            optim_data["performance_profile"],
+            marker=markers[i],
+            markersize=8,
+            color=sns.color_palette("Dark2")[i],
+            linestyle="none",
+            label="_nolegend_",
+        )
     ax.set_xlabel(r"$\tau$")
     ax.set_ylabel(r"$\rho(\tau)$")
 
     ax.legend(ncols=min(len(optims), 2), loc="upper center", bbox_to_anchor=(0.5, 1.25))
 
     # zoom into x-axis: 0 to 0.3
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1.01)
+    ax.set_xlim(0, x_max)
+    ax.set_ylim(0, 1.03)
 
     return fig
 

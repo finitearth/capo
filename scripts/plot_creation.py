@@ -16,6 +16,9 @@ parser.add_argument("--run-all", action="store_true", help="Run all plots")
 parser.add_argument("--run-main", action="store_true", help="Run main plots")
 parser.add_argument("--run-ablation", action="store_true", help="Run ablation plots")
 parser.add_argument("--run-hp", action="store_true", help="Run hyperparameter tuning plots")
+args = parser.parse_args()
+
+assert any([args.run_all, args.run_main, args.run_ablation, args.run_hp])
 
 if __name__ == "__main__":
     os.makedirs("./results/plots", exist_ok=True)
