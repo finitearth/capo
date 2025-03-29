@@ -315,11 +315,16 @@ def plot_length_score(
     x_col: Literal["prompt_len", "instr_len"],
     score_col: Literal["score", "test_score"],
     log_scale=True,
+    colors=None,
+    labels=None,
+    figsize=(5.4, 3.6),
     path_prefix="..",
+    ncols=3,
 ):
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=figsize)
 
-    colors = sns.color_palette("Dark2")
+    if colors is None:
+        colors = sns.color_palette("Dark2")
 
     for i, optim in enumerate(optims):
         df = get_results(dataset, model, optim, path_prefix)
@@ -331,7 +336,16 @@ def plot_length_score(
         df = df.drop_duplicates(subset=["prompt"], keep="last")
 
         color = colors[i]
-        sns.scatterplot(data=df, x=x_col, y=score_col, ax=ax, label=optim, color=color, alpha=0.5)
+        sns.scatterplot(
+            data=df,
+            x=x_col,
+            y=score_col,
+            ax=ax,
+            label=labels[i] if labels else optim,
+            color=color,
+            s=70,
+            alpha=0.5,
+        )
 
         sns.scatterplot(
             data=df_last_step,
@@ -341,6 +355,7 @@ def plot_length_score(
             color=color,
             marker="*",
             s=300,
+            linewidth=0.5,
             edgecolor="black",
         )
 
@@ -351,7 +366,7 @@ def plot_length_score(
     ax.set_xlabel("Prompt length")
     ax.set_ylabel(score_col.replace("_", " ").capitalize())
     # ax.set_title(f"Score vs. Number of Tokens on {dataset} using {model}")
-    ax.legend(ncols=min(len(optims), 3), loc="upper center", bbox_to_anchor=(0.5, 1.25))
+    ax.legend(ncols=min(len(optims), ncols), loc="upper center", bbox_to_anchor=(0.5, 1.35))
     # plt.tight_layout()
 
     return fig

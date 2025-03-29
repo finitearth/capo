@@ -212,6 +212,28 @@ if __name__ == "__main__":
                 bbox_inches="tight",
             )
 
+        #  Shuffling
+        for dataset in ["agnews", "gsm8k"]:
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "nan", "CAPO_shuffling"],
+                path_prefix=".",
+                plot_stddev=True,
+                plot_seeds=False,
+                x_col="step",
+                colors=["#1b9e77", "#7570b3", "#66D874"],
+                markers=["o", "o", "d"],
+                labels=["CAPO", "", "CAPO w/ shuffling"],
+                ncols=2,
+                figsize=(5.4, 3),
+            )
+
+            fig.savefig(
+                f"./results/plots/hyperparameter_tuning_shuffling_{dataset}.png",
+                bbox_inches="tight",
+            )
+
     if args.ablation or args.all:
         DATASETS = ["agnews", "gsm8k"]
         colors = ["#1b9e77", "#7570b3", "#66D874", "#9570b2"]
@@ -225,7 +247,8 @@ if __name__ == "__main__":
             labels=["CAPO", "CAPO w/o Racing", "EvoPromptGA"],
             agg="mean",
             plot_seeds=False,
-            plot_stddev=1,
+            plot_stddev=True,
+            path_prefix=".",
             x_col="step",
             score_col="input_tokens_sum",
         )
@@ -244,26 +267,6 @@ if __name__ == "__main__":
                 path_prefix=".",
                 plot_stddev=True,
                 plot_seeds=False,
-                x_col="step",
-                colors=colors,
-                markers=markers,
-                ncols=2,
-                figsize=(5.4, 3),
-            )
-
-            fig.savefig(
-                f"./results/plots/capo_ablation_racing_{dataset}.png",
-                bbox_inches="tight",
-            )
-
-            fig = plot_population_scores_comparison(
-                dataset,
-                "llama",
-                ["CAPO", "", "CAPO_no_racing"],
-                labels=["CAPO", "", "CAPO w/o racing"],
-                path_prefix=".",
-                plot_stddev=True,
-                plot_seeds=False,
                 x_col="input_tokens_cum",
                 colors=colors,
                 markers=markers,
@@ -271,47 +274,7 @@ if __name__ == "__main__":
                 figsize=(5.4, 3),
             )
             fig.savefig(
-                f"./results/plots/capo_ablation_racing_{dataset}_cum.png",
-                bbox_inches="tight",
-            )
-
-            fig = plot_population_scores_comparison(
-                dataset,
-                "llama",
-                ["CAPO", "nan", "CAPO_shuffling"],
-                path_prefix=".",
-                plot_stddev=True,
-                plot_seeds=False,
-                x_col="step",
-                colors=colors,
-                markers=markers,
-                labels=["CAPO", "", "CAPO w/ shuffling"],
-                ncols=2,
-                figsize=(5.4, 3),
-            )
-
-            fig.savefig(
-                f"./results/plots/capo_ablation_shuffling_{dataset}.png",
-                bbox_inches="tight",
-            )
-
-            fig = plot_population_scores_comparison(
-                dataset,
-                "llama",
-                ["CAPO", "EvoPromptGA", "CAPO_zero_shot"],
-                labels=["CAPO", "EvoPromptGA", "CAPO zero shot"],
-                path_prefix=".",
-                plot_stddev=True,
-                plot_seeds=False,
-                x_col="step",
-                colors=colors,
-                markers=markers,
-                ncols=2,
-                figsize=(5.4, 3),
-            )
-
-            fig.savefig(
-                f"./results/plots/capo_ablation_{dataset}.png",
+                f"./results/plots/ablation_racing_{dataset}.png",
                 bbox_inches="tight",
             )
 
@@ -331,33 +294,38 @@ if __name__ == "__main__":
             )
 
             fig.savefig(
-                f"./results/plots/capo_ablation_{dataset}_cum.png",
+                f"./results/plots/ablation_zero_shot_{dataset}.png",
                 bbox_inches="tight",
             )
 
             fig = plot_length_score(
                 dataset,
                 "llama",
-                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],
+                ["CAPO", "EvoPromptGA", "CAPO_zero_shot"],
+                labels=["CAPO", "EvoPromptGA", "CAPO zero shot"],
+                colors=colors,
                 x_col="prompt_len",
                 score_col="test_score",
                 path_prefix=".",
                 log_scale=False,
+                ncols=2,
+                figsize=(5.4, 3),
             )
 
             fig.savefig(
-                f"./results/plots/{dataset}_zero_shot_len_obj.png",
+                f"./results/plots/ablation_zero_shot_{dataset}_len_obj.png",
                 bbox_inches="tight",
             )
 
             fig = plot_population_scores_comparison(
                 dataset,
                 "llama",
-                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],
+                ["CAPO", "EvoPromptGA", "CAPO_generic_init", "EvoPromptGA_generic_init"],
                 labels=[
                     "CAPO",
                     "EvoPromptGA",
                     "CAPO w/ generic init",
+                    "EvoPromptGA w/ generic init",
                 ],
                 path_prefix=".",
                 plot_stddev=True,
@@ -370,22 +338,7 @@ if __name__ == "__main__":
             )
 
             fig.savefig(
-                f"./results/plots/capo_ablation_generic_init_{dataset}.png",
-                bbox_inches="tight",
-            )
-
-            fig = plot_length_score(
-                dataset,
-                "llama",
-                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],
-                x_col="prompt_len",
-                score_col="test_score",
-                path_prefix=".",
-                log_scale=False,
-            )
-
-            fig.savefig(
-                f"./results/plots/{dataset}_llama_generic_prompt_length_score.png",
+                f"./results/plots/ablation_generic_init_{dataset}.png",
                 bbox_inches="tight",
             )
 
@@ -404,6 +357,6 @@ if __name__ == "__main__":
             )
 
             fig.savefig(
-                f"./results/plots/capo_ablation_evo_td_{dataset}.png",
+                f"./results/plots/ablation_evo_td_{dataset}.png",
                 bbox_inches="tight",
             )
