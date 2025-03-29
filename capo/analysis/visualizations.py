@@ -39,7 +39,9 @@ def plot_population_scores(
     df = get_results(dataset, model, optim, path_prefix)
     if len(df) == 0:
         return ax
-    df = aggregate_results(df, how=agg, ffill_col=x_col)
+
+    if optim not in ["Initial", "PromptWizard"]:
+        df = aggregate_results(df, how=agg, ffill_col=x_col)
 
     # Plot individual seeds if requested
     seeds_count = df["seed"].nunique()
