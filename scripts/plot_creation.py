@@ -46,7 +46,6 @@ if __name__ == "__main__":
                     plot_seeds=False,
                     plot_stddev=True,
                     x_col="input_tokens_cum",
-                    path_prefix=".",
                     figsize=(5.4, 3),
                 )
                 fig.savefig(
@@ -61,7 +60,6 @@ if __name__ == "__main__":
             plot_seeds=False,
             plot_stddev=True,
             x_col="input_tokens_cum",
-            path_prefix=".",
         )
         fig.savefig("./results/plots/gsm8k_mistral_population_scores_main.png", bbox_inches="tight")
 
@@ -73,11 +71,10 @@ if __name__ == "__main__":
             plot_seeds=False,
             plot_stddev=True,
             x_col="input_tokens_cum",
-            path_prefix=".",
         )
         fig.savefig("./results/plots/subj_qwen_population_scores_main.png", bbox_inches="tight")
 
-        fig = plot_performance_profile_curve(path_prefix=".")
+        fig = plot_performance_profile_curve()
         fig.savefig("./results/plots/performance_profile_curve.png", bbox_inches="tight")
 
         fig = plot_length_score(
@@ -87,7 +84,6 @@ if __name__ == "__main__":
             x_col="prompt_len",
             score_col="test_score",
             log_scale=False,
-            path_prefix=".",
         )
         fig.savefig("./results/plots/gsm8k_mistral_prompt_length_score.png", bbox_inches="tight")
 
@@ -97,7 +93,6 @@ if __name__ == "__main__":
             "CAPO",
             x_col="input_tokens_cum",
             score_col="test_score",
-            path_prefix=".",
             seeds=[42],
             figsize=(5.4, 3),
         )
@@ -109,7 +104,6 @@ if __name__ == "__main__":
             "CAPO",
             x_col="step",
             score_col="test_score",
-            path_prefix=".",
             seeds=[42],
             figsize=(5.4, 3),
         )
@@ -146,7 +140,6 @@ if __name__ == "__main__":
                     plot_seeds=False,
                     plot_stddev=True,
                     x_col="step",
-                    path_prefix=".",
                     score_col=score_col,
                     continuous_colors=True,
                     markers=markers,
@@ -172,7 +165,6 @@ if __name__ == "__main__":
                 plot_seeds=False,
                 plot_stddev=True,
                 x_col="step",
-                path_prefix=".",
                 score_col="test_score",
                 continuous_colors=True,
                 markers=markers,
@@ -205,7 +197,6 @@ if __name__ == "__main__":
                 plot_seeds=False,
                 plot_stddev=True,
                 x_col="step",
-                path_prefix=".",
                 score_col="test_score",
                 continuous_colors=True,
                 markers=markers,
@@ -223,7 +214,6 @@ if __name__ == "__main__":
                 dataset,
                 "llama",
                 ["CAPO", "nan", "CAPO_shuffling"],
-                path_prefix=".",
                 plot_stddev=True,
                 plot_seeds=False,
                 x_col="step",
@@ -253,7 +243,6 @@ if __name__ == "__main__":
             agg="mean",
             plot_seeds=False,
             plot_stddev=True,
-            path_prefix=".",
             x_col="step",
             score_col="input_tokens_sum",
         )
@@ -269,7 +258,6 @@ if __name__ == "__main__":
                 "llama",
                 ["CAPO", "", "CAPO_no_racing"],
                 labels=["CAPO", "", "CAPO w/o racing"],
-                path_prefix=".",
                 plot_stddev=True,
                 plot_seeds=False,
                 x_col="input_tokens_cum",
@@ -288,7 +276,6 @@ if __name__ == "__main__":
                 "llama",
                 ["CAPO", "EvoPromptGA", "CAPO_zero_shot"],
                 labels=["CAPO", "EvoPromptGA", "CAPO zero shot"],
-                path_prefix=".",
                 plot_stddev=True,
                 plot_seeds=False,
                 x_col="input_tokens_cum",
@@ -311,7 +298,6 @@ if __name__ == "__main__":
                 colors=colors,
                 x_col="prompt_len",
                 score_col="test_score",
-                path_prefix=".",
                 log_scale=False,
                 ncols=2,
                 figsize=(5.4, 3),
@@ -332,7 +318,6 @@ if __name__ == "__main__":
                     "CAPO w/ generic init",
                     "EvoPromptGA w/ generic init",
                 ],
-                path_prefix=".",
                 plot_stddev=True,
                 plot_seeds=False,
                 x_col="input_tokens_cum",
@@ -351,7 +336,6 @@ if __name__ == "__main__":
                 dataset,
                 "llama",
                 ["nan", "EvoPromptGA", "nan", "EvoPromptGA_TD"],
-                path_prefix=".",
                 plot_stddev=True,
                 plot_seeds=False,
                 x_col="input_tokens_cum",

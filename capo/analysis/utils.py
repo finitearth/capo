@@ -16,22 +16,23 @@ UNINFORMATIVE_INIT_PROMPTS = [
 ]
 
 
-def get_results(dataset, model, optim, path_prefix=".."):
+def get_results(dataset, model, optim):
     """Get the evaluated step results for a given combination."""
     is_initial = "init" in optim.lower() and "generic_init" not in optim.lower()
 
     paths = [
-        f"{path_prefix}/results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
-        f"{path_prefix}/ablation_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
-        f"{path_prefix}/hp_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
+        f"results/main_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
+        f"results/ablation_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
+        f"results/hp_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
     ]
 
     if is_initial:
-        paths += [f"{path_prefix}/init_results/{dataset}/{model}/eval.csv"]
+        paths += [f"results/init_results/{dataset}/{model}/eval.csv"]
 
     files = []
     for path in paths:
         files.extend(glob(path))
+
     seeds = []
     for f in files:
         if not is_initial:
@@ -168,11 +169,9 @@ def aggregate_results(
     return df
 
 
-def get_prompt_scores(dataset, model, optim, path_prefix="../results/"):
+def get_prompt_scores(dataset, model, optim):
     """Get the scores for each prompt and block."""
-    files = glob(
-        f"{path_prefix}{dataset}/{model}/{optim}/*/*/*/prompt_scores.parquet", recursive=True
-    )
+    files = glob(f"results/{dataset}/{model}/{optim}/*/*/*/prompt_scores.parquet", recursive=True)
 
     if not files:
         return pd.DataFrame()
@@ -188,13 +187,12 @@ def generate_comparison_table(
     model: Literal["llama", "mistral", "qwen"] = "llama",
     cutoff_tokens: int = 5_000_000,
     score_col: str = "test_score",
-    path_prefix="../results/",
 ):
     """Generate a comparison table for the given datasets and optimizers."""
     results = {"optimizer": [], "dataset": [], "mean": [], "std": []}
     for optim in optims:
         for dataset in datasets:
-            df = get_results(dataset, model, optim, path_prefix)
+            df = get_results(dataset, model, optim)
             if len(df) == 0:
                 print(f"No results found for {dataset} and {optim}")
                 continue

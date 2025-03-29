@@ -31,7 +31,6 @@ def plot_population_scores(
     color=None,
     add_title=False,
     add_legend=False,
-    path_prefix="..",
     label_suffix="",
     fillstyle=None,
     marker=None,
@@ -41,7 +40,7 @@ def plot_population_scores(
     if ax is None:
         fig, ax = plt.subplots()
 
-    df = get_results(dataset, model, optim, path_prefix)
+    df = get_results(dataset, model, optim)
     if len(df) == 0:
         return ax
 
@@ -167,7 +166,6 @@ def plot_population_scores_comparison(
     score_col="test_score",
     x_col="step",
     seed_linestyle="--",
-    path_prefix="..",
     figsize=(5.4, 3.6),
     colors=None,
     continuous_colors=False,
@@ -198,7 +196,6 @@ def plot_population_scores_comparison(
             seed_linestyle=seed_linestyle,
             color=colors[i],
             ax=ax,
-            path_prefix=path_prefix,
             marker=markers[i] if markers else None,
             label=labels[i] if labels else None,
             n_seeds_to_plot_std=n_seeds_to_plot_std,
@@ -233,11 +230,10 @@ def plot_population_members(
     x_col="step",
     score_col="test_score",
     seeds=[42, 43, 44],
-    path_prefix="..",
     figsize=(5.4, 3.6),
 ):
     fig, ax = plt.subplots(figsize=figsize)
-    df = get_results(dataset, model, optim, path_prefix)
+    df = get_results(dataset, model, optim)
 
     # Filter the dataframe to only include the specified seeds
     df = df[df["seed"].isin(seeds)]
@@ -323,7 +319,6 @@ def plot_length_score(
     colors=None,
     labels=None,
     figsize=(5.4, 3.6),
-    path_prefix="..",
     ncols=3,
 ):
     fig, ax = plt.subplots(figsize=figsize)
@@ -332,7 +327,7 @@ def plot_length_score(
         colors = sns.color_palette("Dark2")
 
     for i, optim in enumerate(optims):
-        df = get_results(dataset, model, optim, path_prefix)
+        df = get_results(dataset, model, optim)
         df = df.sort_values(by=["step", "score"])
 
         df_last_step = df.groupby(["seed"]).last()
@@ -383,14 +378,13 @@ def plot_performance_profile_curve(
     optims=["CAPO", "OPRO", "EvoPromptGA", "PromptWizard"],
     markers=["o", "s", "p", "d"],
     x_max=0.5,
-    path_prefix="..",
 ):
     # get all results
     dfs = []
     for dataset in datasets:
         for model in models:
             for optim in optims:
-                df = get_results(dataset, model, optim, path_prefix)
+                df = get_results(dataset, model, optim)
                 df = aggregate_results(df, how="best_train", ffill_col="step")
                 # only take last step per seed
                 df = df.groupby("seed").last().reset_index()
@@ -461,7 +455,6 @@ def plot_train_test_comparison(
     plot_stddev=False,
     x_col="step",
     seed_linestyle="--",
-    path_prefix="..",
 ):
     fig, ax = plt.subplots()
 
@@ -479,7 +472,6 @@ def plot_train_test_comparison(
             seed_linestyle=seed_linestyle,
             color=sns.color_palette("Dark2")[i],
             ax=ax,
-            path_prefix=path_prefix,
             mean_linestyle="--",
             label_suffix=" (Train)",
             fillstyle="none",
@@ -496,7 +488,6 @@ def plot_train_test_comparison(
             seed_linestyle=seed_linestyle,
             color=sns.color_palette("Dark2")[i],
             ax=ax,
-            path_prefix=path_prefix,
             label_suffix=" (Test)",
         )
 
