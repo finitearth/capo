@@ -93,7 +93,9 @@ Overview of relevant files and directories:
     ├── evaluate_prompts.py  # script to evaluate prompts resulting from the experiments (on unseen test data)
     ├── experiment_wizard.py  # script to run the experiments with PromptWizard
     ├── experiment.py  # script to run all experiments (benchmark, ablation, hyperparam) for CAPO, OPRO, and EvoPrompt
+    ├── plot_creation.py  # script to create the graphics provided in the paper
     └── job_creation.py  # script to automatically generate commands to execute jobs (note: based on our infrastructure)
+
 ```
 
 ## Dependencies
