@@ -167,7 +167,7 @@ def plot_population_scores_comparison(
     continuous_colors=False,
     markers=False,
     labels=None,
-    n_seeds_to_plot_std=2,
+    n_seeds_to_plot_std=1,
     ncols=3,
 ):
     fig, ax = plt.subplots(figsize=figsize)
