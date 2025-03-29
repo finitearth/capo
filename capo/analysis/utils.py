@@ -13,13 +13,15 @@ UNINFORMATIVE_INIT_PROMPTS = [
 
 def get_results(dataset, model, optim, path_prefix=".."):
     """Get the evaluated step results for a given combination."""
+    is_initial = "init" in optim.lower() and "generic_init" not in optim.lower()
+
     paths = [
         f"{path_prefix}/results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
         f"{path_prefix}/ablation_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
         f"{path_prefix}/hp_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
     ]
 
-    if optim == "Initial":
+    if is_initial:
         paths += [f"{path_prefix}/init_results/{dataset}/{model}/eval.csv"]
 
     files = []
@@ -27,7 +29,7 @@ def get_results(dataset, model, optim, path_prefix=".."):
         files.extend(glob(path))
     seeds = []
     for f in files:
-        if "Initial" not in optim:
+        if not is_initial:
             seed = int(f.replace("sst-5", "sst5").split("\\")[-4].split("seed")[-1])
             seeds.append(seed)
         else:
@@ -56,7 +58,7 @@ def get_results(dataset, model, optim, path_prefix=".."):
     if "score" not in df.columns:
         df["score"] = 0
 
-    if optim == "Initial":
+    if is_initial:
         df["step"] = 0
         df["prompt"] = df["prompt"].fillna("")  # is actually empty string
         # drop uninformative prompts
@@ -68,12 +70,10 @@ def get_results(dataset, model, optim, path_prefix=".."):
     df = df.dropna(subset=["prompt"])
 
     df["input_tokens_sum"] = (
-        df["input_tokens_meta_llm"] + df["input_tokens_downstream_llm"] if optim != "Initial" else 0
+        df["input_tokens_meta_llm"] + df["input_tokens_downstream_llm"] if not is_initial else 0
     )
     df["output_tokens_sum"] = (
-        df["output_tokens_meta_llm"] + df["output_tokens_downstream_llm"]
-        if optim != "Initial"
-        else 0
+        df["output_tokens_meta_llm"] + df["output_tokens_downstream_llm"] if not is_initial else 0
     )
 
     # calculate the cumulative sum of tokens

@@ -31,6 +31,7 @@ def plot_population_scores(
     fillstyle=None,
     marker=None,
     label=None,
+    n_seeds_to_plot_std=1,
 ):
     if ax is None:
         fig, ax = plt.subplots()
@@ -60,21 +61,21 @@ def plot_population_scores(
 
     # Calculate and plot the mean across seeds (but only if all seeds are available at the given x_col)
     grouped = df.groupby(x_col)
-    filtered_df = grouped.filter(lambda x: len(x) == seeds_count)
+    filtered_df = grouped.filter(lambda x: len(x) >= n_seeds_to_plot_std)
     mean_df = filtered_df.groupby(x_col)[score_col].agg("mean").reset_index()
     std_df = filtered_df.groupby(x_col)[score_col].agg("std").reset_index()
 
     if "tokens" in x_col:
         ax.set_xlim(0, 5_000_000)
-
-    if len(mean_df) == 1:
+    # check for steps in the x_col
+    if len(filtered_df.step.unique()) == 1:
         y_value = mean_df[score_col].iloc[0]
         ax.axhline(y=y_value, color=color, linewidth=1.5, linestyle=seed_linestyle)
 
         # add a marker at the single point and std dev if requested
         ax.plot(
-            mean_df[x_col],
-            mean_df[score_col],
+            mean_df[x_col][0],
+            mean_df[score_col][0],
             marker=None if optim == "Initial" else "*",
             linestyle=seed_linestyle,
             markersize=10,
@@ -85,9 +86,9 @@ def plot_population_scores(
 
         if plot_stddev and optim != "Initial":
             ax.errorbar(
-                mean_df[x_col],
-                mean_df[score_col],
-                yerr=std_df[score_col],
+                mean_df[x_col][0],
+                mean_df[score_col][0],
+                yerr=std_df[score_col][0],
                 color=color,
                 linestyle=seed_linestyle,
                 capsize=5,
@@ -162,9 +163,11 @@ def plot_population_scores_comparison(
     seed_linestyle="--",
     path_prefix="..",
     figsize=(5.4, 3.6),
+    colors=None,
     continuous_colors=False,
     markers=False,
     labels=None,
+    n_seeds_to_plot_std=1,
     ncols=3,
 ):
     fig, ax = plt.subplots(figsize=figsize)
@@ -172,7 +175,7 @@ def plot_population_scores_comparison(
     if continuous_colors:
         cmap = sns.color_palette("blend:#001843,#006C7C,#1B9E77,#66D874,#DAF9CC", as_cmap=True)
         colors = [cmap(i / len(optims)) for i in range(len(optims) + 1)]
-    else:
+    elif colors is None:
         colors = sns.color_palette("Dark2")
 
     # Plot each optimizer on the same axes
@@ -192,6 +195,7 @@ def plot_population_scores_comparison(
             path_prefix=path_prefix,
             marker=markers[i] if markers else None,
             label=labels[i] if labels else None,
+            n_seeds_to_plot_std=n_seeds_to_plot_std,
         )
 
     # Set title and layout for the comparison plot
