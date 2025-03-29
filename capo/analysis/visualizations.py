@@ -31,6 +31,7 @@ def plot_population_scores(
     fillstyle=None,
     marker=None,
     label=None,
+    n_seeds_to_plot_std=3,
 ):
     if ax is None:
         fig, ax = plt.subplots()
@@ -60,7 +61,7 @@ def plot_population_scores(
 
     # Calculate and plot the mean across seeds (but only if all seeds are available at the given x_col)
     grouped = df.groupby(x_col)
-    filtered_df = grouped.filter(lambda x: len(x) == seeds_count)
+    filtered_df = grouped.filter(lambda x: len(x) >= n_seeds_to_plot_std)
     mean_df = filtered_df.groupby(x_col)[score_col].agg("mean").reset_index()
     std_df = filtered_df.groupby(x_col)[score_col].agg("std").reset_index()
 
@@ -166,6 +167,7 @@ def plot_population_scores_comparison(
     continuous_colors=False,
     markers=False,
     labels=None,
+    n_seeds_to_plot_std=3,
     ncols=3,
 ):
     fig, ax = plt.subplots(figsize=figsize)
@@ -193,6 +195,7 @@ def plot_population_scores_comparison(
             path_prefix=path_prefix,
             marker=markers[i] if markers else None,
             label=labels[i] if labels else None,
+            n_seeds_to_plot_std=n_seeds_to_plot_std,
         )
 
     # Set title and layout for the comparison plot
