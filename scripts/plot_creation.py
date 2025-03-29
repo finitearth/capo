@@ -14,16 +14,20 @@ MODELS = ["llama", "mistral", "qwen"]
 parser = argparse.ArgumentParser()
 
 # general parameters
+parser.add_argument("--all", action="store_true")
 parser.add_argument("--benchmark", action="store_true")
 parser.add_argument("--hp", action="store_true")
 parser.add_argument("--ablation", action="store_true")
 
+args = parser.parse_args()
+
+assert any([args.all, args.benchmark, args.hp, args.ablation])
+
 
 if __name__ == "__main__":
     os.makedirs("./results/plots", exist_ok=True)
-    args = parser.parse_args()
 
-    if args.benchmark:
+    if args.benchmark or args.all:
         for model in MODELS:
             for dataset in DATASETS:
                 fig = plot_population_scores_comparison(
@@ -79,7 +83,7 @@ if __name__ == "__main__":
         )
         fig.savefig("./results/plots/gsm8k_mistral_prompt_length_score.png", bbox_inches="tight")
 
-    if args.hp:
+    if args.hp or args.all:
         hp_runs = [
             "CAPO_no_lp",
             "CAPO_gamma_0.01",
@@ -178,5 +182,172 @@ if __name__ == "__main__":
             )
             fig.savefig(
                 f"./results/plots/hyperparameter_tuning_cross_{dataset}.png",
+                bbox_inches="tight",
+            )
+
+    if args.ablation or args.all:
+        DATASETS = ["agnews", "gsm8k"]
+        # CAPO    # EVO     # CAPO_MUT    # EVO_MUT
+        colors = ["#1b9e77", "#7570b3", "#66D874", "#9570b2"]
+        markers = ["o", "o", "d", "d"]
+        for dataset in DATASETS:
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "", "CAPO_no_racing"],
+                labels=["CAPO", "", "CAPO w/o racing"],
+                path_prefix="../..",
+                plot_stddev=True,
+                x_col="step",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_racing_{dataset}.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "", "CAPO_no_racing"],
+                labels=["CAPO", "", "CAPO w/o racing"],
+                path_prefix="../..",
+                plot_stddev=True,
+                plot_seeds=False,
+                x_col="input_tokens_cum",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+            fig.savefig(
+                f"./results/plots/capo_ablation_racing_{dataset}_cum.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "nan", "CAPO_shuffling"],
+                path_prefix="../..",
+                plot_stddev=True,
+                x_col="step",
+                colors=colors,
+                markers=markers,
+                labels=["CAPO", "", "CAPO w/ shuffling"],
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_shuffling_{dataset}.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_zero_shot"],
+                labels=["CAPO", "EvoPromptGA", "CAPO zero shot"],
+                path_prefix="../..",
+                plot_stddev=True,
+                plot_seeds=True,
+                x_col="step",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_{dataset}.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_zero_shot"],
+                labels=["CAPO", "EvoPromptGA", "CAPO zero shot"],
+                path_prefix="../..",
+                plot_stddev=True,
+                plot_seeds=True,
+                x_col="input_tokens_cum",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_{dataset}_cum.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_length_score(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],
+                x_col="prompt_len",
+                score_col="test_score",
+                path_prefix="../..",
+                log_scale=False,
+            )
+
+            fig.savefig(
+                f"./results/plots/{dataset}_zero_shot_len_obj.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],  # , "EvoPromptGA_generic_init"],
+                labels=[
+                    "CAPO",
+                    "EvoPromptGA",
+                    "CAPO w/ generic init",
+                ],  # , "EvoPromptGA w/ generic init"],
+                path_prefix="../../",
+                plot_stddev=True,
+                x_col="input_tokens_cum",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_generic_init_{dataset}.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_length_score(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],
+                x_col="prompt_len",
+                score_col="test_score",
+                path_prefix="../..",
+                log_scale=False,
+            )
+
+            fig.savefig(
+                f"./results/plots/{dataset}_llama_generic_prompt_length_score.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["nan", "EvoPromptGA", "nan", "EvoPromptGA_TD"],
+                path_prefix="../..",
+                plot_stddev=True,
+                x_col="input_tokens_cum",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+            )
+
+            fig.savefig(
+                f"./results/plots/capo_ablation_evo_td_{dataset}.png",
                 bbox_inches="tight",
             )
