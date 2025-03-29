@@ -227,6 +227,7 @@ if __name__ == "__main__":
                 colors=colors,
                 markers=markers,
                 ncols=2,
+                figsize=(5.4, 3),
             )
 
             fig.savefig(
@@ -246,6 +247,7 @@ if __name__ == "__main__":
                 colors=colors,
                 markers=markers,
                 ncols=2,
+                figsize=(5.4, 3),
             )
             fig.savefig(
                 f"./results/plots/capo_ablation_racing_{dataset}_cum.png",
@@ -264,6 +266,7 @@ if __name__ == "__main__":
                 markers=markers,
                 labels=["CAPO", "", "CAPO w/ shuffling"],
                 ncols=2,
+                figsize=(5.4, 3),
             )
 
             fig.savefig(
@@ -283,6 +286,7 @@ if __name__ == "__main__":
                 colors=colors,
                 markers=markers,
                 ncols=2,
+                figsize=(5.4, 3),
             )
 
             fig.savefig(
@@ -302,6 +306,7 @@ if __name__ == "__main__":
                 colors=colors,
                 markers=markers,
                 ncols=2,
+                figsize=(5.4, 3),
             )
 
             fig.savefig(
@@ -327,12 +332,12 @@ if __name__ == "__main__":
             fig = plot_population_scores_comparison(
                 dataset,
                 "llama",
-                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],  # , "EvoPromptGA_generic_init"],
+                ["CAPO", "EvoPromptGA", "CAPO_generic_init"],
                 labels=[
                     "CAPO",
                     "EvoPromptGA",
                     "CAPO w/ generic init",
-                ],  # , "EvoPromptGA w/ generic init"],
+                ],
                 path_prefix=".",
                 plot_stddev=True,
                 plot_seeds=False,
@@ -340,6 +345,7 @@ if __name__ == "__main__":
                 colors=colors,
                 markers=markers,
                 ncols=2,
+                figsize=(5.4, 3),
             )
 
             fig.savefig(
@@ -373,6 +379,7 @@ if __name__ == "__main__":
                 colors=colors,
                 markers=markers,
                 ncols=2,
+                figsize=(5.4, 3),
             )
 
             fig.savefig(
