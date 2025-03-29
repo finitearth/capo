@@ -1,6 +1,8 @@
 import argparse
 import os
 
+import seaborn as sns
+
 from capo.analysis.visualizations import (
     plot_length_score,
     plot_performance_profile_curve,
@@ -214,6 +216,25 @@ if __name__ == "__main__":
         DATASETS = ["agnews", "gsm8k"]
         colors = ["#1b9e77", "#7570b3", "#66D874", "#9570b2"]
         markers = ["o", "o", "d", "d"]
+
+        fig = plot_population_scores_comparison(
+            "agnews",
+            "llama",
+            ["CAPO", "CAPO_no_racing", "EvoPromptGA"],
+            colors=[sns.color_palette("Dark2")[0], "#66D874", sns.color_palette("Dark2")[2]],
+            labels=["CAPO", "CAPO w/o Racing", "EvoPromptGA"],
+            agg="mean",
+            plot_seeds=False,
+            plot_stddev=1,
+            x_col="step",
+            score_col="input_tokens_sum",
+        )
+
+        fig.savefig(
+            "./results/plots/ablation_racing_tokens_per_step.png",
+            bbox_inches="tight",
+        )
+
         for dataset in DATASETS:
             fig = plot_population_scores_comparison(
                 dataset,
