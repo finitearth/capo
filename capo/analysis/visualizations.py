@@ -63,19 +63,19 @@ def plot_population_scores(
     grouped = df.groupby(x_col)
     filtered_df = grouped.filter(lambda x: len(x) >= n_seeds_to_plot_std)
     mean_df = filtered_df.groupby(x_col)[score_col].agg("mean").reset_index()
-    std_df = filtered_df.groupby(x_col)[score_col].agg("std").reset_index()
+    std_df = filtered_df.groupby(x_col)[score_col].agg(lambda x: x.std(ddof=0)).reset_index()
 
     if "tokens" in x_col:
         ax.set_xlim(0, 5_000_000)
-    # check for steps in the x_col
+
     if len(filtered_df.step.unique()) == 1:
-        y_value = mean_df[score_col].iloc[0]
+        x_value = filtered_df[x_col].mean()
+        y_value = mean_df[score_col].mean()
         ax.axhline(y=y_value, color=color, linewidth=1.5, linestyle=seed_linestyle)
 
-        # add a marker at the single point and std dev if requested
         ax.plot(
             mean_df[x_col][0],
-            mean_df[score_col][0],
+            y_value,
             marker=None if optim == "Initial" else "*",
             linestyle=seed_linestyle,
             markersize=10,
@@ -86,16 +86,15 @@ def plot_population_scores(
 
         if plot_stddev and optim != "Initial":
             ax.errorbar(
-                mean_df[x_col][0],
-                mean_df[score_col][0],
-                yerr=std_df[score_col][0],
+                x_value,
+                y_value,
+                yerr=mean_df[score_col].std(ddof=0),
                 color=color,
                 linestyle=seed_linestyle,
                 capsize=5,
                 alpha=0.5,
             )
     else:
-        # Plot the mean line as before
         ax.plot(
             mean_df[x_col],
             mean_df[score_col],

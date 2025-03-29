@@ -206,7 +206,7 @@ def generate_comparison_table(
             results["optimizer"].append(optim)
             results["dataset"].append(dataset)
             results["mean"].append(combined_df[score_col].mean())
-            results["std"].append(combined_df[score_col].std())
+            results["std"].append(combined_df[score_col].std(ddof=0))
 
     df = pd.DataFrame(results)
     df["optimizer"] = pd.Categorical(df["optimizer"], categories=optims, ordered=True)
