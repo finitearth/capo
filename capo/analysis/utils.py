@@ -1,3 +1,8 @@
+"""
+Utilities for data processing and preparation for visualization.
+Provides functions for aggregating experimental results, calculating statistics, and transforming raw data into plottable formats.
+"""
+
 from glob import glob
 from typing import Literal
 

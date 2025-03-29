@@ -1,4 +1,7 @@
-"""Experiment configurations for all experiments in the paper."""
+"""
+Comprehensive collection of experiment configurations used in the paper.
+Includes benchmark experiments, ablation studies, and hyperparameter analyses for CAPO and baseline methods.
+"""
 
 from capo.configs.base_config import ExperimentConfig, ModelConfig, OptimizerConfig
 

@@ -1,5 +1,7 @@
-"""Task descriptions for each dataset."""
-
+"""
+Dataset-specific task descriptions used in prompt construction.
+Provides clear definitions of what each task requires the model to accomplish.
+"""
 TASK_DESCRIPTIONS = {
     "sst-5": "The dataset consists of movie reviews with five levels of sentiment labels: very negative, negative, neutral, positive, and very positive. The task is to classify each movie review into one of these five sentiment categories. The class will be extracted between the markers <final_answer>answer</final_answer>.",
     "agnews": "The dataset contains news articles categorized into four classes: World, Sports, Business, and Sci/Tech. The task is to classify each news article into one of the four categories. The class will be extracted between the markers <final_answer>answer</final_answer>.",

@@ -1,4 +1,6 @@
-"""Main script to run all experiments.
+"""
+Main script for running all benchmark experiments, ablation studies, and hyperparameter analyses.
+Coordinates evaluation of CAPO, OPRO, and EvoPromptGA across multiple datasets and configurations.
 
 for minimal example run:
 python scripts/experiment.py --experiment-name test --random-seed 42 \
@@ -24,13 +26,13 @@ from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
 from capo.callbacks import ParquetCallback, PickleCallback, PromptScoreCallback
 from capo.capo import CAPOptimizer
+from capo.configs.initial_prompts import INITIAL_PROMPTS
 from capo.evopromptga import EvoPromptGAPickable
 from capo.load_datasets import get_tasks
 from capo.opro import OproPickable
 from capo.statistical_tests import paired_t_test
 from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
 from capo.utils import copy_llm, generate_random_hash, seed_everything
-from capo.configs.initial_prompts import INITIAL_PROMPTS
 
 parser = argparse.ArgumentParser()
 
@@ -117,7 +119,9 @@ if __name__ == "__main__":
     predictor = MarkerBasedClassificator(downstream_llm, dev_task.classes)
 
     # initialize population
-    initial_prompts_pool = dev_task.initial_prompts if not args.generic_init_prompts else INITIAL_PROMPTS["generic"]
+    initial_prompts_pool = (
+        dev_task.initial_prompts if not args.generic_init_prompts else INITIAL_PROMPTS["generic"]
+    )
     initial_prompts = random.sample(initial_prompts_pool, args.population_size)
 
     # set-up EvoPromptGA template

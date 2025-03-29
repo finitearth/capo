@@ -1,3 +1,8 @@
+"""
+Defines the Prompt class for structuring prompts with instructions and few-shot examples.
+Provides functionality to construct complete prompts using templates and handle proper formatting.
+"""
+
 from typing import List
 
 from capo.templates import DOWNSTREAM_TEMPLATE

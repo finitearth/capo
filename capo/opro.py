@@ -1,4 +1,7 @@
-"""Module for Opro optimizer."""
+"""
+Wrapper for OPRO that adds serialization capabilities.
+Contains the OproPickable class which inherits from the original OPRO implementation and makes it picklable for distributed experiments.
+"""
 
 from logging import Logger, getLogger
 

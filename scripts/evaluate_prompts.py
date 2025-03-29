@@ -1,4 +1,8 @@
-"example usage: python scripts/evaluate_prompts.py --experiment-path results/ --validation-size 500 --max-tokens 10000000"
+"""
+Script for evaluating optimized prompts resulting from experiments on unseen test data.
+Measures the generalization performance of prompts produced by different optimization methods.
+example usage: python scripts/evaluate_prompts.py --experiment-path results/ --validation-size 500 --max-tokens 10000000
+"""
 
 import argparse
 import json

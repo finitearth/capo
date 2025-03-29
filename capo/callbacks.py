@@ -1,3 +1,7 @@
+"""
+Custom callback implementations for tracking and saving experiment results.
+Contains PickleCallback for serialization, PromptScoreCallback for performance monitoring, and ParquetCallback for storing structured data efficiently.
+"""
 import os
 from datetime import datetime
 
