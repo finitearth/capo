@@ -31,7 +31,7 @@ def plot_population_scores(
     fillstyle=None,
     marker=None,
     label=None,
-    n_seeds_to_plot_std=3,
+    n_seeds_to_plot_std=1,
 ):
     if ax is None:
         fig, ax = plt.subplots()
@@ -67,15 +67,15 @@ def plot_population_scores(
 
     if "tokens" in x_col:
         ax.set_xlim(0, 5_000_000)
-
-    if len(mean_df) == 1:
+    # check for steps in the x_col
+    if len(filtered_df.step.unique()) == 1:
         y_value = mean_df[score_col].iloc[0]
         ax.axhline(y=y_value, color=color, linewidth=1.5, linestyle=seed_linestyle)
 
         # add a marker at the single point and std dev if requested
         ax.plot(
-            mean_df[x_col],
-            mean_df[score_col],
+            mean_df[x_col][0],
+            mean_df[score_col][0],
             marker=None if optim == "Initial" else "*",
             linestyle=seed_linestyle,
             markersize=10,
@@ -86,9 +86,9 @@ def plot_population_scores(
 
         if plot_stddev and optim != "Initial":
             ax.errorbar(
-                mean_df[x_col],
-                mean_df[score_col],
-                yerr=std_df[score_col],
+                mean_df[x_col][0],
+                mean_df[score_col][0],
+                yerr=std_df[score_col][0],
                 color=color,
                 linestyle=seed_linestyle,
                 capsize=5,
@@ -167,7 +167,7 @@ def plot_population_scores_comparison(
     continuous_colors=False,
     markers=False,
     labels=None,
-    n_seeds_to_plot_std=3,
+    n_seeds_to_plot_std=1,
     ncols=3,
 ):
     fig, ax = plt.subplots(figsize=figsize)
