@@ -20,6 +20,7 @@ Small changes were adapted after the initial prompts were generated to ensure th
 are using the correct target labels.
 
 The task_description used for generic was: '''Create prompts, that are so generic, they could work for almost any task. The answers provided by the LLM should be contained within <final_answer> </final_answer>.'''
+Note that the last generic instruction was added manually, as it is a typically used generic prompt (see e.g. OPRO by Yang et al., 2024).
 """
 
 
