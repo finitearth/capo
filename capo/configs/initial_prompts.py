@@ -23,6 +23,12 @@ The task_description used for generic was: '''Create prompts, that are so generi
 """
 
 
+UNINFORMATIVE_INIT_PROMPTS = [
+    "Let's think step by step.",
+    "",
+    "Let's work this out in a step by step way to be sure we have the right answer.",
+]
+
 INITIAL_PROMPTS = {
     "sst-5": [
         "What's the sentiment of this film review? Choose from: very negative, negative, neutral, positive, or very positive. Format your response with <final_answer> </final_answer>.",

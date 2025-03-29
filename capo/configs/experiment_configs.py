@@ -68,19 +68,14 @@ BENCHMARK_CONFIG = ExperimentConfig(
             optimizer_params={
                 "n_steps": 999,
                 "max_num_instructions": 20,
-                "population_size": 10,
                 "num_instructions_per_step": 8,
                 "num_few_shots": 3,
-                "evoprompt_ga_template": "standard",
             },
         ),
         OptimizerConfig(
             name="PromptWizard",
             optimizer="PromptWizard",
-            optimizer_params={
-                "population_size": 10,
-                "evoprompt_ga_template": "standard",
-            },
+            optimizer_params={},
         ),
     ],
     random_seeds=[42, 43, 44],
@@ -103,7 +98,7 @@ ABLATION_CONFIG = ExperimentConfig(
                 "block_size": 30,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
-                "upper_shots": 0,  # TODO: to be checked
+                "upper_shots": 0,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
@@ -116,7 +111,7 @@ ABLATION_CONFIG = ExperimentConfig(
                 "n_steps": 999,
                 "population_size": 10,
                 "block_size": 30,
-                "length_penalty": 0.0,  # TODO: to be checked
+                "length_penalty": 0.0,
                 "crossovers_per_iter": 4,
                 "upper_shots": 5,
                 "max_n_blocks_eval": 10,
@@ -130,11 +125,11 @@ ABLATION_CONFIG = ExperimentConfig(
             optimizer_params={
                 "n_steps": 999,
                 "population_size": 10,
-                "block_size": 300,  # TODO: to be checked
+                "block_size": 300,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
                 "upper_shots": 5,
-                "max_n_blocks_eval": 1,  # TODO: to be checked
+                "max_n_blocks_eval": 1,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
             },

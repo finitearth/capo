@@ -73,6 +73,11 @@ parser.add_argument("--max-n-blocks-eval", type=int)
 parser.add_argument("--alpha", type=float)
 parser.add_argument("--shuffle-blocks-per-iter", action="store_true", default=False)
 
+# optimizer-specific parameters: OPRO
+parser.add_argument("--max-num-instructions", type=int, default=20)
+parser.add_argument("--max-instructions-per-step", type=int, default=8)
+parser.add_argument("--num_few_shots", type=int, default=3)
+
 
 args = parser.parse_args()
 
@@ -170,6 +175,10 @@ if __name__ == "__main__":
             callbacks=callbacks,
             predictor=predictor,
             task=dev_task,
+            n_steps=args.n_steps,
+            max_num_instructions=args.max_num_instructions,
+            max_instructions_per_step=args.max_instructions_per_step,
+            num_few_shots=args.num_few_shots,
         )
     else:
         raise ValueError(f"Optimizer {args.optimizer} not supported.")

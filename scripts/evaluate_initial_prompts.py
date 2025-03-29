@@ -10,6 +10,7 @@ from promptolution.llms import get_llm
 from promptolution.predictors import MarkerBasedClassificator
 
 from capo.configs.experiment_configs import llama, mistral, qwen
+from capo.configs.initial_prompts import UNINFORMATIVE_INIT_PROMPTS
 from capo.load_datasets import get_tasks
 from capo.utils import seed_everything
 
@@ -47,11 +48,7 @@ if __name__ == "__main__":
 
             predictor = MarkerBasedClassificator(llm=llm, classes=test_task.classes)
 
-            prompts = test_task.initial_prompts + [
-                "Let's think step by step.",
-                "Let's work this out in a step by step way to be sure we have the right answer.",
-                "",
-            ]
+            prompts = test_task.initial_prompts + UNINFORMATIVE_INIT_PROMPTS
 
             logger.critical(f"Evaluating {len(prompts)} unique prompts on {dataset} with {alias}")
             scores = test_task.evaluate(prompts, predictor)
@@ -59,5 +56,3 @@ if __name__ == "__main__":
             df = pd.DataFrame({"prompt": prompts, "test_score": scores, "llm": llm_name})
 
             df.to_csv(path + "eval.csv")
-
-        del llm

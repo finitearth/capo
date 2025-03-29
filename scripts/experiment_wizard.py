@@ -20,21 +20,6 @@ parser.add_argument("--max-model-len", type=int, required=True)
 parser.add_argument("--random-seed", type=int, required=True)
 parser.add_argument("--optimizer", required=True)
 
-# ignored arguments
-parser.add_argument("--n-steps", type=int, default=999)
-parser.add_argument("--batch-size", type=int, default=None)
-parser.add_argument("--budget-per-run", type=int, required=True)
-parser.add_argument("--population-size", type=int)
-parser.add_argument("--n-eval-samples", type=int)
-parser.add_argument("--evoprompt-ga-template", default="standard")
-parser.add_argument("--block-size", type=int)
-parser.add_argument("--length-penalty", type=float)
-parser.add_argument("--crossovers-per-iter", type=int)
-parser.add_argument("--upper-shots", type=int)
-parser.add_argument("--max-n-blocks-eval", type=int)
-parser.add_argument("--alpha", type=float)
-parser.add_argument("--shuffle-blocks-per-iter", action="store_true", default=False)
-
 args = parser.parse_args()
 
 assert args.optimizer == "PromptWizard"

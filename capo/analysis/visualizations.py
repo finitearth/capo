@@ -17,25 +17,25 @@ set_style()
 
 
 def plot_population_scores(
-    dataset,
-    model,
-    optim,
-    agg="mean",
-    plot_seeds=False,
-    plot_stddev=False,
-    score_col="test_score",
-    x_col="step",
-    seed_linestyle="--",
-    mean_linestyle="-",
+    dataset: str,
+    model: str,
+    optim: str,
+    agg: str = "mean",
+    plot_seeds: bool = False,
+    plot_stddev: bool = False,
+    score_col: str = "test_score",
+    x_col: str = "step",
+    seed_linestyle: str = "--",
+    mean_linestyle: str = "-",
     ax=None,
-    color=None,
-    add_title=False,
-    add_legend=False,
-    label_suffix="",
-    fillstyle=None,
-    marker=None,
-    label=None,
-    n_seeds_to_plot_std=1,
+    color: list[str] = None,
+    add_title: bool = False,
+    add_legend: bool = False,
+    label_suffix: str = "",
+    fillstyle: str = None,
+    marker: list["str"] = None,
+    label: list["str"] = None,
+    n_seeds_to_plot_std: int = 1,
 ):
     if ax is None:
         fig, ax = plt.subplots()
@@ -157,22 +157,22 @@ def plot_population_scores(
 
 
 def plot_population_scores_comparison(
-    dataset,
-    model,
-    optims,
-    agg="mean",
-    plot_seeds=False,
-    plot_stddev=False,
-    score_col="test_score",
-    x_col="step",
-    seed_linestyle="--",
-    figsize=(5.4, 3.6),
-    colors=None,
-    continuous_colors=False,
-    markers=False,
-    labels=None,
-    n_seeds_to_plot_std=1,
-    ncols=3,
+    dataset: str,
+    model: str,
+    optims: list[str],
+    agg: str = "mean",
+    plot_seeds: bool = False,
+    plot_stddev: bool = False,
+    score_col: str = "test_score",
+    x_col: str = "step",
+    seed_linestyle: str = "--",
+    figsize: tuple[float] = (5.4, 3.6),
+    colors: list[str] = None,
+    continuous_colors: bool = False,
+    markers: bool = False,
+    labels: list[str] = None,
+    n_seeds_to_plot_std: int = 1,
+    ncols: int = 3,
 ):
     fig, ax = plt.subplots(figsize=figsize)
 
@@ -201,8 +201,6 @@ def plot_population_scores_comparison(
             n_seeds_to_plot_std=n_seeds_to_plot_std,
         )
 
-    # Set title and layout for the comparison plot
-    # ax.set_title(f"Score Comparison ({agg}) on {dataset} using {model}", y=1.05)
     x_col = (
         " ".join(x_col.split("_")[:-1]).capitalize()
         if "cum" in x_col
@@ -216,21 +214,19 @@ def plot_population_scores_comparison(
     )
     ax.set_ylabel(y_col)
 
-    # Improve legend placement and formatting
     ax.legend(ncols=min(len(optims), ncols), loc="upper center", bbox_to_anchor=(0.5, 1.25))
-    # plt.tight_layout()
 
     return fig
 
 
 def plot_population_members(
-    dataset,
-    model,
-    optim,
-    x_col="step",
-    score_col="test_score",
-    seeds=[42, 43, 44],
-    figsize=(5.4, 3.6),
+    dataset: str,
+    model: str,
+    optim: str,
+    x_col: str = "step",
+    score_col: str = "test_score",
+    seeds: list[int] = [42, 43, 44],
+    figsize: tuple[float] = (5.4, 3.6),
 ):
     fig, ax = plt.subplots(figsize=figsize)
     df = get_results(dataset, model, optim)
@@ -302,7 +298,6 @@ def plot_population_members(
     )
     ax.set_xlabel(x_col)
     ax.set_ylabel(score_col.replace("_", " ").capitalize())
-    # ax.set_title(f"Score of {optim} on {dataset} using {model}")
 
     ax.legend(ncols=min(len(optim), 3), loc="upper center", bbox_to_anchor=(0.5, 1.15))
 
@@ -310,16 +305,16 @@ def plot_population_members(
 
 
 def plot_length_score(
-    dataset,
-    model,
-    optims,
+    dataset: str,
+    model: str,
+    optims: list[str],
     x_col: Literal["prompt_len", "instr_len"],
     score_col: Literal["score", "test_score"],
-    log_scale=True,
-    colors=None,
-    labels=None,
-    figsize=(5.4, 3.6),
-    ncols=3,
+    log_scale: bool = True,
+    colors: list[str] = None,
+    labels: list[str] = None,
+    figsize: tuple[float] = (5.4, 3.6),
+    ncols: int = 3,
 ):
     fig, ax = plt.subplots(figsize=figsize)
 
@@ -365,19 +360,17 @@ def plot_length_score(
     ax.scatter([], [], marker="*", s=300, edgecolor="black", facecolor="none", label="Best")
     ax.set_xlabel("Prompt length")
     ax.set_ylabel(score_col.replace("_", " ").capitalize())
-    # ax.set_title(f"Score vs. Number of Tokens on {dataset} using {model}")
     ax.legend(ncols=min(len(optims), ncols), loc="upper center", bbox_to_anchor=(0.5, 1.35))
-    # plt.tight_layout()
 
     return fig
 
 
 def plot_performance_profile_curve(
-    datasets=["sst-5", "agnews", "copa", "subj", "gsm8k"],
-    models=["llama", "qwen", "mistral"],
-    optims=["CAPO", "OPRO", "EvoPromptGA", "PromptWizard"],
-    markers=["o", "s", "p", "d"],
-    x_max=0.5,
+    datasets: list[str] = ["sst-5", "agnews", "copa", "subj", "gsm8k"],
+    models: list[str] = ["llama", "qwen", "mistral"],
+    optims: list[str] = ["CAPO", "OPRO", "EvoPromptGA", "PromptWizard"],
+    markers: list[str] = ["o", "s", "p", "d"],
+    x_max: float = 0.5,
 ):
     # get all results
     dfs = []
@@ -447,14 +440,15 @@ def plot_performance_profile_curve(
 
 
 def plot_train_test_comparison(
-    dataset,
-    model,
-    optims,
-    agg="mean",
-    plot_seeds=False,
-    plot_stddev=False,
-    x_col="step",
-    seed_linestyle="--",
+    dataset: str,
+    model: str,
+    optims: list[str],
+    agg: str = "mean",
+    plot_seeds: bool = False,
+    plot_stddev: bool = False,
+    x_col: str = "step",
+    seed_linestyle: str = "--",
+    add_title: bool = True,
 ):
     fig, ax = plt.subplots()
 
@@ -490,8 +484,8 @@ def plot_train_test_comparison(
             ax=ax,
             label_suffix=" (Test)",
         )
-
-    ax.set_title(f"Train/Test Score Comparison ({agg}) on {dataset} using {model}", y=1.25)
+    if add_title:
+        ax.set_title(f"Train/Test Score Comparison ({agg}) on {dataset} using {model}", y=1.25)
     x_col = (
         " ".join(x_col.split("_")[:-1]).capitalize()
         if "cum" in x_col
@@ -505,7 +499,9 @@ def plot_train_test_comparison(
     return fig
 
 
-def plot_few_shot_boxplots(dataset, model, optim, seed=42, score_column="test_score", top_k=3):
+def plot_few_shot_boxplots(
+    dataset: str, model: str, optim: str, score_column: str = "test_score", top_k: int = 3
+):
     df = get_results(dataset, model, optim)
 
     # Calculate mean test score for each feature when it's True

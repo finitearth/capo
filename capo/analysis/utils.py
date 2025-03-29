@@ -8,15 +8,12 @@ from typing import Literal
 
 import numpy as np
 import pandas as pd
+from promptolution.templates import DEFAULT_SYS_PROMPT
 
-UNINFORMATIVE_INIT_PROMPTS = [
-    "Let's think step by step.",
-    "",
-    "Let's work this out in a step by step way to be sure we have the right answer.",
-]
+from capo.configs.initial_prompts import UNINFORMATIVE_INIT_PROMPTS
 
 
-def get_results(dataset, model, optim):
+def get_results(dataset: str, model: str, optim: str) -> pd.DataFrame:
     """Get the evaluated step results for a given combination."""
     is_initial = "init" in optim.lower() and "generic_init" not in optim.lower()
 
@@ -27,7 +24,7 @@ def get_results(dataset, model, optim):
     ]
 
     if is_initial:
-        paths += [f"results/init_results/{dataset}/{model}/eval.csv"]
+        paths = [f"results/init_results/{dataset}/{model}/eval.csv"]
 
     files = []
     for path in paths:
@@ -73,8 +70,6 @@ def get_results(dataset, model, optim):
         # treat each prompt as its own seed
         df["seed"] = df["prompt"]
 
-    df = df.dropna(subset=["prompt"])
-
     df["input_tokens_sum"] = (
         df["input_tokens_meta_llm"] + df["input_tokens_downstream_llm"] if not is_initial else 0
     )
@@ -99,7 +94,7 @@ def get_results(dataset, model, optim):
 
     # caluclate prompt lengths
     if "system_prompt" not in df.columns:
-        df["system_prompt"] = "You are a helpful assistant."
+        df["system_prompt"] = DEFAULT_SYS_PROMPT
 
     try:
         df["few_shots"] = df["prompt"].str.split(r"\[Question\]|Input:").apply(lambda x: x[1:])
@@ -113,6 +108,8 @@ def get_results(dataset, model, optim):
         .str.split()
         .apply(len)
     )
+
+    # approximate prompt length by counting the number of words in both system prompt and prompt
     df["prompt_len"] = (df["system_prompt"] + " " + df["prompt"]).str.split().apply(len)
 
     df["is_new"] = ~df.groupby(["seed", "prompt"]).cumcount().astype(bool)
