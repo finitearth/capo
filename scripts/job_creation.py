@@ -1,3 +1,8 @@
+"""
+Script for automatically generating job execution commands.
+Creates batched command sequences optimized for the project's specific computing infrastructure.
+"""
+
 import argparse
 import os
 from glob import glob

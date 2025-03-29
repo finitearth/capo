@@ -1,3 +1,8 @@
+"""
+Collection of utility functions used across the CAPO project.
+Provides functionality for random seed management, hashing, object copying, and other common operations needed throughout the codebase.
+"""
+
 import copy
 import hashlib
 import os

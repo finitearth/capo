@@ -1,4 +1,7 @@
-"""Dataset configuration for all datasets."""
+"""
+Configuration specifications for all datasets used in experiments.
+Defines Hugging Face dataset IDs, revisions, column mappings, and split information.
+"""
 
 from dataclasses import dataclass, field
 from typing import Callable, List

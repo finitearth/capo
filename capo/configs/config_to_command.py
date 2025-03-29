@@ -1,4 +1,7 @@
-"""Convert an experiment configuration to command line strings."""
+"""
+Functions to convert experiment configurations into executable commands.
+Splits large experiment configurations into separate configs and generates command line instructions for distributed execution.
+"""
 
 import itertools
 from typing import List

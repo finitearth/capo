@@ -1,3 +1,7 @@
+"""
+Defines the Task class specific to the CAPO algorithm implementation.
+Encapsulates task-specific functionality including evaluation metrics, dataset handling, and performance tracking for prompt optimization.
+"""
 import random
 
 import numpy as np

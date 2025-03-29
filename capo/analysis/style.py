@@ -1,3 +1,8 @@
+"""
+Defines styling configurations for data visualizations in the paper.
+Contains color schemes, font settings, and plot formatting parameters to ensure consistent visual presentation across all figures.
+"""
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 

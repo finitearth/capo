@@ -1,4 +1,7 @@
-"""Module for EvoPromptGA optimizer."""
+"""
+Wrapper for EvoPromptGA that provides picklable functionality.
+Contains the EvoPromptGAPickable class which inherits from EvoPromptGA and enables serialization for distributed computing.
+"""
 
 from logging import Logger, getLogger
 

@@ -1,3 +1,8 @@
+"""
+Functions for generating and saving plots from experimental results.
+This allows for the regeneration of the graphics provided in the paper
+"""
+
 import argparse
 import os
 

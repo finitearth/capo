@@ -1,5 +1,8 @@
-### This code tries to implement the demos/gsm8k.ipynb notebook in a script format.
 """
+This code implements the demos/gsm8k.ipynb notebook of the PromptWizard-Repo in a script format for various applications.
+Script to execute experiments using the PromptWizard framework.
+Handles experiment orchestration with specialized configurations for the PromptWizard methodology.
+
 example call:
 python scripts/experiment_wizard.py --experiment-name prompt_wizard --dataset copa --max-model-len 4096 --random-seed 42 --optimizer promptwizard --model vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE --model-revision main --output-dir results/ --n-steps 999 --budget-per-run 1000
 """

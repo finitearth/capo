@@ -1,3 +1,7 @@
+"""
+Script for evaluating the performance of initial prompts on unseen test data.
+"""
+
 import os
 from logging import getLogger
 

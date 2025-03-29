@@ -1,3 +1,8 @@
+"""
+Contains prompt templates used throughout the CAPO algorithm.
+Defines standard formats like DOWNSTREAM_TEMPLATE for constructing prompts with placeholders for instructions and few-shot examples.
+"""
+
 DOWNSTREAM_TEMPLATE = """<instruction>
 
 <few_shots>

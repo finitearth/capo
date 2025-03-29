@@ -1,3 +1,8 @@
+"""
+Implementation of plotting functions for all paper visualizations.
+Contains specialized chart generators for performance comparisons, ablation studies, and hyperparameter analysis.
+"""
+
 from typing import Literal
 
 import matplotlib.pyplot as plt

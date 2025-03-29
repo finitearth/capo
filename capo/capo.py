@@ -1,3 +1,7 @@
+"""
+Implementation of the CAPO (Cost-Aware Prompt Optimization) algorithm.
+Contains the CAPOptimizer class, which manages the prompt optimization process using statistical racing techniques to efficiently allocate evaluation budget.
+"""
 import random
 from itertools import compress
 from logging import getLogger
