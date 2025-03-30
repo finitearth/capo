@@ -189,7 +189,7 @@ ABLATION_CONFIG = ExperimentConfig(
     ],
     random_seeds=[42, 43, 44],
     budget_per_run=5_000_000,
-    output_dir="ablation_results/",
+    output_dir="results/ablation_results/",
 )
 
 length_penalty_grid = [0.01, 0.02, 0.05, 0.1]
@@ -256,5 +256,5 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
     ],
     random_seeds=[42, 43, 44],
     budget_per_run=5_000_000,
-    output_dir="hp_results/",
+    output_dir="results/hp_results/",
 )

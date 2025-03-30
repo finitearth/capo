@@ -15,7 +15,6 @@ from capo.configs.initial_prompts import UNINFORMATIVE_INIT_PROMPTS
 
 def get_results(dataset: str, model: str, optim: str) -> pd.DataFrame:
     """Get the evaluated step results for a given combination."""
-    is_initial = "init" in optim.lower() and "generic_init" not in optim.lower()
 
     paths = [
         f"results/main_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
@@ -23,6 +22,7 @@ def get_results(dataset: str, model: str, optim: str) -> pd.DataFrame:
         f"results/hp_results/{dataset}/{model}/{optim}/*/*/*/step_results_eval.csv",
     ]
 
+    is_initial = "init" in optim.lower() and "generic_init" not in optim.lower()
     if is_initial:
         paths = [f"results/init_results/{dataset}/{model}/eval.csv"]
 
@@ -91,6 +91,8 @@ def get_results(dataset: str, model: str, optim: str) -> pd.DataFrame:
     df = df.merge(
         tokens_df[["input_tokens_cum", "output_tokens_cum", "seed", "step"]], on=["seed", "step"]
     )
+
+    df = df.dropna(subset=["prompt"])
 
     # caluclate prompt lengths
     if "system_prompt" not in df.columns:

@@ -40,7 +40,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--experiment-name", required=True)
 parser.add_argument("--random-seed", type=int, required=True)
 parser.add_argument("--budget-per-run", type=int, required=True)
-parser.add_argument("--output-dir", default="results/")
+parser.add_argument("--output-dir", default="results/main_results/")
 parser.add_argument("--generic-init-prompts", action="store_true")
 
 # dataset parameters
