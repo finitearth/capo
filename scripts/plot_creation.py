@@ -245,6 +245,7 @@ if __name__ == "__main__":
             plot_stddev=True,
             x_col="step",
             score_col="input_tokens_sum",
+            figsize=(5.4, 2.8),
         )
 
         fig.savefig(
@@ -264,7 +265,7 @@ if __name__ == "__main__":
                 colors=colors,
                 markers=markers,
                 ncols=2,
-                figsize=(5.4, 3),
+                figsize=(5.4, 2.8),
             )
             fig.savefig(
                 f"./results/plots/ablation_racing_{dataset}.png",
@@ -282,7 +283,7 @@ if __name__ == "__main__":
                 colors=colors,
                 markers=markers,
                 ncols=2,
-                figsize=(5.4, 3),
+                figsize=(5.4, 2.8),
             )
 
             fig.savefig(
@@ -300,7 +301,7 @@ if __name__ == "__main__":
                 score_col="test_score",
                 log_scale=False,
                 ncols=2,
-                figsize=(5.4, 3),
+                figsize=(5.4, 2.8),
             )
 
             fig.savefig(
@@ -319,11 +320,35 @@ if __name__ == "__main__":
                 colors=colors,
                 markers=markers,
                 ncols=2,
-                figsize=(5.4, 3),
+                figsize=(5.4, 2.8),
             )
 
             fig.savefig(
                 f"./results/plots/ablation_evo_td_{dataset}.png",
+                bbox_inches="tight",
+            )
+
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                ["CAPO", "EvoPromptGA", "CAPO_generic_init", "EvoPromptGA_generic_init"],
+                labels=[
+                    "CAPO",
+                    "EvoPromptGA",
+                    "CAPO w/ generic init",
+                    "EvoPromptGA generic init",
+                ],
+                plot_stddev=True,
+                plot_seeds=False,
+                x_col="input_tokens_cum",
+                colors=colors,
+                markers=markers,
+                ncols=2,
+                figsize=(5.4, 2.8),
+            )
+
+            fig.savefig(
+                f"./results/plots/ablation_generic_init_{dataset}.png",
                 bbox_inches="tight",
             )
 
@@ -348,53 +373,5 @@ if __name__ == "__main__":
 
         fig.savefig(
             "./results/plots/ablation_generic_init_agnews_main_pre.png",
-            bbox_inches="tight",
-        )
-
-        fig = plot_population_scores_comparison(
-            "agnews",
-            "llama",
-            ["CAPO", "EvoPromptGA", "CAPO_generic_init", "EvoPromptGA_generic_init"],
-            labels=[
-                "CAPO",
-                "EvoPromptGA",
-                "CAPO w/ generic init",
-                "EvoPromptGA generic init",
-            ],
-            plot_stddev=True,
-            plot_seeds=False,
-            x_col="input_tokens_cum",
-            colors=colors,
-            markers=markers,
-            ncols=2,
-            figsize=(5.4, 3),
-        )
-
-        fig.savefig(
-            "./results/plots/ablation_generic_init_agnews.png",
-            bbox_inches="tight",
-        )
-
-        fig = plot_population_scores_comparison(
-            "gsm8k",
-            "llama",
-            ["CAPO", "EvoPromptGA", "CAPO_generic_init", "EvoPromptGA_generic_init"],
-            labels=[
-                "CAPO",
-                "EvoPromptGA",
-                "CAPO w/ generic init",
-                "EvoPromptGA w/ generic init",
-            ],
-            plot_stddev=True,
-            plot_seeds=False,
-            x_col="input_tokens_cum",
-            colors=colors,
-            markers=markers,
-            ncols=2,
-            figsize=(5.4, 3),
-        )
-
-        fig.savefig(
-            "./results/plots/ablation_generic_init_gsm8k.png",
             bbox_inches="tight",
         )
