@@ -1,5 +1,8 @@
-### This code tries to implement the demos/gsm8k.ipynb notebook in a script format.
 """
+This code implements the demos/gsm8k.ipynb notebook of the PromptWizard-Repo in a script format for various applications.
+Script to execute experiments using the PromptWizard framework.
+Handles experiment orchestration with specialized configurations for the PromptWizard methodology.
+
 example call:
 python scripts/experiment_wizard.py --experiment-name prompt_wizard --dataset copa --max-model-len 4096 --random-seed 42 --optimizer promptwizard --model vllm-ConfidentialMind/Mistral-Small-24B-Instruct-2501_GPTQ_G128_W4A16_MSE --model-revision main --output-dir results/ --n-steps 999 --budget-per-run 1000
 """
@@ -17,24 +20,9 @@ parser.add_argument("--max-model-len", type=int, required=True)
 parser.add_argument("--random-seed", type=int, required=True)
 parser.add_argument("--optimizer", required=True)
 
-# ignored arguments
-parser.add_argument("--n-steps", type=int, default=999)
-parser.add_argument("--batch-size", type=int, default=None)
-parser.add_argument("--budget-per-run", type=int, required=True)
-parser.add_argument("--population-size", type=int)
-parser.add_argument("--n-eval-samples", type=int)
-parser.add_argument("--evoprompt-ga-template", default="standard")
-parser.add_argument("--block-size", type=int)
-parser.add_argument("--length-penalty", type=float)
-parser.add_argument("--crossovers-per-iter", type=int)
-parser.add_argument("--upper-shots", type=int)
-parser.add_argument("--max-n-blocks-eval", type=int)
-parser.add_argument("--alpha", type=float)
-parser.add_argument("--shuffle-blocks-per-iter", action="store_true", default=False)
-
 args = parser.parse_args()
 
-assert args.optimizer == "promptwizard"
+assert args.optimizer == "PromptWizard"
 
 import os
 
@@ -65,14 +53,16 @@ class Processor(DatasetSpecificProcessing):
 if __name__ == "__main__":
     logging_dir = args.output_dir + args.experiment_name + "/" + generate_random_hash() + "/"
     seed_everything(args.random_seed)
+    
+    
+    train_file_name = "temp/promptwizard/data.jsonl"
+    os.makedirs(os.path.dirname(train_file_name), exist_ok=True)
+    os.makedirs(logging_dir, exist_ok=True)
 
     with open(logging_dir + "/args.json", "w") as f:
         json.dump(vars(args), f)
 
-    train_file_name = "temp/promptwizard/data.jsonl"
     # make dir if not exist
-    os.makedirs(os.path.dirname(train_file_name), exist_ok=True)
-    os.makedirs(logging_dir, exist_ok=True)
     dev_task, _, _ = get_tasks(
         args.dataset, args.optimizer, block_size=args.block_size, seed=args.random_seed
     )

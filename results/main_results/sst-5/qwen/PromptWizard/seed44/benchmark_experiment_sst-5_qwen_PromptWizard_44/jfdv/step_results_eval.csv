@@ -1,0 +1,16 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"
+The dataset consists of movie reviews with five levels of sentiment labels: very negative, negative, neutral, positive, and very positive. The task is to classify each movie review into one of these five sentiment categories. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+To approach this task, consider the following steps:
+1. Identify key words and phrases that indicate sentiment, such as ""skippable,"" ""hayseeds,"" and comparative terms like ""meets.""
+2. Analyze the overall tone and implications of the review, considering the context and any sarcasm or irony.
+3. Break down the review into components (subject matter, tone, implications) and analyze each for sentiment.
+4. Combine the insights from the previous steps to determine the most appropriate sentiment category.
+
+Apply these steps to the following film review and classify it into one of the five sentiment categories: very negative, negative, neutral, positive, or very positive. Your classification should be enclosed between <final_answer> and </final_answer> markers.
+</START>
+
+
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a machine learning expert with a specialization in natural language processing (NLP) and sentiment analysis. You have extensive experience in developing and deploying models that can accurately classify text into sentiment categories. Your expertise includes understanding the nuances of human language, particularly in the context of movie reviews, which often contain complex emotions and subtle nuances. You are proficient in using advanced algorithms and techniques such as deep learning, specifically recurrent neural networks (RNNs) and transformers, to analyze and classify text data. You are also skilled in preprocessing text data, handling imbalanced datasets, and fine-tuning models to achieve high accuracy and reliability in sentiment classification. Your task is to analyze each movie review and classify it into one of the five sentiment categories: very negative, negative, neutral, positive, and very positive, ensuring that the classification is encapsulated between the markers <final_answer>answer</final_answer>. Your work is crucial in providing accurate sentiment analysis that can be used for various applications, including improving user experiences and informing business decisions.",20776,16542,0,0,0.33

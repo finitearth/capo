@@ -12,14 +12,23 @@ task in little more detail.
 
 Task: <task_description>
 
-Explicitly state this expected format as part of the prompts. Create overall 20 prompts
+Explicitly state this expected format as part of the prompts. Create overall 15 prompts
 within quotes as an array:
 '''
 
 Small changes were adapted after the initial prompts were generated to ensure that the prompts
 are using the correct target labels.
+
+The task_description used for generic was: '''Create prompts, that are so generic, they could work for almost any task. The answers provided by the LLM should be contained within <final_answer> </final_answer>.'''
+Note that the last generic instruction was added manually, as it is a typically used generic prompt (see e.g. OPRO by Yang et al., 2024).
 """
 
+
+UNINFORMATIVE_INIT_PROMPTS = [
+    "Let's think step by step.",
+    "",
+    "Let's work this out in a step by step way to be sure we have the right answer.",
+]
 
 INITIAL_PROMPTS = {
     "sst-5": [
@@ -107,5 +116,23 @@ INITIAL_PROMPTS = {
         "Given the premise, determine the most plausible causal relationship. Is it option A or option B? Please format your answer as <final_answer>A</final_answer> or <final_answer>B</final_answer>.",
         "The Bala-COPA dataset tests commonsense causal reasoning abilities. Review the given scenario and decide whether Text A or Text B is the correct cause/effect. Your answer must be either <final_answer>A</final_answer> or <final_answer>B</final_answer>.",
         "Assess the causal relationship in the given context. Choose between options A and B, and provide your selection in the format <final_answer>A</final_answer> or <final_answer>B</final_answer>.",
+    ],
+    "generic": [
+        "Give me your response within <final_answer> tags.",
+        "Please provide a thoughtful answer to my question and wrap your response in <final_answer> tags so I can easily identify it.",
+        "I need your expertise on this matter. Kindly structure your response within <final_answer> tags for better readability.",
+        "Analyze the following and present your findings enclosed in <final_answer> </final_answer> tags.",
+        "Consider this inquiry carefully. Your comprehensive response should be formatted within <final_answer> tags to facilitate extraction.",
+        "Respond succinctly. Ensure all content appears between <final_answer> and </final_answer> markers.",
+        "Would you mind addressing this request? Please place your entire response inside <final_answer> </final_answer> formatting.",
+        "I'm seeking your insights on a particular topic. Kindly ensure that your complete analysis is contained within <final_answer> tags for my convenience.",
+        "Examine this query thoroughly and deliver your conclusions. All output must be encapsulated in <final_answer> </final_answer> notation for processing purposes.",
+        "Help me understand this subject better. Your explanation should begin with <final_answer> and conclude with </final_answer> to maintain proper structure.",
+        "I require information on the following. Please format your response with <final_answer> tags at the beginning and end for clarity.",
+        "Contemplate this scenario and offer your perspective. Remember to enclose all content within <final_answer> tags as per requirements.",
+        "Elaborate on this concept, making sure to wrap the entirety of your explanation in <final_answer> </final_answer> markers for systematic review.",
+        "Describe your approach to this situation. Be thorough yet concise, and place your complete response between <final_answer> and </final_answer> tags.",
+        "Share your knowledge on this matter. Your entire response should be presented within <final_answer> tags to facilitate proper integration into my workflow.",
+        "Let's think step by step. Your answer should be enclosed within <final_answer> </final_answer> tags.",
     ],
 }

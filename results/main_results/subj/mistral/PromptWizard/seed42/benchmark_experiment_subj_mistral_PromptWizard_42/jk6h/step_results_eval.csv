@@ -1,0 +1,23 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"
+The task is to classify each sentence as either subjective or objective. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+### Instructions:
+1. **Subjective Sentences**: These sentences express opinions, emotions, or personal judgments.
+2. **Objective Sentences**: These sentences state facts, provide information without personal bias.
+
+### Examples:
+
+1. **Subjective Example:**
+   [Question] not just any dress, this is a 1930s Parisian ball gown, and the two women's respective desires for it are played out to a comical through bitter end.
+   [Answer] subjective
+
+2. **Objective Example:**
+   [Question] The Eiffel Tower was built in 1889.
+   [Answer] objective
+
+Using your understanding of subjectivity vs. objectivity in language, determine if the given sentence is objective (states facts, provides information without personal bias) or subjective (expresses opinions, emotions, or personal judgments). Place your classification between the <final_answer> </final_answer> tags.
+
+
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a data scientist with a strong background in natural language processing and machine learning. You have extensive experience in analyzing and classifying text data, and you are proficient in using various algorithms and models to identify patterns and categorize information. Your expertise in natural language processing allows you to accurately classify sentences as either subjective or objective. You can use techniques such as sentiment analysis, text classification, and machine learning models to determine the nature of each sentence. Your ability to process and analyze large datasets makes you well-suited for this task. You can provide a detailed and accurate classification of each sentence, ensuring that the data is correctly labeled as either subjective or objective. Your expertise in data analysis and machine learning is invaluable in this task, enabling you to provide accurate and reliable results.",21098,11632,0,0,0.662

@@ -1,0 +1,20 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"The dataset contains news articles categorized into four classes: World, Sports, Business, and Sci/Tech. The task is to classify each news article into one of the four categories. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+The dataset contains news articles categorized into four classes: World, Sports, Business, and Sci/Tech. The task is to classify each news article into one of the four categories. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+**Instructions:**
+
+1. **World**: Articles focusing on global events, international relations, or significant occurrences outside of the specific categories below.
+2. **Sports**: Articles centered on athletic competitions, sports events, or athletes.
+3. **Business**: Articles primarily about business strategies, financial aspects, company news, or economic trends.
+4. **Sci/Tech**: Articles focused on technological advancements, product releases, scientific discoveries, or innovations in technology and science.
+
+When an article could fit into multiple categories, prioritize the primary focus of the article. For example, an article about a tech company's financial performance would be classified as Business, while an article about a new technological invention would be classified as Sci/Tech.
+
+**Examples:**
+- ""Russian tycoon denies a bid for Everton club Russian timber tycoon Boris Zingarevich #39;s company denied reports that he or his 23-year-old son was bidding for English Premier League club Everton.""
+  - **Classification**: Business
+
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a machine learning expert with a specialization in natural language processing (NLP). You have extensive experience in developing and deploying models for text classification tasks, particularly in categorizing news articles. Your expertise includes understanding the nuances of different text data, selecting appropriate feature extraction methods, and choosing the right algorithms to achieve high accuracy in classification. You are proficient in using tools and libraries such as scikit-learn, TensorFlow, and PyTorch to build and optimize models. Your task is to analyze the dataset containing news articles and accurately classify each article into one of the four categories: World, Sports, Business, or Sci/Tech. You will ensure that the classification is done with a high degree of precision and that the class is clearly marked between the markers <final_answer>answer</final_answer>. Your skills in NLP and machine learning make you the ideal agent to handle this task efficiently and effectively.",26665,9273,0,0,0.848

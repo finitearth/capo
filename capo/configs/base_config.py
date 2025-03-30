@@ -1,3 +1,8 @@
+"""
+Base configuration dataclasses used throughout the project.
+Defines core configuration structures that are extended by specific experiment configurations.
+"""
+
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Literal

@@ -1,4 +1,7 @@
-"""Experiment configurations for all experiments in the paper."""
+"""
+Comprehensive collection of experiment configurations used in the paper.
+Includes benchmark experiments, ablation studies, and hyperparameter analyses for CAPO and baseline methods.
+"""
 
 from capo.configs.base_config import ExperimentConfig, ModelConfig, OptimizerConfig
 
@@ -95,20 +98,20 @@ ABLATION_CONFIG = ExperimentConfig(
                 "block_size": 30,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
-                "upper_shots": 0,  # TODO: to be checked
+                "upper_shots": 0,
                 "max_n_blocks_eval": 10,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
             },
         ),
         OptimizerConfig(
-            name="CAPO_no_length_penalty",
+            name="CAPO_no_lp",
             optimizer="CAPO",
             optimizer_params={
                 "n_steps": 999,
                 "population_size": 10,
                 "block_size": 30,
-                "length_penalty": 0.0,  # TODO: to be checked
+                "length_penalty": 0.0,
                 "crossovers_per_iter": 4,
                 "upper_shots": 5,
                 "max_n_blocks_eval": 10,
@@ -122,17 +125,17 @@ ABLATION_CONFIG = ExperimentConfig(
             optimizer_params={
                 "n_steps": 999,
                 "population_size": 10,
-                "block_size": 300,  # TODO: to be checked
+                "block_size": 300,
                 "length_penalty": 0.05,
                 "crossovers_per_iter": 4,
                 "upper_shots": 5,
-                "max_n_blocks_eval": 1,  # TODO: to be checked
+                "max_n_blocks_eval": 1,
                 "alpha": 0.2,
                 "shuffle_blocks_per_iter": False,
             },
         ),
         OptimizerConfig(
-            name="EvoPromptGA_simplified_with_TD",
+            name="EvoPromptGA_TD",
             optimizer="EvoPromptGA",
             optimizer_params={
                 "n_steps": 999,
@@ -141,10 +144,52 @@ ABLATION_CONFIG = ExperimentConfig(
                 "evoprompt_ga_template": "simplified",
             },
         ),
+        OptimizerConfig(
+            name="CAPO_shuffling",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "block_size": 30,
+                "length_penalty": 0.05,
+                "crossovers_per_iter": 4,
+                "upper_shots": 5,
+                "max_n_blocks_eval": 10,
+                "alpha": 0.2,
+                "shuffle_blocks_per_iter": True,
+            },
+        ),
+        OptimizerConfig(
+            name="CAPO_generic_init",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "block_size": 30,
+                "length_penalty": 0.05,
+                "crossovers_per_iter": 4,
+                "upper_shots": 5,
+                "max_n_blocks_eval": 10,
+                "alpha": 0.2,
+                "shuffle_blocks_per_iter": False,
+                "generic_init_prompts": True,
+            },
+        ),
+        OptimizerConfig(
+            name="EvoPromptGA_generic_init",
+            optimizer="EvoPromptGA",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "n_eval_samples": 300,
+                "evoprompt_ga_template": "standard",
+                "generic_init_prompts": True,
+            },
+        ),
     ],
     random_seeds=[42, 43, 44],
     budget_per_run=5_000_000,
-    output_dir="results/",
+    output_dir="results/ablation_results/",
 )
 
 length_penalty_grid = [0.01, 0.02, 0.05, 0.1]
@@ -211,5 +256,5 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
     ],
     random_seeds=[42, 43, 44],
     budget_per_run=5_000_000,
-    output_dir="results/",
+    output_dir="results/hp_results/",
 )

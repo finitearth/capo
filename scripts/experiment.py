@@ -1,13 +1,15 @@
-"""Main script to run all experiments.
+"""
+Main script for running all benchmark experiments, ablation studies, and hyperparameter analyses.
+Coordinates evaluation of CAPO, OPRO, and EvoPromptGA across multiple datasets and configurations.
 
 for minimal example run:
 python scripts/experiment.py --experiment-name test --random-seed 42 \
     --budget-per-run 1000000 --output-dir results/ --dataset subj \
     --model vllm-Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4\
     --model-revision c83e67dfb2664f5039fd4cd99e206799e27dd800 \
-    --max-model-len 1024 --optimizer CAPO --n-steps 10 --population-size 10 \
-    --n-eval-samples 10 --block-size 30 --length-penalty 0.01 \
-    --crossovers-per-iter 4 --upper-shots 10 --max-n-blocks-eval 10 --alpha 0.2
+    --max-model-len 2048 --optimizer CAPO --n-steps 10 --population-size 10 \
+    --max-n-blocks-eval 10 --block-size 30 --length-penalty 0.05 \
+    --crossovers-per-iter 4 --upper-shots 5 --alpha 0.2
 """
 
 import argparse
@@ -24,8 +26,10 @@ from promptolution.templates import EVOPROMPT_GA_TEMPLATE
 
 from capo.callbacks import ParquetCallback, PickleCallback, PromptScoreCallback
 from capo.capo import CAPOptimizer
+from capo.configs.initial_prompts import INITIAL_PROMPTS
 from capo.evopromptga import EvoPromptGAPickable
 from capo.load_datasets import get_tasks
+from capo.opro import OproPickable
 from capo.statistical_tests import paired_t_test
 from capo.templates import EVOPROMPT_GA_SIMPLIFIED_TEMPLATE
 from capo.utils import copy_llm, generate_random_hash, seed_everything
@@ -36,7 +40,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--experiment-name", required=True)
 parser.add_argument("--random-seed", type=int, required=True)
 parser.add_argument("--budget-per-run", type=int, required=True)
-parser.add_argument("--output-dir", default="results/")
+parser.add_argument("--output-dir", default="results/main_results/")
+parser.add_argument("--generic-init-prompts", action="store_true")
 
 # dataset parameters
 parser.add_argument("--dataset", required=True)
@@ -67,6 +72,12 @@ parser.add_argument("--upper-shots", type=int)
 parser.add_argument("--max-n-blocks-eval", type=int)
 parser.add_argument("--alpha", type=float)
 parser.add_argument("--shuffle-blocks-per-iter", action="store_true", default=False)
+
+# optimizer-specific parameters: OPRO
+parser.add_argument("--max-num-instructions", type=int, default=20)
+parser.add_argument("--max-instructions-per-step", type=int, default=8)
+parser.add_argument("--num_few_shots", type=int, default=3)
+
 
 args = parser.parse_args()
 
@@ -113,7 +124,10 @@ if __name__ == "__main__":
     predictor = MarkerBasedClassificator(downstream_llm, dev_task.classes)
 
     # initialize population
-    initial_prompts = random.sample(dev_task.initial_prompts, args.population_size)
+    initial_prompts_pool = (
+        dev_task.initial_prompts if not args.generic_init_prompts else INITIAL_PROMPTS["generic"]
+    )
+    initial_prompts = random.sample(initial_prompts_pool, args.population_size)
 
     # set-up EvoPromptGA template
     if args.evoprompt_ga_template == "standard":
@@ -153,6 +167,18 @@ if __name__ == "__main__":
             test_statistic=lambda x, y: paired_t_test(x, y, alpha=args.alpha),
             shuffle_blocks_per_iter=args.shuffle_blocks_per_iter,
             verbosity=1,
+        )
+    elif args.optimizer == "OPRO":
+        optimizer = OproPickable(
+            meta_llm=meta_llm,
+            initial_prompts=initial_prompts,
+            callbacks=callbacks,
+            predictor=predictor,
+            task=dev_task,
+            n_steps=args.n_steps,
+            max_num_instructions=args.max_num_instructions,
+            max_instructions_per_step=args.max_instructions_per_step,
+            num_few_shots=args.num_few_shots,
         )
     else:
         raise ValueError(f"Optimizer {args.optimizer} not supported.")

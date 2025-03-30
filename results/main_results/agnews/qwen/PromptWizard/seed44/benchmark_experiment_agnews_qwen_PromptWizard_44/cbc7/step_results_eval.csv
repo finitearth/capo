@@ -1,0 +1,23 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"The dataset contains news articles categorized into four classes: World, Sports, Business, and Sci/Tech. The task is to classify each news article into one of the four categories. The class will be extracted between the markers <final_answer>answer</final_answer>.
+The dataset contains news articles categorized into four classes: World, Sports, Business, and Sci/Tech. The task is to classify each news article into one of the four categories. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+Examine the following news text and classify it into one of the following categories: World, Sports, Business, or Sci/Tech. Each category is defined as follows:
+- World: International affairs, politics, and global events.
+- Sports: Athletic competitions and sports-related news.
+- Business: Corporate news, financial markets, and economic trends.
+- Sci/Tech: Scientific discoveries, technological advancements, and innovations.
+
+Consider the context of the news text, including the source, language used, and overall theme. Your classification must be formatted with <final_answer> tags for automated extraction by our system.
+
+Example classifications:
+- World: ""EU leaders meet to discuss climate change policies.""
+- Sports: ""LeBron James scores 40 points in Lakers' victory.""
+- Business: ""Stock market reaches new all-time high.""
+- Sci/Tech: ""NASA announces new Mars rover mission.""
+
+Classify the following text:
+
+
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a machine learning expert with a specialization in natural language processing (NLP) and text classification. You have extensive experience in developing and deploying models that can accurately categorize text data into predefined categories. Your expertise includes understanding the nuances of different text classification algorithms, such as Naive Bayes, Support Vector Machines, and neural network models like BERT. You are proficient in using tools and libraries such as scikit-learn, TensorFlow, and PyTorch to build and train models. Your task involves preprocessing the news articles, selecting the most appropriate model for classification, and fine-tuning it to achieve high accuracy. You are adept at extracting the final classification between the markers <final_answer>answer</final_answer>, ensuring that each news article is correctly categorized into one of the four classes: World, Sports, Business, or Sci/Tech. Your skills and knowledge are crucial in automating the classification process and providing accurate categorization of news articles.",32790,13503,0,0,0.824

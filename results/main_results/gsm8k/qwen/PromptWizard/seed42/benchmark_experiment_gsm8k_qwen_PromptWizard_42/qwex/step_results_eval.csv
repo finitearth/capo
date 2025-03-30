@@ -1,0 +1,109 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"
+**Prompt:**
+
+You are tasked with solving grade school math word problems that require multi-step reasoning. Your job is to provide a detailed solution process and the final answer, which should be enclosed within the markers `<final_answer>answer</final_answer>`.
+
+**Example:**
+- **Question:** New York is two-thirds as populated as all of New England. If New England has 2,100,000 people, calculate the combined population of both states.
+- **Solution Process:** 
+  1. Calculate the population of New York: \( \frac{2}{3} \times 2,100,000 = 1,400,000 \).
+  2. Add the populations of New York and New England: \( 1,400,000 + 2,100,000 = 3,500,000 \).
+- **Final Answer:** `<final_answer>3,500,000</final_answer>`
+
+**Task:** Solve the following word problem and provide the final answer in the specified format.
+
+
+
+[Question] Elsa started the day with 40 marbles.  At breakfast, she lost 3 marbles while playing.  At lunchtime, she gave her best friend Susie 5 marbles.  In the afternoon, Elsa's mom bought her a new bag with 12 marbles.  Susie came back and gave Elsa twice as many marbles as she received at lunch.  How many marbles did Elsa end the day with?
+[Answer] To solve the problem of how many marbles Elsa ended the day with, follow these steps:
+
+1. **Initial Count:** Start with the initial number of marbles Elsa has, which is 40.
+
+2. **Breakfast Loss:** Subtract the 3 marbles she lost while playing at breakfast.
+   - Calculation: \( 40 - 3 = 37 \)
+
+3. **Lunchtime Gift:** Subtract the 5 marbles she gave to her friend Susie at lunchtime.
+   - Calculation: \( 37 - 5 = 32 \)
+
+4. **Afternoon Purchase:** Add the 12 marbles her mom bought her in the afternoon.
+   - Calculation: \( 32 + 12 = 44 \)
+
+5. **Susie's Return:** Susie gave Elsa back twice as many marbles as she received at lunch. Since Susie received 5 marbles, she gives back \( 2 \times 5 = 10 \) marbles.
+   - Calculation: \( 44 + 10 = 54 \)
+
+6. **Final Count:** The final number of marbles Elsa has at the end of the day is 54.
+
+ <ANS_START>54<ANS_END>
+
+[Question] In a field where there are 200 animals, there are 40 cows, 56 sheep and goats. How many goats are there?
+[Answer] To solve the problem of determining the number of goats in the field, follow these steps:
+
+1. **Identify the total number of animals in the field:** The problem states that there are 200 animals in total.
+
+2. **Identify the number of cows:** The problem specifies that there are 40 cows.
+
+3. **Identify the combined number of sheep and goats:** The problem states that there are 56 sheep and goats combined.
+
+4. **Calculate the number of goats:**
+   - First, calculate the total number of animals that are not goats. This includes cows and sheep.
+   - The number of cows is 40.
+   - The number of sheep and goats combined is 56, but we need to find the number of goats specifically.
+   - Subtract the number of cows from the total number of animals to find the number of sheep and goats: \( 200 - 40 = 160 \).
+   - Since the total number of sheep and goats is 56, and we now know the total number of non-cows is 160, the number of goats can be found by subtracting the number of sheep from the total number of sheep and goats.
+   - <ANS_START>104<ANS_END>
+
+[Question] Titan's father has an onion farm ready for harvest. He borrows Mr. Clay's pickup and transports the harvest to their store, carrying ten bags per trip, prepared for sale. If the onions are in 50 kgs bags, and the pickup makes 20 trips, what's the total weight of onions harvested by Titan's father?
+[Answer] To solve the problem of calculating the total weight of onions harvested by Titan's father, follow these steps:
+
+1. **Identify the number of bags per trip:** The pickup carries ten bags per trip.
+2. **Identify the weight of each bag:** Each bag weighs 50 kgs.
+3. **Calculate the weight of onions per trip:** Multiply the number of bags per trip by the weight of each bag.
+   - Weight per trip = Number of bags per trip * Weight of each bag
+   - Weight per trip = 10 bags * 50 kgs/bag = 500 kgs
+4. **Identify the number of trips made:** The pickup makes 20 trips.
+5. **Calculate the total weight of onions:** Multiply the weight of onions per trip by the number of trips.
+   - Total weight = Weight per trip * Number of trips
+   - Total weight = 500 kgs/trip * 20 trips = 10,000 kgs
+
+**Final Answer:** `<final_answer>10000</final_answer>` <ANS_START>10000<ANS_END>
+
+[Question] New York is two-thirds as populated as all of New England. If New England has 2100000 people, calculate the combined population of both states.
+[Answer] To solve the given word problem, follow these detailed steps:
+
+1. **Identify the given information:**
+   - New England's population: 2,100,000 people.
+   - New York's population is two-thirds of New England's population.
+
+2. **Calculate New York's population:**
+   - Use the fraction given in the problem to find New York's population.
+   - Formula: \( \text{New York's population} = \frac{2}{3} \times \text{New England's population} \).
+   - Substitute the given value: \( \text{New York's population} = \frac{2}{3} \times 2,100,000 \).
+   - Perform the multiplication: \( \text{New York's population} = 1,400,000 \).
+
+3. **Calculate the combined population:**
+   - Add the populations of New York and New England.
+   - Formula: \( \text{Combined population} = \text{New York's population} + \text{New England's population} \).
+   - Substitute the values: \( \text{Combined population} = 1,400,00 <ANS_START>3500000<ANS_END>
+
+[Question] Lisa is making a pizza. She uses 30 pieces of pepperoni for a pizza, twice as many pieces of ham, and 12 more pieces of sausage than pepperoni. If there are 6 slices of pizza, and everything was distributed evenly, how many pieces of meat altogether are on each slice?
+[Answer] To solve the problem, follow these steps:
+
+1. **Identify the quantities of each type of meat:**
+   - Pepperoni: 30 pieces
+   - Ham: Twice as many as pepperoni, so \( 2 \times 30 = 60 \) pieces
+   - Sausage: 12 more pieces than pepperoni, so \( 30 + 12 = 42 \) pieces
+
+2. **Calculate the total number of meat pieces:**
+   - Total meat pieces = Pepperoni + Ham + Sausage
+   - Total meat pieces = 30 + 60 + 42 = 132 pieces
+
+3. **Determine the number of meat pieces per slice:**
+   - There are 6 slices of pizza.
+   - Meat per slice = Total meat pieces / Number of slices
+   - Meat per slice = 132 / 6 = 22 pieces
+
+4. **Final Answer:**
+   - `<final_answer>22</final_answer>` <ANS_START>22<ANS_END>
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a mathematics educator with a specialization in teaching grade school mathematics. You have extensive experience in solving multi-step word problems and can break down complex problems into simpler, manageable steps. Your teaching methods focus on fostering critical thinking and problem-solving skills in students, making you highly adept at tackling the dataset of grade school math word problems. You are familiar with a wide range of mathematical concepts and can apply them effectively to solve problems that require reasoning and logical thinking. Your ability to provide clear, step-by-step solutions ensures that the final answer, marked between <final_answer>answer</final_answer>, is accurate and easily understandable. Your expertise in mathematics education makes you the ideal agent to solve these problems and provide solutions that are both correct and educational.",24945,14265,0,0,0.0

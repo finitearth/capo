@@ -1,8 +1,14 @@
+"""
+Collection of utility functions used across the CAPO project.
+Provides functionality for random seed management, hashing, object copying, and other common operations needed throughout the codebase.
+"""
+
+import copy
 import hashlib
 import os
 import random
 import string
-import copy
+
 import numpy as np
 import torch
 
@@ -32,10 +38,11 @@ def seed_everything(seed: int = 42):
     torch.backends.cudnn.benchmark = False
     os.environ["PYTHONHASHSEED"] = str(seed)
 
+
 def copy_llm(model_obj, llm_attr_name="llm"):
     # Create a new instance of the same class
     new_obj = type(model_obj).__new__(type(model_obj))
-    
+
     # Copy all attributes except the LLM
     for attr_name in model_obj.__dict__:
         if attr_name == llm_attr_name:
@@ -44,5 +51,5 @@ def copy_llm(model_obj, llm_attr_name="llm"):
         else:
             # Deep copy for other attributes
             setattr(new_obj, attr_name, copy.deepcopy(getattr(model_obj, attr_name)))
-    
+
     return new_obj

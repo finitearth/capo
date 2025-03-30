@@ -1,4 +1,7 @@
-"""Convert an experiment configuration to command line strings."""
+"""
+Functions to convert experiment configurations into executable commands.
+Splits large experiment configurations into separate configs and generates command line instructions for distributed execution.
+"""
 
 import itertools
 from typing import List
@@ -32,7 +35,7 @@ def generate_individual_configs(config: ExperimentConfig) -> List[ExperimentConf
     return individual_configs
 
 
-def generate_experiment_command(
+def generate_command(
     config: ExperimentConfig,
     evaluate: bool = False,
     partition: str = None,
@@ -57,11 +60,6 @@ def generate_experiment_command(
     command += " --output=logs/%x-%j.out"
     command += " --error=logs/%x-%j.err"
 
-    if config.optimizers[0].name == "PromptWizard":
-        command += ' --wrap "poetry run python scripts/experiment_wizard.py'
-    else:
-        command += ' --wrap "poetry run python scripts/experiment.py'
-
     # Add all the parameters
     def add_param_if_exists(command, param_name, param_value):
         if param_value is not None:
@@ -69,12 +67,15 @@ def generate_experiment_command(
         return command
 
     if evaluate:
-        command += f' --wrap "poetry run python scripts/evaluate_prompts.py --experiment-path {config.output_dir}"'
+        command += f' --wrap "poetry run python scripts/evaluate_prompts.py --experiment-path {config.output_dir}'
     else:
-        command += ' --wrap "poetry run python scripts/experiment.py'
+        if config.optimizers[0].name == "PromptWizard":
+            command += ' --wrap "poetry run python scripts/experiment_wizard.py'
+        else:
+            command += ' --wrap "poetry run python scripts/experiment.py'
         command = add_param_if_exists(command, "optimizer", config.optimizers[0].optimizer)
         command = add_param_if_exists(
-            command, "n-steps", config.optimizers[0].optimizer_params["n_steps"]
+            command, "n-steps", config.optimizers[0].optimizer_params.get("n_steps")
         )
 
         command = add_param_if_exists(
@@ -127,6 +128,9 @@ def generate_experiment_command(
         command = add_param_if_exists(
             command, "model-storage-path", config.models[0].model_storage_path
         )
+
+        if config.optimizers[0].optimizer_params.get("generic_init_prompts"):
+            command += " --generic-init-prompts"
 
         if config.optimizers[0].optimizer_params.get("shuffle_blocks_per_iter"):
             command += " --shuffle-blocks-per-iter"

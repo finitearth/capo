@@ -1,0 +1,150 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"The dataset consists of movie reviews with five levels of sentiment labels: very negative, negative, neutral, positive, and very positive. The task is to classify each movie review into one of these five sentiment categories. The class will be extracted between the markers <final_answer>answer</final_answer>.
+The dataset consists of movie reviews with five levels of sentiment labels: very negative, negative, neutral, positive, and very positive. The task is to classify each movie review into one of these five sentiment categories. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+The dataset consists of movie reviews with five levels of sentiment labels: very negative, negative, neutral, positive, and very positive. The task is to classify each movie review into one of these five sentiment categories. The class will be extracted between the markers <final_answer>answer</final_answer>.
+
+The sentiment categories are defined as follows:
+- Very negative: Extremely negative sentiment, indicating a highly negative experience.
+- Negative: Negative sentiment, indicating a negative experience.
+- Neutral: Neutral sentiment, indicating a neutral experience.
+- Positive: Positive sentiment, indicating a positive experience.
+- Very positive: Extremely positive sentiment, indicating a highly positive experience.
+
+Evaluate the emotional content of the following film review and classify it into one of the five sentiment categories: very negative, negative, neutral, positive, or very positive. Your classification must be provided between <final_answer> and </final_answer> markers.
+
+Example:
+[Question] it did n't go straight to video.
+[Answer] <final_answer>neutral</final_answer>
+
+END
+```
+
+
+[Question] you wo n't look at religious fanatics -- or backyard sheds -- the same way again .
+[Answer] To classify the movie review into one of the five sentiment categories, we need to analyze the emotional content of the review. Here is the reasoning chain to determine the sentiment category:
+
+1. **Identify the emotional content of the review**:
+   - The review states: ""you won't look at religious fanatics -- or backyard sheds -- the same way again.""
+   - This statement suggests a neutral perspective, as it does not express strong positive or negative emotions.
+
+2. **Analyze the sentiment**:
+   - The review does not convey a strong positive or negative sentiment. It is neutral and does not express strong emotions.
+   - The review does not express strong positive or negative emotions.
+
+3. **Classify the sentiment:
+   - Based on the neutral perspective, the sentiment category is neutral.
+
+4. **Final answer:
+   - The sentiment category is neutral.
+
+<final_answer>neutral</final_answer> <ANS_START>neutral<ANS_END>
+
+[Question] we started to wonder if ... some unpaid intern had just typed ` chris rock , ' ` anthony hopkins ' and ` terrorists ' into some univac-like script machine .
+[Answer] To classify the sentiment of the movie review, we need to analyze the emotional content of the text. Here is a step-by-step reasoning chain to determine the sentiment category:
+
+1. **Identify the Key Words and Phrases**:
+   - The review mentions ""unpaid intern,"" ""chris rock,"" ""anthony hopkins,"" and ""terrorists.""
+   - The phrase ""unpaid intern"" suggests a negative connotation related to exploitation.
+   - The mention of ""chris rock,"" ""anthony hopkins,"" and ""terrorists"" suggests a negative context related to a fictional scenario involving terrorists.
+
+2. **Analyze the Context**:
+   - The context involves a fictional scenario where an unpaid intern is typing names into a script machine, which suggests a negative and potentially dangerous scenario.
+   - The mention of ""terrorists"" adds a negative and threatening element to the scenario.
+
+3. **Determine the Overall sentiment:
+   - The combination of negative elements such as ""unpaid intern"" and ""terrorists"" creates a highly negative sentiment.
+   - The overall tone of the review is extremely negative, indicating a highly negative experience.
+
+4. **Classify the sentiment:
+   - Based on the analysis, the sentiment of the <ANS_START>very negative<ANS_END>
+
+[Question] rodriguez ... was unable to reproduce the special spark between the characters that made the first film such a delight .
+[Answer] To classify the movie review into one of the five sentiment categories, we need to analyze the emotional content of the review. Here is the reasoning chain to determine the sentiment category:
+
+1. **Identify the Key Sentiment Words**:
+   - The review mentions ""unable to reproduce the special spark between the characters that made the first film such a delight.""
+   - The phrase ""unable to reproduce"" indicates a negative sentiment.
+   - The phrase ""special spark"" and ""delight"" indicate positive sentiments.
+
+2. **Evaluate the Overall Sentiment**:
+   - The review mentions a negative aspect (""unable to reproduce"") but also highlights positive aspects (""special spark"" and ""delight"").
+   - The overall sentiment is neutral because the negative and positive aspects balance each other.
+
+3. **Classify the Sentiment:
+   - Based on the balanced sentiment, the review falls into the ""neutral"" category.
+
+[final_answer]neutral</final_answer> <ANS_START>neutral<ANS_END>
+
+[Question] killing time , that 's all that 's going on here .
+[Answer] To classify the movie review into one of the five sentiment categories, we follow these steps:
+
+1. **Understand the Sentiment Categories**:
+   - **Very negative**: Extremely negative sentiment, indicating a highly negative experience.
+   - **Negative**: Negative sentiment, indicating a negative experience.
+   - **Neutral**: Neutral sentiment, indicating a neutral experience.
+   - **Positive**: Positive sentiment, indicating a positive experience.
+   - **Very positive**: Extremely positive sentiment, indicating a highly positive experience.
+
+2. **Analyze the Movie Review**:
+   - The review is: ""killing time, that 's all that 's going on here.""
+
+3. **Determine the Sentiment**:
+   - The phrase ""killing time"" suggests a negative experience, as it implies wasting time without any meaningful activity.
+   - The phrase ""that 's all that 's going on here"" reinforces the negative sentiment, indicating that the experience is monotonous and uninteresting.
+
+4. **Classify the Sentiment**:
+   - The overall sentiment is negative, as the review describes a monotonous and uninteresting experience.
+
+5. **Final Classification:
+   - Based on the analysis, the sentiment of the review is negative.
+
+[final_answer] <ANS_START>very negative<ANS_END>
+
+[Question] -lrb- a -rrb- strong piece of work .
+[Answer] To classify the movie review into one of the five sentiment categories, we follow these steps:
+
+1. **Understand the Sentiment Categories**:
+   - **Very negative**: Extremely negative sentiment, indicating a highly negative experience.
+   - **Negative**: Negative sentiment, indicating a negative experience.
+   - **Neutral**: Neutral sentiment, indicating a neutral experience.
+   - **Positive**: Positive sentiment, indicating a positive experience.
+   - **Very positive**: Extremely positive sentiment, indicating a highly positive experience.
+
+2. **Analyze the Movie Review**:
+   - The review is: ""-lrb- a -rrb- strong piece of work.""
+
+3. **Identify the Sentiment**:
+   - The phrase ""strong piece of work"" indicates a positive sentiment.
+   - The overall tone of the review is positive, suggesting a positive experience.
+
+4. **Classify the Sentiment**:
+   - Based on the positive tone, the review falls into the ""positive"" category.
+
+5. **Final Answer:
+   - <final_answer>positive</final_answer>
+
+This reasoning chain ensures that the movie review is accurately classified into the correct sentiment category. <ANS_START>positive<ANS_END>
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a data scientist special with expertise in natural language processing and sentiment analysis. You have a deep understanding of machine learning algorithms and techniques for analyzing text data. Your skills include developing models that can classify text into different sentiment categories, such as very negative, negative, neutral, positive, and very positive. You are proficient in using various tools and libraries, such as Python, TensorFlow, and scikit-learn, to build and train models that can accurately classify movie reviews. Your expertise in natural language processing and sentiment analysis makes you well-suited to tackle the task of classifying movie reviews into the specified sentiment categories. You can extract the sentiment labels from the dataset and provide accurate classifications for each movie review.
+
+Here is the code to classify the movie reviews:
+
+```python
+import pandas as pd
+from transformers import pipeline
+
+# Load the dataset
+data = pd.read_csv('movie_reviews.csv')
+
+# Initialize the sentiment analysis pipeline
+sentiment_pipeline = pipeline('sentiment-analysis"")
+
+# Classify the movie reviews
+sentiment_labels = []
+for review in data['review']:
+    sentiment = sentiment_pipeline(rereview)
+    sentiment_labels.append(sentiment['label'])
+
+# Add the sentiment labels to the dataset
+data['sentiment'] = sentiment_labels",23818,9988,0,0,0.29

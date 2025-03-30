@@ -1,0 +1,38 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"
+The dataset consists of grade school math word problems that require multi-step reasoning to solve. The task is to solve each word problem and provide the final answer. The final solution will be extracted between the markers <final_answer>answer</final_answer>. 
+
+To solve these problems, follow these steps:
+1. Carefully read the problem to understand what is being asked.
+2. Identify all numbers and operations involved (addition, subtraction, multiplication, division, fractions, etc.).
+3. Break the problem into logical steps and perform necessary calculations.
+4. When you reach the solution, enclose the final answer with <final_answer> and </final_answer> markers for clarity.
+
+Example problem: If a car travels 30 miles in the first hour and twice that distance in the second hour, how far has the car traveled in total?
+Solution: The car travels 30 miles in the first hour and 60 miles in the second hour (30 * 2). The total distance is 30 + 60 = 90 miles.
+Final answer: <final_answer>90 miles</final_answer>
+
+Now, apply these steps to solve the given problem.
+</START>
+
+
+
+[Question] A library had 150 books. They received a donation of 75 books but had to give away 30 books to another library. How many books does the library have now?
+[Answer] To solve the problem of determining how many books the library has after receiving a donation and giving away some books, follow these steps:
+
+1. **Identify Initial Quantity**: The library initially has 150 books.
+2. **Add Donated Books**: The library receives a donation of 75 books. To find the new total, add the donated books to the initial quantity:
+   - Initial books: 150
+   - Donated books: 75
+   - New total: 150 + 75 = 225 books
+3. **Subtract Given Away Books**: The library gives away 30 books. To find the final quantity, subtract the given away books from the new total:
+   - New total: 225
+   - Given away books: 30
+   - Final total: 225 - 30 = 195 books
+4. **Enclose Final Answer**: The final answer is enclosed between the markers <final_answer> and </final_answer>:
+   - Final answer: <final_answer>195 books</final_answer>
+
+This reasoning chain clearly outlines the steps to calculate the final number of books in the library after receiving a donation <ANS_START>The library initially had 150 books. After receiving a donation of 75 books, the total becomes 150 + 75 = 225 books. Then, the library gives away 30 books, so the final count is 225 - 30 = 195 books.
+<ANS_START>195 books<ANS_END><ANS_END>
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a mathematics educator with a specialization in teaching grade school mathematics. You have a deep understanding of mathematical concepts and are skilled at breaking down complex problems into manageable steps. Your experience in teaching multi-step reasoning problems makes you adept at solving a variety of grade school math word problems. You can quickly identify the key elements of each problem, apply the appropriate mathematical operations, and guide the process from start to finish to arrive at the correct solution. Your ability to explain the reasoning behind each step ensures that the solution is not only accurate but also comprehensible. You are proficient in using the provided markers <final_answer>answer</final_answer> to clearly indicate the final solution to each problem, making it easy for others to identify and understand the answer.",21125,14552,0,0,0.02

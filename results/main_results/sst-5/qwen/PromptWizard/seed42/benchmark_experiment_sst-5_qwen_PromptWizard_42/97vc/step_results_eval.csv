@@ -1,0 +1,97 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"
+Classify the sentiment in this cinema critique using a five-point scale: very negative, negative, neutral, positive, or very positive. To ensure accuracy, consider the following steps:
+1. Identify key words and phrases that indicate the reviewer's opinion, paying special attention to subtle connotations and the intensity of the language used.
+2. Evaluate the overall tone of the critique, considering both explicit statements and implied sentiments. Look for words that suggest strong feelings, either positive or negative, and analyze the context in which they are used.
+3. Assess whether the critique contains mixed sentiments and how they balance out. If there are both positive and negative elements, determine which sentiment is more dominant by weighing the intensity and frequency of the positive versus negative language.
+4. Use these insights to determine the most appropriate sentiment category. Your answer must be enclosed within <final_answer> </final_answer>.
+</START>
+
+
+
+[Question] one just waits grimly for the next shock without developing much attachment to the characters .
+[Answer] To classify the sentiment of the given cinema critique, we will follow the outlined steps:
+
+1. **Identify Key Words and Phrases:**
+   - ""waits grimly"" suggests a negative anticipation or experience.
+   - ""shock"" implies a negative or unpleasant event.
+   - ""without developing much attachment to the characters"" indicates a lack of emotional engagement, which is generally seen as a negative aspect in a movie critique.
+
+2. **Evaluate the Overall Tone:**
+   - The overall tone is not overtly positive or negative but leans towards a neutral-negative sentiment. The use of ""grimly"" and ""shock"" suggests a somewhat negative experience, but the critique does not express strong negative emotions like disappointment or anger.
+
+3. **Assess Mixed Sentiments:**
+   - There are no explicitly positive sentiments mentioned in the critique. The critique focuses on the lack of emotional engagement and the anticipation of negative events, which are negative aspects.
+   - However, the critique does not express strong negative emotions, which would typically be associated with a ""negative"" or ""very negative"" classification.
+
+4. **Determine the Most Appropriate Sentiment Category:**
+   - Given the critique's focus on the lack of emotional engagement and the anticipation of negative events <ANS_START>neutral<ANS_END>
+
+[Question] because the film deliberately lacks irony , it has a genuine dramatic impact ; it plays like a powerful 1957 drama we 've somehow never seen before .
+[Answer] To classify the sentiment of the given cinema critique, we will follow the outlined steps:
+
+1. **Identify Key Words and Phrases:**
+   - ""deliberately lacks irony"" suggests a straightforward approach, which can be seen as positive in the context of dramatic impact.
+   - ""genuine dramatic impact"" is a clear positive phrase indicating the film successfully achieves its intended effect.
+   - ""powerful 1957 drama"" uses the word ""powerful,"" which is a strong positive descriptor.
+   - ""we've somehow never seen before"" implies a fresh and unique experience, which is generally viewed positively.
+
+2. **Evaluate the Overall Tone:**
+   - The overall tone of the critique is appreciative and admiring. The reviewer praises the film's ability to create a genuine and powerful dramatic experience.
+   - There are no negative or critical remarks present in the critique.
+
+3. **Assess Mixed Sentiments:**
+   - There are no mixed sentiments in this critique. All the sentiments expressed are positive.
+
+4. **Determine the Most Appropriate Sentiment Category:**
+   - Given the positive language used throughout the critique and the absence of any negative sentiments, the appropriate sentiment category is ""very positive.""
+
+<final_answer>very positive <ANS_START>very positive<ANS_END>
+
+[Question] all comedy is subversive , but this unrelenting bleak insistence on opting out of any opportunity for finding meaning in relationships or work just becomes sad .
+[Answer] To classify the sentiment of the given movie review, we will follow the outlined steps:
+
+1. **Identify Key Words and Phrases:**
+   - ""unrelenting bleak insistence"" suggests a persistent negative tone.
+   - ""opting out of any opportunity for finding meaning in relationships or work"" implies a lack of positive outcomes or hope.
+   - ""just becomes sad"" directly expresses a negative emotional response.
+
+2. **Evaluate Overall Tone:**
+   - The review does not contain any explicitly positive words or phrases.
+   - The tone is consistently negative, focusing on the bleakness and sadness of the film's approach to relationships and work.
+
+3. **Assess Mixed Sentiments:**
+   - There are no positive elements in the critique to balance out the negative sentiments.
+   - The critique is entirely focused on the negative aspects of the film, with no redeeming qualities mentioned.
+
+4. **Determine the Most Appropriate Sentiment Category:**
+   - Given the persistent negative language and the overall bleak tone, the sentiment is decidedly negative.
+   - The phrase ""unrelenting bleak insistence"" and the conclusion that the film ""just becomes sad"" indicate a strong negative sentiment, suggesting that the critique is not just negative but very negative.
+
+<final_answer <ANS_START>very negative<ANS_END>
+
+[Question] leading a double life in an american film only comes to no good , but not here .
+[Answer] To classify the sentiment of the given cinema critique, we will follow the outlined steps:
+
+1. **Identify Key Words and Phrases**: The critique mentions ""leading a double life in an american film only comes to no good, but not here."" The key phrases here are ""comes to no good"" and ""but not here."" The phrase ""comes to no good"" suggests a negative outcome, but the addition of ""but not here"" implies that the film in question does not follow this typical negative outcome.
+
+2. **Evaluate the Overall Tone**: The overall tone is not strongly negative or positive. The critique acknowledges a common negative outcome in films but indicates that this film avoids that pitfall. This suggests a balanced view rather than an overtly positive or negative stance.
+
+3. **Assess Mixed Sentiments**: There is a mix of sentiments here. The critique starts with a negative expectation (""comes to no good"") but then shifts to a neutral or slightly positive stance by indicating that the film does not follow this negative path. The sentiment is not strongly positive or negative, as it does not praise or criticize the film extensively.
+
+4. **Determine the Most Appropriate Sentiment Category**: Given the balanced nature of the critique, with neither a strong positive nor negative sentiment <ANS_START>neutral<ANS_END>
+
+[Question] hardly a film that comes along every day .
+[Answer] To classify the sentiment of the movie review ""hardly a film that comes along every day,"" follow these steps:
+
+1. **Identify Key Words and Phrases**: The phrase ""hardly a film that comes along every day"" suggests that the film is unique or rare. The word ""hardly"" can be interpreted as a mild negative, but in this context, it is used to emphasize the rarity and uniqueness of the film, which is generally seen as a positive attribute.
+
+2. **Evaluate the Overall Tone**: The overall tone of the critique is not explicitly negative. Instead, it implies that the film is special and not something that is seen frequently, which is often a compliment in the context of cinema critiques.
+
+3. **Assess Mixed Sentiments**: There are no clear negative sentiments expressed in the critique. The phrase ""hardly a film that comes along every day"" does not contain any negative connotations but rather suggests that the film is unique and noteworthy.
+
+4. **Determine the Most Appropriate Sentiment Category**: Given that the critique emphasizes the uniqueness and rarity of the film, which is generally seen as a positive attribute, the sentiment can be classified as positive.
+
+<final_answer>positive</final_answer> <ANS_START>positive<ANS_END>
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a machine learning expert with a specialization in natural language processing (NLP) and sentiment analysis. You have extensive experience in developing and deploying models that can accurately classify text into sentiment categories. Your expertise includes understanding the nuances of human language, particularly in the context of movie reviews, which often contain complex emotions and subtle nuances. You are proficient in using advanced algorithms and techniques such as deep learning, specifically recurrent neural networks (RNNs) and transformers, to capture the context and sentiment of text data. You are also skilled in preprocessing text data, handling imbalanced datasets, and fine-tuning models to achieve high accuracy and reliability in sentiment classification. Your task is to analyze each movie review and classify it into one of the five sentiment categories: very negative, negative, neutral, positive, and very positive, ensuring that the classification is encapsulated between the markers <final_answer>answer</final_answer>. Your work is crucial in providing accurate sentiment analysis that can be used for various applications, including market research, customer feedback analysis, and content moderation.",23601,21882,0,0,0.292

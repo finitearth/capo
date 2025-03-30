@@ -1,3 +1,7 @@
+"""
+Custom callback implementations for tracking and saving experiment results.
+Contains PickleCallback for serialization, PromptScoreCallback for performance monitoring, and ParquetCallback for storing structured data efficiently.
+"""
 import os
 from datetime import datetime
 
@@ -30,7 +34,6 @@ class PromptScoreCallback(Callback):
         if not os.path.exists(dir):
             os.makedirs(dir)
         self.dir = dir
-        self.count = 0
 
     def on_step_end(self, optimizer):
         if hasattr(optimizer.task, "prompt_score_cache"):
@@ -53,13 +56,8 @@ class PromptScoreCallback(Callback):
             for (prompt, block_id), score in eval_dict.items():
                 df.at[prompt, block_id] = score.mean()
 
-            if self.save_all_steps:
-                parquet_path = os.path.join(self.dir, f"prompt_scores_{self.count}.parquet")
-                df.to_parquet(parquet_path)
-                self.count += 1
-            else:
-                parquet_path = os.path.join(self.dir, "prompt_scores.parquet")
-                df.to_parquet(parquet_path)
+            parquet_path = os.path.join(self.dir, "prompt_scores.parquet")
+            df.to_parquet(parquet_path)
 
         return True
 
@@ -124,6 +122,10 @@ class ParquetCallback(FileOutputCallback):
         if not os.path.exists(self.dir + "step_results.parquet"):
             df.to_parquet(self.dir + "step_results.parquet", index=False)
         else:
-            df.to_parquet(self.dir + "step_results.parquet", mode="a", header=False, index=False)
+            df.to_parquet(
+                self.dir + "step_results.parquet",
+                engine="fastparquet",
+                append=True,
+            )
 
         return True

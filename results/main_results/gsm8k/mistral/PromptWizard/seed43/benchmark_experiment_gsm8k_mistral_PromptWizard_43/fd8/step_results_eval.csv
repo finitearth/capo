@@ -1,0 +1,61 @@
+step,prompt,system_prompt,input_tokens_meta_llm,output_tokens_meta_llm,input_tokens_downstream_llm,output_tokens_downstream_llm,test_score
+1,"The dataset consists of grade school math word problems that require multi-step reasoning to solve. The task is to solve each word problem and provide the final answer. The final solution will be extracted between the markers <final_answer>answer</final_answer>.
+
+To solve the grade school math word problems that require multi-step reasoning, follow these steps:
+
+1. **Break down the problem into smaller parts**: Identify the key components of the problem and break it down into smaller, manageable parts.
+2. **Solve each part individually**: For each part, apply the necessary mathematical operations to solve it.
+3. **Combine the solutions: Once each part is solved, combine the solutions to get the final answer.
+4. **Format the final answer: Ensure the final answer is formatted between <final_answer> tags.
+
+### Example:
+**Question:** Elsa and her sister watch an opera show every year at Central City Opera. Last year, opera seating cost $85 per ticket. This year, it costs $102. What is the percent increase in the cost of each ticket?
+
+**Solution:**
+1. Calculate the increase in cost: $102 - $85 = $17.
+2. Calculate the percentage increase: ($17 / $85) * 100 = 20%.
+
+**Final Answer:**
+<final_answer>20</final_answer>
+
+### Key Assum
+
+
+[Question] Maria is planning to buy a new car that costs $25,000. She has saved $15,000 for the car. She was awarded a grant that will cover 30% of the remainder of her car cost. How much will Maria need to apply for to receive a loan that will cover her car cost?
+[Answer] To solve the problem, follow these steps:
+
+1. **Calculate the remaining cost of the car:**
+   - The total cost of the car is $25,000.
+   - Maria has saved $15,000.
+   - The remaining cost is $25,000 - $15,000 = $10,000.
+
+2. **Calculate the amount covered by the grant:**
+   - The grant covers 30% of the remaining cost.
+   - The amount covered by the grant is 30% of $10,000 = 0.3 * $10,000 = $3,000.
+
+3. **Calculate the amount Maria needs to apply for a loan:**
+   - The remaining cost after the grant is $10,000 - $3,000 = $7,000.
+
+**Final Answer:**
+<final_answer>7,000</final_answer> <ANS_START>10,500<ANS_END>
+
+[Question] Three runners are competing in a 15-mile race. The first runs at an average pace of 7 minutes per mile, the second runs at an average pace of 6 minutes per mile, and the third runs at an average pace of 5 minutes per mile. After 60 minutes, the second runner stops for a drink of water. For how many minutes could the second runner remain stopped before the first runner catches up with him?
+[Answer] To solve the problem, we need to determine how long the second runner can remain stopped before the first runner catches up with him. Here is the step-by-step reasoning:
+
+1. **Calculate the distance covered by the second runner in 60 minutes:**
+   - The second runner runs at a pace of 6 minutes per mile.
+   - In 60 minutes, the second runner covers \( \frac{60}{6} = 10$ miles.
+
+2. **Calculate the distance covered by the first runner in 60 minutes:**
+   - The first runner runs at a pace of 7 minutes per mile.
+   - In 60 minutes, the first runner covers $ \frac{60}{7} = 8.57$ miles.
+
+3. **Determine the remaining distance for the first runner to catch up with the second runner:**
+   - The second runner has covered 10 miles.
+   - The first runner has covered 8.57 miles.
+   - The remaining distance for the first runner to catch up is $10 - 8.57 = 1.43$ miles.
+
+4. **Calculate the time it takes for the first runner to cover the remaining distance:
+   - The <ANS_START>10<ANS_END>
+
+For each question present the reasoning followed by the correct answer within <final_answer> </final_answer> tags.","You are a mathematics educator with a strong background in teaching and solving complex mathematical problems. You have extensive experience in breaking down multi-step word problems and guiding students through the process of solving them. Your expertise in mathematics allows you to identify the key steps required to solve each problem and provide clear, step-by-step solutions. You can effectively analyze the problem, apply mathematical principles, and provide the final answer. Your ability to break down complex problems into manageable steps makes you an valuable resource for solving grade school math word problems. Your expertise ensures that the final solution is accurate and comprehensible.",24153,13084,0,0,0.578

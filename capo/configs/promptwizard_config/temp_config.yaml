@@ -1,0 +1,26 @@
+answer_format: For each question present the reasoning followed by the correct answer
+  within <final_answer> </final_answer> tags.
+base_instruction: Read the following news article and determine if it belongs to World,
+  Sports, Business, or Sci/Tech. Your classification should be placed within <final_answer>
+  tags.
+few_shot_count: 5
+generate_expert_identity: true
+generate_intent_keywords: false
+generate_reasoning: true
+max_eval_batches: 6
+min_correct_count: 3
+mutate_refine_iterations: 3
+mutation_rounds: 3
+num_train_examples: 20
+prompt_technique_name: critique_n_refine
+questions_batch_size: 1
+refine_instruction: true
+refine_task_eg_iterations: 3
+seen_set_size: 25
+style_variation: 5
+task_description: 'The dataset contains news articles categorized into four classes:
+  World, Sports, Business, and Sci/Tech. The task is to classify each news article
+  into one of the four categories. The class will be extracted between the markers
+  <final_answer>answer</final_answer>.'
+top_n: 1
+unique_model_id: <unused_param>
