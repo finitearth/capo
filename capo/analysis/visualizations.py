@@ -325,8 +325,8 @@ def plot_length_score(
         df = get_results(dataset, model, optim)
         df = df.sort_values(by=["step", "score"])
 
-        df_last_step = df.groupby(["seed"]).last()
-        df = df[~df.index.isin(df_last_step.index)]
+        df_best_last_step = df.groupby(["seed"]).last()
+        df = df[~df.index.isin(df_best_last_step.index)]
 
         df = df.drop_duplicates(subset=["prompt"], keep="last")
 
@@ -343,7 +343,7 @@ def plot_length_score(
         )
 
         sns.scatterplot(
-            data=df_last_step,
+            data=df_best_last_step,
             x=x_col,
             y=score_col,
             ax=ax,
