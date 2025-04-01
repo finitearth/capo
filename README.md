@@ -57,6 +57,7 @@ poetry run python scripts/experiment.py --experiment-name test --random-seed 42 
     --max-n-blocks-eval 10 --block-size 30 --length-penalty 0.05 \
     --crossovers-per-iter 4 --upper-shots 5 --alpha 0.2
 ```
+This command will automatically download the specified model from HuggingFace and use vLLM to host it. We recommend at least 80GB of GPU RAM to ensure smooth execution of the experiments. If you've already downloaded the model, you can specify its location by adding the ``--model-storage-path`` command line argument to your call.
 
 ## Repository Structure
 
@@ -100,4 +101,4 @@ Overview of relevant files and directories:
 
 ## Dependencies
 
-Exact dependencies are documented in the poetry.lock. Executing `poetry install`` will produce an environment with exactly the dependencies used for our experiments.
+Exact dependencies are documented in the poetry.lock. Executing ``poetry install`` will produce an environment with exactly the dependencies used for our experiments.
