@@ -28,7 +28,7 @@ poetry config virtualenvs.in-project true
 poetry install
 ```
 
-*4a.) If the specified Python version (3.11 for this project) is not found:*
+*4a.) If the specified Python version (3.12 for this project) is not found:*
 
 If the required Python version is not installed on your device, install Python from the official [python.org](https://www.python.org/downloads) website.
 
