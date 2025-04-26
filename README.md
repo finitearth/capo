@@ -1,4 +1,15 @@
 # CAPO - Cost-Aware Prompt Optimization
+[![arXiv](https://img.shields.io/badge/arXiv-2504.16005-b31b1b.svg)](https://arxiv.org/abs/2504.16005)
+
+This is the official implementation of the paper ["CAPO: Cost-Aware Prompt Optimization"](https://arxiv.org/abs/2504.16005).
+
+## About
+
+Large language models (LLMs) have revolutionized natural language processing by solving a wide range of tasks simply guided by a prompt. Yet their performance is highly sensitive to prompt formulation. While automated prompt optimization addresses this challenge by finding optimal prompts, current methods require a substantial number of LLM calls and input tokens, making prompt optimization expensive. 
+
+We introduce CAPO (Cost-Aware Prompt Optimization), an algorithm that enhances prompt optimization efficiency by integrating AutoML techniques. CAPO is an evolutionary approach with LLMs as operators, incorporating racing to save evaluations and multi-objective optimization to balance performance with prompt length. It jointly optimizes instructions and few-shot examples while leveraging task descriptions for improved robustness.
+
+Our extensive experiments across diverse datasets and LLMs demonstrate that CAPO outperforms state-of-the-art discrete prompt optimization methods in 11/15 cases with improvements up to 21%. Our algorithm achieves better performances already with smaller budgets, saves evaluations through racing, and decreases average prompt length via a length penalty, making it both cost-efficient and cost-aware.
 
 ## Installation
 
@@ -102,3 +113,22 @@ Overview of relevant files and directories:
 ## Dependencies
 
 Exact dependencies are documented in the poetry.lock. Executing ``poetry install`` will produce an environment with exactly the dependencies used for our experiments.
+
+
+
+## Citation
+
+If you use CAPO in your research or wish to refer to our work, please use the following BibTeX entry:
+
+```bibtex
+@article{zehle2025capo,
+  title={CAPO: Cost-Aware Prompt Optimization},
+  author={Zehle, Tom and Schlager, Moritz and Hei{\ss}, Timo and Feurer, Matthias},
+  journal={arXiv preprint arXiv:2504.16005},
+  year={2025},
+  url={https://arxiv.org/abs/2504.16005},
+  doi={10.48550/arXiv.2504.16005}
+}
+```
+
+Or cite using the [citation.cff](./citation.cff) file provided in this repository.
