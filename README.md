@@ -2,6 +2,10 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2504.16005-b31b1b.svg)](https://arxiv.org/abs/2504.16005)
 
 This is the official implementation of the paper ["CAPO: Cost-Aware Prompt Optimization"](https://arxiv.org/abs/2504.16005).
+> [!WARNING]
+> **This repository is no longer actively maintained.**
+> 
+> This repository will remain available for reproducibility and archival purposes of the publication. For an actively maintained version of CAPO, please refer to: https://github.com/finitearth/promptolution
 
 ## About
 
