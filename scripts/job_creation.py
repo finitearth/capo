@@ -36,7 +36,7 @@ if __name__ == "__main__":
             ["step_results.parquet" in c for c in complete_path]
         ):
             command = generate_command(
-                config, time="0-03:30:00", gres="gpu:1", partition="mcml-hgx-h100-94x4"
+                config, time="0-01:30:00", gres="gpu:1", partition="mcml-hgx-h100-94x4"
             )
         elif (
             os.path.exists(config.output_dir)
@@ -48,7 +48,7 @@ if __name__ == "__main__":
             command = generate_command(
                 config,
                 evaluate=True,
-                time="0-03:30:00",
+                time="0-00:30:00",
                 gres="gpu:1",
                 partition="mcml-hgx-h100-94x4",
             )
