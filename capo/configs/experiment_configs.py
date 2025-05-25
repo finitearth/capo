@@ -177,7 +177,7 @@ ABLATION_CONFIG = ExperimentConfig(
         ),
         OptimizerConfig(
             name="CAPO_no_racing_gamma_0_no_fs",
-            optimizer="EvoPromptGA",
+            optimizer="CAPO",
             optimizer_params={
                 "n_steps": 999,
                 "population_size": 10,
@@ -272,7 +272,7 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
     ]
     + [
         OptimizerConfig(
-            name=f"CAPO_ncrossovers_{alpha}",
+            name=f"CAPO_alpha_{alpha}",
             optimizer="CAPO",
             optimizer_params={
                 "n_steps": 999,
