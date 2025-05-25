@@ -210,7 +210,7 @@ ABLATION_CONFIG = ExperimentConfig(
 length_penalty_grid = [0.01, 0.02, 0.05, 0.1]
 population_size_grid = [6, 8, 10, 12]
 ncrossovers_grid = [4, 7, 10]
-alphas_grid = [0.05, 0.1, 0.2, 0.5]
+alphas_grid = [0.05, 0.1, 0.5]
 
 HYPERPARAMETER_CONFIG = ExperimentConfig(
     name="hyperparameter_experiment",

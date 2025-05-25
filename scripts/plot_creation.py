@@ -6,6 +6,7 @@ This allows for the regeneration of the graphics provided in the paper
 import argparse
 import os
 
+import matplotlib.pyplot as plt
 import seaborn as sns
 
 from capo.analysis.visualizations import (
@@ -51,7 +52,7 @@ if __name__ == "__main__":
                 fig.savefig(
                     f"./results/plots/{dataset}_{model}_population_scores.png", bbox_inches="tight"
                 )
-
+                plt.close()
         fig = plot_population_scores_comparison(
             "gsm8k",
             "mistral",
@@ -62,7 +63,7 @@ if __name__ == "__main__":
             x_col="input_tokens_cum",
         )
         fig.savefig("./results/plots/gsm8k_mistral_population_scores_main.png", bbox_inches="tight")
-
+        plt.close()
         fig = plot_population_scores_comparison(
             "subj",
             "qwen",
@@ -73,9 +74,10 @@ if __name__ == "__main__":
             x_col="input_tokens_cum",
         )
         fig.savefig("./results/plots/subj_qwen_population_scores_main.png", bbox_inches="tight")
-
+        plt.close()
         fig = plot_performance_profile_curve()
         fig.savefig("./results/plots/performance_profile_curve.png", bbox_inches="tight")
+        plt.close()
 
         fig = plot_length_score(
             "gsm8k",
@@ -86,6 +88,7 @@ if __name__ == "__main__":
             log_scale=False,
         )
         fig.savefig("./results/plots/gsm8k_mistral_prompt_length_score.png", bbox_inches="tight")
+        plt.close()
 
         fig = plot_population_members(
             "sst-5",
@@ -97,6 +100,7 @@ if __name__ == "__main__":
             figsize=(5.4, 3),
         )
         fig.savefig("./results/plots/sst-5_mistral_42_population_members.png", bbox_inches="tight")
+        plt.close()
 
         fig = plot_population_members(
             "subj",
@@ -108,6 +112,7 @@ if __name__ == "__main__":
             figsize=(5.4, 3),
         )
         fig.savefig("./results/plots/subj_qwen_42_population_members.png", bbox_inches="tight")
+        plt.close()
 
     if args.hp or args.all:
         hp_runs = [
@@ -150,6 +155,7 @@ if __name__ == "__main__":
                     f"./results/plots/hyperparameter_tuning_lp_{dataset}_{score_col}.png",
                     bbox_inches="tight",
                 )
+                plt.close()
 
         # Population size
         hp_runs = ["CAPO_pop_6", "CAPO_pop_8", "CAPO_pop_10", "Dummy", "CAPO_pop_12"]
@@ -176,6 +182,7 @@ if __name__ == "__main__":
                 f"./results/plots/hyperparameter_tuning_pop_{dataset}.png",
                 bbox_inches="tight",
             )
+            plt.close()
 
         # Number of crossovers
         hp_runs = [
@@ -208,6 +215,8 @@ if __name__ == "__main__":
                 bbox_inches="tight",
             )
 
+            plt.close()
+
         #  Shuffling
         for dataset in ["agnews", "gsm8k"]:
             fig = plot_population_scores_comparison(
@@ -228,6 +237,45 @@ if __name__ == "__main__":
                 f"./results/plots/hyperparameter_tuning_shuffling_{dataset}.png",
                 bbox_inches="tight",
             )
+
+            plt.close()
+
+        # alpha
+        hp_runs = [
+            "CAPO_alpha_0.05",
+            "CAPO_alpha_0.1",
+            "CAPO_alpha_0.2",
+            "CAPO_alpha_0.5",
+        ]
+
+        markers = ["8", "s", "o", "d"]
+        labels = [
+            r"$\alpha=0.05$",
+            r"$\alpha=0.1$",
+            r"$\alpha=0.2$ (CAPO)",
+            r"$\alpha=0.5$ ",
+        ]
+
+        for dataset in ["agnews", "gsm8k"]:
+            fig = plot_population_scores_comparison(
+                dataset,
+                "llama",
+                hp_runs,
+                "mean",
+                plot_seeds=False,
+                plot_stddev=True,
+                x_col="step",
+                score_col="test_score",
+                continuous_colors=True,
+                markers=markers,
+                labels=labels,
+                figsize=(5.4, 3),
+            )
+            fig.savefig(
+                f"./results/plots/hyperparameter_tuning_alpha_{dataset}.png",
+                bbox_inches="tight",
+            )
+            plt.close()
 
     if args.ablation or args.all:
         DATASETS = ["agnews", "gsm8k"]
@@ -252,7 +300,9 @@ if __name__ == "__main__":
             "./results/plots/ablation_racing_tokens_per_step.png",
             bbox_inches="tight",
         )
+        plt.close()
 
+        markers = ["o", "d", "s", "p"]
         for dataset in DATASETS:
             fig = plot_population_scores_comparison(
                 dataset,
@@ -271,7 +321,7 @@ if __name__ == "__main__":
                 f"./results/plots/ablation_racing_{dataset}.png",
                 bbox_inches="tight",
             )
-
+            plt.close()
             fig = plot_population_scores_comparison(
                 dataset,
                 "llama",
@@ -290,7 +340,7 @@ if __name__ == "__main__":
                 f"./results/plots/ablation_zero_shot_{dataset}.png",
                 bbox_inches="tight",
             )
-
+            plt.close()
             fig = plot_length_score(
                 dataset,
                 "llama",
@@ -308,7 +358,7 @@ if __name__ == "__main__":
                 f"./results/plots/ablation_zero_shot_{dataset}_len_obj.png",
                 bbox_inches="tight",
             )
-
+            plt.close()
             fig = plot_population_scores_comparison(
                 dataset,
                 "llama",
@@ -327,7 +377,7 @@ if __name__ == "__main__":
                 f"./results/plots/ablation_evo_td_{dataset}.png",
                 bbox_inches="tight",
             )
-
+            plt.close()
             fig = plot_population_scores_comparison(
                 dataset,
                 "llama",
@@ -352,6 +402,8 @@ if __name__ == "__main__":
                 bbox_inches="tight",
             )
 
+            plt.close()
+
         fig = plot_population_scores_comparison(
             "agnews",
             "llama",
@@ -373,5 +425,54 @@ if __name__ == "__main__":
 
         fig.savefig(
             "./results/plots/ablation_generic_init_agnews_main_pre.png",
+            bbox_inches="tight",
+        )
+
+        plt.close()
+
+        fig = plot_population_scores_comparison(
+            "gsm8k",
+            "llama",
+            ["CAPO", "", "CAPO_no_racing_gamma_0_no_fs"],
+            labels=[
+                "CAPO",
+                "",
+                "CAPO w/o anything",
+            ],
+            plot_stddev=True,
+            plot_seeds=False,
+            x_col="input_tokens_cum",
+            colors=colors,
+            markers=markers,
+            ncols=2,
+            figsize=(5.4, 3.6),
+        )
+
+        fig.savefig(
+            "./results/plots/ablation_capo_wo_anything_gsm8k.png",
+            bbox_inches="tight",
+        )
+
+        plt.close()
+
+        fig = plot_population_scores_comparison(
+            "agnews",
+            "llama",
+            ["CAPO", "", "CAPO_no_racing_gamma_0_no_fs"],
+            labels=[
+                "CAPO",
+                "",
+                "CAPO w/o anything",
+            ],
+            plot_stddev=True,
+            plot_seeds=False,
+            x_col="input_tokens_cum",
+            colors=colors,
+            markers=markers,
+            ncols=2,
+            figsize=(5.4, 3.6),
+        )
+        fig.savefig(
+            "./results/plots/ablation_capo_wo_anything_agnews.png",
             bbox_inches="tight",
         )
