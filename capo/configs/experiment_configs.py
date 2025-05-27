@@ -176,6 +176,21 @@ ABLATION_CONFIG = ExperimentConfig(
             },
         ),
         OptimizerConfig(
+            name="CAPO_no_racing_gamma_0_no_fs",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "length_penalty": 0,
+                "block_size": 300,
+                "max_n_blocks_eval": 1,
+                "upper_shots": 0,
+                "crossovers_per_iter": 4,
+                "alpha": 0.2,
+                "shuffle_blocks_per_iter": False,
+            },
+        ),
+        OptimizerConfig(
             name="EvoPromptGA_generic_init",
             optimizer="EvoPromptGA",
             optimizer_params={
@@ -195,6 +210,7 @@ ABLATION_CONFIG = ExperimentConfig(
 length_penalty_grid = [0.01, 0.02, 0.05, 0.1]
 population_size_grid = [6, 8, 10, 12]
 ncrossovers_grid = [4, 7, 10]
+alphas_grid = [0.05, 0.1, 0.5]
 
 HYPERPARAMETER_CONFIG = ExperimentConfig(
     name="hyperparameter_experiment",
@@ -253,6 +269,24 @@ HYPERPARAMETER_CONFIG = ExperimentConfig(
             },
         )
         for ncrossovers in ncrossovers_grid
+    ]
+    + [
+        OptimizerConfig(
+            name=f"CAPO_alpha_{alpha}",
+            optimizer="CAPO",
+            optimizer_params={
+                "n_steps": 999,
+                "population_size": 10,
+                "block_size": 30,
+                "length_penalty": 0.05,
+                "crossovers_per_iter": 4,
+                "upper_shots": 5,
+                "max_n_blocks_eval": 10,
+                "alpha": alpha,
+                "shuffle_blocks_per_iter": False,
+            },
+        )
+        for alpha in alphas_grid
     ],
     random_seeds=[42, 43, 44],
     budget_per_run=5_000_000,

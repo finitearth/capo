@@ -1,5 +1,6 @@
 # CAPO - Cost-Aware Prompt Optimization
 [![arXiv](https://img.shields.io/badge/arXiv-2504.16005-b31b1b.svg)](https://arxiv.org/abs/2504.16005)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
 
 This is the official implementation of the paper ["CAPO: Cost-Aware Prompt Optimization"](https://arxiv.org/abs/2504.16005).
 > [!WARNING]

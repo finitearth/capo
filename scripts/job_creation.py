@@ -48,7 +48,7 @@ if __name__ == "__main__":
             command = generate_command(
                 config,
                 evaluate=True,
-                time="0-03:30:00",
+                time="0-03:00:00",
                 gres="gpu:1",
                 partition="mcml-hgx-h100-94x4",
             )

@@ -360,7 +360,7 @@ def plot_length_score(
     ax.scatter([], [], marker="*", s=300, edgecolor="black", facecolor="none", label="Best")
     ax.set_xlabel("Prompt length")
     ax.set_ylabel(score_col.replace("_", " ").capitalize())
-    ax.legend(ncols=min(len(optims), ncols), loc="upper center", bbox_to_anchor=(0.5, 1.35))
+    ax.legend(ncols=min(len(optims), ncols), loc="upper center", bbox_to_anchor=(0.5, 1.25))
 
     return fig
 
