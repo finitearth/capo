@@ -51,6 +51,7 @@ def get_results(dataset: str, model: str, optim: str) -> pd.DataFrame:
                 "test_score",
                 "prompt_len",
                 "instr_len",
+                "fs_len",
                 "system_prompt",
                 "input_tokens_cum",
                 "output_tokens_cum",
@@ -113,6 +114,10 @@ def get_results(dataset: str, model: str, optim: str) -> pd.DataFrame:
 
     # approximate prompt length by counting the number of words in both system prompt and prompt
     df["prompt_len"] = (df["system_prompt"] + " " + df["prompt"]).str.split().apply(len)
+
+    df["fs_len"] = df["prompt_len"] - df["instr_len"]
+
+    df["frac_fs"] = df["fs_len"] / df["prompt_len"]
 
     df["is_new"] = ~df.groupby(["seed", "prompt"]).cumcount().astype(bool)
     df["is_last_occ"] = ~df.groupby(["seed", "prompt"]).cumcount(ascending=False).astype(bool)
