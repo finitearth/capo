@@ -1,9 +1,9 @@
 # CAPO - Cost-Aware Prompt Optimization
-[![arXiv](https://img.shields.io/badge/arXiv-2504.16005-b31b1b.svg)](https://arxiv.org/abs/2504.16005)
+[![arXiv](https://img.shields.io/badge/OpenReview-CAPO-8C1B13.svg)](https://openreview.net/forum?id=UweaRrg9D0)
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 
-This is the official implementation of the paper ["CAPO: Cost-Aware Prompt Optimization"](https://arxiv.org/abs/2504.16005).
-> [!WARNING]
+This is the official implementation of the paper ["CAPO: Cost-Aware Prompt Optimization"](https://openreview.net/forum?id=UweaRrg9D0).
+> [!NOTE]
 > **This repository is no longer actively maintained.**
 > 
 > This repository will remain available for reproducibility and archival purposes of the publication. For an actively maintained version of CAPO, please refer to: https://github.com/finitearth/promptolution
@@ -126,13 +126,13 @@ Exact dependencies are documented in the poetry.lock. Executing ``poetry install
 If you use CAPO in your research or wish to refer to our work, please use the following BibTeX entry:
 
 ```bibtex
-@article{zehle2025capo,
-  title={CAPO: Cost-Aware Prompt Optimization},
-  author={Zehle, Tom and Schlager, Moritz and Hei{\ss}, Timo and Feurer, Matthias},
-  journal={arXiv preprint arXiv:2504.16005},
-  year={2025},
-  url={https://arxiv.org/abs/2504.16005},
-  doi={10.48550/arXiv.2504.16005}
+@inproceedings{
+    zehle2025capo,
+    title={{CAPO}: Cost-Aware Prompt Optimization},
+    author={Tom Zehle and Moritz Schlager and Timo Hei{\ss} and Matthias Feurer},
+    booktitle={4th International Conference on Automated Machine Learning},
+    year={2025},
+    url={https://openreview.net/forum?id=UweaRrg9D0}
 }
 ```
 
